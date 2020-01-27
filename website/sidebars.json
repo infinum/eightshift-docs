@@ -1,0 +1,71 @@
+{
+  "frontend-libs": {
+    "Frontend Libs": [
+      "frontend-libs-index",
+      "frontend-libs/frontend-libs-storybook",
+      "frontend-libs/frontend-libs-sassdocs"
+    ],
+    "Helpers": [
+      "frontend-libs/frontend-libs-get-actions",
+      "frontend-libs/frontend-libs-aliases",
+      "frontend-libs/frontend-libs-render-block-view"
+    ],
+    "Installation": [
+      "frontend-libs/frontend-libs-instalation",
+      "frontend-libs/frontend-libs-register-webpack"
+    ],
+    "Structure": [
+      "frontend-libs/frontend-libs-block-registration",
+      "frontend-libs/frontend-libs-blocks-structure",
+      "frontend-libs/frontend-libs-component-structure",
+      "frontend-libs/frontend-libs-block-structure",
+      "frontend-libs/frontend-libs-manifest-structure",
+      "frontend-libs/frontend-libs-creating-block-from-components"
+    ],
+    "Tips": [
+      "frontend-libs/frontend-libs-tips"
+    ]
+  },
+  "libs": {
+    "Libs": [
+      "libs-index"
+    ],
+    "Installation": [
+      "libs/libs-instalation"
+    ],
+    "Features": [
+      "libs/libs-features-blocks",
+      "libs/libs-features-columns",
+      "libs/libs-features-custom-post-type",
+      "libs/libs-features-taxonomy",
+      "libs/libs-features-enqueue",
+      "libs/libs-features-general",
+      "libs/libs-features-i18n",
+      "libs/libs-features-login",
+      "libs/libs-features-manifest",
+      "libs/libs-features-media",
+      "libs/libs-features-menu",
+      "libs/libs-features-rest"
+    ],
+    "Helpers": [
+      "libs/libs-helpers-object-helpers",
+      "libs/libs-helpers-general-helpers"
+    ]
+  },
+  "boilerplate": {
+    "Boilerplate": [
+      "boilerplate-index"
+    ],
+    "Installation": [
+      "boilerplate/boilerplate-instalation"
+    ]
+  },
+  "boilerplate-plugin": {
+    "Boilerplate Plugin": [
+      "boilerplate-plugin-index"
+    ],
+    "Installation": [
+      "boilerplate-plugin/boilerplate-instalation"
+    ]
+  }
+}
