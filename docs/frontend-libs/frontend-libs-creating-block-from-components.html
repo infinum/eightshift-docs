@@ -1,0 +1,340 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Creating Block from Components · Eightshift Docs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="You may wonder: what is the difference between components and blocks? Aren&#x27;t they the same thing? "/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Creating Block from Components · Eightshift Docs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://infinum.github.io/"/><meta property="og:description" content="You may wonder: what is the difference between components and blocks? Aren&#x27;t they the same thing? "/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/favicon.png" alt="Eightshift Docs"/><h2 class="headerTitleWithLogo">Eightshift Docs</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/boilerplate-index" target="_self">Boilerplate</a></li><li class=""><a href="/docs/boilerplate-plugin-index" target="_self">Boilerplate Plugin</a></li><li class="siteNavGroupActive"><a href="/docs/frontend-libs-index" target="_self">Frontend-Libs</a></li><li class=""><a href="/docs/libs-index" target="_self">Libs</a></li><li class=""><a href="https://infinum.github.io/eightshift-frontend-libs/storybook/" target="_blank">Storybook</a></li><li class=""><a href="https://infinum.github.io/eightshift-frontend-libs/sassdocs/" target="_blank">SassDocs</a></li><li class=""><a target="_self"></a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Structure</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Frontend Libs<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/frontend-libs-index">Eightshift Frontend Libs</a></li><li class="navListItem"><a class="navItem" href="/docs/frontend-libs/frontend-libs-storybook">Storybook</a></li><li class="navListItem"><a class="navItem" href="/docs/frontend-libs/frontend-libs-sassdocs">SassDocs</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Helpers<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/frontend-libs/frontend-libs-get-actions">JavaScript GetActions Helper</a></li><li class="navListItem"><a class="navItem" href="/docs/frontend-libs/frontend-libs-aliases">Helpful aliases</a></li><li class="navListItem"><a class="navItem" href="/docs/frontend-libs/frontend-libs-render-block-view">PHP Render Block View Helper</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Installation<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/frontend-libs/frontend-libs-instalation">Installation and Requirements</a></li><li class="navListItem"><a class="navItem" href="/docs/frontend-libs/frontend-libs-register-webpack">Register Webpack</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Structure<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/frontend-libs/frontend-libs-block-registration">Block Registration</a></li><li class="navListItem"><a class="navItem" href="/docs/frontend-libs/frontend-libs-blocks-structure">Blocks Structure</a></li><li class="navListItem"><a class="navItem" href="/docs/frontend-libs/frontend-libs-component-structure">Component Structure</a></li><li class="navListItem"><a class="navItem" href="/docs/frontend-libs/frontend-libs-block-structure">Custom Block Structure</a></li><li class="navListItem"><a class="navItem" href="/docs/frontend-libs/frontend-libs-manifest-structure">Block Manifest Structure</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/frontend-libs/frontend-libs-creating-block-from-components">Creating Block from Components</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Tips<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/frontend-libs/frontend-libs-tips">Useful Tips</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Creating Block from Components</h1></header><article><div><span><p>You may wonder: what is the difference between components and blocks? Aren't they the same thing?</p>
+<p>They are similar, but not the same. Components are, for lack of a better word, <em>dumb</em>. They aren't bothered with the context and they are <strong>reusable</strong>.
+This is the key word in this whole ordeal. One component may be reused in different blocks. Also, the main difference is that the component is not registered in WordPress; its sole purpose is to provide reusable parts for your blocks.</p>
+<p>Let's look at an example.
+For instance, we want to create a card block. This block consists of an image, a title and a text.</p>
+<h3><a class="anchor" aria-hidden="true" id="folder-structure"></a><a href="#folder-structure" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Folder structure</h3>
+<p>First we'll create a block in the <code>src/blocks/custom/card</code> folder. The folder structure will look like this</p>
+<pre><code class="hljs css language-shell">|card
+| |components
+| | |card-editor.js
+| | |card-options.js
+| |card-block.js
+| |card.php
+| |card-style.scss
+| |manifest.json
+</code></pre>
+<p>The <code>manifest.json</code> will hold all the default attributes and data about the new block</p>
+<h3><a class="anchor" aria-hidden="true" id="manifest"></a><a href="#manifest" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Manifest</h3>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"blockName"</span>: <span class="hljs-string">"card"</span>,
+  <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Card"</span>,
+  <span class="hljs-attr">"description"</span> : <span class="hljs-string">"Card with custom settings."</span>,
+  <span class="hljs-attr">"category"</span>: <span class="hljs-string">"eightshift"</span>,
+  <span class="hljs-attr">"icon"</span>: {
+    <span class="hljs-attr">"src"</span>: <span class="hljs-string">"buddicons-buddypress-logo"</span>
+  },
+  <span class="hljs-attr">"keywords"</span>: [
+    <span class="hljs-string">"Service"</span>,
+    <span class="hljs-string">"Box"</span>,
+    <span class="hljs-string">"Card"</span>
+  ],
+  <span class="hljs-attr">"hasWrapper"</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-attr">"parent"</span>: [
+    <span class="hljs-string">"eightshift-boilerplate/cards-grid"</span>
+  ],
+  <span class="hljs-attr">"attributes"</span>: {
+    <span class="hljs-attr">"media"</span>: {
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"object"</span>,
+      <span class="hljs-attr">"default"</span>: {
+        <span class="hljs-attr">"id"</span>: <span class="hljs-number">0</span>,
+        <span class="hljs-attr">"url"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-attr">"title"</span>: <span class="hljs-string">""</span>
+      },
+      <span class="hljs-attr">"items"</span>: {
+        <span class="hljs-attr">"type"</span>: <span class="hljs-string">"object"</span>
+      },
+      <span class="hljs-attr">"mediaAction"</span>: <span class="hljs-literal">true</span>
+    },
+    <span class="hljs-attr">"heading"</span>: {
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"string"</span>
+    },
+    <span class="hljs-attr">"paragraph"</span>: {
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"string"</span>
+    }
+  }
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="components"></a><a href="#components" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Components</h3>
+<p>Next, we want to set up the editor and options component for this block. So in the <code>components</code> folder we'll add <code>card-editor.js</code> and <code>card-options.js</code> files.</p>
+<p><strong>card-editor.js</strong></p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>; <span class="hljs-comment">// eslint-disable-line no-unused-vars</span>
+<span class="hljs-keyword">import</span> { RichText } <span class="hljs-keyword">from</span> <span class="hljs-string">'@wordpress/editor'</span>;
+<span class="hljs-keyword">import</span> { __ } <span class="hljs-keyword">from</span> <span class="hljs-string">'@wordpress/i18n'</span>;
+<span class="hljs-keyword">import</span> { ImageEditor } <span class="hljs-keyword">from</span> <span class="hljs-string">'../../../components/image/components/image-editor'</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> CardEditor = <span class="hljs-function">(<span class="hljs-params">props</span>) =&gt;</span> {
+  <span class="hljs-keyword">const</span> {
+    <span class="hljs-attr">attributes</span>: {
+      blockClass,
+      heading,
+      paragraph,
+      media,
+    },
+    <span class="hljs-attr">actions</span>: {
+      onChangeHeading,
+      onChangeParagraph,
+    },
+  } = props;
+
+  <span class="hljs-keyword">return</span> (
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">{blockClass}</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">{</span>`${<span class="hljs-attr">blockClass</span>}<span class="hljs-attr">__media</span>`}&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">ImageEditor</span>
+          <span class="hljs-attr">blockClass</span>=<span class="hljs-string">{blockClass}</span>
+          <span class="hljs-attr">media</span>=<span class="hljs-string">{media}</span>
+        /&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">{</span>`${<span class="hljs-attr">blockClass</span>}<span class="hljs-attr">__content</span>`}&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">{</span>`${<span class="hljs-attr">blockClass</span>}<span class="hljs-attr">__heading</span>`}&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">RichText</span>
+            <span class="hljs-attr">placeholder</span>=<span class="hljs-string">{__(</span>'<span class="hljs-attr">Add</span> <span class="hljs-attr">Heading</span>', '<span class="hljs-attr">eightshift-boilerplate</span>')}
+            <span class="hljs-attr">onChange</span>=<span class="hljs-string">{onChangeHeading}</span>
+            <span class="hljs-attr">value</span>=<span class="hljs-string">{heading}</span>
+          /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">{</span>`${<span class="hljs-attr">blockClass</span>}<span class="hljs-attr">__paragraph</span>`}&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">RichText</span>
+            <span class="hljs-attr">placeholder</span>=<span class="hljs-string">{__(</span>'<span class="hljs-attr">Add</span> <span class="hljs-attr">Paragraph</span>', '<span class="hljs-attr">eightshift-boilerplate</span>')}
+            <span class="hljs-attr">onChange</span>=<span class="hljs-string">{onChangeParagraph}</span>
+            <span class="hljs-attr">value</span>=<span class="hljs-string">{paragraph}</span>
+          /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+  );
+};
+</code></pre>
+<p>Notice how we've imported the <a href="https://github.com/infinum/eightshift-frontend-libs/blob/develop/blocks/init/components/image/components/image-editor.js"><code>image-editor</code></a> component from the project's component folder. Note that in your project you'd just copy this component from the frontend-libs blocks (that is you'd copy the entire folder in your project as previously described).</p>
+<p>Our card editor component will have an <code>&lt;ImageEditor /&gt;</code> component and two <code>&lt;RichText /&gt;</code> components (which come from the core editor).</p>
+<p><strong>card-options.js</strong></p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>; <span class="hljs-comment">// eslint-disable-line no-unused-vars</span>
+<span class="hljs-keyword">import</span> { __ } <span class="hljs-keyword">from</span> <span class="hljs-string">'@wordpress/i18n'</span>;
+<span class="hljs-keyword">import</span> { PanelBody } <span class="hljs-keyword">from</span> <span class="hljs-string">'@wordpress/components'</span>;
+<span class="hljs-keyword">import</span> { ImageOptions } <span class="hljs-keyword">from</span> <span class="hljs-string">'../../../components/image/components/image-options'</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> CardOptions = <span class="hljs-function">(<span class="hljs-params">props</span>) =&gt;</span> {
+  <span class="hljs-keyword">const</span> {
+    <span class="hljs-attr">attributes</span>: {
+      media,
+    },
+    <span class="hljs-attr">actions</span>: {
+      onChangeMedia,
+    },
+  } = props;
+
+  <span class="hljs-keyword">return</span> (
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">PanelBody</span> <span class="hljs-attr">title</span>=<span class="hljs-string">{__(</span>'<span class="hljs-attr">Card</span> <span class="hljs-attr">Details</span>', '<span class="hljs-attr">eightshift-boilerplate</span>')}&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">ImageOptions</span>
+        <span class="hljs-attr">media</span>=<span class="hljs-string">{media}</span>
+        <span class="hljs-attr">onChangeMedia</span>=<span class="hljs-string">{onChangeMedia}</span>
+      /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">PanelBody</span>&gt;</span></span>
+  );
+};
+</code></pre>
+<p>The options component (the one shown on the right side in the editor screen), will only contain the <code>&lt;ImageOptions /&gt;</code> so that we can upload image in our block.</p>
+<h3><a class="anchor" aria-hidden="true" id="editor-render"></a><a href="#editor-render" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Editor render</h3>
+<p>Back to the block, we need to create the <code>edit</code> method functionality and the view that we'll render on the front.</p>
+<p><strong>card-block.js</strong></p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>; <span class="hljs-comment">// eslint-disable-line no-unused-vars</span>
+<span class="hljs-keyword">import</span> { Fragment } <span class="hljs-keyword">from</span> <span class="hljs-string">'@wordpress/element'</span>;
+<span class="hljs-keyword">import</span> { InspectorControls } <span class="hljs-keyword">from</span> <span class="hljs-string">'@wordpress/editor'</span>;
+<span class="hljs-keyword">import</span> { getActions } <span class="hljs-keyword">from</span> <span class="hljs-string">'EighshiftBlocksGetActions'</span>;
+<span class="hljs-keyword">import</span> manifest <span class="hljs-keyword">from</span> <span class="hljs-string">'./manifest.json'</span>;
+<span class="hljs-keyword">import</span> { CardEditor } <span class="hljs-keyword">from</span> <span class="hljs-string">'./components/card-editor'</span>;
+<span class="hljs-keyword">import</span> { CardOptions } <span class="hljs-keyword">from</span> <span class="hljs-string">'./components/card-options'</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">'./hooks'</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> Card = <span class="hljs-function">(<span class="hljs-params">props</span>) =&gt;</span> {
+
+  <span class="hljs-keyword">const</span> {
+    attributes,
+  } = props;
+
+  <span class="hljs-keyword">const</span> actions = getActions(props, manifest);
+
+  <span class="hljs-keyword">return</span> (
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Fragment</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">InspectorControls</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">CardOptions</span>
+          <span class="hljs-attr">attributes</span>=<span class="hljs-string">{attributes}</span>
+          <span class="hljs-attr">actions</span>=<span class="hljs-string">{actions}</span>
+        /&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">InspectorControls</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">CardEditor</span>
+        <span class="hljs-attr">attributes</span>=<span class="hljs-string">{attributes}</span>
+        <span class="hljs-attr">actions</span>=<span class="hljs-string">{actions}</span>
+      /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Fragment</span>&gt;</span></span>
+  );
+};
+</code></pre>
+<p>Here we'll use our ready made component (built out of other components - reusability), and wrap it in <a href="https://reactjs.org/docs/fragments.html">React Fragment</a>. It is a pattern used so that we can return multiple elements.<br>
+Another thing you'll note is the usage of <code>&lt;InspectorControls /&gt;</code> <a href="https://github.com/WordPress/gutenberg/tree/master/packages/block-editor/src/components/inspector-controls">component</a>. It is used to display settings of the block in the sidebar (in our case our options that contain the image upload component).<br>
+Lastly, both our <code>&lt;CardEditor /&gt;</code> and <code>&lt;InspectorControls /&gt;</code> are wrapped in the <code>&lt;Fragment /&gt;</code> wrapper due to Reacts one top-level element rule. If your block doesn't have Options, you can only have <code>&lt;CardEditor /&gt;</code> component in here.</p>
+<h3><a class="anchor" aria-hidden="true" id="php-view"></a><a href="#php-view" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>PHP view</h3>
+<p>So all we need now is the PHP view.</p>
+<p><strong>card.php</strong></p>
+<pre><code class="hljs css language-php">&lt;?php
+/**
+ * Template for the Card Block.
+ *
+ * @since 1.0.0
+ * @package Eightshift_Boilerplate\Blocks.
+ */
+
+namespace Eightshift_Boilerplate\Blocks;
+
+$heading   = $attributes['heading'] ?? '';
+$paragraph = $attributes['paragraph'] ?? '';
+$media     = $attributes['media'] ?? [];
+
+$block_class = $attributes['blockClass'] ?? '';
+
+?&gt;
+
+&lt;div class="&lt;?php echo esc_attr( $block_class ); ?&gt;"&gt;
+
+  &lt;?php if ( ! empty( $media ) ) { ?&gt;
+    &lt;div class="&lt;?php echo esc_attr( "{$block_class}__media" ); ?&gt;"&gt;
+      &lt;?php $this-&gt;render_block_view(
+        '/components/image/image.php',
+        [
+          'blockClass' =&gt; $attributes['blockClass'] ?? '',
+          'media'      =&gt; $media,
+        ]
+      );
+      ?&gt;
+    &lt;/div&gt;
+  &lt;?php } ?&gt;
+
+  &lt;div class="&lt;?php echo esc_attr( "{$block_class}__content" ); ?&gt;"&gt;
+    &lt;?php if ( ! empty( $heading ) ) { ?&gt;
+      &lt;div class="&lt;?php echo esc_attr( "{$block_class}__heading" ); ?&gt;"&gt;
+        &lt;?php echo wp_kses_post( $heading ); ?&gt;
+      &lt;/div&gt;
+    &lt;?php } ?&gt;
+
+    &lt;?php if ( ! empty( $paragraph ) ) { ?&gt;
+      &lt;div class="&lt;?php echo esc_attr( "{$block_class}__paragraph" ); ?&gt;"&gt;
+        &lt;?php echo wp_kses_post( $paragraph ); ?&gt;
+      &lt;/div&gt;
+    &lt;?php } ?&gt;
+  &lt;/div&gt;
+
+&lt;/div&gt;
+
+</code></pre>
+<p>Notice how we used</p>
+<pre><code class="hljs css language-php"><span class="hljs-meta">&lt;?php</span> <span class="hljs-keyword">$this</span>-&gt;render_block_view(
+  <span class="hljs-string">'/components/image/image.php'</span>,
+  [
+    <span class="hljs-string">'blockClass'</span> =&gt; $attributes[<span class="hljs-string">'blockClass'</span>] ?? <span class="hljs-string">''</span>,
+    <span class="hljs-string">'media'</span>      =&gt; $media,
+  ]
+);
+<span class="hljs-meta">?&gt;</span>
+</code></pre>
+<p>To render out our <code>image</code> component. Again, we're showing the power of reusability here.</p>
+<h3><a class="anchor" aria-hidden="true" id="styling"></a><a href="#styling" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Styling</h3>
+<p>You can style them how you want, but we added some default styles</p>
+<p><strong>card-style.scss</strong></p>
+<pre><code class="hljs css language-scss"><span class="hljs-variable">$block-card</span>: (
+  heading: (
+    mobile: (
+      font-size: <span class="hljs-number">24px</span>,
+      line-height: <span class="hljs-number">1.33</span>,
+    ),
+  ),
+  paragraph: (
+    mobile: (
+      font-size: <span class="hljs-number">18px</span>,
+      line-height: <span class="hljs-number">1.5</span>,
+    ),
+  ),
+);
+
+<span class="hljs-selector-class">.block-card</span> {
+  <span class="hljs-variable">$this</span>: &amp;;
+
+  &amp;__media {
+    <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">25px</span>;
+  }
+
+  &amp;__img {
+    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> auto;
+  }
+
+  &amp;__content {
+    <span class="hljs-attribute">text-align</span>: center;
+  }
+
+  &amp;__heading {
+    <span class="hljs-keyword">@include</span> responsive(<span class="hljs-variable">$block-card</span>, heading);
+    <span class="hljs-attribute">font-weight</span>: bold;
+  }
+
+  &amp;__paragraph {
+    <span class="hljs-keyword">@include</span> responsive(<span class="hljs-variable">$block-card</span>, paragraph);
+    <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">15px</span>;
+  }
+}
+</code></pre>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 1/27/2020 by Ivan Ruzevic</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/frontend-libs/frontend-libs-manifest-structure"><span class="arrow-prev">← </span><span>Block Manifest Structure</span></a><a class="docs-next button" href="/docs/frontend-libs/frontend-libs-tips"><span>Useful Tips</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/favicon.png" alt="Eightshift Docs" width="66" height="58"/></a><div><h5>Eightshift-frontend-libs</h5><a href="https://github.com/infinum/eightshift-frontend-libs">Github</a><a class="github-button" href="https://github.com/infinum/eightshift-frontend-libs" data-icon="octicon-star" data-size="large" aria-label="Star infinum/eightshift-frontend-libs on GitHub">Star</a></div><div><h5>Eightshift-libs</h5><a href="https://github.com/infinum/eightshift-libs">Github</a><a class="github-button" href="https://github.com/infinum/eightshift-libs" data-icon="octicon-star" data-size="large" aria-label="Star infinum/eightshift-libs on GitHub">Star</a></div><div><h5>Eightshift-boilerplate</h5><a href="https://github.com/infinum/eightshift-boilerplate">Github</a><a class="github-button" href="https://github.com/infinum/eightshift-boilerplate" data-icon="octicon-star" data-size="large" aria-label="Star infinum/eightshift-boilerplate on GitHub">Star</a></div><div><h5>Eightshift-boilerplate-plugin</h5><a href="https://github.com/infinum/eightshift-boilerplate-plugin">Github</a><a class="github-button" href="https://github.com/infinum/eightshift-boilerplate-plugin" data-icon="octicon-star" data-size="large" aria-label="Star infinum/eightshift-boilerplate-plugin on GitHub">Star</a></div></section><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2020 Eightshift</section></footer></div></body></html>
