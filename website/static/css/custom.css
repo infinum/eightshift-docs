@@ -22,11 +22,74 @@
 @media only screen and (min-width: 1500px) {
 }
 
+
+body {
+  --base-parl-color: #9B5328;
+  --base-walnut-color: #78401E;
+  --base-ararra-color: #F4F3F0;
+  --base-alto-color: #E0E0E0;
+  --base-white-color: #FFFFFF;
+}
+
 .homeContent {
-  background-color: #f4f3f0;
+  background-color: var(--base-ararra-color);
 }
 
 .logo-big {
   margin: 0 auto;
   display: block;
+}
+
+a {
+  transition: color 0.5s ease-in;
+}
+
+@media only screen and (min-width: 1024px) {
+  .docsNavContainer {
+    border-right: 1px solid var(--base-alto-color);
+    /* padding-left: 25px; */
+    padding-right: 25px;
+  }
+
+  .separateOnPageNav .docsNavContainer {
+    flex: 0 0 255px;
+  }
+}
+
+article a {
+  color: var(--base-parl-color);
+  text-decoration: underline;
+}
+
+article a:hover {
+  color: var(--base-walnut-color);
+}
+
+.toc .toggleNav ul li a {
+  color: var(--base-parl-color);
+}
+
+.toc .toggleNav ul li.navListItemActive a {
+  font-weight: bold;
+}
+
+@media only screen and (min-width: 1024px) {
+  .docsSliderActive .toc section .navGroups {
+    padding-top: 0;
+  }
+}
+
+.onPageNav a:hover {
+  color: var(--base-walnut-color);
+}
+
+.button {
+  border-color: var(--base-parl-color);
+  color: var(--base-parl-color);
+}
+
+.button:hover {
+  background-color: var(--base-walnut-color);
+  border-color: var(--base-walnut-color);
+  color: var(--base-white-color);
 }
