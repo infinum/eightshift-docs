@@ -45,7 +45,15 @@
       "libs/libs-features-manifest",
       "libs/libs-features-media",
       "libs/libs-features-menu",
-      "libs/libs-features-rest"
+      {
+        "type": "subcategory",
+        "label": "Rest API",
+        "ids": [
+          "libs/libs-features-rest-intro",
+          "libs/libs-features-rest-field-example",
+          "libs/libs-features-rest-route-example"
+        ]
+      }
     ],
     "Helpers": [
       "libs/libs-helpers-object-helpers",
