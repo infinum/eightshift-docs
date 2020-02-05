@@ -24,7 +24,6 @@ To implement the new Rest API Route, you would need to do a few things, but for 
 /**
  * The class register route for example endpoint
  *
- * @since   1.0.0
  * @package Eightshift_Boilerplate\Rest
  */
 
@@ -42,7 +41,7 @@ class Example_Route extends Base_Route implements Callable_Route {
   /**
    * Route slug
    *
-   * @since 1.0.0
+   * @var string
    */
   const ENDPOINT_SLUG = '/custom-route-slug';
 
@@ -50,8 +49,6 @@ class Example_Route extends Base_Route implements Callable_Route {
    * Instance variable of project config data.
    *
    * @var object
-   *
-   * @since 1.0.0
    */
   protected $config;
 
@@ -59,8 +56,6 @@ class Example_Route extends Base_Route implements Callable_Route {
    * Create a new instance that injects classes
    *
    * @param Config_Data $config Inject config which holds data regarding project details.
-   *
-   * @since 1.0.0 Init.
    */
   public function __construct( Config_Data $config ) {
     $this->config = $config;
@@ -70,8 +65,6 @@ class Example_Route extends Base_Route implements Callable_Route {
    * Method that returns project Route namespace.
    *
    * @return string Project namespace for REST route.
-   *
-   * @since 1.0.0 Added in the project
    */
   protected function get_namespace() : string {
     return $this->config->get_project_routes_namespace();
@@ -81,8 +74,6 @@ class Example_Route extends Base_Route implements Callable_Route {
    * Method that returns project route version.
    *
    * @return string Route version as a string.
-   *
-   * @since 1.0.0 Added in the project
    */
   protected function get_version() : string {
     return $this->config->get_project_routes_version();
@@ -92,8 +83,6 @@ class Example_Route extends Base_Route implements Callable_Route {
    * Get the base url of the route
    *
    * @return string The base URL for route you are adding.
-   *
-   * @since 1.0.0 Added in the project
    */
   protected function get_route_name() : string {
     return static::ENDPOINT_SLUG;
@@ -103,8 +92,6 @@ class Example_Route extends Base_Route implements Callable_Route {
    * Get callback arguments array
    *
    * @return array Either an array of options for the endpoint, or an array of arrays for multiple methods.
-   *
-   * @since 1.0.0 Added in the project
    */
   protected function get_callback_arguments() : array {
     return [
@@ -121,8 +108,6 @@ class Example_Route extends Base_Route implements Callable_Route {
    * @return WP_REST_Response|mixed If response generated an error, WP_Error, if response
    *                                is already an instance, WP_HTTP_Response, otherwise
    *                                returns a new WP_REST_Response instance.
-   *
-   * @since 1.0.0
    */
   public function route_callback( \WP_REST_Request $request ) {
 
