@@ -1,6 +1,7 @@
 ---
 id: libs-index
 title: Eightshift Libs
+sidebar_label: Intro
 ---
 
 This library is aimed at bringing the modern development tools to the [Eightshift Boilerplate](https://github.com/infinum/eightshift-boilerplate) or [Eightshift Boilerplate Plugin](https://github.com/infinum/eightshift-boilerplate-plugin), but you can use it on any WordPress project.

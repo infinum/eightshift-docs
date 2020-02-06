@@ -4,10 +4,14 @@ title: Route Example
 ---
 
 To implement the new Rest API Route, you would need to do a few things, but for this example, we will use this folder structure:
+```php
+
 * src
   * class-main.php
   * rest
     * class-example-route.php
+
+```
 
 ## Follow these steps:
 * Create a new folder to put this class. For example, `Rest`. Or put this in a place you think it would suit your project best.
@@ -20,6 +24,7 @@ To implement the new Rest API Route, you would need to do a few things, but for 
 ### Class-example-route.php
 
 ```php
+
 <?php
 /**
  * The class register route for example endpoint
