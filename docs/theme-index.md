@@ -46,6 +46,7 @@ npx create-wp-project --help
 
 Here's why you should use Eightshift Boilerplate for your next project.
 
+- **Custom Gutenberg blocks** - Easily use our pre-made 100% customizable [existing Gutenberg blocks](https://infinum.github.io/eightshift-frontend-libs/storybook/) & components or create your own.
 - **OOP** - All code is written following the latest object-oriented programming paradigms
 - **[Webpack](https://webpack.js.org/)** - Modern bundling & build process
 - **[SASS (scss)](https://sass-lang.com/)** - Easy to learn CSS on steroids
