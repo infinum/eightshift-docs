@@ -29,9 +29,16 @@ body {
   --base-ararra-color: #F4F3F0;
   --base-alto-color: #E0E0E0;
   --base-white-color: #FFFFFF;
+  --base-fake-black-color: #0C3636;
+  --base-picton-blue-color: #44AEDE;
+  --base-tree-poppy-color: #F99922;
+  --base-medium-purple-color: #9973E3;
+  --base-keppel-color: #30ADAD;
+  --mobile: 767px;
+  --tablet: 1024px;
 }
 
-.homeContent {
+.navPusher {
   background-color: var(--base-ararra-color);
 }
 
@@ -92,4 +99,85 @@ article a:hover {
   background-color: var(--base-walnut-color);
   border-color: var(--base-walnut-color);
   color: var(--base-white-color);
+}
+
+#footer {
+  background: var(--base-fake-black-color);
+}
+
+.row-flex {
+  display: block;
+  margin-left: -48px;
+}
+
+.row-flex-2 .card {
+  width: 100%;
+}
+
+@media only screen and (min-width: 767px) {
+  .row-flex {
+    display: flex;
+  }
+
+  .row-flex-2 .card {
+    width: 50%;
+  }
+}
+
+.center {
+  text-align: center;
+}
+
+.card {
+  margin: 24px;
+  padding: 32px;
+  border-radius: 24px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: 0.3s transform ease-out;
+}
+
+@media only screen and (min-width: 1024px) {
+  .card {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.card:hover,
+.card:focus {
+  transform: scale(1.1);
+}
+.card:active {
+  opacity: 0.8;
+}
+
+.card--theme {
+  background: var(--base-picton-blue-color);
+}
+
+.card--plugin {
+  background: var(--base-tree-poppy-color);
+}
+
+.card--custom {
+  background: var(--base-medium-purple-color);
+}
+
+.card--docs {
+  background: var(--base-keppel-color);
+}
+
+.card-title {
+  text-align: center;
+  margin: 18px auto;
+  font-style: italic;
+}
+
+.card-img {
+  width: 124px;
+  margin: 0 auto;
+  display: block;
 }
