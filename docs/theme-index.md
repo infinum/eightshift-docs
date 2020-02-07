@@ -1,9 +1,12 @@
 ---
 id: theme-index
 title: Create new WordPress theme
+sidebar_label: Setup
 ---
 
-You can easily setup a new WordPress theme with our setup script.
+Eightshift boilerplate contains all the tools you need to start building a modern WordPress theme, using all the latest front end development tools.
+
+[Please go here if you wish to setup a plugin instead](plugin-index).
 
 ## Requirements
 
@@ -25,7 +28,7 @@ Script will prompt you for theme name and local development url (used for Browse
 
 After the script is finished, you can activate the theme through WP Admin Dashboard. 
 
-To start developing run this command from projects root folder:
+To start developing run this command from theme's root folder:
 
 ```
 npm start
