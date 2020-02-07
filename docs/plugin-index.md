@@ -1,6 +1,6 @@
 ---
-id: boilerplate-plugin-index
-title: Eightshift Boilerplate Plugin
+id: plugin-index
+title: Create new WordPress plugin
 sidebar_label: Intro
 ---
 
