@@ -1,0 +1,81 @@
+---
+id: boilerplate-custom-fonts
+title: Custom Fonts
+---
+To add a custom font and generate `@font-face` rules in built CSS file we recommend using PostCSS plugin: [Font Magician](https://github.com/jonathantneal/postcss-font-magician). Before configuring Font Magician, font files need to be included in the build process.
+
+## Font files setup
+
+Font files should be placed in `theme-name/assets/fonts`. It is recommended that `.woff` or `.woff2` formats are present, but for compatibility issues you may need to include `.eot` and `.svg` fromats, as well.
+
+Fonts and all of their variations need to be included in `index.js` file inside the `/fonts` directory:
+
+```js
+import './Font-Name-Variation.woff2';
+import './Font-Name-Variation.woff';
+```
+
+After running the build process again, fonts will be placed in `/theme-name/public` directory and we can configure Font Magician to load them.
+
+## Font Magician configuration
+
+To install Font Magician run:
+```shell
+npm install postcss-font-magician --save-dev
+```
+or
+```shell
+yarn add postcss-font-magician --dev
+```
+
+In root of the theme there is already `postcss.config.js` file with [Autoprefixer](https://github.com/postcss/autoprefixer) enabled. To configure Font Magician it first needs to be imported and its configuration added to an existing one.
+
+```js
+...
+const postcssFontMagician = require('postcss-font-magician');
+
+module.exports = {
+  plugins: [
+    ... // other postCss configs
+    postcssFontMagician({
+      foundries: ['custom'],
+      custom: {
+        FontName: { // font-family declarations
+          variants: {
+            normal: { // font-style variation
+              400: { // font-weight variation
+                url: {
+                  woff: 'Font-Name-Variation.woff',
+                  woff2: 'Font-Name-Variation.woff2',
+                },
+              },
+              ... // other font-weight variation of the same font-tyle
+            },
+            ... // other font-style variation of the same font-family
+          },
+        },
+        ... // other font-family declarations
+      },
+    }),
+  ],
+};
+```
+
+There are other configuration options for including custom fonts using Font Magician and you can check them in their [documentation](https://github.com/jonathantneal/postcss-font-magician#options)
+
+Restart the build process to generate `@font-face` rules.
+
+## Using the custom font
+
+To use the custom font in the theme simply delcare a new `font-family` rule and assign to it the __font name__ from the Font Magician configuration. Better approach would be to save specific `font-family` values to variables that can be reused:
+```scss
+// Variable declared in a global variables .scss file.
+$base-font-family: `FontName`, sans-serif,
+
+// Using the variable in .scss partial
+body {
+  font-family: $base-font-family;
+  ...
+}
+```
+

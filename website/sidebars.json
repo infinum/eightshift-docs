@@ -60,12 +60,16 @@
       "libs/libs-helpers-general-helpers"
     ]
   },
-  "boilerplate": {
+  "boilwerplate": {
     "Boilerplate": [
       "boilerplate-index"
     ],
     "Installation": [
       "boilerplate/boilerplate-instalation"
+    ],
+    "Features": [
+      "boilerplate/boilerplate-custom-fonts",
+      "boilerplate/boilerplate-icon-fonts"
     ]
   },
   "boilerplate-plugin": {
