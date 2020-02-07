@@ -40,7 +40,7 @@ module.exports = {
     postcssFontMagician({
       foundries: ['custom'],
       custom: {
-        FontName: { // font-family declarations
+        FontName: { // font-family declaration
           variants: {
             normal: { // font-style variation
               400: { // font-weight variation
