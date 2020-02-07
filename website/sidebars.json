@@ -1,4 +1,10 @@
 {
+  "docs": {
+    "Docs": [
+      "frontend-libs-index",
+      "libs-index"
+    ]
+  },
   "frontend-libs": {
     "Frontend Libs": [
       "frontend-libs-index",
