@@ -26,7 +26,7 @@ class Index extends React.Component {
           className="myCustomClass"
         >
           <h1 class="center">Choose one of the options below to get started...</h1>
-          <div class="row-flex row-flex-2">
+          <div class="row-flex row-flex-2 row-flex-offest">
             <Card
               href="docs/theme-index"
               img={iconTheme}
@@ -40,7 +40,7 @@ class Index extends React.Component {
               modifierClass="plugin"
             />
           </div>
-          <div class="row-flex row-flex-2">
+          <div class="row-flex row-flex-2 row-flex-offest">
             <Card 
               href="docs/guides/boilerplate-in-existing-project" 
               img={iconCustom}

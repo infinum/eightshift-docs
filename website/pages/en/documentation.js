@@ -24,7 +24,7 @@ class Index extends React.Component {
           className="myCustomClass"
         >
           <h1 class="center">Which docs are you looking for?</h1>
-          <div class="row-flex row-flex-2">
+          <div class="row-flex row-flex-2 row-flex-offest">
             <Card
               href="docs/libs-index"
               img={imgLibs}

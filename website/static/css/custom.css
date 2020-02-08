@@ -34,6 +34,7 @@ body {
   --base-tree-poppy-color: #F99922;
   --base-medium-purple-color: #9973E3;
   --base-keppel-color: #30ADAD;
+  --base-text-color: #E0E0E0;
 }
 
 .navPusher {
@@ -61,7 +62,8 @@ a {
   }
 }
 
-article a {
+article a,
+.narrow-container a {
   color: var(--base-parl-color);
   text-decoration: underline;
 }
@@ -88,17 +90,6 @@ article a:hover {
   color: var(--base-walnut-color);
 }
 
-.button {
-  border-color: var(--base-parl-color);
-  color: var(--base-parl-color);
-}
-
-.button:hover {
-  background-color: var(--base-walnut-color);
-  border-color: var(--base-walnut-color);
-  color: var(--base-white-color);
-}
-
 #footer {
   background: var(--base-fake-black-color);
 }
@@ -108,6 +99,9 @@ article a:hover {
 ------------------------------------------ */
 .row-flex {
   display: block;
+}
+
+.row-flex-offest {
   margin-left: -48px;
 }
 
@@ -123,10 +117,6 @@ article a:hover {
   .row-flex-2 .card {
     width: 50%;
   }
-}
-
-.center {
-  text-align: center;
 }
 
 .card {
@@ -171,19 +161,6 @@ article a:hover {
   background: var(--base-keppel-color);
 }
 
-.card--libs {
-  /* color: var(--base-alto-color); */
-  /* border: 2px solid var(--base-fake-black-color); */
-  /* background: transparent; */
-  /* background: #F99922; */
-}
-
-.card--frontend-libs {
-  /* color: var(--base-alto-color); */
-  /* border: 2px solid var(--base-fake-black-color); */
-  /* background: transparent; */
-}
-
 .card-title {
   text-align: center;
   margin: 18px auto;
@@ -193,4 +170,95 @@ article a:hover {
   width: 124px;
   margin: 0 auto;
   display: block;
+}
+
+/* ---------------------------------------
+  Container
+------------------------------------------ */
+
+.narrow-container {
+  padding: 32px 0;
+}
+
+.narrow-container a {
+
+}
+
+.projectTitle {
+  color: var(--base-text-color);
+}
+
+.narrow-container-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.section-title-wrapper {
+  max-width: 60ch;
+}
+
+.section-title {
+  font-size: 32px;
+  margin-bottom: 24px;
+  color: var(--base-fake-black-color);
+}
+
+/* ---------------------------------------
+  Buttons
+------------------------------------------ */
+
+.button-wrapper {
+  margin-right: 18px;
+}
+
+.button {
+  color: var(--base-text-color) !important;
+  background: var(--base-fake-black-color);
+  border: 0px;
+  border-radius: 100px;
+  padding: 14px 68px;
+  font-size: 16px;
+  transition: 0.3s transform ease-out;
+}
+
+.button:hover {
+  transform: scale(1.1);
+  background: var(--base-fake-black-color);
+}
+
+.button-orange {
+  color: var(--base-fake-black-color) !important;
+  background: var(--base-tree-poppy-color);
+}
+
+.button-orange:hover {
+  color: var(--base-fake-black-color) !important;
+  background: var(--base-tree-poppy-color);
+}
+
+.button-teal {
+  color: var(--base-fake-black-color) !important;
+  background: var(--base-keppel-color);
+}
+
+.button-teal:hover {
+  color: var(--base-fake-black-color) !important;
+  background: var(--base-keppel-color);
+}
+
+/* ---------------------------------------
+  Helpers
+------------------------------------------ */
+
+.padding-large {
+  padding: 96px 0;
+}
+
+.dark-bg {
+  background-color: hsl(180, 61%, 18%);
+  color: var(--base-text-color);
+}
+
+.center {
+  text-align: center;
 }
