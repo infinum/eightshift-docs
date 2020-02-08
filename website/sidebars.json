@@ -80,20 +80,14 @@
       }
     ]
   },
-  "boilerplate": {
-    "Boilerplate": [
-      "boilerplate-index"
-    ],
-    "Installation": [
-      "boilerplate/boilerplate-instalation"
+  "theme": {
+    "Getting Started": [
+      "theme-index"
     ]
   },
-  "boilerplate-plugin": {
-    "Boilerplate Plugin": [
-      "boilerplate-plugin-index"
-    ],
-    "Installation": [
-      "boilerplate-plugin/boilerplate-instalation"
+  "plugin": {
+    "Getting Started": [
+      "plugin-index"
     ]
   }
 }
