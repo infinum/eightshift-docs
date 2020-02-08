@@ -27,12 +27,32 @@ class Index extends React.Component {
         >
           <h1 class="center">Choose one of the options below to get started...</h1>
           <div class="row-flex row-flex-2">
-            <Card href="docs/theme-index" img={iconTheme} title="I want a WordPress theme" modifierClass="theme"/>
-            <Card href="docs/plugin-index" img={iconPlugin} title="I want a WordPress plugin" modifierClass="plugin"/>
+            <Card
+              href="docs/theme-index"
+              img={iconTheme}
+              title="I want a new WordPress theme"
+              modifierClass="theme"
+            />
+            <Card
+              href="docs/plugin-index"
+              img={iconPlugin}
+              title="I want a new WordPress plugin"
+              modifierClass="plugin"
+            />
           </div>
           <div class="row-flex row-flex-2">
-            <Card href="#" img={iconCustom} title="I want to implement Eightshift Boilerplate into an existing project" modifierClass="custom"/>
-            <Card href="docs/docs-index" img={iconDocs} title="I just want to read the docs" modifierClass="docs"/>
+            <Card 
+              href="docs/guides/boilerplate-in-existing-project" 
+              img={iconCustom}
+              title="I want to implement Eightshift Boilerplate into an existing project"
+              modifierClass="custom"
+            />
+            <Card
+              href="documentation"
+              img={iconDocs}
+              title="I just want to read the docs"
+              modifierClass="docs"
+            />
           </div>
         </Container>
       </div>

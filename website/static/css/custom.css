@@ -103,6 +103,9 @@ article a:hover {
   background: var(--base-fake-black-color);
 }
 
+/* ---------------------------------------
+  CARDS
+------------------------------------------ */
 .row-flex {
   display: block;
   margin-left: -48px;
@@ -129,7 +132,7 @@ article a:hover {
 .card {
   margin: 24px;
   padding: 32px;
-  border-radius: 24px;
+  border-radius: 100px;
   background: white;
   display: flex;
   flex-direction: column;
@@ -168,10 +171,22 @@ article a:hover {
   background: var(--base-keppel-color);
 }
 
+.card--libs {
+  /* color: var(--base-alto-color); */
+  /* border: 2px solid var(--base-fake-black-color); */
+  /* background: transparent; */
+  /* background: #F99922; */
+}
+
+.card--frontend-libs {
+  /* color: var(--base-alto-color); */
+  /* border: 2px solid var(--base-fake-black-color); */
+  /* background: transparent; */
+}
+
 .card-title {
   text-align: center;
   margin: 18px auto;
-  font-style: italic;
 }
 
 .card-img {
