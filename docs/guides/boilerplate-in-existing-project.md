@@ -23,5 +23,5 @@ This is where all the frontend (JS, SCSS, assets) code is kept.
 99% of the Boilerplate functionality is contained in these 2 libs. In order to have your own project work like a Boilerplate, you need to implement both of these libraries in your project.
 
 Here's what you need to do:
-1. [Install eightshift libs](/eightshift-docs/docs/libs/libs-instalation)
-2. [Install eightshift frontend libs](/eightshift-docs/docs/frontend-libs/frontend-libs-instalation)
+1. [Install eightshift libs](/eightshift-docs/docs/libs/libs-installation)
+2. [Install eightshift frontend libs](/eightshift-docs/docs/frontend-libs/frontend-libs-installation)
