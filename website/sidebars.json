@@ -80,12 +80,6 @@
       }
     ]
   },
-  "libs": {
-    "Helpers": [
-      "documentation/libs/libs-helpers-object-helpers",
-      "documentation/libs/libs-helpers-general-helpers"
-    ]
-  },
   "boilerplate": {
     "Boilerplate": [
       "boilerplate-index"
