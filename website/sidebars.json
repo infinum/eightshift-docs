@@ -58,6 +58,9 @@
     "Helpers": [
       "libs/libs-helpers-object-helpers",
       "libs/libs-helpers-general-helpers"
+    ],
+    "Examples": [
+      "libs/examples/libs-example-custom-post-type"
     ]
   },
   "theme": {
