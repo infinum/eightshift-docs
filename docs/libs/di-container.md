@@ -3,7 +3,7 @@ id: libs-features-di-container
 title: Dependency injection container
 ---
 
-Dependency injection is a way of implementing inversion of control design pattern. It's used to handle the dependencies between multiple classes without directly instantiating one class in another - which causes tight coupling in the code, and makes it less testable and harder to maintain.
+Dependency injection is a way of implementing inversion of control design pattern. It's used to handle the dependencies between multiple classes without the direct instantiation of one class in another - which causes tight coupling in the code, and makes it less testable and harder to maintain.
 
 Eightshift libs are using [PHP-DI](http://php-di.org/) as an implementation of a dependency injection container. We'll explain the implementation by following the [eightshift-boilerplate](https://github.com/infinum/eightshift-boilerplate/blob/develop/src/class-main.php) example.
 
