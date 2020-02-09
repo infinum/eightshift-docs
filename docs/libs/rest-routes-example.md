@@ -17,7 +17,7 @@ To implement the new Rest API Route, you would need to do a few things, but for 
 * Create a new folder to put this class. For example, `Rest`. Or put this in a place you think it would suit your project best.
 * Create a new class with the same name as your class. For this example, this would be `class-example-route.php`.
 * Copy this example and update it to your needs.
-* Register this new class in `clas-main.php` inside `get_service_classes` method.
+* Register this new class in `class-main.php` inside `get_service_classes` method.
 * In terminal run `composer dump-autoload`.
 
 
