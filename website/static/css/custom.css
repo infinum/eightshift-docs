@@ -122,19 +122,12 @@ article a:hover {
 .card {
   margin: 24px;
   padding: 32px;
-  border-radius: 100px;
+  border-radius: 8px;
   background: white;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   transition: 0.3s transform ease-out;
-}
-
-@media only screen and (min-width: 1024px) {
-  .card {
-    flex-direction: row;
-    align-items: center;
-  }
 }
 
 .card:hover,
