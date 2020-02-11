@@ -8,7 +8,7 @@ To add a custom font and generate `@font-face` rules in built CSS file we recomm
 
 Font files should be placed in `theme-name/assets/fonts`. It is recommended that `.woff` or `.woff2` formats are present, but for compatibility issues you may need to include `.eot` and `.svg` fromats, as well.
 
-Fonts and all of their variations need to be included in `index.js` file inside the `/fonts` directory:
+Fonts, and all of their variations, need to be included in `index.js` file inside the `/fonts` directory:
 
 ```js
 import './Font-Name-Variation.woff2';
@@ -78,4 +78,3 @@ body {
   ...
 }
 ```
-
