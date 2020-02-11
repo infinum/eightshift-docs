@@ -67,7 +67,7 @@ Restart the build process to generate `@font-face` rules.
 
 ## Using the custom font
 
-To use the custom font in the theme simply delcare a new `font-family` rule and assign to it the __font name__ from the Font Magician configuration. Better approach would be to save specific `font-family` values to variables that can be reused:
+To use the custom font in a theme, simply declare a new `font-family` rule and assign it to the __font name__ from the Font Magician configuration. A better approach would be to save the specific `font-family` values to variables that can be reused:
 ```scss
 // Variable declared in a global variables .scss file.
 $base-font-family: `FontName`, sans-serif,
