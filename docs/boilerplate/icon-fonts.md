@@ -5,7 +5,7 @@ title: Add custom icon font
 
 Icons can be added as icon font and will be added in a similar way that the [custom fonts](/eightshift-docs/docs/boilerplate/boilerplate-custom-fonts) are added. The process of file preparation is a bit different.
 
-__While icon font is the easiest method of managing and using a large library of icons, there are a number of reasons why they should not be used. Poor accessiblity, really noticable FOUT and styling inconsistencies are major downsides to icon fonts. There are a lot more benefits that come with using SVG components like: more styling options, usage flexibility and no impact to accessiblity of the webiste.__
+__While icon font is the easiest method of managing and using a large library of icons, there are a number of reasons why it should not be used. Poor accessiblity, really noticable FOUT and styling inconsistencies are major downsides to icon fonts. There are a lot more benefits that come with using SVG components like: more styling options, usage flexibility and no impact to accessiblity of the website.__
 
 ## Icon font files setup
 
