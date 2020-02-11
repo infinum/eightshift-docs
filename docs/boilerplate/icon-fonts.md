@@ -3,13 +3,13 @@ id: boilerplate-icon-fonts
 title: Add custom icon font
 ---
 
-Icons can be added as a icon font and will be added in a similar way that [custom fonts](/eightshift-docs/docs/boilerplate/boilerplate-custom-fonts) are added. The process of file preparation is a bit different.
+Icons can be added as icon font and will be added in a similar way that the [custom fonts](/eightshift-docs/docs/boilerplate/boilerplate-custom-fonts) are added. The process of file preparation is a bit different.
 
 ## Icon font files setup
 
-For generating icon font files we can recommend [Icomoon](https://icomoon.io/app/).
+For generating icon font files we recommend using [Icomoon](https://icomoon.io/app/).
 
-Icons, exported as `.svg`, will need to be impoted in a new set. Once all SVG icons are present in a set and named properly the icon font can be generated. It is also recommended that before downloading icon font option for generating preprocessor variables is selected.
+Icons, exported as `.svg`, will need to be imported in a new set. Once all SVG icons are present in a set and named properly, the icon font can be generated. It is also recommended that before downloading an icon font the option for generating preprocessor variables is selected.
 
 Downloaded package will contain a few important files:
 * `selection.json` - contains a snapshot of the whole icon font set and can be imported to update the whole icon set
@@ -19,7 +19,7 @@ Downloaded package will contain a few important files:
 
 Place font files in `theme-name/assets/fonts` directory and import them the same way as other fonts. Recommended formats for icon fonts are `.svg` and `.woff`. Place the `selection.json` file in the same directory just as a reference for updating icon font set (no need to import it).
 
-Variables and class names need to be included in some form of global SCSS file e.g. `theme-name/assets/styles/parts/shared` and you can change or rename them to fit your needs. Definition of the `@font-face` can be removed because we will be generating it with [Font Magician](https://github.com/jonathantneal/postcss-font-magician), so we will get back to that later.
+Variables and class names need to be included in some form of global SCSS file e.g. `theme-name/assets/styles/parts/shared` and you can change or rename them to fit your needs. The definition of the `@font-face` can be removed because we will be generating it using the [Font Magician](https://github.com/jonathantneal/postcss-font-magician), so we will get back to that later.
 
 ## Font Magician configuration for icon font
 

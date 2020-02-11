@@ -8,7 +8,7 @@ To add a custom font and generate `@font-face` rules in built CSS file we recomm
 
 Font files should be placed in `theme-name/assets/fonts`. There are multiple web oriented font file formats. For majority of browsers only `.woff` format is enough (having it alongisde `.woff2` is even better), but if you plan to support older browsers (e.g. IE 10 and older) you must include `.eot` and `.svg` formats, as well.
 
-Fonts and all of their variations need to be included in `index.js` file inside the `/fonts` directory:
+Fonts, and all of their variations, need to be included in `index.js` file inside the `/fonts` directory:
 
 ```js
 import './Font-Name-Variation.woff2';
@@ -28,7 +28,7 @@ or
 yarn add postcss-font-magician --dev
 ```
 
-In root of the theme there is already `postcss.config.js` file with [Autoprefixer](https://github.com/postcss/autoprefixer) enabled. To configure Font Magician it first needs to be imported and its configuration added to an existing one.
+In the root of the theme there is already a `postcss.config.js` file with [Autoprefixer](https://github.com/postcss/autoprefixer) enabled. To configure Font Magician it needs to be imported first and its configuration needs to be added to the existing one.
 
 ```js
 ...
@@ -61,13 +61,13 @@ module.exports = {
 };
 ```
 
-There are other configuration options for including custom fonts using Font Magician and you can check them in their [documentation](https://github.com/jonathantneal/postcss-font-magician#options)
+There are other configuration options for including custom fonts using Font Magician and you can check them in the [font magician documentation](https://github.com/jonathantneal/postcss-font-magician#options)
 
 Restart the build process to generate `@font-face` rules.
 
 ## Using the custom font
 
-To use the custom font in the theme simply delcare a new `font-family` rule and assign to it the __font name__ from the Font Magician configuration. Better approach would be to save specific `font-family` values to variables that can be reused:
+To use the custom font in a theme, simply declare a new `font-family` rule and assign it to the __font name__ from the Font Magician configuration. A better approach would be to save the specific `font-family` values to variables that can be reused:
 ```scss
 // Variable declared in a global variables .scss file.
 $base-font-family: `FontName`, sans-serif,
@@ -78,4 +78,3 @@ body {
   ...
 }
 ```
-
