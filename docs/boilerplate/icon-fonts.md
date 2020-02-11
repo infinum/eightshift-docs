@@ -7,7 +7,7 @@ Icons can be added as icon font and will be added in a similar way that the [cus
 
 ## Icon font files setup
 
-For generating icon font files we can recommend [Icomoon](https://icomoon.io/app/).
+For generating icon font files we recommend using [Icomoon](https://icomoon.io/app/).
 
 Icons, exported as `.svg`, will need to be impoted in a new set. Once all SVG icons are present in a set and named properly the icon font can be generated. It is also recommended that before downloading icon font option for generating preprocessor variables is selected.
 
