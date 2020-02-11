@@ -1,12 +1,12 @@
 ---
 id: boilerplate-custom-fonts
-title: Custom Fonts
+title: Add custom fonts
 ---
 To add a custom font and generate `@font-face` rules in built CSS file we recommend using PostCSS plugin: [Font Magician](https://github.com/jonathantneal/postcss-font-magician). Before configuring Font Magician, font files need to be included in the build process.
 
 ## Font files setup
 
-Font files should be placed in `theme-name/assets/fonts`. It is recommended that `.woff` or `.woff2` formats are present, but for compatibility issues you may need to include `.eot` and `.svg` fromats, as well.
+Font files should be placed in `theme-name/assets/fonts`. There are multiple web oriented font file formats. For majority of browsers only `.woff` format is enough (having it alongisde `.woff2` is even better), but if you plan to support older browsers (e.g. IE 10 and older) you must include `.eot` and `.svg` formats, as well.
 
 Fonts and all of their variations need to be included in `index.js` file inside the `/fonts` directory:
 
