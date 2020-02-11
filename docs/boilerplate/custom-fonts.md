@@ -61,7 +61,7 @@ module.exports = {
 };
 ```
 
-There are other configuration options for including custom fonts using Font Magician and you can check them in their [documentation](https://github.com/jonathantneal/postcss-font-magician#options)
+There are other configuration options for including custom fonts using Font Magician and you can check them in the [font magician documentation](https://github.com/jonathantneal/postcss-font-magician#options)
 
 Restart the build process to generate `@font-face` rules.
 
