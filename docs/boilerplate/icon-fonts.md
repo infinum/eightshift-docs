@@ -3,7 +3,7 @@ id: boilerplate-icon-fonts
 title: Icon Fonts
 ---
 
-Icons can be added as a icon font and will be added in a similar way that [custom fonts](/eightshift-docs/docs/boilerplate/boilerplate-custom-fonts) are added. The process of file preparation is a bit different.
+Icons can be added as icon font and will be added in a similar way that the [custom fonts](/eightshift-docs/docs/boilerplate/boilerplate-custom-fonts) are added. The process of file preparation is a bit different.
 
 ## Icon font files setup
 
