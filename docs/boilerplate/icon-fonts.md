@@ -19,7 +19,7 @@ Downloaded package will contain a few important files:
 
 Place font files in `theme-name/assets/fonts` directory and import them the same way as other fonts. Recommended formats for icon fonts are `.svg` and `.woff`. Place the `selection.json` file in the same directory just as a reference for updating icon font set (no need to import it).
 
-Variables and class names need to be included in some form of global SCSS file e.g. `theme-name/assets/styles/parts/shared` and you can change or rename them to fit your needs. Definition of the `@font-face` can be removed because we will be generating it with [Font Magician](https://github.com/jonathantneal/postcss-font-magician), so we will get back to that later.
+Variables and class names need to be included in some form of global SCSS file e.g. `theme-name/assets/styles/parts/shared` and you can change or rename them to fit your needs. The definition of the `@font-face` can be removed because we will be generating it using the [Font Magician](https://github.com/jonathantneal/postcss-font-magician), so we will get back to that later.
 
 ## Font Magician configuration for icon font
 
