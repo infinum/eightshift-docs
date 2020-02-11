@@ -28,7 +28,7 @@ or
 yarn add postcss-font-magician --dev
 ```
 
-In root of the theme there is already `postcss.config.js` file with [Autoprefixer](https://github.com/postcss/autoprefixer) enabled. To configure Font Magician it first needs to be imported and its configuration added to an existing one.
+In the root of the theme there is already a `postcss.config.js` file with [Autoprefixer](https://github.com/postcss/autoprefixer) enabled. To configure Font Magician it needs to be imported first and its configuration needs to be added to the existing one.
 
 ```js
 ...
