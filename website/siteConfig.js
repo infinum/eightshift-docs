@@ -26,8 +26,8 @@ const siteConfig = {
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
-    {doc: 'boilerplate-index', label: 'Theme'},
-    {doc: 'boilerplate-plugin-index', label: 'Plugin'},
+    {doc: 'theme-index', label: 'Theme'},
+    {doc: 'plugin-index', label: 'Plugin'},
     {doc: 'frontend-libs-index', label: 'Frontend-Libs'},
     {doc: 'libs-index', label: 'Libs'},
     {href: 'https://infinum.github.io/eightshift-frontend-libs/storybook/', label: 'Storybook', external: true},

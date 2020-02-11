@@ -60,9 +60,9 @@
       "libs/libs-helpers-general-helpers"
     ]
   },
-  "boilerplate": {
-    "Boilerplate": [
-      "boilerplate-index"
+  "theme": {
+    "Getting Started": [
+      "theme-index"
     ],
     "Installation": [
       "boilerplate/boilerplate-instalation"
@@ -72,12 +72,9 @@
       "boilerplate/boilerplate-icon-fonts"
     ]
   },
-  "boilerplate-plugin": {
-    "Boilerplate Plugin": [
-      "boilerplate-plugin-index"
-    ],
-    "Installation": [
-      "boilerplate-plugin/boilerplate-instalation"
+  "plugin": {
+    "Getting Started": [
+      "plugin-index"
     ]
   }
 }
