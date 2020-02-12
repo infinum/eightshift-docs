@@ -2,7 +2,9 @@
   "guides": {
     "Guides": [
       "guides-index",
-      "guides/boilerplate-in-existing-project"
+      "guides/boilerplate-in-existing-project",
+      "guides/add-custom-fonts",
+      "guides/add-icon-fonts"
     ]
   },
   "frontend-libs": {
@@ -69,6 +71,9 @@
   "theme": {
     "Getting Started": [
       "theme-index"
+    ],
+    "Installation": [
+      "boilerplate/boilerplate-instalation"
     ]
   },
   "plugin": {
