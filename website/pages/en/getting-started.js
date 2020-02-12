@@ -25,8 +25,8 @@ class Index extends React.Component {
           padding={['bottom', 'left', 'right']}
           className="myCustomClass"
         >
-          <h1 class="center">Choose one of the options below to get started...</h1>
-          <div class="row-flex row-flex-2 row-flex-offest">
+          <h1 className="center">Choose one of the options below to get started...</h1>
+          <div className="row-flex row-flex-2 row-flex-offest">
             <Card
               href="docs/theme-index"
               img={iconTheme}
@@ -40,9 +40,9 @@ class Index extends React.Component {
               modifierClass="plugin"
             />
           </div>
-          <div class="row-flex row-flex-2 row-flex-offest">
-            <Card 
-              href="docs/guides/boilerplate-in-existing-project" 
+          <div className="row-flex row-flex-2 row-flex-offest">
+            <Card
+              href="docs/guides/boilerplate-in-existing-project"
               img={iconCustom}
               title="I want to implement Eightshift Boilerplate into an existing project"
               modifierClass="custom"

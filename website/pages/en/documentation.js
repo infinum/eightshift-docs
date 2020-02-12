@@ -23,8 +23,8 @@ class Index extends React.Component {
           padding={['bottom', 'left', 'right']}
           className="myCustomClass"
         >
-          <h1 class="center">Which docs are you looking for?</h1>
-          <div class="row-flex row-flex-2 row-flex-offest">
+          <h1 className="center">Which docs are you looking for?</h1>
+          <div className="row-flex row-flex-2 row-flex-offest">
             <Card
               href="docs/libs-index"
               img={imgLibs}
