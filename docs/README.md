@@ -1,6 +1,6 @@
 * [Eightshift Frontend Libs](index.md)
 * Installation and setup
-  * [Installation and Requirements](installation/instalation-and-requirements.md)
+  * [Installation and Requirements](installation/installation-and-requirements.md)
   * [Register Webpack](installation/register-webpack.md)
 * Structure
   * [Blocks Registration](structure/blocks-registration.md)

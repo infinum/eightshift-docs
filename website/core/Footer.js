@@ -56,19 +56,6 @@ class Footer extends React.Component {
             <a className="github-button" href="https://github.com/infinum/eightshift-boilerplate-plugin" data-icon="octicon-star" data-size="large" aria-label="Star infinum/eightshift-boilerplate-plugin on GitHub">Star</a>
           </div>
         </section>
-
-        <a
-          href="https://opensource.facebook.com/"
-          target="_blank"
-          rel="noreferrer noopener"
-          className="fbOpenSource">
-          <img
-            src={`${this.props.config.baseUrl}img/oss_logo.png`}
-            alt="Facebook Open Source"
-            width="170"
-            height="45"
-          />
-        </a>
         <section className="copyright">{this.props.config.copyright}</section>
       </footer>
     );

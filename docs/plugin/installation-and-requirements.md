@@ -1,5 +1,5 @@
 ---
-id: boilerplate-plugin-instalation
+id: boilerplate-plugin-installation
 title: Installation and Requirements
 ---
 
