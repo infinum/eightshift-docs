@@ -1,4 +1,12 @@
 {
+  "guides": {
+    "Guides": [
+      "guides-index",
+      "guides/boilerplate-in-existing-project",
+      "guides/add-custom-fonts",
+      "guides/add-icon-fonts"
+    ]
+  },
   "frontend-libs": {
     "Frontend Libs": [
       "frontend-libs-index",
@@ -11,7 +19,7 @@
       "frontend-libs/frontend-libs-render-block-view"
     ],
     "Installation": [
-      "frontend-libs/frontend-libs-instalation",
+      "frontend-libs/frontend-libs-installation",
       "frontend-libs/frontend-libs-register-webpack"
     ],
     "Structure": [
@@ -31,7 +39,7 @@
       "libs-index"
     ],
     "Installation": [
-      "libs/libs-instalation"
+      "libs/libs-installation"
     ],
     "Features": [
       "libs/libs-features-blocks",
@@ -66,6 +74,9 @@
   "theme": {
     "Getting Started": [
       "theme-index"
+    ],
+    "Installation": [
+      "boilerplate/boilerplate-instalation"
     ]
   },
   "plugin": {

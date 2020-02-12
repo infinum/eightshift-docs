@@ -1,5 +1,5 @@
 ---
-id: libs-instalation
+id: libs-installation
 title: Installation and Requirements
 ---
 
