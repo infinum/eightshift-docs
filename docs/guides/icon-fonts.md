@@ -1,5 +1,5 @@
 ---
-id: boilerplate-icon-fonts
+id: add-icon-fonts
 title: Add custom icon font
 ---
 

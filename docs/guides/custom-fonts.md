@@ -1,5 +1,5 @@
 ---
-id: boilerplate-custom-fonts
+id: add-custom-fonts
 title: Add custom fonts
 ---
 To add a custom font and generate `@font-face` rules in built CSS file we recommend using PostCSS plugin: [Font Magician](https://github.com/jonathantneal/postcss-font-magician). Before configuring Font Magician, font files need to be included in the build process.
