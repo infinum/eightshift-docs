@@ -64,7 +64,7 @@ class Projects extends Base_Post_Type {
   const POST_TYPE_SLUG = 'projects-type';
 
   /**
-   * Pretty slug for the custom post type.
+   * URL slug for the custom post type.
    *
    * @var string
    */
