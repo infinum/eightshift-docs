@@ -1,5 +1,5 @@
 ---
-id: frontend-libs-instalation
+id: frontend-libs-installation
 title: Installation and Requirements
 ---
 
