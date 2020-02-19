@@ -122,41 +122,27 @@ article a:hover {
 .card {
   margin: 24px;
   padding: 32px;
-  border-radius: 8px;
   background: white;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.16), 0 5px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  transition: 0.3s transform ease-in;
 }
 
-.card:active {
-  opacity: 0.8;
-}
-
-.card--theme {
-  /* background: var(--base-picton-blue-color); */
-}
-
-.card--plugin {
-  /* background: var(--base-tree-poppy-color); */
-}
-
-.card--custom {
-  /* background: var(--base-medium-purple-color); */
-}
-
-.card--docs {
-  /* background: var(--base-keppel-color); */
+.card:hover {
+  transform: scale(1.05);
 }
 
 .card-title {
   text-align: center;
   margin: 18px auto;
+  font-size: 24px;
+  font-weight: normal;
 }
 
 .card-img {
-  width: 124px;
+  width: 80px;
   margin: 0 auto;
   display: block;
 }
@@ -167,10 +153,6 @@ article a:hover {
 
 .narrow-container {
   padding: 32px 0;
-}
-
-.narrow-container a {
-
 }
 
 .projectTitle {
@@ -204,14 +186,13 @@ article a:hover {
   color: var(--base-text-color) !important;
   background: var(--base-fake-black-color);
   border: 0px;
-  border-radius: 100px;
-  padding: 14px 68px;
-  font-size: 16px;
+  padding: 14px 30px;
+  font-size: 14px;
   transition: 0.3s transform ease-out;
 }
 
 .button:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
   background: var(--base-fake-black-color);
 }
 
@@ -250,4 +231,9 @@ article a:hover {
 
 .center {
   text-align: center;
+}
+
+iframe {
+  width: 100vw;
+  height: 100vh;
 }

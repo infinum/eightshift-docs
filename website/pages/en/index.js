@@ -61,7 +61,7 @@ class HomeSplash extends React.Component {
           />
           <div className="row-flex row-flex-2">
             <Button color="orange" href="getting-started">Get started</Button>
-            <Button color="teal" href="documentation">Read docs</Button>
+            <Button color="teal" href="docs/introduction">Read docs</Button>
           </div>
         </NarrowContainer>
         <NarrowContainer>
@@ -114,7 +114,6 @@ class HomeSplash extends React.Component {
 class Index extends React.Component {
   render() {
     const { config: siteConfig, language = '' } = this.props;
-    const { baseUrl } = siteConfig;
 
     return (
       <div className="homeContent">

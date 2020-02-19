@@ -1,87 +1,74 @@
 {
-  "guides": {
+  "docs": {
+    "Getting Started": [
+      "theme",
+      "plugin"
+    ],
+    "The Basics": [
+      "introduction",
+      "frontend-libs",
+      "libs"
+    ],
     "Guides": [
-      "guides-index",
-      "guides/boilerplate-in-existing-project",
-      "guides/add-custom-fonts",
-      "guides/add-icon-fonts"
-    ]
-  },
-  "frontend-libs": {
-    "Frontend Libs": [
-      "frontend-libs-index",
-      "frontend-libs/frontend-libs-storybook",
-      "frontend-libs/frontend-libs-sassdocs"
-    ],
-    "Helpers": [
-      "frontend-libs/frontend-libs-get-actions",
-      "frontend-libs/frontend-libs-aliases",
-      "frontend-libs/frontend-libs-render-block-view"
-    ],
-    "Installation": [
-      "frontend-libs/frontend-libs-installation",
-      "frontend-libs/frontend-libs-register-webpack"
-    ],
-    "Structure": [
-      "frontend-libs/frontend-libs-block-registration",
-      "frontend-libs/frontend-libs-blocks-structure",
-      "frontend-libs/frontend-libs-component-structure",
-      "frontend-libs/frontend-libs-block-structure",
-      "frontend-libs/frontend-libs-manifest-structure",
-      "frontend-libs/frontend-libs-creating-block-from-components"
-    ],
-    "Tips": [
-      "frontend-libs/frontend-libs-tips"
-    ]
-  },
-  "libs": {
-    "Libs": [
-      "libs-index"
-    ],
-    "Installation": [
-      "libs/libs-installation"
-    ],
-    "Features": [
-      "libs/libs-features-blocks",
-      "libs/libs-features-columns",
-      "libs/libs-features-custom-post-type",
-      "libs/libs-features-taxonomy",
-      "libs/libs-features-enqueue",
-      "libs/libs-features-general",
-      "libs/libs-features-i18n",
-      "libs/libs-features-login",
-      "libs/libs-features-manifest",
-      "libs/libs-features-media",
-      "libs/libs-features-menu",
+      "guides/di-container",
+      "guides/manifest",
+      "guides/enqueue",
+      "guides/custom-post-type",
+      "guides/taxonomy",
+      {
+        "type": "subcategory",
+        "label": "Fonts",
+        "ids": [
+          "guides/fonts-custom",
+          "guides/fonts-icon"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Blocks",
+        "ids": [
+          "guides/block-registration",
+          "guides/block-structure",
+          "guides/block-structure-item",
+          "guides/block-structure-component",
+          "guides/block-structure-manifest",
+          "guides/block-from-components"
+        ]
+      },
+      "guides/columns",
+      "guides/general",
+      "guides/i18n",
+      "guides/login",
+      "guides/media",
+      "guides/menu",
       {
         "type": "subcategory",
         "label": "Rest API",
         "ids": [
-          "libs/libs-features-rest-intro",
-          "libs/libs-features-rest-field-example",
-          "libs/libs-features-rest-route-example"
+          "guides/rest-intro",
+          "guides/rest-field-example",
+          "guides/rest-route-example"
         ]
       }
     ],
-    "Helpers": [
-      "libs/libs-helpers-object-helpers",
-      "libs/libs-helpers-general-helpers"
-    ],
-    "Examples": [
-      "libs/examples/libs-example-custom-post-type"
-    ]
-  },
-  "theme": {
-    "Getting Started": [
-      "theme-index"
-    ],
-    "Installation": [
-      "boilerplate/boilerplate-instalation"
-    ]
-  },
-  "plugin": {
-    "Getting Started": [
-      "plugin-index"
+    "Advance": [
+      "advanced/installation",
+      "advanced/register-webpack",
+      {
+        "type": "subcategory",
+        "label": "Helpers",
+        "ids": [
+          "advanced/get-actions",
+          "advanced/aliases",
+          "advanced/render-block-view",
+          "advanced/helpers-object-helpers",
+          "advanced/helpers-general-helpers"
+        ]
+      },
+      "advanced/installation",
+      "advanced/tips",
+      "advanced/sassdocs",
+      "advanced/boilerplate-in-existing-project"
     ]
   }
 }
