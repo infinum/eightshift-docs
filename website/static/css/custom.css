@@ -237,3 +237,7 @@ iframe {
   width: 100vw;
   height: 100vh;
 }
+
+input#search_input_react {
+  border-radius: 0;
+}

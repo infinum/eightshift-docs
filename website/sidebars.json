@@ -6,14 +6,14 @@
     ],
     "The Basics": [
       "introduction",
-      "frontend-libs",
-      "libs"
+      "libs",
+      "frontend-libs"
     ],
     "Guides": [
       "guides/di-container",
       "guides/manifest",
       "guides/enqueue",
-      "guides/custom-post-type",
+      "guides/post-type",
       "guides/taxonomy",
       {
         "type": "subcategory",
@@ -27,12 +27,14 @@
         "type": "subcategory",
         "label": "Blocks",
         "ids": [
-          "guides/block-registration",
-          "guides/block-structure",
-          "guides/block-structure-item",
-          "guides/block-structure-component",
-          "guides/block-structure-manifest",
-          "guides/block-from-components"
+          "guides/blocks-registration",
+          "guides/blocks-structure",
+          "guides/blocks-structure-block-item",
+          "guides/blocks-structure-component",
+          "guides/blocks-structure-manifest",
+          "guides/blocks-block-from-components",
+          "guides/blocks-render-block-view-helper",
+          "guides/blocks-get-actions-helper"
         ]
       },
       "guides/columns",
@@ -51,24 +53,28 @@
         ]
       }
     ],
-    "Advance": [
-      "advanced/installation",
-      "advanced/register-webpack",
+    "Advanced": [
+      "advanced/docs-storybook",
+      "advanced/docs-sass",
+      "advanced/webpack",
       {
         "type": "subcategory",
         "label": "Helpers",
         "ids": [
-          "advanced/get-actions",
           "advanced/aliases",
-          "advanced/render-block-view",
           "advanced/helpers-object-helpers",
           "advanced/helpers-general-helpers"
         ]
       },
-      "advanced/installation",
-      "advanced/tips",
-      "advanced/sassdocs",
-      "advanced/boilerplate-in-existing-project"
+      {
+        "type": "subcategory",
+        "label": "Custom Installation",
+        "ids": [
+          "advanced/installation-boilerplate-custom",
+          "advanced/installation-libs",
+          "advanced/installation-frontend-libs"
+        ]
+      }
     ]
   }
 }

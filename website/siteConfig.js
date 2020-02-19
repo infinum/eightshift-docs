@@ -29,6 +29,7 @@ const siteConfig = {
     {page: 'getting-started', label: 'Get Started'},
     {doc: 'introduction', label: 'Docs'},
     {page: 'storybook', label: 'Storybook'},
+    {page: 'sass', label: 'Sass'},
     { search: true },
   ],
 
