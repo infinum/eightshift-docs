@@ -92,4 +92,4 @@ This is just a simple example, but one that could prove useful when writing test
 
 ## Useful hint
 
-Don't pass to many dependencies in your classes. Having more than three dependencies is usually a sign that your class may be doing too much, and that it should probably be broken down into more different classes.
+Don't pass too many dependencies in your classes. Having more than three dependencies is usually a sign that your class may be doing too much, and that it should probably be broken down into more different classes.
