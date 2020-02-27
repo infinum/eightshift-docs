@@ -12,6 +12,7 @@
     "Guides": [
       "guides/di-container",
       "guides/extending-classes",
+      "guides/config",
       "guides/manifest",
       "guides/enqueue",
       "guides/post-type",
