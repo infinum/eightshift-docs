@@ -4,7 +4,7 @@ title: GetActions Helper
 ---
 
 This helper will create attributes actions from blocks `manifest.json`.
-Actions are passed in child components in order to update props on an event (`onChange`, `onClick`, etc.).
+Actions are passed in child components to update props on an event (`onChange`, `onClick`, etc.).
 
 ## Default Attribute
 
@@ -57,7 +57,7 @@ const actions = {
 
 ## Media Attribute
 
-If attribute needs to save multiple values at the same time for media (images, video, etc.). `ID` value is used on the frontend using the php methods to fetch images, and `URL` is used in the editor to provide image preview.
+If the attribute needs to save multiple values at the same time for media (images, video, etc.). `ID` value is used on the frontend using the PHP methods to fetch images, and `URL` is used in the editor to provide image preview.
 
 `manifest.json`
 

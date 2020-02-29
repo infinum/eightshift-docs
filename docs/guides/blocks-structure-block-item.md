@@ -3,7 +3,7 @@ id: blocks-structure-block-item
 title: Block Structure Item
 ---
 
-In order for the library to work and register blocks dynamically, a specific folder structure and naming must be followed. Individual blocks are placed in the `custom` folder.
+For the library to work and register blocks dynamically, a specific folder structure and naming must be followed. Individual blocks are placed in the `custom` folder.
 
 Your custom block structure should look like this:
 
@@ -39,7 +39,7 @@ Corrections in the columns layout are necessary because Block Editor editor adds
 _This file is optional_.
 
 ### block-name-style.scss
-Holds all the frontend and editor styling for the component. Like the above file, in most cases it can be avoided.  
+Holds all the frontend and editor styling for the component. Like the above file, in most cases, it can be avoided.  
 _This file is optional_.
 
 ### manifest.json
