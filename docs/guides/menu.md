@@ -7,7 +7,7 @@ Menu class is located in `project`. It extends `Eightshift_Libs\Menu\Menu` names
 
 This class is used to add all custom project implementation for menues.
 
-To add custom menu you must provide array for custom menu location by using documentation from [official WordPress docs](TODO).
+To add custom menu you must provide array for custom menu location by using documentation from [official WordPress docs](https://developer.wordpress.org/reference/functions/register_nav_menus/).
 
 ```php
 /**

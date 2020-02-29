@@ -13,7 +13,7 @@ We provide some helpers, abstract classes, interfaces and abstractions on origin
 
 ## How to integrate to an existing project
 
-Please visit this [link](TODO) for more details.
+Please visit this [link](advanced/installation-boilerplate-custom) for more details.
 
 ## Who do I talk to?
 

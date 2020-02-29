@@ -16,8 +16,7 @@ This class is used to define all important methods for your project:
 * get_project_path() - Mandatory
 * get_config() - Mandatory
 
-TODO: LINKS
-Some methods are mandatory and are defined in [config interface]() the rest are providend insite the project.
+Some methods are mandatory and are defined in [config interface](https://github.com/infinum/eightshift-libs/blob/develop/src/interface-config-data.php) the rest are providend insite the project.
 
 ## get_project_name()
 
