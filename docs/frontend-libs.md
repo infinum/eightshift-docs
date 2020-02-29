@@ -30,7 +30,7 @@ The library can be used for pure webpack/js/scss functionality, but if the block
 
 ## How to integrate to an existing project
 
-Please visit this [link](TODO) for more details.
+Please visit this [link](advanced/installation-boilerplate-custom) for more details.
 
 ## Who do I talk to?
 

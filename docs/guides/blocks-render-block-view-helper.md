@@ -21,4 +21,4 @@ $this->render_block_view(
 );
 ```
 
-In the case you are using libs with dependency injection container, this should be handled by the library and `render_block_view` method is provided in block view by default.
+In the case you are using libs with dependency injection container, this should be handled by the library and the `render_block_view` method is provided in block view by default.

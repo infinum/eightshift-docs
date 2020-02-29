@@ -11,6 +11,8 @@
     ],
     "Guides": [
       "guides/di-container",
+      "guides/extending-classes",
+      "guides/config",
       "guides/manifest",
       "guides/enqueue",
       "guides/post-type",
@@ -34,7 +36,8 @@
           "guides/blocks-structure-manifest",
           "guides/blocks-block-from-components",
           "guides/blocks-render-block-view-helper",
-          "guides/blocks-get-actions-helper"
+          "guides/blocks-get-actions-helper",
+          "guides/blocks-filter-block-attributes-override"
         ]
       },
       "guides/columns",
