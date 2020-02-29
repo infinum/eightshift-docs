@@ -3,11 +3,11 @@ id: menu
 title: Menu
 ---
 
-Menu class is located in `project`. It extends `Eightshift_Libs\Menu\Menu` namespace.
+The menu class is located in the `project`. It extends `Eightshift_Libs\Menu\Menu` namespace.
 
 This class is used to add all custom project implementation for menus.
 
-To add custom menu, you must provide an array for custom menu location by using documentation from [official WordPress docs](https://developer.wordpress.org/reference/functions/register_nav_menus/).
+To add the custom menu, you must provide an array for custom menu location by using documentation from [official WordPress docs](https://developer.wordpress.org/reference/functions/register_nav_menus/).
 
 ```php
 /**
@@ -23,3 +23,17 @@ To add custom menu, you must provide an array for custom menu location by using 
     ];
   }
 ```
+
+## BEM Menu helper
+
+We are providing a BEM menu helper that will create a normal WordPress menu but with HTML classes specific to the [BEM methodology](http://getbem.com/).
+
+To use it just call this helper in your template.
+
+```PHP
+use Eightshift_Libs\Menu\Menu;
+
+Menu::bem_menu( 'header_main_default', 'main-navigation' );
+```
+
+You can also provide multiple parameters to the helper and all the details are [found here](https://github.com/infinum/eightshift-libs/blob/404aeab50beef38f788c864d7c0312858b097e81/src/menu/class-menu.php#L69).

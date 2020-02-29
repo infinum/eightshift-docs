@@ -13,8 +13,8 @@ This class is used to define all important methods for your project:
 * get_project_routes_namespace()
 * get_project_routes_version()
 * get_project_primary_color()
-* get_project_path() - Mandatory
-* get_config() - Mandatory
+* get_project_path()
+* get_config()
 
 Some methods are mandatory and are defined in [config interface](https://github.com/infinum/eightshift-libs/blob/develop/src/interface-config-data.php) the rest are provided inside the project.
 
@@ -42,7 +42,7 @@ Type: Optional but recommended
 
 Returns the project environment variable descriptor.
 
-Used for defining global settings depending on the environment of the project. Can be one of, but not limited to, develop, staging, production.
+Used for defining global settings depending on the environment of the project. It can be one of, but not limited to, develop, staging, production.
 
 Defaults to 'develop' (as to not cache manifest in transient) if not otherwise defined in wp-config.php
 
@@ -50,13 +50,13 @@ Defaults to 'develop' (as to not cache manifest in transient) if not otherwise d
 
 Type: Optional
 
-Used for namespacing projects REST-API routes and fields. Only required if you are creating custom REST route or field.
+Used for namespacing projects REST-API routes and fields. Only required if you are creating custom REST a route or field.
 
 ## get_project_routes_version()
 
 Type: Optional
 
-Used for versioning projects REST-API routes and fields. Only required if you are creating custom REST route or field.
+Used for versioning projects REST-API routes and fields. Only required if you are creating custom REST a route or field.
 
 ## get_project_primary_color()
 
@@ -70,15 +70,15 @@ Type: Mandatory
 
 Returns project absolute path.
 
-If used in a theme use `get_template_directory()` and in case it's used in a plugin use `__DIR__`.
+If used in a theme, use `get_template_directory()` and in case it's used in a plugin, use `__DIR__`.
 
 ## get_config()
 
 Type: Mandatory
 
-Method that returns every string prefixed with project prefix based on project type.
+The method that returns every string prefixed with project prefix based on project type.
 
-It converts all spaces and "_" with "-", also it converts all characters to lowercase. Also, it appends project prefix defined in the class-config.php.
+It converts all spaces and "_" with "-", also it converts all characters to lowercase. Also, it appends the project prefix defined in the class-config.php.
 
 Example 1:
 ```php
