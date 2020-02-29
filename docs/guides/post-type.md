@@ -3,7 +3,7 @@ id: post-type
 title: Post Type
 ---
 
-[![docs-source](https://img.shields.io/badge/source-eigthshift--libs-blue?style=for-the-badge&logo=php)](https://github.com/infinum/eightshift-libs/blob/develop/src/custom-post-type/class-base-post-type.php)
+[![docs-source](https://img.shields.io/badge/source-eigthshift--libs-blue?style=for-the-badge&logo=php&labelColor=2a2a2a)](https://github.com/infinum/eightshift-libs/blob/develop/src/custom-post-type/class-base-post-type.php)
 
 When working on a WordPress project it is possible that, at one point, you will need to register a Custom Post Type.
 

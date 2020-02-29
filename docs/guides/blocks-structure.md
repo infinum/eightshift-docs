@@ -3,7 +3,10 @@ id: blocks-structure
 title: Blocks Structure
 ---
 
-In order for the library to work and register blocks dynamically, a specific folder structure and naming must be followed. 
+[![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/develop/blocks/init/src/blocks/)
+
+
+In order for the library to work and register blocks dynamically, a specific folder structure and naming must be followed.
 
 Your folder structure should like this:
 
@@ -28,7 +31,7 @@ This folder contains all the Block Editor blocks defined in your project. Each b
 This folder contains all the additional javascript, images, fonts and style functionality for the blocks that you only need to use on the frontend and in the editor (admin).
 
 ### components
-This folder contains all the components that are shared across blocks. Components are not registered as blocks. 
+This folder contains all the components that are shared across blocks. Components are not registered as blocks.
 
 ### custom
 This folder contains all the custom Block Editor blocks defined and used in your project.

@@ -4,7 +4,7 @@ title: Create new WordPress plugin
 sidebar_label: Plugin Setup
 ---
 
-[![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript)](https://github.com/infinum/eightshift-frontend-libs/tree/develop/setup/create-wp-project)
+[![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/develop/setup/create-wp-project)
 
 Eightshift boilerplate contains all the tools you need to start building a modern WordPress plugin, using all the latest front end development tools.
 
