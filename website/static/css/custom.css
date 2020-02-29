@@ -72,6 +72,11 @@ article a:hover {
   color: var(--base-walnut-color);
 }
 
+article p img {
+  margin-left: 0;
+  display: inline-block;
+}
+
 .toc .toggleNav ul li a {
   color: var(--base-parl-color);
 }
