@@ -3,6 +3,8 @@ id: aliases
 title: Helpful aliases
 ---
 
+[![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript)](https://github.com/infinum/eightshift-frontend-libs/tree/develop/scripts)
+
 We have created a lot of helpful aliases that you can use in your project.
 
 ## JavaScript Dynamic Import Helper
@@ -77,7 +79,7 @@ import 'EighshiftBlocksBabelPolyfill';
 
 ## Scss EighshiftFrontendLibs
 
-Alias providing [Eighshift Frontend Libs](https://infinum.github.io/eightshift-frontend-libs/sassdocs/). 
+Alias providing [Eighshift Frontend Libs](https://infinum.github.io/eightshift-frontend-libs/sassdocs/).
 
 #### Usage
 
