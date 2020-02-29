@@ -154,6 +154,18 @@ article a:hover {
   margin: 0 -24px;
 }
 
+.row-flex-justify-start {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.row-flex-justify-center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .row-flex-2 .card {
   max-width: 100%;
 }
@@ -163,9 +175,6 @@ article a:hover {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
   }
 
   .row-flex-2 .card {

@@ -26,7 +26,7 @@ class Index extends React.Component {
           className="myCustomClass"
         >
           <h1 className="center">Choose one of the options below to get started</h1>
-          <div className="row-flex row-flex-2 row-flex-offest">
+          <div className="row-flex row-flex-2 row-flex-offest row-flex-justify-center">
             <Card
               href="docs/theme"
               img={iconTheme}
