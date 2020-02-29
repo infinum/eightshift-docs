@@ -5,13 +5,13 @@ title: Login
 
 Login class is located in `Eightshift Libs`. To extend it use `Eightshift_Libs\Login\Login` namespace.
 
-It changes the default logo ulr on WordPress login page to you site home url.
+It changes the default logo url on WordPress login page to you site home url.
 
 ## Additional options
 
 This class goes great hand in hand with `assets/styles/application-admin.scss` file. This is the main style entry point for project style used for the `WordPress admin screen`.
 
-For example you can provide custom login logo image for some custom project styling:
+For example, you can provide custom login logo image for some custom project styling:
 
 ```scss
 /* Full path due to wp-login.php is not in the theme folder */

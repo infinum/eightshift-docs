@@ -3,10 +3,10 @@ id: taxonomy
 title: Taxonomy
 ---
 
-Custom Taxonomy class is located in `Eightshift Libs`. To extend it use `Eightshift_Libs\Custom_Taxonomy\Base_Taxonomy` namespace. This is an abstract class.
+Custom Taxonomy class is located in `Eightshift Libs`. To extend it, use `Eightshift_Libs\Custom_Taxonomy\Base_Taxonomy` namespace. This is an abstract class.
 
-## Examle:
-To create custom taxonomy make a new class `src/custom-taxonomy/class-blog-taxonomy.php`, and extend all methods provides in example. Also dont forget to register class inside `class-main.php`.
+## Example:
+To create custom taxonomy, make a new class `src/custom-taxonomy/class-blog-taxonomy.php`, and extend all methods provides an example. Also, don't forget to register the class inside `class-main.php`.
 
 ```php
 <?php

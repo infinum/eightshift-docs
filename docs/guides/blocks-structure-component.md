@@ -24,13 +24,13 @@ For example, you can check [storybook](storybook).
 This folder contains all the javascript components that are used in the component. The folder can include `editor`, `options` or `toolbar` component.
 
 ### component-name-editor.js
-JavaScript component for handling component editor. Component editor is what will be shown in the main editor screen.
+JavaScript component for handling component editor. The component editor is what will be shown in the main editor screen.
 
 ### component-name-options.js
 JavaScript component for handling component options. Component options are displayed on the right side of the Block Editor editor. You can set various things here - component color, element sizes (usually font sizes), and other features.
 
 ### component-name-toolbars.js
-JavaScript component for handling component toolbars. Toolbars are displayed at the top of every component - things like font weight, alignment, etc.
+JavaScript component for handling component toolbars. Toolbars are displayed at the top of every component - things like font-weight, alignment, etc.
 
 ### component-name.php
 This file contains the frontend part (the view) of the component, used in your project when the page renders. This file shouldn't contain any business logic, just presenting the passed attributes.
@@ -39,7 +39,7 @@ This file contains the frontend part (the view) of the component, used in your p
 This file only contains the editor styles for the component. Editor styles are only applied to the editor screen in the admin.
 
 ### component-name-style.scss
-This file contains the editor and the frontend styles for the component. These styles will be applied to both editor screen and your front end. This is just the way the core editor is set up. Each component has `blockClass` attribute that returns a block name with a block prefix, for example: `.block-intro`. You can/must use this naming convention when stying your block. Just like with any other SCSS components, the Block Editor block must also be standalone and easy to copy to a different project (reusable).
+This file contains the editor and the frontend styles for the component. These styles will be applied to both the editor screen and your front end. This is just the way the core editor is set up. Each component has the `blockClass` attribute that returns a block name with a block prefix, for example: `.block-intro`. You can/must use this naming convention when stying your block. Just like with any other SCSS components, the Block Editor block must also be standalone and easy to copy to a different project (reusable).
 
 #### Note on the component styles
 

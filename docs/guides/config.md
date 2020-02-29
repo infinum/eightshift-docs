@@ -3,7 +3,7 @@ id: config
 title: Project Config
 ---
 
-Project config is located in `src/class-config.php` and it extends `Eightshift_Libs\Core\Config` class from the lib. 
+Project config is located in `src/class-config.php`, and it extends `Eightshift_Libs\Core\Config` class from the lib. 
 
 This class is used to define all important methods for your project:
 * get_project_name()
@@ -16,7 +16,7 @@ This class is used to define all important methods for your project:
 * get_project_path() - Mandatory
 * get_config() - Mandatory
 
-Some methods are mandatory and are defined in [config interface](https://github.com/infinum/eightshift-libs/blob/develop/src/interface-config-data.php) the rest are providend insite the project.
+Some methods are mandatory and are defined in [config interface](https://github.com/infinum/eightshift-libs/blob/develop/src/interface-config-data.php) the rest are provided inside the project.
 
 ## get_project_name()
 
@@ -50,19 +50,19 @@ Defaults to 'develop' (as to not cache manifest in transient) if not otherwise d
 
 Type: Optional
 
-Used for namespacing projects REST-API routes and fields. Only requiered if you are creating custom REST route or field.
+Used for namespacing projects REST-API routes and fields. Only required if you are creating custom REST route or field.
 
 ## get_project_routes_version()
 
 Type: Optional
 
-Used for versioning projects REST-API routes and fields. Only requiered if you are creating custom REST route or field.
+Used for versioning projects REST-API routes and fields. Only required if you are creating custom REST route or field.
 
 ## get_project_primary_color()
 
 Type: Optional
 
-Used for styling the mobile browser color and splash screens. Check `head.php` for more details.
+Used for styling the mobile browser colour and splash screens. Check `head.php` for more details.
 
 ## get_project_path()
 
@@ -78,7 +78,7 @@ Type: Mandatory
 
 Method that returns every string prefixed with project prefix based on project type.
 
-It converts all spaces and "_" with "-", also it converts all characters to lowercase. Also it appends project prefix defined in the class-config.php.
+It converts all spaces and "_" with "-", also it converts all characters to lowercase. Also, it appends project prefix defined in the class-config.php.
 
 Example 1:
 ```php

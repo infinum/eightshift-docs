@@ -6,14 +6,14 @@ title: Creating Block from Components
 You may wonder: what is the difference between components and blocks? Aren't they the same thing? 
 
 They are similar, but not the same. Components are, for lack of a better word, _dumb_. They aren't bothered with the context and they are **reusable**.
-This is the key word in this whole ordeal. One component may be reused in different blocks. Also, the main difference is that the component is not registered in WordPress; its sole purpose is to provide reusable parts for your blocks.
+This is the keyword in this whole ordeal. One component may be reused in different blocks. Also, the main difference is that the component is not registered in WordPress; its sole purpose is to provide reusable parts for your blocks.
 
 Let's look at an example.
-For instance, we want to create a card block. This block consists of an image, a title and a text.
+For instance, we want to create a card block. This block consists of an image, a title, and a text.
 
 ### Folder structure
 
-First we'll create a block in the `src/blocks/custom/card` folder. The folder structure will look like this
+First, we'll create a block in the `src/blocks/custom/card` folder. The folder structure will look like this
 
 ```shell
 |card
@@ -73,7 +73,7 @@ The `manifest.json` will hold all the default attributes and data about the new 
 
 ### Components
 
-Next, we want to set up the editor and options component for this block. So in the `components` folder we'll add `card-editor.js` and `card-options.js` files.
+Next, we want to set up the editor and options component for this block. So in the `components` folder, we'll add `card-editor.js` and `card-options.js` files.
 
 **card-editor.js**
 
@@ -202,9 +202,9 @@ export const Card = (props) => {
 };
 ```
 
-Here we'll use our ready made component (built out of other components - reusability), and wrap it in [React Fragment](https://reactjs.org/docs/fragments.html). It is a pattern used so that we can return multiple elements.  
+Here we'll use our ready-made component (built out of other components - reusability), and wrap it in [React Fragment](https://reactjs.org/docs/fragments.html). It is a pattern used so that we can return multiple elements.  
 Another thing you'll note is the usage of `<InspectorControls />` [component](https://github.com/WordPress/gutenberg/tree/master/packages/block-editor/src/components/inspector-controls). It is used to display settings of the block in the sidebar (in our case our options that contain the image upload component).  
-Lastly, both our `<CardEditor />` and `<InspectorControls />` are wrapped in the `<Fragment />` wrapper due to Reacts one top-level element rule. If your block doesn't have Options, you can only have `<CardEditor />` component in here.
+Lastly, both our `<CardEditor />` and `<InspectorControls />` are wrapped in the `<Fragment />` wrapper due to Reacts one top-level element rule. If your block doesn't have options, you can only have `<CardEditor />` component in here.
 
 ### PHP view
 

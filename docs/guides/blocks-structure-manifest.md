@@ -3,7 +3,7 @@ id: blocks-structure-manifest
 title: Manifest Structure
 ---
 
-This file contains all the configuration required for a block to work. It's used in WordPress [`registerBlockType`](https://developer.wordpress.org/block-editor/developers/block-api/block-registration/) method to register a block. Using manifest.json we are able to provide configuration in JavaScript and Php part of the block in one file.
+This file contains all the configuration required for a block to work. It's used in WordPress [`registerBlockType`](https://developer.wordpress.org/block-editor/developers/block-api/block-registration/) method to register a block. Using manifest.json we can provide a configuration in JavaScript and Php part of the block in one file.
 
 ### Example
 
@@ -41,7 +41,7 @@ We are using the same structure as described in [Block Editor documentation](htt
 ### hasInnerBlocks
 `default: false`
 
-If the `hasInnerBlocks` key is set to true, blocks `save` method for inner blocks will be used. This method is used if the block has [`InnerBlocks`](https://github.com/WordPress/gutenberg/tree/master/packages/block-editor/src/components/inner-blocks). In PHP you now have `$inner_block_content` variable available. Here is an example what happends in the back: 
+If the `hasInnerBlocks` key is set to true, blocks `save` method for inner blocks will be used. This method is used if the block has [`InnerBlocks`](https://github.com/WordPress/gutenberg/tree/master/packages/block-editor/src/components/inner-blocks). In PHP you now have `$inner_block_content` variable available. Here is an example of what happens in the back: 
 
 ```js
   save = () => createElement(InnerBlocks.Content);
