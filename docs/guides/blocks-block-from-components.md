@@ -202,7 +202,8 @@ export const Card = (props) => {
 };
 ```
 
-Here we'll use our ready-made component (built out of other components - reusability), and wrap it in [React Fragment](https://reactjs.org/docs/fragments.html). It is a pattern used so that we can return multiple elements.  
+Here we'll use our ready-made component (built out of other components - reusability), and wrap it in [React Fragment](https://reactjs.org/docs/fragments.html). It is a pattern used to return multiple elements.
+
 Another thing you'll note is the usage of `<InspectorControls />` [component](https://github.com/WordPress/gutenberg/tree/master/packages/block-editor/src/components/inspector-controls). It is used to display settings of the block in the sidebar (in our case our options that contain the image upload component).  
 Lastly, both our `<CardEditor />` and `<InspectorControls />` are wrapped in the `<Fragment />` wrapper due to Reacts one top-level element rule. If your block doesn't have options, you can only have `<CardEditor />` component in here.
 

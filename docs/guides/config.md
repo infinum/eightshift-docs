@@ -3,9 +3,9 @@ id: config
 title: Project Config
 ---
 
-Project config is located in `src/class-config.php`, and it extends `Eightshift_Libs\Core\Config` class from the lib. 
+Project config is located in `src/class-config.php`, and it extends `Eightshift_Libs\Core\Config` class from the lib.
 
-This class is used to define all important methods for your project:
+This class is used to define all the important methods for your project:
 * get_project_name()
 * get_project_version()
 * get_project_prefix()
@@ -42,27 +42,27 @@ Type: Optional but recommended
 
 Returns the project environment variable descriptor.
 
-Used for defining global settings depending on the environment of the project. Can be one of, but not limited to, develop, staging, production.
+Used for defining global settings depending on the environment of the project. It can be one of, but not limited to, develop, staging, production.
 
-Defaults to 'develop' (as to not cache manifest in transient) if not otherwise defined in wp-config.php
+Defaults to 'develop' (as to not cache manifest in transient) if not otherwise defined in `wp-config.php`
 
 ## get_project_routes_namespace()
 
 Type: Optional
 
-Used for namespacing projects REST-API routes and fields. Only required if you are creating custom REST route or field.
+Used for namespacing project REST-API routes and fields. Only required if you are creating a custom REST route or field.
 
 ## get_project_routes_version()
 
 Type: Optional
 
-Used for versioning projects REST-API routes and fields. Only required if you are creating custom REST route or field.
+Used for versioning projects REST-API routes and fields. Only required if you are creating a custom REST route or field.
 
 ## get_project_primary_color()
 
 Type: Optional
 
-Used for styling the mobile browser colour and splash screens. Check `head.php` for more details.
+Used for styling the mobile browser color and splash screens. Check `head.php` for more details.
 
 ## get_project_path()
 
@@ -70,15 +70,15 @@ Type: Mandatory
 
 Returns project absolute path.
 
-If used in a theme use `get_template_directory()` and in case it's used in a plugin use `__DIR__`.
+If used in a theme use `get_template_directory()`, and in case it's used in a plugin use `__DIR__`.
 
 ## get_config()
 
 Type: Mandatory
 
-Method that returns every string prefixed with project prefix based on project type.
+The method that returns every string prefixed with project prefix based on project type.
 
-It converts all spaces and "_" with "-", also it converts all characters to lowercase. Also, it appends project prefix defined in the class-config.php.
+It converts all spaces and "_" with "-", also it converts all characters to lowercase. Also, it appends the project prefix defined in the `class-config.php`.
 
 Example 1:
 ```php

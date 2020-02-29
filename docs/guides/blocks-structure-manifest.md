@@ -3,7 +3,7 @@ id: blocks-structure-manifest
 title: Manifest Structure
 ---
 
-This file contains all the configuration required for a block to work. It's used in WordPress [`registerBlockType`](https://developer.wordpress.org/block-editor/developers/block-api/block-registration/) method to register a block. Using manifest.json we can provide a configuration in JavaScript and Php part of the block in one file.
+This file contains all the configuration required for a block to work. It's used in WordPress [`registerBlockType`](https://developer.wordpress.org/block-editor/developers/block-api/block-registration/) method to register a block. Using `manifest.json` we can provide a configuration in JavaScript and PHP part of the block in one file.
 
 ### Example
 

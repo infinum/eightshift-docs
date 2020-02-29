@@ -3,7 +3,7 @@ id: menu
 title: Menu
 ---
 
-Menu class is located in `project`. It extends `Eightshift_Libs\Menu\Menu` namespace.
+Menu class is located in `project`. It extends `Eightshift_Libs\Menu\Menu` class.
 
 This class is used to add all custom project implementation for menus.
 
