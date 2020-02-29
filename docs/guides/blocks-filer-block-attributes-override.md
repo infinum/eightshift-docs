@@ -12,7 +12,7 @@ The usage of this method is vast. You can, for example, use it to provide differ
 
 ## Example
 
-If you haven't already created a new class src>blocks>class-blocks.php and extend `Eightshift_Libs\Blocks\Blocks` class from the lib.
+If you haven't already created a new class src/blocks/class-blocks.php and extend `Eightshift_Libs\Blocks\Blocks` class from the lib.
 
 Hot to extend a class [check here](extending-classes).
 
