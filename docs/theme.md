@@ -4,6 +4,8 @@ title: Create new WordPress theme
 sidebar_label: Theme Setup
 ---
 
+[![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript)](https://github.com/infinum/eightshift-frontend-libs/tree/develop/setup/create-wp-project)
+
 Eightshift boilerplate contains all the tools you need to start building a modern WordPress theme, using all the latest front end development tools.
 
 [Please go here if you wish to setup a plugin instead](plugin).
@@ -13,7 +15,7 @@ Eightshift boilerplate contains all the tools you need to start building a moder
 1. [Node.js](https://nodejs.org/en/)
 2. [Composer](https://getcomposer.org/)
 
-## Quick start 
+## Quick start
 Let's create a new theme!
 
 Navigate to your WordPress theme folder and run the following command:
@@ -26,7 +28,7 @@ Script will prompt you for theme name and local development url (used for Browse
 
 ![](https://raw.githubusercontent.com/infinum/eightshift-frontend-libs/develop/package/setup.gif)
 
-After the script is finished, you can activate the theme through WP Admin Dashboard. 
+After the script is finished, you can activate the theme through WP Admin Dashboard.
 
 To start developing run this command from theme's root folder:
 
