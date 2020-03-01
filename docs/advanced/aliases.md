@@ -1,6 +1,6 @@
 ---
-id: aliases
-title: Helpful aliases
+id: helpers-aliases-helpers
+title: Aliases
 ---
 
 ## EightshiftBlocksWhatwgFetch

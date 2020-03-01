@@ -1,6 +1,6 @@
 ---
 id: helpers-object-helpers
-title: Object Helpers
+title: Object
 ---
 
 Object trait is located in `Eightshift Libs`. To extend it, use `Eightshift_Libs\Helpers\Object_Helper` namespace.

@@ -1,6 +1,6 @@
 ---
 id: helpers-components-helpers
-title: Components Helpers
+title: Components
 ---
 
 Components helper is located in `Eightshift Libs`. To extend it, use `Eightshift_Libs\Helpers\Components` namespace.

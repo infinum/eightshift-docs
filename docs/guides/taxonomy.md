@@ -22,6 +22,8 @@ To create custom taxonomy:
  * @package Eightshift_Boilerplate\Custom_Taxonomy
  */
 
+declare( strict_types=1 );
+
 namespace Eightshift_Boilerplate\Custom_Taxonomy;
 
 use Eightshift_Libs\Custom_Taxonomy\Base_Taxonomy;
