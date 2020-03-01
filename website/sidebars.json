@@ -19,14 +19,6 @@
       "guides/taxonomy",
       {
         "type": "subcategory",
-        "label": "Fonts",
-        "ids": [
-          "guides/fonts-custom",
-          "guides/fonts-icon"
-        ]
-      },
-      {
-        "type": "subcategory",
         "label": "Blocks",
         "ids": [
           "guides/blocks-registration",
@@ -40,9 +32,7 @@
           "guides/blocks-filter-block-attributes-override"
         ]
       },
-      "guides/columns",
       "guides/i18n",
-      "guides/login",
       "guides/media",
       "guides/menu",
       {
@@ -52,6 +42,24 @@
           "guides/rest-intro",
           "guides/rest-field-example",
           "guides/rest-route-example"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Columns",
+        "ids": [
+          "guides/columns-post-type",
+          "guides/columns-taxonomy",
+          "guides/columns-user"
+        ]
+      },
+      "guides/login",
+      {
+        "type": "subcategory",
+        "label": "Fonts",
+        "ids": [
+          "guides/fonts-custom",
+          "guides/fonts-icon"
         ]
       }
     ],
