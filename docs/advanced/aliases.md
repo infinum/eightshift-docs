@@ -117,4 +117,8 @@ It provides the Block Editor overrides on some styles to give better UX for our 
 
 ## EightshiftComponentColorPalette
 
+Alias providing custom React component. For more details check [here](components-color-palette).
+
 ## EightshiftComponentHeadingLevel
+
+Alias providing custom React component. For more details check [here](components-heading-level).
