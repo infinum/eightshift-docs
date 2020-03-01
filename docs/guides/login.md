@@ -3,7 +3,7 @@ id: login
 title: Login
 ---
 
-Login class is located in `Eightshift Libs`. To extend it use `Eightshift_Libs\Login\Login` namespace.
+Login class is located in `Eightshift Libs`. To extend it use `Eightshift_Libs\Login\Login` class.
 
 It changes the default logo url on WordPress login page to you site home url.
 

@@ -3,7 +3,7 @@ id: manifest
 title: Manifest
 ---
 
-Manifest class is located in `Eightshift Libs`. To extend it, use `Eightshift_Libs\Manifes\Manifest` namespace.
+Manifest class is located in `Eightshift Libs`. To extend it, use `Eightshift_Libs\Manifes\Manifes` class.
 
 In the build process, Webpack creates all static files and also `manifest.json` inside the `public` folder. The manifest file contains a key/value list that we use to call the location of the assets dynamically.
 
@@ -11,7 +11,7 @@ This class is used to provide `manifest.json` file location and helpers to retur
 
 ## How to use it?
 
-The manifest class provides a filter name that is defined in the lib as a class constant. To apply/call this filter you need to provide `Manifest::MANIFEST_ITEM_FILTER_NAME` filter name inside the project config helper. [Config helper](config) is used to appends project prefix to filter name.
+The manifest class provides a filter name that is defined in the lib as a class constant. To apply/call this filter you need to provide `Manifest::MANIFEST_ITEM_FILTER_NAME` filter name inside the project config helper. [Config helper](config) is used to append project prefix to a filter name.
 
 ## Example
 Manifest.json:
