@@ -41,7 +41,6 @@
         ]
       },
       "guides/columns",
-      "guides/general",
       "guides/i18n",
       "guides/login",
       "guides/media",
@@ -64,9 +63,11 @@
         "type": "subcategory",
         "label": "Helpers",
         "ids": [
-          "advanced/aliases",
+          "advanced/helpers-aliases-helpers",
           "advanced/helpers-object-helpers",
-          "advanced/helpers-components-helpers"
+          "advanced/helpers-components-helpers",
+          "advanced/helpers-shortcode-helpers",
+          "advanced/helpers-error-logger-helpers"
         ]
       },
       {
