@@ -16,4 +16,8 @@ If you are familiar with the extending classes (object inheritance) in PHP langu
 
 Please get acquainted with these concepts before you continue because they will help you in the later chapters.
 
-**PHP part of this project lives in `Eightshift_Libs` namespace.**
+## Important notes
+
+> PHP part of this project lives in `Eightshift_Libs` namespace.
+
+> When adding new class, changing the class name or changing the class file name don't forget to run `composer dump-autoload` to rebuild autoload map.
