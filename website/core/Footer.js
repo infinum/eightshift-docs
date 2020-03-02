@@ -31,28 +31,31 @@ class Footer extends React.Component {
                 src={this.props.config.baseUrl + this.props.config.footerIcon}
                 alt={this.props.config.title}
                 width="66"
-                height="58"
               />
             )}
           </a>
           <div>
-            <h5>Eightshift-frontend-libs</h5>
-            <a href="https://github.com/infinum/eightshift-frontend-libs">Github</a>
+            <a href="https://github.com/infinum/eightshift-frontend-libs">
+              <h5>Eightshift-frontend-libs</h5>
+            </a>
             <a className="github-button" href="https://github.com/infinum/eightshift-frontend-libs" data-icon="octicon-star" data-size="large" aria-label="Star infinum/eightshift-frontend-libs on GitHub">Star</a>
           </div>
           <div>
-            <h5>Eightshift-libs</h5>
-            <a href="https://github.com/infinum/eightshift-libs">Github</a>
+            <a href="https://github.com/infinum/eightshift-libs">
+              <h5>Eightshift-libs</h5>
+            </a>
             <a className="github-button" href="https://github.com/infinum/eightshift-libs" data-icon="octicon-star" data-size="large" aria-label="Star infinum/eightshift-libs on GitHub">Star</a>
           </div>
           <div>
-            <h5>Eightshift-boilerplate</h5>
-            <a href="https://github.com/infinum/eightshift-boilerplate">Github</a>
+            <a href="https://github.com/infinum/eightshift-boilerplate">
+              <h5>Eightshift-boilerplate</h5>
+            </a>
             <a className="github-button" href="https://github.com/infinum/eightshift-boilerplate" data-icon="octicon-star" data-size="large" aria-label="Star infinum/eightshift-boilerplate on GitHub">Star</a>
           </div>
           <div>
-            <h5>Eightshift-boilerplate-plugin</h5>
-            <a href="https://github.com/infinum/eightshift-boilerplate-plugin">Github</a>
+            <a href="https://github.com/infinum/eightshift-boilerplate-plugin">
+              <h5>Eightshift-boilerplate-plugin</h5>
+            </a>
             <a className="github-button" href="https://github.com/infinum/eightshift-boilerplate-plugin" data-icon="octicon-star" data-size="large" aria-label="Star infinum/eightshift-boilerplate-plugin on GitHub">Star</a>
           </div>
         </section>
