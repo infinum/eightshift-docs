@@ -3,7 +3,7 @@ id: components-color-palette
 title: Color Palette
 ---
 
-This is a custom react component the renders a custom color picker exactly the same as native block editor component but on save method in attributes we save color name and not color hex.
+This is a custom react component the renders a custom color picker exactly the same as native block editor component but on save method in attributes we save the color name and not color hex.
 
 ## Usage
 
@@ -31,5 +31,5 @@ import { ColorPaletteCustom } from 'EightshiftComponentColorPalette';
 
 ### Options
 
-All options are the same as a native block editor component that you can see [here](TODO).
+All options are the same as a native block editor component that you can see [here](https://developer.wordpress.org/block-editor/components/color-palette/).
 

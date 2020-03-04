@@ -3,7 +3,7 @@ id: components-heading-level
 title: Heading Level
 ---
 
-This is a custom react component the renders a custom heading level. It is used in heading component or block.
+This is a custom react component the renders a custom heading level. It is used in the heading component or block.
 
 ## Usage
 
@@ -34,9 +34,9 @@ Default: 6
 
 #### selectedLevel
 
-Defines selected level value to show for heading 
+Defines selected level value to show for heading. 
 
 
 #### onChange
 
-On Change callback method for saving the components attributes.
+On Change callback method for saving the attributes of the component.

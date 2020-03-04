@@ -10,14 +10,14 @@ All of us have some custom helpers and stuff that we use around on multiple the 
 
 ## is_valid_xml
 
-Check if provided XML is valid file. It uses DOMDocument library.
+Check if provided XML is a valid file. It uses a DOMDocument library.
 
 * @param xml $xml Full xml document.
 * @return boolean
 
 ## is_json
 
-Check if provided json is valid.
+Check if provided JSON is valid.
 * @param string $string String to check.
 * @return bool
 
@@ -41,7 +41,7 @@ Sanitize all values in an array.
 
 ## sort_array_by_order_key
 
-Sort array by order key. Used to sort terms.
+Sort array by order key. It is used to sort terms.
 
 * @param array $items Items array to sort. Must have order key.
 * @return array

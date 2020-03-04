@@ -8,7 +8,7 @@ title: Aliases
 Alias providing [Whatwg-fetch](https://www.npmjs.com/package/whatwg-fetch).
 
 ```js
-import 'EighshiftBlocksWhatwgFetch';
+import 'EightshiftBlocksWhatwgFetch';
 ```
 
 ## EightshiftBlocksSwiper
@@ -16,7 +16,15 @@ import 'EighshiftBlocksWhatwgFetch';
 Alias providing [Swiper](https://www.npmjs.com/package/swiper).
 
 ```js
-import 'EighshiftBlocksSwiper';
+import 'EightshiftBlocksSwiper';
+```
+
+## EightshiftBlocksSwiperIE
+
+Alias providing [Swiper](https://www.npmjs.com/package/swiper) but for IE11 version.
+
+```js
+import 'EightshiftBlocksSwiperIE';
 ```
 
 ## EightshiftBlocksBabelPolyfill
@@ -24,7 +32,7 @@ import 'EighshiftBlocksSwiper';
 Alias providing [Babel Polyfill](https://babeljs.io/docs/en/babel-polyfill).
 
 ```js
-import 'EighshiftBlocksBabelPolyfill';
+import 'EightshiftBlocksBabelPolyfill';
 ```
 
 ## EightshiftBlocksAutoprefixer
@@ -40,7 +48,7 @@ import 'EightshiftBlocksAutoprefixer';
 Alias providing [Normalize](https://www.npmjs.com/package/normalize-scss). Check documentation for more details.
 
 ```scss
-@import 'EighshiftBlocksNormalize';
+@import 'EightshiftBlocksNormalize';
 @include normalize(); // stylelint-disable-line at-rule-empty-line-before
 ```
 
@@ -49,7 +57,7 @@ Alias providing [Normalize](https://www.npmjs.com/package/normalize-scss). Check
 Alias providing [Media Blender](https://github.com/infinum/media-blender). Check documentation for more details.
 
 ```scss
-@import 'EighshiftBlocksMediaBlender';
+@import 'EightshiftBlocksMediaBlender';
 ```
 
 ## EightshiftBlocksSwiperStyle
@@ -57,7 +65,7 @@ Alias providing [Media Blender](https://github.com/infinum/media-blender). Check
 Alias providing [Swiper](https://www.npmjs.com/package/swiper).
 
 ```scss
-@import 'EighshiftBlocksSwiperStyle';
+@import 'EightshiftBlocksSwiperStyle';
 ```
 
 ## EightshiftBlocksDynamicImport
@@ -66,7 +74,7 @@ To get (require) all the files using `require.context`  method, we created a hel
 
 It finds all files recursively in the folder using regex. This example will require all `assets/index.js` files inside the `custom` folder, so there is no need to add the files to the build manually.
 ```js
-import { dynamicImport } from 'EighshiftBlocksDynamicImport';
+import { dynamicImport } from 'EightshiftBlocksDynamicImport';
 
 dynamicImport(require.context('./../../custom', true, /assets\/index.js$/));
 ```
@@ -79,7 +87,7 @@ Alias providing blocks registration. For more details check [here](/eightshift-d
 
 Converts the first letter of the string to uppercase.
 ```js
-import { ucfirst } from 'EighshiftBlocksUcfirst';
+import { ucfirst } from 'EightshiftBlocksUcfirst';
 
 ucfirst('custom string');
 ```
@@ -95,15 +103,15 @@ We have also created a bunch of JavaScript helpers located in [helpers folder](h
 This alias provides only path to helpers folder.
 
 ```js
-import { media } from 'EighshiftBlocksUtilityHelpersPath/media';
+import { media } from 'EightshiftBlocksUtilityHelpersPath/media';
 ```
 
 ## EightshiftFrontendLibs
 
-Alias providing [Eighshift Frontend Libs](https://infinum.github.io/eightshift-frontend-libs/sassdocs/). 
+Alias providing [Eightshift Frontend Libs](https://infinum.github.io/eightshift-frontend-libs/sassdocs/). 
 
 ```scss
-@import 'EighshiftFrontendLibs';
+@import 'EightshiftFrontendLibs';
 ```
 
 ## EightshiftEditorStyleOverride
@@ -111,7 +119,7 @@ Alias providing [Eighshift Frontend Libs](https://infinum.github.io/eightshift-f
 It provides the Block Editor overrides on some styles to give better UX for our block.
 
 ```scss
-@import 'EighshiftEditorStyleOverride';
+@import 'EightshiftEditorStyleOverride';
 ```
 
 
