@@ -13,8 +13,8 @@ This class is used to define all the important methods for your project:
 * get_project_routes_namespace()
 * get_project_routes_version()
 * get_project_primary_color()
-* get_project_path() - Mandatory
-* get_config() - Mandatory
+* get_project_path()
+* get_config()
 
 Some methods are mandatory and are defined in [config interface](https://github.com/infinum/eightshift-libs/blob/develop/src/interface-config-data.php) the rest are provided inside the project.
 
@@ -50,7 +50,7 @@ Defaults to 'develop' (as to not cache manifest in transient) if not otherwise d
 
 Type: Optional
 
-Used for namespacing project REST-API routes and fields. Only required if you are creating a custom REST route or field.
+Used for namespacing project's REST-API routes and fields. Only required if you are creating a custom REST route or field.
 
 ## get_project_routes_version()
 
@@ -70,7 +70,7 @@ Type: Mandatory
 
 Returns project absolute path.
 
-If used in a theme use `get_template_directory()`, and in case it's used in a plugin use `__DIR__`.
+If used in a theme, use `get_template_directory()` and in case it's used in a plugin, use `__DIR__`.
 
 ## get_config()
 

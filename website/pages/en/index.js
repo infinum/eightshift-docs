@@ -59,7 +59,7 @@ class HomeSplash extends React.Component {
             title="Eightshift Boilerplate"
             tagline="A modern way of developing WordPress themes & plugins"
           />
-          <div className="row-flex row-flex-2">
+          <div className="row-flex row-flex-2 row-flex-justify-start">
             <Button color="orange" href="getting-started">Get started</Button>
             <Button color="teal" href="docs/introduction">Read docs</Button>
           </div>

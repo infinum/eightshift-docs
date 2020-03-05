@@ -3,7 +3,7 @@ id: manifest
 title: Manifest
 ---
 
-Manifest class is located in `Eightshift Libs`. To extend it, use `Eightshift_Libs\Manifes\Manifes` class.
+Manifest class is located in `Eightshift Libs`. To extend it, use `Eightshift_Libs\Manifest\Manifest` class.
 
 In the build process, Webpack creates all static files and also `manifest.json` inside the `public` folder. The manifest file contains a key/value list that we use to call the location of the assets dynamically.
 

@@ -1,123 +1,138 @@
 ---
-id: aliases
-title: Helpful aliases
+id: helpers-aliases-helpers
+title: Aliases
 ---
 
 [![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/develop/scripts)
 
 We have created a lot of helpful aliases that you can use in your project.
 
-## JavaScript Dynamic Import Helper
+## EightshiftBlocksWhatwgFetch
 
-In order to get (require) all the files using `require.context`  method, we created a helper located [here](https://github.com/infinum/eightshift-frontend-libs/blob/develop/scripts/dynamic-import.js).
+Alias providing [Whatwg-fetch](https://www.npmjs.com/package/whatwg-fetch).
 
-It finds all files recursively in the folder using regex. This example will require all `assets/index.js` files inside the `custom` folder, so there is no need to add the files to the build manually.
-
-#### Usage
 ```js
-import { dynamicImport } from 'EighshiftBlocksDynamicImport';
+import 'EightshiftBlocksWhatwgFetch';
+```
+
+## EightshiftBlocksSwiper
+
+Alias providing [Swiper](https://www.npmjs.com/package/swiper).
+
+```js
+import 'EightshiftBlocksSwiper';
+```
+
+## EightshiftBlocksSwiperIE
+
+Alias providing [Swiper](https://www.npmjs.com/package/swiper) but for IE11 version.
+
+```js
+import 'EightshiftBlocksSwiperIE';
+```
+
+## EightshiftBlocksBabelPolyfill
+
+Alias providing [Babel Polyfill](https://babeljs.io/docs/en/babel-polyfill).
+
+```js
+import 'EightshiftBlocksBabelPolyfill';
+```
+
+## EightshiftBlocksAutoprefixer
+
+Alias providing [Autoprefixer](https://github.com/postcss/autoprefixer).
+
+```js
+import 'EightshiftBlocksAutoprefixer';
+```
+
+## EightshiftBlocksNormalize
+
+Alias providing [Normalize](https://www.npmjs.com/package/normalize-scss). Check documentation for more details.
+
+```scss
+@import 'EightshiftBlocksNormalize';
+@include normalize(); // stylelint-disable-line at-rule-empty-line-before
+```
+
+## EightshiftBlocksMediaBlender
+
+Alias providing [Media Blender](https://github.com/infinum/media-blender). Check documentation for more details.
+
+```scss
+@import 'EightshiftBlocksMediaBlender';
+```
+
+## EightshiftBlocksSwiperStyle
+
+Alias providing [Swiper](https://www.npmjs.com/package/swiper).
+
+```scss
+@import 'EightshiftBlocksSwiperStyle';
+```
+
+## EightshiftBlocksDynamicImport
+
+To get (require) all the files using the `require.context` method, we created a helper located [here](https://github.com/infinum/eightshift-frontend-libs/blob/develop/scripts/dynamic-import.js).
+
+It will find all files recursively in the folder using a regex. The following example will require all `assets/index.js` files inside the `custom` folder, so there is no need to add the files to the build manually.
+
+```js
+import { dynamicImport } from 'EightshiftBlocksDynamicImport';
 
 dynamicImport(require.context('./../../custom', true, /assets\/index.js$/));
 ```
 
-## JavaScript Ucfirst Helper
+## EightshiftBlocksRegisterBlocks
 
-Converts the first letter of the string to uppercase.
+Alias providing blocks registration. For more details check [here](/eightshift-docs/docs/guides/blocks-registration).
 
-#### Usage
+## EightshiftBlocksUcfirst
+
+Converts the first letter of a string to uppercase.
+
 ```js
-import { ucfirst } from 'EighshiftBlocksUcfirst';
+import { ucfirst } from 'EightshiftBlocksUcfirst';
 
 ucfirst('custom string');
 ```
 
-## JavaScript Utilities path
+## EightshiftBlocksGetActions
 
-We have also created a bunch of JavaScript helpers located in [helpers folder](https://github.com/infinum/eightshift-frontend-libs/tree/develop/scripts/helpers).
+Alias providing blocks actions helper. For more details check [here](/eightshift-docs/docs/guides/blocks-get-actions-helper).
 
-This alias provides only path to helpers folder.
+## EightshiftBlocksUtilityHelpersPath
 
-#### Usage
-```js
-import { media } from 'EighshiftBlocksUtilityHelpersPath/media';
-```
+We have also created a bunch of JavaScript helpers located in the [helpers folder](https://github.com/infinum/eightshift-frontend-libs/tree/develop/scripts/helpers).
 
-## JavaScript WhatwgFetch
-
-Alias providing [Whatwg-fetch](https://www.npmjs.com/package/whatwg-fetch). Check documentation for more details.
-
-#### Usage
-```js
-import 'EighshiftBlocksWhatwgFetch';
-```
-
-## JavaScript Swiper
-
-Alias providing [Swiper](https://www.npmjs.com/package/swiper). Check documentation for more details.
-
-#### Usage
-
-JavaScript
-```js
-import 'EighshiftBlocksSwiper';
-```
-
-Styles:
-```scss
-@import 'EighshiftBlocksSwiperStyle';
-```
-
-## JavaScript Babel Polyfill
-
-Alias providing [Babel Polyfill](https://babeljs.io/docs/en/babel-polyfill). Check documentation for more details.
-
-#### Usage
+This alias provides only path to the helpers folder.
 
 ```js
-import 'EighshiftBlocksBabelPolyfill';
+import { media } from 'EightshiftBlocksUtilityHelpersPath/media';
 ```
 
-## Scss EighshiftFrontendLibs
+## EightshiftFrontendLibs
 
-Alias providing [Eighshift Frontend Libs](https://infinum.github.io/eightshift-frontend-libs/sassdocs/).
+Alias providing [Eightshift Frontend Libs](https://infinum.github.io/eightshift-frontend-libs/sassdocs/).
 
-#### Usage
-
-Styles:
 ```scss
-@import 'EighshiftFrontendLibs';
+@import 'EightshiftFrontendLibs';
 ```
 
-## Scss Normalize
-
-Alias providing [Normalize](https://www.npmjs.com/package/normalize-scss). Check documentation for more details.
-
-#### Usage
-
-Styles:
-```scss
-@import 'EighshiftBlocksNormalize';
-@include normalize(); // stylelint-disable-line at-rule-empty-line-before
-```
-
-## Scss Media Blender
-
-Alias providing [Media Blender](https://github.com/infinum/media-blender). Check documentation for more details.
-
-#### Usage
-
-Styles:
-```scss
-@import 'EighshiftBlocksMediaBlender';
-```
-
-## Scss EditorStyleOverride
+## EightshiftEditorStyleOverride
 
 It provides the Block Editor overrides on some styles to give better UX for our block.
 
-#### Usage
-
-Styles:
 ```scss
-@import 'EighshiftEditorStyleOverride';
+@import 'EightshiftEditorStyleOverride';
 ```
+
+
+## EightshiftComponentColorPalette
+
+Alias providing custom React component. For more details check [here](components-color-palette).
+
+## EightshiftComponentHeadingLevel
+
+Alias providing custom React component. For more details check [here](components-heading-level).

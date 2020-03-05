@@ -4,7 +4,7 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
- 
+
 /* your custom css */
 
 @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
@@ -95,8 +95,57 @@ article p img {
   color: var(--base-walnut-color);
 }
 
+
+/* ---------------------------------------
+  FOOTER
+------------------------------------------ */
 #footer {
   background: var(--base-fake-black-color);
+}
+
+
+.nav-footer .sitemap {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 0 20px;
+}
+
+.nav-footer .sitemap div {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 25%;
+          flex: 0 0 25%;
+}
+
+.nav-footer .sitemap .nav-home {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 735px) {
+  .nav-footer .sitemap {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+
+
+  .nav-footer .sitemap div {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .nav-footer .sitemap div {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+  }
 }
 
 /* ---------------------------------------
@@ -107,20 +156,37 @@ article p img {
 }
 
 .row-flex-offest {
-  margin-left: -48px;
+  margin: 0 -24px;
+}
+
+.row-flex-justify-start {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.row-flex-justify-center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .row-flex-2 .card {
-  width: 100%;
+  max-width: 100%;
 }
 
 @media only screen and (min-width: 767px) {
   .row-flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
   }
 
   .row-flex-2 .card {
-    width: 50%;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+    max-width: 300px;
   }
 }
 

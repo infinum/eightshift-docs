@@ -6,34 +6,17 @@ title: Post Type
 [![docs-source](https://img.shields.io/badge/source-eigthshift--libs-blue?style=for-the-badge&logo=php&labelColor=2a2a2a)](https://github.com/infinum/eightshift-libs/blob/develop/src/custom-post-type/class-base-post-type.php)
 
 When working on a WordPress project it is possible that, at one point, you will need to register a Custom Post Type.
+Custom Post Type class is located in `Eightshift Libs`. To extend it, use `Eightshift_Libs\Custom_Post_Type\Base_Post_Type` class. This is an abstract class.
 
-In that case, we have prepared an easy way for you to register a new post type by following these steps with the following code example:
+## Example:
 
-First we will setup our folder structure:
-
-### Folder structure
-
-```php
-
-* src
-  * class-main.php
-  * custom-post-type
-    * class-example.php
-
-```
-Files containing a class should be named `class-{classname}.php` and there should always be only one class per file.
-
-## Follow these steps:
-* Create a new folder inside the `src` folder called `custom-post-type`. This is the place where you will hold all your classes for registering custom post types, Or put this in a place you think it would suit your project best.
-* Let's call our first custom post type `Projects`. Create a file called the same as your custom post type, in this case, `class-projects.php`.
-* Copy this example and update it to your needs.
-* Register this new class in `class-main.php` inside `get_service_classes` method.
-* In terminal run `composer dump-autoload`.
-
-### Class-projects.php
+To create a custom post type:
+1. make a new class `src/custom-post-type/class-projects.php`.
+2. implement all the methods provided in the example.
+3. register the class inside the `class-main.php` file.
+4. dump autoload.
 
 ```php
-
 <?php
 /**
  * File that holds class for "Projects" custom post type registration.
@@ -43,14 +26,7 @@ Files containing a class should be named `class-{classname}.php` and there shoul
 
 namespace Eightshift_Boilerplate\Custom_Post_Type;
 
-/**
- * File that holds base abstract class for custom post type registration.
- */
 use Eightshift_Libs\Custom_Post_Type\Base_Post_Type;
-
-/**
- * File containing label generator class.
- */
 use Eightshift_Libs\Custom_Post_Type\Label_Generator;
 
 /**
@@ -143,17 +119,5 @@ class Projects extends Base_Post_Type {
     ];
   }
 }
-
-```
-
-### Class-main.php
-
-```php
-
-// Add this to the top of the file.
-use Eightshift_Boilerplate\Custom_Post_Type;
-
-// Add this inside `get_service_classes` method.
-Custom_Post_Type\Projects::class,
 
 ```
