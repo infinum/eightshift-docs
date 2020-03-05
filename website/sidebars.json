@@ -10,21 +10,13 @@
       "frontend-libs"
     ],
     "Guides": [
-      "guides/di-container",
       "guides/extending-classes",
+      "guides/di-container",
       "guides/config",
       "guides/manifest",
       "guides/enqueue",
       "guides/post-type",
       "guides/taxonomy",
-      {
-        "type": "subcategory",
-        "label": "Fonts",
-        "ids": [
-          "guides/fonts-custom",
-          "guides/fonts-icon"
-        ]
-      },
       {
         "type": "subcategory",
         "label": "Blocks",
@@ -40,10 +32,7 @@
           "guides/blocks-filter-block-attributes-override"
         ]
       },
-      "guides/columns",
-      "guides/general",
       "guides/i18n",
-      "guides/login",
       "guides/media",
       "guides/menu",
       {
@@ -53,6 +42,24 @@
           "guides/rest-intro",
           "guides/rest-field-example",
           "guides/rest-route-example"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Listing Columns",
+        "ids": [
+          "guides/columns-post-type",
+          "guides/columns-taxonomy",
+          "guides/columns-user"
+        ]
+      },
+      "guides/login",
+      {
+        "type": "subcategory",
+        "label": "Fonts",
+        "ids": [
+          "guides/fonts-custom",
+          "guides/fonts-icon"
         ]
       }
     ],
@@ -64,9 +71,19 @@
         "type": "subcategory",
         "label": "Helpers",
         "ids": [
-          "advanced/aliases",
+          "advanced/helpers-aliases-helpers",
           "advanced/helpers-object-helpers",
-          "advanced/helpers-general-helpers"
+          "advanced/helpers-components-helpers",
+          "advanced/helpers-shortcode-helpers",
+          "advanced/helpers-error-logger-helpers"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Custom Components",
+        "ids": [
+          "advanced/components-color-palette",
+          "advanced/components-heading-level"
         ]
       },
       {

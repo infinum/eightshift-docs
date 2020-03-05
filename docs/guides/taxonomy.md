@@ -6,7 +6,12 @@ title: Taxonomy
 Custom Taxonomy class is located in `Eightshift Libs`. To extend it, use `Eightshift_Libs\Custom_Taxonomy\Base_Taxonomy` class. This is an abstract class.
 
 ## Example:
-To create custom taxonomy, make a new class `src/custom-taxonomy/class-blog-taxonomy.php`, and extend all methods provided in the example. Also, don't forget to register the class inside `class-main.php` file.
+
+To create custom taxonomy:
+1. make a new class `src/custom-taxonomy/class-blog-taxonomy.php`.
+2. implement all the methods provided in the example.
+3. register the class inside the `class-main.php` file.
+4. dump autoload.
 
 ```php
 <?php
@@ -16,6 +21,8 @@ To create custom taxonomy, make a new class `src/custom-taxonomy/class-blog-taxo
  * @since   1.0.8
  * @package Eightshift_Boilerplate\Custom_Taxonomy
  */
+
+declare( strict_types=1 );
 
 namespace Eightshift_Boilerplate\Custom_Taxonomy;
 

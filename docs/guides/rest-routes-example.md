@@ -3,28 +3,17 @@ id: rest-route-example
 title: Route Example
 ---
 
-To implement the new Rest API Route, you would need to do a few things, but for this example, we will use this folder structure:
-```php
+REST Route class is located in `Eightshift Libs`. To extend it, use `use Eightshift_Libs\Rest\Base_Route` class. This is an abstract class.
 
-* src
-  * class-main.php
-  * rest
-    * class-example-route.php
+## Example:
 
-```
-
-## Follow these steps:
-* Create a new folder to put this class. For example, `Rest`. Or put this in a place you think it would suit your project best.
-* Create a new class with the same name as your class. For this example, this would be `class-example-route.php`.
-* Copy this example and update it to your needs.
-* Register this new class in `class-main.php` inside `get_service_classes` method.
-* In terminal run `composer dump-autoload`.
-
-
-### Class-example-route.php
+To create custom REST Route:
+1. make a new class `src/rest-routes/routes/class-example-route.php`.
+2. implement all the methods provided in the example.
+3. register the class inside the `class-main.php` file.
+4. dump autoload.
 
 ```php
-
 <?php
 /**
  * The class register route for example endpoint
@@ -119,18 +108,6 @@ class Example_Route extends Base_Route implements Callable_Route {
     return \rest_ensure_response( 'output data' );
   }
 }
-
-```
-
-### Class-main.php
-
-```php
-
-// Add this to the top of the file.
-use Eightshift_Boilerplate\Rest;
-
-// Add this inside `get_service_classes` method.
-Rest\Example_Route::class,
 
 ```
 
