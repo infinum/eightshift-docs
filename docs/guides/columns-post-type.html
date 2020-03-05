@@ -1,0 +1,144 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Post Type · Eightshift Docs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Post Type Column class is located in `Eightshift Libs`. To extend it use `Eightshift_Libs\Columns\Base_Post_Type_Columns` class."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Post Type · Eightshift Docs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://infinum.github.io/eightshift-docs/"/><meta property="og:description" content="Post Type Column class is located in `Eightshift Libs`. To extend it use `Eightshift_Libs\Columns\Base_Post_Type_Columns` class."/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/eightshift-docs/img/favicon.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/eightshift-docs/js/scrollSpy.js"></script><link rel="stylesheet" href="/eightshift-docs/css/main.css"/><script src="/eightshift-docs/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/eightshift-docs/"><img class="logo" src="/eightshift-docs/img/favicon.png" alt="Eightshift Docs"/><h2 class="headerTitleWithLogo">Eightshift Docs</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/eightshift-docs/getting-started" target="_self">Get Started</a></li><li class="siteNavGroupActive"><a href="/eightshift-docs/docs/introduction" target="_self">Docs</a></li><li class=""><a href="/eightshift-docs/storybook" target="_self">Storybook</a></li><li class=""><a href="/eightshift-docs/sass" target="_self">Sass</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Listing Columns</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Getting Started<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/eightshift-docs/docs/theme">Theme Setup</a></li><li class="navListItem"><a class="navItem" href="/eightshift-docs/docs/plugin">Plugin Setup</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">The Basics<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/eightshift-docs/docs/introduction">Introduction</a></li><li class="navListItem"><a class="navItem" href="/eightshift-docs/docs/libs">Eightshift Libs</a></li><li class="navListItem"><a class="navItem" href="/eightshift-docs/docs/frontend-libs">Eightshift Frontend Libs</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Guides<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/eightshift-docs/docs/guides/extending-classes">Extending Classes</a></li><li class="navListItem"><a class="navItem" href="/eightshift-docs/docs/guides/di-container">Dependency injection container</a></li><li class="navListItem"><a class="navItem" href="/eightshift-docs/docs/guides/config">Project Config</a></li><li class="navListItem"><a class="navItem" href="/eightshift-docs/docs/guides/manifest">Manifest</a></li><li class="navListItem"><a class="navItem" href="/eightshift-docs/docs/guides/enqueue">Enqueue</a></li><li class="navListItem"><a class="navItem" href="/eightshift-docs/docs/guides/post-type">Post Type</a></li><li class="navListItem"><a class="navItem" href="/eightshift-docs/docs/guides/taxonomy">Taxonomy</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Blocks</h4><ul><li class="navListItem"><a class="navItem" href="/eightshift-docs/docs/guides/blocks-registration">Registration</a></li><li class="navListItem"><a class="navItem" href="/eightshift-docs/docs/guides/blocks-structure">Blocks Structure</a></li><li class="navListItem"><a class="navItem" href="/eightshift-docs/docs/guides/blocks-structure-block-item">Block Structure Item</a></li><li class="navListItem"><a class="navItem" href="/eightshift-docs/docs/guides/blocks-structure-component">Component Structure</a></li><li class="navListItem"><a class="navItem" href="/eightshift-docs/docs/guides/blocks-structure-manifest">Manifest Structure</a></li><li class="navListItem"><a class="navItem" href="/eightshift-docs/docs/guides/blocks-block-from-components">Creating Block from Components</a></li><li class="navListItem"><a class="navItem" href="/eightshift-docs/docs/guides/blocks-render-block-view-helper">Render Block View Helper</a></li><li class="navListItem"><a class="navItem" href="/eightshift-docs/docs/guides/blocks-get-actions-helper">GetActions Helper</a></li><li class="navListItem"><a class="navItem" href="/eightshift-docs/docs/guides/blocks-filter-block-attributes-override">Filter Attributes Override</a></li></ul></div><li class="navListItem"><a class="navItem" href="/eightshift-docs/docs/guides/i18n">i18n</a></li><li class="navListItem"><a class="navItem" href="/eightshift-docs/docs/guides/media">Media</a></li><li class="navListItem"><a class="navItem" href="/eightshift-docs/docs/guides/menu">Menu</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Rest API</h4><ul><li class="navListItem"><a class="navItem" href="/eightshift-docs/docs/guides/rest-intro">Rest Intro</a></li><li class="navListItem"><a class="navItem" href="/eightshift-docs/docs/guides/rest-field-example">Field Example</a></li><li class="navListItem"><a class="navItem" href="/eightshift-docs/docs/guides/rest-route-example">Route Example</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Listing Columns</h4><ul><li class="navListItem navListItemActive"><a class="navItem" href="/eightshift-docs/docs/guides/columns-post-type">Post Type</a></li><li class="navListItem"><a class="navItem" href="/eightshift-docs/docs/guides/columns-taxonomy">Taxonomy</a></li><li class="navListItem"><a class="navItem" href="/eightshift-docs/docs/guides/columns-user">User</a></li></ul></div><li class="navListItem"><a class="navItem" href="/eightshift-docs/docs/guides/login">Login</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Fonts</h4><ul><li class="navListItem"><a class="navItem" href="/eightshift-docs/docs/guides/fonts-custom">Custom fonts</a></li><li class="navListItem"><a class="navItem" href="/eightshift-docs/docs/guides/fonts-icon">Icon font</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Advanced<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/eightshift-docs/docs/advanced/docs-storybook">Storybook</a></li><li class="navListItem"><a class="navItem" href="/eightshift-docs/docs/advanced/docs-sass">Sass</a></li><li class="navListItem"><a class="navItem" href="/eightshift-docs/docs/advanced/webpack">Webpack</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Helpers</h4><ul><li class="navListItem"><a class="navItem" href="/eightshift-docs/docs/advanced/helpers-aliases-helpers">Aliases</a></li><li class="navListItem"><a class="navItem" href="/eightshift-docs/docs/advanced/helpers-object-helpers">Object</a></li><li class="navListItem"><a class="navItem" href="/eightshift-docs/docs/advanced/helpers-components-helpers">Components</a></li><li class="navListItem"><a class="navItem" href="/eightshift-docs/docs/advanced/helpers-shortcode-helpers">Shortcode</a></li><li class="navListItem"><a class="navItem" href="/eightshift-docs/docs/advanced/helpers-error-logger-helpers">Error Logger</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Custom Components</h4><ul><li class="navListItem"><a class="navItem" href="/eightshift-docs/docs/advanced/components-color-palette">Color Palette</a></li><li class="navListItem"><a class="navItem" href="/eightshift-docs/docs/advanced/components-heading-level">Heading Level</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Custom Installation</h4><ul><li class="navListItem"><a class="navItem" href="/eightshift-docs/docs/advanced/installation-boilerplate-custom">Integrating Boilerplate in existing project</a></li><li class="navListItem"><a class="navItem" href="/eightshift-docs/docs/advanced/installation-libs">Eightshift Libs</a></li><li class="navListItem"><a class="navItem" href="/eightshift-docs/docs/advanced/installation-frontend-libs">Eightshift Frontend Libs</a></li></ul></div></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Post Type</h1></header><article><div><span><p>Post Type Column class is located in <code>Eightshift Libs</code>. To extend it use <code>Eightshift_Libs\Columns\Base_Post_Type_Columns</code> class.</p>
+<h2><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example:</h2>
+<p>To create custom column:</p>
+<ol>
+<li>make a new class <code>src/columns/class-example-column.php</code>.</li>
+<li>implement all the methods provided in the example.</li>
+<li>register the class inside the <code>class-main.php</code> file.</li>
+<li>dump autoload.</li>
+</ol>
+<pre><code class="hljs css language-php"><span class="hljs-meta">&lt;?php</span>
+<span class="hljs-comment">/**
+ * Example_Column class file
+ *
+ * <span class="hljs-doctag">@since</span> 1.1.0
+ * <span class="hljs-doctag">@package</span> Eightshift_Boilerplate\Columns
+ */</span>
+
+<span class="hljs-keyword">declare</span>( strict_types=<span class="hljs-number">1</span> );
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">Eightshift_Boilerplate</span>\<span class="hljs-title">Columns</span>;
+
+<span class="hljs-comment">/**
+ * Class Example_Column.
+ */</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Example_Column</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Base_Post_Columns</span> </span>{
+
+  <span class="hljs-comment">/**
+   * Column name constant name.
+   *
+   * <span class="hljs-doctag">@var</span> string
+   */</span>
+  <span class="hljs-keyword">const</span> COLUMN_NAME = <span class="hljs-string">'example'</span>;
+
+  <span class="hljs-comment">/**
+   * Get the slug of the post type where the additional column should appear.
+   *
+   * <span class="hljs-doctag">@return</span> array The name of the post type.
+   */</span>
+  <span class="hljs-keyword">protected</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">get_post_type_slug</span><span class="hljs-params">()</span> : <span class="hljs-title">array</span> </span>{
+    <span class="hljs-keyword">return</span> [ <span class="hljs-string">'post'</span> ];
+  }
+
+  <span class="hljs-comment">/**
+   * Add additional post columns to the columns array.
+   *
+   * <span class="hljs-doctag">@param</span> array $columns The existing column names array with default post columns (title, author, date etc.).
+   * <span class="hljs-doctag">@return</span> array         Modified column names array.
+   */</span>
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add_column_name</span><span class="hljs-params">( array $columns )</span> : <span class="hljs-title">array</span> </span>{
+    $columns[ <span class="hljs-keyword">static</span>::COLUMN_NAME ] = esc_html__( <span class="hljs-string">'Example'</span>, <span class="hljs-string">'eightshift-boilerplate'</span> );
+
+    <span class="hljs-keyword">return</span> $columns;
+  }
+
+  <span class="hljs-comment">/**
+   * Render the post column content in the custom post column
+   *
+   * <span class="hljs-doctag">@param</span>  string $column_name The name of the column to display.
+   * <span class="hljs-doctag">@param</span>  int    $post_id     The current post ID.
+   * <span class="hljs-doctag">@return</span> void
+   */</span>
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">render_column_content</span><span class="hljs-params">( string $column_name, int $post_id )</span> : <span class="hljs-title">void</span> </span>{
+    <span class="hljs-keyword">if</span> ( $column_name === <span class="hljs-keyword">static</span>::COLUMN_NAME ) {
+      <span class="hljs-keyword">echo</span> <span class="hljs-string">'column value'</span>;
+    }
+  }
+}
+
+</code></pre>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 3/5/2020 by Ivan Ruzevic</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/eightshift-docs/docs/guides/rest-route-example"><span class="arrow-prev">← </span><span>Route Example</span></a><a class="docs-next button" href="/eightshift-docs/docs/guides/columns-taxonomy"><span>Taxonomy</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#example">Example:</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/eightshift-docs/" class="nav-home"><img src="/eightshift-docs/img/favicon.png" alt="Eightshift Docs" width="66"/></a><div><a href="https://github.com/infinum/eightshift-frontend-libs"><h5>Eightshift-frontend-libs</h5></a><a class="github-button" href="https://github.com/infinum/eightshift-frontend-libs" data-icon="octicon-star" data-size="large" aria-label="Star infinum/eightshift-frontend-libs on GitHub">Star</a></div><div><a href="https://github.com/infinum/eightshift-libs"><h5>Eightshift-libs</h5></a><a class="github-button" href="https://github.com/infinum/eightshift-libs" data-icon="octicon-star" data-size="large" aria-label="Star infinum/eightshift-libs on GitHub">Star</a></div><div><a href="https://github.com/infinum/eightshift-boilerplate"><h5>Eightshift-boilerplate</h5></a><a class="github-button" href="https://github.com/infinum/eightshift-boilerplate" data-icon="octicon-star" data-size="large" aria-label="Star infinum/eightshift-boilerplate on GitHub">Star</a></div><div><a href="https://github.com/infinum/eightshift-boilerplate-plugin"><h5>Eightshift-boilerplate-plugin</h5></a><a class="github-button" href="https://github.com/infinum/eightshift-boilerplate-plugin" data-icon="octicon-star" data-size="large" aria-label="Star infinum/eightshift-boilerplate-plugin on GitHub">Star</a></div></section><section class="copyright">Copyright © 2020 Eightshift</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '921996f662a2a05c1ffbcf2a87146376',
+                indexName: 'infinum_eightshift',
+                inputSelector: '#search_input_react'
+              });
+            </script></body></html>
