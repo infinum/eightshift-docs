@@ -70,9 +70,10 @@ Alias providing [Swiper](https://www.npmjs.com/package/swiper).
 
 ## EightshiftBlocksDynamicImport
 
-To get (require) all the files using `require.context`  method, we created a helper located [here](https://github.com/infinum/eightshift-frontend-libs/blob/develop/scripts/dynamic-import.js).
+To get (require) all the files using the `require.context` method, we created a helper located [here](https://github.com/infinum/eightshift-frontend-libs/blob/develop/scripts/dynamic-import.js).
 
-It finds all files recursively in the folder using regex. This example will require all `assets/index.js` files inside the `custom` folder, so there is no need to add the files to the build manually.
+It will find all files recursively in the folder using a regex. The following example will require all `assets/index.js` files inside the `custom` folder, so there is no need to add the files to the build manually.
+
 ```js
 import { dynamicImport } from 'EightshiftBlocksDynamicImport';
 
@@ -85,7 +86,8 @@ Alias providing blocks registration. For more details check [here](/eightshift-d
 
 ## EightshiftBlocksUcfirst
 
-Converts the first letter of the string to uppercase.
+Converts the first letter of a string to uppercase.
+
 ```js
 import { ucfirst } from 'EightshiftBlocksUcfirst';
 
@@ -98,9 +100,9 @@ Alias providing blocks actions helper. For more details check [here](/eightshift
 
 ## EightshiftBlocksUtilityHelpersPath
 
-We have also created a bunch of JavaScript helpers located in [helpers folder](https://github.com/infinum/eightshift-frontend-libs/tree/develop/scripts/helpers).
+We have also created a bunch of JavaScript helpers located in the [helpers folder](https://github.com/infinum/eightshift-frontend-libs/tree/develop/scripts/helpers).
 
-This alias provides only path to helpers folder.
+This alias provides only path to the helpers folder.
 
 ```js
 import { media } from 'EightshiftBlocksUtilityHelpersPath/media';

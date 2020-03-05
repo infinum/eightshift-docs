@@ -46,7 +46,7 @@
       },
       {
         "type": "subcategory",
-        "label": "Columns",
+        "label": "Listing Columns",
         "ids": [
           "guides/columns-post-type",
           "guides/columns-taxonomy",

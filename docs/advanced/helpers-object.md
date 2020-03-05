@@ -3,14 +3,13 @@ id: helpers-object-helpers
 title: Object
 ---
 
-Object trait is located in `Eightshift Libs`. To extend it, use `Eightshift_Libs\Helpers\Object_Helper` namespace.
+Object trait is located in `Eightshift Libs`. To extend it, use `Eightshift_Libs\Helpers\Object_Helper` class.
 
-All of us have some custom helpers and stuff that we use around on multiple the project. We have created this simple trait helper that you can use in any PHP class as a [trait](/eightshift-docs/docs/guides/extending-classes). To see all the class helper go [here](https://github.com/infinum/eightshift-libs/blob/develop/src/helpers/class-object-helper.php) and help your selves.
-
+All of us have some custom helpers and stuff that we use around on multiple the project. We have created this simple trait helper that you can use in any PHP class as a [trait](/eightshift-docs/docs/guides/extending-classes). To see all of the class helper go [here](https://github.com/infinum/eightshift-libs/blob/develop/src/helpers/class-object-helper.php).
 
 ## is_valid_xml
 
-Check if provided XML is a valid file. It uses a DOMDocument library.
+Check if the provided XML is valid. It uses a `DOMDocument` library.
 
 * @param xml $xml Full xml document.
 * @return boolean
@@ -18,19 +17,20 @@ Check if provided XML is a valid file. It uses a DOMDocument library.
 ## is_json
 
 Check if provided JSON is valid.
+
 * @param string $string String to check.
 * @return bool
 
 ## flatten_array
 
-Flattens multidimensional array.
+Flattens a multidimensional array.
 
 * @param  array $array Multidimensional array.
 * @return array
 
 ## sanitize_array
 
-Sanitize all values in an array.
+Sanitize all the values in an array.
 
 * @param array  $array                 Provided array.
 * @param string $sanitization_function WordPress function used for sanitization purposes.

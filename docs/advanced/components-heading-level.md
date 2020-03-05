@@ -3,7 +3,7 @@ id: components-heading-level
 title: Heading Level
 ---
 
-This is a custom react component the renders a custom heading level. It is used in the heading component or block.
+This is a custom React component that renders a custom heading level (`<h1>` to `<h6>`). It is used in the heading component or block.
 
 ## Usage
 
@@ -22,20 +22,19 @@ import { HeadingLevel } from 'EightshiftComponentHeadingLevel';
 
 #### minLevel
 
-Defines minimal value to show for heading 
+Defines the minimum value to show in a heading.
 
 Default: 1
 
 #### maxLevel
 
-Defines maximal value to show for heading 
+Defines the maximum value to show in a heading.
 
 Default: 6
 
 #### selectedLevel
 
-Defines selected level value to show for heading. 
-
+Defines the selected level value to show in a heading.
 
 #### onChange
 

@@ -8,10 +8,10 @@ Custom Post Type class is located in `Eightshift Libs`. To extend it, use `Eight
 ## Example:
 
 To create a custom post type:
-1. make a new class `src/custom-post-type/class-projects.php`
-2. extend all methods provided in the example.
-3. register the class inside `class-main.php` file.
-4. Dump autoload
+1. make a new class `src/custom-post-type/class-projects.php`.
+2. implement all the methods provided in the example.
+3. register the class inside the `class-main.php` file.
+4. dump autoload.
 
 ```php
 <?php

@@ -50,7 +50,7 @@ Defaults to 'develop' (as to not cache manifest in transient) if not otherwise d
 
 Type: Optional
 
-Used for namespacing projects REST-API routes and fields. Only required if you are creating custom REST a route or field.
+Used for namespacing project's REST-API routes and fields. Only required if you are creating a custom REST route or field.
 
 ## get_project_routes_version()
 

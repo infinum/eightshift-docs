@@ -5,7 +5,13 @@ title: Dependency injection container
 
 Dependency injection is a way of implementing inversion of control design pattern. It's used to handle the dependencies between multiple classes without the direct instantiation of one class in another - which causes tight coupling in the code and makes it less testable and harder to maintain.
 
-In general, if you have something like this in your class `new SuperClass()` that is bad.
+In general, if you instantiate another class like this inside your class
+
+```php
+new SuperClass()
+````
+
+that should be avoided because it tightly couples two classes.
 
 Eightshift libs are using [PHP-DI](http://php-di.org/) as an implementation of a dependency injection container. We'll explain the implementation by following the [eightshift-boilerplate](https://github.com/infinum/eightshift-boilerplate/blob/develop/src/class-main.php) example.
 

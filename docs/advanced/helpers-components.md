@@ -3,10 +3,9 @@ id: helpers-components-helpers
 title: Components
 ---
 
-Components helper is located in `Eightshift Libs`. To extend it, use `Eightshift_Libs\Helpers\Components` namespace.
+Components helper is located in `Eightshift Libs`. To extend it, use `Eightshift_Libs\Helpers\Components` class.
 
-We have created this simple helper that you can use in any PHP class as a static helper. To see all the components helpers go [here](https://github.com/infinum/eightshift-libs/blob/develop/src/helpers/class-components.php) and help your selves.
-
+We have created this simple helper that you can use in any PHP class as a static helper. To see all of the components helpers go [here](https://github.com/infinum/eightshift-libs/blob/develop/src/helpers/class-components.php).
 
 ## ensure_string
 

@@ -20,4 +20,4 @@ Please get acquainted with these concepts before you continue because they will 
 
 > PHP part of this project lives in `Eightshift_Libs` namespace.
 
-> When adding new class, changing the class name or changing the class file name don't forget to run `composer dump-autoload` to rebuild autoload map.
+> When adding a new class, changing the class name or changing the class file name, don't forget to run `composer dump-autoload` to rebuild the autoload map.
