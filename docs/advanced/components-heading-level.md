@@ -3,6 +3,8 @@ id: components-heading-level
 title: Heading Level
 ---
 
+[![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/blob/develop/components/heading-level/heading-level.js)
+
 This is a custom React component that renders a custom heading level (`<h1>` to `<h6>`). It is used in the heading component or block.
 
 ## Usage

@@ -3,6 +3,8 @@ id: enqueue
 title: Enqueue
 ---
 
+[![docs-source](https://img.shields.io/badge/source-eigthshift--libs-blue?style=for-the-badge&logo=php&labelColor=2a2a2a)](https://github.com/infinum/eightshift-libs/tree/develop/src/enqueue)
+
 Manifest class is located in `Eightshift Libs`. To extend it, use one of the following classes:
 * `Eightshift_Libs\Enqueue\Enqueue_Admin` class.
 * `Eightshift_Libs\Enqueue\Enqueue_Blocks` class.

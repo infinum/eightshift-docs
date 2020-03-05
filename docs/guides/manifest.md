@@ -3,6 +3,8 @@ id: manifest
 title: Manifest
 ---
 
+[![docs-source](https://img.shields.io/badge/source-eigthshift--libs-blue?style=for-the-badge&logo=php&labelColor=2a2a2a)](https://github.com/infinum/eightshift-libs/tree/develop/src/manifest)
+
 Manifest class is located in `Eightshift Libs`. To extend it, use `Eightshift_Libs\Manifest\Manifest` class.
 
 In the build process, Webpack creates all static files and also `manifest.json` inside the `public` folder. The manifest file contains a key/value list that we use to call the location of the assets dynamically.
