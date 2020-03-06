@@ -3,6 +3,8 @@ id: rest-intro
 title: Rest Intro
 ---
 
+[![docs-source](https://img.shields.io/badge/source-eigthshift--libs-blue?style=for-the-badge&logo=php&labelColor=2a2a2a)](https://github.com/infinum/eightshift-libs/tree/master/src/rest)
+
 When you are working on a more complex WordPress project at one point, you will have to make a new Rest API route or add a new API field to the existing route, or something else.
 
 We have prepared 4 interfaces:

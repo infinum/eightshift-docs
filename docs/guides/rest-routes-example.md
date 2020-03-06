@@ -3,6 +3,17 @@ id: rest-route-example
 title: Route Example
 ---
 
+[![docs-source](https://img.shields.io/badge/source-eigthshift--libs-blue?style=for-the-badge&logo=php&labelColor=2a2a2a)](https://github.com/infinum/eightshift-libs/tree/master/src/rest)
+
+To implement the new Rest API Route, you would need to do a few things, but for this example, we will use this folder structure:
+```php
+
+* src
+  * class-main.php
+  * rest
+    * class-example-route.php
+
+```
 REST Route class is located in `Eightshift Libs`. To extend it, use `use Eightshift_Libs\Rest\Base_Route` class. This is an abstract class.
 
 ## Example:

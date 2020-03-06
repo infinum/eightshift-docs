@@ -3,15 +3,16 @@ id: blocks-get-actions-helper
 title: GetActions Helper
 ---
 
+[![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/blob/develop/scripts/get-actions.js)
+
+
 This helper will create attributes actions from blocks `manifest.json`.
 Actions are passed in child components to update props on an event (`onChange`, `onClick`, etc.).
 
 ## Default Attribute
 
-Default function output is `onChange` + attribute name.  
+Default function output is `onChange` + attribute name.
 Example: `onChangeContent`.
-
-Helper is located [here](https://github.com/infinum/eightshift-frontend-libs/blob/d14c02804c1e55fc4ca11af0546a40205fee93a7/scripts/get-actions.js).
 
 `manifest.json`
 

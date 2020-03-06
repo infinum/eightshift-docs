@@ -3,9 +3,9 @@ id: blocks-render-block-view-helper
 title: Render Block View Helper
 ---
 
-Locate and return template part with passed attributes for a block.
+[![docs-source](https://img.shields.io/badge/source-eigthshift--libs-blue?style=for-the-badge&logo=php&labelColor=2a2a2a)](https://github.com/infinum/eightshift-libs/blob/master/src/blocks/class-blocks.php)
 
-Helper is located in the [eightshift-libs](https://github.com/infinum/eightshift-libs/blob/935e7bc777094d7518950316a45061f7675cf7ed/src/blocks/class-blocks.php#L295) library.
+Locate and return template part with passed attributes for a block.
 
 ### Usage
 

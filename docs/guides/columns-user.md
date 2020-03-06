@@ -3,6 +3,8 @@ id: columns-user
 title: User
 ---
 
+[![docs-source](https://img.shields.io/badge/source-eigthshift--libs-blue?style=for-the-badge&logo=php&labelColor=2a2a2a)](https://github.com/infinum/eightshift-libs/blob/develop/src/columns/class-base-user-columns.php)
+
 User Column class is located in `Eightshift Libs`. To extend it use `Eightshift_Libs\Columns\Base_User_Columns` class.
 
 ## Example:

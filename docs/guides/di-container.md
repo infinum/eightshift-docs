@@ -3,6 +3,9 @@ id: di-container
 title: Dependency injection container
 ---
 
+[![docs-source](https://img.shields.io/badge/source-eigthshift--libs-blue?style=for-the-badge&logo=php&labelColor=2a2a2a)](https://github.com/infinum/eightshift-libs/blob/develop/src/class-main.php)
+
+Dependency injection is a way of implementing inversion of control design pattern. It's used to handle the dependencies between multiple classes without the direct instantiation of one class in another - which causes tight coupling in the code, and makes it less testable and harder to maintain.
 Dependency injection is a way of implementing inversion of control design pattern. It's used to handle the dependencies between multiple classes without the direct instantiation of one class in another - which causes tight coupling in the code and makes it less testable and harder to maintain.
 
 In general, if you instantiate another class like this inside your class

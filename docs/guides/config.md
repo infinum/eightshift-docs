@@ -3,6 +3,8 @@ id: config
 title: Project Config
 ---
 
+[![docs-source](https://img.shields.io/badge/source-eigthshift--boilerplate-red?style=for-the-badge&logo=wordpress&labelColor=2a2a2a)](https://github.com/infinum/eightshift-boilerplate/blob/develop/src/class-config.php)
+
 Project config is located in `src/class-config.php`, and it extends `Eightshift_Libs\Core\Config` class from the lib.
 
 This class is used to define all the important methods for your project:

@@ -3,6 +3,8 @@ id: blocks-structure-component
 title: Component Structure
 ---
 
+[![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/develop/blocks/init/src/blocks/components/button)
+
 Component naming and folder structure are not as strict as in the case of the block, but for the sake of consistency, it would be better to follow the same principles.
 
 Basic component structure should like something this:
@@ -43,4 +45,4 @@ This file contains the editor and the frontend styles for the component. These s
 
 #### Note on the component styles
 
-Component styles should only style the inner component layout and styles such as font sizes, alignment, etc. Any layout placement should be handled either by the wrapper, or a layout. 
+Component styles should only style the inner component layout and styles such as font sizes, alignment, etc. Any layout placement should be handled either by the wrapper, or a layout.

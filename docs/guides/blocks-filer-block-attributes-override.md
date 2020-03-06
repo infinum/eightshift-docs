@@ -3,6 +3,8 @@ id: blocks-filter-block-attributes-override
 title: Filter Attributes Override
 ---
 
+[![docs-source](https://img.shields.io/badge/source-eigthshift--libs-blue?style=for-the-badge&logo=php&labelColor=2a2a2a)](https://github.com/infinum/eightshift-libs/blob/develop/src/blocks/class-blocks.php)
+
 This filter gives you the ability to hook your changes to block/wrapper attributes after they are registered in the block editor but before they are rendered in React.
 
 The usage of this method is vast. You can, for example, use it to provide different block/wrapper defaults depending on the post type. For example, you have a button block that you want to have the default color red, but on the post type `post`, you want that button to be black by default. Using this hook, you can easily do this.

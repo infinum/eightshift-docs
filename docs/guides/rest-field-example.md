@@ -3,6 +3,8 @@ id: rest-field-example
 title: Field Example
 ---
 
+[![docs-source](https://img.shields.io/badge/source-eigthshift--libs-blue?style=for-the-badge&logo=php&labelColor=2a2a2a)](https://github.com/infinum/eightshift-libs/tree/master/src/rest)
+
 REST Field class is located in `Eightshift Libs`. To extend it, use `use Eightshift_Libs\Rest\Base_Field` class. This is an abstract class.
 
 ## Example:

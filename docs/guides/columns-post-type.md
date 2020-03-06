@@ -3,6 +3,8 @@ id: columns-post-type
 title: Post Type
 ---
 
+[![docs-source](https://img.shields.io/badge/source-eigthshift--libs-blue?style=for-the-badge&logo=php&labelColor=2a2a2a)](https://github.com/infinum/eightshift-libs/blob/develop/src/columns/class-base-post-type-columns.php)
+
 Post Type Column class is located in `Eightshift Libs`. To extend it use `Eightshift_Libs\Columns\Base_Post_Type_Columns` class.
 
 ## Example:

@@ -3,6 +3,10 @@ id: helpers-aliases-helpers
 title: Aliases
 ---
 
+[![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/develop/scripts)
+
+We have created a lot of helpful aliases that you can use in your project.
+
 ## EightshiftBlocksWhatwgFetch
 
 Alias providing [Whatwg-fetch](https://www.npmjs.com/package/whatwg-fetch).
@@ -110,7 +114,7 @@ import { media } from 'EightshiftBlocksUtilityHelpersPath/media';
 
 ## EightshiftFrontendLibs
 
-Alias providing [Eightshift Frontend Libs](https://infinum.github.io/eightshift-frontend-libs/sassdocs/). 
+Alias providing [Eightshift Frontend Libs](https://infinum.github.io/eightshift-frontend-libs/sassdocs/).
 
 ```scss
 @import 'EightshiftFrontendLibs';
