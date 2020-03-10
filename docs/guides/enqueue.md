@@ -5,26 +5,29 @@ title: Enqueue
 
 [![docs-source](https://img.shields.io/badge/source-eigthshift--libs-blue?style=for-the-badge&logo=php&labelColor=2a2a2a)](https://github.com/infinum/eightshift-libs/tree/develop/src/enqueue)
 
-Manifest class is located in `Eightshift Libs`. To extend it, use one of the following classes:
+When enqueuing assets you can either use ready made classes from the libs:
+
 * `Eightshift_Libs\Enqueue\Enqueue_Admin` class.
 * `Eightshift_Libs\Enqueue\Enqueue_Blocks` class.
 * `Eightshift_Libs\Enqueue\Enqueue_Theme` class.
 
-These classes are made to create Javascript and CSS files of the project for every project part like Admin area, Block Editor area of Theme area.
+or you can modify their functionalities by extending them.
+
+These classes will handle JavaScript and CSS files of the project for different parts like: Admin area, Block Editor area of Theme area (front end).
 
 The usage of any of these classes is optional, and you can use only what you need. Eightshift Boilerplate comes with all three classes already implemented.
 
-Each of these classes implements actions that can be deregistered using the standard [WordPress way](https://developer.wordpress.org/reference/functions/remove_action/).
+Each of these classes implement actions that can be deregistered using the standard [WordPress way](https://developer.wordpress.org/reference/functions/remove_action/).
 
-Enqueue classes work in combination with [webpack build](/eightshift-docs/docs/advanced/webpack) part of your project.
+Enqueue classes work in combination with [webpack build](/eightshift-docs/docs/advanced/webpack) of your project.
 
-File names are defined inside a class constants that can be changed by extending the class and providing the override for the constants. If you change the file names, you must provide changes to the webpack build process.
+File names are defined inside class constants that can be changed by extending the class and providing the overrides for the constants. If you change the file names, you must provide changes to the webpack build process as well.
 
 ## Enqueue_Admin
 
-This class provides assets for **Admin** part of the project.
+This class provides way to enqueue assets for the **Admin** part of the project.
 
-It implements these hooks:
+It implements these hooks in the register method:
 ```php
 
 // Login only style.
@@ -98,17 +101,18 @@ Class constants:
 
 ## Additional
 
-Each of these 3 classes extends `Eightshift_Libs\Enqueue\Assets` class that holds some of the useful methods that you can extend. These methods can be used in all of the enqueue classes.
+Each of these 3 classes extends `Eightshift_Libs\Enqueue\Assets` class that holds some useful methods that you can extend. These methods can be used in all enqueue classes.
 
-You can find Assets class [here](https://github.com/infinum/eightshift-libs/tree/develop/src/enqueue).
+You can find the Assets class [here](https://github.com/infinum/eightshift-libs/tree/develop/src/enqueue).
 
 Provided methods:
-* get_frontend_script_dependencies
-* get_admin_script_dependencies
-* get_localizations
-* get_frontend_style_dependencies
-* get_admin_style_dependencies
-* get_media
-* script_in_footer
+
+* `get_frontend_script_dependencies()`
+* `get_admin_script_dependencies()`
+* `get_localizations()`
+* `get_frontend_style_dependencies()`
+* `get_admin_style_dependencies()`
+* `get_media()`
+* `script_in_footer()`
 
 
