@@ -48,42 +48,6 @@ Class constants:
   const ADMIN_STYLE_URI  = 'applicationAdmin.css';
 ```
 
-In order to override this class, you should create a new class, preferably in the `enqueue` folder in your project. For instance, if you'd like to remove the login and admin styles from your project, in your `enqueue\class-admin-enqueue.php` you'd do:
-
-```php
-<?php
-/**
- * The Admin Enqueue specific functionality.
- *
- * @package Your_Project\Enqueue
- */
-
-declare( strict_types=1 );
-
-namespace Your_Project\Enqueue;
-
-use Eightshift_Libs\Enqueue\Enqueue_Admin;
-
-class Admin_Enqueue extends Enqueue_Admin {
-  /**
-   * Register all the hooks
-   *
-   * @return void
-   *
-   * @since 2.0.0
-   */
-  public function register() {
-    parent::register();
-
-    // We do not want to load the login and admin styles.
-    remove_action( 'login_enqueue_scripts', [ $this, 'enqueue_styles' ] );
-    remove_action( 'admin_enqueue_scripts', [ $this, 'enqueue_styles' ], 50 );
-  }
-}
-```
-
-This way, only `add_action( 'admin_enqueue_scripts', [ $this, 'enqueue_scripts' ] );` hook will run, and only admin scripts will be loaded. Be sure to modify your webpack settings.
-
 ## Enqueue_Blocks
 
 This class provides assets for **Block Editor** part of the project.
