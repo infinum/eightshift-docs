@@ -40,7 +40,7 @@ const siteConfig = {
 
   /* Google tracking */
   gaTrackingId: 'UA-37477022-42',
-  gaGtag: true
+  gaGtag: true,
 
   /* Colors for website */
   colors: {
