@@ -1,0 +1,73 @@
+$navbar: (
+  nav: (
+    mobile: (
+      padding-top: 12px,
+      padding-bottom: 12px,
+      padding-left: 20px,
+      padding-right: 20px,
+    ),
+  ),
+  inner: (
+    mobile: (
+      margin-left: 20px,
+      margin-right: 20px,
+    ),
+  ),
+);
+
+.navbar {
+  @include responsive($navbar, nav);
+
+  background-color: $base-cararra-color;
+  height: 72px;
+
+  &__inner {
+    @include responsive($navbar, inner);
+  }
+}
+
+.navbar .navbar__brand {
+  height: 48px;
+}
+
+.navbar .navbar__link {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: $base-cape-color;
+
+  &:hover {
+    color: $base-elephant-color;
+  }
+}
+
+.navbar .navbar__search {
+  width: 142px;
+  height: 48px;
+  padding-left: 20px;
+}
+
+.navbar .navbar__search .navbar__search-input {
+  width: 100%;
+  height: 100%;
+  background-color: $base-white-color;
+  padding-left: 40px;
+  padding-right: 15px;
+  font-family: $base-font-family;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: $base-nevada-color;
+  float: right;
+  transition: width 0.5s;
+}
+
+.navbar .navbar__search .navbar__search-input:active, .navbar .navbar__search .navbar__search-input:focus {
+  width: 150px;
+}
+
+.navbar .navbar__search .navbar__search-input::placeholder {
+  color: $base-nevada-color;
+}
