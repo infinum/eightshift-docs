@@ -1,3 +1,65 @@
+$footer: (
+  container: (
+    mobile: (
+      padding-left: 0,
+      padding-right: 0,
+    ),
+    desktop: (
+      padding-left: 20px,
+      padding-right: 20px,
+    ),
+  ),
+  column: (
+    mobile: (
+      flex: 0 0 50%,
+      margin-bottom: 50px,
+    ),
+    tablet: (
+      flex: 0 0 25%,
+    ),
+  ),
+  content: (
+    mobile: (
+      padding-left: 0,
+      padding-right: 0,
+    ),
+    desktop: (
+      padding-left: 100px,
+      padding-right: 100px,
+    ),
+  ),
+  bottom: (
+    mobile: (
+      flex: 0 0 100%,
+      width: 50%,
+      padding-left: 0,
+      padding-right: 0,
+    ),
+    desktop: (
+      flex: 0 0 50%,
+      width: 50%,
+      padding-left: 20px,
+      padding-right: 20px,
+    ),
+  ),
+  left: (
+    mobile: (
+      text-align: center,
+    ),
+    desktop: (
+      text-align: left,
+    ),
+  ),
+  right: (
+    mobile: (
+      text-align: center,
+    ),
+    desktop: (
+      text-align: right,
+    ),
+  ),
+);
+
 .footer {
   background-color: $base-cararra-color;
   padding-left: 20px;
@@ -6,10 +68,9 @@
   box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.1);
 
   &__container {
+    @include responsive($footer, container);
     display: flex;
     flex-wrap: wrap;
-    padding-left: 20px;
-    padding-right: 20px;
   }
 
   &__top {
@@ -20,14 +81,14 @@
   }
 
   &__content {
+    @include responsive($footer, content);
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
-    padding-left: 100px;
-    padding-right: 100px;
   }
 
   &__column {
-    flex: 0 0 25%;
+    @include responsive($footer, column);
     text-align: center;
   }
 
@@ -44,11 +105,10 @@
 
   &__bottom {
     display: flex;
+    flex-wrap: wrap;
     flex: 0 0 100%;
     width: 100%;
     padding-top: 45px;
-    padding-left: 20px;
-    padding-right: 20px;
     font-size: 18px;
     font-weight: 500;
     line-height: 1.44;
@@ -56,18 +116,17 @@
   }
 
   &__left {
-    flex: 0 0 50%;
-    width: 50%;
-    text-align: left;
+    @include responsive($footer, bottom);
+    @include responsive($footer, left);
   }
 
   &__right {
-    flex: 0 0 50%;
-    width: 50%;
-    text-align: right;
+    @include responsive($footer, bottom);
+    @include responsive($footer, right);
   }
 
   &__eightshift {
+    font-size: 18px;
     color: $base-cape-color;
   }
 
