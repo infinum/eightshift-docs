@@ -1,0 +1,83 @@
+.footer {
+  background-color: $base-cararra-color;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 90px;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.1);
+
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  &__top {
+    flex: 0 0 100%;
+    width: 100%;
+    padding-top: 70px;
+    padding-bottom: 65px;
+  }
+
+  &__content {
+    display: flex;
+    width: 100%;
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+
+  &__column {
+    flex: 0 0 25%;
+    text-align: center;
+  }
+
+  &__image {
+    margin-bottom: 25px;
+  }
+
+  &__text p{
+    font-size: 24px;
+    line-height: 1.13;
+    font-weight: bold;
+    color: $base-elephant-color;
+  }
+
+  &__bottom {
+    display: flex;
+    flex: 0 0 100%;
+    width: 100%;
+    padding-top: 45px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.44;
+    color: $base-pewter-color;
+  }
+
+  &__left {
+    flex: 0 0 50%;
+    width: 50%;
+    text-align: left;
+  }
+
+  &__right {
+    flex: 0 0 50%;
+    width: 50%;
+    text-align: right;
+  }
+
+  &__eightshift {
+    color: $base-cape-color;
+  }
+
+  &__dot {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  &__logo {
+    margin-left: 10px;
+  }
+
+}
