@@ -1,5 +1,16 @@
+$container: (
+  container: (
+    mobile: (
+      padding-left: 16px,
+    ),
+    desktop: (
+      padding-left: 85px,
+    ),
+  ),
+);
+
 .container {
-  padding-left: 85px;
+  @include responsive($container, container);
 }
 
 .docTitle_node_modules-\@docusaurus-theme-classic-src-theme-DocItem- {
@@ -67,4 +78,17 @@ iframe {
   letter-spacing: 0.6px;
   color: $base-elephant-color;
   text-transform: uppercase;
+}
+
+/* Secondary menu mobile */
+.menu.menu--responsive .menu__button {
+  background-color: $base-white-color;
+}
+
+.button.button--secondary {
+  color: $base-cape-color;
+}
+
+.menu.menu--show {
+  background-color: $base-cararra-color;
 }
