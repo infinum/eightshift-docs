@@ -44,7 +44,7 @@ $navbar: (
 }
 
 .navbar .navbar__search {
-  width: 142px;
+  width: 200px;
   height: 48px;
   padding-left: 20px;
 }
@@ -61,11 +61,6 @@ $navbar: (
   line-height: 1.5;
   color: $base-nevada-color;
   float: right;
-  transition: width 0.5s;
-}
-
-.navbar .navbar__search .navbar__search-input:active, .navbar .navbar__search .navbar__search-input:focus {
-  width: 150px;
 }
 
 .navbar .navbar__search .navbar__search-input::placeholder {
