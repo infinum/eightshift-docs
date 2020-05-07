@@ -104,8 +104,8 @@ function Footer() {
           </div>
         </div>
         <div className="footer__bottom">
-          <div className="footer__left">Made with <span>🧡</span> by <span className="footer__eightshift">Eightshift</span> team.</div>
-          <div className="footer__right">© Eightshift. All rights reserved <span className="footer__dot">・</span> Part of <img className="footer__logo" src={useBaseUrl('img/img-infinum-mark.svg')} alt="Infinum Logo" /></div>
+          <div className="footer__left">Made with <span>🧡</span> by <a href="https://eightshift.com/"><span className="footer__eightshift">Eightshift</span></a> team.</div>
+          <div className="footer__right">© Eightshift. All rights reserved <span className="footer__dot">・</span> Part of <a href="https://infinum.com/"><img className="footer__logo" src={useBaseUrl('img/img-infinum-mark.svg')} alt="Infinum Logo" /></a></div>
         </div>
       </div>
     </footer>
