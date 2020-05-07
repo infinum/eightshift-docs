@@ -1,0 +1,83 @@
+@import '../parts/utils/colors';
+
+.get-started {
+  padding-top: 90px;
+  padding-bottom: 90px;
+  padding-left: 32px;
+  padding-right: 32px;
+
+  &__heading {
+    text-align: center;
+  }
+
+  &__title {
+    font-size: 64px;
+    font-weight: bold;
+    line-height: 1.03;
+    letter-spacing: -2px;
+    margin-bottom: 35px;
+  }
+
+  &__subtitle {
+    font-size: 18px;
+    line-height: 1.56;
+    width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 90px;
+  }
+
+  &__container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__column {
+    flex: 0 0 50%;
+
+    &--plugin {
+      padding-top: 80px;
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    position: relative;
+    text-align: center;
+    margin-bottom: 25px;
+  }
+
+  &__background {
+    position: relative;
+  }
+
+  &__icon {
+    position: absolute;
+    left: 20%;
+  }
+
+  &__content {
+    text-align: center;
+  }
+
+  &__paragraph {
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 1.19;
+    letter-spacing: -1px;
+    color: $base-elephant-color;
+  }
+
+  &__theme {
+    color: $base-picton-color;
+  }
+
+  &__plugin {
+    color: $base-mandy-color;
+  }
+}
