@@ -1,0 +1,21 @@
+/// Mixin that creates flex width of one column based on the column number.
+///
+/// @param {string} $cols [$base-col-number] - Total number of columns
+///
+/// @example
+/// .test {
+///   @include flex-grid-width;
+/// }
+///
+/// @output
+/// ```scss
+/// .test {
+///   flex: 0 0 100%;
+///   max-width: 100%;
+/// }
+/// ```
+
+@mixin flex-grid-width($cols: $base-col-number) {
+  flex: 0 0 calc-grid-width($cols);
+  max-width: calc-grid-width($cols);
+}

@@ -1,0 +1,48 @@
+/// Mixin that takes calc-grid-width mixin and creates modifier classes from it. Used by flex grid.
+///
+/// @param {string} $cols - Total number of columns. Default: $base-col-number.
+/// @param {string} $wrapper - Wrap output item with additional markup.
+/// @param {string} $selector - HTML valid selector. Define offset type used. Default: margin-left.
+///
+/// @example
+/// .test {
+///   @include grid-offset-modifiers;
+/// }
+/// @example
+/// .test {
+///   @include grid-offset-modifiers($wrapper: '.item');
+/// }
+///
+/// @output
+/// ```scss
+/// .test--1 {
+///   margin-left: 8.33333%;
+/// }
+/// .test--2 {
+///   margin-left: 16.66667%;
+/// }
+/// ```
+/// ```scss
+/// .test--1 .item {
+///   margin-left: 8.33333%;
+/// }
+/// .test--2 .item {
+///   margin-left: 16.66667%;
+/// }
+/// ```
+
+@mixin grid-offset-modifiers($cols: $base-col-number, $wrapper: false, $selector: 'margin-left') {
+  @for $i from 1 through $cols {
+    &--#{$i} {
+      @if $wrapper {
+        #{$wrapper} {
+          #{$selector}: calc-grid-width($i);
+        }
+      }
+
+      @else {
+        #{$selector}: calc-grid-width($i);
+      }
+    }
+  }
+}

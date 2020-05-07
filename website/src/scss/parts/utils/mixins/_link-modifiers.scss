@@ -1,0 +1,87 @@
+/// Mixin that creates output modifiers for any valid html state, :hover, :focus, :active but only the default state has to be in normal key.
+/// All selectors must be valid html selectors.
+/// Also supports multiple nested maps as a key.
+///
+/// @param {string} $map - Map to search.
+/// @param {string} $key - Map key to find.
+///
+/// Map:
+/// $test: (
+///   test: (
+///     default: (
+///       normal: (
+///         background-color: $base-black-color,
+///         color: $base-white-color,
+///       ),
+///       hover: (
+///         background-color: $base-white-color,
+///         color: $base-black-color,
+///       ),
+///       focus: (
+///         background-color: $base-white-color,
+///         color: $base-black-color,
+///       ),
+///       active: (
+///         background-color: $base-white-color,
+///         color: $base-black-color,
+///       ),
+///     ),
+///   ),
+/// );
+///
+/// @example
+/// .test {
+///   @include link-modifiers($test, test);
+/// }
+///
+/// @output
+/// ```scss
+/// .test--default {
+///   background-color: #000000;
+///   color: #FFFFFF;
+/// }
+/// .test--default:hover {
+///   background-color: #FFFFFF;
+///   color: #000000;
+/// }
+/// .test--default:focus {
+///   background-color: #FFFFFF;
+///   color: #000000;
+/// }
+/// .test--default:active {
+///   background-color: #FFFFFF;
+///   color: #000000;
+/// }
+/// ```
+
+@mixin link-modifiers($map, $keys...) { // stylelint-disable max-nesting-depth
+  @each $modifier, $modifierMap in map-get-deep($map, $keys...) {
+    &--#{$modifier} {
+      @if (type-of($modifierMap) == 'map') {
+        @each $state, $stateMap in $modifierMap {
+          @if $state == 'normal' {
+            @if (type-of($stateMap) == 'map') {
+              @each $cssSelector, $cssValue in $stateMap {
+                #{$cssSelector}: $cssValue;
+              }
+            }
+          }
+
+          @else {
+            &:#{$state} {
+              @if (type-of($stateMap) == 'map') {
+                @each $cssSelector, $cssValue in $stateMap {
+                  #{$cssSelector}: $cssValue;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      @else {
+        @error 'ERROR: Responsive Map breakpointMap items are not map please check: #{$map} with key: #{modifierMap}';
+      }
+    }
+  }
+}

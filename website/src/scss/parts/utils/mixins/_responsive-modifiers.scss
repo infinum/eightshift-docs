@@ -1,0 +1,107 @@
+/// Mixin that creates output modifiers for specific map key, with provided media breakpoints.
+/// Selectors must be valid html selectors.
+/// It operates the same way as "responsive" mixin, except it will output modifier classes.
+/// Also supports multiple nested maps as a key.
+///
+/// @param {string} $map - Map to search for.
+/// @param {string} $key - Map key to find.
+///
+/// Map:
+/// $test: (
+///   sizes: (
+///     mobile: (
+///       default: (
+///         font-size: 64px,
+///         line-height: 0.92,
+///       ),
+///       big: (
+///         font-size: 42px,
+///         line-height: 1.12,
+///       ),
+///     ),
+///     tablet: (
+///       default: (
+///         font-size: 115px,
+///         line-height: 0.92,
+///       ),
+///       big: (
+///         font-size: 90px,
+///         line-height: 1,
+///       ),
+///     ),
+///   )
+/// );
+///
+/// @example
+/// .test {
+///   @include responsive-modifiers($test, sizes);
+/// }
+///
+/// @output
+/// ```scss
+/// .test--default {
+///   font-size: 64px;
+///   line-height: 0.92;
+/// }
+/// .test--big {
+///   font-size: 42px;
+///   line-height: 1.12;
+/// }
+/// \@media (min-width: 768px) {
+///   .test--default {
+///     font-size: 115px;
+///     line-height: 0.92;
+///   }
+///   .test--big {
+///     font-size: 90px;
+///     line-height: 1;
+///   }
+/// }
+/// ```
+
+@mixin responsive-modifiers($map, $keys...) { // stylelint-disable max-nesting-depth
+  $i: 0;
+
+  @each $breakpoint, $breakpointMap in map-get-deep($map, $keys...) {
+    @if (type-of($breakpointMap) == 'map') {
+      @if $i == 0 {
+        @each $modifier, $modifierMap in $breakpointMap {
+          @if (type-of($modifierMap) == 'map') {
+            &--#{$modifier} {
+              @each $cssSelector, $cssValue in $modifierMap {
+                #{$cssSelector}: $cssValue;
+              }
+            }
+          }
+
+          @else {
+            @error 'ERROR: Responsive Map modifierMap items are not map please check: #{$map} with key: #{modifierMap}';
+          }
+        }
+      }
+
+      @else {
+        @include media(#{$breakpoint} up) {
+          @each $modifier, $modifierMap in $breakpointMap {
+            @if (type-of($modifierMap) == 'map') {
+              &--#{$modifier} {
+                @each $cssSelector, $cssValue in $modifierMap {
+                  #{$cssSelector}: $cssValue;
+                }
+              }
+            }
+
+            @else {
+              @error 'ERROR: Responsive Map modifierMap items are not map please check: #{$map} with key: #{modifierMap}';
+            }
+          }
+        }
+      }
+    }
+
+    @else {
+      @error 'ERROR: Responsive Map breakpointMap items are not map please check: #{$map} with key: #{breakpointMap}';
+    }
+    $i: $i + 1;
+  }
+}

@@ -1,0 +1,71 @@
+/// Mixin that creates output for specific map key or from map that is nested multiple times, with provided media breakpoints.
+/// Selectors must be valid html selectors.
+/// Also supports multiple nested maps as a key.
+///
+/// ### Map
+/// ```scss
+/// $test: (
+///   test: (
+///     mobile: (
+///       font-size: 64px,
+///       line-height: 0.92,
+///     ),
+///     tablet: (
+///       font-size: 42px,
+///       line-height: 1.12,
+///     ),
+///   )
+/// );
+/// ```
+/// @param {string} $map - Map to search for.
+/// @param {string} $key - Map key to find.
+///
+/// @example
+/// .test {
+///   @include responsive($test, test);
+/// }
+/// @example
+/// .test {
+///   @include responsive($test, test2, test1);
+/// }
+///
+/// @output
+/// ```scss
+/// .test {
+///   font-size: 64px;
+///   line-height: 0.92;
+/// }
+/// \@media (min-width: 768px) {
+///   .test {
+///     font-size: 42px;
+///     line-height: 1.12;
+///   }
+/// }
+/// ```
+
+@mixin responsive($map, $keys...) {
+  $i: 0;
+
+  @each $breakpoint, $breakpointMap in map-get-deep($map, $keys...) {
+    @if (type-of($breakpointMap) == 'map') {
+      @if $i == 0 {
+        @each $cssSelector, $cssValue in $breakpointMap {
+          #{$cssSelector}: $cssValue;
+        }
+      }
+
+      @else {
+        @include media(#{$breakpoint} up) {
+          @each $cssSelector, $cssValue in $breakpointMap { // stylelint-disable-line max-nesting-depth
+            #{$cssSelector}: $cssValue;
+          }
+        }
+      }
+    }
+
+    @else {
+      @error 'ERROR: Responsive Map breakpointMap items are not map please check: #{$map} with key: #{breakpointMap}';
+    }
+    $i: $i + 1;
+  }
+}

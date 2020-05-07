@@ -1,0 +1,33 @@
+/// Mixin that create text align modifiers.
+///
+/// @example
+/// .test {
+///   @include text-align-modifiers;
+/// }
+///
+/// @output
+/// ```scss
+/// .test--left {
+///   text-align: left;
+/// }
+/// .test--center {
+///   text-align: center;
+/// }
+/// .test--right {
+///   text-align: right;
+/// }
+/// ```
+
+@mixin text-align-modifiers() {
+  &--left {
+    text-align: left;
+  }
+
+  &--center {
+    text-align: center;
+  }
+
+  &--right {
+    text-align: right;
+  }
+}

@@ -1,0 +1,19 @@
+/// Outputs box sizing value.
+///
+/// @access public
+/// @author Ivan Ruzevic
+/// @param {string} $border-box [border-box] - Value to apply to box-sizing
+/// @example
+/// .test {
+///   @include box-sizing;
+/// }
+/// @output
+/// ```scss
+/// .test {
+///   box-sizing: border-box;
+/// }
+/// ```
+///
+@mixin box-sizing($box-model: border-box) {
+  box-sizing: $box-model;
+}

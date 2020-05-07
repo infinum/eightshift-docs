@@ -1,0 +1,51 @@
+/// Mixin that takes flex-grid-width mixing and creates modifier classes from it. Used for flex grid.
+///
+/// @param {string} $cols [$base-col-number] - Total number of columns.
+/// @param {string} $wrapper - Wrap output item with additional markup.
+///
+/// @example
+/// .test {
+///   @include flex-grid-width-modifiers;
+/// }
+/// @example
+/// .test {
+///   @include flex-grid-width-modifiers($wrapper: '.item');
+/// }
+///
+/// @output
+/// ```scss
+/// .test--1 {
+///   flex: 0 0 8.33333%;
+///   max-width: 8.33333%;
+/// }
+/// .test--2 {
+///   flex: 0 0 16.66667%;
+///   max-width: 16.66667%;
+/// }
+/// ```
+/// ```scss
+/// .test--1 .item {
+///   flex: 0 0 8.33333%;
+///   max-width: 8.33333%;
+/// }
+/// .test--2 .item {
+///   flex: 0 0 16.66667%;
+///   max-width: 16.66667%;
+/// }
+/// ```
+
+@mixin flex-grid-width-modifiers($cols: $base-col-number, $wrapper: false) {
+  @for $i from 1 through $cols {
+    &--#{$i} {
+      @if $wrapper {
+        #{$wrapper} {
+          @include flex-grid-width($i);
+        }
+      }
+
+      @else {
+        @include flex-grid-width($i);
+      }
+    }
+  }
+}

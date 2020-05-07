@@ -1,0 +1,49 @@
+/// This mixin is meant to be used mostly as a helper in other mixins.
+///
+/// It can be used as separating commonly used attributes and their values
+/// in a map that you can later reuse by simply calling this mixin with $map
+/// as a parameter.
+///
+/// @access public
+/// @author Karlo Volf
+///
+/// @param {map} $map [] - Map that you want to spread.
+///
+/// @example
+/// $map: (
+///   display: inline-block,
+///   margin-left: 10px,
+///   transform: scale(3),
+///   padding: 300px,
+/// );
+///
+/// .first-class {
+///   @include for-each-attribute($map);
+/// }
+///
+/// .second-class {
+///   @include for-each-attribute($map);
+/// }
+///
+/// @output
+/// ```scss
+/// .first-class {
+///   display: inline-block;
+///   margin-left: 10px;
+///   transform: scale(3);
+///   padding: 300px;
+/// }
+///
+/// .second-class {
+///   display: inline-block;
+///   margin-left: 10px;
+///   transform: scale(3);
+///   padding: 300px;
+/// }
+/// ```
+
+@mixin for-each-attribute($map) {
+  @each $key, $value in $map {
+    #{$key}: #{$value};
+  }
+}

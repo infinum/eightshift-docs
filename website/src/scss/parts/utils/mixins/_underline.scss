@@ -1,0 +1,147 @@
+/// Mixin that will underline blocks elements. Each parameter is optional.
+/// Breakpoint is manually added with last parameter.
+///
+/// @access public
+/// @author Karlo Volf
+///
+/// @param {pixel} $thickness [2px] - Thickness of the line.
+/// @param {seconds} $duration [.3s] - How long animation lasts.
+/// @param {timing-function} $timing-function [cubic-bezier(.79, .01, .22, .99)] - Execution speed function.
+/// @param {hex} $color [currentColor] - Color of the line.
+/// @param {pixel} $breakpoint [1080px] - Minimum width of the device. Classic media query.
+///
+/// @example
+/// .test {
+///   @include underline();
+/// }
+///
+/// .test2 {
+///   @include underline(4px, 0.5s, ease-in, #132031, 300px);
+/// }
+///
+/// .test3 {
+///   @include underline($timing-function: ease, $color: #000000);
+/// }
+///
+/// @output
+/// ```scss
+/// .test {
+///   position: relative;
+///
+///   &:hover {
+///     text-decoration: none;
+///   }
+///
+///   &::after {
+///     content: '';
+///     position: absolute;
+///     right: 0;
+///     bottom: 0;
+///     width: 100%;
+///     height: 2px;
+///     transform: scaleX(0);
+///     transform-origin: left center;
+///     transition: transform 0.3s cubic-bezier(0.79, 0.01, 0.22, 0.99) 0s, transform-origin 0s step-end 0.3s;
+///     background-color: currentColor;
+///   }
+///
+///   @media (min-width: 1080px) {
+///     &:hover::after {
+///       content: '';
+///       transform: scaleX(1);
+///       transform-origin: right center;
+///     }
+///   }
+/// }
+///
+/// .test2 {
+///   position: relative;
+///
+///   &:hover {
+///     text-decoration: none;
+///   }
+///
+///   &::after {
+///     content: '';
+///     position: absolute;
+///     right: 0;
+///     bottom: 0;
+///     width: 100%;
+///     height: 4px;
+///     transform: scaleX(0);
+///     transform-origin: left center;
+///     transition: transform 0.5s ease-in 0s, transform-origin 0s step-end 0.5s;
+///     background-color: #132031;
+///   }
+///
+///   @media (min-width: 300px) {
+///     &:hover::after {
+///       content: '';
+///       transform: scaleX(1);
+///       transform-origin: right center;
+///     }
+///   }
+/// }
+///
+/// .test3 {
+///   position: relative;
+///
+///   &:hover {
+///     text-decoration: none;
+///   }
+///
+///   &::after {
+///     content: '';
+///     position: absolute;
+///     right: 0;
+///     bottom: 0;
+///     width: 100%;
+///     height: 2px;
+///     transform: scaleX(0);
+///     transform-origin: left center;
+///     transition: transform 0.3s ease 0s, transform-origin 0s step-end 0.3s;
+///     background-color: #000000;
+///   }
+///
+///   @media (min-width: 1080px) {
+///     &:hover::after {
+///       content: '';
+///       transform: scaleX(1);
+///       transform-origin: right center;
+///     }
+///   }
+/// }
+/// ```
+
+@mixin underline($thickness: 2px, $duration: 0.3s, $timing-function: cubic-bezier(0.79, 0.01, 0.22, 0.99), $color: currentColor, $breakpoint: 1080px) {
+  position: relative;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &::after {
+    content: '';
+
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: $thickness;
+
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform $duration $timing-function 0s, transform-origin 0s step-end $duration;
+
+    background-color: $color;
+  }
+
+  @media (min-width: $breakpoint) {
+    &:hover::after {
+      content: '';
+      transform: scaleX(1);
+      transform-origin: right center;
+    }
+  }
+}

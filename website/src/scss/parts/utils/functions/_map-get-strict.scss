@@ -1,0 +1,41 @@
+/// Returns an item from map. Function behaves the same as native `map-get()` but it adds additional error handling
+/// when trying to get undefined keys.
+///
+/// ### Map
+/// ```scss
+/// $map: (
+///   test: 50%,
+/// );
+/// ```
+/// ### Output
+/// ```scss
+/// .test {
+///   width: 50%;
+/// }
+/// ```
+///
+/// @access public
+/// @author Ivan Ruzevic
+/// @param {string} $map - Map to search.
+/// @param {string} $key - Map key to find.
+///
+/// @example
+/// /* All good */
+/// .test {
+///   width: map-get-strict($map, test);
+/// }
+///
+/// /* Throws error on build */
+/// .test {
+///   width: map-get-strict($map, nonexistentKey);
+/// }
+
+@function map-get-strict($map, $key) {
+  @if map-has-key($map, $key) {
+    @return map-get($map, $key);
+  }
+
+  @else {
+    @error 'ERROR: Specified index does not exist in map #{$map}, with value: #{$key}';
+  }
+}

@@ -1,0 +1,21 @@
+/// Calculates grid width from base columns number and then outputs percentage.
+///
+/// ### Output
+/// ```scss
+/// .test {
+///   width: 83.33333%;
+/// }
+/// ```
+///
+/// @access public
+/// @author Ivan Ruzevic
+/// @param {Number} $cols [$base-col-number] - Total number of columns.
+///
+/// @example
+/// .test {
+///   width: calc-grid-width(10);
+/// }
+
+@function calc-grid-width($cols: $base-col-number) {
+  @return percentage($cols/$base-col-number);
+}

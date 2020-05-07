@@ -1,0 +1,21 @@
+/// Calculates column width from base columns number and then outputs percentage.
+///
+/// ### Output
+/// ```scss
+/// .test {
+///   width: 10%;
+/// }
+/// ```
+///
+/// @access public
+/// @author Ivan Ruzevic
+/// @param {Number} $cols [$base-col-number] - Total number of columns.
+///
+/// @example
+/// .test {
+///   width: calc-column-width(10);
+/// }
+
+@function calc-column-width($cols: $base-col-number) {
+  @return (100/$cols) + 0%;
+}

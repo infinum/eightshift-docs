@@ -1,0 +1,143 @@
+///  This mixin has 2 possible way of using it.
+///
+///  #### Example 1
+///
+///  Include the mixin in the class you want to hover over. Text you want
+///  to underline needs to have attached class .underline-text
+///  or you can send your custom class name via parameter $element.
+///
+///  Also, you have to set the $wrapper parameter to true.
+///
+///  #### Example 2
+///
+///  Just include mixin in whichever element you want. In this
+///  case, the parameter $wrapper should stay unchanged(value: false).
+///
+///  Other parameters are optional and they allow you customize your transition.
+///
+/// @access public
+/// @author Karlo Volf
+///
+/// @param {percentage} $thickness [10%] - Thickness of the line in percentage. Percentage refers to the font size.
+/// @param {seconds} $duration [.5s] - How long animation lasts.
+/// @param {timing-function} $timing-function [cubic-bezier(0.79, 0.01, 0.22, 0.99)] - Execution speed function.
+/// @param {hex} $color [currentColor] - Color of the line.
+/// @param {boolean} $wrapper [false] - If wrapper is used as hover reference.
+/// @param {string} $element [.underline-text] - Element on which you want underline.
+/// @param {string} $state [hover] - The state in which it becomes underline element.
+///
+/// @example
+/// .test {
+///   @include underline-text();
+/// }
+///
+/// .test2 {
+///   @include underline-text(5%, .7s, ease-in, #132031, true, ".link", hover);
+/// }
+///
+/// .test3 {
+///   @include underline-text($timing-function: ease, $color: #000000, $wrapper: true, $element: ".target-text");
+/// }
+///
+/// @output
+/// ```scss
+///  .test {
+///    display: inline;
+///    transition: background-size 0.5s cubic-bezier(0.79, 0.01, 0.22, 0.99) 0s, background-position 0s step-end 0.5s;
+///    text-decoration: none;
+///    background-image: linear-gradient(transparent 90%, currentColor 90%, currentColor 100%);
+///    background-repeat: no-repeat;
+///    background-position-y: bottom;
+///    background-size: 0% 100%;
+///
+///    &:hover {
+///      background-position-x: right;
+///      background-position-y: bottom;
+///      background-size: 100% 100%;
+///    }
+///  }
+///
+///  .test2 {
+///    text-decoration: none;
+///
+///    .link {
+///      display: inline;
+///      transition: background-size 0.7s ease-in 0s, background-position 0s step-end 0.7s;
+///      text-decoration: none;
+///      background-image: linear-gradient(transparent 95%, #132031 95%, #132031 100%);
+///      background-repeat: no-repeat;
+///      background-position-y: bottom;
+///      background-size: 0% 100%;
+///    }
+///
+///    &:hover .link {
+///      background-position-x: right;
+///      background-position-y: bottom;
+///      background-size: 100% 100%;
+///    }
+///  }
+///
+///  .test3 {
+///    text-decoration: none;
+///
+///    .target-text {
+///      display: inline;
+///      transition: background-size 0.5s ease 0s, background-position 0s step-end 0.5s;
+///      text-decoration: none;
+///      background-image: linear-gradient(transparent 90%, #000000 90%, #000000 100%);
+///      background-repeat: no-repeat;
+///      background-position-y: bottom;
+///      background-size: 0% 100%;
+///    }
+///
+///    &:hover .target-text {
+///      background-position-x: right;
+///      background-position-y: bottom;
+///      background-size: 100% 100%;
+///    }
+///  }
+/// ```
+
+@mixin underline-text($thickness: 10%, $duration: 0.5s, $timing-function: cubic-bezier(0.79, 0.01, 0.22, 0.99), $color: currentColor, $wrapper: false, $element: '.underline-text', $state: 'hover') {
+  $thickness: 100% - $thickness;
+
+  $underline-inactive-state: (
+    display: inline,
+
+    transition: (background-size $duration $timing-function 0s, background-position 0s step-end $duration),
+    text-decoration: none,
+
+    background-image: linear-gradient(transparent $thickness, $color $thickness, $color 100%),
+    background-repeat: no-repeat,
+    background-position-y: bottom,
+    background-size: 0% 100%,
+  );
+
+  $underline-active-state: (
+    background-position-x: right,
+    background-position-y: bottom,
+    background-size: 100% 100%,
+  );
+
+  @if $wrapper {
+    text-decoration: none;
+
+    #{$element} {
+      @include for-each-attribute($underline-inactive-state);
+    }
+
+    &:#{$state} {
+      #{$element} {
+        @include for-each-attribute($underline-active-state);
+      }
+    }
+  }
+
+  @else {
+    @include for-each-attribute($underline-inactive-state);
+
+    &:#{$state} {
+      @include for-each-attribute($underline-active-state);
+    }
+  }
+}

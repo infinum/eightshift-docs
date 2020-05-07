@@ -1,0 +1,44 @@
+/// Returns an item from map that is nested multiple times.
+///
+/// ### Map
+/// ```scss
+/// $map: (
+///   test2: (
+///     test1: (
+///       test: 50%,
+///     ),
+///   ),
+/// );
+/// ```
+/// ### Output
+/// ```scss
+/// .test {
+///   width: 50%;
+/// }
+/// ```
+///
+/// @access public
+/// @author Ivan Ruzevic
+/// @param {string} $map - Map to search.
+/// @param {string} $keys - List all keys to find.
+///
+/// @example
+/// .test {
+///   width: map-get-deep($map, test2, test1, test);
+/// }
+
+@function map-get-deep($map, $keys...) {
+  $value: $map;
+
+  @each $key in $keys {
+    @if map-has-key($value, $key) {
+      $value: map-get($value, $key);
+    }
+
+    @else {
+      @error 'ERROR: Specified index does not exist in map #{$map}, with value: #{$key}';
+    }
+  }
+
+  @return $value;
+}

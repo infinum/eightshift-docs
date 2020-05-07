@@ -1,0 +1,28 @@
+/// Mixin that creates font smoothing options.
+///
+/// @param {string} $type - Type of font smoothing. Default: antialiased.
+///
+/// @example
+/// .test {
+///   @include font-smoothing;
+/// }
+///
+/// @output
+/// ```scss
+/// .test {
+///   -webkit-font-smoothing: antialiased;
+///   -moz-osx-font-smoothing: grayscale;
+/// }
+/// ```
+
+@mixin font-smoothing($type: antialiased) {
+  @if $type == antialiased {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  @else {
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+  }
+}
