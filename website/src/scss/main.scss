@@ -1,0 +1,60 @@
+/* stylelint-disable docusaurus/copyright-header */
+@import 'media-blender';
+
+/* Utils */
+@import './parts/utils/fonts';
+@import './parts/utils/colors';
+
+/* Functions */
+@import './parts/utils/functions/all';
+
+/* Mixin */
+@import './parts/utils/mixins/all';
+
+/* Parts */
+@import './parts/navbar';
+@import './parts/algolia';
+@import './parts/sidebar';
+@import './parts/container';
+@import './parts/code-block';
+@import './parts/footer';
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $base-heading-family;
+  font-size: 32px;
+  line-height: 1.19;
+  color: $base-elephant-color;
+}
+
+p, a {
+  font-family: $base-font-family;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: $base-cape-color;
+}
+
+a {
+  color: $base-mandy-color;
+}
+
+a:hover {
+  text-decoration: none;
+  color: $base-flush-color;
+}
+
+body {
+  background-color: $base-cararra-color;
+}
+
+.docPage_node_modules-\@docusaurus-theme-classic-src-theme-DocPage- {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+// .docusaurus-highlight-code-line {
+//   background-color: rgb(72, 77, 91);
+//   display: block;
+//   margin: 0 calc(-1 * var(--ifm-pre-padding));
+//   padding: 0 var(--ifm-pre-padding);
+// }

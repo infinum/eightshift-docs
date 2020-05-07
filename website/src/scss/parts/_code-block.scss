@@ -1,0 +1,21 @@
+.codeBlock_node_modules-\@docusaurus-theme-classic-src-theme-CodeBlock- {
+  border-radius: 0;
+}
+
+.codeBlockLines_node_modules-\@docusaurus-theme-classic-src-theme-CodeBlock- {
+  background-color: $base-white-color !important;
+}
+
+.token-line {
+  font-family: $base-code-block-family;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.token-line span.function {
+  color: $base-mandy-color !important;
+}
+
+.token-line span.plain {
+  color: $base-keppel-color;
+}

@@ -1,0 +1,70 @@
+.container {
+  padding-left: 85px;
+}
+
+.docTitle_node_modules-\@docusaurus-theme-classic-src-theme-DocItem- {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.docItemContainer_node_modules-\@docusaurus-theme-classic-src-theme-DocItem- article {
+  max-width: 640px;
+}
+
+code {
+  background-color: $base-white-color;
+}
+
+blockquote {
+  border-left-color: $base-mandy-color;
+  background-color: $base-citrin-color;
+  color: $base-cape-color;
+}
+
+blockquote code {
+  font-family: $base-code-block-family;
+  background-color: $base-chamois-color;
+  color: $base-cape-color;
+}
+
+iframe {
+  width: 100%;
+  height: 100vh;
+}
+
+/* Right sidemenu */
+.contents.contents__left-border {
+  border-left-color: $base-silver-color;
+  padding-left: 22px;
+}
+
+.contents .contents__link {
+  color: $base-cape-color;
+  font-size: 12px;
+  line-height: 2;
+}
+
+.contents .contents__link:hover,
+.contents .contents__link:hover code,
+.contents .contents__link.contents__link--active,
+.contents .contents__link.contents__link--active code {
+  color: $base-mandy-color;
+}
+
+/* Pagination */
+.margin-vert--lg {
+  max-width: 640px;
+}
+
+.pagination-nav .pagination-nav__link {
+  border: none;
+}
+
+.pagination-nav .pagination-nav__link--label {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.43;
+  letter-spacing: 0.6px;
+  color: $base-elephant-color;
+  text-transform: uppercase;
+}
