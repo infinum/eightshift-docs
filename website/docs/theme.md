@@ -20,7 +20,7 @@ Let's create a new theme!
 
 Navigate to your WordPress theme folder and run the following command:
 
-```
+```bash
 npx create-wp-project
 ```
 
@@ -32,7 +32,7 @@ After the script is finished, you can activate the theme through WP Admin Dashbo
 
 To start developing run this command from theme's root folder:
 
-```
+```bash
 npm start
 ```
 
@@ -40,6 +40,6 @@ npm start
 
 You can get a list of available script arguments by running:
 
-```
+```bash
 npx create-wp-project --help
 ```

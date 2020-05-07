@@ -20,7 +20,7 @@ Let's create a **new plugin**!
 
 Navigate to your WordPress plugin folder (`wp-content/plugins`) and run the following command:
 
-```
+```bash
 npx create-wp-project plugin
 ```
 
@@ -28,7 +28,7 @@ Script will prompt you for some info and install a new plugin. After it's finish
 
 To start developing run this command from plugin's root folder:
 
-```
+```bash
 npm start
 ```
 
@@ -36,6 +36,6 @@ npm start
 
 You can get a list of available script arguments by running:
 
-```
+```bash
 npx create-wp-project --help
 ```

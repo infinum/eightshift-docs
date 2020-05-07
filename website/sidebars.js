@@ -1,5 +1,5 @@
-{
-  "docs": {
+module.exports = {
+  docs: {
     "Getting Started": [
       "theme",
       "plugin"
@@ -18,9 +18,9 @@
       "guides/post-type",
       "guides/taxonomy",
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Blocks",
-        "ids": [
+        "items": [
           "guides/blocks-registration",
           "guides/blocks-structure",
           "guides/blocks-structure-block-item",
@@ -36,18 +36,18 @@
       "guides/media",
       "guides/menu",
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Rest API",
-        "ids": [
+        "items": [
           "guides/rest-intro",
           "guides/rest-field-example",
           "guides/rest-route-example"
         ]
       },
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Listing Columns",
-        "ids": [
+        "items": [
           "guides/columns-post-type",
           "guides/columns-taxonomy",
           "guides/columns-user"
@@ -55,9 +55,9 @@
       },
       "guides/login",
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Fonts",
-        "ids": [
+        "items": [
           "guides/fonts-custom",
           "guides/fonts-icon"
         ]
@@ -68,9 +68,9 @@
       "advanced/docs-sass",
       "advanced/webpack",
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Helpers",
-        "ids": [
+        "items": [
           "advanced/helpers-aliases-helpers",
           "advanced/helpers-object-helpers",
           "advanced/helpers-components-helpers",
@@ -79,22 +79,22 @@
         ]
       },
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Custom Components",
-        "ids": [
+        "items": [
           "advanced/components-color-palette",
           "advanced/components-heading-level"
         ]
       },
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Custom Installation",
-        "ids": [
+        "items": [
           "advanced/installation-boilerplate-custom",
           "advanced/installation-libs",
           "advanced/installation-frontend-libs"
         ]
       }
     ]
-  }
-}
+  },
+};
