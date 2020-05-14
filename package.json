@@ -1,0 +1,38 @@
+{
+  "name": "eighshift-development-kit",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "docusaurus": "docusaurus",
+    "start": "docusaurus start",
+    "build": "docusaurus build",
+    "swizzle": "docusaurus swizzle",
+    "deploy": "docusaurus deploy"
+  },
+  "dependencies": {
+    "@docusaurus/core": "^2.0.0-alpha.24",
+    "@docusaurus/plugin-content-blog": "^2.0.0-alpha.24",
+    "@docusaurus/plugin-content-docs-legacy": "^2.0.0-alpha.24",
+    "@docusaurus/plugin-content-pages": "^2.0.0-alpha.24",
+    "docusaurus-plugin-sass": "^0.1.8",
+    "@wgao19/docusaurus-theme-no-style": "0.0.6",
+    "@eightshift/frontend-libs": "^3.2.0",
+    "media-blender": "^2.1.0",
+    "classnames": "^2.2.6",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "react-scripts": "^3.4.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
