@@ -1,11 +1,11 @@
 import React from 'react';
 import Layout from '@theme/Layout';
 
-function Start() {
+function GetStarted() {
   return (
     <Layout>
     </Layout>
   );
 }
 
-export default Start;
+export default GetStarted;
