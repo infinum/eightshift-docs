@@ -1,0 +1,35 @@
+/**
+ * Copyright (c) 2017-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+header[role='navigation'] {
+  display: flex;
+  padding: var(--default-padding, 0);
+  width: calc(100vw - 2 * var(--default-padding));
+  background: white;
+}
+
+header[role='navigation'] a {
+  height: var(--navbar-height);
+  display: flex;
+  align-items: center;
+}
+
+header[role='navigation'] a:not(:first-of-type) {
+  margin-left: 0.5em;
+}
+
+header[role='navigation'] a strong {
+  margin-left: 0.5em;
+}
+
+header[role='navigation'] a[position='right'] {
+  margin-left: auto;
+}
+
+header[role='navigation'] img {
+  max-height: 100%;
+}
