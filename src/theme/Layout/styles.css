@@ -1,0 +1,125 @@
+/**
+ * Copyright (c) 2017-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/* global styles */
+body {
+  margin: 0;
+  font-size: 112.5%; /* computes to 18px */
+}
+
+@media screen and (max-width: 979px) {
+  #__docusaurus {
+    display: block;
+  }
+  main {
+    padding: 0 var(--default-padding, 0);
+  }
+}
+
+@media screen and (min-width: 980px) {
+  #__docusaurus {
+    display: grid;
+    grid-template-columns: minmax(min-content, 40ch) minmax(45em, 1fr) minmax(
+        min-content,
+        40ch
+      );
+    grid-template-rows: minmax(min-content, 40px) 1fr minmax(min-content, 40px);
+    grid-column-gap: 14px;
+    grid-row-gap: 0px;
+  }
+  header {
+    grid-area: 1 / 1 / 2 / 4;
+  }
+  footer,
+  nav {
+    grid-area: 3 / 1 / 4 / 4;
+  }
+  main {
+    grid-area: 2 / 2 / 3 / 3;
+    /* 
+     * when the page is short, grow main to reveal only 40px of footer 
+     * magic numbers:
+     * 2rem - heading paddings 1rem * 2
+     * 32px - heading nav content height
+     * 46px - footer height
+     */
+    min-height: calc(100vh - 2rem - 32px - 46px - 2rem);
+    padding-bottom: 2rem;
+  }
+  aside[role="doc-toc"] {
+    grid-area: 2 / 3 / 3 / 4;
+  }
+  aside[role="docs-navigation"] {
+    grid-area: 2 / 1 / 3 / 2;
+  }
+}
+
+/* block level styles */
+
+footer {
+  text-align: center;
+}
+footer section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+aside {
+  padding: var(--default-padding, 0);
+}
+article,
+nav,
+aside,
+section {
+  max-width: 45em;
+  margin: 0 auto;
+}
+article {
+  margin-bottom: 4rem;
+}
+section:not(:first-child) {
+  margin-top: 1rem;
+}
+
+/* inline level styles */
+
+/* hover to display anchor */
+a[aria-hidden="true"]:not(:empty) {
+  display: inline-block;
+  margin-left: 0.25em;
+  opacity: 0;
+}
+:hover > a[aria-hidden="true"] {
+  opacity: 1;
+}
+
+/* paginators for docs, blog, and blog listing */
+nav[role="paginator"] {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: space-between;
+}
+a[role="prev"]::before {
+  content: "« ";
+}
+a[role="next"]::after {
+  content: " »";
+}
+a[role="tag"] {
+  margin-left: 0.2em;
+}
+
+img[role="avatar"] {
+  width: 4rem;
+  border-radius: 50%;
+}
+
+pre {
+  overflow: auto;
+  padding: var(--default-padding);
+}
