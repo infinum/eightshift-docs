@@ -1,0 +1,23 @@
+/* stylelint-disable docusaurus/copyright-header */
+@import 'media-blender';
+@import 'normalize-scss';
+@include normalize();
+@import '@eightshift/frontend-libs/styles/index.scss';
+
+/* Utils */
+@import 'utils/colors';
+@import 'utils/defaults';
+@import 'utils/shared-variables';
+
+// Config.
+@import 'core';
+
+/* Components */
+@import 'components';
+
+/* Sections */
+@import './../theme/sections/get-started/get-started';
+@import './../theme/sections/intro/intro';
+@import './../theme/sections/project/project';
+@import './../theme/sections/why/why';
+@import './../theme/sections/footer/footer';

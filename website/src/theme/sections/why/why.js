@@ -1,8 +1,7 @@
 import React from 'react';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import '../../../scss/sections/why.scss'
 
-function Why() {
+export default function Why() {
 
   return (
   <section className="why">
@@ -18,5 +17,3 @@ function Why() {
   </section>
   )
 }
-
-export default Why;

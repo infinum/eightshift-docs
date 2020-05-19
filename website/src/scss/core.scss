@@ -1,0 +1,54 @@
+$core-map: (
+  font-family: $base-font-family,
+  color: $base-text-color,
+  background-color: $base-cararra-color,
+  font-size: $base-font-size,
+);
+
+*,
+*::after,
+*::before {
+  @include box-sizing;
+}
+
+html {
+  font-size: map-get-strict($core-map, font-size);
+}
+
+body {
+  @include font-smoothing;
+  font-family: map-get-strict($core-map, font-family);
+  color: map-get-strict($core-map, color);
+  background-color: map-get-strict($core-map, background-color);
+  position: relative;
+  overflow-x: hidden;
+}
+
+// h1, h2, h3, h4, h5, h6 {
+//   font-family: $base-heading-family;
+//   font-size: 32px;
+//   line-height: 1.19;
+//   color: $base-elephant-color;
+// }
+
+// p, a {
+//   font-family: $base-font-family;
+//   font-size: 16px;
+//   font-weight: 500;
+//   line-height: 1.5;
+//   color: $base-cape-color;
+// }
+
+// a {
+//   color: $base-mandy-color;
+// }
+
+// a:hover {
+//   text-decoration: none;
+//   color: $base-flush-color;
+// }
+
+// .docPage_node_modules-\@docusaurus-theme-classic-src-theme-DocPage- {
+//   margin-left: 15px;
+//   margin-right: 15px;
+// }

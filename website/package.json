@@ -11,9 +11,9 @@
   "dependencies": {
     "@docusaurus/core": "^2.0.0-alpha.50",
     "@docusaurus/preset-classic": "^2.0.0-alpha.50",
+    "@eightshift/frontend-libs": "^3.2.2",
     "classnames": "^2.2.6",
     "docusaurus-plugin-sass": "^0.1.8",
-    "media-blender": "^2.1.0",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-scripts": "^3.4.1"

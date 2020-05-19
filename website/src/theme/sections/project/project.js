@@ -1,8 +1,6 @@
 import React from 'react';
-import useBaseUrl from '@docusaurus/useBaseUrl';
-import '../../../scss/sections/project.scss'
 
-function Project() {
+export default function Project() {
 
   return (
   <section className="project">
@@ -89,5 +87,3 @@ function Project() {
   </section>
   )
 }
-
-export default Project;

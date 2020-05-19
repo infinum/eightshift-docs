@@ -1,17 +1,36 @@
-@import '../parts/utils/colors';
+$get-started-map: (
+  title: (
+    mobile: (
+      font-size: 64px,
+      line-height: 1.03,
+    ),
+  ),
+  subtitle: (
+    mobile: (
+      font-size: 18px,
+      line-height: 1.56,
+    ),
+  ),
+  paragraph: (
+    mobile: (
+      font-size: 32px,
+      line-height: 1.19,
+      color: $base-elephant-color,
+    ),
+  ),
+  theme: $base-picton-color,
+  plugin: $base-mandy-color,
+);
 
 .get-started {
-  padding-top: 90px;
-  padding-bottom: 90px;
-  padding-left: 32px;
-  padding-right: 32px;
+  padding: 90px 32px;
 
   &__heading {
     text-align: center;
   }
 
   &__title {
-    font-size: 64px;
+    @include responsive($get-started-map, title);
     font-weight: bold;
     line-height: 1.03;
     letter-spacing: -2px;
@@ -19,8 +38,7 @@
   }
 
   &__subtitle {
-    font-size: 18px;
-    line-height: 1.56;
+    @include responsive($get-started-map, subtitle);
     width: 640px;
     margin-left: auto;
     margin-right: auto;
@@ -37,7 +55,7 @@
   }
 
   &__column {
-    flex: 0 0 50%;
+    @include flex-grid-width(6);
 
     &--plugin {
       padding-top: 80px;
@@ -66,18 +84,16 @@
   }
 
   &__paragraph {
-    font-size: 32px;
     font-weight: bold;
-    line-height: 1.19;
     letter-spacing: -1px;
-    color: $base-elephant-color;
+    @include responsive($get-started-map, paragraph);
   }
 
   &__theme {
-    color: $base-picton-color;
+    color: map-get-strict($get-started-map, theme);
   }
 
   &__plugin {
-    color: $base-mandy-color;
+    color: map-get-strict($get-started-map, plugin);
   }
 }

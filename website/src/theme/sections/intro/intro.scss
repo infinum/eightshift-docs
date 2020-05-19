@@ -1,13 +1,25 @@
-@import '../parts/utils/colors';
+$intro-map: (
+  background-color: $base-cararra-color,
+  title: (
+    mobile: (
+      font-size: 132px,
+      line-height: 0.98,
+      color: $base-elephant-color,
+    ),
+  ),
+  subtitle: (
+    mobile: (
+      font-size: 18px,
+      line-height: 1.56,
+      color: $base-cape-color,
+    ),
+  ),
+);
 
-.navbar {
-  box-shadow: none;
-}
-
-.hero {
+.intro {
   display: flex;
   padding-top: 95px;
-  background-color: $base-cararra-color;
+  background-color: map-get-strict($intro-map, background-color);
 
   &__container {
     display: flex;
@@ -16,14 +28,12 @@
 
   &__column {
     &--content {
-      flex: 0 0 50%;
+      @include flex-grid-width(6);
       padding-left: 100px;
-      margin-right: -210px;
     }
 
     &--image {
-      flex: 0 0 50%;
-      width: 50%;
+      @include flex-grid-width(6);
       overflow: overlay;
       position: relative;
     }
@@ -44,17 +54,13 @@
   }
 
   &__title {
-    font-size: 132px !important;
+    @include responsive($intro-map, title);
     font-weight: bold;
-    line-height: 0.98;
     letter-spacing: -1px;
-    color: $base-elephant-color;
   }
 
   &__subtitle {
-    font-size: 18px !important;
-    line-height: 1.56;
-    color: $base-cape-color;
+    @include responsive($intro-map, subtitle);
     margin-bottom: 50px;
   }
 
