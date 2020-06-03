@@ -1,165 +1,169 @@
 $footer: (
-  container: (
+  footer: (
     mobile: (
-      padding-left: 0,
-      padding-right: 0,
-    ),
-    desktop: (
-      padding-left: 20px,
-      padding-right: 20px,
+      margin-top: 30px,
+      padding: 0,
+      background-color: inherit,
     ),
   ),
-  column: (
+  container: (
     mobile: (
-      flex: 0 0 50%,
-      margin-bottom: 50px,
+      max-width: $base-container-size,
+      margin: 0 auto,
+      padding: 0 $base-gutter-size,
     ),
-    tablet: (
-      flex: 0 0 25%,
+  ),
+  heading: (
+    mobile: (
+      font-family: $base-font-family-alternative,
+      font-size: 64px,
+      line-height: 1.03,
+      letter-spacing: -2px,
+      text-align: center,
+      color: $base-elephant-color,
+      margin-bottom: 125px,
     ),
   ),
   content: (
     mobile: (
-      padding-left: 0,
-      padding-right: 0,
-    ),
-    desktop: (
-      padding-left: 100px,
-      padding-right: 100px,
+      display: flex,
+      flex-wrap: wrap,
+      margin: 0 (-$base-gutter-size / 2) -50px,
     ),
   ),
-  bottom: (
-    mobile: (
-      flex: 0 0 100%,
-      width: 50%,
-      padding-left: 0,
-      padding-right: 0,
-    ),
-    desktop: (
-      flex: 0 0 50%,
-      width: 50%,
-      padding-left: 20px,
-      padding-right: 20px,
-    ),
-  ),
-  left: (
+  item: (
     mobile: (
       text-align: center,
-    ),
-    desktop: (
-      text-align: left,
+      padding: 0 ($base-gutter-size/2),
+      margin-bottom: 50px,
     ),
   ),
-  right: (
+  icon: (
     mobile: (
-      text-align: center,
+      margin-bottom: 25px,
     ),
-    desktop: (
-      text-align: right,
+  ),
+  label: (
+    mobile: (
+      font-size: 24px,
+      font-weight: bold,
+      line-height: 1.13,
+      color: $base-elephant-color,
+      text-align: center,
+      font-family: $base-font-family-alternative,
+      margin-bottom: 20px,
+    ),
+  ),
+  link: (
+    mobile: (
+      margin-top: 30px,
     ),
   ),
 );
 
-/* stylelint-disable docusaurus/copyright-header */
-/**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
- */
-
- .footer {
-  box-shadow: none;
-  margin-top: 30px;
-
-  &__heading {
-    text-align: center;
-  }
-
-  &__title {
-    font-size: 64px;
-    font-weight: bold;
-    line-height: 1.03;
-    letter-spacing: -2px;
-  }
-}
-
-
 .footer {
-  background-color: $base-cararra-color;
-  padding-left: 20px;
-  padding-right: 20px;
-  margin-top: 90px;
-  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.1);
+  @include responsive($footer, footer);
 
   &__container {
     @include responsive($footer, container);
-    display: flex;
-    flex-wrap: wrap;
   }
 
-  &__top {
-    flex: 0 0 100%;
-    width: 100%;
-    padding-top: 70px;
-    padding-bottom: 65px;
+  &__heading {
+    @include responsive($footer, heading);
   }
 
   &__content {
     @include responsive($footer, content);
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
   }
 
-  &__column {
-    @include responsive($footer, column);
-    text-align: center;
+  &__item {
+    @include responsive($footer, item);
+    @include flex-grid-width(12);
+
+    @include media(tablet) {
+      @include flex-grid-width(6);
+    }
+    @include media(desktop up) {
+      @include flex-grid-width(3);
+    }
   }
 
-  &__image {
-    margin-bottom: 25px;
+  &__icon {
+    @include responsive($footer, icon);
   }
 
-  &__text p{
-    font-size: 24px;
-    line-height: 1.13;
-    font-weight: bold;
-    color: $base-elephant-color;
+  &__label {
+    @include responsive($footer, label);
   }
 
-  &__bottom {
-    display: flex;
-    flex-wrap: wrap;
-    flex: 0 0 100%;
-    width: 100%;
-    padding-top: 45px;
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 1.44;
-    color: $base-pewter-color;
+  &__link {
+    @include responsive($footer, link);
   }
 
-  &__left {
-    @include responsive($footer, bottom);
-    @include responsive($footer, left);
-  }
+  // &__top {
+  //   flex: 0 0 100%;
+  //   width: 100%;
+  //   padding-top: 70px;
+  //   padding-bottom: 65px;
+  // }
 
-  &__right {
-    @include responsive($footer, bottom);
-    @include responsive($footer, right);
-  }
+  // &__content {
+  //   @include responsive($footer, content);
+  //   display: flex;
+  //   flex-wrap: wrap;
+  //   width: 100%;
+  // }
 
-  &__eightshift {
-    font-size: 18px;
-    color: $base-cape-color;
-  }
+  // &__column {
+  //   @include responsive($footer, column);
+  //   text-align: center;
+  // }
 
-  &__dot {
-    margin-left: 5px;
-    margin-right: 5px;
-  }
+  // &__image {
+  //   margin-bottom: 25px;
+  // }
 
-  &__logo {
-    margin-left: 10px;
-  }
+  // &__text p{
+  //   font-size: 24px;
+  //   line-height: 1.13;
+  //   font-weight: bold;
+  //   color: $base-elephant-color;
+  // }
+
+  // &__bottom {
+  //   display: flex;
+  //   flex-wrap: wrap;
+  //   flex: 0 0 100%;
+  //   width: 100%;
+  //   padding-top: 45px;
+  //   font-size: 18px;
+  //   font-weight: 500;
+  //   line-height: 1.44;
+  //   color: $base-pewter-color;
+  // }
+
+  // &__left {
+  //   @include responsive($footer, bottom);
+  //   @include responsive($footer, left);
+  // }
+
+  // &__right {
+  //   @include responsive($footer, bottom);
+  //   @include responsive($footer, right);
+  // }
+
+  // &__eightshift {
+  //   font-size: 18px;
+  //   color: $base-cape-color;
+  // }
+
+  // &__dot {
+  //   margin-left: 5px;
+  //   margin-right: 5px;
+  // }
+
+  // &__logo {
+  //   margin-left: 10px;
+  // }
 
 }

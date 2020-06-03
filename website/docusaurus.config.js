@@ -50,9 +50,6 @@ module.exports = {
         theme: require('prism-react-renderer/themes/dracula'),
       },
     },
-    footer: {
-      style: 'light',
-    },
     algolia: {
       apiKey: '921996f662a2a05c1ffbcf2a87146376',
       indexName: 'infinum_eightshift',

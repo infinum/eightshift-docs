@@ -5,6 +5,7 @@ import Why from '../theme/sections/why/why';
 import GetStarted from '../theme/sections/get-started/get-started';
 import Project from '../theme/sections/project/project';
 import Footer from '../theme/sections/Footer/Footer';
+import Foot from '../theme/sections/Foot/Foot';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 export default function Home() {
@@ -19,10 +20,8 @@ export default function Home() {
       <Why />
       <GetStarted />
       <Project />
-      <div className="footer__heading">
-        <h2 className="footer__title">Start exploring</h2>
-      </div>
       <Footer />
+      <Foot />
     </Layout>
   );
 }
