@@ -1,22 +1,24 @@
 $get-started: (
   get-started: (
     mobile: (
-      padding: 0 0 135px,
-      background-color: inherit,
+      padding: 0 0 100px,
+    ),
+    tablet: (
+      padding: 0 0 200px,
     ),
   ),
   content: (
     mobile: (
       display: flex,
       flex-wrap: wrap,
-      margin: 0 (-$base-gutter-size / 2) -50px,
+      margin: 0 (-$base-gutter-size / 2) -90px,
     ),
   ),
   item: (
     mobile: (
       text-align: center,
       padding: 0 ($base-gutter-size/2),
-      margin-bottom: 50px,
+      margin-bottom: 90px,
       flex: 0 0 calc-grid-width(12),
     ),
     tablet: (
@@ -25,12 +27,10 @@ $get-started: (
   ),
   item-even:(
     mobile: (
-      padding-top: 80px,
+      padding-top: 0,
     ),
-  ),
-  link: (
-    mobile: (
-      display: block
+    tablet: (
+      padding-top: 80px,
     ),
   ),
   icon: (
@@ -62,8 +62,8 @@ $get-started: (
       margin: 0 auto 25px,
     ),
   ),
-  plugin: $base-picton-color,
-  theme: $base-mandy-color,
+  theme: $base-picton-color,
+  plugin: $base-mandy-color,
 );
 
 .shift-get-started {
@@ -95,10 +95,17 @@ $get-started: (
   }
 
   &__link {
-    @include responsive($get-started, link);
-
     &:hover {
-      text-decoration: none,
+      text-decoration: none;
+
+      #{$this}__shift-arrow {
+        @extend %shift-arrow-hover;
+      }
+
+      #{$this}__icon-bg {
+        transform: rotate(5deg);
+        transition: all 0.3s ease-in,
+      }
     }
   }
 
@@ -108,6 +115,10 @@ $get-started: (
 
   &__icon-img {
     @include responsive($get-started, icon-img);
+  }
+
+  &__icon-bg {
+    transition: all 0.3s ease-in,
   }
 
   &__label {

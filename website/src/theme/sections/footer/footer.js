@@ -1,6 +1,7 @@
 import React from 'react';
 import Heading from './../../components/heading/heading';
 import Container from './../../components/container/container';
+import Arrow from './../../components/arrow/arrow';
 
 export default function Footer() {
 
@@ -54,12 +55,12 @@ export default function Footer() {
 
     return (
       <div className={`${component}__item`} key={index}>
-        <div className={`${component}__icon`}>
-          {icon}
-        </div>
-        <div className={`${component}__label`} dangerouslySetInnerHTML={{__html: label}}></div>
         <a className={`${component}__link`} href={link}>
-          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24"><path fill="#0C3636" d="M12.536 18.228l6.364-6.364L12.536 5.5l-1.414 1.414 3.912 3.914H5.172v2h9.936l-3.986 3.986 1.414 1.414z"/></svg>
+          <div className={`${component}__icon`}>
+            {icon}
+          </div>
+          <div className={`${component}__label`} dangerouslySetInnerHTML={{__html: label}}></div>
+          <Arrow componentClass={component} />
         </a>
       </div>
     )

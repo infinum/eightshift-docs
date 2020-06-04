@@ -15,7 +15,7 @@ function Foot() {
         <div className={`${component}__columns`}>
           <div className={`${component}__column ${component}__column--left`}>
             {'Made with 🧡 by '}
-            <a href="https://eightshift.com/" className={`${component}__link`}>
+            <a href="https://eightshift.com/" target="_blank" rel="noopener noreferrer" className={`${component}__link`}>
               {'Eightshift'}
             </a>
             {' team'}
@@ -26,7 +26,7 @@ function Foot() {
             </span>
             <span className={`${component}__logo-wrap`}>
               {'Part of '}
-              <a href="https://eightshift.com/" className={`${component}__logo`}>
+              <a href="https://infinum.com/" target="_blank" rel="noopener noreferrer" rel="nofolloe" className={`${component}__logo`}>
                 <InfinumLogo />
               </a>
             </span>

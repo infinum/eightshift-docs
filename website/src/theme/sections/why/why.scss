@@ -1,42 +1,61 @@
-.why {
-  padding-top: 90px;
-  padding-bottom: 100px;
-  padding-left: 32px;
-  padding-right: 32px;
+$why: (
+  why: (
+    mobile: (
+      padding: 0 0 55px,
+    ),
+    tablet: (
+      padding: 0 0 190px,
+    ),
+  ),
+  heading: (
+    mobile: (
+      max-width: 580px,
+    ),
+  ),
+  content: (
+    mobile: (
+      display: flex,
+    ),
+  ),
+  image: (
+    mobile: (
+      max-width: 100%,
+      height: auto,
+    ),
+  ),
+  image-desktop: (
+    mobile: (
+      display: none,
+    ),
+    tablet: (
+      display: block,
+    ),
+  ),
+  image-mobile: (
+    mobile: (
+      display: block,
+    ),
+    tablet: (
+      display: none,
+    ),
+  ),
+);
 
-  &__container {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-  }
+.shift-why {
+  @include responsive($why, why);
 
-  &__content {
-    flex: 0 0 100%;
-    width: 100%;
-    padding-left: 220px;
-    padding-bottom: 75px;
-  }
-
-  &__title {
-    font-size: 48px;
-    line-height: 1.13;
-    letter-spacing: -1.6px;
-    margin-bottom: 32px;
-  }
-
-  &__paragraph {
-    font-size: 18px;
-    line-height: 1.56;
-    width: 580px;
+  &__shift-heading {
+    @include responsive($why, heading);
   }
 
   &__image {
-    flex: 0 0 100%;
-    width: 100%;
-    text-align: center;
-  }
+    @include responsive($why, image);
 
-  &__img {
-    max-width: 1094px;
+    &--desktop {
+      @include responsive($why, image-desktop);
+    }
+    &--mobile {
+      @include responsive($why, image-mobile);
+    }
   }
 }

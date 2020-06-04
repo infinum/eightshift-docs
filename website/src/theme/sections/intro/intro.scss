@@ -1,105 +1,136 @@
-$intro-map: (
-  background-color: $base-cararra-color,
-  title: (
+$intro: (
+  intro: (
     mobile: (
-      font-size: 132px,
-      line-height: 0.98,
-      color: $base-elephant-color,
+      padding-top: 70px,
+      padding-bottom: 80px,
+      position: relative,
+    ),
+    tablet: (
+      padding-top: 160px,
     ),
   ),
-  subtitle: (
+  title: (
     mobile: (
-      font-size: 18px,
+      font-size: 42px,
+      line-height: 1.13,
+      color: $base-elephant-color,
+      font-weight: bold,
+      letter-spacing: -1px,
+      font-family: $base-font-family-alternative,
+      z-index: 1,
+      position: relative,
+    ),
+    tablet: (
+      font-size: 100px,
+      line-height: 0.98,
+      margin-bottom: 40px,
+    ),
+    desktop: (
+      font-size: 132px,
+    )
+  ),
+  content: (
+    mobile: (
+      font-size: 16px,
       line-height: 1.56,
       color: $base-cape-color,
+      margin-bottom: 25px,
+      padding-left: 75px,
+      position: relative,
+      max-width: 550px,
     ),
+    tablet: (
+      margin-bottom: 50px,
+      padding-left: 115px,
+      font-size: 18px,
+    )
+  ),
+  content-before: (
+    mobile: (
+      content: '',
+      width: 45px,
+      position: absolute,
+      left: 0,
+      top: 20px,
+      background-color: $base-sirocco-color,
+      height: 1px,
+    ),
+    tablet: (
+      width: 75px,
+    )
+  ),
+  button: (
+    mobile: (
+      margin-left: 75px,
+    ),
+    tablet: (
+      margin-left: 115px,
+    )
+  ),
+  image: (
+    mobile: (
+      position: relative,
+      margin: 0 (-$base-gutter-size) 40px,
+      display: flex,
+      justify-content: flex-end,
+    ),
+    tablet: (
+      position: absolute,
+      right: 0,
+      top: 50%,
+      display: block,
+      margin: 0,
+      transform: translateY(-50%),
+    )
+  ),
+  image-bg: (
+    mobile: (
+      display: block,
+    ),
+  ),
+  image-img: (
+    mobile: (
+      display: block,
+      position: absolute,
+      left: 50%,
+      top: 50%,
+      max-width: 80%,
+      transform: translate(-50%, -50%),
+    ),
+    tablet: (
+      max-width: 100%,
+    )
   ),
 );
 
-.intro {
-  display: flex;
-  padding-top: 95px;
-  background-color: map-get-strict($intro-map, background-color);
+.shift-intro {
+  @include responsive($intro, intro);
 
-  &__container {
-    display: flex;
-    width: 100%;
-  }
-
-  &__column {
-    &--content {
-      @include flex-grid-width(6);
-      padding-left: 100px;
-    }
-
-    &--image {
-      @include flex-grid-width(6);
-      overflow: overlay;
-      position: relative;
-    }
+  &__title {
+    @include responsive($intro, title);
   }
 
   &__content {
-    padding-top: 30px;
-    display: flex;
-  }
+    @include responsive($intro, content);
 
-  &__one {
-    width: 75px;
-  }
-
-  &__two {
-    padding-left: 40px;
-    width: 435px;
-  }
-
-  &__title {
-    @include responsive($intro-map, title);
-    font-weight: bold;
-    letter-spacing: -1px;
-  }
-
-  &__subtitle {
-    @include responsive($intro-map, subtitle);
-    margin-bottom: 50px;
-  }
-
-  &__line {
-    width: 75px;
-    color: #778080;
-  }
-
-  &__buttons {
-    display: flex;
-    align-items: center;
-  }
-
-  &__button {
-    font-size: 14px;
-    letter-spacing: 0.6px;
-    line-height: 1.43;
-    text-transform: uppercase;
-    color: $base-white-color;
-    background-color: $base-elephant-color;
-    padding: 14px 44px;
-    border-radius: 100px;
-    transition: all .3s ease-out;
-
-    &:hover {
-      color: $base-white-color;
-      transform: scale(1.1);
+    &::before {
+      @include responsive($intro, content-before);
     }
   }
 
-  &__background {
-    position: absolute;
-    bottom: 0;
-    right: 0;
+  &__shift-button {
+    @include responsive($intro, button);
   }
 
   &__image {
-    position: absolute;
-    bottom: 115px;
-    left: 105px;
+    @include responsive($intro, image);
+  }
+
+  &__image-bg {
+    @include responsive($intro, image-bg);
+  }
+
+  &__image-img {
+    @include responsive($intro, image-img);
   }
 }

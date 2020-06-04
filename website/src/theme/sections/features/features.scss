@@ -1,8 +1,10 @@
 $features: (
   features: (
     mobile: (
-      padding: 0 0 200px,
-      background-color: inherit,
+      padding: 0 0 110px,
+    ),
+    tablet: (
+      padding: 0 0 180px,
     ),
   ),
   content: (
@@ -54,6 +56,7 @@ $features: (
 );
 
 .shift-features {
+  $this: &;
   @include responsive($features, features);
 
   &__content {
@@ -62,6 +65,13 @@ $features: (
 
   &__item {
     @include responsive($features, item);
+
+    &:hover {
+      #{$this}__title::before {
+        transform: rotate(45deg);
+        transition: all 0.3s ease-in,
+      }
+    }
   }
 
   &__title {
@@ -74,6 +84,7 @@ $features: (
       top: 7px;
       width: 16px;
       height: 16px;
+      transition: all 0.3s ease-in,
     }
 
     &--red::before {

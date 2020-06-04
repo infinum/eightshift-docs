@@ -1,45 +1,35 @@
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
 import React from 'react';
-import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Container from './../../components/container/container';
+import Button from './../../components/button/button';
 
 export default function Intro() {
   const context = useDocusaurusContext();
   const {siteConfig = {}} = context;
 
+  const component = 'shift-intro';
+
   return (
-    <section className="intro">
-    <div className="intro__container">
-      <div className="intro__column--content">
-        <h1 className="intro__title">{siteConfig.title}</h1>
-        <div className="intro__content">
-          <div className="intro__one">
-            <hr className="intro__line"></hr>
-          </div>
-          <div className="intro__two">
-            <p className="intro__subtitle">{siteConfig.tagline}</p>
-            <div className="intro__buttons">
-              <Link
-                className="intro__button"
-                to={useBaseUrl('/get-started')}>
-                Get Started
-              </Link>
-            </div>
-          </div>
+    <div className={component}>
+      <Container
+        componentClass={component}
+        size={'medium'}
+      >
+        <div className={`${component}__title`} dangerouslySetInnerHTML={{__html: 'Eightshit<br/>Development<br/>kit'}}></div>
+        <div className={`${component}__image`}>
+          <img className={`${component}__image-bg`} src={useBaseUrl('img/bg.svg')} />
+          <img className={`${component}__image-img`} src={useBaseUrl('img/img-boilerplate-intro.png')} />
         </div>
-      </div>
-      <div className="intro__column--image">
-        <img className="intro__background" src={useBaseUrl('img/bg.svg')} />
-        <img className="intro__image" src={useBaseUrl('img/img-boilerplate-intro.png')} />
-      </div>
+        <div className={`${component}__content`}>
+          {siteConfig.tagline}
+        </div>
+        <Button 
+          componentClass={component}
+          label={'Get Started'}
+          href={useBaseUrl('/get-started')}
+        />
+      </Container>
     </div>
-  </section>
   );
 }

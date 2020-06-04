@@ -3,10 +3,10 @@ $heading: (
     mobile: (
       text-align: center,
       max-width: 750px,
-      margin: 0 auto 65px,
+      margin: 0 auto 60px,
     ),
     tablet: (
-      margin-bottom: 125px,
+      margin-bottom: 75px,
     )
   ),
   heading-left: (
@@ -19,14 +19,32 @@ $heading: (
   title: (
     mobile: (
       font-family: $base-font-family-alternative,
-      font-size: 32px,
-      line-height: 1.19,
+      
       letter-spacing: -2px,
       color: $base-elephant-color,
     ),
+    
+  ),
+  title-sizes: (
+    mobile: (
+      default: (
+        font-size: 32px,
+        line-height: 1.19,
+      ),
+      medium: (
+        font-size: 32px,
+        line-height: 1.19,
+      ),
+    ),
     tablet: (
-      font-size: 64px,
-      line-height: 1.03,
+      default: (
+        font-size: 64px,
+        line-height: 1.03,
+      ),
+      medium: (
+        font-size: 48px,
+        line-height: 1.13,
+      ),
     ),
   ),
   subtitle: (
@@ -34,7 +52,10 @@ $heading: (
       font-size: 18px,
       line-height: 1.56,
       color: $base-cape-color,
-      margin-top: 30px,
+      margin-top: 20px,
+    ),
+    tablet: (
+      margin-top: 40px,
     ),
   ),
 );
@@ -50,6 +71,10 @@ $heading: (
 
   &__title {
     @include responsive($heading, title);
+  }
+
+  &__title-size {
+    @include responsive-modifiers($heading, title-sizes);
   }
 
   &__subtitle {

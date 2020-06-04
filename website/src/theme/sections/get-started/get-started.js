@@ -1,13 +1,14 @@
 import React from 'react';
 import Heading from './../../components/heading/heading';
 import Container from './../../components/container/container';
+import Arrow from './../../components/arrow/arrow';
 
 export default function GetStarted() {
 
   const component = 'shift-get-started';
 
   const PluginBgIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="230" height="200"><path fill="#44AEDE" fillRule="evenodd" d="M225.245 67.358c-5.96-34.252-43.288-94.865-112.527-43.525C39.06 78.45-3.008 97.91 3.697 139.423c15.967 98.854 244.434 59.444 221.548-72.065"/></svg>
+    <svg className={`${component}__icon-bg`} xmlns="http://www.w3.org/2000/svg" width="230" height="200"><path fill="#44AEDE" fillRule="evenodd" d="M225.245 67.358c-5.96-34.252-43.288-94.865-112.527-43.525C39.06 78.45-3.008 97.91 3.697 139.423c15.967 98.854 244.434 59.444 221.548-72.065"/></svg>
   );
 
   const PluginIcon = () => (
@@ -15,7 +16,7 @@ export default function GetStarted() {
   );
 
   const ThemeBgIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="230" height="200"><path fill="#E84E4E" fillRule="evenodd" d="M192.864 25.003c26.035 21.887 61.732 83.48-11.392 127.41-77.467 46.539-127.873 53.76-159.12 27.007C-46.375 120.576 92.91-59.028 192.864 25.003"/></svg>
+    <svg className={`${component}__icon-bg`} xmlns="http://www.w3.org/2000/svg" width="230" height="200"><path fill="#E84E4E" fillRule="evenodd" d="M192.864 25.003c26.035 21.887 61.732 83.48-11.392 127.41-77.467 46.539-127.873 53.76-159.12 27.007C-46.375 120.576 92.91-59.028 192.864 25.003"/></svg>
   );
 
   const ThemeIcon = () => (
@@ -56,7 +57,7 @@ export default function GetStarted() {
             {icon}
           </div>
           <div className={`${component}__label`} dangerouslySetInnerHTML={{__html: label}}></div>
-          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24"><path fill="#0C3636" d="M12.536 18.228l6.364-6.364L12.536 5.5l-1.414 1.414 3.912 3.914H5.172v2h9.936l-3.986 3.986 1.414 1.414z"/></svg>
+          <Arrow componentClass={component} />
         </a>
       </div>
     )

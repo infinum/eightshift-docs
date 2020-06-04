@@ -9,7 +9,8 @@ export default function Heading(props) {
     componentClass,
     title,
     subtitle,
-    align,
+    align='center',
+    titleSize='default',
   } = props;
 
   return (
@@ -21,7 +22,7 @@ export default function Heading(props) {
           ${component}__align--${align}
         `}>
           {title &&
-            <div className={`${component}__title`}>
+            <div className={`${component}__title ${component}__title-size--${titleSize}`}>
               {title}
             </div>
           }
