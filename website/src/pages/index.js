@@ -3,7 +3,7 @@ import Layout from '@theme/Layout';
 import Intro from '../theme/sections/intro/intro';
 import Why from '../theme/sections/why/why';
 import GetStarted from '../theme/sections/get-started/get-started';
-import Project from '../theme/sections/project/project';
+import Features from '../theme/sections/features/features';
 import Footer from '../theme/sections/Footer/Footer';
 import Foot from '../theme/sections/Foot/Foot';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -19,7 +19,7 @@ export default function Home() {
       <Intro />
       <Why />
       <GetStarted />
-      <Project />
+      <Features />
       <Footer />
       <Foot />
     </Layout>

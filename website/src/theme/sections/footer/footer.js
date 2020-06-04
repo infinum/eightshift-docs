@@ -1,13 +1,6 @@
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
 import React from 'react';
 
-function Footer() {
+export default function Footer() {
 
   const component = 'footer';
 
@@ -27,30 +20,30 @@ function Footer() {
     <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64"><g fill="none" fillRule="evenodd"><path fill="#44AEDE" d="M46.276 34.514l-.701.956c-10.94 14.774-19.96 20.075-28.095 17.498C-.793 47.18 11.506.591 37.953 8.708c6.889 2.113 18.948 11.175 8.323 25.806z"/><path fill="#FFF" d="M37 16v10h10"/><path stroke="#0C3636" strokeWidth="2" d="M37 16v10h10"/><path stroke="#0C3636" strokeWidth="2" d="M47 45.881V51H20V16h17l10 10v10.422"/><path stroke="#0C3636" strokeWidth="2" d="M38.375 36.422h12.456v9.459h-7.855"/><path fill="#FFF" d="M38.375 36.23l-3.804 10.802-2.595-.913a5.728 5.728 0 013.804-10.804l2.595.915z"/><path stroke="#0C3636" strokeLinecap="round" strokeWidth="2" d="M40.006 46.131l-4.557-1.63m6.33-4.014l-4.296-1.537"/><path stroke="#0C3636" strokeWidth="2" d="M29.879 36.624l-.236-.083a2.533 2.533 0 00-1.681 4.777l.23.08"/><path stroke="#0C3636" strokeWidth="2" d="M34.57 47.032l-2.594-.914a5.727 5.727 0 113.804-10.803l2.595.914"/><path stroke="#0C3636" strokeLinecap="round" strokeWidth="2" d="M34.035 48.498l5.111-14.254"/><path stroke="#0C3636" strokeWidth="2" d="M27.58 38.527c-3.556-1.253-7.597-4.167-7.58-10.94"/></g></svg>
   );
 
-  const items = [
+  const itemsData = [
     {
       icon: <BoilerplateIcon />,
-      label: 'Eightshift\n\nBoilerplate',
+      label: 'Eightshift<br/ >Boilerplate',
       link: 'https://github.com/infinum/eightshift-boilerplate',
     },
     {
       icon: <PluginIcon />,
-      label: 'Eightshift\n\nBoilerplate Plugin',
+      label: 'Eightshift<br />Boilerplate Plugin',
       link: 'https://github.com/infinum/eightshift-boilerplate-plugin',
     },
     {
       icon: <FrontendLibsIcon />,
-      label: 'Eightshift\n\nFrontend Libs',
+      label: 'Eightshift<br />Frontend Libs',
       link: 'https://github.com/infinum/eightshift-frontend-libs',
     },
     {
       icon: <LibsIcon />,
-      label: 'Eightshift\n\ Libs',
+      label: 'Eightshift<br />Libs',
       link: 'https://github.com/infinum/eightshift-libs',
     }
   ];
 
-  const itemsComponent = items.map((item, index) => {
+  const items = itemsData.map((item, index) => {
     const {
       icon,
       label,
@@ -62,9 +55,7 @@ function Footer() {
         <div className={`${component}__icon`}>
           {icon}
         </div>
-        <div className={`${component}__label`}>
-          {label}
-        </div>
+        <div className={`${component}__label`} dangerouslySetInnerHTML={{__html: label}}></div>
         <a className={`${component}__link`} href={link}>
           <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24"><path fill="#0C3636" d="M12.536 18.228l6.364-6.364L12.536 5.5l-1.414 1.414 3.912 3.914H5.172v2h9.936l-3.986 3.986 1.414 1.414z"/></svg>
         </a>
@@ -79,11 +70,9 @@ function Footer() {
           {'Start exploring'}
         </div>
         <div className={`${component}__content`}>
-          {itemsComponent}
+          {items}
         </div>
       </div>
     </div>
   );
 }
-
-export default Footer;

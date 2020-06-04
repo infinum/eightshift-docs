@@ -30,10 +30,12 @@ function Foot() {
             <span className={`${component}__copy`}>
               {'© Eightshift. All rights reserved'}
             </span>
-            {'Part of '}
-            <a href="https://eightshift.com/" className={`${component}__logo`}>
-              <InfinumLogo />
-            </a>
+            <span className={`${component}__logo-wrap`}>
+              {'Part of '}
+              <a href="https://eightshift.com/" className={`${component}__logo`}>
+                <InfinumLogo />
+              </a>
+            </span>
           </div>
         </div>
       </div>

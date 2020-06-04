@@ -1,8 +1,7 @@
 $footer: (
   footer: (
     mobile: (
-      margin-top: 30px,
-      padding: 0,
+      padding: 0 0 135px,
       background-color: inherit,
     ),
   ),
@@ -16,11 +15,16 @@ $footer: (
   heading: (
     mobile: (
       font-family: $base-font-family-alternative,
-      font-size: 64px,
-      line-height: 1.03,
+      font-size: 32px,
+      line-height: 1.19,
       letter-spacing: -2px,
       text-align: center,
       color: $base-elephant-color,
+      margin-bottom: 65px,
+    ),
+    tablet: (
+      font-size: 64px,
+      line-height: 1.03,
       margin-bottom: 125px,
     ),
   ),
@@ -36,6 +40,13 @@ $footer: (
       text-align: center,
       padding: 0 ($base-gutter-size/2),
       margin-bottom: 50px,
+      flex: 0 0 calc-grid-width(12),
+    ),
+    tablet: (
+      flex: 0 0 calc-grid-width(6),
+    ),
+    desktop: (
+      flex: 0 0 calc-grid-width(3),
     ),
   ),
   icon: (
@@ -78,14 +89,6 @@ $footer: (
 
   &__item {
     @include responsive($footer, item);
-    @include flex-grid-width(12);
-
-    @include media(tablet) {
-      @include flex-grid-width(6);
-    }
-    @include media(desktop up) {
-      @include flex-grid-width(3);
-    }
   }
 
   &__icon {
@@ -99,71 +102,4 @@ $footer: (
   &__link {
     @include responsive($footer, link);
   }
-
-  // &__top {
-  //   flex: 0 0 100%;
-  //   width: 100%;
-  //   padding-top: 70px;
-  //   padding-bottom: 65px;
-  // }
-
-  // &__content {
-  //   @include responsive($footer, content);
-  //   display: flex;
-  //   flex-wrap: wrap;
-  //   width: 100%;
-  // }
-
-  // &__column {
-  //   @include responsive($footer, column);
-  //   text-align: center;
-  // }
-
-  // &__image {
-  //   margin-bottom: 25px;
-  // }
-
-  // &__text p{
-  //   font-size: 24px;
-  //   line-height: 1.13;
-  //   font-weight: bold;
-  //   color: $base-elephant-color;
-  // }
-
-  // &__bottom {
-  //   display: flex;
-  //   flex-wrap: wrap;
-  //   flex: 0 0 100%;
-  //   width: 100%;
-  //   padding-top: 45px;
-  //   font-size: 18px;
-  //   font-weight: 500;
-  //   line-height: 1.44;
-  //   color: $base-pewter-color;
-  // }
-
-  // &__left {
-  //   @include responsive($footer, bottom);
-  //   @include responsive($footer, left);
-  // }
-
-  // &__right {
-  //   @include responsive($footer, bottom);
-  //   @include responsive($footer, right);
-  // }
-
-  // &__eightshift {
-  //   font-size: 18px;
-  //   color: $base-cape-color;
-  // }
-
-  // &__dot {
-  //   margin-left: 5px;
-  //   margin-right: 5px;
-  // }
-
-  // &__logo {
-  //   margin-left: 10px;
-  // }
-
 }
