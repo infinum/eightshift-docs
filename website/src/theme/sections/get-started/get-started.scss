@@ -1,99 +1,116 @@
-$get-started-map: (
-  title: (
+$get-started: (
+  get-started: (
     mobile: (
-      font-size: 64px,
-      line-height: 1.03,
+      padding: 0 0 135px,
+      background-color: inherit,
     ),
   ),
-  subtitle: (
+  content: (
     mobile: (
-      font-size: 18px,
-      line-height: 1.56,
+      display: flex,
+      flex-wrap: wrap,
+      margin: 0 (-$base-gutter-size / 2) -50px,
     ),
   ),
-  paragraph: (
+  item: (
+    mobile: (
+      text-align: center,
+      padding: 0 ($base-gutter-size/2),
+      margin-bottom: 50px,
+      flex: 0 0 calc-grid-width(12),
+    ),
+    tablet: (
+      flex: 0 0 calc-grid-width(6),
+    ),
+  ),
+  item-even:(
+    mobile: (
+      padding-top: 80px,
+    ),
+  ),
+  link: (
+    mobile: (
+      display: block
+    ),
+  ),
+  icon: (
+    mobile: (
+      width: 230px,
+      height: 200px,
+      position: relative,
+      margin: 0 auto 25px,
+    ),
+  ),
+  icon-img: (
+    mobile: (
+      position: absolute,
+      left: 0,
+      right: 0,
+      top: 0,
+      bottom: 0,
+    ),
+  ),
+  label: (
     mobile: (
       font-size: 32px,
+      font-weight: bold,
       line-height: 1.19,
+      letter-spacing: -1px,
+      font-family: $base-font-family-alternative,
       color: $base-elephant-color,
+      max-width: 300px,
+      margin: 0 auto 25px,
     ),
   ),
-  theme: $base-picton-color,
-  plugin: $base-mandy-color,
+  plugin: $base-picton-color,
+  theme: $base-mandy-color,
 );
 
-.get-started {
-  padding: 90px 32px;
+.shift-get-started {
+  $this: &;
+  @include responsive($get-started, get-started);
 
-  &__heading {
-    text-align: center;
+  &__content {
+    @include responsive($get-started, content);
   }
 
-  &__title {
-    @include responsive($get-started-map, title);
-    font-weight: bold;
-    line-height: 1.03;
-    letter-spacing: -2px;
-    margin-bottom: 35px;
-  }
+  &__item {
+    @include responsive($get-started, item);
 
-  &__subtitle {
-    @include responsive($get-started-map, subtitle);
-    width: 640px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-bottom: 90px;
-  }
-
-  &__container {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    max-width: 750px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  &__column {
-    @include flex-grid-width(6);
+    &:nth-child(even) {
+      @include responsive($get-started, item-even);
+    }
 
     &--plugin {
-      padding-top: 80px;
+      #{$this}__label-highlight {
+        color: map-get-strict($get-started, plugin);
+      }
+    }
+
+    &--theme {
+      #{$this}__label-highlight {
+        color: map-get-strict($get-started, theme);
+      }
     }
   }
 
-  &__image {
-    display: block;
-    width: 100%;
-    position: relative;
-    text-align: center;
-    margin-bottom: 25px;
-  }
+  &__link {
+    @include responsive($get-started, link);
 
-  &__background {
-    position: relative;
+    &:hover {
+      text-decoration: none,
+    }
   }
 
   &__icon {
-    position: absolute;
-    left: 20%;
+    @include responsive($get-started, icon);
   }
 
-  &__content {
-    text-align: center;
+  &__icon-img {
+    @include responsive($get-started, icon-img);
   }
 
-  &__paragraph {
-    font-weight: bold;
-    letter-spacing: -1px;
-    @include responsive($get-started-map, paragraph);
-  }
-
-  &__theme {
-    color: map-get-strict($get-started-map, theme);
-  }
-
-  &__plugin {
-    color: map-get-strict($get-started-map, plugin);
+  &__label {
+    @include responsive($get-started, label);
   }
 }

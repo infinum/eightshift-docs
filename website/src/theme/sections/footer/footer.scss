@@ -5,29 +5,6 @@ $footer: (
       background-color: inherit,
     ),
   ),
-  container: (
-    mobile: (
-      max-width: $base-container-size,
-      margin: 0 auto,
-      padding: 0 $base-gutter-size,
-    ),
-  ),
-  heading: (
-    mobile: (
-      font-family: $base-font-family-alternative,
-      font-size: 32px,
-      line-height: 1.19,
-      letter-spacing: -2px,
-      text-align: center,
-      color: $base-elephant-color,
-      margin-bottom: 65px,
-    ),
-    tablet: (
-      font-size: 64px,
-      line-height: 1.03,
-      margin-bottom: 125px,
-    ),
-  ),
   content: (
     mobile: (
       display: flex,
@@ -60,7 +37,6 @@ $footer: (
       font-weight: bold,
       line-height: 1.13,
       color: $base-elephant-color,
-      text-align: center,
       font-family: $base-font-family-alternative,
       margin-bottom: 20px,
     ),
@@ -72,16 +48,8 @@ $footer: (
   ),
 );
 
-.footer {
+.shift-footer {
   @include responsive($footer, footer);
-
-  &__container {
-    @include responsive($footer, container);
-  }
-
-  &__heading {
-    @include responsive($footer, heading);
-  }
 
   &__content {
     @include responsive($footer, content);

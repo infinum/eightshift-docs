@@ -5,28 +5,6 @@ $features: (
       background-color: inherit,
     ),
   ),
-  container: (
-    mobile: (
-      max-width: $base-container-size,
-      margin: 0 auto,
-      padding: 0 $base-gutter-size,
-    ),
-  ),
-  heading: (
-    mobile: (
-      font-family: $base-font-family-alternative,
-      font-size: 32px,
-      line-height: 1.19,
-      letter-spacing: -2px,
-      color: $base-elephant-color,
-      margin-bottom: 65px,
-    ),
-    tablet: (
-      font-size: 64px,
-      line-height: 1.03,
-      margin-bottom: 125px,
-    ),
-  ),
   content: (
     mobile: (
       display: flex,
@@ -75,16 +53,8 @@ $features: (
   ),
 );
 
-.features {
+.shift-features {
   @include responsive($features, features);
-
-  &__container {
-    @include responsive($features, container);
-  }
-
-  &__heading {
-    @include responsive($features, heading);
-  }
 
   &__content {
     @include responsive($features, content);

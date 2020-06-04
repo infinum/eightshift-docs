@@ -12,13 +12,6 @@ $foot: (
       padding: 0 0 45px,
     ),
   ),
-  container: (
-    mobile: (
-      max-width: $base-container-size,
-      margin: 0 auto,
-      padding: 0 $base-gutter-size,
-    ),
-  ),
   columns: (
     mobile: (
       display: flex,
@@ -92,12 +85,8 @@ $foot: (
   ),
 );
 
-.foot {
+.shift-foot {
   @include responsive($foot, foot);
-
-  &__container {
-    @include responsive($foot, container);
-  }
 
   &__columns {
     @include responsive($foot, columns);

@@ -1,8 +1,10 @@
 import React from 'react';
+import Heading from './../../components/heading/heading';
+import Container from './../../components/container/container';
 
 export default function Features() {
 
-  const component = 'features';
+  const component = 'shift-features';
 
   const data = [
     {
@@ -93,14 +95,19 @@ export default function Features() {
 
   return (
     <div className={component}>
-      <div className={`${component}__container`}>
-        <div className={`${component}__heading`}>
-          Why should you use this<br />for your next project?
-        </div>
+      <Container
+        componentClass={component}
+        size={'medium'}
+      >
+        <Heading
+          componentClass={component}
+          title={'Why should you use this for your next project?'}
+          align={'left'}
+        />
         <div className={`${component}__content`}>
           {items}
         </div>
-      </div>
+      </Container>
     </div>
   )
 }

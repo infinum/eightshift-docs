@@ -15,6 +15,10 @@
 /* Components */
 @import 'components';
 
+// Components.
+@import './../theme/components/heading/heading';
+@import './../theme/components/container/container';
+
 /* Sections */
 @import './../theme/sections/get-started/get-started';
 @import './../theme/sections/intro/intro';
