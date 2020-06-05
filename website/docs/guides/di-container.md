@@ -10,7 +10,7 @@ Dependency injection is a way of implementing inversion of control design patter
 
 In general, if you instantiate another class like this inside your class
 
-```php
+```js
 new SuperClass()
 ````
 
@@ -20,7 +20,7 @@ Eightshift libs are using [PHP-DI](http://php-di.org/) as an implementation of a
 
 In your main class, which is used to store all the dependencies in your code, and which extends the main eightshift-lib class (`Eightshift_Libs\Core\Main`), you need to define a method called `get_service_classes()` which contains an array of service classes (those that have a way to register hooks in your WordPress project):
 
-```php
+```js
 protected function get_service_classes() : array {
   return [
 
@@ -58,7 +58,7 @@ protected function get_service_classes() : array {
 
 Whenever a class has a dependency on another class, you'd add this dependency through a process of constructor injection. For instance, the `Enqueue_Admin` class depends on both the `Config` and `Manifest` classes. Looking at the [implementation](https://github.com/infinum/eightshift-libs/blob/develop/src/enqueue/class-enqueue-admin.php) we have:
 
-```php
+```js
 class Enqueue_Admin implements Service {
   public function __construct( Config_Data $config, Manifest_Data $manifest ) {
     $this->config   = $config;
@@ -74,7 +74,7 @@ This is why we use interfaces since interface only mandates the contract our cla
 
 By adding the interfaces we need to say to our DI container what the classes, that implement these interfaces, actually are. This is why we needed to define:
 
-```php
+```js
 Lib_Enqueue\Enqueue_Admin::class => [ Config::class, Lib_Manifest\Manifest::class ]
 ```
 
@@ -82,7 +82,7 @@ in our `get_service_classes()` method.
 
 The beauty of this method is that we can easily add mocks in our automated tests:
 
-```php
+```js
 protected function get_service_classes() : array {
   $services = [
     Lib_Enqueue\Enqueue_Admin::class => [ Config::class, Lib_Manifest\Manifest::class ],

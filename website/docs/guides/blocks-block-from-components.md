@@ -215,7 +215,7 @@ So all we need now is the PHP view.
 
 **card.php**
 
-```php
+```js
 <?php
 /**
  * Template for the Card Block.
@@ -269,7 +269,7 @@ $block_class = $attributes['blockClass'] ?? '';
 
 Notice how we used
 
-```php
+```js
 <?php $this->render_block_view(
   '/components/image/image.php',
   [

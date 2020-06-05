@@ -1,0 +1,101 @@
+$markdown: (
+  p: (
+    mobile: (
+      font-size: 16px,
+      font-weight: 500,
+      line-height: 1.7,
+      color: $base-cape-color,
+    ),
+  ),
+  code: (
+    mobile: (
+      background-color: $base-white-color,
+      font-family: $base-block-family-code,
+      font-weight: 500,
+      font-size: 16px,
+      line-height: 1.5,
+      color: $base-cape-color,
+    ),
+  ),
+  a: (
+    normal: (
+      color: $base-mandy-color,
+      transition: all 0.3s ease-in,
+    ),
+    hover: (
+      color: $base-cape-color,
+      text-decoration: none,
+    ),
+  ),
+  li: (
+    mobile: (
+      padding: 3px 0,
+    ),
+  ),
+  blockquote: (
+    mobile: (
+      background-color: $base-egg-color,
+      border-color: $base-mandy-color,
+      font-size: 16px,
+      font-weight: 500,
+      line-height: 1.7,
+      color: $base-cape-color,
+    ),
+  ),
+  blockquote-code: (
+    mobile: (
+      background-color: $base-chamois-color,
+    ),
+  ),
+  code-block: (
+    mobile: (
+      background-color: $base-white-color !important,
+    ),
+  ),
+  token-line: (
+    mobile: (
+      font-size: 14px,
+      font-weight: 500,
+      color: $base-cape-color !important,
+      font-family: $base-block-family-code,
+    ),
+  ),
+);
+
+.markdown {
+  > p {
+    @include responsive($markdown, p);
+  }
+
+  a {
+    @include link($markdown, a);
+  }
+
+  li {
+    @include responsive($markdown, li);
+  }
+
+  blockquote {
+    @include responsive($markdown, blockquote);
+
+    code {
+      @include responsive($markdown, blockquote-code);
+    }
+  }
+
+  code {
+    @include responsive($markdown, code);
+  }
+
+  .codeBlock_node_modules-\@docusaurus-theme-classic-src-theme-CodeBlock- {
+    border-radius: 0;
+  }
+
+  .codeBlockLines_node_modules-\@docusaurus-theme-classic-src-theme-CodeBlock- {
+    @include responsive($markdown, code-block);
+  }
+
+  .token-line {
+    @include responsive($markdown, token-line);
+  }
+}

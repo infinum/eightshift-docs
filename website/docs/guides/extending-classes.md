@@ -31,7 +31,7 @@ Every class in the lib can be extended and certain parts of it can be overriden 
 In order to override the `Eightshift_Lib\Enqueue_Admin` class, you should create a new class, preferably in the `enqueue` folder in your project.
 In your `enqueue\class-admin-enqueue.php` file you'd do:
 
-```php
+```js
 <?php
 /**
  * The Admin Enqueue specific functionality.

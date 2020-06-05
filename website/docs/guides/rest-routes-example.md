@@ -6,7 +6,7 @@ title: Route Example
 [![docs-source](https://img.shields.io/badge/source-eigthshift--libs-blue?style=for-the-badge&logo=php&labelColor=2a2a2a)](https://github.com/infinum/eightshift-libs/tree/master/src/rest)
 
 To implement the new Rest API Route, you would need to do a few things, but for this example, we will use this folder structure:
-```php
+```js
 
 * src
   * class-main.php
@@ -24,7 +24,7 @@ To create custom REST Route:
 3. register the class inside the `class-main.php` file.
 4. dump autoload.
 
-```php
+```js
 <?php
 /**
  * The class register route for example endpoint

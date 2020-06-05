@@ -15,7 +15,7 @@ To create custom REST Field:
 3. register the class inside the `class-main.php` file.
 4. dump autoload.
 
-```php
+```js
 <?php
 /**
  * The class register field for example endpoint

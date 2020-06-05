@@ -28,7 +28,7 @@ File names are defined inside class constants that can be changed by extending t
 This class provides way to enqueue assets for the **Admin** part of the project.
 
 It implements these hooks in the register method:
-```php
+```js
 
 // Login only style.
 add_action( 'login_enqueue_scripts', [ $this, 'enqueue_styles' ] );
@@ -41,7 +41,7 @@ add_action( 'admin_enqueue_scripts', [ $this, 'enqueue_scripts' ] );
 ```
 
 Class constants:
-```php
+```js
 
   const ADMIN_SCRIPT_URI = 'applicationAdmin.js';
 
@@ -53,7 +53,7 @@ Class constants:
 This class provides assets for **Block Editor** part of the project.
 
 It implements these hooks:
-```php
+```js
 
 // Editor only script.
 add_action( 'enqueue_block_editor_assets', [ $this, 'enqueue_block_editor_script' ] );
@@ -69,7 +69,7 @@ add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_block_script' ] );
 ```
 
 Class constants:
-```php
+```js
 
   const BLOCKS_EDITOR_SCRIPT_URI = 'applicationBlocksEditor.js';
   const BLOCKS_EDITOR_STYLE_URI  = 'applicationBlocksEditor.css';
@@ -83,7 +83,7 @@ Class constants:
 This class provides assets for **Theme** part of the project.
 
 It implements these hooks:
-```php
+```js
 
 // Theme only style.
 add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_styles' ], 10 );
@@ -93,7 +93,7 @@ add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_scripts' ] );
 ```
 
 Class constants:
-```php
+```js
 
   const THEME_SCRIPT_URI = 'application.js';
   const THEME_STYLE_URI  = 'application.css';

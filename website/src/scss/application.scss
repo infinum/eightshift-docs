@@ -12,14 +12,19 @@
 // Config.
 @import 'core';
 
-/* Components */
-@import 'components';
-
 // Components.
 @import './../theme/components/heading/heading';
 @import './../theme/components/container/container';
 @import './../theme/components/button/button';
 @import './../theme/components/arrow/arrow';
+@import './../theme/components/navbar/navbar';
+@import './../theme/components/navbar-sidebar/navbar-sidebar';
+@import './../theme/components/algolia/algolia';
+@import './../theme/components/left-sidebar/left-sidebar';
+@import './../theme/components/docs-layout/docs-layout';
+@import './../theme/components/right-sidebar/right-sidebar';
+@import './../theme/components/markdown/markdown';
+@import './../theme/components/pagination/pagination';
 
 /* Sections */
 @import './../theme/sections/get-started/get-started';

@@ -19,7 +19,7 @@ How to extend a class [check here](extending-classes).
 
 Then in the filter provide a callback method that contains the overrides.
 
-```php
+```js
   /**
    * Register all the hooks
    *

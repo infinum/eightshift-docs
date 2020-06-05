@@ -11,7 +11,7 @@ Locate and return template part with passed attributes for a block.
 
 Inside your block view PHP file you'd write:
 
-```php
+```js
 $this->render_block_view(
   '/components/heading/heading.php',
   [

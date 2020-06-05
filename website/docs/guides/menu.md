@@ -11,7 +11,7 @@ This class is used to add all custom project implementation for menus.
 
 To add the custom menu, you must provide an array for custom menu locations as explained in the documentation from the [official WordPress docs](https://developer.wordpress.org/reference/functions/register_nav_menus/).
 
-```php
+```js
 /**
    * Return all menu poistions
    *
@@ -32,7 +32,7 @@ We are providing a BEM menu helper that will create a normal WordPress menu but 
 
 To use it just call this helper in your template.
 
-```PHP
+```js
 use Eightshift_Libs\Menu\Menu;
 
 Menu::bem_menu( 'header_main_default', 'main-navigation' );

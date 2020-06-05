@@ -15,7 +15,7 @@ To create custom taxonomy column:
 3. register the class inside the `class-main.php` file.
 4. dump autoload.
 
-```php
+```js
 <?php
 /**
  * Example_Taxonomy_Column class file

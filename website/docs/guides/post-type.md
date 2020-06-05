@@ -16,7 +16,7 @@ To create a custom post type:
 3. register the class inside the `class-main.php` file.
 4. dump autoload.
 
-```php
+```js
 <?php
 /**
  * File that holds class for "Projects" custom post type registration.

@@ -24,7 +24,7 @@ Manifest.json:
 ```
 
 Usage:
-```php
+```js
 use Eightshift_Libs\Manifest\Manifest;
 
 $logo_img = apply_filters( Config::get_config( Manifest::MANIFEST_ITEM_FILTER_NAME ), 'logo.svg' );

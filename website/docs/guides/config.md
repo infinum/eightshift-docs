@@ -83,7 +83,7 @@ The method that returns every string prefixed with project prefix based on proje
 It converts all spaces and "_" with "-", also it converts all characters to lowercase. Also, it appends the project prefix defined in the `class-config.php`.
 
 Example 1:
-```php
+```js
 Config::get_config( 'custom_filter_name' );
 
 Output:
@@ -91,7 +91,7 @@ eb-custom-filter-name
 ```
 
 Example 2:
-```php
+```js
 Config::get_config( 'custom-filter-name' );
 
 Output:
@@ -99,7 +99,7 @@ eb-custom-filter-name
 ```
 
 Example 3:
-```php
+```js
 Config::get_config( 'custom filter name' );
 
 Output:
