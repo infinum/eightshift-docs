@@ -10,18 +10,20 @@ $layout: (
 #__docusaurus {
   .main-wrapper {
     width: 100%;
-    max-width: map-get-strict($layout, main-wrapper);
     padding: 0 map-get-strict($layout, main-wrapper-gutter);
-    margin: 0 auto;
 
     > div {
       flex-wrap: wrap;
+      max-width: map-get-strict($layout, main-wrapper);
+      margin: 0 auto;
 
       > div {
         border-right: none;
         @include flex-grid-width(3);
 
         > div {
+          padding-bottom: 35px;
+
           > div {
             > button {
               span {
