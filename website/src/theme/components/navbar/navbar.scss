@@ -9,7 +9,6 @@ $navbar: (
   ),
   inner: (
     mobile: (
-      max-width: map-get-strict($base-containers, default),
       padding: 0 $base-gutter-size,
       margin: 0 auto,
     ),
