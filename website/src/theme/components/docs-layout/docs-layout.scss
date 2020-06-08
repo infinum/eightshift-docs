@@ -19,7 +19,11 @@ $layout: (
 
       > div {
         border-right: none;
-        @include flex-grid-width(3);
+
+        @include media(tablet up) {
+          display: block;
+          @include flex-grid-width(3);
+        }
 
         > div {
           padding-bottom: 35px;

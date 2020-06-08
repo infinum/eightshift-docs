@@ -2,6 +2,7 @@ $pagination: (
   pagination: (
     mobile: (
       margin-top: 60px,
+      margin-bottom: 100px,
     ),
   ),
   link: (
@@ -49,6 +50,6 @@ $pagination: (
   }
 
   .margin-vert--lg {
-    margin: 0;
+    margin: 0 !important;
   }
 }
