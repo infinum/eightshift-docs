@@ -5,6 +5,8 @@ $right-menu: (
       transition: all 0.3s ease-in,
       display: block,
       padding: 7px 0,
+      line-height: 1.5,
+      font-size: 13px,
     ),
     hover: (
       color: $base-mandy-color,
