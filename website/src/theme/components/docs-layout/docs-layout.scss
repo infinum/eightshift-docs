@@ -1,3 +1,6 @@
+// This file has multiple nestings because Docusaurus adds its custom selectors that he overrides in build phase and doesn't take into account your overrides.
+// Themes are not mend to be overriden whole but only partial.
+
 $layout: (
   right-sidebar-padding: $base-gutter-size,
   main-wrapper: map-get-strict($base-containers, default),
@@ -5,16 +8,57 @@ $layout: (
 );
 
 #__docusaurus {
-  .docSidebarContainer_node_modules-\@docusaurus-theme-classic-src-theme-DocPage- {
-    border-right: none;
-    @include flex-grid-width(3);
-  }
-
   .main-wrapper {
     width: 100%;
     max-width: map-get-strict($layout, main-wrapper);
     padding: 0 map-get-strict($layout, main-wrapper-gutter);
     margin: 0 auto;
+
+    > div {
+      flex-wrap: wrap;
+
+      > div {
+        border-right: none;
+        @include flex-grid-width(3);
+
+        > div {
+          > div {
+            > button {
+              span {
+                display: block;
+              }
+            }
+          }
+        }
+      }
+
+      > main {
+        @include flex-grid-width(12);
+
+        @include media(desktop up) {
+          @include flex-grid-width(9);
+        }
+
+        > div {
+          > div {
+            > div {
+              > div {
+                padding: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    article {
+      header {
+        h1 {
+          margin-top: 0;
+          margin-bottom: 20px;
+        }
+      }
+    }
   }
   
   .container {
@@ -42,32 +86,11 @@ $layout: (
         padding-right: 0;
         padding-left: 0;
         @include flex-grid-width(3);
+
+        > div {
+          top: var(--ifm-navbar-height);
+        }
       }
-    }
-  }
-
-  .docItemContainer_node_modules-\@docusaurus-theme-classic-src-theme-DocItem- {
-    padding: 0;
-  }
-
-  .docTitle_node_modules-\@docusaurus-theme-classic-src-theme-DocItem- {
-    margin-top: 0;
-    margin-bottom: 20px;
-  }
-
-  .docPage_node_modules-\@docusaurus-theme-classic-src-theme-DocPage- {
-    flex-wrap: wrap;
-  }
-
-  .tableOfContents_node_modules-\@docusaurus-theme-classic-src-theme-DocItem- {
-    top: var(--ifm-navbar-height);
-  }
-
-  .docMainContainer_node_modules-\@docusaurus-theme-classic-src-theme-DocPage- {
-    @include flex-grid-width(12);
-
-    @include media(desktop up) {
-      @include flex-grid-width(9);
     }
   }
 }

@@ -87,12 +87,16 @@ $markdown: (
     @include responsive($markdown, code);
   }
 
-  .codeBlock_node_modules-\@docusaurus-theme-classic-src-theme-CodeBlock- {
-    border-radius: 0;
-  }
+  div {
+    div {
+      div {
+        border-radius: 0;
 
-  .codeBlockLines_node_modules-\@docusaurus-theme-classic-src-theme-CodeBlock- {
-    @include responsive($markdown, code-block);
+        div {
+          @include responsive($markdown, code-block);
+        }
+      }
+    }
   }
 
   .token-line {
