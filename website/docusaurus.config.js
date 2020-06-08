@@ -1,5 +1,5 @@
 module.exports = {
-  title: 'Eightshit Development kit',
+  title: 'Eightshift Development kit',
   tagline: 'All the tools you need to start building a modern WordPress project, using all the latest front end development tools.',
   url: 'https://infinum.github.io',
   baseUrl: '/eightshift-docs/',
@@ -17,7 +17,7 @@ module.exports = {
     disableDarkMode: true,
     navbar: {
       logo: {
-        alt: 'Eightshit Development kit Logo',
+        alt: 'Eightshift Development kit Logo',
         src: 'img/eightshift-dev-kit-logo.svg',
       },
       links: [

@@ -16,7 +16,7 @@ export default function Intro() {
         componentClass={component}
         size={'medium'}
       >
-        <div className={`${component}__title`} dangerouslySetInnerHTML={{__html: 'Eightshit<br/>Development<br/>kit'}}></div>
+        <div className={`${component}__title`} dangerouslySetInnerHTML={{__html: 'Eightshift<br/>Development<br/>kit'}}></div>
         <div className={`${component}__image`}>
           <img className={`${component}__image-bg`} src={useBaseUrl('img/ic-intro.svg')} />
           <img className={`${component}__image-img`} src={useBaseUrl('img/img-boilerplate-intro@2x.png')} />
