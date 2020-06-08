@@ -8,7 +8,7 @@ sidebar_label: Theme Setup
 
 Eightshift boilerplate contains all the tools you need to start building a modern WordPress theme, using all the latest front end development tools.
 
-[Please go here if you wish to setup a plugin instead](plugin).
+[Please go here if you wish to setup a plugin instead](https://infinum.github.io/eightshift-docs/docs/plugin/).
 
 ## Requirements
 

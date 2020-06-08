@@ -20,7 +20,7 @@ Basic component structure should like something this:
 | |____component-name-style.scss
 ```
 
-For example, you can check [storybook](storybook).
+For example, you can check [storybook](https://infinum.github.io/eightshift-docs/storybook).
 
 ### components
 This folder contains all the javascript components that are used in the component. The folder can include `editor`, `options` or `toolbar` component.

@@ -74,7 +74,7 @@ Alias providing [Swiper](https://www.npmjs.com/package/swiper).
 
 ## EightshiftBlocksDynamicImport
 
-To get (require) all the files using the `require.context` method, we created a helper located [here](https://github.com/infinum/eightshift-frontend-libs/blob/develop/scripts/dynamic-import.js).
+To get (require) all the files using the `require.context` method, we created a helper located [here](https://github.com/infinum/eightshift-frontend-libs/blob/develop/scripts/helpers/dynamic-import.js).
 
 It will find all files recursively in the folder using a regex. The following example will require all `assets/index.js` files inside the `custom` folder, so there is no need to add the files to the build manually.
 
@@ -131,8 +131,8 @@ It provides the Block Editor overrides on some styles to give better UX for our 
 
 ## EightshiftComponentColorPalette
 
-Alias providing custom React component. For more details check [here](components-color-palette).
+Alias providing custom React component. For more details check [here](components-color-palette.md).
 
 ## EightshiftComponentHeadingLevel
 
-Alias providing custom React component. For more details check [here](components-heading-level).
+Alias providing custom React component. For more details check [here](components-heading-level.md).

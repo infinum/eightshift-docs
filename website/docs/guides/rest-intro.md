@@ -42,10 +42,10 @@ The interface used in Rest API Route for providing general options for your rout
 
 Abstract class used in Rest API Field for updating existing filed, or providing a new field to the existing Rest API.
 
-Please check the implementation details in [this example](rest-field-example).
+Please check the implementation details in [this example](rest-field-example.md).
 
 ## Class-base-route.php
 
 Abstract class used in Rest API Route for adding a new Rest API route.
 
-Please check the implementation details in [this example](rest-route-example).
+Please check the implementation details in [this example](rest-route-example.md).
