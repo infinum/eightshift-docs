@@ -22,7 +22,7 @@ Your custom block structure should look like this:
 | |____manifest.json
 ```
 
-For example, you can check [storybook](storybook).
+For example, you can check [storybook](https://infinum.github.io/eightshift-docs/storybook).
 
 ### components
 Components folder holds three files `block-name-options.js`, `block-name-editor.js` and `block-name-toolbars.js`. Each of these files represents a part of the Block Editor block that is used in the editor. We have separated options, editor and toolbar in separate components for the sake of readability and reusing components in different projects.

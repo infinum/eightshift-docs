@@ -11,6 +11,6 @@ In order to use it, you need to understand what makes boilerplate tick. In theor
 
 This is where all the backend (PHP) code is kept. Think abstract classes, interfaces, dependency injection, asset enqueuing, filter & actions.
 
-### 2. Eightshift frontend libs - [docs](frontend-libs) | [github](https://github.com/infinum/eightshift-frontend-libs)
+### 2. Eightshift frontend libs - [docs](frontend-libs.md) | [github](https://github.com/infinum/eightshift-frontend-libs)
 
 This is where all the frontend (JS, SCSS, assets) code is kept.
