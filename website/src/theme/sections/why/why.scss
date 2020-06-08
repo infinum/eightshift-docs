@@ -1,0 +1,61 @@
+$why: (
+  why: (
+    mobile: (
+      padding: 0 0 55px,
+    ),
+    tablet: (
+      padding: 0 0 190px,
+    ),
+  ),
+  heading: (
+    mobile: (
+      max-width: 580px,
+    ),
+  ),
+  content: (
+    mobile: (
+      display: flex,
+    ),
+  ),
+  image: (
+    mobile: (
+      max-width: 100%,
+      height: auto,
+    ),
+  ),
+  image-desktop: (
+    mobile: (
+      display: none,
+    ),
+    tablet: (
+      display: block,
+    ),
+  ),
+  image-mobile: (
+    mobile: (
+      display: block,
+    ),
+    tablet: (
+      display: none,
+    ),
+  ),
+);
+
+.shift-why {
+  @include responsive($why, why);
+
+  &__shift-heading {
+    @include responsive($why, heading);
+  }
+
+  &__image {
+    @include responsive($why, image);
+
+    &--desktop {
+      @include responsive($why, image-desktop);
+    }
+    &--mobile {
+      @include responsive($why, image-mobile);
+    }
+  }
+}

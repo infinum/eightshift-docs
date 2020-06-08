@@ -1,0 +1,13 @@
+import React from 'react';
+import Layout from '@theme/Layout';
+import Iframe from '../theme/sections/Iframe/Iframe';
+
+export default function Storybook() {
+  return (
+    <Layout
+      title={'Storybook'}
+    >
+        <Iframe src="https://infinum.github.io/eightshift-frontend-libs/storybook/" />
+    </Layout>
+  );
+};

@@ -1,0 +1,127 @@
+$get-started: (
+  get-started: (
+    mobile: (
+      padding: 0 0 100px,
+    ),
+    tablet: (
+      padding: 0 0 200px,
+    ),
+  ),
+  content: (
+    mobile: (
+      display: flex,
+      flex-wrap: wrap,
+      margin: 0 (-$base-gutter-size / 2) -90px,
+    ),
+  ),
+  item: (
+    mobile: (
+      text-align: center,
+      padding: 0 ($base-gutter-size/2),
+      margin-bottom: 90px,
+      flex: 0 0 calc-grid-width(12),
+    ),
+    tablet: (
+      flex: 0 0 calc-grid-width(6),
+    ),
+  ),
+  item-even:(
+    mobile: (
+      padding-top: 0,
+    ),
+    tablet: (
+      padding-top: 80px,
+    ),
+  ),
+  icon: (
+    mobile: (
+      width: 230px,
+      height: 200px,
+      position: relative,
+      margin: 0 auto 25px,
+    ),
+  ),
+  icon-img: (
+    mobile: (
+      position: absolute,
+      left: 0,
+      right: 0,
+      top: 0,
+      bottom: 0,
+    ),
+  ),
+  label: (
+    mobile: (
+      font-size: 32px,
+      font-weight: bold,
+      line-height: 1.19,
+      letter-spacing: -1px,
+      font-family: $base-font-family-alternative,
+      color: $base-elephant-color,
+      max-width: 300px,
+      margin: 0 auto 25px,
+    ),
+  ),
+  theme: $base-picton-color,
+  plugin: $base-mandy-color,
+);
+
+.shift-get-started {
+  $this: &;
+  @include responsive($get-started, get-started);
+
+  &__content {
+    @include responsive($get-started, content);
+  }
+
+  &__item {
+    @include responsive($get-started, item);
+
+    &:nth-child(even) {
+      @include responsive($get-started, item-even);
+    }
+
+    &--plugin {
+      #{$this}__label-highlight {
+        color: map-get-strict($get-started, plugin);
+      }
+    }
+
+    &--theme {
+      #{$this}__label-highlight {
+        color: map-get-strict($get-started, theme);
+      }
+    }
+  }
+
+  &__link {
+    &:hover {
+      text-decoration: none;
+
+      #{$this}__shift-arrow {
+        @extend %shift-arrow-hover;
+      }
+
+      #{$this}__icon-bg {
+        transform: rotate(5deg);
+        transition: all 0.3s ease-in,
+      }
+    }
+  }
+
+  &__icon {
+    @include responsive($get-started, icon);
+  }
+
+  &__icon-img {
+    @include responsive($get-started, icon-img);
+  }
+
+  &__icon-bg {
+    transition: all 0.3s ease-in,
+  }
+
+  &__label {
+    @include responsive($get-started, label);
+  }
+}

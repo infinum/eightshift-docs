@@ -1,0 +1,17 @@
+$container: (
+  container: (
+    mobile: (
+      margin: 0 auto,
+      padding: 0 $base-gutter-size,
+    ),
+  ),
+  sizes: $base-containers,
+);
+
+.shift-container {
+  @include responsive($container, container);
+
+  &__size {
+    @include modifiers-deep($container, sizes, max-width);
+  }
+}

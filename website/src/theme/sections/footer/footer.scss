@@ -1,0 +1,83 @@
+$footer: (
+  footer: (
+    mobile: (
+      padding: 0 0 140px,
+    ),
+    tablet: (
+      padding: 0 0 205px,
+    ),
+  ),
+  content: (
+    mobile: (
+      display: flex,
+      flex-wrap: wrap,
+      margin: 0 (-$base-gutter-size / 2) -70px,
+    ),
+  ),
+  item: (
+    mobile: (
+      text-align: center,
+      padding: 0 ($base-gutter-size/2),
+      margin-bottom: 70px,
+      flex: 0 0 calc-grid-width(12),
+    ),
+    tablet: (
+      flex: 0 0 calc-grid-width(6),
+    ),
+    desktop: (
+      flex: 0 0 calc-grid-width(3),
+    ),
+  ),
+  icon: (
+    mobile: (
+      margin-bottom: 25px,
+      transition: all 0.3s ease-in,
+    ),
+  ),
+  label: (
+    mobile: (
+      font-size: 24px,
+      font-weight: bold,
+      line-height: 1.13,
+      color: $base-elephant-color,
+      font-family: $base-font-family-alternative,
+      margin-bottom: 30px,
+    ),
+  ),
+);
+
+.shift-footer {
+  $this: &;
+  @include responsive($footer, footer);
+
+  &__content {
+    @include responsive($footer, content);
+  }
+
+  &__item {
+    @include responsive($footer, item);
+  }
+
+  &__icon {
+    @include responsive($footer, icon);
+  }
+
+  &__label {
+    @include responsive($footer, label);
+  }
+
+  &__link {
+    &:hover {
+      text-decoration: none;
+
+      #{$this}__shift-arrow {
+        @extend %shift-arrow-hover;
+      }
+
+      #{$this}__icon {
+        transition: all 0.3s ease-in;
+        transform: translateY(-5px);
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+%shift-arrow-hover {
+  transform: translateX(10px);
+  transition: all 0.3s ease-in,
+}
+
+.shift-arrow {
+  transition: all 0.3s ease-in;
+
+  &:hover {
+    @extend %shift-arrow-hover;
+  }
+}

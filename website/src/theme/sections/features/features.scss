@@ -1,0 +1,114 @@
+$features: (
+  features: (
+    mobile: (
+      padding: 0 0 110px,
+    ),
+    tablet: (
+      padding: 0 0 180px,
+    ),
+  ),
+  content: (
+    mobile: (
+      display: flex,
+      flex-wrap: wrap,
+      margin: 0 (-$base-gutter-size / 2) -30px,
+    ),
+  ),
+  item: (
+    mobile: (
+      text-align: left,
+      padding: 0 ($base-gutter-size/2),
+      margin-bottom: 30px,
+      flex: 0 0 calc-grid-width(12),
+    ),
+    tablet: (
+      flex: 0 0 calc-grid-width(6),
+    ),
+  ),
+  title: (
+    mobile: (
+      font-size: 24px,
+      font-weight: bold,
+      line-height: 1.13,
+      color: $base-elephant-color,
+      font-family: $base-font-family-alternative,
+      margin-bottom: 15px,
+      padding-left: 40px,
+      position: relative,
+    ),
+    tablet: (
+      max-width: 410px,
+    )
+  ),
+  desc: (
+    mobile: (
+      font-size: 18px,
+      font-weight: 500,
+      line-height: 1.56,
+      color: $base-cape-color,
+      margin-bottom: 20px,
+      padding-left: 40px,
+    ),
+    tablet: (
+      max-width: 410px,
+    )
+  ),
+);
+
+.shift-features {
+  $this: &;
+  @include responsive($features, features);
+
+  &__content {
+    @include responsive($features, content);
+  }
+
+  &__item {
+    @include responsive($features, item);
+
+    &:hover {
+      #{$this}__title::before {
+        transform: rotate(45deg);
+        transition: all 0.3s ease-in,
+      }
+    }
+  }
+
+  &__title {
+    @include responsive($features, title);
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 7px;
+      width: 16px;
+      height: 16px;
+      transition: all 0.3s ease-in,
+    }
+
+    &--red::before {
+      background-image: url('/eightshift-docs/img/ic-bullet-1.svg');
+    }
+
+    &--purple::before {
+      background-image: url('/eightshift-docs/img/ic-bullet-2.svg');
+    }
+
+    &--blue::before {
+      background-image: url('/eightshift-docs/img/ic-bullet-3.svg');
+    }
+
+    &--yellow::before {
+      background-image: url('/eightshift-docs/img/ic-bullet-4.svg');
+    }
+
+    &--green::before {
+      background-image: url('/eightshift-docs/img/ic-bullet-5.svg');
+    }
+  }
+
+  &__desc {
+    @include responsive($features, desc);
+  }
+}

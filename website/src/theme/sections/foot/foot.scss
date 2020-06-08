@@ -1,0 +1,122 @@
+$foot: (
+  foot: (
+    mobile: (
+      color: $base-pewter-color,
+      padding: 0 0 15px,
+      font-size: 14px,
+      font-weight: 500,
+      line-height: 1.44,
+    ),
+    tablet: (
+      font-size: 18px,
+      padding: 0 0 45px,
+    ),
+  ),
+  columns: (
+    mobile: (
+      display: flex,
+      flex-direction: column,
+      margin: 0 (-$base-gutter-size / 2),
+    ),
+    tablet: (
+      flex-direction: row,
+      justify-content: space-between,
+    )
+  ),
+  column: (
+    mobile: (
+      padding: 0 ($base-gutter-size/2) 10px,
+    ),
+    tablet: (
+      padding-bottom: 0,
+    )
+  ),
+  column-left: (
+    mobile: (
+      text-align: center,
+    ),
+    tablet: (
+      text-align: left,
+    ),
+  ),
+  column-right: (
+    mobile: (
+      text-align: center,
+      display: flex,
+      flex-direction: column,
+    ),
+    tablet: (
+      text-align: right,
+      flex-direction: row,
+    ),
+  ),
+  logo-wrap: (
+    mobile: (
+      display: inline-flex,
+      align-items: center,
+      justify-content: center,
+      margin-top: 15px,
+      flex: 1 0 auto,
+    ),
+    tablet: (
+      margin-top: 0,
+    ),
+  ),
+  logo: (
+    mobile: (
+      margin-left: 10px,
+    ),
+  ),
+  copy: (
+    mobile: (
+      flex: 1 0 auto,
+    ),
+    tablet: (
+      margin-right: 40px,
+    ),
+  ),
+  link: (
+    normal: (
+      color: $base-cape-color,
+    ),
+    hover: (
+      color: $base-mandy-color,
+    ),
+  ),
+);
+
+.shift-foot {
+  @include responsive($foot, foot);
+
+  &__columns {
+    @include responsive($foot, columns);
+  }
+
+  &__column {
+    @include responsive($foot, column);
+
+    &--left {
+      @include responsive($foot, column-left);
+    }
+
+    &--right {
+      @include responsive($foot, column-right);
+    }
+  }
+
+  &__logo-wrap {
+    @include responsive($foot, logo-wrap);
+  }
+
+  &__logo {
+    @include responsive($foot, logo);
+  }
+
+  &__link {
+    @include link($foot, link);
+  }
+
+  &__copy {
+    @include responsive($foot, copy);
+  }
+}

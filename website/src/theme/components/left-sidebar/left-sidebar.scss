@@ -1,0 +1,118 @@
+$menu: (
+  menu: (
+    mobile: (
+      padding: 0,
+    ),
+  ),
+  menu-show: (
+    mobile: (
+      padding: $base-gutter-size,
+    ),
+  ),
+  link: (
+    mobile: (
+      padding-left: 0,
+      padding-right: 25px,
+      color: $base-cape-color,
+      transition: all 0.3s ease-in,
+      position: relative,
+    )
+  ),
+  link-after: (
+    mobile: (
+      position: absolute,
+      right: 0,
+      top: 50%,
+      margin-top: -10px,
+    ),
+  ),
+  link-hover: (
+    mobile: (
+      color: $base-mandy-color,
+      background-color: transparent,
+    )
+  ),
+  sublist: (
+    mobile: (
+      font-size: 18px,
+      font-weight: bold,
+      color: $base-elephant-color,
+      font-family: $base-font-family-alternative,
+    ),
+  ),
+  sublist-sublist: (
+    mobile: (
+      font-size: 14px,
+      font-weight: 500,
+      line-height: 1.43,
+      letter-spacing: 0.4px,
+      color: $base-cape-color,
+      font-family: $base-font-family,
+    ),
+  ),
+  list: (
+    mobile: (
+      font-size: 14px,
+      font-weight: 500,
+      line-height: 1.43,
+      letter-spacing: 0.4px,
+    )
+  ),
+  active: (
+    mobile: (
+      color: $base-mandy-color,
+      background-color: transparent,
+    ),
+  ),
+);
+
+#__docusaurus {
+  .menu {
+    @include responsive($menu, menu);
+
+    &--show {
+      @include responsive($menu, menu-show);
+    }
+  
+    &__link {
+      @include responsive($menu, link);
+
+      &::after {
+        @include responsive($menu, link-after);
+      }
+
+      &:focus {
+        outline: none;
+      }
+
+      &:hover {
+        @include responsive($menu, link-hover);
+      }
+  
+      &--sublist {
+        @include responsive($menu, sublist);
+
+        &::after {
+          background-size: 24px;
+        }
+      }
+    }
+  
+    &__list {
+      @include responsive($menu, list);
+  
+      .menu__list .menu__link--active {
+        @include responsive($menu, active);
+      }
+
+      .menu__list .menu__link--sublist {
+        @include responsive($menu, sublist-sublist);
+      }
+    }
+
+
+    span[class^="sidebarMenuIcon_"] {
+      display: block;
+    }
+  }
+}

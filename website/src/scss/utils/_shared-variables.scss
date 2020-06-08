@@ -1,0 +1,25 @@
+/*
+Some default variables are defined in eightshift-frontend-libs as defaults.
+If you want to override it just define it with new value here.
+
+All variables are available here:
+https://github.com/infinum/eightshift-frontend-libs/blob/develop/styles/scss/_core.scss
+*/
+
+$base-font-family: 'IBM Plex Sans', sans-serif;
+
+$base-font-family-alternative: 'MarkPro', monospace;
+
+$base-block-family-code: 'IBM Plex Mono', monospace;
+
+$base-containers: (
+  default: $base-container-size,
+  medium: 1094px,
+  small: 867px,
+  smaller: 640px,
+);
+
+:root {
+  --ifm-navbar-height: 100px;
+  --ifm-navbar-sidebar-width: 90vw;
+}

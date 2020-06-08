@@ -1,0 +1,33 @@
+$right-menu: (
+  link: (
+    normal: (
+      color: $base-cape-color,
+      transition: all 0.3s ease-in,
+      display: block,
+      padding: 7px 0,
+      line-height: 1.5,
+      font-size: 13px,
+    ),
+    hover: (
+      color: $base-mandy-color,
+    ),
+  )
+);
+
+#__docusaurus {
+  .contents.contents__left-border {
+    padding: 0 0 0 30px;
+
+    ul {
+      padding-left: 0;
+    }
+
+    li {
+      margin: 0;
+
+      a {
+        @include link($right-menu, link);
+      }
+    }
+  }
+}

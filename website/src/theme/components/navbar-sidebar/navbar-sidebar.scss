@@ -1,0 +1,80 @@
+$navbar-sidebar: (
+  link: (
+    mobile: (
+      font-size: 38px,
+      font-weight: bold,
+      line-height: 1.13,
+      padding: 15px 0,
+      letter-spacing: -1.5px,
+      font-family: $base-font-family-alternative,
+      transition: all 0.3s ease-in,
+    )
+  ),
+  link-color: (
+    normal: (
+      color: $base-elephant-color,
+    ),
+    hover: (
+      color: $base-mandy-color,
+      background-color: transparent,
+    ),
+  ),
+  brand: (
+    mobile: (
+      height: auto,
+      padding: 20px $base-gutter-size,
+    ),
+  ),
+  items: (
+    mobile: (
+      padding: 10px $base-gutter-size 20px,
+    ),
+  ),
+  menu: (
+    mobile: (
+      padding: 0,
+    ),
+  ),
+  close: (
+    mobile: (
+      border-radius: 50px,
+      width: 45px,
+      height: 44px,
+      padding: 0,
+      display: flex,
+      align-items: center,
+      justify-content: center,
+      transition: all 0.3s ease-in,
+    ),
+    desktop: (
+      display: none,
+    ),
+  ),
+);
+
+#__docusaurus {
+  .navbar-sidebar {
+    $this: &;
+  
+    &__brand {
+      @include responsive($navbar-sidebar, brand);
+    }
+  
+    &__items {
+      @include responsive($navbar-sidebar, items);
+    }
+  
+    .menu {
+      @include responsive($navbar-sidebar, menu);
+  
+      &__link {
+        @include responsive($navbar-sidebar, link);
+        @include link($navbar-sidebar, link-color);
+      }
+    }
+  }
+
+  .menu.menu--responsive .menu__button {
+    @include responsive($navbar-sidebar, close);
+  }
+}

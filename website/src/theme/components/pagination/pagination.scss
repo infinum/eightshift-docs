@@ -1,0 +1,55 @@
+$pagination: (
+  pagination: (
+    mobile: (
+      margin-top: 60px,
+      margin-bottom: 100px,
+    ),
+  ),
+  link: (
+    mobile: (
+      border: none,
+      text-transform: uppercase,
+      padding: 0,
+      transition: all 0.3s ease-in,
+    ),
+  ),
+  label: (
+    mobile: (
+      font-size: 14px,
+      font-weight: 600,
+      line-height: 1.43,
+    ),
+  ),
+  link-color: (
+    normal: (
+      color: $base-elephant-color,
+    ),
+    hover: (
+      color: $base-mandy-color,
+    ),
+  ),
+);
+
+
+#__docusaurus {
+  .pagination-nav {
+    @include responsive($pagination, pagination);
+
+    &__link {
+      @include responsive($pagination, link);
+      @include link($pagination, link-color);
+
+      &--sublabel {
+        display: none;
+      }
+
+      &--label {
+        @include responsive($pagination, label);
+      }
+    }
+  }
+
+  .margin-vert--lg {
+    margin: 0 !important;
+  }
+}

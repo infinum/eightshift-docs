@@ -1,0 +1,144 @@
+$navbar: (
+  nav: (
+    mobile: (
+      box-shadow: none,
+      height: var(--ifm-navbar-height),
+      background-color: $base-cararra-color,
+      padding: 0,
+    ),
+  ),
+  inner: (
+    mobile: (
+      padding: 0 $base-gutter-size,
+      margin: 0 auto,
+    ),
+  ),
+  link: (
+    mobile: (
+      font-size: 16px,
+      font-weight: 500,
+      line-height: 1.5,
+      padding: 0 20px,
+      transition: all 0.3s ease-in,
+    )
+  ),
+  link-color: (
+    normal: (
+      color: $base-cape-color,
+    ),
+    hover: (
+      color: $base-mandy-color,
+    ),
+  ),
+  brand: (
+    mobile: (
+      height: auto,
+      margin: 0,
+    ),
+  ),
+  logo: (
+    mobile: (
+      height: auto,
+      max-width: 156px,
+      margin: 0,
+    ),
+  ),
+  search: (
+    mobile: (
+      height: 48px,
+      padding-left: 20px,
+      display: none,
+    ),
+    tablet: (
+      display: block,
+    )
+  ),
+  search-input: (
+    mobile: (
+      width: 122px,
+      height: 100%,
+      background-color: $base-white-color,
+      padding-left: 40px,
+      padding-right: 20px,
+      font-family: $base-font-family,
+      font-size: 16px,
+      font-weight: 500,
+      line-height: 1.5,
+      color: $base-nevada-color,
+      transition: all 0.3s ease-in,
+    ),
+  ),
+  search-input-focus: (
+    mobile: (
+      width: 300px,
+      transition: all 0.3s ease-in,
+    ),
+  ),
+  search-input-placeholder: (
+    mobile: (
+      color: $base-nevada-color,
+    ),
+  ),
+  toggle: (
+    mobile: (
+      background-color: $base-white-color,
+      border-radius: 50%,
+      width: 40px,
+      height: 40px,
+      display: flex,
+      align-items: center,
+      justify-content: center,
+      padding: 9px,
+      margin-right: 20px,
+    ),
+    desktop: (
+      display: none,
+    ),
+  )
+);
+
+#__docusaurus .navbar {
+  $this: &;
+  @include responsive($navbar, nav);
+
+  &__inner {
+    @include responsive($navbar, inner);
+  }
+
+  &__link {
+    @include responsive($navbar, link);
+    @include link($navbar, link-color);
+  }
+
+  &__brand {
+    @include responsive($navbar, brand);
+  }
+
+  &__logo {
+    @include responsive($navbar, logo);
+  }
+
+  &__search {
+    @include responsive($navbar, search);
+  }
+
+  &__search-input {
+    @include responsive($navbar, search-input);
+
+    &:focus {
+      @include responsive($navbar, search-input-focus);
+    }
+
+    &::placeholder {
+      @include responsive($navbar, search-input-placeholder);
+    }
+  }
+
+  &__toggle {
+    @include responsive($navbar, toggle);
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

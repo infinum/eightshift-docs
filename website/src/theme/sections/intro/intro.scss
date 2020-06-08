@@ -1,0 +1,137 @@
+$intro: (
+  intro: (
+    mobile: (
+      padding-top: 70px,
+      padding-bottom: 80px,
+    ),
+    tablet: (
+      padding-top: 160px,
+    ),
+  ),
+  title: (
+    mobile: (
+      font-size: 50px,
+      line-height: 1.13,
+      color: $base-elephant-color,
+      font-weight: bold,
+      letter-spacing: -1px,
+      font-family: $base-font-family-alternative,
+      z-index: 1,
+      position: relative,
+    ),
+    tablet: (
+      font-size: 100px,
+      line-height: 0.98,
+      margin-bottom: 40px,
+    ),
+    desktop: (
+      font-size: 132px,
+    )
+  ),
+  content: (
+    mobile: (
+      font-size: 16px,
+      line-height: 1.56,
+      color: $base-cape-color,
+      margin-bottom: 25px,
+      padding-left: 75px,
+      position: relative,
+      max-width: 550px,
+    ),
+    tablet: (
+      margin-bottom: 50px,
+      padding-left: 115px,
+      font-size: 18px,
+    )
+  ),
+  content-before: (
+    mobile: (
+      content: '',
+      width: 45px,
+      position: absolute,
+      left: 0,
+      top: 20px,
+      background-color: $base-nevada-color,
+      height: 1px,
+    ),
+    tablet: (
+      width: 75px,
+    )
+  ),
+  button: (
+    mobile: (
+      margin-left: 75px,
+    ),
+    tablet: (
+      margin-left: 115px,
+    )
+  ),
+  image: (
+    mobile: (
+      position: relative,
+      margin: 0 (-$base-gutter-size * 2) 40px,
+      display: flex,
+      justify-content: flex-end,
+    ),
+    tablet: (
+      position: absolute,
+      right: 0,
+      top: 50%,
+      display: block,
+      margin: 0,
+      transform: translateY(-50%),
+    )
+  ),
+  image-bg: (
+    mobile: (
+      display: block,
+      width: 100%,
+      height: auto,
+    ),
+  ),
+  image-img: (
+    mobile: (
+      display: block,
+      position: absolute,
+      left: 50%,
+      top: 50%,
+      max-width: 75%,
+      transform: translate(-50%, -50%),
+    ),
+    tablet: (
+      max-width: 75%,
+    )
+  ),
+);
+
+.shift-intro {
+  @include responsive($intro, intro);
+
+  &__title {
+    @include responsive($intro, title);
+  }
+
+  &__content {
+    @include responsive($intro, content);
+
+    &::before {
+      @include responsive($intro, content-before);
+    }
+  }
+
+  &__shift-button {
+    @include responsive($intro, button);
+  }
+
+  &__image {
+    @include responsive($intro, image);
+  }
+
+  &__image-bg {
+    @include responsive($intro, image-bg);
+  }
+
+  &__image-img {
+    @include responsive($intro, image-img);
+  }
+}

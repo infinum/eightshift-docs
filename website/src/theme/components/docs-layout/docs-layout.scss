@@ -1,0 +1,89 @@
+// This file has multiple nestings because Docusaurus adds its custom selectors that he overrides in build phase and doesn't take into account your overrides.
+// Themes are not mend to be overriden whole but only partial.
+
+$layout: (
+  right-sidebar-padding: $base-gutter-size,
+  main-wrapper: map-get-strict($base-containers, default),
+  main-wrapper-gutter: $base-gutter-size
+);
+
+#__docusaurus {
+  .main-wrapper {
+    width: 100%;
+
+    div[class^="docPage_"] {
+      flex-wrap: wrap;
+      max-width: map-get-strict($layout, main-wrapper);
+      padding: 0 map-get-strict($layout, main-wrapper-gutter);
+      margin: 0 auto;
+    }
+
+    main[class^="docMainContainer_"] {
+      @include flex-grid-width(12);
+
+      @include media(desktop up) {
+        @include flex-grid-width(9);
+      }
+    }
+
+    main[class^="docItemContainer_"] {
+      padding: 0;
+    }
+
+    div[class^="docSidebarContainer_"] {
+      border-right: none;
+
+      @include media(tablet up) {
+        display: block;
+        @include flex-grid-width(3);
+      }
+    }
+
+    div[class^="sidebar_"] {
+      padding-bottom: 35px;
+    }
+
+    article {
+      header {
+        h1 {
+          margin-top: 0;
+          margin-bottom: 20px;
+        }
+      }
+    }
+
+    .container {
+      padding: 0 !important;
+      margin: 0;
+      max-width: initial;
+    }
+
+    .row {
+      margin: 0;
+  
+      .col {
+        @include flex-grid-width(12);
+        padding: 0;
+
+        @include media(desktop up) {
+          @include flex-grid-width(9);
+          padding: 0 map-get-strict($layout, main-wrapper-gutter);
+        }
+  
+        @include media(large up) {
+          padding: 0 80px;
+        }
+
+        &.col--3 {
+          padding-right: 0;
+          padding-left: 0;
+          @include flex-grid-width(3);
+        }
+      }
+    }
+
+    div[class^="tableOfContents_"] {
+      top: var(--ifm-navbar-height);
+    }
+  }
+}
