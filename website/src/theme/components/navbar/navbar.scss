@@ -1,15 +1,16 @@
 $navbar: (
   nav: (
     mobile: (
-      padding: 0 $base-gutter-size,
       box-shadow: none,
       height: var(--ifm-navbar-height),
       background-color: $base-cararra-color,
+      padding: 0,
     ),
   ),
   inner: (
     mobile: (
       max-width: map-get-strict($base-containers, default),
+      padding: 0 $base-gutter-size,
       margin: 0 auto,
     ),
   ),

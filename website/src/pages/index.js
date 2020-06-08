@@ -6,11 +6,8 @@ import GetStarted from '../theme/sections/get-started/get-started';
 import Features from '../theme/sections/features/features';
 import Footer from '../theme/sections/Footer/Footer';
 import Foot from '../theme/sections/Foot/Foot';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 export default function Home() {
-  const context = useDocusaurusContext();
-  const {siteConfig = {}} = context;
 
   return (
     <Layout>

@@ -10,11 +10,11 @@ $layout: (
 #__docusaurus {
   .main-wrapper {
     width: 100%;
-    padding: 0 map-get-strict($layout, main-wrapper-gutter);
 
-    > div {
+    > div[class^="docPage_"] {
       flex-wrap: wrap;
       max-width: map-get-strict($layout, main-wrapper);
+      padding: 0 map-get-strict($layout, main-wrapper-gutter);
       margin: 0 auto;
 
       > div {
@@ -61,36 +61,37 @@ $layout: (
         }
       }
     }
-  }
+
+    .container {
+      padding: 0 !important;
+      margin: 0;
+      max-width: initial;
+    }
   
-  .container {
-    padding: 0 !important;
-    margin: 0;
-    max-width: initial;
-  }
-
-  .row {
-    margin: 0;
-
-    .col {
-      @include flex-grid-width(12);
-      padding: 0;
-
-      @include media(desktop up) {
-        @include flex-grid-width(9);
-      }
-
-      @include media(large up) {
-        padding: 0 80px;
-      }
-
-      &.col--3 {
-        padding-right: 0;
-        padding-left: 0;
-        @include flex-grid-width(3);
-
-        > div {
-          top: var(--ifm-navbar-height);
+    .row {
+      margin: 0;
+  
+      .col {
+        @include flex-grid-width(12);
+        padding: 0;
+  
+        @include media(desktop up) {
+          @include flex-grid-width(9);
+          padding: 0 map-get-strict($layout, main-wrapper-gutter);
+        }
+  
+        @include media(large up) {
+          padding: 0 80px;
+        }
+  
+        &.col--3 {
+          padding-right: 0;
+          padding-left: 0;
+          @include flex-grid-width(3);
+  
+          > div {
+            top: var(--ifm-navbar-height);
+          }
         }
       }
     }
