@@ -4,6 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
 <meta name="generator" content="Docusaurus v2.0.0-alpha.54">
+<link rel="preconnect" href="https://www.google-analytics.com">
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<script async src="https://www.googletagmanager.com/gtag/js?id=GTM-P5GG5DH"></script>
+<script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","GTM-P5GG5DH",{anonymize_ip:!0})</script>
 <script src="https://buttons.github.io/buttons.js" async defer="defer"></script>
 
 <title data-react-helmet="true">Extending Classes | Eightshift Development kit</title>
@@ -18,25 +22,25 @@
 <link rel="stylesheet" href="/eightshift-docs/main.2c301944.css">
 
 
-<link rel="preload" href="/eightshift-docs/styles.8b317322.js" as="script">
+<link rel="preload" href="/eightshift-docs/styles.f711700b.js" as="script">
 
-<link rel="preload" href="/eightshift-docs/runtime~main.5ab32a1a.js" as="script">
+<link rel="preload" href="/eightshift-docs/runtime~main.2bc635cb.js" as="script">
 
-<link rel="preload" href="/eightshift-docs/main.c977b6ba.js" as="script">
+<link rel="preload" href="/eightshift-docs/main.ede95847.js" as="script">
 
-<link rel="preload" href="/eightshift-docs/1.0a0c6e5a.js" as="script">
+<link rel="preload" href="/eightshift-docs/1.5c018651.js" as="script">
 
-<link rel="preload" href="/eightshift-docs/2.cdb9ffe0.js" as="script">
+<link rel="preload" href="/eightshift-docs/2.903344b2.js" as="script">
 
-<link rel="preload" href="/eightshift-docs/1be78505.15378d1a.js" as="script">
+<link rel="preload" href="/eightshift-docs/1be78505.f1146f6d.js" as="script">
 
-<link rel="preload" href="/eightshift-docs/60.0620c958.js" as="script">
+<link rel="preload" href="/eightshift-docs/60.5379b818.js" as="script">
 
-<link rel="preload" href="/eightshift-docs/3c240ef0.0a7b4816.js" as="script">
+<link rel="preload" href="/eightshift-docs/3c240ef0.28556620.js" as="script">
 
-<link rel="preload" href="/eightshift-docs/17896441.d0e80de3.js" as="script">
+<link rel="preload" href="/eightshift-docs/17896441.0c85cad1.js" as="script">
 
-<link rel="preload" href="/eightshift-docs/c93b6be3.f084f4cf.js" as="script">
+<link rel="preload" href="/eightshift-docs/c93b6be3.018d6f7f.js" as="script">
 
 </head>
 <body>
@@ -51,25 +55,25 @@ In your <code>enqueue\class-admin-enqueue.php</code> file you&#x27;d do:</p><div
 </span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">    </span><span class="token comment" style="color:rgb(105, 112, 152);font-style:italic">// We do not want to load the login and admin styles.</span><span class="token plain"></span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">    </span><span class="token function" style="color:rgb(130, 170, 255)">remove_action</span><span class="token punctuation" style="color:rgb(199, 146, 234)">(</span><span class="token plain"> </span><span class="token string" style="color:rgb(195, 232, 141)">&#x27;login_enqueue_scripts&#x27;</span><span class="token punctuation" style="color:rgb(199, 146, 234)">,</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(199, 146, 234)">[</span><span class="token plain"> $</span><span class="token keyword" style="font-style:italic">this</span><span class="token punctuation" style="color:rgb(199, 146, 234)">,</span><span class="token plain"> </span><span class="token string" style="color:rgb(195, 232, 141)">&#x27;enqueue_styles&#x27;</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(199, 146, 234)">]</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(199, 146, 234)">)</span><span class="token punctuation" style="color:rgb(199, 146, 234)">;</span><span class="token plain"></span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">    </span><span class="token function" style="color:rgb(130, 170, 255)">remove_action</span><span class="token punctuation" style="color:rgb(199, 146, 234)">(</span><span class="token plain"> </span><span class="token string" style="color:rgb(195, 232, 141)">&#x27;admin_enqueue_scripts&#x27;</span><span class="token punctuation" style="color:rgb(199, 146, 234)">,</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(199, 146, 234)">[</span><span class="token plain"> $</span><span class="token keyword" style="font-style:italic">this</span><span class="token punctuation" style="color:rgb(199, 146, 234)">,</span><span class="token plain"> </span><span class="token string" style="color:rgb(195, 232, 141)">&#x27;enqueue_styles&#x27;</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(199, 146, 234)">]</span><span class="token punctuation" style="color:rgb(199, 146, 234)">,</span><span class="token plain"> </span><span class="token number" style="color:rgb(247, 140, 108)">50</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(199, 146, 234)">)</span><span class="token punctuation" style="color:rgb(199, 146, 234)">;</span><span class="token plain"></span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">  </span><span class="token punctuation" style="color:rgb(199, 146, 234)">}</span><span class="token plain"></span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain"></span><span class="token punctuation" style="color:rgb(199, 146, 234)">}</span></div></div></div></div></div><p>This way, only <code>add_action( &#x27;admin_enqueue_scripts&#x27;, [ $this, &#x27;enqueue_scripts&#x27; ] );</code> hook will run, and only admin scripts will be loaded. You just need to be sure to modify your webpack settings so that admin CSS scripts are not bundled.</p><p>You can do this with other classess in the lib - <code>Blocks</code>, <code>Columns</code>, <code>Manifest</code>, etc. in the same way.</p></div></article><div class="margin-vert--lg"><nav class="pagination-nav"><div class="pagination-nav__item"><a class="pagination-nav__link" href="/eightshift-docs/docs/frontend-libs"><div class="pagination-nav__link--sublabel">Previous</div><div class="pagination-nav__link--label">« Eightshift Frontend Libs</div></a></div><div class="pagination-nav__item pagination-nav__item--next"><a class="pagination-nav__link" href="/eightshift-docs/docs/guides/di-container"><div class="pagination-nav__link--sublabel">Next</div><div class="pagination-nav__link--label">Dependency injection container »</div></a></div></nav></div></div></div><div class="col col--3"><div class="tableOfContents_TbNY"><ul class="contents contents__left-border"><li><a href="#important-notes" class="contents__link">Important notes</a></li><li><a href="#example" class="contents__link">Example</a></li></ul></div></div></div></div></main></div></div>
 </div>
 
-<script src="/eightshift-docs/styles.8b317322.js"></script>
+<script src="/eightshift-docs/styles.f711700b.js"></script>
 
-<script src="/eightshift-docs/runtime~main.5ab32a1a.js"></script>
+<script src="/eightshift-docs/runtime~main.2bc635cb.js"></script>
 
-<script src="/eightshift-docs/main.c977b6ba.js"></script>
+<script src="/eightshift-docs/main.ede95847.js"></script>
 
-<script src="/eightshift-docs/1.0a0c6e5a.js"></script>
+<script src="/eightshift-docs/1.5c018651.js"></script>
 
-<script src="/eightshift-docs/2.cdb9ffe0.js"></script>
+<script src="/eightshift-docs/2.903344b2.js"></script>
 
-<script src="/eightshift-docs/1be78505.15378d1a.js"></script>
+<script src="/eightshift-docs/1be78505.f1146f6d.js"></script>
 
-<script src="/eightshift-docs/60.0620c958.js"></script>
+<script src="/eightshift-docs/60.5379b818.js"></script>
 
-<script src="/eightshift-docs/3c240ef0.0a7b4816.js"></script>
+<script src="/eightshift-docs/3c240ef0.28556620.js"></script>
 
-<script src="/eightshift-docs/17896441.d0e80de3.js"></script>
+<script src="/eightshift-docs/17896441.0c85cad1.js"></script>
 
-<script src="/eightshift-docs/c93b6be3.f084f4cf.js"></script>
+<script src="/eightshift-docs/c93b6be3.018d6f7f.js"></script>
 
 
 </body>
