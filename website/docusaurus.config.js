@@ -14,6 +14,10 @@ module.exports = {
     }
   ],
   themeConfig: {
+    gtag: {
+      trackingID: 'GTM-P5GG5DH',
+      anonymizeIP: true,
+    },
     disableDarkMode: true,
     navbar: {
       logo: {
