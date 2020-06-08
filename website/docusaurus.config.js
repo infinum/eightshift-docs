@@ -73,4 +73,15 @@ module.exports = {
     ],
   ],
   plugins: ['docusaurus-plugin-sass'],
+  customFields: {
+    keywords: [
+      'wordpress tools',
+       'development tools',
+       'wordpress project',
+       'Gutenberg blocks',
+       'development kit',
+       'wordpress kit'
+    ],
+    image: 'img-why-boilerplate@2x.png',
+  }
 };
