@@ -13,9 +13,7 @@ export default function Home() {
   const {siteConfig = {}} = context;
 
   return (
-    <Layout
-      title={siteConfig.title}
-      description="All the tools you need to start building a modern WordPress project, using all the latest front end development tools.">
+    <Layout>
       <Intro />
       <Why />
       <GetStarted />

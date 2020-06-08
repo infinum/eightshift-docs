@@ -4,7 +4,9 @@ import GetStarted from '../theme/sections/get-started/get-started'
 
 export default function Start() {
   return (
-    <Layout>
+    <Layout
+      title={'Get Started'}
+    >
       <GetStarted />
     </Layout>
   );
