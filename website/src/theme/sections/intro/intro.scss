@@ -3,7 +3,6 @@ $intro: (
     mobile: (
       padding-top: 70px,
       padding-bottom: 80px,
-      position: relative,
     ),
     tablet: (
       padding-top: 160px,
@@ -70,7 +69,7 @@ $intro: (
   image: (
     mobile: (
       position: relative,
-      margin: 0 (-$base-gutter-size) 40px,
+      margin: 0 (-$base-gutter-size * 2) 40px,
       display: flex,
       justify-content: flex-end,
     ),
@@ -86,6 +85,8 @@ $intro: (
   image-bg: (
     mobile: (
       display: block,
+      width: 100%,
+      height: auto,
     ),
   ),
   image-img: (

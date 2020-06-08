@@ -11,6 +11,7 @@ $layout: (
   }
 
   .main-wrapper {
+    width: 100%;
     max-width: map-get-strict($layout, main-wrapper);
     padding: 0 map-get-strict($layout, main-wrapper-gutter);
     margin: 0 auto;
@@ -26,12 +27,14 @@ $layout: (
     margin: 0;
 
     .col {
-      padding: 0 map-get-strict($layout, main-wrapper-gutter);
-      @include flex-grid-width(9);
+      @include flex-grid-width(12);
+      padding: 0;
 
-      
-  
-      @include media(tablet up) {
+      @include media(desktop up) {
+        @include flex-grid-width(9);
+      }
+
+      @include media(large up) {
         padding: 0 80px;
       }
 
@@ -41,6 +44,10 @@ $layout: (
         @include flex-grid-width(3);
       }
     }
+  }
+
+  .docItemContainer_node_modules-\@docusaurus-theme-classic-src-theme-DocItem- {
+    padding: 0;
   }
 
   .docTitle_node_modules-\@docusaurus-theme-classic-src-theme-DocItem- {
@@ -53,10 +60,14 @@ $layout: (
   }
 
   .tableOfContents_node_modules-\@docusaurus-theme-classic-src-theme-DocItem- {
-    top: 0;
+    top: var(--ifm-navbar-height);
   }
 
   .docMainContainer_node_modules-\@docusaurus-theme-classic-src-theme-DocPage- {
-    @include flex-grid-width(9);
+    @include flex-grid-width(12);
+
+    @include media(desktop up) {
+      @include flex-grid-width(9);
+    }
   }
 }

@@ -4,11 +4,23 @@ $menu: (
       padding: 0,
     ),
   ),
+  menu-show: (
+    mobile: (
+      padding: $base-gutter-size,
+    ),
+  ),
   link: (
     mobile: (
       padding-left: 0,
-      padding-right: 20px,
+      padding-right: 0,
       color: $base-cape-color,
+      transition: all 0.3s ease-in,
+    )
+  ),
+  link-hover: (
+    mobile: (
+      color: $base-mandy-color,
+      background-color: transparent,
     )
   ),
   sublist: (
@@ -48,10 +60,21 @@ $menu: (
 #__docusaurus {
   .menu {
     @include responsive($menu, menu);
+
+    &--show {
+      @include responsive($menu, menu-show);
+    }
   
     &__link {
       @include responsive($menu, link);
-      transition: all 0.3s ease-in;
+
+      &:focus {
+        outline: none;
+      }
+
+      &:hover {
+        @include responsive($menu, link-hover);
+      }
   
       &--sublist {
         @include responsive($menu, sublist);

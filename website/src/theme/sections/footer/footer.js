@@ -55,7 +55,7 @@ export default function Footer() {
 
     return (
       <div className={`${component}__item`} key={index}>
-        <a className={`${component}__link`} href={link}>
+        <a className={`${component}__link`} href={link} target="_blank" rel="noopener noreferrer">
           <div className={`${component}__icon`}>
             {icon}
           </div>

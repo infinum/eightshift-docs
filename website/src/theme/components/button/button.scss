@@ -45,6 +45,10 @@ $button: (
     text-decoration: none;
   }
 
+  &:focus {
+    outline: none;
+  }
+
   &__color {
     @include link-modifiers($button, colors);
   }

@@ -4,7 +4,11 @@ $navbar: (
       padding: 0 $base-gutter-size,
       box-shadow: none,
       height: var(--ifm-navbar-height),
-      background-color: inherit,
+      background-color: $base-cararra-color,
+    ),
+  ),
+  inner: (
+    mobile: (
       max-width: map-get-strict($base-containers, default),
       margin: 0 auto,
     ),
@@ -43,7 +47,11 @@ $navbar: (
     mobile: (
       height: 48px,
       padding-left: 20px,
+      display: none,
     ),
+    tablet: (
+      display: block,
+    )
   ),
   search-input: (
     mobile: (
@@ -83,12 +91,19 @@ $navbar: (
       padding: 9px,
       margin-right: 20px,
     ),
+    desktop: (
+      display: none,
+    ),
   )
 );
 
 #__docusaurus .navbar {
   $this: &;
   @include responsive($navbar, nav);
+
+  &__inner {
+    @include responsive($navbar, inner);
+  }
 
   &__link {
     @include responsive($navbar, link);
@@ -121,5 +136,9 @@ $navbar: (
 
   &__toggle {
     @include responsive($navbar, toggle);
+
+    &:focus {
+      outline: none;
+    }
   }
 }
