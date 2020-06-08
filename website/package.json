@@ -16,7 +16,8 @@
     "docusaurus-plugin-sass": "^0.1.8",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
-    "react-scripts": "^3.4.1"
+    "react-scripts": "^3.4.1",
+    "my-loaders": "file:plugins/my-loaders"
   },
   "browserslist": {
     "production": [
