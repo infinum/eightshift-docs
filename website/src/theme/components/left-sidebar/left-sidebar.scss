@@ -109,5 +109,10 @@ $menu: (
         @include responsive($menu, sublist-sublist);
       }
     }
+
+
+    span[class^="sidebarMenuIcon_"] {
+      display: block;
+    }
   }
 }

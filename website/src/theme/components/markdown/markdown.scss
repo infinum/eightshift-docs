@@ -87,16 +87,12 @@ $markdown: (
     @include responsive($markdown, code);
   }
 
-  div {
-    div {
-      div {
-        border-radius: 0;
+  div[class^="codeBlock_"] {
+    border-radius: 0;
+  }
 
-        div {
-          @include responsive($markdown, code-block);
-        }
-      }
-    }
+  div[class^="codeBlockLines_"] {
+    @include responsive($markdown, code-block);
   }
 
   .token-line {

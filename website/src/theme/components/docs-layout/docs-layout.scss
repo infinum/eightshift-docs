@@ -11,50 +11,36 @@ $layout: (
   .main-wrapper {
     width: 100%;
 
-    > div[class^="docPage_"] {
+    div[class^="docPage_"] {
       flex-wrap: wrap;
       max-width: map-get-strict($layout, main-wrapper);
       padding: 0 map-get-strict($layout, main-wrapper-gutter);
       margin: 0 auto;
+    }
 
-      > div {
-        border-right: none;
+    main[class^="docMainContainer_"] {
+      @include flex-grid-width(12);
 
-        @include media(tablet up) {
-          display: block;
-          @include flex-grid-width(3);
-        }
-
-        > div {
-          padding-bottom: 35px;
-
-          > div {
-            > button {
-              span {
-                display: block;
-              }
-            }
-          }
-        }
+      @include media(desktop up) {
+        @include flex-grid-width(9);
       }
+    }
 
-      > main {
-        @include flex-grid-width(12);
+    main[class^="docItemContainer_"] {
+      padding: 0;
+    }
 
-        @include media(desktop up) {
-          @include flex-grid-width(9);
-        }
+    div[class^="docSidebarContainer_"] {
+      border-right: none;
 
-        > div {
-          > div {
-            > div {
-              > div {
-                padding: 0;
-              }
-            }
-          }
-        }
+      @include media(tablet up) {
+        display: block;
+        @include flex-grid-width(3);
       }
+    }
+
+    div[class^="sidebar_"] {
+      padding-bottom: 35px;
     }
 
     article {
