@@ -24,6 +24,8 @@ To create custom REST Field:
  * @package Eightshift_Boilerplate\Rest_Routes\Fields
  */
 
+ declare( strict_types=1 );
+
 namespace Eightshift_Boilerplate\Rest_Routes\Fields;
 
 use Eightshift_Libs\Rest\Base_Field;
@@ -47,7 +49,7 @@ class Example_Field extends Base_Field implements Callable_Field {
   }
 
   /**
-   * Get the name of the field you awant to register or orverride.
+   * Get the name of the field you want to register or override.
    *
    * @return string The attribute name.
    *
