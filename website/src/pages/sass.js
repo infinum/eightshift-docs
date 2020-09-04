@@ -2,7 +2,7 @@ import React from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Layout from '@theme/Layout';
-import Iframe from '../theme/sections/Iframe/Iframe';
+import Iframe from '../theme/sections/iframe/iframe';
 
 export default function Sass() {
   const context = useDocusaurusContext();
