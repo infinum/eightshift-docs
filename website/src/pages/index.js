@@ -6,8 +6,8 @@ import Intro from '../theme/sections/intro/intro';
 import Why from '../theme/sections/why/why';
 import GetStarted from '../theme/sections/get-started/get-started';
 import Features from '../theme/sections/features/features';
-import Footer from '../theme/sections/Footer/Footer';
-import Foot from '../theme/sections/Foot/Foot';
+import Footer from '../theme/sections/footer/footer';
+import Foot from '../theme/sections/foot/foot';
 
 export default function Home() {
   const context = useDocusaurusContext();
