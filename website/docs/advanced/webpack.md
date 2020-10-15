@@ -90,10 +90,12 @@ module.exports = (env, argv) => {
 
   return {
     ...project,
-    plugin: [
+    plugins: [
+      ...project.plugins,
       new HtmlWebpackPlugin(),
-    ]
+    ],
   };
 };
-
 ```
+
+If you want to override the defaults from the libs, first put it in the `overrides` array, then provide your own config as described above.
