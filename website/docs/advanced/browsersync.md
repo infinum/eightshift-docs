@@ -12,7 +12,7 @@ Besides that, you can test your site on various devices on the same network.
 If comes by default with the libs, and when you run:
 
 ```bash
-npm run start
+npm start
 ```
 
 it will proxy the page you've specified in the `projectUrl` to your local server
@@ -29,7 +29,7 @@ it will proxy the page you've specified in the `projectUrl` to your local server
  --------------------------------------
 ```
 
-Using the IP address you can open it on any device (mobile phone or a tablet) and you'll see how your site looks like on them.
+Using the IP address you can open it on any device (mobile phone or a tablet) that is connected to the same network and you'll see how your site looks like on them.
 
 ## Override default functionality
 
