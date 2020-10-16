@@ -67,6 +67,7 @@ module.exports = {
       "advanced/docs-storybook",
       "advanced/docs-sass",
       "advanced/webpack",
+      "advanced/browsersync",
       {
         "type": "category",
         "label": "Helpers",
