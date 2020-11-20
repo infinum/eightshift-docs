@@ -1,0 +1,45 @@
+---
+id: requirements
+title: Requirements
+sidebar_label: Requirements
+---
+
+In order for to have the smoothest development and setup experience we need some things to be installed on your computer.
+Please install this packages before you start the setup.
+
+1. [Node.js](https://nodejs.org/en/)
+2. [Composer](https://getcomposer.org/)
+3. [WP-CLI](https://wp-cli.org/)
+4. [Git](https://git-scm.com/)
+
+Make sure that you have all this packages installed and
+ready to use on your system. To make sure that they work run this commands:
+- `node -v`
+- `composer -v`
+- `wp --info`
+- `git --version`
+
+
+If it doesn't return any errors you are good to go.
+
+## Quick start
+Let's finally create a new theme!
+
+Navigate to your WordPress theme folder and run the following command:
+
+```bash
+npx create-wp-project
+```
+
+Script will prompt you for theme name and local development url (used for BrowserSync) and install a new theme:
+
+![](https://raw.githubusercontent.com/infinum/eightshift-frontend-libs/develop/package/setup.gif)
+
+After the script is finished, please follow the instructions provided by the setup script.
+
+All additional steps after the initial setup are done using WP_CLI commands so please make sure that you have WP-CLI set and ready to use.
+
+## What is next?
+Now that we have theme set on your local enviroment, lets do something with it. 
+
+Please make sure you read the Basics chapter to get a better idea how the project is set and what do we use to make your developing experience as smooth as possible.

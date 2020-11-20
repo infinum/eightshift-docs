@@ -1,12 +1,23 @@
 module.exports = {
   docs: {
-    "The Basics": [
-      "introduction",
+    "Getting Started": [
+      "welcome",
       "eightshift-libs",
       "eightshift-frontend-libs",
+      "requirements",
+      "create-new-theme",
     ],
-    "Getting Started": [
-      "theme",
+    "Basics": [
+      'basics/basics',
+    ],
+    "Dynamic Blocks": [
+      'dynamic-blocks/dynamic-blocks'
+    ],
+    "Helpers": [
+      'helpers/helpers'
+    ],
+    "Advanced": [
+      'advanced/advanced'
     ],
     "Legacy": [
       {
