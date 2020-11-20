@@ -24,5 +24,5 @@ If it doesn't return any errors you are good to go.
 # Now you must decide!
 
 We are prepared for all your development needs, so decide what are you going to develop next:
-* [New Theme](create-new-theme.md)
-* [New Plugin](create-new-plugin.md)
+* [New Theme](theme)
+* [New Plugin](plugin)

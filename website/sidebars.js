@@ -5,14 +5,37 @@ module.exports = {
       "eightshift-libs",
       "eightshift-frontend-libs",
       "requirements",
-      "create-new-theme",
-      "create-new-plugin",
+      "theme",
+      "plugin",
     ],
     "Basics": [
       'basics/basics',
-    ],
-    "Dynamic Blocks": [
-      'dynamic-blocks/dynamic-blocks'
+      'basics/wp-cli',
+      {
+        "type": "category",
+        "label": "Backend Stuff",
+        "items": [
+          "basics/backend",
+          "basics/namespaces",
+          "basics/extending-classes",
+          "basics/example-class",
+        ]
+      },
+      {
+        "type": "category",
+        "label": "Frontend Stuff",
+        "items": [
+          "basics/frontend",
+          "basics/browser-sync",
+        ]
+      },
+      {
+        "type": "category",
+        "label": "Blocks",
+        "items": [
+          "basics/blocks",
+        ]
+      },
     ],
     "Helpers": [
       'helpers/helpers'

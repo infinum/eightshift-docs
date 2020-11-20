@@ -1,18 +1,18 @@
 ---
-id: create-new-theme
-title: Create new WordPress theme
-sidebar_label: Create New Theme
+id: plugin
+title: Create new WordPress plugin
+sidebar_label: Create New Plugin
 ---
 
-Let's create a new theme!
+Let's create a new plugin!
 
-Navigate to your WordPress theme folder and run the following command:
+Navigate to your WordPress plugin folder and run the following command:
 
 ```bash
-npx create-wp-project
+npx create-wp-project plugin
 ```
 
-The script will prompt you for a theme name and local development URL (used for BrowserSync). After that your new theme will be installed:
+The script will prompt you for a plugin name and local development URL (used for BrowserSync). After that your new plugin will be installed:
 
 ![](https://raw.githubusercontent.com/infinum/eightshift-frontend-libs/develop/package/setup.gif)
 
@@ -21,6 +21,6 @@ After the script is finished, please follow the instructions provided by the set
 All additional steps after the initial setup are done using WP_CLI commands so please make sure that you have WP-CLI set and ready to use.
 
 ## What is next?
-Now that we have the theme set on your local enviroment, let's do something with it.
+Now that we have the plugin set on your local enviroment, let's do something with it.
 
 Please make sure you read the [Basics chapter](basics/basics.md) to get a better understanding of how the project is set up and what is included to make your developing experience as smooth as possible.
