@@ -41,18 +41,13 @@ Script will prompt you for theme name and local development url (used for Browse
 
 ![](https://raw.githubusercontent.com/infinum/eightshift-frontend-libs/develop/package/setup.gif)
 
-After the script is finished, you can activate the theme through WP Admin Dashboard.
+After the script is finished, please follow the instructions provided by the setup script.
 
-To start developing run this command from theme's root folder:
+All additional steps after the initial setup are done using WP_CLI commands so please make sure that you have WP-CLI set and ready to use.
 
-```bash
-npm start
-```
+## What is next?
+Now that we have theme set on your local enviroment, lets do something with it. 
 
-## Script arguments
+Please make sure you read the Basics chapter to get a better idea how the project is set and what do we use to make your developing experience as smooth as possible.
 
-You can get a list of available script arguments by running:
-
-```bash
-npx create-wp-project --help
-```
+After Basic chapter you can find all 

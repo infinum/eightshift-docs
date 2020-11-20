@@ -1,5 +1,10 @@
 module.exports = {
   docs: {
+    "The Basics": [
+      "introduction",
+      "eightshift-libs",
+      "eightshift-frontend-libs",
+    ],
     "Getting Started": [
       "theme",
     ],
