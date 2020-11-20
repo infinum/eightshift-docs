@@ -14,19 +14,6 @@ Eightshift boilerplate contains all the tools you need to start building a moder
 
 1. [Node.js](https://nodejs.org/en/)
 2. [Composer](https://getcomposer.org/)
-3. [WP-CLI](https://wp-cli.org/)
-4. [Git](https://git-scm.com/)
-
-Please make sure that you have all this packages installed and
-ready to use on your system. To make sure that they work run this commands:
-```bash
-node -v
-composer -v
-wp --info
-git --version
-```
-
-If it doesn't return any errors you are good to go.
 
 ## Quick start
 Let's create a new theme!
