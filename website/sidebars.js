@@ -6,6 +6,7 @@ module.exports = {
       "eightshift-frontend-libs",
       "requirements",
       "create-new-theme",
+      "create-new-plugin",
     ],
     "Basics": [
       'basics/basics',

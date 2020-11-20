@@ -12,8 +12,7 @@ Please install this packages before you start the setup.
 3. [WP-CLI](https://wp-cli.org/)
 4. [Git](https://git-scm.com/)
 
-Make sure that you have all this packages installed and
-ready to use on your system. To make sure that they work run this commands:
+Make sure that you have all this packages installed and ready to use on your system. To make sure that they work, run this commands:
 - `node -v`
 - `composer -v`
 - `wp --info`
@@ -22,24 +21,8 @@ ready to use on your system. To make sure that they work run this commands:
 
 If it doesn't return any errors you are good to go.
 
-## Quick start
-Let's finally create a new theme!
+# Now you must decide!
 
-Navigate to your WordPress theme folder and run the following command:
-
-```bash
-npx create-wp-project
-```
-
-Script will prompt you for theme name and local development url (used for BrowserSync) and install a new theme:
-
-![](https://raw.githubusercontent.com/infinum/eightshift-frontend-libs/develop/package/setup.gif)
-
-After the script is finished, please follow the instructions provided by the setup script.
-
-All additional steps after the initial setup are done using WP_CLI commands so please make sure that you have WP-CLI set and ready to use.
-
-## What is next?
-Now that we have theme set on your local enviroment, lets do something with it. 
-
-Please make sure you read the Basics chapter to get a better idea how the project is set and what do we use to make your developing experience as smooth as possible.
+We are prepared for all your development needs, so decide what are you going to develop next:
+* [New Theme](create-new-theme.md)
+* [New Plugin](create-new-plugin.md)

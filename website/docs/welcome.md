@@ -13,7 +13,7 @@ Lets brag a little about what you can expect from this setup:
 - **WP-CLI** - Build your application with all-ready pre-created features that you can access with a single command using terminal.
 - **Webpack** - Modern assets & building process that you can customise.
 - **SASS** - Easy to learn CSS on steroids.
-- **Autoprefixing** - You don't have too worry is your code work on a older browsers.
+- **Autoprefixing** - You don't have to worry if your code will work on older browsers.
 - **JS Compiler (Babel)** - Write JS using the latest features and let webpack worry about making it work across all browsers.
 - **Synchronised browser testing** - Automatically minifies your production assets (JS / CSS) during build process.
 - **Minifying** - Automatically minifies your production assets (JS / CSS) during build process.

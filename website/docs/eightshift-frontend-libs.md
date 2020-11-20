@@ -5,11 +5,11 @@ title: Eightshift Frontend Libs
 
 [![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs)
 
-This library is aimed at bringing the modern front end development tools to the [Eightshift Boilerplate](https://github.com/infinum/eightshift-boilerplate) or [Eightshift Boilerplate Plugin](https://github.com/infinum/eightshift-boilerplate-plugin), but you can use it on any WordPress project.
+This library is meant to bringing you the modern front end development tools to the [Eightshift Boilerplate](https://github.com/infinum/eightshift-boilerplate) or [Eightshift Boilerplate Plugin](https://github.com/infinum/eightshift-boilerplate-plugin), but you can use it on any WordPress project.
 
 ## Prerequisites
 
-The knowledge of the core editor components and React.js is recommended since this library is focused on working with new editor, and contains custom blocks. If you want to create your own custom blocks, that knowledge will come in handy.
+The knowledge of the core editor components and React.js is recommended since this library is focused on working with the new Gutenberg block editor, and contains custom blocks. If you want to create your own custom blocks, that knowledge will come in handy.
 
 The library can be used for pure webpack/js/scss functionality, but if the blocks are to be used, [Eightshift Libs](https://github.com/infinum/eightshift-libs/) must be used in tandem.
 
