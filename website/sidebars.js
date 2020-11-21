@@ -19,6 +19,7 @@ module.exports = {
           "basics/namespaces",
           "basics/extending-classes",
           "basics/example-class",
+          "basics/autowiring",
         ]
       },
       {
