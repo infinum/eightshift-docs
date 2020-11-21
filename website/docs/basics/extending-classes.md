@@ -7,13 +7,13 @@ sidebar_label: Extending Classes
 [![docs-source](https://img.shields.io/badge/source-eigthshift--libs-blue?style=for-the-badge&logo=php&labelColor=2a2a2a)](https://github.com/infinum/eightshift-libs)
 
 
-Every class in the lib can be extended. To follow the good practice you should never use class directly from the Eightshift-libs in you service container, but rather you should create an class in your project and extend the class from the Eightshift-libs. That is why we created all those [WP-CLI](wp-cli) commands that you saw in the previous chapter.
+You can extend every class from the library. To follow the good practice, you should never use the class directly from the Eightshift-libs in your service container; but instead, you should create a class in your project and extend the class from the Eightshift-libs. That is why we made all those [WP-CLI](wp-cli) commands that you saw in the previous chapter.
 
-We don't do any magic in the Eightshift-libs, like we did in previous versions. All classes contain only methods that you need to call using WordPress hooks or filters.
+We don't do any magic in the Eightshift-libs as we did in previous versions. All classes contain only methods that you need to call using WordPress hooks or filters.
 
 ## Example
 
-Let's look at a way to add class that enqueues themes frontend scripts and styles.
+Let's look at a way to add a class that enqueues themes frontend scripts and styles.
 Go to the **root** of your theme using the terminal and run this command:
 
 `wp boilerplate create_enqueue_admin`
@@ -45,52 +45,52 @@ use CoolProjectVendor\EightshiftLibs\Manifest\ManifestInterface;
 class EnqueueAdmin extends AbstractEnqueueAdmin
 {
 
-	/**
-	 * Create a new admin instance.
-	 *
-	 * @param ManifestInterface $manifest Inject manifest which holds data about assets from manifest.json.
-	 */
-	public function __construct(ManifestInterface $manifest)
-	{
-		$this->manifest = $manifest;
-	}
+  /**
+   * Create a new admin instance.
+   *
+   * @param ManifestInterface $manifest Inject manifest which holds data about assets from manifest.json.
+   */
+  public function __construct(ManifestInterface $manifest)
+  {
+    $this->manifest = $manifest;
+  }
 
-	/**
-	 * Register all the hooks
-	 *
-	 * @return void
-	 */
-	public function register(): void
-	{
-		add_action('login_enqueue_scripts', [ $this, 'enqueueStyles' ]);
-		add_action('admin_enqueue_scripts', [ $this, 'enqueueStyles' ], 50);
-		add_action('admin_enqueue_scripts', [ $this, 'enqueueScripts' ]);
-	}
+  /**
+   * Register all the hooks
+   *
+   * @return void
+   */
+  public function register(): void
+  {
+    add_action('login_enqueue_scripts', [ $this, 'enqueueStyles' ]);
+    add_action('admin_enqueue_scripts', [ $this, 'enqueueStyles' ], 50);
+    add_action('admin_enqueue_scripts', [ $this, 'enqueueScripts' ]);
+  }
 
-	/**
-	 * Method that returns assets name used to prefix asset handlers.
-	 *
-	 * @return string
-	 */
-	public function getAssetsPrefix(): string
-	{
-		return Config::getProjectName();
-	}
+  /**
+   * Method that returns assets name used to prefix asset handlers.
+   *
+   * @return string
+   */
+  public function getAssetsPrefix(): string
+  {
+    return Config::getProjectName();
+  }
 
-	/**
-	 * Method that returns assets version for versioning asset handlers.
-	 *
-	 * @return string
-	 */
-	public function getAssetsVersion(): string
-	{
-		return Config::getProjectVersion();
-	}
+  /**
+   * Method that returns assets version for versioning asset handlers.
+   *
+   * @return string
+   */
+  public function getAssetsVersion(): string
+  {
+    return Config::getProjectVersion();
+  }
 }
 ```
 
-As you see from the provided example we created a new class and extended the functionality from the Eightshift-libs.
+As you see from the provided example, we created a new class and extended the functionality from the Eightshift-libs.
 
-In your new class you have a `register` method that must be in every class that registers WordPress action hooks or filters, and we call them **service classes**.
+In your new class, you have a `register` method that must be in every class that registers WordPress action hooks or filters, and we call them **service classes**.
 
-Your class contains three action hooks now, from this example you can see that if you don't want to use some functionality just remove the action and it is not used any more. For more details what each hooks callback does just go to the extended class in Eightshift-libs and see what it does.
+Your class contains three action hooks now; from this example, you can see that if you don't want to use some functionality, remove the action, and it is not used anymore. For more details on what each hook callback does, go to the extended class in Eightshift-libs and see what it does.
