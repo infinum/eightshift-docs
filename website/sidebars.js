@@ -18,8 +18,8 @@ module.exports = {
           "basics/backend",
           "basics/namespaces",
           "basics/extending-classes",
-          "basics/example-class",
           "basics/autowiring",
+          "basics/example-class",
         ]
       },
       {
