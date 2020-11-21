@@ -12,7 +12,7 @@ As you already saw in the previous chapters about [Eightshift Libs](eightshift-l
 
 ## Let's finally start with documentation
 
-We took our time to set up 40+ WP-CLI commands that will help you set up everything and use all our features without worrying about correct names, files, and organization. You can find out more on this link:
+We took our time to set up bunch WP-CLI commands that will help you set up everything and use all our features without worrying about correct names, files, and organization. You can find out more on this link:
 
 [WP-CLI](wp-cli)
 
