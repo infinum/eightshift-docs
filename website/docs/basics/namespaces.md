@@ -8,9 +8,9 @@ sidebar_label: Namespaces
 
 > PHP part of this project lives in `EightshiftLibs` namespace.
 
-But because WordPress lives in a global namespace, we had to provide the way for your project to be unique. That is why we implemented [**Imposter**](https://github.com/infinum/imposter-plugin) script inside `composer.json`. Imposter adds Namespace prefix on all the packages inside the vendor folder that uses namespacing.
+But because WordPress lives in a global namespace, we had to provide the way for your project to be unique. That is why we implemented [**Imposter**](https://github.com/infinum/imposter-plugin) script inside `composer.json`. Imposter adds a namespace prefix on all the packages inside the `vendor` folder that uses namespacing.
 
-You can change the vendor prefix in your `composer.json` file. But if you do this, make sure you delete the vendor's folder before running the command to install composer packages again with the command: `composer install`.
+You can change the vendor prefix in your `composer.json` file. But if you do this, make sure you delete the `vendor` folder before running the command to install composer packages again with the `composer install` command.
 
 
 ```php
@@ -26,10 +26,10 @@ You can change the vendor prefix in your `composer.json` file. But if you do thi
 }
 ```
 
-For example, with the default setup, your project will have the namespace you defined in the setup process, but let's say you have the structure from the upper code:
+For example, with the default setup, your project will have the namespace you defined in the setup process, but let's say you have the structure from the parent code:
 
 - Your current namespace is: `CustomProject`.
 - Namespace for all packages used from Eightshift libs is `EightshiftBoilerplateVendor\CustomProject`.
 - Also, every package you additionally install will follow the same convention: `EightshiftBoilerplateVendor\SomePackageNamespace`.
 
-To sum it up, you don't need to change the default vendor prefix if you only run one theme or one plugin with Eightshift Boilerplate. But if you have multiple Eightshift Boilerplates installed, please change the vendor prefix on one of the projects.
+To sum it up: you don't need to change the default vendor prefix if you only run one theme or one plugin with Eightshift Boilerplate. But if you have multiple Eightshift Boilerplate powered themes or plugins installed please change the vendor prefix on each of the projects.

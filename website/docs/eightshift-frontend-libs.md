@@ -9,9 +9,9 @@ This library is meant to bringing you the modern front-end development tools to 
 
 ## Prerequisites
 
-The knowledge of the core editor components and React.js is recommended since this library is focused on working with the new Block editor and contains custom blocks. If you want to create your custom blocks, that knowledge will come in handy.
+The knowledge of the core editor components and React.js is recommended, since this library is focused on working with the new Block editor and contains custom blocks. If you want to create your custom blocks, that knowledge will come in handy.
 
-The library can be used for pure Webpack/Js/Scss functionality, but if the blocks are to be used, [Eightshift Libs](https://github.com/infinum/eightshift-libs/) must be used in tandem.
+The library can be used for pure webpack/js/scss functionality, but if you want to use our blocks, [Eightshift Libs](https://github.com/infinum/eightshift-libs/) must be used in tandem. Because they handle block registration, etc.
 
 ### The library contains
 

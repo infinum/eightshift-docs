@@ -13,7 +13,11 @@ We provide some helpers, abstract classes, interfaces, and abstractions on origi
 
 ## Prerequisites
 
-We focus on modern development principles, so you should be familiar with PHP Object oriented principles and SOLID design patterns. But don't be discouraged if you don't know all of this because we have a lot of examples and tutorials to help you learn stuff and become a better developer.
+In our projects, we use object-oriented PHP, design patterns, and SOLID principle. When you work on complex projects, with various third-party integrations, it makes sense to use these. You want your code to be easily extended, testable, and future proof.
+
+If all you need is a simple website, some of these concepts might be too much for you, and you won't see many benefits in using them. Which is totally valid. We need to pick our battles and decide for ourselves what is the best tool for the job.
+
+If you want to try our setup, but you might not be as versed in the above concepts, don't worry. We have lots of examples and tried to make them easy to follow.
 
 ### The library contains
 - Dependency injection container.
