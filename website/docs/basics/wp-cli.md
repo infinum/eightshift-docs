@@ -64,4 +64,6 @@ We have defined a few command prefixes:
 - **setup** - these are commands that runs multiple all-ready defined commands from the list.
 - **use** - these are commands used for blocks and blocks related stuff. They will copy various files and folders from the blocks folder to your project.
 
-**Make WP-CLI your best friend, and your coding life will be much more comfortable, trust me.**
+> **Make WP-CLI your best friend, and your coding life will be much more comfortable, trust me.**
+
+We will explain classes that we think are necessary and should be described in more detail, and for the rest of the classes, you can find all the descriptions by running `--help` after each command.
