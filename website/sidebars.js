@@ -39,6 +39,9 @@ module.exports = {
         "items": [
           "basics/frontend",
           "basics/webpack",
+          "basics/library",
+          "basics/global-settings",
+          "basics/fonts",
           "basics/browser-sync",
         ]
       },
