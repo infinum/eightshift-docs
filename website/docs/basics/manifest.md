@@ -5,3 +5,60 @@ sidebar_label: Manifest
 ---
 
 [![docs-source](https://img.shields.io/badge/source-eigthshift--libs-blue?style=for-the-badge&logo=php&labelColor=2a2a2a)](https://github.com/infinum/eightshift-libs)
+
+In the build process, Webpack creates all the static files from your assets folder and also `manifest.json` inside the public folder. The manifest file contains a key/value list that we use to call the location of the assets dynamically.
+
+This class provides `manifest.json` file location and helpers to return the full path for a specific asset.
+
+## How to use it?
+
+First, install the manifest class if you didn't use the default project installation using this command:
+
+`wp boilerplate create_manifest`
+
+You will see a custom filter that you can use to fetch the item from the public folder in your class. This is the custom filter:
+
+```js
+/**
+ * Manifest item filter name constant.
+ *
+ * @var string
+ */
+public const MANIFEST_ITEM = 'manifest-item';
+
+/**
+ * Register all hooks. Changed filter name to manifest.
+ *
+ * @return void
+ */
+public function register(): void
+{
+	\add_filter(static::MANIFEST_ITEM, [ $this, 'getAssetsManifestItem' ]);
+}
+```
+
+To use this filter, add this code and provide the correct name of your asset:
+
+```js
+use CoolProject\Manifest\Manifest;
+
+$logo = \apply_filters(Manifest::MANIFEST_ITEM, 'logo.svg');
+```
+
+And that is it. This filter will check the public folder for the `manifest.json` file, parse it and return the value of the provided key.
+
+If there is no `manifest.json` file or you provided the wrong asset name, there will be a descriptive message for you.
+
+## Why not just fetch the asset the old fashioned way?
+
+By old fashioned way we mean ruining something like this:
+
+```js
+$logo = get_template_directory_uri() . 'public/logo.svg';
+```
+
+You definitely can do this, but with our filter, if you want to change the public folders location or public folders name for some reason, you can change it at one place, and you are done.
+
+If you are using the old fashioned way, you would need to search and replace the whole project and implement the change. There is always a chance you would miss something, break the project, get yelled at by your boss, or get fired.
+
+And this is the modern way, so there is that.
