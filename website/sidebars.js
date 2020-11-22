@@ -20,6 +20,17 @@ module.exports = {
           "basics/extending-classes",
           "basics/autowiring",
           "basics/example-class",
+          "basics/the-structure",
+          "basics/manifest",
+          {
+            "type": "category",
+            "label": "Rest",
+            "items": [
+              "basics/rest",
+              "basics/rest-field",
+              "basics/rest-route",
+            ]
+          },
         ]
       },
       {
@@ -27,6 +38,7 @@ module.exports = {
         "label": "Frontend Stuff",
         "items": [
           "basics/frontend",
+          "basics/webpack",
           "basics/browser-sync",
         ]
       },
