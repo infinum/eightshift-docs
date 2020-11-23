@@ -15,4 +15,4 @@ If you want to add a new class to your project but don't want to write all the b
 The output will ask you to input the correct folder path relative to the `src` folder and specify the class name.
 Everything else will be done for you, setting the namespace, package, vendor prefixes, class and folder name, and you will be set to write your class.
 
-After that just add your WordPress hook to the register method, provide its callback and let the magic happen.
+After that just add your WordPress hooks to the register method, provide its callback, and let the magic happen.

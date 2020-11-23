@@ -6,17 +6,17 @@ sidebar_label: Global Settings
 
 [![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs)
 
-Ok, this is the part that we are incredibly proud of. Did you know that you can pass values from the JSON manifest or some other file directly to SCSS? Yes, I had the same facial expression when I found out. For this, to work, we used Webpack and its excellent features.
+Ok, this is the part that we are incredibly proud of. Did you know that you can pass values from the JSON manifest or some other file directly to SCSS? Yes, we had the same facial expression when we found out. For this, to work, we used Webpack and its excellent features.
 
 > This feature comes only with the block setup.
 
 So if you used the `init_theme` setup, you are all set; if not, please visit [blocks chapter](blocks) for more details.
 
-## Why we use this?
+## Why do we use this?
 
-Because with dynamic blocks, you must create your blocks, we got tired of copy/pasting styles from JavaScript/PHP/SCSS files. That is why we created this feature to define some global styles at one spot and use them in all three technologies.
+Because, with dynamic blocks, you must create your blocks. We got tired of copy/pasting styles from JavaScript/PHP/SCSS files. That is why we created this feature to define some global styles in one spot and use them in all three places.
 
-## How this works?
+## How does this work?
 
 You have file `src/Blocks/manifest.json` that has a key called `globalVariables`. We use this key and build the SCSS maps that you can use in your style files.
 

@@ -9,11 +9,11 @@ sidebar_label: Extending Classes
 
 You can extend every class from the library. To follow the good practice, you should never use the class directly from the Eightshift-libs in your service container; but instead, you should create a class in your project and extend the class from the Eightshift-libs. That is why we made all those [WP-CLI](wp-cli) commands that you saw in the previous chapter.
 
-We don't do any magic in the Eightshift-libs as we did in previous versions. All classes contains only methods that you need to call using WordPress hooks or filters.
+We don't do any magic in the Eightshift-libs as we did in previous versions. All classes contain only the methods that you need to call using WordPress hooks or filters.
 
 ## Example
 
-Let's look at a way to add a class that enqueues themes frontend scripts and styles.
+Let's look at a way to add a class that enqueues theme frontend scripts and styles.
 Go to the **root** of your theme, and using the terminal, run this command:
 
 `wp boilerplate create_enqueue_admin`
