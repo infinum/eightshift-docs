@@ -51,12 +51,12 @@ If there is no `manifest.json` file or you provided the wrong asset name, there 
 
 ## Why not just fetch the asset the old fashioned way?
 
-By old fashioned way we mean ruining something like this:
+By old fashioned way we mean running something like this:
 
 ```js
 $logo = get_template_directory_uri() . 'public/logo.svg';
 ```
 
-You definitely can do this, but with our filter, if you want to change the public folders location or public folders name for some reason, you can change it at one place, and you are done.
+You can definitely do this. But with our filter, if you want to change the public folder location or public folder name for some reason, you can change it in one place, and you are done.
 
-If you are using the old fashioned way, you would need to search and replace the whole project and implement the change. There is always a chance you would miss something, break the project, get yelled at by your boss, or get fired.
+If you are using the old fashioned way, you would need to search and replace the whole project and implement the change. There is always a chance you would miss something, break the project, etc.
