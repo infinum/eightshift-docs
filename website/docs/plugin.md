@@ -6,7 +6,7 @@ sidebar_label: Create New Plugin
 
 Let's create a new plugin!
 
-Navigate to your WordPress plugin folder and run the following command:
+Navigate to your WordPress plugins folder and run the following command:
 
 ```bash
 npx create-wp-project plugin

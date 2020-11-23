@@ -52,7 +52,7 @@ const projectConfig = {
 }
 ```
 
-## I want to add something custom
+## Add a new custom functionality
 
 Let's say you want to add a custom `html-webpack-plugin` to the build; you can simply use all the native [webpack features](https://webpack.js.org/guides/) by providing it like in the example:
 
@@ -73,7 +73,7 @@ module.exports = (env, argv) => {
 };
 ```
 
-## I want to change your config
+## Change the default config
 
 Let's say you want to change what we made and adjust it to your specific needs. In that case, you should remove our functionality by providing the `overrides` array and create your implementation. For example:
 
