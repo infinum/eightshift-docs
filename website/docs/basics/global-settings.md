@@ -10,7 +10,7 @@ Ok, this is the part that we are incredibly proud of. Did you know that you can 
 
 > This feature comes only with the block setup.
 
-So if you used the `init_theme` setup, you are all set; if not, please visit [blocks chapter](blocks) for more details.
+If you used the `setup_theme` setup, you are all set; if not, please visit [blocks chapter](blocks) for more details.
 
 ## Why we use this?
 

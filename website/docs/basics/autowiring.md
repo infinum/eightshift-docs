@@ -56,8 +56,6 @@ What are your steps:
 - In your `DocumentsRoute` class provide the `QueryDocumentsInterface` interface as a parameter inside the `__construct` method.
 - Provide some additional markup to use this `QueryDocumentsInterface` in your `DocumentsRoute` class.
 
-Sounds confusing, right?
-
 Let's us provide you with some code examples:
 
 **Structure:**
@@ -215,4 +213,6 @@ Just provide the method and add your custom implementation like this:
 
 ## Sum it up
 
-We understand that this is a long chapter but take your time and try to understand it because it can make you a better developer, your project better, and your clients happier. We tried to explain this as simply as possible.
+This chapter may be a bit long, but we wanted to make sure you understand our motivation behind it. We often work on large projects, with lots of third-party integrations, and having a good project structure and architecture makes the projects more durable. It makes them less prone to bugs (if you write tests), makes the implementation of new features, and removing obsolete features a lot easier.
+
+Do you need to use it? Not really. Especially on really simple projects. Should you? We think you'll benefit from it in the long run

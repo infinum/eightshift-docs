@@ -6,7 +6,7 @@ sidebar_label: The Structure
 
 [![docs-source](https://img.shields.io/badge/source-eigthshift--libs-blue?style=for-the-badge&logo=php&labelColor=2a2a2a)](https://github.com/infinum/eightshift-libs)
 
-If you followed the chapters this far and set your first project with all classes from the `wp boilerplate init_theme` command, you saw that you have an `src` folder in the root of your project.
+If you followed the chapters this far and set your first project with all classes from the `wp boilerplate setup_theme` command, you saw that you have an `src` folder in the root of your project.
 
 In that root folder, you have a bunch of folders with classes. We like to structure our projects by features, so for example, all `custom post type` registrations will be located in the `CustomPostType` folder.
 
@@ -88,7 +88,7 @@ These classes will handle JavaScript and CSS files for your project, depending o
 - **Blocks** - Used in the block editor part of your project. You can find the files inside the `src/Blocks/assets` folder. As blocks are complicated, we have files loaded only in the admin-editor part of the project, those files have an `-editor` suffix. The rest of the files with no suffix loads on the admin-editor part and the project's front end.
 - **Theme** - Used in the theme (frontend) part of your project. You can find the files inside the `assets` folder with no suffix. You would use these files for stuff related to your project that is not associated with components and blocks. (To be honest, we barely use these files.)
 
-The usage of any of these classes is optional, and you can use only what you need. Eightshift Boilerplate `init_theme` command comes with all three classes already implemented. Keep in mind that enqueue classes work in combination with the Webpack build of your project.
+The usage of any of these classes is optional, and you can use only what you need. Eightshift Boilerplate `setup_theme` command comes with all three classes already implemented. Keep in mind that enqueue classes work in combination with the Webpack build of your project.
 
 We named all our files with `application` in prefix. If you don't like the name, you can change it by providing the project overrides for constants used in the Eightshift-Libs. If you change the file names, you must give changes to the Webpack build process as well. Webpack part you can check in the [Webpack chapter](webpack).
 

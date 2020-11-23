@@ -60,5 +60,3 @@ $logo = get_template_directory_uri() . 'public/logo.svg';
 You definitely can do this, but with our filter, if you want to change the public folders location or public folders name for some reason, you can change it at one place, and you are done.
 
 If you are using the old fashioned way, you would need to search and replace the whole project and implement the change. There is always a chance you would miss something, break the project, get yelled at by your boss, or get fired.
-
-And this is the modern way, so there is that.

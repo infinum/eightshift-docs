@@ -21,7 +21,7 @@ Sass mixing, functions, and helpers are located in Eightshift Frontend Libs, so 
 @import '@eightshift/frontend-libs/styles/index.scss';
 ```
 
-But if you use our default `init_theme` setup, you are all set. Eightshift Frontend Libs are in your project injected in the `_shared.scss` file.
+But if you use our default `setup_theme` setup, you are all set. Eightshift Frontend Libs are in your project injected in the `_shared.scss` file.
 
 ## We have some defaults
 
