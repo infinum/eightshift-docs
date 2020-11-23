@@ -75,7 +75,7 @@ You type this in you SCSS files:
 $gutters: global-settings(gutters);
 ```
 
-the output will be a map that you need to loop or fetch individual files by `get-map-strict` or `get-map-deep` function:
+the output will be a map that you need to loop or fetch individual files using `get-map-strict` or `get-map-deep` function:
 
 ```js
 $gutters: (
@@ -95,7 +95,7 @@ width: get-map-strict($gutters, default);
 
 I want to output colors, but they don't follow the structure you mentioned before. Why is that?
 
-Yes, colors are different because we use this manifest to output the colors to the Block Editors color palette, which is why colors are different. (Only colors are like this).
+Yes, colors are different because we use this manifest to output the colors to the Block Editors' color palette, which is why colors are different. Only colors are like this.
 
 You type this in you scss files:
 

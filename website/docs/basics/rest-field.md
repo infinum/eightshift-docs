@@ -6,7 +6,7 @@ sidebar_label: Rest Field
 
 [![docs-source](https://img.shields.io/badge/source-eigthshift--libs-blue?style=for-the-badge&logo=php&labelColor=2a2a2a)](https://github.com/infinum/eightshift-libs)
 
-This class is used to update the existing Rest API Field filed or provide a new field to the existing Rest API.
+This class is used to update the existing Rest API Field or provide a new field to the existing Rest API.
 
 To create a new class for extending the Rest API field, run this command:
 
