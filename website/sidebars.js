@@ -1,7 +1,63 @@
 module.exports = {
   docs: {
     "Getting Started": [
+      "welcome",
+      "eightshift-libs",
+      "eightshift-frontend-libs",
+      "requirements",
       "theme",
+      "plugin",
+    ],
+    "Basics": [
+      'basics/basics',
+      'basics/wp-cli',
+      {
+        "type": "category",
+        "label": "Backend Stuff",
+        "items": [
+          "basics/backend",
+          "basics/namespaces",
+          "basics/extending-classes",
+          "basics/autowiring",
+          "basics/example-class",
+          "basics/the-structure",
+          "basics/manifest",
+          {
+            "type": "category",
+            "label": "Rest",
+            "items": [
+              "basics/rest",
+              "basics/rest-field",
+              "basics/rest-route",
+            ]
+          },
+        ]
+      },
+      {
+        "type": "category",
+        "label": "Frontend Stuff",
+        "items": [
+          "basics/frontend",
+          "basics/webpack",
+          "basics/library",
+          "basics/global-settings",
+          "basics/fonts",
+          "basics/browser-sync",
+        ]
+      },
+      {
+        "type": "category",
+        "label": "Blocks",
+        "items": [
+          "basics/blocks",
+        ]
+      },
+    ],
+    "Helpers": [
+      'helpers/helpers'
+    ],
+    "Advanced": [
+      'advanced/advanced'
     ],
     "Legacy": [
       {
