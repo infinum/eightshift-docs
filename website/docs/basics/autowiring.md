@@ -196,7 +196,7 @@ class QueryDocuments implements ServiceInterface, QueryDocumentsInterface
 ```
 
 **src/Rest/Routes/DocumentsRoute.php**
-```php
+```js
 /**
  * The class register route for DocumentsRoute endpoint
  *
