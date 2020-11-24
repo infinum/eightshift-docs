@@ -30,6 +30,41 @@ Here is a quick overview of how this works:
 
 Even shorter: you just add a new class (that's PSR-4 compliant) with or without some class dependencies and everything will be automatically resolved / injected.
 
+### What if I have to mock or manually call a class?
+
+Before we start with the automatization and autowiring let's see how services classes are called manually. 
+
+We can think of these scenarios where you want to load a class manually:
+- You have to write tests and manually provide mocked classes.
+- Your classes have some custom structure, and autowiring can't resolve it.
+- You want to provide a primitive parameter (`string`, `int`, etc.) inside a constructor method.
+
+In those cases, you can manually provide your DI container with the implementation using the `getServiceClasses` method inside the `src>Main>Main` class.
+
+Just provide the method and add your custom implementation like this:
+
+`src>Main>Main.php`
+```js
+  /**
+   * Get the list of services to register.
+   *
+   * A list of classes which contain hooks.
+   *
+   * @return array<class-string, string|string[]> Array of fully qualified service class names.
+   */
+  protected function getServiceClasses(): array
+  {
+    return [
+
+      // If you are using a class as a DI.
+      ProjectNamespace\Rest\Routes\DocumentsRoute::class => [ProjectNamespace\Query\Documents\QueryDocuments::class],
+
+      // If you just want to include a simple class with no DI.
+      ProjectNamespace\CoolFolder\CoolClass::class,
+    ];
+  }
+```
+
 ### What if my class doesn't have anything inside a constructor method? (no dependencies)
 
 If your class **doesn't have** anything defined in the constructor method, autoloading will require your class.
@@ -37,15 +72,44 @@ This just means that you are not using dependency injection (as you have nothing
 
 ### What if my class has a **primitive parameter** (`string`, `int`, etc.) inside a constructor method?
 
-If your class ** has** a primitive parameter defined in the constructor method, autowiring will check what type it is and load it to your new class.
+If your class **has** a primitive parameter defined in the constructor method, autowiring will **not know** how to handle this because you manually need to provide the primitive parameters at the point of usage. For this you should check [this](#what-if-i-have-to-mock-or-manually-call-a-class).
 
 ### What if my class does have another class as a parameter inside a constructor method?
 
-This is when things become interesting. A good coding practice is that your class should never depend on the concrete class implementation because you have tightly coupled your class to another class. This makes it hard to test and your code becomes hard to modify. Imagine that you have put a concrete implementation as a dependency, only to get feedback from the client that you need to change that implementation for a completely different one. Making the changes means that you'll need to track all the places in your codebase where you have used some functionality from this class, and change it completely.
+This works out of the box, but you shouldn't really do this.
+
+A good coding practice is that your class should never depend on the concrete class implementation because you have tightly coupled your class to another class. This makes it hard to test and your code becomes hard to modify. Imagine that you have put a concrete implementation as a dependency, only to get feedback from the client that you need to change that implementation for a completely different one. Making the changes means that you'll need to track all the places in your codebase where you have used some functionality from this class, and change it completely.
 
 **You should always code against interfaces and not implementation.**
 
 We can't stress this enough because as your project grows, so will your headaches. Also, when you start testing your code, that is when your hair will begin to fall off. We recommend reading Uncle Bob Martin's [Clean Code](http://cleancoder.com/products) book. That will save you a lot of sleepless nights, and you'll learn tons of tips and tricks for writing clean code.
+
+### What if my class has an interface parameter inside the constructor method?
+
+This will automatically be resolved (same as with class parameters) if you follow 1 simple rule:
+
+> Variable name in your constructor method needs to match the class name (which implements the interface) in camelCase.
+
+For example, let's say you have a `SteeringWheel` class:
+
+```js
+class SteeringWheel implements CarPartInterface
+```
+
+and you want to have this as a dependency in Car class. Your Car class has the following constructor:
+
+```js
+public function __construct(CarPartInterface $steeringWheel)
+{
+  $this->steeringWheel = $steeringWheel;
+}
+```
+
+Since the injected variable name `$steeringWheel` is the camelCase version of the class name `SteeringWheel` which implements `CarPartInterface`, autowiring will know to inject the correct class and everything will work fine.
+
+If you understand everything from the upper example you can just skip this next example, but we recommend checking this next example for more detailed overview.
+
+#### Example
 
 Let's set a scene. You have created a `DocumentsRoute` class and it needs some functionality from the `QueryDocuments` class.
 
@@ -175,40 +239,6 @@ class DocumentsRoute extends AbstractRoute implements CallableRouteInterface
 ```
 
 And that's it. Autowiring knows how to resolve the dependencies, you didn't tightly couple the code, and you're all set.
-
-### What if I have to mock or do some weird stuff in my DI?
-
-Automatization can save you, but in the end, if you need something custom, we got you covered.
-
-We can think of these scenarios:
-- You have to write tests and manually provide mocked classes.
-- Your classes have some custom structure, and autowiring can't resolve it.
-
-In those cases, you can manually provide your DI container with the implementation using the `getServiceClasses` method inside the `src>Main>Main` class.
-
-Just provide the method and add your custom implementation like this:
-
-`src>Main>Main.php`
-```js
-  /**
-   * Get the list of services to register.
-   *
-   * A list of classes which contain hooks.
-   *
-   * @return array<class-string, string|string[]> Array of fully qualified service class names.
-   */
-  protected function getServiceClasses(): array
-  {
-    return [
-
-      // If you are using a class as a DI.
-      ProjectNamespace\Rest\Routes\DocumentsRoute::class => [ProjectNamespace\Query\Documents\QueryDocuments::class],
-
-      // If you just want to include a simple class with no DI.
-      ProjectNamespace\CoolFolder\CoolClass::class,
-    ];
-  }
-```
 
 ## To sum it up
 
