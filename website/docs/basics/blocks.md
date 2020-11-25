@@ -3,3 +3,50 @@ id: blocks
 title: Blocks
 sidebar_label: Blocks
 ---
+
+Since WordPress 5.0, we were introduced to the new editing experience using block. With blocks, the idea is to have the same look and feel in the editor as it is on the frontend. As a developer, you just got a new technology that you should know if you want to do a great project on WordPress. That new technology is React because everything regarding blocks is done using React. 
+
+Don't get discouraged just yet, because the WordPress team has made the process of creating blocks so easy. But we are not here to talk about the simple stuff. We want to do more complex projects with custom blocks, so follow along and see what we have prepared here.
+
+> Everything regarding the blocks you can read in the [WordPress documentation](https://developer.wordpress.org/block-editor/tutorials/block-tutorial/). We will not be explaining how everything natively works in this documentation, but instead, we will describe only how to use our setup and how it correlates with the native one. So everything that you can't find here, please check the WordPress Handbook.
+
+## Type of blocks
+
+WordPress Block Editor team has provided us with two different kinds of blocks:
+
+- Regular blocks.
+- Dynamic blocks.
+
+
+### Regular blocks
+
+These are the blocks that you can see in the core, and almost every block from WordPress comes this way. In regular blocks, you have the same content on the frontend as you do in the editor. This was accomplished by providing the same layout in the save callback as in the edit callback. But the drawback of this way is that you must also provide the HTML markup that you will use on the frontend inside the save callback. That method saves everything to the database, and you can't just change the HTML markup without some transformations or deprecation methods.
+
+We don't like this approach because of how it stores the HTML content in the database, but luckily WordPress has provided us with different kinds of blocks for this matter. They are called a dynamic block.
+
+### Dynamic blocks
+
+As you already saw in the previous chapter, the main difference between regular and dynamic blocks is storing content in the database. For many dynamic blocks, the save callback function should be returned as null, which tells the editor to save only the block attributes to the database. These attributes are then passed into the server-side rendering callback, so you can decide how to display the block on the front end of your site.
+
+This means that you write code using React and JSX in the editor, and you must provide the same code in the PHP for the frontend. Yes, it is a lot of work because you must switch technologies and do the same thing multiple times, but we tried to make this process as simple as possible.
+
+Follow along and see what we prepared, and from now on we are talking only about dynamic blocks in this documentation.
+
+## Eightshift blocks
+
+Our setup's main advantage is that you don't need to do a bunch of boilerplate every time you want to create a new block for your project. Also, we have a bunch of cool features that we think you will like:
+
+- Separated blocks from components.
+- You have a predefined structure for everything.
+- If you follow the structure we provided, everything is registered and called automaticity.
+- You don't have to worry: "did I registered this the right way", "what style goes where", etc.
+- Storybook for your project.
+- A dozen of the procreated block from our end. Once we create a new block in some of our projects, we make it available in the boilerplate.
+- Easy usage of blocks and components with our [WP-CLI](wp-cli) commands.
+- Setup that shares configuration between JS, PHP, and SCSS files.
+- Wrapper that comes with every block and allows you to control how block behaves in layout entirely.
+- Everything is responsive. Yes, you read that correctly; we created options that you can control on multiple breakpoints.
+- **Everything is configurable and editable from your project.**
+- Linting standards.
+- Multiple helpers work the same on JS and PHP side, so it is easy to copy code from one language to another.
+- Much, much more.
