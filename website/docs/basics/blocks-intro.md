@@ -7,21 +7,21 @@ sidebar_label: Intro
 Before we dive into blocks and see how everything is set, we should describe this setup's mindset.
 If you managed to set up your project by this point with [WP-CLI](wp-cli) command `setup_theme`, you might have a few questions. We will try to answer all those questions here.
 
-### Why all my blocks look the same and have the same name structure?
+### Why do all my blocks look the same and have the same name structure?
 
-This is because we defined the name structure for all our blocks and components to be able to load everything automatically. More on this please check the [block structure](block-structure) and [component structure](blocks-component-structure) chapters.
+This is because we defined the name structure for all our blocks and components to be able to load everything automatically. For more info about this please check the [block structure](block-structure) and [component structure](blocks-component-structure) chapters.
 
 ### What is the difference between components and blocks?
 
 The main difference is that blocks are available in the block editor's block picker, and components are not. With that being said, blocks are registered using the `registerBlockType` method, and components are just here for you to bundle some functionality in one place and reuse it where ever you need.
 
-More on blocks you can read in [block structure](block-structure) chapter and more on components you can read in [component structure](blocks-component-structure) chapter
+For more info about blocks, you can read the [block structure](block-structure) chapter and about components, you can read in the [component structure](blocks-component-structure) chapter.
 
 ### Do I need to have storybook stories in my block?
 
 ### Do you support block variations, and how can I use them?
 
-Yes, we do; all block variations are located in `src/Blocks/variations` folder. More on this please check the [variations](blocks-variations) chapters.
+Yes, we do. All block variations are located in the `src/Blocks/variations` folder. For more info about this, please check the [variations](blocks-variations) chapters.
 
 ### Do you support patterns, and how can I use them?
 
