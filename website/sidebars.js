@@ -50,6 +50,15 @@ module.exports = {
         "label": "Blocks",
         "items": [
           "basics/blocks",
+          "basics/blocks-registration",
+          "basics/blocks-structure",
+          "basics/block-structure",
+          "basics/blocks-component-structure",
+          "basics/block-manifest",
+          "basics/blocks-component-manifest",
+          "basics/blocks-component-in-block",
+          "basics/blocks-special-use-cases",
+          "basics/blocks-helpers",
         ]
       },
     ],
