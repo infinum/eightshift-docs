@@ -4,6 +4,8 @@ title: Intro
 sidebar_label: Intro
 ---
 
+[![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/develop/blocks/init/src/blocks/)
+
 Before we dive into blocks and see how everything is set, we should describe this setup's mindset.
 If you managed to set up your project by this point with [WP-CLI](wp-cli) command `setup_theme`, you might have a few questions. We will try to answer all those questions here.
 
@@ -70,3 +72,5 @@ Yes, we do. All block variations are located in the `src/Blocks/variations` fold
 ### What if you don't yet support something from the native setup? What can I do?
 
 As we described in [this chapter](blocks), if we don't support something natively from the core or you can't find it in this documentation, you can always use it in the normal native way from the [WordPress documentation](https://developer.wordpress.org/block-editor/tutorials/block-tutorial/). Also, if you think we are missing something, please open a [pull request](https://github.com/infinum/eightshift-frontend-libs/pulls) or an [issue](https://github.com/infinum/eightshift-frontend-libs/issues) on our GitHub repository.
+
+### Why is this my blocks folder called `custom` and not `blocks` for example?

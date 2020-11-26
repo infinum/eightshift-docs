@@ -53,6 +53,7 @@ module.exports = {
           "basics/blocks-intro",
           "basics/blocks-registration",
           "basics/blocks-structure",
+          "basics/blocks-global-manifest",
           "basics/block-structure",
           "basics/blocks-component-structure",
           "basics/block-manifest",
@@ -66,7 +67,10 @@ module.exports = {
       },
     ],
     "Helpers": [
-      'helpers/helpers'
+      'helpers/helpers',
+      'helpers/javascript',
+      'helpers/scss',
+      'helpers/php',
     ],
     "Advanced": [
       'advanced/advanced'
