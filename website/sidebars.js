@@ -58,6 +58,7 @@ module.exports = {
           "basics/blocks-component-structure",
           "basics/block-manifest",
           "basics/blocks-component-manifest",
+          "basics/blocks-attributes",
           "basics/blocks-component-in-block",
           "basics/blocks-wrapper",
           "basics/blocks-variations",
