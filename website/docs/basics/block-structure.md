@@ -42,9 +42,9 @@ We are not using the `save` callback method because it is used to create dynamic
 
 You load blocks components here in a specific layout:
 
-- `heading-options.js` - must be wrapped with the `InspectorControls` component from the core. This will ensure that options are shown in the proper place in the Block Editor (sidebar).�
-- `heading-toolbar.js` - must be wrapped with the `BlockControls` component from the core. This will ensure that toolbar is shown in the proper place in the Block Editor (floating or fixed toolbar).�
-- `heading-editor.js` - must **not** be wrapped with any top-level component. This will ensure that the editor component is showed in the proper place in the Block Editor (editor).�
+- `heading-options.js` - must be wrapped with the `InspectorControls` component from the core. This will ensure that options are shown in the proper place in the Block Editor (sidebar).
+- `heading-toolbar.js` - must be wrapped with the `BlockControls` component from the core. This will ensure that toolbar is shown in the proper place in the Block Editor (floating or fixed toolbar).
+- `heading-editor.js` - must **not** be wrapped with any top-level component. This will ensure that the editor component is showed in the proper place in the Block Editor (editor).
 
 
 ### heading.php
