@@ -10,7 +10,7 @@ Your custom blocks are placed in the `src/Blocks/custom` folder.
 
 For example, let's take the heading block (just replace `heading` with your block name).
 
-We suggest you always use the full name and never abbreviate for the block name. If your block has multiple words, you should separate them by a dash, for example, `featured-post.block.js`.
+We suggest you always use the full name and never abbreviate for the block name. If your block has multiple words, you should separate them by a dash, for example, `featured-post-block.js`.
 
 **Block structure should look like this:**
 
@@ -42,9 +42,9 @@ We are not using the `save` callback method because it is used to create dynamic
 
 You load blocks components here in a specific layout:
 
-- `heading-options.js` - must be wrapped with the `InspectorControls` component from the core. This will ensure that options are shown in the proper place in the Block Editor. (sidebar).
-- `heading-toolbar.js` - must be wrapped with the `BlockControls` component from the core. This will ensure that toolbar is shown in the proper place in the Block Editor. (floating or fixed toolbar).
-- `heading-editor.js` - must **not** be wrapped with any top-level component. This will ensure that the editor component is showed in the proper place in the Block Editor. (editor).
+- `heading-options.js` - must be wrapped with the `InspectorControls` component from the core. This will ensure that options are shown in the proper place in the Block Editor (sidebar).�
+- `heading-toolbar.js` - must be wrapped with the `BlockControls` component from the core. This will ensure that toolbar is shown in the proper place in the Block Editor (floating or fixed toolbar).�
+- `heading-editor.js` - must **not** be wrapped with any top-level component. This will ensure that the editor component is showed in the proper place in the Block Editor (editor).�
 
 
 ### heading.php
@@ -53,7 +53,7 @@ This file is and frontend representation of a block. In this file, you will have
 In the blocks PHP part, you always have two props available:
 
 - `$attributes` - This prop contains all the attributes you defined in the `manifest.json` and all the attributes saved in the database.
-- `$innerBlockContent` - This prop contains all the inner block details when you set your block as an inner block.
+- `$innerBlockContent` - This prop contains all the inner block details when you set your block to contain inner blocks.
 
 ### heading-editor.scss
 Holds only the editor styling for the block. You should be using this file to override styles in the editor set by the component. In 90% of cases, you will not need to write any overrides here. But if you are using any column layout like a grid, flex, etc., you may need to add some corrections.
