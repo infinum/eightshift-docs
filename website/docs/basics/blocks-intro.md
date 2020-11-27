@@ -74,3 +74,5 @@ Yes, we do. All block variations are located in the `src/Blocks/variations` fold
 As we described in [this chapter](blocks), if we don't support something natively from the core or you can't find it in this documentation, you can always use it in the normal native way from the [WordPress documentation](https://developer.wordpress.org/block-editor/tutorials/block-tutorial/). Also, if you think we are missing something, please open a [pull request](https://github.com/infinum/eightshift-frontend-libs/pulls) or an [issue](https://github.com/infinum/eightshift-frontend-libs/issues) on our GitHub repository.
 
 ### Why is this my blocks folder called `custom` and not `blocks` for example?
+
+### In global manifest you have key called `“customBlocksName”: “eightshift-block”,`, can I change this to `my-project-name-block`?
