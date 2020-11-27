@@ -41,6 +41,7 @@ module.exports = {
           "basics/webpack",
           "basics/library",
           "basics/global-settings",
+          "basics/writing-styles",
           "basics/fonts",
           "basics/browser-sync",
         ]
