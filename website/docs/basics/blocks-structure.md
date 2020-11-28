@@ -11,7 +11,6 @@ For the library to work and register blocks dynamically, a specific folder struc
 
 Your folder structure should like this:
 
-
 * src
   * Blocks
     * assets
@@ -23,13 +22,13 @@ Your folder structure should like this:
     * manifest.json
 
 ### Blocks folder
-This folder contains all the blocks defined in your project. Each block is located in the `custom` folder, and every component is located in the `components` folder. Blocks can be standalone created from multiple block editors components or your project components.
+This folder contains all the blocks defined in your project. Every block is located in the `custom` folder, and every component is located in the `components` folder. Blocks can be created from multiple block editor components or your project components.
 
 ### Assets
 This folder contains all the additional files for the blocks that you only need to use on the frontend. Basicity everything that is not a block or a component goes here like defining global style, global JavaScript helpers, project images, fonts, etc. Also, we register all blocks, styles, and scripts in the assets folder so that nothing will work without this folder.
 
 ### Components
-This folder contains all the components that are shared across blocks and project template files. Components are not registered as blocks because they are small chunks of code that you can reuse everywhere. Please refer to [component structure](blocks-component-structure) chapter for more details.
+This folder contains all the components that are shared across blocks and project template files. Components are not registered as blocks because they are small chunks of code that you can reuse everywhere. For instance, you can create a menu component to be used in the footer but also reused in a separate menu block. Please refer to [component structure](blocks-component-structure) chapter for more details.
 
 ### Custom
 This folder contains all the custom blocks defined and used in your project. Please refer to [block structure](block-structure) chapter for more details.

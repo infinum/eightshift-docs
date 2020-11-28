@@ -66,7 +66,7 @@ If you want to define multiple namespaces for your blocks in a single folder, pl
 
 Just like a namespace, we use the same logic for background and foreground. Here you define global background and foreground for all your custom blocks.
 
-Please refer to the [block-structure](block-structure) chapter for more details on how to override global background and foreground your block.
+Please refer to the [block-structure](block-structure) chapter for more details on how to override global background and foreground of your block.
 
 ### Global Variables
 
@@ -77,4 +77,3 @@ These are all the global settings that you can use in JavaScript, SCSS, and PHP 
 We don't have this key in the example, but you can set the default attributes in this file, and they will be applied to all the blocks.
 
 Please refer to the [blocks attributes](blocks-attributes) chapter for more details.
-

@@ -14,7 +14,6 @@ By following our structure, we can find all files using the `require.context` re
 * writing register method.
 * setting PHP method for registering dynamic blocks.
 * including files when adding new components.
-* etc.
 
 You can check out how this works inside the `src/Blocks/assets/scripts/application-blocks-editor.js` file.
 

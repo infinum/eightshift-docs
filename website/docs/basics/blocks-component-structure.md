@@ -24,7 +24,7 @@ Basic component structure should like something this:
 For example, you can check [storybook](https://infinum.github.io/eightshift-docs/storybook).
 
 ### components
-This folder contains all the javascript components that are used in the component. The folder can include `editor`, `options` or `toolbar` component.
+This folder contains all the JavaScript components that are used in the component. The folder can include `editor`, `options` or `toolbar` component.
 
 ### component-name-editor.js
 JavaScript component for handling component editor. The component editor is what will be shown in the main editor screen.
