@@ -74,7 +74,7 @@ We are using the same structure as described in [Block Editor documentation](htt
 
 *custom feature*
 
-If the `hasInnerBlocks` key is set to true, the block's `save` method for inner blocks will be used. This method is used if the block has [`InnerBlocks`](https://github.com/WordPress/gutenberg/tree/master/packages/block-editor/src/components/inner-blocks). In the PHP view file, you will have the `$inner_block_content` variable available. Here is an example of what happens in the back: 
+If the `hasInnerBlocks` key is set to true, the block's `save` method for inner blocks will be used. This method is used if the block has [`InnerBlocks`](https://github.com/WordPress/gutenberg/tree/master/packages/block-editor/src/components/inner-blocks). In the PHP view file, you will have the `$innerBlockContent` variable available. Here is an example of what happens in the back: 
 
 ```js
   save = () => createElement(InnerBlocks.Content);

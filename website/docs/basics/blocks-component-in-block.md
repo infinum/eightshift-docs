@@ -12,8 +12,8 @@ Try to think of your development process in this way:
 
 - Each component must be standalone and ideally not depend on any other components (sometimes this is not possible but keep this to a minimum).
 - Components must not be aware of the layout they are used in.
-- No global styles. Instead all styles should be contained to the block. _(maybe a link to a section in docs explaining why we don't use global styles if we have that)_
-- You should define all heading variations in a `heading` component. Then use this component everywhere you have a heading instead of writing a new implementation. In practice: don't do `<h2>$heading</h2>` but render the `heading` component instead `Components::render( 'heading', $attributes )` (Heading is an example, but this implies to every component).
+- No global styles. Instead all styles should be contained to the block. For more details check [this link](writing-styles).
+- You should define all heading variations in a `heading` component. Then use this component everywhere you have a heading instead of writing a new implementation. In practice: don't do `<h2>$heading</h2>` but render the `heading` component instead using the helpers defined in the [helpers section](). (Heading is an example, but this implies to every component).
 - You can have multiple heading components in one block.
 
 ### I want to use one heading component in my block.
