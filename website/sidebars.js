@@ -64,6 +64,7 @@ module.exports = {
           "basics/blocks-wrapper",
           "basics/blocks-variations",
           "basics/blocks-special-use-cases",
+          "basics/blocks-storybook",
           "basics/blocks-helpers",
         ]
       },
