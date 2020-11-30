@@ -64,9 +64,9 @@ If you want to define multiple namespaces for your blocks in a single folder, pl
 
 ### Background and Foreground
 
-Just like a namespace, we use the same logic for background and foreground. Here you define global background and foreground for all your custom blocks.
+Just like a namespace, we use the same logic for icons background and foreground when selecting the block from the list. Here you define global background and foreground for all your custom blocks.
 
-Please refer to the [block-structure](block-structure) chapter for more details on how to override global background and foreground your block.
+Please refer to the [block-structure](block-structure) chapter for more details on how to override global background and foreground your blocks icon.
 
 ### Global Variables
 

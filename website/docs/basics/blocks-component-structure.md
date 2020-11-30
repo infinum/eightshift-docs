@@ -6,44 +6,47 @@ sidebar_label: Component Structure
 
 [![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/develop/blocks/init/src/blocks/)
 
-Component naming and folder structure are not as strict as in the case of the block, but for the sake of consistency, it would be better to follow the same principles.
+Your custom components are placed in the `src/Blocks/components` folder.
 
-Basic component structure should like something this:
+For example, let's take the heading component (just replace the heading with your component name).
 
-```shell
-|____component-name
-| |____components
-| | |____component-name-editor.js
-| | |____component-name-options.js
-| | |____component-name-toolbar.js
-| |____component-name.php
-| |____component-name-editor.scss
-| |____component-name-style.scss
-```
+We suggest you always use the full name and never abbreviate for the component name. If your component has multiple words, you should separate them by a dash, for example, featured-post-block.js.
+
+**Block structure should look like this:**
+
+* heading
+  * assets
+    * index.js
+  * components
+    * heading-editor.js
+    * heading-options.js
+    * heading-toolbar.js
+  * heading.php
+  * heading-editor.scss
+  * heading-style.scss
+  * manifest.json
 
 For example, you can check [storybook](https://infinum.github.io/eightshift-docs/storybook).
 
+> All files in components are optional.
+
+### assets
+
+This folder behaves the same as the blocks assets folder. Please check the [block structure](block-structure#assets) chapter for more details.
+
 ### components
-This folder contains all the javascript components that are used in the component. The folder can include `editor`, `options` or `toolbar` component.
+Components folder holds three files, `heading-options.js`, `heading-editor.js`, and `heading-toolbars.js`. They are used the same way as in blocks to provide functionality based on the location used. The main difference in components is that these files are used inside other blocks to implement functionality from the component.
 
-### component-name-editor.js
-JavaScript component for handling component editor. The component editor is what will be shown in the main editor screen.
+### heading.php
+This file contains the frontend part (the view) of the component used in your project when the page renders. This file shouldn't contain any business logic, just presenting the passed attributes. The main difference from block view is that you only have attributes that you passed from a block or a top-level component in this file.
 
-### component-name-options.js
-JavaScript component for handling component options. Component options are displayed on the right side of the Block Editor editor. You can set various things here - component color, element sizes (usually font sizes), and other features.
+### heading-editor.scss
+This file behaves the same as in blocks. Please check the [block structure](block-structure#heading-editorscss) chapter for more details.
 
-### component-name-toolbars.js
-JavaScript component for handling component toolbars. Toolbars are displayed at the top of every component - things like font-weight, alignment, etc.
+### heading-style.scss
+This file behaves the same as in blocks. Please check the [block structure](block-structure#heading-stylescss) chapter for more details.
 
-### component-name.php
-This file contains the frontend part (the view) of the component, used in your project when the page renders. This file shouldn't contain any business logic, just presenting the passed attributes.
+### manifest.json
+This file contains all the configuration for a component. It is not fully necessary, but we encourage you to use it because it provides many possibilities.
 
-### component-name-editor.scss
-This file only contains the editor styles for the component. Editor styles are only applied to the editor screen in the admin.
-
-### component-name-style.scss
-This file contains the editor and the frontend styles for the component. These styles will be applied to both the editor screen and your front end. This is just the way the core editor is set up. Each component has the `blockClass` attribute that returns a block name with a block prefix, for example: `.block-intro`. You can/must use this naming convention when stying your block. Just like with any other SCSS components, the Block Editor block must also be standalone and easy to copy to different projects (reusable).
-
-#### Note on the component styles
-
-Component styles should only style the inner component layout and styles such as font sizes, alignment, etc. Any layout placement should be handled either by the wrapper, or a layout.
+For more details, check the [component manifest](blocks-component-manifest) chapter

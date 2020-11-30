@@ -11,7 +11,6 @@ For the library to work and register blocks dynamically, a specific folder struc
 
 Your folder structure should like this:
 
-
 * src
   * Blocks
     * assets
