@@ -69,6 +69,14 @@ Please reference in [writing styles](writing-styles) chapter for more details.
 
 _This file is optional_.
 
+### heading-hooks.js
+
+Here you can provide any custom Block Editor hook you need. For documentation please referee to [this link](https://developer.wordpress.org/block-editor/developers/filters/block-filters/). This file file is going to be merged in the `registerBlockType` method.
+
+### heading-transforms.js
+
+Here you can provide any custom block transformation you need. For documentation please referee to [this link](https://developer.wordpress.org/block-editor/developers/block-api/block-transforms/). This file file is going to be merged in the `registerBlockType` method.
+
 ### manifest.json
 This file contains all the configuration required for a block to work. It's used in WordPress [`registerBlockType`](https://developer.wordpress.org/block-editor/developers/block-api/block-registration/) method to register a block.
 
