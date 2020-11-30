@@ -10,7 +10,7 @@ Global manifest is used to provide all the global configuration to the blocks an
 
 Currently, our default global manifest looks like this:
 
-```php
+```json
 {
   "namespace": "eightshift-boilerplate",
   "background": "#900000",

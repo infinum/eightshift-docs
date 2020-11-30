@@ -51,22 +51,22 @@ Most of the keys are the same as the `registerBlockType` method, so if you can't
 
 *native feature*
 
-The block's namespace is set globally in the global manifest for all your custom blocks, but you can override them on each block if you need so.
+The block's namespace is set globally in the global manifest for all your custom blocks, but you can override them on each block if you need to.
 
 ### icon.background & icon.foreground
 
 *native feature*
 
-The icon background and foreground is set globally in the global manifest for all your custom blocks, but you can override them on each block if you need so.
+The icon background and foreground is set globally in the global manifest for all your custom blocks, but you can override them on each block if you need to.
 
 ### example
 
 *native feature*
 
-This key provides you the ability to give an example mockup of your attributes. Then you try to add a block to the editor, you will have a preview image on the right. This is the place where this key is used. We also use it in the storybook to mock attributes. More on this in the [storybook chapter](blocks-storybook)
+This key provides you the ability to give an example mockup of your attributes. When you try to add a block to the editor, using the button in the main toolbar, you will have a preview image on the right. The image generated here will actually be a rendered block with the attributes from the example key. We also use it in the storybook to mock attributes. More on this in the [storybook chapter](blocks-storybook)
 
 ### attributes
-Attributes key is an object of attributes that you define and set up default values for a block. These attributes are then provided for you in the editor as props, and the PHP view part in the `$attributes` variable.
+Attributes key is an object of attributes where you define and set up default values for a block. These attributes are then passed in the editor as props, and the PHP view part in the `$attributes` variable.
 We are using the same structure as described in [Block Editor documentation](https://developer.wordpress.org/block-editor/developers/block-api/block-attributes/).
 
 ### hasInnerBlocks
@@ -74,7 +74,7 @@ We are using the same structure as described in [Block Editor documentation](htt
 
 *custom feature*
 
-If the `hasInnerBlocks` key is set to true, blocks `save` method for inner blocks will be used. This method is used if the block has [`InnerBlocks`](https://github.com/WordPress/gutenberg/tree/master/packages/block-editor/src/components/inner-blocks). In PHP you now have `$inner_block_content` variable available. Here is an example of what happens in the back: 
+If the `hasInnerBlocks` key is set to true, the block's `save` method for inner blocks will be used. This method is used if the block has [`InnerBlocks`](https://github.com/WordPress/gutenberg/tree/master/packages/block-editor/src/components/inner-blocks). In the PHP view file, you will have the `$inner_block_content` variable available. Here is an example of what happens in the back: 
 
 ```js
   save = () => createElement(InnerBlocks.Content);
@@ -84,4 +84,4 @@ If the `hasInnerBlocks` key is set to true, blocks `save` method for inner block
 
 *custom feature*
 
-This key gives you the ability to use component attributes in your block without mapping all the components attributes every time. Please check [this chapter](blocks-component-in-block) for more details.
+This key gives you the ability to use component attributes in your block without mapping all the component's attributes every time. Please check [this chapter](blocks-component-in-block) for more details.

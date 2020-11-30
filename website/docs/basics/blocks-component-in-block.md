@@ -6,21 +6,22 @@ sidebar_label: Component In Block
 
 [![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/develop/blocks/init/src/blocks/)
 
-Blocks and components go perfectly together because they are made this way. We simplified this as much as possible but there always a few things you need to do manually.
+Blocks and components work perfectly together because they are made that way. We simplified this as much as possible but there always a few things you need to do manually.
 
 Try to think of your development process in this way:
 
-- Each component must be standalone and not depend on and different components (sometimes this is not possible but keep this to a minimum).
-- All components must not be aware of the layout it is used in.
-- You don't add global styles as you did in Bootstrap before.
-- You should define all headings in a heading component, and everywhere you have a heading, use this component and not a new implementation of it. (this is an example, but this implies to every component).
+- Each component must be standalone and ideally not depend on any other components (sometimes this is not possible but keep this to a minimum).
+- Components must not be aware of the layout they are used in.
+- No global styles. Instead all styles should be contained to the block. _(maybe a link to a section in docs explaining why we don't use global styles if we have that)_
+- You should define all heading variations in a `heading` component. Then use this component everywhere you have a heading instead of writing a new implementation. In practice: don't do `<h2>$heading</h2>` but render the `heading` component instead `Components::render( 'heading', $attributes )` (Heading is an example, but this implies to every component).
 - You can have multiple heading components in one block.
-
 
 ### I want to use one heading component in my block.
 
-If you have heading component with this attributes:
+If you have a heading component with these attributes:
 
+
+`src/Components/heading/manifest.json`
 ```js
 "attributes": {
   "headingContent": {
@@ -39,6 +40,8 @@ If you have heading component with this attributes:
 
 and you want to use the heading component in the Jumbotron block, you can use it by adding a component's key in the Jumbotron block manifest like this:
 
+`src/Blocks/jumbotron/manifest.json`
+
 ```js
 "attributes": {
   "content": {
@@ -51,16 +54,16 @@ and you want to use the heading component in the Jumbotron block, you can use it
 }
 ```
 
-in your blocks attributes object, you will now have these keys:
+in your block attributes object, you will now have these keys:
 
 ```js
 
-// Attributes from component.
+// Attributes from the component.
 "headingContent": "",
 "headingLevel": 2,
 "headingSize": "default",
 
-// Attributes from a block.
+// Attributes from the block.
 "content": "test",
 ```
 
