@@ -283,3 +283,7 @@ Another attribute is `buttonShowControls`.
 ```
 
 This attribute is available in the options component only. You can't set it via block editor, but only as a developer from code. You would use it if you want to use a heading component and set all the defaults, but you don't want your content editor to change how this heading looks, but he can add the heading content from the editor section. You can set this option from the manifest or passing it manuals via props.
+
+### How my example attributes behave when I use components in blocks
+
+Exactly the same way as attributes.
