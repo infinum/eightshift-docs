@@ -4,6 +4,8 @@ title: Blocks
 sidebar_label: Blocks
 ---
 
+[![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/develop/blocks/init/src/blocks/)
+
 Since WordPress 5.0, we were introduced to the new editing experience using so-called Gutenberg blocks. With blocks, the idea is to have the same look and feel in the editor as it is on the frontend. As a developer, you just got a new technology that you should know if you want to build a great project on WordPress. That new technology is React because everything regarding blocks is done using React. 
 
 Don't get discouraged just yet, because the WordPress team has made the process of creating blocks relatively easy. But we are not here to talk about the simple stuff. We want to do more complex projects with custom blocks, so follow along and see what we have prepared here.

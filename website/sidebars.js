@@ -41,6 +41,7 @@ module.exports = {
           "basics/webpack",
           "basics/library",
           "basics/global-settings",
+          "basics/writing-styles",
           "basics/fonts",
           "basics/browser-sync",
         ]
@@ -50,11 +51,29 @@ module.exports = {
         "label": "Blocks",
         "items": [
           "basics/blocks",
+          "basics/blocks-intro",
+          "basics/blocks-registration",
+          "basics/blocks-structure",
+          "basics/blocks-global-manifest",
+          "basics/block-structure",
+          "basics/blocks-component-structure",
+          "basics/block-manifest",
+          "basics/blocks-component-manifest",
+          "basics/blocks-attributes",
+          "basics/blocks-component-in-block",
+          "basics/blocks-wrapper",
+          "basics/blocks-variations",
+          "basics/blocks-special-use-cases",
+          "basics/blocks-storybook",
+          "basics/blocks-helpers",
         ]
       },
     ],
     "Helpers": [
-      'helpers/helpers'
+      'helpers/helpers',
+      'helpers/javascript',
+      'helpers/scss',
+      'helpers/php',
     ],
     "Advanced": [
       'advanced/advanced'
