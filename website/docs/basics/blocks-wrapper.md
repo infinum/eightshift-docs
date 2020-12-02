@@ -8,7 +8,9 @@ sidebar_label: Wrapper
 
 The wrapper is our best and most powerful feature. In a nutshell, the wrapper is nothing more than a high order component (parent component). 
 
-When setting up block registration, we made, so every block view passes the true wrapper component before it is registered. This gives us the ability to have multiple shared attributes set in one component. The wrapper is designed to be the ultimate top-level component that controls how your block behaves in the website layout. By default, you can control a whole lot of stuff, but there is an ability to add your custom attributes and fine-tune wrapper to your project needs. Here are some of the features:
+When setting up block registration, we made it so that every block view (PHP part) passes through the wrapper component before it is registered. This gives us the ability to set multiple shared attributes in one component.
+
+The wrapper is designed to be the ultimate top-level component that controls how your block behaves in the website layout. The wrapper is a sort of a 'section' in traditional builders. By default, you can control a whole lot of stuff, but there is an ability to add your custom attributes and fine-tune wrapper to your project needs. Here are some of the features:
 
 > Some attributes are made responsive using the `Responsive` component, and you can control all attributes depending on the media breakpoints.
 
@@ -22,7 +24,7 @@ This attribute controls if you are going to see options in the block editor for 
 
 ### wrapperUseSimple
 
-We wrapped some of the options in a specific condition, and we call it `wrapperUseSimple`. In general, this attribute is set to `true` when you only want simplified options on your block. Natively it is used inside all of the inner blocks in the column block. Generali in all of the inner blocks, it is a good idea to simplify the wrapper.
+We wrapped some of the options in a specific condition, and we call it `wrapperUseSimple`. In general, this attribute is set to `true` when you only want simplified options on your block. Natively, it is used inside all of the inner blocks in the column block. Because we don't need wrappers inside wrappers inside wrappers (and so on). It's a good rule of thumb to use a simple wrapper in all of the inner blocks.
 
 ### wrapperUseSimpleShowControl
 
@@ -34,7 +36,7 @@ This attribute disables the wrapper completely. When this attribute is set to `t
 
 ### wrapperParentClass
 
-This attribute is interesting to use if you, for example, have and carousel block with inner blocks. To provide the markup necessary for the carousel script to work, you need to add some items selector. With this key, you can pass a parent item class, and all of your items will be wrapped with this selector.
+This attribute is interesting to use if, for example, you have a carousel block with inner blocks. To provide the markup necessary for the carousel script to work, you need to add some items selector (a div). With this key, you can pass a parent item class, and all of your items will be wrapped with this selector and a class.
 
 ### wrapperId
 
@@ -42,7 +44,7 @@ It is used if you want to provide some identifier for a specific block.
 
 ### wrapperAnchorId
 
-It is used if you want to use the section as a scroll to option. It is designed, so it is virtually moved up for the size of your fixed header. You can change this value according to your project needs.
+It is used if you want to use the section as a scroll to option. Initially, it is designed so the scroll is moved up by the size of your fixed header size. You can change this value according to your project needs.
 
 ### wrapperBackgroundColor
 
@@ -58,27 +60,27 @@ The same as the width, but this attribute controls the offset (margin) from the 
 
 ### wrapperContainerWidth (Responsive)
 
-This attribute defines your block's container width, and on that container, wrapper width and wrapperContainerWidth be applied. You can define these values in the wrappers manifest and the global manifest settings.
+This attribute defines your block's container width, and on that container, wrapper width and wrapperContainerWidth will be applied. You can define these values in the wrapper's manifest and the global manifest settings.
 
 ### wrapperGutter (Responsive)
 
-Controls the left/right spacing for the content (block). You can define these values in the wrappers manifest and the global manifest settings.
+Controls the left/right spacing for the content (block). You can define these values in the wrapper's manifest and the global manifest settings.
 
 ### wrapperSpacingTop (Responsive)
 
-Moves the spacing from the top by an increment of 10px. It uses margin-top to set a spacing, background color **will not be applied to this attribute**. You can define these values in the wrappers manifest and the global manifest settings.
+Moves the spacing from the top by an increment of 10px. It uses `margin-top` to set a spacing, background color **will not be applied to this attribute**. You can define these values in the wrapper's manifest and the global manifest settings.
 
 ### wrapperSpacingBottom (Responsive)
 
-Moves the spacing from the bottom by an increment of 10px. It uses margin-bottom to set a spacing, background color **will not be applied to this attribute**. You can define these values in the wrappers manifest and the global manifest settings.
+Moves the spacing from the bottom by an increment of 10px. It uses `margin-bottom` to set a spacing, background color **will not be applied to this attribute**. You can define these values in the wrapper's manifest and the global manifest settings.
 
 ### wrapperSpacingTopIn (Responsive)
 
-Moves the spacing from the top by an increment of 10px. It uses padding-top to set a spacing, background color **will be applied to this attribute**. You can define these values in the wrappers manifest and the global manifest settings.
+Moves the spacing from the top by an increment of 10px. It uses `padding-top` to set a spacing, background color **will be applied to this attribute**. You can define these values in the wrapper's manifest and the global manifest settings.
 
 ### wrapperSpacingBottomIn (Responsive)
 
-Moves the spacing from the bottom by an increment of 10px. It uses padding-bottom to set a spacing, background color **will be applied to this attribute**. You can define these values in the wrappers manifest and the global manifest settings.
+Moves the spacing from the bottom by an increment of 10px. It uses `padding-bottom` to set a spacing, background color **will be applied to this attribute**. You can define these values in the wrapper's manifest and the global manifest settings.
 
 ### wrapperDividerTop (Responsive)
 
@@ -90,6 +92,6 @@ This attribute adds a divider on the bottom of the section. The spacing of the d
 
 ### wrapperHide (Responsive)
 
-Controls will the section be showed in a specific breakpoint.
+Controls if the section will be showed on a specific breakpoint.
 
-> Important note that all responsive options are made in `desktop` first way for the block editor because every editor wants to style these firsts. All of the responsive attributes and applied from the large to the mobile breakpoint. So if you set the tablet's value, it will be applied to the tabled and mobile breakpoint.
+> **Important note**: all responsive options are made in `desktop` first way for the block editor because every editor wants to style these firsts. All of the responsive attributes are applied from the large to the mobile breakpoint. So if you set the tablet values, it will be applied to the tablet and mobile breakpoints.

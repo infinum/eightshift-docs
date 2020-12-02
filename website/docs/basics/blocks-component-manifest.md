@@ -6,7 +6,7 @@ sidebar_label: Component Manifest
 
 [![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/develop/blocks/init/src/blocks/)
 
-Component manifest is a bit different than a block manifest. The main difference is that components manifest is a fully custom feature, and it is only here to provide a way to store configuration data and share it with multiple files in your project.
+A component manifest is a bit different than the block manifest. The main difference is that component manifest is a fully custom feature, and it is only here to provide a way to store configuration data and share it with multiple files in your project.
 
 ### Example
 
@@ -71,11 +71,11 @@ This key is not generally used anywhere. We wanted some consistency with the blo
 
 ### title
 
-This key is used to provide the label for all your components options and provide the storybook's automatic story title.
+This key is used to provide the label for all your component options and provide the storybook's automatic story title.
 
 ### componentClass
 
-These keys are used to provide a single point of reference for a component name. You use this key to provide a prefix for all css selectors in your component.
+These keys are used to provide a single point of reference for a component name. You'll use this key to provide a prefix for all the CSS selectors in your component.
 
 ### example
 

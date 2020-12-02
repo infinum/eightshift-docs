@@ -11,7 +11,7 @@ Blocks and components work perfectly together because they are made that way. We
 Try to think of your development process in this way:
 
 - Each component must be standalone and ideally not depend on any other components (sometimes this is not possible but keep this to a minimum).
-- Components must not be aware of the layout they are used.
+- Components must not be aware of the layout they are used in.
 - No global styles. Instead, all styles should be contained to the block/component. For more details, check [this link](writing-styles).
 - You should define all heading variations in a `heading` component. Then use this component everywhere you have a heading instead of writing a new implementation. In practice: don't do `<h2>$heading</h2>` but render the `heading` component instead using the helpers defined in the [helpers section](). (Heading is an example, but this implies to every component).
 - You can have multiple heading components in one block.
@@ -37,7 +37,7 @@ If you have a heading component with these attributes:
 }
 ```
 
-and you want to use the heading component in the Jumbotron block; you can use it by adding a component's key in the Jumbotron block manifest like this:
+and you want to use the heading component in the Jumbotron block, you can use it by adding a component's key in the Jumbotron block manifest like this:
 
 `src/Blocks/custom/jumbotron/manifest.json`
 
@@ -66,7 +66,7 @@ in your block attributes object, you will now have these keys:
 "content": "test",
 ```
 
-As you see in the example, you can merge component attributes in your block attributes. Keep in mind that with the provided example, the components' attributes will be injected in the block attributes with the same name as it is defined in the components manifest.
+As you see in the example, you can merge component attributes in your block attributes. Keep in mind that with the provided example, the components' attributes will be injected in the block attributes with the same name as they are defined in the components manifest.
 
 ### I want to use one heading and paragraph component in my block.
 
@@ -91,7 +91,7 @@ You can do this by following the same principle as before. Here is an example:
 
 As you already saw in the previous examples, the heading key and value are the same in the components object. The key represents the `components attributes prefix`, and the value represents the `actual component name`.
 
-If you want to heading component in your block, follow this example:
+If you want to use the heading component in your block, follow this example:
 
 `src/Blocks/custom/jumbotron/manifest.json`
 
@@ -189,7 +189,7 @@ in your block attributes object, you will now have these keys:
 "content": "test",
 ```
 
-### I want to use a component that used more components (componentsCeption).
+### I want to use a component that uses more components (componentCeption).
 
 For example, if you have a block called cards grid that uses a card component, that card component uses a heading component.
 
@@ -272,18 +272,18 @@ All our components come with a few common attributes that we recommend you also 
 
 This attribute is available in all three components (editor, toolbar, options), and if set to **false**, it will remove this component from the DOM. This is useful if you want to hide all markup from the DOM.
 
-For example, you have a Jumbotron block, and you have a heading that you want to populate if necessary. If you add content to the heading, everything is good, but if you don't add it, in the block editor, you still see a placeholder for that heading, and it changes how you see and think this block will look like on the frontend. So if you have a component that you will not populate on some block, switch the toggle to false, and it will hide from the DOM. This is useful for content editors.
+For example, you have a Jumbotron block, and you have a heading that you want to populate if necessary. If you add content to the heading, everything looks good. But if you don't add it, in the block editor, you'll still see a placeholder for that heading. That affects how you perceive it, and a user may think this block will look like that on the frontend (with the placeholder text). So if you have a component that you will not populate on some block, switch the toggle to false, and you will hide it from the DOM. This is useful for content editors.
 
-### I don't want my editor to be able to change components options in my block.
+### I don't want my editor to be able to change component options in my block.
 
-Another attribute is `buttonShowControls`.
+Another attribute that you can use is `buttonShowControls`.
 
 ```json
 "buttonShowControls": true,
 ```
 
-This attribute is available in the options component only. You can't set it via block editor, but only as a developer from code. You would use it if you want to use a heading component and set all the defaults, but you don't want your content editor to change how this heading looks, but he can add the heading content from the editor section. You can set this option from the manifest or passing it manuals via props.
+This attribute is available in the options component only. You can't set it via block editor, but only as a developer from code. You would use it if you want to use a heading component and set all the defaults, but you don't want your content editor to change how this heading looks. They can add the heading content from the editor section but not change any of the options. You can set this option from the manifest or passing it manually via props.
 
-### How my example attributes behave when I use components in blocks
+### How do my example attributes behave when I use components in blocks?
 
 Exactly the same way as attributes.
