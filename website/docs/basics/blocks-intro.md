@@ -21,6 +21,8 @@ For more info about blocks, you can read the [block structure](block-structure) 
 
 ### Do I need to have storybook stories in my block?
 
+No you don't. But we provided you an ability to use storybook for all of your blocks and components. Why not use it.
+
 ### Do you support block variations, and how can I use them?
 
 Yes, we do. All block variations are located in the `src/Blocks/variations` folder. For more info about this, please check the [variations](blocks-variations) chapters.
@@ -29,15 +31,25 @@ Yes, we do. All block variations are located in the `src/Blocks/variations` fold
 
 ### What is a wrapper?
 
+All details about wrapper you can find in [this chapter](blocks-wrapper).
+
 ### Do you support inner blocks?
+
+Yes, we support everything that core natively supports. How to use them you can find in [this chapter](block-manifest).
 
 ### Why do you use manifest.json in all blocks and components?
 
+So we can provide content, attributes, options and much more across multiple different files in multiple programing languages. More details read in [this chapter](block-manifest).
+
 ### Why do you use global manifest.json
+
+Basicity the same answer as the previous one but in the global manifest.json we have options that are shared across all blocks and components. More details read in [this chapter](blocks-global-manifest).
 
 ### If I want to create a new block/component, what do I do?
 
 ### How can I use your pre-made blocks?
+
+You can check all available blocks/components using our `wp boilerplate use_block --help` or `wp boilerplate use_component --help` command.
 
 ### Can I use block/component from Eightshift-frontend-libs directly?
 
@@ -47,7 +59,11 @@ Yes, we do. All block variations are located in the `src/Blocks/variations` fold
 
 ### How do you use components in blocks?
 
+Yes we do, please referrer to [this chapter](blocks-component-in-block).
+
 ### How do I use multiple heading components in my block?
+
+Please referrer to [this chapter](blocks-component-in-block).
 
 ### Where can I define my global styles?
 
