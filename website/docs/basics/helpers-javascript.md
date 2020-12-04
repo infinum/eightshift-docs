@@ -8,7 +8,7 @@ sidebar_label: JavaScript
 
 ## checkAttr
 
-Check if attributes exist in the attributes list and add default value if not.
+Checks if the attributes exist in the attributes list, and adds a default value if they don't.
 
 * @param string $key Key to check.
 * @param array  $attributes Array of attributes.
@@ -24,21 +24,21 @@ Check if attributes exist in the attributes list and add default value if not.
 
 ## cookies
 
-It is used to set and get cookie values.
+Used to set and get cookie values.
 
 **Usage:**
 
 ```js
   import { cookies } from '@eightshift/frontend-libs/scripts/helpers';
 
-  setCookie('gdpr', '2', cookies.setOneDay(), '/');
+  cookies.setCookie('gdpr', '2', cookies.setOneDay(), '/');
 
-  getCookie('gdpr');
+  cookies.getCookie('gdpr');
 ```
 
 ## debounce
 
-Debounces the provided function.
+Debounces the provided function. For more information check [this blog post](https://davidwalsh.name/javascript-debounce-function).
 
 * @param {function} func Provided function to apply debounce.
 * @param {int} wait Wait time for debounce.
@@ -55,7 +55,7 @@ Debounces the provided function.
 
 ## devices
 
-Check if your browser's navigator is specific device.
+Check if your browser's navigator is a specific device.
 
 **Usage:**
 
@@ -97,6 +97,8 @@ Takes provided string and removes special characters. Characters that will be re
 
 Create responsive selectors used for responsive attributes.
 
+Useful if you want to show how the responsive behavior looks in the editor.
+
 * @param array   items        Array of breakpoints.
 * @param string  selector     Selector for this breakpoint.
 * @param string  parent       Parent block selector.
@@ -118,7 +120,7 @@ Create responsive selectors used for responsive attributes.
 
 ## selectorB
 
-Return's BEM selector for HTML class and checks if block is set.
+Returns BEM selector for HTML class and checks if block is set.
 
 * @param string block BEM Block selector. *(required)*
 * @param string element BEM Element selector.
@@ -145,7 +147,7 @@ Return's BEM selector for HTML class and checks if block is set.
 
 ## selectorE
 
-Return's BEM selector for HTML class and checks if the element is set.
+Returns BEM selector for HTML class and checks if the element is set.
 
 * @param string block BEM Block selector. *(required)*
 * @param string element BEM Element selector. *(required)*
@@ -169,7 +171,7 @@ Return's BEM selector for HTML class and checks if the element is set.
 
 ## selectorM
 
-Return's BEM selector for HTML class and checks if the modifier is set.
+Returns BEM selector for HTML class and checks if the modifier is set.
 
 * @param string block BEM Block selector. *(required)*
 * @param string element BEM Element selector. *(required)*
@@ -215,7 +217,7 @@ Return's BEM selector for HTML class and checks all conditions from the checkAtt
 
 ## selectorCustom
 
-Return's BEM selector for HTML class and checks if the custom condition is set.
+Returns BEM selector for HTML class and checks if the custom condition is set.
 
 * @param bool   condition Check condition.
 * @param string block BEM Block selector.
@@ -282,7 +284,6 @@ It is used to set attributes on all innerBlocks. This value will be stored in th
 ## overrideInnerBlockSimpleWrapperAttributes
 
 It is used to set attributes on all innerBlocks preset only for simple wrapper setup. This value will be stored in the Block Editor store and set to a block.
-
 
 **Usage:**
 

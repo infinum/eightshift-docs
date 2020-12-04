@@ -9,7 +9,7 @@ sidebar_label: PHP
 ## ensureString
 
 Makes sure the output is string. Useful for converting an array of components into a string.
-If you pass an associative array it will output strings with keys, used for generating data-attributes from array.
+If you pass an associative array it will output strings with keys. Used for generating data-attributes from an array.
 
 - @param array|string $variable Variable we need to convert into a string.
 - @throws ComponentException When $variable is not a string or array.
@@ -26,9 +26,9 @@ Converts an array of classes into a string which can be echoed.
 
 Renders a components and (optionally) passes some attributes to it.
 
-Note about "parentClass" attribute: If provided, the component will be wrapped with a
-parent BEM selector. For example, if $attributes['parentClass'] === 'header' and $component === 'logo'
-are set, the component will be wrapped with a <div class="header__logo"></div>.
+Note about the `parentClass` attribute: If provided, the component will be wrapped with a parent BEM selector.
+
+For example, if `$attributes['parentClass'] === 'header'` and `$component === 'logo'` are set, the component will be wrapped with a `<div class="header__logo"></div>`.
 
 - @param string $component Component's name or full path (ending with .php).
 - @param array  $attributes Array of attributes that's implicitly passed to component.
@@ -38,7 +38,7 @@ are set, the component will be wrapped with a <div class="header__logo"></div>.
 
 ## getManifest
 
-Get manifest json. Generally used for getting block/components manifest.
+Get `manifest json`. Used for getting block/components manifest.
 
 - @param string $path Absolute path to manifest folder.
 - @throws \Exception When we're unable to find the component by $component.
@@ -46,35 +46,35 @@ Get manifest json. Generally used for getting block/components manifest.
 
 ## responsiveSelectors
 
-This function is the exact same equivalent as JavaScript function on this [link](helpers-javascript).
+This function is the PHP equivalent of the JavaScript function on this [link](helpers-javascript).
 
 ## checkAttr
 
-This function is the exact same equivalent as JavaScript function on this [link](helpers-javascript).
+This function is the PHP equivalent of the JavaScript function on this [link](helpers-javascript).
 
 ## selectorB
 
-This function is the exact same equivalent as JavaScript function on this [link](helpers-javascript).
+This function is the PHP equivalent of the JavaScript function on this [link](helpers-javascript).
 
 ## selectorE
 
-This function is the exact same equivalent as JavaScript function on this [link](helpers-javascript).
+This function is the PHP equivalent of the JavaScript function on this [link](helpers-javascript).
 
 ## selectorM
 
-This function is the exact same equivalent as JavaScript function on this [link](helpers-javascript).
+This function is the PHP equivalent of the JavaScript function on this [link](helpers-javascript).
 
 ## selector
 
-This function is the exact same equivalent as JavaScript function on this [link](helpers-javascript).
+This function is the PHP equivalent of the JavaScript function on this [link](helpers-javascript).
 
 ## selectorCustom
 
-This function is the exact same equivalent as JavaScript function on this [link](helpers-javascript).
+This function is the PHP equivalent of the JavaScript function on this [link](helpers-javascript).
 
 ## restResponseHandler
 
-Ensure correct response for rest using handler function.
+Ensure the correct response for REST using the handler function.
 
 - @param integer     $code Response Status code.
 - @param string      $status Response Status name (success/error).
@@ -84,7 +84,7 @@ Ensure correct response for rest using handler function.
 
 ## isValidXml
 
-Check if XML is valid file used for svg.
+Check if XML is valid. Used for validating SVG files.
 
 - @param string $xml Full xml document.
 - @return boolean
@@ -105,7 +105,7 @@ Flatten multidimensional array.
 
 ## sanitizeArray
 
-Sanitize all values in an array.
+Sanitize all the values in an array.
 
 - @link https://developer.wordpress.org/themes/theme-security/data-sanitization-escaping/
 - @param array  $array Provided array.

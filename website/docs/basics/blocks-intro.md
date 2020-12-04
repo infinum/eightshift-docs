@@ -21,7 +21,7 @@ For more info about blocks, you can read the [block structure](block-structure) 
 
 ### Do I need to have storybook stories in my block?
 
-No you don't. But we provided you an ability to use storybook for all of your blocks and components. Why not use it.
+No, you don't. But we provided you with the ability to use the storybook for all of your blocks and components. Why not use it? It will speed up your development time. Trust us 🙂.
 
 ### Do you support block variations, and how can I use them?
 
@@ -31,19 +31,19 @@ Yes, we do. All block variations are located in the `src/Blocks/variations` fold
 
 ### What is a wrapper?
 
-All details about wrapper you can find in [this chapter](blocks-wrapper).
+All the details about wrapper can be found in [this chapter](blocks-wrapper).
 
 ### Do you support inner blocks?
 
-Yes, we support everything that core natively supports. How to use them you can find in [this chapter](block-manifest).
+Yes, we support everything that core natively supports.  You can find more information about how to use them in [this chapter](block-manifest).
 
 ### Why do you use manifest.json in all blocks and components?
 
-So we can provide content, attributes, options and much more across multiple different files in multiple programing languages. More details read in [this chapter](block-manifest).
+So that we can provide content, attributes, options, and much more across multiple different files in multiple contexts (in both PHP and JS). You can read all about it in [this chapter](block-manifest).
 
 ### Why do you use global manifest.json
 
-Basicity the same answer as the previous one but in the global manifest.json we have options that are shared across all blocks and components. More details read in [this chapter](blocks-global-manifest).
+Basically the same answer as the previous one. In the global `manifest.json` we have options that are shared across all blocks and components. Read more about it in [this chapter](blocks-global-manifest).
 
 ### If I want to create a new block/component, what do I do?
 
@@ -57,13 +57,13 @@ You can check all available blocks/components using our `wp boilerplate use_bloc
 
 ### Do I need to write JS and PHP implementation for all my blocks?
 
-### How do you use components in blocks?
+### How do I use components in blocks?
 
-Yes we do, please referrer to [this chapter](blocks-component-in-block).
+Yes, we do. Please check [this chapter](blocks-component-in-block) out for more information.
 
 ### How do I use multiple heading components in my block?
 
-Please referrer to [this chapter](blocks-component-in-block).
+You can follow the instructions given in [this chapter](blocks-component-in-block).
 
 ### Where can I define my global styles?
 
