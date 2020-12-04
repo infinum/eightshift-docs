@@ -65,15 +65,18 @@ module.exports = {
           "basics/blocks-variations",
           "basics/blocks-special-use-cases",
           "basics/blocks-storybook",
-          "basics/blocks-helpers",
         ]
       },
-    ],
-    "Helpers": [
-      'helpers/helpers',
-      'helpers/javascript',
-      'helpers/scss',
-      'helpers/php',
+      {
+        "type": "category",
+        "label": "Helpers",
+        "items": [
+          'basics/helpers',
+          'basics/helpers-javascript',
+          'basics/helpers-scss',
+          'basics/helpers-php',
+        ]
+      },
     ],
     "Advanced": [
       'advanced/advanced'

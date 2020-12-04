@@ -21,6 +21,8 @@ For more info about blocks, you can read the [block structure](block-structure) 
 
 ### Do I need to have storybook stories in my block?
 
+No, you don't. But we provided you with the ability to use the storybook for all of your blocks and components. Why not use it? It will speed up your development time. Trust us 🙂.
+
 ### Do you support block variations, and how can I use them?
 
 Yes, we do. All block variations are located in the `src/Blocks/variations` folder. For more info about this, please check the [variations](blocks-variations) chapters.
@@ -29,15 +31,25 @@ Yes, we do. All block variations are located in the `src/Blocks/variations` fold
 
 ### What is a wrapper?
 
+All the details about wrapper can be found in [this chapter](blocks-wrapper).
+
 ### Do you support inner blocks?
+
+Yes, we support everything that core natively supports.  You can find more information about how to use them in [this chapter](block-manifest).
 
 ### Why do you use manifest.json in all blocks and components?
 
+So that we can provide content, attributes, options, and much more across multiple different files in multiple contexts (in both PHP and JS). You can read all about it in [this chapter](block-manifest).
+
 ### Why do you use global manifest.json
+
+Basically the same answer as the previous one. In the global `manifest.json` we have options that are shared across all blocks and components. Read more about it in [this chapter](blocks-global-manifest).
 
 ### If I want to create a new block/component, what do I do?
 
 ### How can I use your pre-made blocks?
+
+You can check all available blocks/components using our `wp boilerplate use_block --help` or `wp boilerplate use_component --help` command.
 
 ### Can I use block/component from Eightshift-frontend-libs directly?
 
@@ -45,9 +57,13 @@ Yes, we do. All block variations are located in the `src/Blocks/variations` fold
 
 ### Do I need to write JS and PHP implementation for all my blocks?
 
-### How do you use components in blocks?
+### How do I use components in blocks?
+
+Yes, we do. Please check [this chapter](blocks-component-in-block) out for more information.
 
 ### How do I use multiple heading components in my block?
+
+You can follow the instructions given in [this chapter](blocks-component-in-block).
 
 ### Where can I define my global styles?
 
