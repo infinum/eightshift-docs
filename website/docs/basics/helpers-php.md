@@ -52,15 +52,15 @@ This function is the PHP equivalent of the JavaScript function on this [link](he
 
 This function is the PHP equivalent of the JavaScript function on this [link](helpers-javascript).
 
-## selectorB
+## selectorBlock
 
 This function is the PHP equivalent of the JavaScript function on this [link](helpers-javascript).
 
-## selectorE
+## selectorElement
 
 This function is the PHP equivalent of the JavaScript function on this [link](helpers-javascript).
 
-## selectorM
+## selectorModifier
 
 This function is the PHP equivalent of the JavaScript function on this [link](helpers-javascript).
 
