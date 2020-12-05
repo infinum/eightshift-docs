@@ -14,7 +14,7 @@ Let's brag a little about what you can expect from this setup:
 - **Webpack** - Modern assets & building process that you can customize.
 - **SASS** - Easy to learn CSS on steroids.
 - **Autoprefixing** - You don't have to worry if your code will work on older browsers.
-- **JS Compiler (Babel)** - Write JS using the latest features and let webpack worry about making it work across all browsers.
+- **JS Compiler (Babel)** - Write JS using the latest features and let Webpack worry about making it work across all browsers.
 - **Synchronised browser testing** - Automatically minifies your production assets (JS / CSS) during the build process.
 - **Minifying** - Automatically minifies your production assets (JS / CSS) during the build process.
 - **PHPCS** - Helps you write better code with automatic code linting for PHP, SCSS, and JS.
