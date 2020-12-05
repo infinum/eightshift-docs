@@ -49,6 +49,12 @@ module.exports = {
           label: 'Sass',
           position: 'right',
         },
+        {
+          to: '/showcase',
+          activeBasePath: 'showcase',
+          label: 'Showcase',
+          position: 'right',
+        },
       ],
       prism: {
         theme: require('prism-react-renderer/themes/dracula'),
