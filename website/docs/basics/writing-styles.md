@@ -1,4 +1,3 @@
-
 ---
 id: writing-styles
 title: Writing Styles
