@@ -118,9 +118,9 @@ Useful if you want to show how the responsive behavior looks in the editor.
   .block-column__width-large--4
 ```
 
-## selectorB
+## selectorBlock
 
-Returns BEM selector for HTML class and checks if block is set.
+Returns BEM selector for HTML class and checks if block part is set.
 
 * @param string block BEM Block selector. *(required)*
 * @param string element BEM Element selector.
@@ -129,11 +129,11 @@ Returns BEM selector for HTML class and checks if block is set.
 **Usage:**
 
 ```js
-  import { selectorB } from '@eightshift/frontend-libs/scripts/helpers';
+  import { selectorBlock } from '@eightshift/frontend-libs/scripts/helpers';
 
-  selectorB(blockClass);
-  selectorB(blockClass, selectorClass);
-  selectorB(blockClass, selectorClass, modifierClass);
+  selectorBlock(blockClass);
+  selectorBlock(blockClass, selectorClass);
+  selectorBlock(blockClass, selectorClass, modifierClass);
 ```
 
 **Equivalent:**
@@ -145,9 +145,9 @@ Returns BEM selector for HTML class and checks if block is set.
 ```
 
 
-## selectorE
+## selectorElement
 
-Returns BEM selector for HTML class and checks if the element is set.
+Returns BEM selector for HTML class and checks if the element part is set.
 
 * @param string block BEM Block selector. *(required)*
 * @param string element BEM Element selector. *(required)*
@@ -156,10 +156,10 @@ Returns BEM selector for HTML class and checks if the element is set.
 **Usage:**
 
 ```js
-  import { selectorE } from '@eightshift/frontend-libs/scripts/helpers';
+  import { selectorElement } from '@eightshift/frontend-libs/scripts/helpers';
 
-  selectorE(blockClass, selectorClass);
-  selectorE(blockClass, selectorClass, modifierClass);
+  selectorElement(blockClass, selectorClass);
+  selectorElement(blockClass, selectorClass, modifierClass);
 ```
 
 **Equivalent:**
@@ -169,9 +169,9 @@ Returns BEM selector for HTML class and checks if the element is set.
   selectorClass ? `${blockClass}__${selectorClass}--${modifierClass}` : '';
 ```
 
-## selectorM
+## selectorModifier
 
-Returns BEM selector for HTML class and checks if the modifier is set.
+Returns BEM selector for HTML class and checks if the modifier part is set.
 
 * @param string block BEM Block selector. *(required)*
 * @param string element BEM Element selector. *(required)*
@@ -180,9 +180,9 @@ Returns BEM selector for HTML class and checks if the modifier is set.
 **Usage:**
 
 ```js
-  import { selectorM } from '@eightshift/frontend-libs/scripts/helpers';
+  import { selectorModifier } from '@eightshift/frontend-libs/scripts/helpers';
 
-  selectorM(blockClass, selectorClass, modifierClass);
+  selectorModifier(blockClass, selectorClass, modifierClass);
 ```
 
 **Equivalent:**
