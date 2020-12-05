@@ -59,9 +59,9 @@ You can check all available blocks/components using our `wp boilerplate use_bloc
 
 ### Can I use block/component from Eightshift-frontend-libs directly?
 
-It depends; you can't use stuff from the blocks folder like `components`, `custom`, `variations`, `wrapper`, etc. This stuff is made to be copied to your project and styled and changed depending on your project's needs. 
+It depends. You can't use things from the blocks folder like `components`, `custom`, `variations`, `wrapper`, etc. They are meant to be copied to your project, styled, and changed depending on your project's needs. 
 
-You can move stuff from block to your project using these commands describes in [this chapter](blocks-intro#how-can-i-use-your-pre-made-blocks).
+You can move things from block to your project using these commands described in [this chapter](blocks-intro#how-can-i-use-your-pre-made-blocks).
 
 ### I want to change attributes on inner blocks; how do I do it?
 
@@ -69,11 +69,11 @@ We described how attributes are used and combined in [this chapter](blocks-attri
 
 ### Do I need to write JS and PHP implementation for all my blocks?
 
-For block, you must provide the JS and PHP implementation because it won't work without it.
+For block, you must provide the JS and PHP implementations because the block won't work without them.
 
 For components, if you are not using the JS part, you don't need to write one, but we recommend you do so because the JS part is used in Storybook.
 
-If you have a more advanced block and don't benefit from writing the JS implementation of the block, you can always use [ServerSideRender component](https://developer.wordpress.org/block-editor/packages/packages-server-side-render/) form the core. If the editor can't input anything from admin, there is no need to write JS implementation of the block; just use ServerSideRender component.
+If you have a more advanced block and don't benefit from writing the JS implementation of the block, you can always use [ServerSideRender component](https://developer.wordpress.org/block-editor/packages/packages-server-side-render/) form the core. If you have no inputs in the editor from the admin, there is no need to write JS implementation of the block. Just use `ServerSideRender` component in that case.
 
 ### How do I use components in blocks?
 
@@ -106,17 +106,21 @@ Ask yourself, will I reuse this functionality anywhere else?
 
 Our recommendation is not to burden yourself from the begging with the components. Start creating blocks and if you find yourself in need of code that you already wrote, just extract it in a component.
 
-### Will this setup works with full site editing?
+### Will this setup work with full site editing?
 
 Yes, it will. We are constantly upgrading this documentation and our code to say that it will work with full site editing. This boilerplate was made for Infinum/Eightshift WordPress team, so se are constantly using it on our projects.
 
 ### Can I use core blocks with your setup?
 
-Yes, you can. We are working on an ability to override core block on our smart way, but until we make this work, you can use everything the normal way that is defined in the core documentation. 
+Yes, you can. We are working on the ability to override core block in our smart way, but until we make this work, you can use everything the normal way that is defined in the core documentation. 
+
+We avoid using core blocks because they add different class naming and additional markup that makes it harder to style things as we want to.
+
+ Also, they are prone to breaking changes every several months, so we prefer to write our own implementation. 
 
 ### How can I limit my blocklist?
 
-Easy, we have a method that you can extend that limits your project's block to the only block from your project. you should put this filter in your projects `src/Blocks/Blocks.php` file under the `register` method
+Easy. We have a method that you can extend that limits your project's block to the only block from your project. you should put this filter in your projects `src/Blocks/Blocks.php` file under the `register` method
 
 ```php
   // Limits the usage of only custom project blocks.
@@ -189,6 +193,6 @@ And folder structure `src/Blocks/blocks` is kinda weird.
 
 ### In the global manifest, you have a key called “customBlocksName”: “eightshift-block”, can I change this to my-project-name-block?
 
-You can, but you shouldn't. We use this key to provide the css selector on all our custom block in the block editor. Additional styles are added to this selector for the wrapper to work on full width and remove some of the native block editor styles. 
+You can, but you shouldn't. We use this key to provide the CSS selectors on all our custom blocks in the block editor. Additional styles are added to this selector for the wrapper to work on full width and remove some of the native block editor styles. 
 
-So don't remove this.
+So don't remove or change this 😅 .

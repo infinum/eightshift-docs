@@ -10,9 +10,9 @@ Before you start developing and changing anything on your block/components, you 
 
 We require all our JS files using the `require.context` and all our SCSS files using the `webpack-import-glob-loader`.
 
-All files are required in the project's` compile-time`, so that means that we can't get any new files after the compile time is over. This approach gives us the ability not to worry if you loaded the file or not. You can focus on your code and leave the messy stuff to the boilerplate.
+All files are required during the project's` compile-time`, so that means that we can't get any new files after the compile time is over. This approach gives us the ability not to worry if you loaded the file or not. You can focus on your code and leave the messy stuff to the boilerplate.
 
-As all the files are required in the `compile-time`, every time you change the file structure, you must restart the Webpack watch.
+As all the files are required during the `compile-time`, every time you change the file structure, you must restart the Webpack watch.
 
 You **must restart** Webpack watch when:
 
