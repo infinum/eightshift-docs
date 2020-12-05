@@ -58,6 +58,7 @@ $heading: (
       margin-top: 40px,
     ),
   ),
+  link-color: $base-mandy-color,
 );
 
 .shift-heading {
@@ -79,5 +80,10 @@ $heading: (
 
   &__subtitle {
     @include responsive($heading, subtitle);
+
+    a {
+      text-decoration: underline;
+      color: map-get-strict($heading, link-color)
+    }
   }
 }

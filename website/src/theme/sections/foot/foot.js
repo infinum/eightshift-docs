@@ -23,7 +23,7 @@ function Foot() {
             </span>
             <span className={`${component}__logo-wrap`}>
               {'Part of '}
-              <a href="https://infinum.com/" target="_blank" rel="noopener noreferrer" rel="nofolloe" className={`${component}__logo`}>
+              <a href="https://infinum.com/" target="_blank" rel="noopener noreferrer" rel="nofollow" className={`${component}__logo`}>
                 <img src={useBaseUrl('img/ic-infinum-logo.svg')} />
               </a>
             </span>

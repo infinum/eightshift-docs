@@ -1,0 +1,154 @@
+$showcase-grid: (
+  showcase-grid: (
+    mobile: (
+      padding: 0 0 140px,
+    ),
+    tablet: (
+      padding: 0 0 205px,
+    ),
+  ),
+  content: (
+    mobile: (
+      display: flex,
+      flex-wrap: wrap,
+      margin: 0 (-$base-gutter-size) -70px,
+    ),
+  ),
+  item: (
+    mobile: (
+      text-align: center,
+      padding: 0 ($base-gutter-size),
+      margin-bottom: 70px,
+    ),
+  ),
+  icon: (
+    mobile: (
+      margin-bottom: 25px,
+      transition: all 0.3s ease-in,
+    ),
+  ),
+  label: (
+    mobile: (
+      font-size: 24px,
+      font-weight: bold,
+      line-height: 1.13,
+      color: $base-elephant-color,
+      font-family: $base-font-family-alternative,
+      margin-bottom: 30px,
+    ),
+  ),
+  desc: (
+    mobile: (
+      font-size: 15px,
+      line-height: 1.4,
+      color: $base-cape-color,
+      margin: 0 auto 30px,
+      max-width: 300px,
+    ),
+  ),
+);
+
+.showcase-grid {
+  $this: &;
+  @include responsive($showcase-grid, showcase-grid);
+
+  &__content {
+    @include responsive($showcase-grid, content);
+
+    padding-bottom: 100px;
+
+    @include media(tablet) {
+      margin-bottom: 90px;
+    }
+    @include media(desktop up) {
+      margin-bottom: 180px;
+    }
+  }
+
+  &__item {
+    @include responsive($showcase-grid, item);
+    flex: 0 0 calc-grid-width(12);
+
+    @include media(tablet) {
+      flex: 0 0 calc-grid-width(6);
+
+      &:nth-child(even) {
+        transform: translateY(90px);
+      }
+    }
+
+    @include media(desktop up) {
+      flex: 0 0 calc-grid-width(4);
+
+      &:nth-child(3n-1) {
+        transform: translateY(90px);
+      }
+      &:nth-child(3n) {
+        transform: translateY(180px);
+      }
+    }
+  }
+
+  &__icon {
+    @include responsive($showcase-grid, icon);
+  }
+
+  &__img {
+    border-radius: 12px;
+    box-shadow: 5px 5px 5px rgba($base-elephant-color, 0.1),
+  }
+
+  &__label {
+    @include responsive($showcase-grid, label);
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      transform: translateX(-25px);
+      top: 7px;
+      width: 16px;
+      height: 16px;
+      transition: all 0.3s ease-in,
+    }
+
+    &--red::before {
+      background-image: url('/eightshift-docs/img/ic-bullet-1.svg');
+    }
+
+    &--purple::before {
+      background-image: url('/eightshift-docs/img/ic-bullet-2.svg');
+    }
+
+    &--blue::before {
+      background-image: url('/eightshift-docs/img/ic-bullet-3.svg');
+    }
+
+    &--yellow::before {
+      background-image: url('/eightshift-docs/img/ic-bullet-4.svg');
+    }
+
+    &--green::before {
+      background-image: url('/eightshift-docs/img/ic-bullet-5.svg');
+    }
+  }
+
+  &__desc {
+    @include responsive($showcase-grid, desc);
+  }
+
+  &__link {
+    &:hover {
+      text-decoration: none;
+
+      #{$this}__shift-arrow {
+        @extend %shift-arrow-hover;
+      }
+
+      #{$this}__icon {
+        transition: all 0.3s ease-in;
+        transform: translateY(-5px);
+      }
+    }
+  }
+}

@@ -10,7 +10,7 @@ export default function Features() {
     {
       icon: 'red',
       title: 'Custom Block Editor blocks',
-      desc: 'Easily use our pre-made 100% customizable existing Block Editor blocks & components or create your own. We focus on **dynamic blocks** for developers.',
+      desc: 'Easily use our pre-made 100% customizable existing Block Editor blocks & components or create your own. We focus on dynamic blocks for developers.',
     },
     {
       icon: 'purple',

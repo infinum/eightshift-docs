@@ -27,9 +27,7 @@ export default function Heading(props) {
             </div>
           }
           {subtitle &&
-            <div className={`${component}__subtitle`}>
-              {subtitle}
-            </div>
+            <div className={`${component}__subtitle`} dangerouslySetInnerHTML={{__html: subtitle}}></div>
           }
         </div>
       }
