@@ -9,53 +9,63 @@ export default function Features() {
   const data = [
     {
       icon: 'red',
-      title: 'Custom Gutenberg blocks',
-      desc: 'Easily use our pre-made 100% customizable existing Gutenberg blocks & components or create your own.',
+      title: 'Custom Block Editor blocks',
+      desc: 'Easily use our pre-made 100% customizable existing Block Editor blocks & components or create your own. We focus on **dynamic blocks** for developers.',
     },
     {
       icon: 'purple',
       title: 'OOP',
-      desc: 'All code is written following the latest object-oriented programming paradigms',
+      desc: 'All code is written following the latest object-oriented programming paradigms (abstract classes, interfaces, dependency injection, namespacing).',
     },
     {
       icon: 'yellow',
-      title: 'Webpack',
-      desc: 'Modern bundling & build process',
+      title: 'WP-CLI',
+      desc: 'Build your application with all-ready pre-made features that you can access with a single command using the terminal.',
     },
     {
       icon: 'green',
-      title: 'SAAS - scss',
-      desc: 'Easy to learn CSS on steroids',
+      title: 'Webpack',
+      desc: 'Modern assets & building process that you can customize.',
     },
     {
       icon: 'red',
-      title: 'Autoprefixing',
-      desc: 'Automatically adds vendors prefixes to your CSS',
+      title: 'SASS',
+      desc: 'Easy to learn CSS on steroids.',
     },
     {
       icon: 'purple',
-      title: 'JS Compiler (Babel)',
-      desc: 'Write JS using the latest features and let webpack worry about making it work accross all browsers',
+      title: 'Autoprefixing',
+      desc: 'You don\'t have to worry if your code will work on older browsers.',
     },
     {
       icon: 'yellow',
-      title: 'Synchronised browser testing',
-      desc: 'Automatically minifies your production assets (JS / CSS) during build process',
+      title: 'JS Compiler (Babel)',
+      desc: 'Write JS using the latest features and let Webpack worry about making it work across all browsers.',
     },
     {
       icon: 'red',
+      title: 'Synchronised browser testing',
+      desc: 'Automatically minifies your production assets (JS / CSS) during the build process.',
+    },
+    {
+      icon: 'green',
       title: 'Minifying',
-      desc: 'Automatically minifies your production assets (JS / CSS) during build process',
+      desc: 'Automatically minifies your production assets (JS / CSS) during the build process.',
     },
     {
       icon: 'purple',
-      title: 'Helps you write better code',
-      desc: 'Automatic code linting',
+      title: 'PHPCS',
+      desc: 'Helps you write better code with automatic code linting for PHP, SCSS, and JS.',
     },
     {
       icon: 'yellow',
       title: 'Easy SASS media queries',
-      desc: 'Automatically minifies your production assets (JS / CSS) during build process',
+      desc: 'Build your application with easy to use media queries that are connected to blocks.',
+    },
+    {
+      icon: 'red',
+      title: 'Cache busting',
+      desc: 'Each time you build assets, we generate a new URL for each asset file. This means you\'ll never see the old cached version while developing or after pushing your code to production.',
     },
     {
       icon: 'green',
@@ -63,14 +73,9 @@ export default function Features() {
       desc: 'Library aimed at bringing the modern development tools to your project.',
     },
     {
-      icon: 'red',
+      icon: 'purple',
       title: 'Eightshift Frontend Libs',
-      desc: 'A collection of useful frontend utility modules and all the tools you need to start building a modern Gutenberg dynamic blocks.',
-    },
-    {
-      icon: 'green',
-      title: 'Cache busting',
-      desc: 'Each time you build assets, we generate a new URL for each asset file. This means you\'ll never see the old cached version while developing or after pushing your code to production.',
+      desc: 'A collection of useful frontend utility modules and all the tools you need to start building modern Block Editor dynamic blocks.',
     },
   ];
 

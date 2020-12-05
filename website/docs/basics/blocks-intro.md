@@ -23,13 +23,15 @@ For more info about blocks, you can read the [block structure](block-structure) 
 
 No, you don't. But we provided you with the ability to use the Storybook for all of your blocks and components. Why not use it? It will speed up your development time. Trust us 🙂.
 
+For more details how to write stories checkout [this chapter](blocks-storybook).
+
 ### Do you support block variations, and how can I use them?
 
 Yes, we do. All block variations are located in the `src/Blocks/variations` folder. For more info about this, please check the [variations](blocks-variations) chapters.
 
 ### Do you support patterns, and how can I use them?
 
-*Comming soon*
+*Coming soon*
 
 ### What is a wrapper?
 
@@ -123,7 +125,7 @@ Easy, we have a method that you can extend that limits your project's block to t
 
 ### How to allow only one pattern category?
 
-*Comming soon*
+*Coming soon*
 
 ### Can I have blocks in multiple categories?
 

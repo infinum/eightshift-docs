@@ -18,7 +18,7 @@ Let's brag a little about what you can expect from this setup:
 - **Synchronised browser testing** - Automatically minifies your production assets (JS / CSS) during the build process.
 - **Minifying** - Automatically minifies your production assets (JS / CSS) during the build process.
 - **PHPCS** - Helps you write better code with automatic code linting for PHP, SCSS, and JS.
-- **Easy SASS media queries** - build your application with easy to use media queries that are connected to blocks.
+- **Easy SASS media queries** - Build your application with easy to use media queries that are connected to blocks.
 - **Cache busting** - Each time you build assets, we generate a new URL for each asset file. This means you'll never see the old cached version while developing or after pushing your code to production.
 
 
