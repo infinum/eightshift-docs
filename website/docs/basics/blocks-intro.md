@@ -69,6 +69,8 @@ You can follow the instructions given in [this chapter](blocks-component-in-bloc
 
 ### Where can I define global typography for all my blocks/components?
 
+You can follow the instructions given in [this chapter](writing-styles).
+
 ### Can I make a component with WP_Query logic in it?
 
 ### Do I need to make components for all my blocks?
