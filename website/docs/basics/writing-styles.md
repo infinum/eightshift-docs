@@ -6,13 +6,13 @@ sidebar_label: Writing Styles
 
 [![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs)
 
-Everyone says that writing styles are easy and usually don't think enough when doing so. Like everything in programming, if you don't, think the problems will add up exponentially, and you will have a headache fast.
+Everyone says that writing styles is easy and usually don't think when doing so. Like everything in programming, if you don't think about it, the problems will add up, and you will have a headache.
 
-Here are some of our recommendations on writing our styles and how we manage everything to be as modular as possible.
+Here are some of the recommendations that we use when writing our styles and how we manage everything to be as modular as possible.
 
 ### Never use HEX color values in your files
 
-As is Bootstrap or any other frontend framework, you should never use hex color values in multiple places. You should assign that hex value to a variable and use that variable all over.
+Like in Bootstrap or any other frontend framework, you should never use hex color values in multiple places. You should assign that hex value to a variable and use that variable all over. That way, if you ever need to change the color, just change the value in one place and it will be applied all over the project in a consistent way.
 
 You can read more about defining your colors in the [global settings](global-settings) chapter.
 
@@ -22,7 +22,7 @@ You can name your variables how you like, but we recommend that you never use th
 
 For example, you can call blue color r2d2-color. With this approach, if for any reason your designer chooses to change the project color scheme at any point, you only need to change one variable value, and you are done. 
 
-We like to use [this site](https://chir.ag/projects/name-that-color) for our color names. Also, we recrement using a simple name as possible like:
+We like to use [this site](https://chir.ag/projects/name-that-color) for our color names. Also, we recommend using simple names like:
 
 * Cornflower Blue will be `$base-corn-color` or `$base-flower-color` name.
 
@@ -36,9 +36,9 @@ We use maps for a lot of stuff in our boilerplate. The reason is that:
 * you can have multiple values with the same name and just change the top-level map.
 * etc.
 
-We also have many helpers inside our [SASS Docs](/eightshift-docs/sass).
+We also have many helpers, that you can check in our [SASS docs](/eightshift-docs/sass).
 
-In the component map, you should only add stuff that you will reuse in your component.
+In the component map, you should only add things that you will reuse in your component.
 
 **Examples:**
 
@@ -88,9 +88,9 @@ $social-links: (
 
 ### Never mix multiple maps in a single component
 
-You want all your styles to be continued to a single component and not depend on the external stuff. Sometimes this can't be avoided.
+You want all your styles to be contained to a single component and not dependent on the external components. Sometimes this can't be avoided.
 
-With this case, you should  define a key in a component variable for the external map and define it like this:
+In that case, you should define a key in a component variable for the external map and define it like this:
 
 **Example:**
 
@@ -120,8 +120,8 @@ $header: (
 
 Well, nowhere. Try to move your way of thinking from Bootstrap or any other frontend framework where you define global typography in one place.
 
-Why is that? Because we use component-based development and you should think in that way. Each component is responsible for its styles. 
+Why is that? Because we use component-based development and you should think in that way. Each component is responsible for its own styles. 
 
 You should define styles with all sizes, colors, and variations for the heading component and reuse that component where ever you need any kind of heading. The same way is with any other component. This is why you don't need global typography, styles, etc.
 
-Global styles and variables are only used for stuff you want to share across components (that should be reduced to a minimum).
+Global styles and variables are only used for things you want to share across components (that should be reduced to a minimum).
