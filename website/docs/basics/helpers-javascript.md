@@ -10,16 +10,17 @@ sidebar_label: JavaScript
 
 Checks if the attributes exist in the attributes list, and adds a default value if they don't.
 
-* @param string $key Key to check.
-* @param array  $attributes Array of attributes.
-* @param array  $manifest Array of default attributes from manifest.json.
+* @param {string} $key Key to check.
+* @param {array}  $attributes Array of attributes.
+* @param {array}  $manifest Array of default attributes from manifest.json.
+* @param {string} $componentName The real component name.
 
 **Usage:**
 
 ```js
   import { checkAttr } from '@eightshift/frontend-libs/scripts/helpers';
 
-  checkAttr('buttonUse', attributes, manifest);
+  checkAttr('buttonUse', attributes, manifest, $componentName);
 ```
 
 ## cookies
@@ -83,7 +84,7 @@ To get (require) all the files using the `require.context` method. It will find 
 
 Takes provided string and removes special characters. Characters that will be removed: `([;&,.+*~':"!^#$%@[\]()=>|]`.
 
-* @param string $key Key to check.
+* @param {string} $key Key to check.
 
 **Usage:**
 
@@ -99,10 +100,10 @@ Create responsive selectors used for responsive attributes.
 
 Useful if you want to show how the responsive behavior looks in the editor.
 
-* @param array   items        Array of breakpoints.
-* @param string  selector     Selector for this breakpoint.
-* @param string  parent       Parent block selector.
-* @param boolean use_modifier If false, you can use this selector for visibility.
+* @param {array}   items        Array of breakpoints.
+* @param {string}  selector     Selector for this breakpoint.
+* @param {string}  parent       Parent block selector.
+* @param {boolean} use_modifier If false, you can use this selector for visibility.
 
 **Usage:**
 
@@ -118,122 +119,26 @@ Useful if you want to show how the responsive behavior looks in the editor.
   .block-column__width-large--4
 ```
 
-## selectorBlock
-
-Returns BEM selector for HTML class and checks if block part is set.
-
-* @param string block BEM Block selector. *(required)*
-* @param string element BEM Element selector.
-* @param string modifier BEM Modifier selector.
-
-**Usage:**
-
-```js
-  import { selectorBlock } from '@eightshift/frontend-libs/scripts/helpers';
-
-  selectorBlock(blockClass);
-  selectorBlock(blockClass, selectorClass);
-  selectorBlock(blockClass, selectorClass, modifierClass);
-```
-
-**Equivalent:**
-
-```js
-  blockClass ? `${blockClass}` : '';
-  blockClass ? `${blockClass}__${selectorClass}` : '';
-  blockClass ? `${blockClass}__${selectorClass}--${modifierClass}` : '';
-```
-
-
-## selectorElement
-
-Returns BEM selector for HTML class and checks if the element part is set.
-
-* @param string block BEM Block selector. *(required)*
-* @param string element BEM Element selector. *(required)*
-* @param string modifier BEM Modifier selector.
-
-**Usage:**
-
-```js
-  import { selectorElement } from '@eightshift/frontend-libs/scripts/helpers';
-
-  selectorElement(blockClass, selectorClass);
-  selectorElement(blockClass, selectorClass, modifierClass);
-```
-
-**Equivalent:**
-
-```js
-  selectorClass ? `${blockClass}__${selectorClass}` : '';
-  selectorClass ? `${blockClass}__${selectorClass}--${modifierClass}` : '';
-```
-
-## selectorModifier
-
-Returns BEM selector for HTML class and checks if the modifier part is set.
-
-* @param string block BEM Block selector. *(required)*
-* @param string element BEM Element selector. *(required)*
-* @param string modifier BEM Modifier selector. *(required)*
-
-**Usage:**
-
-```js
-  import { selectorModifier } from '@eightshift/frontend-libs/scripts/helpers';
-
-  selectorModifier(blockClass, selectorClass, modifierClass);
-```
-
-**Equivalent:**
-
-```js
-  modifierClass ? `${blockClass}__${selectorClass}--${modifierClass}` : '';
-```
-
 ## selector
 
-Return's BEM selector for HTML class and checks all conditions from the checkAttr method.
+Returns BEM selector for HTML class and check if condition part is set.
 
-* @param string block BEM Block selector.
-* @param string element BEM Element selector.
-* @param string key Key to check.
-* @param array  attributes Array of attributes.
-* @param array  manifest Array of default attributes from manifest.json.
+* @param {boolean} condition Check condition.
+* @param {string}  block BEM Block selector.
+* @param {string}  element BEM Element selector.
+* @param {string}  modifier BEM Modifier selector.
+* @return {string}
 
 **Usage:**
 
 ```js
   import { selector } from '@eightshift/frontend-libs/scripts/helpers';
 
-  selector(componentClass, 'size', 'buttonSize', attributes, manifest),
-```
+  selector(!(buttonContent && buttonUrl), `${componentClass}-placeholder`);
 
-**Equivalent:**
+  selector(test, componentClass, elementClass);
 
-```js
-  manifest['size'] ? `${componentClass}__size--${manifest['size']}` : '';
-```
-
-## selectorCustom
-
-Returns BEM selector for HTML class and checks if the custom condition is set.
-
-* @param bool   condition Check condition.
-* @param string block BEM Block selector.
-* @param string element BEM Element selector.
-* @param string modifier BEM Modifier selector.
-
-**Usage:**
-
-```js
-  import { selectorCustom } from '@eightshift/frontend-libs/scripts/helpers';
-
-  selectorCustom(!(buttonContent && buttonUrl), `${componentClass}-placeholder`);
-
-  selectorCustom(test, componentClass, elementClass);
-
-  selectorCustom(!newTest, componentClass, elementClass, modifierClass);
+  selector(!newTest, componentClass, elementClass, modifierClass);
 ```
 
 **Equivalent:**
