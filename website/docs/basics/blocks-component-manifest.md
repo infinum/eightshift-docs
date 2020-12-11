@@ -67,7 +67,7 @@ A component manifest is a bit different than the block manifest. The main differ
 
 ### componentName
 
-This key is the most important one. We use this key to specify the component attributes prefix. With this key used correctly we are able change the attributes prefix depending on the component name passes from the parent component or block.
+This key is the most important one. We use this key to specify the component attributes prefix. With this key used correctly we are able to change the attributes prefix depending on the component name passed from the parent component or block.
 
 ### title
 
