@@ -67,7 +67,7 @@ A component manifest is a bit different than the block manifest. The main differ
 
 ### componentName
 
-This key is not generally used anywhere. We wanted some consistency with the block manifest.
+This key is the most important one. We use this key to specify the component attributes prefix. With this key used correctly we are able to change the attributes prefix depending on the component name passed from the parent component or block.
 
 ### title
 
@@ -84,6 +84,37 @@ The same as in the blocks manifest. Please check [this chapter](block-manifest) 
 ### attributes
 
 The same as in the blocks manifest. Please check [this chapter](block-manifest) for more details.
+All attributes in the component must begin with the exact same prefix as it is defined in the `componentName`.
+
+for example:
+```json
+{
+  "componentName": "heading",
+  "attributes": {
+		"headingContent": {
+			"type": "string"
+		},
+		"headingLevel": {
+			"type": "integer",
+			"default": 2
+		}
+	}
+}
+
+or
+
+  "componentName": "intro",
+  "attributes": {
+		"introContent": {
+			"type": "string"
+		},
+		"introLevel": {
+			"type": "integer",
+			"default": 2
+		}
+	}
+}
+```
 
 ### options
 
