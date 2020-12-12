@@ -100,6 +100,20 @@ for example:
 		}
 	}
 }
+
+or
+
+  "componentName": "intro",
+  "attributes": {
+		"introContent": {
+			"type": "string"
+		},
+		"introLevel": {
+			"type": "integer",
+			"default": 2
+		}
+	}
+}
 ```
 
 ### options
