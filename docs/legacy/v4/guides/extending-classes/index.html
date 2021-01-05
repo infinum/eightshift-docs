@@ -22,25 +22,25 @@
 <link rel="stylesheet" href="/eightshift-docs/main.08071266.css">
 
 
-<link rel="preload" href="/eightshift-docs/styles.6e0b3021.js" as="script">
+<link rel="preload" href="/eightshift-docs/styles.2f1151fd.js" as="script">
 
-<link rel="preload" href="/eightshift-docs/runtime~main.2bac2863.js" as="script">
+<link rel="preload" href="/eightshift-docs/runtime~main.cf2a2a62.js" as="script">
 
-<link rel="preload" href="/eightshift-docs/main.79dc6167.js" as="script">
+<link rel="preload" href="/eightshift-docs/main.624f71f6.js" as="script">
 
-<link rel="preload" href="/eightshift-docs/1.06ab405b.js" as="script">
+<link rel="preload" href="/eightshift-docs/1.b78a5cc9.js" as="script">
 
-<link rel="preload" href="/eightshift-docs/2.55775f4b.js" as="script">
+<link rel="preload" href="/eightshift-docs/2.0df8e15d.js" as="script">
 
-<link rel="preload" href="/eightshift-docs/1be78505.87e9b7bf.js" as="script">
+<link rel="preload" href="/eightshift-docs/1be78505.52f3e102.js" as="script">
 
-<link rel="preload" href="/eightshift-docs/112.7e796007.js" as="script">
+<link rel="preload" href="/eightshift-docs/112.61aa700d.js" as="script">
 
-<link rel="preload" href="/eightshift-docs/3c240ef0.bfec864c.js" as="script">
+<link rel="preload" href="/eightshift-docs/3c240ef0.69aaf5f5.js" as="script">
 
-<link rel="preload" href="/eightshift-docs/17896441.4af56937.js" as="script">
+<link rel="preload" href="/eightshift-docs/17896441.7f053e8c.js" as="script">
 
-<link rel="preload" href="/eightshift-docs/43adcc08.44539a8b.js" as="script">
+<link rel="preload" href="/eightshift-docs/43adcc08.76c2159f.js" as="script">
 
 </head>
 <body>
@@ -55,25 +55,25 @@ In your <code>enqueue\class-admin-enqueue.php</code> file you&#x27;d do:</p><div
 </span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">    </span><span class="token comment" style="color:rgb(105, 112, 152);font-style:italic">// We do not want to load the login and admin styles.</span><span class="token plain"></span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">    </span><span class="token function" style="color:rgb(130, 170, 255)">remove_action</span><span class="token punctuation" style="color:rgb(199, 146, 234)">(</span><span class="token plain"> </span><span class="token string" style="color:rgb(195, 232, 141)">&#x27;login_enqueue_scripts&#x27;</span><span class="token punctuation" style="color:rgb(199, 146, 234)">,</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(199, 146, 234)">[</span><span class="token plain"> $</span><span class="token keyword" style="font-style:italic">this</span><span class="token punctuation" style="color:rgb(199, 146, 234)">,</span><span class="token plain"> </span><span class="token string" style="color:rgb(195, 232, 141)">&#x27;enqueue_styles&#x27;</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(199, 146, 234)">]</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(199, 146, 234)">)</span><span class="token punctuation" style="color:rgb(199, 146, 234)">;</span><span class="token plain"></span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">    </span><span class="token function" style="color:rgb(130, 170, 255)">remove_action</span><span class="token punctuation" style="color:rgb(199, 146, 234)">(</span><span class="token plain"> </span><span class="token string" style="color:rgb(195, 232, 141)">&#x27;admin_enqueue_scripts&#x27;</span><span class="token punctuation" style="color:rgb(199, 146, 234)">,</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(199, 146, 234)">[</span><span class="token plain"> $</span><span class="token keyword" style="font-style:italic">this</span><span class="token punctuation" style="color:rgb(199, 146, 234)">,</span><span class="token plain"> </span><span class="token string" style="color:rgb(195, 232, 141)">&#x27;enqueue_styles&#x27;</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(199, 146, 234)">]</span><span class="token punctuation" style="color:rgb(199, 146, 234)">,</span><span class="token plain"> </span><span class="token number" style="color:rgb(247, 140, 108)">50</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(199, 146, 234)">)</span><span class="token punctuation" style="color:rgb(199, 146, 234)">;</span><span class="token plain"></span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">  </span><span class="token punctuation" style="color:rgb(199, 146, 234)">}</span><span class="token plain"></span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain"></span><span class="token punctuation" style="color:rgb(199, 146, 234)">}</span></div></div></div></div></div><p>This way, only <code>add_action( &#x27;admin_enqueue_scripts&#x27;, [ $this, &#x27;enqueue_scripts&#x27; ] );</code> hook will run, and only admin scripts will be loaded. You just need to be sure to modify your webpack settings so that admin CSS scripts are not bundled.</p><p>You can do this with other classess in the lib - <code>Blocks</code>, <code>Columns</code>, <code>Manifest</code>, etc. in the same way.</p></div></article><div class="margin-vert--lg"><nav class="pagination-nav"><div class="pagination-nav__item"><a class="pagination-nav__link" href="/eightshift-docs/docs/legacy/v4/frontend-libs"><div class="pagination-nav__link--sublabel">Previous</div><div class="pagination-nav__link--label">« Eightshift Frontend Libs</div></a></div><div class="pagination-nav__item pagination-nav__item--next"><a class="pagination-nav__link" href="/eightshift-docs/docs/legacy/v4/guides/di-container"><div class="pagination-nav__link--sublabel">Next</div><div class="pagination-nav__link--label">Dependency injection container »</div></a></div></nav></div></div></div><div class="col col--3"><div class="tableOfContents_TbNY"><ul class="contents contents__left-border"><li><a href="#important-notes" class="contents__link">Important notes</a></li><li><a href="#example" class="contents__link">Example</a></li></ul></div></div></div></div></main></div></div>
 </div>
 
-<script src="/eightshift-docs/styles.6e0b3021.js"></script>
+<script src="/eightshift-docs/styles.2f1151fd.js"></script>
 
-<script src="/eightshift-docs/runtime~main.2bac2863.js"></script>
+<script src="/eightshift-docs/runtime~main.cf2a2a62.js"></script>
 
-<script src="/eightshift-docs/main.79dc6167.js"></script>
+<script src="/eightshift-docs/main.624f71f6.js"></script>
 
-<script src="/eightshift-docs/1.06ab405b.js"></script>
+<script src="/eightshift-docs/1.b78a5cc9.js"></script>
 
-<script src="/eightshift-docs/2.55775f4b.js"></script>
+<script src="/eightshift-docs/2.0df8e15d.js"></script>
 
-<script src="/eightshift-docs/1be78505.87e9b7bf.js"></script>
+<script src="/eightshift-docs/1be78505.52f3e102.js"></script>
 
-<script src="/eightshift-docs/112.7e796007.js"></script>
+<script src="/eightshift-docs/112.61aa700d.js"></script>
 
-<script src="/eightshift-docs/3c240ef0.bfec864c.js"></script>
+<script src="/eightshift-docs/3c240ef0.69aaf5f5.js"></script>
 
-<script src="/eightshift-docs/17896441.4af56937.js"></script>
+<script src="/eightshift-docs/17896441.7f053e8c.js"></script>
 
-<script src="/eightshift-docs/43adcc08.44539a8b.js"></script>
+<script src="/eightshift-docs/43adcc08.76c2159f.js"></script>
 
 
 </body>

@@ -22,25 +22,25 @@
 <link rel="stylesheet" href="/eightshift-docs/main.08071266.css">
 
 
-<link rel="preload" href="/eightshift-docs/styles.6e0b3021.js" as="script">
+<link rel="preload" href="/eightshift-docs/styles.2f1151fd.js" as="script">
 
-<link rel="preload" href="/eightshift-docs/runtime~main.2bac2863.js" as="script">
+<link rel="preload" href="/eightshift-docs/runtime~main.cf2a2a62.js" as="script">
 
-<link rel="preload" href="/eightshift-docs/main.79dc6167.js" as="script">
+<link rel="preload" href="/eightshift-docs/main.624f71f6.js" as="script">
 
-<link rel="preload" href="/eightshift-docs/1.06ab405b.js" as="script">
+<link rel="preload" href="/eightshift-docs/1.b78a5cc9.js" as="script">
 
-<link rel="preload" href="/eightshift-docs/2.55775f4b.js" as="script">
+<link rel="preload" href="/eightshift-docs/2.0df8e15d.js" as="script">
 
-<link rel="preload" href="/eightshift-docs/1be78505.87e9b7bf.js" as="script">
+<link rel="preload" href="/eightshift-docs/1be78505.52f3e102.js" as="script">
 
-<link rel="preload" href="/eightshift-docs/112.7e796007.js" as="script">
+<link rel="preload" href="/eightshift-docs/112.61aa700d.js" as="script">
 
-<link rel="preload" href="/eightshift-docs/3c240ef0.bfec864c.js" as="script">
+<link rel="preload" href="/eightshift-docs/3c240ef0.69aaf5f5.js" as="script">
 
-<link rel="preload" href="/eightshift-docs/17896441.4af56937.js" as="script">
+<link rel="preload" href="/eightshift-docs/17896441.7f053e8c.js" as="script">
 
-<link rel="preload" href="/eightshift-docs/6cbda4b6.83871bae.js" as="script">
+<link rel="preload" href="/eightshift-docs/6cbda4b6.db14a70e.js" as="script">
 
 </head>
 <body>
@@ -50,25 +50,25 @@
 We are not using the <code>save</code> callback method because we are creating dynamic blocks. The <code>edit</code> method describes how your block will be rendered in the editor once the block is used. In this file, you can use more advanced stuff like hooks and all the top-level block features.</p><ul><li><code>heading-options.js</code> - must be wrapped with the <code>InspectorControls</code> component from the core. This will ensure that options are shown in the proper place in the Block Editor (sidebar).</li><li><code>heading-toolbar.js</code> - must be wrapped with the <code>BlockControls</code> component from the core. This will ensure that toolbar is shown in the proper place in the Block Editor (floating or fixed toolbar).</li><li><code>heading-editor.js</code> - must <strong>not</strong> be wrapped with any top-level component. This will ensure that the editor component is showed in the proper place in the Block Editor (editor).</li></ul><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="headingphp"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#headingphp" title="Direct link to heading">#</a>heading.php</h3><p>This file is the frontend representation of a block. In this file, you will have all the attributes that you defined in the <code>manifest.json</code> file.</p><p>In the blocks PHP part, you always have these two properties (props) available:</p><ul><li><code>$attributes</code> - This prop contains all the attributes you defined in the <code>manifest.json</code> and all the attributes saved in the database.</li><li><code>$innerBlockContent</code> - This prop contains all the inner block details when you set your block to contain inner blocks.</li></ul><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="heading-editorscss"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#heading-editorscss" title="Direct link to heading">#</a>heading-editor.scss</h3><p>Holds only the editor styling for the block. You should be using this file to override styles in the editor set by the component. In 90% of cases, you will not need to write any overrides here. But if you are using any column layout like a grid, flex, etc., you may need to add some corrections.</p><p>Corrections in the grid layout are necessary because the Block Editor adds its additional HTML and we can&#x27;t change it.</p><p>Please reference in <a href="writing-styles">writing styles</a> chapter for more details.</p><p><em>This file is optional</em>.</p><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="heading-stylescss"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#heading-stylescss" title="Direct link to heading">#</a>heading-style.scss</h3><p>Holds all the frontend and editor styling for the component.</p><p>Please reference in <a href="writing-styles">writing styles</a> chapter for more details.</p><p><em>This file is optional</em>.</p><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="heading-hooksjs"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#heading-hooksjs" title="Direct link to heading">#</a>heading-hooks.js</h3><p>Here you can provide any custom Block Editor hook you need. For documentation please refer to <a href="https://developer.wordpress.org/block-editor/developers/filters/block-filters/">this link</a>. This file is going to be merged in the <code>registerBlockType</code> method.</p><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="heading-transformsjs"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#heading-transformsjs" title="Direct link to heading">#</a>heading-transforms.js</h3><p>Here you can provide any custom block transformation you need. For documentation please referee to <a href="https://developer.wordpress.org/block-editor/developers/block-api/block-transforms/">this link</a>. This file is going to be merged in the <code>registerBlockType</code> method.</p><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="manifestjson"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#manifestjson" title="Direct link to heading">#</a>manifest.json</h3><p>This file contains all the configuration required for a block to work. It&#x27;s used in WordPress <a href="https://developer.wordpress.org/block-editor/developers/block-api/block-registration/"><code>registerBlockType</code></a> method to register a block.</p><p>For more details, check the <a href="block-manifest">block manifest</a> chapter</p></div></article><div class="margin-vert--lg"><nav class="pagination-nav"><div class="pagination-nav__item"><a class="pagination-nav__link" href="/eightshift-docs/docs/basics/blocks-global-manifest"><div class="pagination-nav__link--sublabel">Previous</div><div class="pagination-nav__link--label">« Global Manifest</div></a></div><div class="pagination-nav__item pagination-nav__item--next"><a class="pagination-nav__link" href="/eightshift-docs/docs/basics/blocks-component-structure"><div class="pagination-nav__link--sublabel">Next</div><div class="pagination-nav__link--label">Component Structure »</div></a></div></nav></div></div></div><div class="col col--3"><div class="tableOfContents_TbNY"><ul class="contents contents__left-border"><li><a href="#assets" class="contents__link">assets</a></li><li><a href="#components" class="contents__link">components</a></li><li><a href="#heading-blockjs" class="contents__link">heading-block.js</a></li><li><a href="#headingphp" class="contents__link">heading.php</a></li><li><a href="#heading-editorscss" class="contents__link">heading-editor.scss</a></li><li><a href="#heading-stylescss" class="contents__link">heading-style.scss</a></li><li><a href="#heading-hooksjs" class="contents__link">heading-hooks.js</a></li><li><a href="#heading-transformsjs" class="contents__link">heading-transforms.js</a></li><li><a href="#manifestjson" class="contents__link">manifest.json</a></li></ul></div></div></div></div></main></div></div>
 </div>
 
-<script src="/eightshift-docs/styles.6e0b3021.js"></script>
+<script src="/eightshift-docs/styles.2f1151fd.js"></script>
 
-<script src="/eightshift-docs/runtime~main.2bac2863.js"></script>
+<script src="/eightshift-docs/runtime~main.cf2a2a62.js"></script>
 
-<script src="/eightshift-docs/main.79dc6167.js"></script>
+<script src="/eightshift-docs/main.624f71f6.js"></script>
 
-<script src="/eightshift-docs/1.06ab405b.js"></script>
+<script src="/eightshift-docs/1.b78a5cc9.js"></script>
 
-<script src="/eightshift-docs/2.55775f4b.js"></script>
+<script src="/eightshift-docs/2.0df8e15d.js"></script>
 
-<script src="/eightshift-docs/1be78505.87e9b7bf.js"></script>
+<script src="/eightshift-docs/1be78505.52f3e102.js"></script>
 
-<script src="/eightshift-docs/112.7e796007.js"></script>
+<script src="/eightshift-docs/112.61aa700d.js"></script>
 
-<script src="/eightshift-docs/3c240ef0.bfec864c.js"></script>
+<script src="/eightshift-docs/3c240ef0.69aaf5f5.js"></script>
 
-<script src="/eightshift-docs/17896441.4af56937.js"></script>
+<script src="/eightshift-docs/17896441.7f053e8c.js"></script>
 
-<script src="/eightshift-docs/6cbda4b6.83871bae.js"></script>
+<script src="/eightshift-docs/6cbda4b6.db14a70e.js"></script>
 
 
 </body>

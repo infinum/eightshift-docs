@@ -22,25 +22,25 @@
 <link rel="stylesheet" href="/eightshift-docs/main.08071266.css">
 
 
-<link rel="preload" href="/eightshift-docs/styles.6e0b3021.js" as="script">
+<link rel="preload" href="/eightshift-docs/styles.2f1151fd.js" as="script">
 
-<link rel="preload" href="/eightshift-docs/runtime~main.2bac2863.js" as="script">
+<link rel="preload" href="/eightshift-docs/runtime~main.cf2a2a62.js" as="script">
 
-<link rel="preload" href="/eightshift-docs/main.79dc6167.js" as="script">
+<link rel="preload" href="/eightshift-docs/main.624f71f6.js" as="script">
 
-<link rel="preload" href="/eightshift-docs/1.06ab405b.js" as="script">
+<link rel="preload" href="/eightshift-docs/1.b78a5cc9.js" as="script">
 
-<link rel="preload" href="/eightshift-docs/2.55775f4b.js" as="script">
+<link rel="preload" href="/eightshift-docs/2.0df8e15d.js" as="script">
 
-<link rel="preload" href="/eightshift-docs/1be78505.87e9b7bf.js" as="script">
+<link rel="preload" href="/eightshift-docs/1be78505.52f3e102.js" as="script">
 
-<link rel="preload" href="/eightshift-docs/112.7e796007.js" as="script">
+<link rel="preload" href="/eightshift-docs/112.61aa700d.js" as="script">
 
-<link rel="preload" href="/eightshift-docs/3c240ef0.bfec864c.js" as="script">
+<link rel="preload" href="/eightshift-docs/3c240ef0.69aaf5f5.js" as="script">
 
-<link rel="preload" href="/eightshift-docs/17896441.4af56937.js" as="script">
+<link rel="preload" href="/eightshift-docs/17896441.7f053e8c.js" as="script">
 
-<link rel="preload" href="/eightshift-docs/ceb6d72a.0cb33a40.js" as="script">
+<link rel="preload" href="/eightshift-docs/ceb6d72a.de50273c.js" as="script">
 
 </head>
 <body>
@@ -51,25 +51,25 @@ If you managed to set up your project by this point with <a href="wp-cli">WP-CLI
 </span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain"> /**</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">  * Create a custom category to assign all custom blocks</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">  *</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">  * This category will be shown on all blocks list in the &quot;Add Block&quot; button.</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">  *</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">  * @param array[]  $categories Array of all block categories.</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">  * @param \WP_Post $post Post being loaded.</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">  *</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">  * @return array[] Array of block categories.</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">  */</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">public function getCustomCategory(array $categories, \WP_Post $post): array</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">{</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">  return array_merge(</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">    parent::getCustomCategory($categories, $post),</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">    [</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">      [</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">        &#x27;slug&#x27; =&gt; &#x27;custom-category-name&#x27;,</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">        &#x27;title&#x27; =&gt; \esc_html__(&#x27;Custom Category&#x27;, &#x27;project text domain&#x27;),</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">        &#x27;icon&#x27; =&gt; &#x27;admin-settings&#x27;,</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">      ],</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">    ]</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">  );</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">}</span></div></div></div></div></div><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="what-if-you-dont-yet-support-something-from-the-native-setup-what-can-i-do"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#what-if-you-dont-yet-support-something-from-the-native-setup-what-can-i-do" title="Direct link to heading">#</a>What if you don&#x27;t yet support something from the native setup? What can I do?</h3><p>As we described in <a href="blocks">this chapter</a>, if we don&#x27;t support something natively from the core or you can&#x27;t find it in this documentation, you can always use it in the normal native way from the <a href="https://developer.wordpress.org/block-editor/tutorials/block-tutorial/">WordPress documentation</a>. Also, if you think we are missing something, please open a <a href="https://github.com/infinum/eightshift-frontend-libs/pulls">pull request</a> or an <a href="https://github.com/infinum/eightshift-frontend-libs/issues">issue</a> on our GitHub repository.</p><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="why-is-this-my-blocks-folder-called-custom-and-not-blocks-for-example"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#why-is-this-my-blocks-folder-called-custom-and-not-blocks-for-example" title="Direct link to heading">#</a>Why is this my blocks folder called custom and not blocks, for example?</h3><p>The idea was to put all your custom blocks inside the custom folder and all core block in the core folder. This boilerplate is not designed only for your custom block, but you can use it as an ultimate block setup. </p><p>And folder structure <code>src/Blocks/blocks</code> is kinda weird.</p><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="in-the-global-manifest-you-have-a-key-called-customblocksname-eightshift-block-can-i-change-this-to-my-project-name-block"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#in-the-global-manifest-you-have-a-key-called-customblocksname-eightshift-block-can-i-change-this-to-my-project-name-block" title="Direct link to heading">#</a>In the global manifest, you have a key called “customBlocksName”: “eightshift-block”, can I change this to my-project-name-block?</h3><p>You can, but you shouldn&#x27;t. We use this key to provide the CSS selectors on all our custom blocks in the block editor. Additional styles are added to this selector for the wrapper to work on full width and remove some of the native block editor styles. </p><p>So don&#x27;t remove or change this 😅 .</p></div></article><div class="margin-vert--lg"><nav class="pagination-nav"><div class="pagination-nav__item"><a class="pagination-nav__link" href="/eightshift-docs/docs/basics/blocks-important"><div class="pagination-nav__link--sublabel">Previous</div><div class="pagination-nav__link--label">« Important</div></a></div><div class="pagination-nav__item pagination-nav__item--next"><a class="pagination-nav__link" href="/eightshift-docs/docs/basics/blocks-registration"><div class="pagination-nav__link--sublabel">Next</div><div class="pagination-nav__link--label">Registration »</div></a></div></nav></div></div></div><div class="col col--3"><div class="tableOfContents_TbNY"><ul class="contents contents__left-border"><li><a href="#why-do-all-my-blocks-look-the-same-and-have-the-same-name-structure" class="contents__link">Why do all my blocks look the same and have the same name structure?</a></li><li><a href="#what-is-the-difference-between-components-and-blocks" class="contents__link">What is the difference between components and blocks?</a></li><li><a href="#do-i-need-to-have-storybook-stories-in-my-block" class="contents__link">Do I need to have storybook stories in my block?</a></li><li><a href="#do-you-support-block-variations-and-how-can-i-use-them" class="contents__link">Do you support block variations, and how can I use them?</a></li><li><a href="#do-you-support-patterns-and-how-can-i-use-them" class="contents__link">Do you support patterns, and how can I use them?</a></li><li><a href="#what-is-a-wrapper" class="contents__link">What is a wrapper?</a></li><li><a href="#do-you-support-inner-blocks" class="contents__link">Do you support inner blocks?</a></li><li><a href="#why-do-you-use-manifestjson-in-all-blocks-and-components" class="contents__link">Why do you use manifest.json in all blocks and components?</a></li><li><a href="#why-do-you-use-global-manifestjson" class="contents__link">Why do you use global manifest.json</a></li><li><a href="#if-i-want-to-create-a-new-blockcomponent-what-do-i-do" class="contents__link">If I want to create a new block/component, what do I do?</a></li><li><a href="#how-can-i-use-your-pre-made-blocks" class="contents__link">How can I use your pre-made blocks?</a></li><li><a href="#can-i-use-blockcomponent-from-eightshift-frontend-libs-directly" class="contents__link">Can I use block/component from Eightshift-frontend-libs directly?</a></li><li><a href="#i-want-to-change-attributes-on-inner-blocks-how-do-i-do-it" class="contents__link">I want to change attributes on inner blocks; how do I do it?</a></li><li><a href="#do-i-need-to-write-js-and-php-implementation-for-all-my-blocks" class="contents__link">Do I need to write JS and PHP implementation for all my blocks?</a></li><li><a href="#how-do-i-use-components-in-blocks" class="contents__link">How do I use components in blocks?</a></li><li><a href="#how-do-i-use-multiple-heading-components-in-my-block" class="contents__link">How do I use multiple heading components in my block?</a></li><li><a href="#where-can-i-define-my-global-styles" class="contents__link">Where can I define my global styles?</a></li><li><a href="#where-can-i-define-global-typography-for-all-my-blockscomponents" class="contents__link">Where can I define global typography for all my blocks/components?</a></li><li><a href="#can-i-make-a-component-with-wp_query-logic-in-it" class="contents__link">Can I make a component with WP_Query logic in it?</a></li><li><a href="#do-i-need-to-make-components-for-all-my-blocks" class="contents__link">Do I need to make components for all my blocks?</a></li><li><a href="#will-this-setup-work-with-full-site-editing" class="contents__link">Will this setup work with full site editing?</a></li><li><a href="#can-i-use-core-blocks-with-your-setup" class="contents__link">Can I use core blocks with your setup?</a></li><li><a href="#how-can-i-limit-my-blocklist" class="contents__link">How can I limit my blocklist?</a></li><li><a href="#how-to-allow-only-one-pattern-category" class="contents__link">How to allow only one pattern category?</a></li><li><a href="#can-i-have-blocks-in-multiple-categories" class="contents__link">Can I have blocks in multiple categories?</a></li><li><a href="#how-can-i-add-a-new-blocks-category" class="contents__link">How can I add a new blocks category?</a></li><li><a href="#what-if-you-dont-yet-support-something-from-the-native-setup-what-can-i-do" class="contents__link">What if you don&#39;t yet support something from the native setup? What can I do?</a></li><li><a href="#why-is-this-my-blocks-folder-called-custom-and-not-blocks-for-example" class="contents__link">Why is this my blocks folder called custom and not blocks, for example?</a></li><li><a href="#in-the-global-manifest-you-have-a-key-called-customblocksname-eightshift-block-can-i-change-this-to-my-project-name-block" class="contents__link">In the global manifest, you have a key called “customBlocksName”: “eightshift-block”, can I change this to my-project-name-block?</a></li></ul></div></div></div></div></main></div></div>
 </div>
 
-<script src="/eightshift-docs/styles.6e0b3021.js"></script>
+<script src="/eightshift-docs/styles.2f1151fd.js"></script>
 
-<script src="/eightshift-docs/runtime~main.2bac2863.js"></script>
+<script src="/eightshift-docs/runtime~main.cf2a2a62.js"></script>
 
-<script src="/eightshift-docs/main.79dc6167.js"></script>
+<script src="/eightshift-docs/main.624f71f6.js"></script>
 
-<script src="/eightshift-docs/1.06ab405b.js"></script>
+<script src="/eightshift-docs/1.b78a5cc9.js"></script>
 
-<script src="/eightshift-docs/2.55775f4b.js"></script>
+<script src="/eightshift-docs/2.0df8e15d.js"></script>
 
-<script src="/eightshift-docs/1be78505.87e9b7bf.js"></script>
+<script src="/eightshift-docs/1be78505.52f3e102.js"></script>
 
-<script src="/eightshift-docs/112.7e796007.js"></script>
+<script src="/eightshift-docs/112.61aa700d.js"></script>
 
-<script src="/eightshift-docs/3c240ef0.bfec864c.js"></script>
+<script src="/eightshift-docs/3c240ef0.69aaf5f5.js"></script>
 
-<script src="/eightshift-docs/17896441.4af56937.js"></script>
+<script src="/eightshift-docs/17896441.7f053e8c.js"></script>
 
-<script src="/eightshift-docs/ceb6d72a.0cb33a40.js"></script>
+<script src="/eightshift-docs/ceb6d72a.de50273c.js"></script>
 
 
 </body>
