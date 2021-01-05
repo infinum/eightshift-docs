@@ -1,7 +1,28 @@
 {
-  "name": "website",
-  "version": "0.0.0",
-  "private": true,
+  "name": "@eightshift/docs",
+  "version": "5.0.0",
+  "description": "A documentation website for Eightshift open source projects.",
+  "author": {
+    "name": "Eightshift team",
+    "email": "team@eightshift.com",
+    "url": "https://eightshift.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/infinum/eightshift-docs.git"
+  },
+  "keywords": [
+    "frontend",
+    "scss",
+    "mixin",
+    "js",
+    "utility",
+    "module",
+    "WordPress"
+  ],
+  "bugs": {
+    "url": "https://github.com/infinum/eightshift-docs/issues"
+  },
   "scripts": {
     "start": "docusaurus start",
     "build": "docusaurus build",
