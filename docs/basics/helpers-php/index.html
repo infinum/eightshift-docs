@@ -22,25 +22,25 @@
 <link rel="stylesheet" href="/eightshift-docs/main.08071266.css">
 
 
-<link rel="preload" href="/eightshift-docs/styles.2f1151fd.js" as="script">
+<link rel="preload" href="/eightshift-docs/styles.6e0b3021.js" as="script">
 
-<link rel="preload" href="/eightshift-docs/runtime~main.cf2a2a62.js" as="script">
+<link rel="preload" href="/eightshift-docs/runtime~main.2bac2863.js" as="script">
 
-<link rel="preload" href="/eightshift-docs/main.624f71f6.js" as="script">
+<link rel="preload" href="/eightshift-docs/main.79dc6167.js" as="script">
 
-<link rel="preload" href="/eightshift-docs/1.b78a5cc9.js" as="script">
+<link rel="preload" href="/eightshift-docs/1.06ab405b.js" as="script">
 
-<link rel="preload" href="/eightshift-docs/2.0df8e15d.js" as="script">
+<link rel="preload" href="/eightshift-docs/2.55775f4b.js" as="script">
 
-<link rel="preload" href="/eightshift-docs/1be78505.52f3e102.js" as="script">
+<link rel="preload" href="/eightshift-docs/1be78505.87e9b7bf.js" as="script">
 
-<link rel="preload" href="/eightshift-docs/112.61aa700d.js" as="script">
+<link rel="preload" href="/eightshift-docs/112.7e796007.js" as="script">
 
-<link rel="preload" href="/eightshift-docs/3c240ef0.69aaf5f5.js" as="script">
+<link rel="preload" href="/eightshift-docs/3c240ef0.bfec864c.js" as="script">
 
-<link rel="preload" href="/eightshift-docs/17896441.7f053e8c.js" as="script">
+<link rel="preload" href="/eightshift-docs/17896441.4af56937.js" as="script">
 
-<link rel="preload" href="/eightshift-docs/add2b463.76bf47e9.js" as="script">
+<link rel="preload" href="/eightshift-docs/add2b463.c03ddb16.js" as="script">
 
 </head>
 <body>
@@ -50,25 +50,25 @@
 If you pass an associative array it will output strings with keys. Used for generating data-attributes from an array.</p><ul><li>@param array|string $variable Variable we need to convert into a string.</li><li>@throws ComponentException When $variable is not a string or array.</li><li>@return string</li></ul><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="classnames"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#classnames" title="Direct link to heading">#</a>classnames</h2><p>Converts an array of classes into a string which can be echoed.</p><ul><li>@param array $classes Array of classes.</li><li>@return string</li></ul><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="render"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#render" title="Direct link to heading">#</a>render</h2><p>Renders a components and (optionally) passes some attributes to it.</p><p>Note about the <code>parentClass</code> attribute: If provided, the component will be wrapped with a parent BEM selector.</p><p>For example, if <code>$attributes[&#x27;parentClass&#x27;] === &#x27;header&#x27;</code> and <code>$component === &#x27;logo&#x27;</code> are set, the component will be wrapped with a <code>&lt;div class=&quot;header__logo&quot;&gt;&lt;/div&gt;</code>.</p><ul><li>@param string $component Component&#x27;s name or full path (ending with .php).</li><li>@param array  $attributes Array of attributes that&#x27;s implicitly passed to component.</li><li>@param string $parentPath If parent path is provides it will be appended to the file location. If not get_template_directory_uri() will be used as a default parent path.</li><li>@throws \Exception When we&#x27;re unable to find the component by $component.</li><li>@return string</li></ul><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="getmanifest"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#getmanifest" title="Direct link to heading">#</a>getManifest</h2><p>Get <code>manifest json</code>. Used for getting block/components manifest.</p><ul><li>@param string $path Absolute path to manifest folder.</li><li>@throws \Exception When we&#x27;re unable to find the component by $component.</li><li>@return array</li></ul><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="responsiveselectors"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#responsiveselectors" title="Direct link to heading">#</a>responsiveSelectors</h2><p>This function is the PHP equivalent of the JavaScript function on this <a href="helpers-javascript">link</a>.</p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="checkattr"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#checkattr" title="Direct link to heading">#</a>checkAttr</h2><p>This function is the PHP equivalent of the JavaScript function on this <a href="helpers-javascript">link</a>.</p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="selector"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#selector" title="Direct link to heading">#</a>selector</h2><p>This function is the PHP equivalent of the JavaScript function on this <a href="helpers-javascript">link</a>.</p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="restresponsehandler"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#restresponsehandler" title="Direct link to heading">#</a>restResponseHandler</h2><p>Ensure the correct response for REST using the handler function.</p><ul><li>@param integer     $code Response Status code.</li><li>@param string      $status Response Status name (success/error).</li><li>@param string|null $msg Response Message.</li><li>@param array|null  $data Response additional data.</li><li>@return \WP_REST_Response|\WP_Error If response generated an error, WP_Error, if response is already an instance, WP_REST_Response, otherwise returns a new WP_REST_Response instance.</li></ul><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="isvalidxml"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#isvalidxml" title="Direct link to heading">#</a>isValidXml</h2><p>Check if XML is valid. Used for validating SVG files.</p><ul><li>@param string $xml Full xml document.</li><li>@return boolean</li></ul><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="isjson"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#isjson" title="Direct link to heading">#</a>isJson</h2><p>Check if json is valid</p><ul><li>@param string $string String to check.</li><li>@return bool</li></ul><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="flattenarray"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#flattenarray" title="Direct link to heading">#</a>flattenArray</h2><p>Flatten multidimensional array.</p><ul><li>@param array $array Multidimensional array.</li><li>@return array</li></ul><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="sanitizearray"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#sanitizearray" title="Direct link to heading">#</a>sanitizeArray</h2><p>Sanitize all the values in an array.</p><ul><li>@link <a href="https://developer.wordpress.org/themes/theme-security/data-sanitization-escaping/">https://developer.wordpress.org/themes/theme-security/data-sanitization-escaping/</a></li><li>@param array  $array Provided array.</li><li>@param string $sanitizationFunction WordPress function used for sanitization purposes.</li><li>@return array</li></ul><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="sortarraybyorderkey"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#sortarraybyorderkey" title="Direct link to heading">#</a>sortArrayByOrderKey</h2><p>Sort array by order key. Used to sort terms.</p><ul><li>@param array $items Items array to sort. Must have order key.</li><li>@return array</li></ul><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="getshortcode"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#getshortcode" title="Direct link to heading">#</a>getShortcode</h2><p>Call a shortcode function by tag name.</p><ul><li>@author J.D. Grimes</li><li>@link <a href="https://codesymphony.co/dont-do_shortcode/">https://codesymphony.co/dont-do_shortcode/</a></li><li>@param string      $tag The shortcode whose function to call.</li><li>@param array       $attr The attributes to pass to the shortcode function. Optional.</li><li>@param string|null $content The shortcodes content. Default is null (none).</li><li>@return string|bool False on failure, the result of the shortcode on success.</li></ul></div></article><div class="margin-vert--lg"><nav class="pagination-nav"><div class="pagination-nav__item"><a class="pagination-nav__link" href="/eightshift-docs/docs/basics/helpers-scss"><div class="pagination-nav__link--sublabel">Previous</div><div class="pagination-nav__link--label">« Scss</div></a></div><div class="pagination-nav__item pagination-nav__item--next"><a class="pagination-nav__link" href="/eightshift-docs/docs/advanced/additional-libraries"><div class="pagination-nav__link--sublabel">Next</div><div class="pagination-nav__link--label">Additional Libraries »</div></a></div></nav></div></div></div><div class="col col--3"><div class="tableOfContents_TbNY"><ul class="contents contents__left-border"><li><a href="#ensurestring" class="contents__link">ensureString</a></li><li><a href="#classnames" class="contents__link">classnames</a></li><li><a href="#render" class="contents__link">render</a></li><li><a href="#getmanifest" class="contents__link">getManifest</a></li><li><a href="#responsiveselectors" class="contents__link">responsiveSelectors</a></li><li><a href="#checkattr" class="contents__link">checkAttr</a></li><li><a href="#selector" class="contents__link">selector</a></li><li><a href="#restresponsehandler" class="contents__link">restResponseHandler</a></li><li><a href="#isvalidxml" class="contents__link">isValidXml</a></li><li><a href="#isjson" class="contents__link">isJson</a></li><li><a href="#flattenarray" class="contents__link">flattenArray</a></li><li><a href="#sanitizearray" class="contents__link">sanitizeArray</a></li><li><a href="#sortarraybyorderkey" class="contents__link">sortArrayByOrderKey</a></li><li><a href="#getshortcode" class="contents__link">getShortcode</a></li></ul></div></div></div></div></main></div></div>
 </div>
 
-<script src="/eightshift-docs/styles.2f1151fd.js"></script>
+<script src="/eightshift-docs/styles.6e0b3021.js"></script>
 
-<script src="/eightshift-docs/runtime~main.cf2a2a62.js"></script>
+<script src="/eightshift-docs/runtime~main.2bac2863.js"></script>
 
-<script src="/eightshift-docs/main.624f71f6.js"></script>
+<script src="/eightshift-docs/main.79dc6167.js"></script>
 
-<script src="/eightshift-docs/1.b78a5cc9.js"></script>
+<script src="/eightshift-docs/1.06ab405b.js"></script>
 
-<script src="/eightshift-docs/2.0df8e15d.js"></script>
+<script src="/eightshift-docs/2.55775f4b.js"></script>
 
-<script src="/eightshift-docs/1be78505.52f3e102.js"></script>
+<script src="/eightshift-docs/1be78505.87e9b7bf.js"></script>
 
-<script src="/eightshift-docs/112.61aa700d.js"></script>
+<script src="/eightshift-docs/112.7e796007.js"></script>
 
-<script src="/eightshift-docs/3c240ef0.69aaf5f5.js"></script>
+<script src="/eightshift-docs/3c240ef0.bfec864c.js"></script>
 
-<script src="/eightshift-docs/17896441.7f053e8c.js"></script>
+<script src="/eightshift-docs/17896441.4af56937.js"></script>
 
-<script src="/eightshift-docs/add2b463.76bf47e9.js"></script>
+<script src="/eightshift-docs/add2b463.c03ddb16.js"></script>
 
 
 </body>

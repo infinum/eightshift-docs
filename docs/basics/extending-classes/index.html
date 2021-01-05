@@ -22,25 +22,25 @@
 <link rel="stylesheet" href="/eightshift-docs/main.08071266.css">
 
 
-<link rel="preload" href="/eightshift-docs/styles.2f1151fd.js" as="script">
+<link rel="preload" href="/eightshift-docs/styles.6e0b3021.js" as="script">
 
-<link rel="preload" href="/eightshift-docs/runtime~main.cf2a2a62.js" as="script">
+<link rel="preload" href="/eightshift-docs/runtime~main.2bac2863.js" as="script">
 
-<link rel="preload" href="/eightshift-docs/main.624f71f6.js" as="script">
+<link rel="preload" href="/eightshift-docs/main.79dc6167.js" as="script">
 
-<link rel="preload" href="/eightshift-docs/1.b78a5cc9.js" as="script">
+<link rel="preload" href="/eightshift-docs/1.06ab405b.js" as="script">
 
-<link rel="preload" href="/eightshift-docs/2.0df8e15d.js" as="script">
+<link rel="preload" href="/eightshift-docs/2.55775f4b.js" as="script">
 
-<link rel="preload" href="/eightshift-docs/1be78505.52f3e102.js" as="script">
+<link rel="preload" href="/eightshift-docs/1be78505.87e9b7bf.js" as="script">
 
-<link rel="preload" href="/eightshift-docs/112.61aa700d.js" as="script">
+<link rel="preload" href="/eightshift-docs/112.7e796007.js" as="script">
 
-<link rel="preload" href="/eightshift-docs/3c240ef0.69aaf5f5.js" as="script">
+<link rel="preload" href="/eightshift-docs/3c240ef0.bfec864c.js" as="script">
 
-<link rel="preload" href="/eightshift-docs/17896441.7f053e8c.js" as="script">
+<link rel="preload" href="/eightshift-docs/17896441.4af56937.js" as="script">
 
-<link rel="preload" href="/eightshift-docs/8df52c09.d2c98eac.js" as="script">
+<link rel="preload" href="/eightshift-docs/8df52c09.59aeac3e.js" as="script">
 
 </head>
 <body>
@@ -59,25 +59,25 @@ Go to the <strong>root</strong> of your theme, and using the terminal, run this 
 </span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">  </span><span class="token comment" style="color:rgb(105, 112, 152);font-style:italic">/**</span></div><div class="token-line" style="color:#bfc7d5"><span class="token comment" style="color:rgb(105, 112, 152);font-style:italic">   * Method that returns assets version for versioning asset handlers.</span></div><div class="token-line" style="color:#bfc7d5"><span class="token comment" style="color:rgb(105, 112, 152);font-style:italic">   *</span></div><div class="token-line" style="color:#bfc7d5"><span class="token comment" style="color:rgb(105, 112, 152);font-style:italic">   * @return string</span></div><div class="token-line" style="color:#bfc7d5"><span class="token comment" style="color:rgb(105, 112, 152);font-style:italic">   */</span><span class="token plain"></span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">  </span><span class="token keyword" style="font-style:italic">public</span><span class="token plain"> </span><span class="token keyword" style="font-style:italic">function</span><span class="token plain"> </span><span class="token function" style="color:rgb(130, 170, 255)">getAssetsVersion</span><span class="token punctuation" style="color:rgb(199, 146, 234)">(</span><span class="token punctuation" style="color:rgb(199, 146, 234)">)</span><span class="token operator" style="color:rgb(137, 221, 255)">:</span><span class="token plain"> string</span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">  </span><span class="token punctuation" style="color:rgb(199, 146, 234)">{</span><span class="token plain"></span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">    </span><span class="token keyword" style="font-style:italic">return</span><span class="token plain"> </span><span class="token maybe-class-name">Config</span><span class="token operator" style="color:rgb(137, 221, 255)">:</span><span class="token operator" style="color:rgb(137, 221, 255)">:</span><span class="token function" style="color:rgb(130, 170, 255)">getProjectVersion</span><span class="token punctuation" style="color:rgb(199, 146, 234)">(</span><span class="token punctuation" style="color:rgb(199, 146, 234)">)</span><span class="token punctuation" style="color:rgb(199, 146, 234)">;</span><span class="token plain"></span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">  </span><span class="token punctuation" style="color:rgb(199, 146, 234)">}</span><span class="token plain"></span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain"></span><span class="token punctuation" style="color:rgb(199, 146, 234)">}</span></div></div></div></div></div><p>As you can see from the provided example, we created a new class and extended the functionality from the Eightshift-libs.</p><p>In your new class, you have a <code>register</code> method that must be in every class that registers WordPress action hooks or filters. We call these <strong>service classes</strong>.</p><p>Your class contains three action hooks now. From this example, you can see that if you don&#x27;t want to use some functionality, remove the action, and it is not used anymore. For more details on what each hook&#x27;s callback does, go to the extended class in Eightshift-libs and see the logic defined there.</p></div></article><div class="margin-vert--lg"><nav class="pagination-nav"><div class="pagination-nav__item"><a class="pagination-nav__link" href="/eightshift-docs/docs/basics/namespaces"><div class="pagination-nav__link--sublabel">Previous</div><div class="pagination-nav__link--label">« Namespaces</div></a></div><div class="pagination-nav__item pagination-nav__item--next"><a class="pagination-nav__link" href="/eightshift-docs/docs/basics/autowiring"><div class="pagination-nav__link--sublabel">Next</div><div class="pagination-nav__link--label">Autowiring »</div></a></div></nav></div></div></div><div class="col col--3"><div class="tableOfContents_TbNY"><ul class="contents contents__left-border"><li><a href="#example" class="contents__link">Example</a></li></ul></div></div></div></div></main></div></div>
 </div>
 
-<script src="/eightshift-docs/styles.2f1151fd.js"></script>
+<script src="/eightshift-docs/styles.6e0b3021.js"></script>
 
-<script src="/eightshift-docs/runtime~main.cf2a2a62.js"></script>
+<script src="/eightshift-docs/runtime~main.2bac2863.js"></script>
 
-<script src="/eightshift-docs/main.624f71f6.js"></script>
+<script src="/eightshift-docs/main.79dc6167.js"></script>
 
-<script src="/eightshift-docs/1.b78a5cc9.js"></script>
+<script src="/eightshift-docs/1.06ab405b.js"></script>
 
-<script src="/eightshift-docs/2.0df8e15d.js"></script>
+<script src="/eightshift-docs/2.55775f4b.js"></script>
 
-<script src="/eightshift-docs/1be78505.52f3e102.js"></script>
+<script src="/eightshift-docs/1be78505.87e9b7bf.js"></script>
 
-<script src="/eightshift-docs/112.61aa700d.js"></script>
+<script src="/eightshift-docs/112.7e796007.js"></script>
 
-<script src="/eightshift-docs/3c240ef0.69aaf5f5.js"></script>
+<script src="/eightshift-docs/3c240ef0.bfec864c.js"></script>
 
-<script src="/eightshift-docs/17896441.7f053e8c.js"></script>
+<script src="/eightshift-docs/17896441.4af56937.js"></script>
 
-<script src="/eightshift-docs/8df52c09.d2c98eac.js"></script>
+<script src="/eightshift-docs/8df52c09.59aeac3e.js"></script>
 
 
 </body>
