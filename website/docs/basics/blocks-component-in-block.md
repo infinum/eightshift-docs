@@ -189,6 +189,8 @@ in your block attributes object, you will now have these keys:
 "content": "test",
 ```
 
+> Keep in mind that we handle the attributes data necessary to have multiple components in one block but you must provide the correct props inside you files to mock the custom attribute names. Best way to check this block and see what we have done here: [Card Block](https://github.com/infinum/eightshift-frontend-libs/tree/develop/blocks/init/src/Blocks/custom/card)
+
 ### I want to use a component that uses more components (componentCeption).
 
 For example, if you have a block called cards grid that uses a card component, that card component uses a heading component.
@@ -259,8 +261,6 @@ in your block attributes object, you will now have these keys:
 ```
 
 As you see in the example, you have all attributes from the card and heading component inside your card's grid block.
-
-> There is only one catch here. You can't override heading attributes from the card component. You can only override it from the top-level cards grid block.
 
 ### I don't need all the component options in my block.
 
