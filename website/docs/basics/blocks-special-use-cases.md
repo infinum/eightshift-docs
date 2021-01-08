@@ -6,7 +6,6 @@ sidebar_label: Special Use Cases
 
 [![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/develop/blocks/init/src/blocks/)
 
-By special use cases, we mean just that **special**.
 For example, in our clients projects, we noticed that sometimes you need to provide something special to your blocks, like changing the block editor block DOM structure or change attributes added inside the inner blocks.
 
 These are some of the examples that we found that we would like to share with you. We will list all of them and gradually add more.
@@ -65,7 +64,7 @@ If you have a block containing inner blocks and only want to change attributes o
 
 Luckily WordPress core has provided us with the filter that can change any block before it is rendered. This filter will provide you an array of block and inner block along with the innerBlock and all attributes if you use it correctly.
 
-The filter is called: `render_block_data`, and you can put your implementation in the `class-blocks.php` file.
+The filter is called: `render_block_data`, and you can put your implementation in the `class-blocks.php` file. You can find documentation on this [link](https://developer.wordpress.org/reference/hooks/render_block_data/).
 
 **Implementation**
 
