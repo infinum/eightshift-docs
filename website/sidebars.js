@@ -64,8 +64,9 @@ module.exports = {
           "basics/blocks-component-in-block",
           "basics/blocks-wrapper",
           "basics/blocks-variations",
-          "basics/blocks-transforms",
           "basics/blocks-patterns",
+          "basics/blocks-transforms",
+          "basics/blocks-hooks",
           "basics/blocks-special-use-cases",
           "basics/blocks-storybook",
         ]

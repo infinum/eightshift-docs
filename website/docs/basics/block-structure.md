@@ -21,6 +21,9 @@ We suggest you always use the full name and never abbreviate the block name. If 
     * heading-editor.js
     * heading-options.js
     * heading-toolbar.js
+  * docs
+    * story.js
+    * readme.mdx
   * heading-block.js
   * heading.php
   * heading-editor.scss
@@ -35,6 +38,12 @@ In this folder, you'll define all the custom JavaScript functionality for your b
 
 ### components
 Components folder holds three files `heading-options.js`, `heading-editor.js`, and `heading-toolbars.js`. Each of these files represents a part of the Block Editor block that is used in the editor. We have separated options, editor, and toolbar into separate components for readability and reusing components in different projects.
+
+### docs
+Contains everything that a block needs to be run inside the Storybook. This part is optional. However, it will speed up your development time and provide you with the much needed documentation.
+
+- `story.js` - Storybook entrypoint for your block. All blocks have the exact same story.
+- `readme.mdx` - readme document that describes your block and provides the documentation.
 
 ### heading-block.js
 This file represents the `edit` callback method used in WordPress `registerBlockType` method.

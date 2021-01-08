@@ -31,7 +31,7 @@ Yes, we do. All block variations are located in the `src/Blocks/variations` fold
 
 ### Do you support patterns, and how can I use them?
 
-*Coming soon*
+Yes, we do. For more info about this, please check the [patterns](blocks-patterns) chapters.
 
 ### What is a wrapper?
 

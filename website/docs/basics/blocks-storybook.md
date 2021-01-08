@@ -10,6 +10,12 @@ We have created a full storybook that hosts all our blocks/components/variations
 
 **Visit [Storybook](eightshift-docs/storybook/) for more details.**
 
+> To speedup project build time Eightshift Boilerplate doesn't come with the storybook out of the box, you need to install it. To install Storybook to your project just type this command in you terminal and follow the instructions:
+
+```shell
+wp boilerplate create_blocks_storybook
+```
+
 ## Create my custom story
 
 You don't need to have stories in your block/component, but we provided you with the ability to use the Storybook for all of your blocks and components. Why not use it? It will speed up your development time. Trust us.
@@ -29,23 +35,23 @@ For your blocks/components/variation to be seen in the Storybook, you must have 
 For all blocks, you don't need to write anything because all blocks stories look the same:
 
 ```js
-/* eslint-disable no-unused-vars */
-
-import { Gutenberg, blockDetails } from '@eightshift/frontend-libs/scripts/storybook';
 import React from 'react';
+import { Gutenberg, blockDetails } from '@eightshift/frontend-libs/scripts/storybook';
 import manifest from './../manifest.json';
 import globalManifest from './../../../manifest.json';
-import readme from './readme.md';
+import readme from './readme.mdx';
 
 export default {
-  title: `Blocks|${manifest.title}`,
-  parameters: {
-    notes: readme,
-  },
+	title: `Blocks/${manifest.title}`,
+	parameters: {
+		docs: { 
+			page: readme
+		}
+	},
 };
 
 export const block = () => (
-  <Gutenberg props={blockDetails(manifest, globalManifest)} />
+	<Gutenberg props={blockDetails(manifest, globalManifest)} />
 );
 ```
 
@@ -63,60 +69,64 @@ You should set all the mock data in the component `manifest.json` and just provi
 Button Block Editor component:
 
 ```js
-import React from 'react'; // eslint-disable-line no-unused-vars
+import React from 'react';
 import { Fragment } from '@wordpress/element';
-import readme from './readme.md';
+import readme from './readme.mdx';
 import manifest from './../manifest.json';
 import { ButtonEditor } from '../components/button-editor';
 import { ButtonOptions } from '../components/button-options';
 import { ButtonToolbar } from '../components/button-toolbar';
 
 export default {
-  title: `Components|${manifest.title}`,
-  parameters: {
-    notes: readme,
-  },
+	title: `Components/${manifest.title}`,
+	parameters: {
+		docs: { 
+			page: readme
+		}
+	},
 };
 
 const props = manifest.example.attributes;
 
 export const editor = () => (
-  <ButtonEditor {...props} />
+	<ButtonEditor {...props} />
 );
 ```
 
 Button Block Editor Size variation:
 
 ```js
-import React from 'react'; // eslint-disable-line no-unused-vars
+import React from 'react';
 import { Fragment } from '@wordpress/element';
-import readme from './readme.md';
+import readme from './readme.mdx';
 import manifest from './../manifest.json';
 import { ButtonEditor } from '../components/button-editor';
 import { ButtonOptions } from '../components/button-options';
 import { ButtonToolbar } from '../components/button-toolbar';
 
 export default {
-  title: `Components|${manifest.title}`,
-  parameters: {
-    notes: readme,
-  },
+	title: `Components/${manifest.title}`,
+	parameters: {
+		docs: { 
+			page: readme
+		}
+	},
 };
 
 const props = manifest.example.attributes;
 
 export const size = () => (
-  <Fragment>
-    {manifest.options.sizes.map((values, index) => (
-      <Fragment key={index}>
-        <ButtonEditor
-          {...props}
-          buttonContent={values.label}
-          buttonSize={values.value}
-        />
-        <br />
-      </Fragment>
-    ))}
-  </Fragment>
+	<Fragment>
+		{manifest.options.sizes.map((values, index) => (
+			<Fragment key={index}>
+				<ButtonEditor
+					{...props}
+					buttonContent={values.label}
+					buttonSize={values.value}
+				/>
+				<br />
+			</Fragment>
+		))}
+	</Fragment>
 );
 ```
