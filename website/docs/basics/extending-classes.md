@@ -20,7 +20,7 @@ Go to the **root** of your theme, and using the terminal, run this command:
 
 This command will output something like this in your project, taking care of your projects namespace and vendor prefixes, as well as the package name and the text-domain:
 
-```js
+```php
 <?php
 
 /**

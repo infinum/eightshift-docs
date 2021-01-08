@@ -25,12 +25,12 @@ If you want to use it outside of the Eightshift boilerplate, you can. It is only
 
 In your terminal, install Eightshift Frontend Libs package:
 
-```js
+```bash
 npm install @eightshift/frontend-libs
 ```
 
 and in your project add this import:
 
-```js
+```scss
 @import '@eightshift/frontend-libs/styles/index.scss';
 ```

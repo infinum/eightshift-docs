@@ -13,7 +13,7 @@ Because WordPress lives in a global namespace, we had to provide the way for you
 You can change the vendor prefix in your `composer.json` file. But if you do this, make sure you delete the `vendor` folder before running the command to install composer packages again with the `composer install` command.
 
 
-```php
+```json
 "autoload": {
   "psr-4": {
     "CustomProject\\": "src/"

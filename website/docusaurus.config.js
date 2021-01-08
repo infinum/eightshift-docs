@@ -56,9 +56,10 @@ module.exports = {
           position: 'right',
         },
       ],
-      prism: {
-        theme: require('prism-react-renderer/themes/dracula'),
-      },
+    },
+    prism: {
+      theme: require('prism-react-renderer/themes/dracula'),
+      additionalLanguages: ['php'],
     },
     algolia: {
       apiKey: '921996f662a2a05c1ffbcf2a87146376',
@@ -78,7 +79,18 @@ module.exports = {
       },
     ],
   ],
-  plugins: ['docusaurus-plugin-sass'],
+  plugins: [
+    'docusaurus-plugin-sass',
+    [
+      '@docusaurus/plugin-sitemap',
+      {
+        cacheTime: 600 * 1000, // 600 sec - cache purge period
+        changefreq: 'weekly',
+        priority: 0.5,
+        trailingSlash: false,
+      },
+    ],
+  ],
   customFields: {
     keywords: [
       'wordpress tools',

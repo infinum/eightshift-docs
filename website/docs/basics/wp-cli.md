@@ -12,9 +12,9 @@ We already mentioned the WP-CLI feature of Eightshift Boilerplate, but now let's
 
 In your projects entrypoint you have something like this:
 
-```js
+```php
 /**
- * Run all WPCLI commands.
+ * Run all WP-CLI commands.
  */
 if (class_exists(Cli::class)) {
   (new Cli())->load('boilerplate');
@@ -31,9 +31,9 @@ To run the WP-CLI command and see what you can use, run this command in your ter
 
 You can change that by simply replacing the string inside the load method like this:
 
-```js
+```php
 /**
- * Run all WPCLI commands.
+ * Run all WP-CLI commands.
  */
 if (class_exists(Cli::class)) {
   (new Cli())->load('superCoolTheme');

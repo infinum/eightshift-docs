@@ -21,7 +21,7 @@ Try to think of your development process in this way:
 If you have a heading component with these attributes:
 
 `src/Blocks/components/heading/manifest.json`
-```js
+```json
 "attributes": {
   "headingContent": {
     "type": "string"
@@ -41,7 +41,7 @@ and you want to use the heading component in the Jumbotron block, you can use it
 
 `src/Blocks/custom/jumbotron/manifest.json`
 
-```js
+```json
 "attributes": {
   "content": {
     "type": "string"
@@ -55,7 +55,7 @@ and you want to use the heading component in the Jumbotron block, you can use it
 
 in your block attributes object, you will now have these keys:
 
-```js
+```json
 
 // Attributes from the component.
 "headingContent": "",
@@ -74,7 +74,7 @@ You can do this by following the same principle as before. Here is an example:
 
 `src/Blocks/custom/jumbotron/manifest.json`
 
-```js
+```json
 "attributes": {
   "content": {
     "type": "string"
@@ -95,7 +95,7 @@ If you want to use the heading component in your block, follow this example:
 
 `src/Blocks/custom/jumbotron/manifest.json`
 
-```js
+```json
 "attributes": {
   "content": {
     "type": "string"
@@ -110,7 +110,7 @@ If you want to use the heading component in your block, follow this example:
 
 in your block attributes object, you will now have these keys:
 
-```js
+```json
 
 // Attributes from the first component.
 "headingContent": "",
@@ -140,7 +140,7 @@ By following the basic principle of merging objects, if you have two keys with t
 If you have a heading component with these attributes:
 
 `src/Blocks/components/heading/manifest.json`
-```js
+```json
 "attributes": {
   "headingContent": {
     "type": "string"
@@ -160,7 +160,7 @@ and you want to override one or multiple default attributes from the heading com
 
 `src/Blocks/custom/jumbotron/manifest.json`
 
-```js
+```json
 "attributes": {
   "content": {
     "type": "string"
@@ -178,7 +178,7 @@ and you want to override one or multiple default attributes from the heading com
 
 in your block attributes object, you will now have these keys:
 
-```js
+```json
 
 // Attributes from the component.
 "headingContent": "",
@@ -198,7 +198,7 @@ For example, if you have a block called cards grid that uses a card component, t
 If you have a heading component with these attributes:
 
 `src/Blocks/components/heading/manifest.json`
-```js
+```json
 "attributes": {
   "headingContent": {
     "type": "string"
@@ -217,7 +217,7 @@ If you have a heading component with these attributes:
 and you have a card component:
 
 `src/Blocks/components/card/manifest.json`
-```js
+```json
 "attributes": {
   "superCard": {
     "type": "boolean"
@@ -232,7 +232,7 @@ and you have a card component:
 and you have a cards grid block:
 
 `src/Blocks/custom/cards-grid/manifest.json`
-```js
+```json
 "attributes": {
   "content": {
     "type": "string"
@@ -246,7 +246,7 @@ and you have a cards grid block:
 
 in your block attributes object, you will now have these keys:
 
-```js
+```json
 
 // Attributes from the heading component.
 "headingContent": "",

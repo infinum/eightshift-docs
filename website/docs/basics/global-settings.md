@@ -24,7 +24,7 @@ Mind-blowing right?
 
 To use it, write your style in the `manifest.json` under the `globalVariables` key, and you can use that variable in your style files like this:
 
-```js
+```scss
 $base-col-number: global-settings(maxCols);
 ```
 
@@ -32,7 +32,7 @@ Keep in mind that the `global-settings` is a function that checks the `globalVar
 
 For example, if you have something like this in your `manifest.json`:
 
-```js
+```json
 {
   "globalVariables": {
     "maxCols": 12,
@@ -61,7 +61,7 @@ For example, if you have something like this in your `manifest.json`:
 
 You type this in you SCSS files:
 
-```js
+```scss
 $base-col-number: global-settings(maxCols);
 ```
 
@@ -71,13 +71,13 @@ the output will be: **12**
 
 You type this in you SCSS files:
 
-```js
+```scss
 $gutters: global-settings(gutters);
 ```
 
 the output will be a map that you need to loop or fetch individual files using `get-map-strict` or `get-map-deep` function:
 
-```js
+```scss
 $gutters: (
   "none": "0",
   "default": "25px",
@@ -87,7 +87,7 @@ $gutters: (
 
 so you can call it like this:
 
-```js
+```scss
 width: get-map-strict($gutters, default);
 ```
 
@@ -99,21 +99,21 @@ Yes, colors are different because we use this manifest to output the colors to t
 
 You type this in you scss files:
 
-```js
+```scss
 $primary-color: global-settings(colors, primary),
 $black-color: global-settings(colors, black),
 ```
 
 the output will be:
 
-```js
+```scss
 $primary-color: #3E3E3E;
 $black-color: #000000;
 ```
 
 so you use it the normal SCSS way:
 
-```js
+```scss
 color: $primary-color;
 background-color: $black-color;
 ```

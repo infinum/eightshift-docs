@@ -40,8 +40,6 @@ If you need to override the default settings (because you are using HTTPS or cha
 For example, if you want to use `HTTPS` instead of `HTTP` in your local development, you'd put in your `webpack.config.js`:
 
 ```js
-/* eslint-disable import/no-dynamic-require, global-require */
-
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 /**
