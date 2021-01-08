@@ -189,7 +189,7 @@ in your block attributes object, you will now have these keys:
 "content": "test",
 ```
 
-> Keep in mind that we handle the attributes data necessary to have multiple components in one block but you must provide the correct props inside you files to mock the custom attribute names. Best way to check this block and see what we have done here: [Card Block](https://github.com/infinum/eightshift-frontend-libs/tree/develop/blocks/init/src/Blocks/custom/card)
+> Keep in mind that we handle the attributes data necessary to have multiple components in one block but you must provide the correct props inside your files to mock the custom attribute names. The best way to see how this is done is to check the [card block](https://github.com/infinum/eightshift-frontend-libs/tree/develop/blocks/init/src/Blocks/custom/card) for example.
 
 ### I want to use a component that uses more components (componentCeption).
 

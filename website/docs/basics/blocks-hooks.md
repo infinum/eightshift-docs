@@ -8,9 +8,8 @@ sidebar_label: Hooks
 
 WordPress Block Editor hooks provide the same functionalities as PHP hooks. They are used to modify the behavior of existing blocks.
 
-Here you can check [WordPress documentation](https://developer.wordpress.org/block-editor/developers/filters/block-filters/) on this subject.
+You can check [WordPress documentation](https://developer.wordpress.org/block-editor/developers/filters/block-filters/) on this subject.
 
 We didn't change anything here regarding the original documentation, but we simply provided you with the structured file where you can write all your hooks.
 
-Please follow this [example](https://github.com/infinum/eightshift-frontend-libs/blob/develop/blocks/init/src/Blocks/custom/column/column-hooks.js) for more inspiration.
-
+Please follow this [example](https://github.com/infinum/eightshift-frontend-libs/blob/develop/blocks/init/src/Blocks/custom/column/column-hooks.js) to get more insights about using hooks in your project.

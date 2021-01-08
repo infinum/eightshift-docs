@@ -43,8 +43,8 @@ Components folder holds three files, `heading-options.js`, `heading-editor.js`, 
 ### docs
 Docs folder contains everything that a component needs to be run inside the Storybook. This part is optional. But it will speed up your development time and provide you with the much needed documentation.
 
-- `story.js` - this is and Storybook entrypoint for your component. As components are not block you must provide the mocked data for you component in this file.
-- `readme.mdx` - this is and readme document that describes your component and provides the documentation.
+- `story.js` - Storybook entrypoint for your component. As components are not blocks you must provide the mocked data for your component in this file.
+- `readme.mdx` - readme that describes your component and provides the documentation.
 
 ### heading.php
 This file contains the frontend part (the view) of the component used in your project when the page renders. This file shouldn't contain any business logic, just presenting the passed attributes. The main difference from block view is that you only have attributes that you passed from a block or a top-level component in this file.

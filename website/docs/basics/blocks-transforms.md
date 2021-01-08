@@ -8,9 +8,8 @@ sidebar_label: Transforms
 
 Block Transforms is the API that allows a block to be transformed from and to other blocks, as well as from other entities.
 
-Here you can check [WordPress documentation](https://developer.wordpress.org/block-editor/developers/block-api/block-transforms/) on this subject.
+You can check [WordPress documentation](https://developer.wordpress.org/block-editor/developers/block-api/block-transforms/) on this subject.
 
 We didn't change anything here regarding the original documentation, but we simply provided you with the structured file where you can write all you transformations.
 
 Please follow this [example](https://github.com/infinum/eightshift-frontend-libs/blob/develop/blocks/init/src/Blocks/custom/heading/heading-transforms.js) for more inspiration.
-
