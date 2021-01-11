@@ -44,7 +44,7 @@ In those cases, you can manually provide your DI container with the implementati
 Just provide the method and add your custom implementation like this:
 
 `src>Main>Main.php`
-```js
+```php
   /**
    * Get the list of services to register.
    *
@@ -92,13 +92,13 @@ This will automatically be resolved (same as with class parameters) if you follo
 
 For example, let's say you have a `SteeringWheel` class:
 
-```js
+```php
 class SteeringWheel implements CarPartInterface
 ```
 
 and you want to have this as a dependency in Car class. Your Car class has the following constructor:
 
-```js
+```php
 public function __construct(CarPartInterface $steeringWheel)
 {
   $this->steeringWheel = $steeringWheel;
@@ -134,7 +134,7 @@ Let's us provide you with some code examples:
 
 
 **src/Query/Documents/QueryDocumentsInterface.php**
-```js
+```php
 /**
  * The file that holds a QueryDocuments interface.
  *
@@ -163,7 +163,7 @@ interface QueryDocumentsInterface
 ```
 
 **src/Query/Documents/QueryDocuments.php**
-```js
+```php
 /**
  * The file for querying all the documents
  *
@@ -196,7 +196,7 @@ class QueryDocuments implements ServiceInterface, QueryDocumentsInterface
 ```
 
 **src/Rest/Routes/DocumentsRoute.php**
-```js
+```php
 /**
  * The class register route for DocumentsRoute endpoint
  *

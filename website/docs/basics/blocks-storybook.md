@@ -12,7 +12,7 @@ We have created a full storybook that hosts all our blocks/components/variations
 
 > To speedup project build time Eightshift Boilerplate doesn't come with the storybook out of the box, you need to install it. To install Storybook to your project just type this command in you terminal and follow the instructions:
 
-```shell
+```bash
 wp boilerplate create_blocks_storybook
 ```
 
@@ -22,7 +22,7 @@ You don't need to have stories in your block/component, but we provided you with
 
 If you used our way to set up your project, you already have Storybook ready to use. To start Storybook, run this command:
 
-```js
+```bash
 npm run Storybook
 ```
 
@@ -34,7 +34,7 @@ For your blocks/components/variation to be seen in the Storybook, you must have 
 
 For all blocks, you don't need to write anything because all blocks stories look the same:
 
-```js
+```jsx
 import React from 'react';
 import { Gutenberg, blockDetails } from '@eightshift/frontend-libs/scripts/storybook';
 import manifest from './../manifest.json';
@@ -68,7 +68,7 @@ You should set all the mock data in the component `manifest.json` and just provi
 
 Button Block Editor component:
 
-```js
+```jsx
 import React from 'react';
 import { Fragment } from '@wordpress/element';
 import readme from './readme.mdx';
@@ -95,7 +95,7 @@ export const editor = () => (
 
 Button Block Editor Size variation:
 
-```js
+```jsx
 import React from 'react';
 import { Fragment } from '@wordpress/element';
 import readme from './readme.mdx';

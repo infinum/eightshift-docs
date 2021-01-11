@@ -15,7 +15,10 @@ function Foot() {
             <a href="https://eightshift.com/" target="_blank" rel="noopener noreferrer" className={`${component}__link`}>
               {'Eightshift'}
             </a>
-            {' team'}
+            {' team | '}
+            <a href={useBaseUrl('/sitemap.xml')} target="_blank" rel="noopener noreferrer" className={`${component}__link`}>
+              {'Sitemap'}
+            </a>
           </div>
           <div className={`${component}__column ${component}__column--right`}>
             <span className={`${component}__copy`}>

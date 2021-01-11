@@ -18,7 +18,7 @@ First, install the manifest class if you didn't use the default project installa
 
 You will see a custom filter that you can use to fetch the item from the public folder in your class. This is the custom filter:
 
-```js
+```php
 /**
  * Manifest item filter name constant.
  *
@@ -39,7 +39,7 @@ public function register(): void
 
 To use this filter, add this code and provide the correct name of your asset:
 
-```js
+```php
 use CoolProject\Manifest\Manifest;
 
 $logo = \apply_filters(Manifest::MANIFEST_ITEM, 'logo.svg');
@@ -53,7 +53,7 @@ If there is no `manifest.json` file or you provided the wrong asset name, there 
 
 By old fashioned way we mean running something like this:
 
-```js
+```php
 $logo = get_template_directory_uri() . 'public/logo.svg';
 ```
 

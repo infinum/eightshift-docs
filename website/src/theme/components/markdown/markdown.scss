@@ -9,12 +9,12 @@ $markdown: (
   ),
   code: (
     mobile: (
-      background-color: $base-white-color,
+      background-color: $base-charade-color,
       font-family: $base-block-family-code,
       font-weight: 500,
       font-size: 16px,
       line-height: 1.5,
-      color: $base-cape-color,
+      color: $base-white-color,
     ),
   ),
   a: (
@@ -54,18 +54,13 @@ $markdown: (
   blockquote-code: (
     mobile: (
       background-color: $base-chamois-color,
-    ),
-  ),
-  code-block: (
-    mobile: (
-      background-color: $base-white-color !important,
+      color: $base-cape-color,
     ),
   ),
   token-line: (
     mobile: (
       font-size: 14px,
       font-weight: 500,
-      color: $base-cape-color !important,
       font-family: $base-block-family-code,
     ),
   ),
@@ -102,10 +97,6 @@ $markdown: (
 
   div[class^="codeBlock_"] {
     border-radius: 0;
-  }
-
-  div[class^="codeBlockLines_"] {
-    @include responsive($markdown, code-block);
   }
 
   .token-line {
