@@ -24,5 +24,5 @@ If it doesn't return any errors, you are good to go.
 # Now you must decide!
 
 We have prepared you for all your development needs, now you must decide what are you going to develop next:
-* [New Theme](theme)
-* [New Plugin](plugin)
+* [New Theme](/eightshift-docs/docs/theme)
+* [New Plugin](/eightshift-docs/docs/plugin)
