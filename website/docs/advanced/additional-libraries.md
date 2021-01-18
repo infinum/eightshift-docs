@@ -36,6 +36,13 @@ This library hosts all the documentation you have read so far and all of these c
 * [Documentation](/eightshift-docs/docs/welcome)
 * [Github](https://github.com/infinum/eightshift-docs)
 
+## Eightshift Storybook
+
+A collection of all WordPress core packages used to run Block Editor in storybook.
+
+* [Documentation](/eightshift-docs/docs/basics/blocks-storybook)
+* [Github](https://github.com/infinum/eightshift-storybook)
+
 ## Eightshift Forms
 
 This plugin is made on our Eightshift Boilerplate, and it provides you the ability to create a cool looking form using our custom block and much more. We are implementing all our custom integrations like Salesforce, Mailchimp, Microsoft Dynamics CRM, Buckaroo, Emails, and much more.

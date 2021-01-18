@@ -215,3 +215,22 @@ Converts the first letter of a string to uppercase.
 
   ucfirst('custom');
 ```
+
+## camelize
+
+Returns a camel-cased string.
+
+**Usage:**
+
+```js
+  import { camelize } from '@eightshift/frontend-libs/scripts/editor';
+
+  camelize('custom string');
+  camelize('custom-string');
+```
+
+**Output:**
+
+```js
+customString
+```
