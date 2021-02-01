@@ -84,6 +84,7 @@ module.exports = {
     ],
     "Advanced": [
       'advanced/additional-libraries',
+      'advanced/the-eightshift-way',
       'advanced/custom-eightshift-libs-usage',
       'advanced/custom-eightshift-frontend-libs-usage',
     ],
