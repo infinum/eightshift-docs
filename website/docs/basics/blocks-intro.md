@@ -195,4 +195,12 @@ And folder structure `src/Blocks/blocks` is kinda weird.
 
 You can, but you shouldn't. We use this key to provide the CSS selectors on all our custom blocks in the block editor. Additional styles are added to this selector for the wrapper to work on full width and remove some of the native block editor styles. 
 
-So don't remove or change this 😅 .
+So don't remove or change this 😅.
+
+### Simple vs Compound blocks
+
+In a nutshell there are no difference between blocks. For the WordPress core block is a block, but we like to make a distinction between what are simple and what are compound block.
+
+**Simple block** is a block that is used just as is and provides a small functionality like heading, paragraph, button, etc.
+
+**Compound block** is a block that build from multiple components and provides a bigger functionality.
