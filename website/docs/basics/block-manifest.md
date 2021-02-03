@@ -85,3 +85,41 @@ If the `hasInnerBlocks` key is set to true, the block's `save` method for inner 
 *custom feature*
 
 This key gives you the ability to use component attributes in your block without mapping all the component's attributes every time. Please check [this chapter](blocks-component-in-block) for more details.
+
+## The power of manifest.json
+
+As described before we use `manifest.json` to share stuff across multiple languages so you can easily see its power.
+
+For example, you can use `manifest.json` to store SVG files that you will use on the frontend(PHP) and backend(JS) files. Or you can store block options so it is easier to find and add items.
+
+Let's see how would you share SVG icon across multiple languages:
+
+**manifest.json**
+
+> Note: because this is a `JSON` file you must convert all double quotes to single because otherwise, you will get a fatal error.
+
+```json
+{
+  ...
+  "icon": "<svg xmlns='http://www.w3.org/2000/svg' width='7' height='12' viewBox='0 0 320 512'><path fill='currentColor' d='M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z'></path></svg>",
+  ...
+}
+```
+
+**block-name.php**
+```php
+$manifest = Components::getManifest(__DIR__);
+
+echo wp_kses_post($manifest['icon']);
+```
+
+**block-name-editor.js**
+```jsx
+import manifest from 'manifest.json';
+
+<span dangerouslySetInnerHTML={{ __html: manifest.icon }}></span>
+```
+
+As you see you can share everything like this and you can find multiple examples here:
+* [Social Links](https://github.com/infinum/eightshift-frontend-libs/blob/develop/blocks/init/src/Blocks/components/social-links/manifest.json)
+* [Button](https://github.com/infinum/eightshift-frontend-libs/blob/develop/blocks/init/src/Blocks/components/button/manifest.json)
