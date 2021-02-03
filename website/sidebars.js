@@ -69,6 +69,7 @@ module.exports = {
           "basics/blocks-transforms",
           "basics/blocks-hooks",
           "basics/blocks-special-use-cases",
+          "basics/blocks-reusable",
           "basics/blocks-storybook",
         ]
       },
