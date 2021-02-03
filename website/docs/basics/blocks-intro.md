@@ -199,8 +199,8 @@ So don't remove or change this 😅.
 
 ### Simple vs Compound blocks
 
-In a nutshell there are no difference between blocks. For the WordPress core block is a block, but we like to make a distinction between what are simple and what are compound block.
+In a nutshell, there is no difference between blocks. The WordPress core block is a block, but we like to make a distinction between what is simple and what is a compound block.
 
 **Simple block** is a block that is used just as is and provides a small functionality like heading, paragraph, button, etc.
 
-**Compound block** is a block that build from multiple components and provides a bigger functionality.
+**Compound block** is a block that builds from multiple components and provides a bigger functionality.
