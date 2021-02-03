@@ -6,7 +6,7 @@ sidebar_label: Component Manifest
 
 [![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/develop/blocks/init/src/blocks/)
 
-A component manifest is a bit different than the block manifest. The main difference is that component manifest is a fully custom feature, and it is only here to provide a way to store configuration data and share it with multiple files in your project.
+A component manifest is a bit different than the block manifest. The main difference is that the component manifest is a fully custom feature, and it is only here to provide a way to store configuration data and share it with multiple files in your project.
 
 ### Example
 
@@ -67,7 +67,7 @@ A component manifest is a bit different than the block manifest. The main differ
 
 ### componentName
 
-This key is the most important one. We use this key to specify the component attributes prefix. With this key used correctly we are able to change the attributes prefix depending on the component name passed from the parent component or block.
+This key is the most important one. We use this key to specify the component attributes prefix. When it's used correctly, we are able to change the attributes prefix depending on the component name passed from the parent component or block.
 
 ### title
 
@@ -86,7 +86,8 @@ The same as in the blocks manifest. Please check [this chapter](block-manifest) 
 The same as in the blocks manifest. Please check [this chapter](block-manifest) for more details.
 All attributes in the component must begin with the exact same prefix as it is defined in the `componentName`.
 
-for example:
+For example:
+
 ```json
 {
   "componentName": "heading",

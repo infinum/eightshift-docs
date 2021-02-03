@@ -10,9 +10,9 @@ Our setup works if you follow our naming convention and strict folder structure 
 
 By following our structure, we can find all files using the `require.context` regular expression inside the `Blocks` folder. Alongside some JavaScript magic, we have been able to leave out all those unnecessary steps when creating new blocks like:
 
-* providing style files.
-* writing register method.
-* setting PHP method for registering dynamic blocks.
+* providing style files;
+* writing register method;
+* setting PHP method for registering dynamic blocks; and
 * including files when adding new components.
 
 You can check out how this works inside the `src/Blocks/assets/scripts/application-blocks-editor.js` file.

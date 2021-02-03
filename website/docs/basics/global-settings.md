@@ -6,11 +6,11 @@ sidebar_label: Global Settings
 
 [![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs)
 
-Ok, this is the part that we are incredibly proud of. Did you know that you can pass values from the JSON manifest or some other file directly to SCSS? Yes, we had the same facial expression when we found out. For this, to work, we used Webpack and its excellent features.
+Ok, this is the part that we are incredibly proud of. Did you know that you can pass values from the JSON manifest or some other file directly to SCSS? Yes, we had the same facial expression when we found out. For this to work, we used Webpack and its excellent features.
 
 > This feature comes only with the block setup.
 
-If you used the `setup_theme` setup, you are all set; if not, please visit [blocks chapter](blocks) for more details.
+If you used the `setup_theme` setup, you are all set. If not, please visit the [blocks chapter](blocks) for more details.
 
 ## Why do we use this?
 
@@ -18,9 +18,9 @@ Because, with dynamic blocks, you must create your blocks. We got tired of copy/
 
 ## How does this work?
 
-You have file `src/Blocks/manifest.json` that has a key called `globalVariables`. We use this key and build the SCSS maps that you can use in your style files.
+You have the file `src/Blocks/manifest.json` that has a key called `globalVariables`. We use this key and build the SCSS maps that you can use in your style files.
 
-Mind-blowing right?
+Mind-blowing, right?
 
 To use it, write your style in the `manifest.json` under the `globalVariables` key, and you can use that variable in your style files like this:
 
@@ -93,18 +93,18 @@ width: get-map-strict($gutters, default);
 
 ### Scenario 3:
 
-I want to output colors, but they don't follow the structure you mentioned before. Why is that?
+"I want to output colors, but they don't follow the structure you mentioned before. Why is that?"
 
-Yes, colors are different because we use this manifest to output the colors to the Block Editors' color palette, which is why colors are different. Only colors are like this.
+Yes, colors are different because we use this manifest to output the colors to the block editors' color palette. Only the colors are like this.
 
-You type this in you scss files:
+Type this into your SCSS files:
 
 ```scss
 $primary-color: global-settings(colors, primary),
 $black-color: global-settings(colors, black),
 ```
 
-the output will be:
+The output will be:
 
 ```scss
 $primary-color: #3E3E3E;

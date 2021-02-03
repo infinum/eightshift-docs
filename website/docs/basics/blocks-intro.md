@@ -7,47 +7,47 @@ sidebar_label: Intro
 [![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/develop/blocks/init/src/blocks/)
 
 Before we dive into blocks and see how everything is set, we should describe this setup's mindset.
-If you managed to set up your project by this point with [WP-CLI](wp-cli) command `setup_theme`, you might have a few questions. We will try to answer all those questions here.
+If you've managed to set up your project by this point with the [WP-CLI](wp-cli) command `setup_theme`, you might have a few questions. We will try to answer all those questions here.
 
 ### Why do all my blocks look the same and have the same name structure?
 
-This is because we defined the name structure for all our blocks and components to load everything automatically. For more info about this please check the [block structure](block-structure) and [component structure](blocks-component-structure) chapters.
+This is so because we defined the name structure for all our blocks and components to load everything automatically. For more information, please check the [block structure](block-structure) and [component structure](blocks-component-structure) chapters.
 
 ### What is the difference between components and blocks?
 
-The main difference is that blocks are available in the block editor's block picker, and components are not. With that being said, blocks are registered using the `registerBlockType` method, and components are just here for you to bundle some functionality in one place and reuse it where ever you need.
+The main difference is that blocks are available in the block editor's block picker, and components are not. With that being said, blocks are registered using the `registerBlockType` method, and components are just here for you to bundle some functionality in one place and reuse it wherever you need.
 
-For more info about blocks, you can read the [block structure](block-structure) chapter, and about components, you can read in the [component structure](blocks-component-structure) chapter.
+For more information about blocks, read the [block structure](block-structure) chapter. To find out more about components, read the [component structure](blocks-component-structure) chapter.
 
-### Do I need to have storybook stories in my block?
+### Do I need to have Storybook stories in my block?
 
-No, you don't. But we provided you with the ability to use the Storybook for all of your blocks and components. Why not use it? It will speed up your development time. Trust us 🙂.
+No, you don't. But we provided you with the ability to use the Storybook for all of your blocks and components. Why not use it? It will speed up your development time. Trust us. 🙂
 
-For more details how to write stories checkout [this chapter](blocks-storybook).
+For more details on how to write stories, check out [this chapter](blocks-storybook).
 
 ### Do you support block variations, and how can I use them?
 
-Yes, we do. All block variations are located in the `src/Blocks/variations` folder. For more info about this, please check the [variations](blocks-variations) chapters.
+Yes, we do. All block variations are located in the `src/Blocks/variations` folder. For more information about this, please check the [variations](blocks-variations) chapter.
 
 ### Do you support patterns, and how can I use them?
 
-Yes, we do. For more info about this, please check the [patterns](blocks-patterns) chapters.
+Yes, we do. For more information, please read the [patterns](blocks-patterns) chapter.
 
 ### What is a wrapper?
 
-All the details about wrapper can be found in [this chapter](blocks-wrapper).
+Read about wrappers in [this chapter](blocks-wrapper).
 
 ### Do you support inner blocks?
 
-Yes, we support everything that core natively supports.  You can find more information about how to use them in [this chapter](block-manifest).
+Yes, we support everything that the core natively supports.  You can find more information on how to use them in [this chapter](block-manifest).
 
 ### Why do you use manifest.json in all blocks and components?
 
-So that we can provide content, attributes, options, and much more across multiple different files in multiple contexts (in both PHP and JS), you can read all about it in [this chapter](block-manifest).
+So that we can provide content, attributes, options, and much more across multiple different files in multiple contexts (in both PHP and JS). You can read all about it in [this chapter](block-manifest).
 
-### Why do you use global manifest.json
+### Why do you use global manifest.json?
 
-The same answer as the previous one. In the global `manifest.json`, we have options that are shared across all blocks and components. Read more about it in [this chapter](blocks-global-manifest).
+The answer is the same as the previous one. In the global `manifest.json`, we have options that are shared across all blocks and components. Read more about it in [this chapter](blocks-global-manifest).
 
 ### If I want to create a new block/component, what do I do?
 
@@ -59,25 +59,25 @@ You can check all available blocks/components using our `wp boilerplate use_bloc
 
 ### Can I use block/component from Eightshift-frontend-libs directly?
 
-It depends. You can't use things from the blocks folder like `components`, `custom`, `variations`, `wrapper`, etc. They are meant to be copied to your project, styled, and changed depending on your project's needs. 
+It depends. You can't use things from the blocks folder like `components`, `custom`, `variations`, `wrapper`, etc. They are meant to be copied to your project, styled, and changed depending on your project's needs.
 
-You can move things from block to your project using these commands described in [this chapter](blocks-intro#how-can-i-use-your-pre-made-blocks).
+You can move things from a block to your project using the commands described in [this chapter](blocks-intro#how-can-i-use-your-pre-made-blocks).
 
-### I want to change attributes on inner blocks; how do I do it?
+### I want to change attributes on inner blocks. How do I do it?
 
 We described how attributes are used and combined in [this chapter](blocks-attributes) and [this chapter](blocks-component-in-block).
 
 ### Do I need to write JS and PHP implementation for all my blocks?
 
-For block, you must provide the JS and PHP implementations because the block won't work without them.
+For a block, you must provide the JS and PHP implementations because it won't work without them.
 
 For components, if you are not using the JS part, you don't need to write one, but we recommend you do so because the JS part is used in Storybook.
 
-If you have a more advanced block and don't benefit from writing the JS implementation of the block, you can always use [ServerSideRender component](https://developer.wordpress.org/block-editor/packages/packages-server-side-render/) form the core. If you have no inputs in the editor from the admin, there is no need to write JS implementation of the block. Just use `ServerSideRender` component in that case.
+If you have a more advanced block and don't benefit from writing the JS implementation of the block, you can always use the [ServerSideRender component](https://developer.wordpress.org/block-editor/packages/packages-server-side-render/) form the core. If you have no inputs in the editor from the admin, there is no need to write JS implementation of the block. Just use `ServerSideRender` component in that case.
 
 ### How do I use components in blocks?
 
-Yes, we do. Please check [this chapter](blocks-component-in-block) out for more information.
+Please check out [this chapter](blocks-component-in-block) for more information.
 
 ### How do I use multiple heading components in my block?
 
@@ -101,26 +101,26 @@ No, it might look like that from the examples provided, but that is not the case
 
 Ask yourself, will I reuse this functionality anywhere else?
 
-- if the answer is **yes**, create a component.
-- if the answer is **no**, don't create a component.
+- If the answer is **yes**, create a component.
+- If the answer is **no**, don't create a component.
 
-Our recommendation is not to burden yourself from the begging with the components. Start creating blocks and if you find yourself in need of code that you already wrote, just extract it in a component.
+Our recommendation is not to burden yourself with components from the beginning. Start creating blocks and, if you find yourself in need of code that you already wrote, just extract it in a component.
 
 ### Will this setup work with full site editing?
 
-Yes, it will. We are constantly upgrading this documentation and our code to say that it will work with full site editing. This boilerplate was made for Infinum/Eightshift WordPress team, so se are constantly using it on our projects.
+Yes, it will. We are constantly upgrading this documentation and our code to say that it will work with full site editing. This boilerplate was made for the Infinum/Eightshift WordPress team, so we are constantly using it in our projects.
 
 ### Can I use core blocks with your setup?
 
-Yes, you can. We are working on the ability to override core block in our smart way, but until we make this work, you can use everything the normal way that is defined in the core documentation. 
+Yes, you can. We are working on the ability to override core blocks in our smart way. Until we make this work, you can use everything that is already defined in the core documentation.
 
-We avoid using core blocks because they add different class naming and additional markup that makes it harder to style things as we want to.
+We avoid using core blocks because they add different class naming and additional markup that makes it harder to style things.
 
- Also, they are prone to breaking changes every several months, so we prefer to write our own implementation. 
+Also, they are prone to breaking changes every several months, so we prefer to write our own implementation.
 
 ### How can I limit my blocklist?
 
-Easy. We have a method that you can extend that limits your project's block to the only block from your project. you should put this filter in your projects `src/Blocks/Blocks.php` file under the `register` method
+Easy. We have a method you can extend that limits your project's block to the only block from your project. You should put this filter in your project's `src/Blocks/Blocks.php` file under the `register` method:
 
 ```php
   // Limits the usage of only custom project blocks.
@@ -185,14 +185,14 @@ public function getCustomCategory(array $categories, \WP_Post $post): array
 
 As we described in [this chapter](blocks), if we don't support something natively from the core or you can't find it in this documentation, you can always use it in the normal native way from the [WordPress documentation](https://developer.wordpress.org/block-editor/tutorials/block-tutorial/). Also, if you think we are missing something, please open a [pull request](https://github.com/infinum/eightshift-frontend-libs/pulls) or an [issue](https://github.com/infinum/eightshift-frontend-libs/issues) on our GitHub repository.
 
-### Why is this my blocks folder called custom and not blocks, for example?
+### Why is my blocks folder called custom and not blocks, for example?
 
-The idea was to put all your custom blocks inside the custom folder and all core block in the core folder. This boilerplate is not designed only for your custom block, but you can use it as an ultimate block setup. 
+The idea was to put all your custom blocks inside the custom folder and all core block in the core folder. This boilerplate is not designed only for your custom block, but you can use it as an ultimate block setup.
 
-And folder structure `src/Blocks/blocks` is kinda weird.
+And folder structure `src/Blocks/blocks` is kind of weird.
 
-### In the global manifest, you have a key called “customBlocksName”: “eightshift-block”, can I change this to my-project-name-block?
+### In the global manifest, you have a key called “customBlocksName”: “eightshift-block”. Can I change this to my-project-name-block?
 
-You can, but you shouldn't. We use this key to provide the CSS selectors on all our custom blocks in the block editor. Additional styles are added to this selector for the wrapper to work on full width and remove some of the native block editor styles. 
+You can, but you shouldn't. We use this key to provide the CSS selectors on all our custom blocks in the block editor. Additional styles are added to this selector for the wrapper to work on full width and remove some of the native block editor styles.
 
-So don't remove or change this 😅 .
+So don't remove or change this. 😅

@@ -52,25 +52,25 @@ Currently, our default global manifest looks like this:
 }
 ```
 
-As you see, we have some global configuration for blocks and also some SCSS variables. Along with these default keys here you can define anything you need for the project.
+As you can see, we have some global configuration for blocks and some SCSS variables. Along with these default keys, here you can define anything you need for the project.
 
 ### Namespace
 
-All blocks must have a valid block name to be registered. Valid block consists of namespace and block name, like this: `eightshift-boilerplate/heading`.
+All blocks must have a valid block name to be registered. A valid block consists of namespace and block name, like this: `eightshift-boilerplate/heading`.
 
-To remove the need to write namespace multiple times across multiple blocks, we have defined the namespace in the global manifest and use it in the block registration process.
+To remove the need to write namespace multiple times across multiple blocks, we have defined the namespace in the global manifest, and we use it in the block registration process.
 
 If you want to define multiple namespaces for your blocks in a single folder, please refer to the [block-structure](block-structure) chapter for more details.
 
-### Background and Foreground
+### Background and foreground
 
-Just like a namespace, we use the same logic for icons background and foreground when selecting the block from the list. Here you define global background and foreground for all your custom blocks.
+Just like a namespace, we use the same logic for icons background and foreground when selecting a block from the list. Here you define global background and foreground for all your custom blocks.
 
 Please refer to the [block-structure](block-structure) chapter for more details on how to override global background and foreground your blocks icon.
 
-### Global Variables
+### Global variables
 
-These are all the global settings that you can use in JavaScript, SCSS, and PHP files. We have covered this topic in more detail in the [frontend global setting](global-settings) chapter.
+These are all the global settings you can use in JavaScript, SCSS, and PHP files. We have covered this topic in more detail in the [frontend global setting](global-settings) chapter.
 
 ### Attributes
 
