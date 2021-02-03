@@ -23,60 +23,34 @@ it will proxy the page you've specified in the `projectUrl` to your local server
 [Browsersync] Proxying: https://local-url.test
 [Browsersync] Access URLs:
  --------------------------------------
-       Local: https://localhost:3000
-    External: https://192.168.0.25:3000
+		Local: https://localhost:3000
+		External: https://192.168.0.25:3000
  --------------------------------------
-          UI: http://localhost:3001
- UI External: http://localhost:3001
+		UI: http://localhost:3001
+ 		UI External: http://localhost:3001
  --------------------------------------
 ```
 
 Using the IP address, you can open it on any device (mobile phone or a tablet) that is connected to the same network, and you'll see how your site looks like on them.
 
-## Override default functionality
+## Using SSL for local development
 
-If you need to override the default settings (because you are using HTTPS or change some default configuration), you'll need to disable the default config and add your own.
-
-For example, if you want to use `HTTPS` instead of `HTTP` in your local development, you'd put in your `webpack.config.js`:
+By default BrowserSync is not working with the https urls but if you are like us and you use HTTPS in your local enviroment you can simply provide additional key to the Webpack config to make it work.
 
 ```js
-const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
-/**
- * This is the main entry point for Webpack config.
- * All the settings are pulled from node_modules/@eightshift/frontend-libs/webpack.
- * We are loading mostly used configuration, but you can always override or turn off the default setup and provide your own.
- * Please referrer to Eightshift-libs wiki for details.
- */
 module.exports = (env, argv) => {
 
-  const projectConfig = {
-    config: {
-      projectDir: __dirname, // Current project directory absolute path.
-      projectUrl: 'local-url.test', // Used for providing browsersync functionality.
-      projectPath: 'wp-content/themes/your-theme-name', // Project path relative to project root.
-    },
-    overrides: [
-      'browserSyncPlugin', // Disable the default.
-    ],
-  };
+	const projectConfig = {
+		config: {
+			projectDir: __dirname, // Current project directory absolute path.
+			projectUrl: 'local-url.test', // Used for providing browsersync functionality.
+			projectPath: 'wp-content/themes/your-theme-name', // Project path relative to project root.
+			useSsl: true
+		},
+	};
 
-  // Generate webpack config for this project using options object.
-  const project = require('./node_modules/@eightshift/frontend-libs/webpack')(argv.mode, projectConfig);
-
-  return {
-    ...project,
-    plugins: [
-      ...project.plugins,
-      new BrowserSyncPlugin({
-        host: 'localhost',
-        port: 3000,
-        proxy: 'https://local-url.test', // It's important to add the protocol when using https!
-        https: true,
-      }, {
-        reload: false,
-      }),
-    ],
-  };
+	// Generate webpack config for this project using options object.
+	return require('./node_modules/@eightshift/frontend-libs/webpack')(argv.mode, projectConfig);
 };
 ```
