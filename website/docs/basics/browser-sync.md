@@ -22,13 +22,13 @@ it will proxy the page you've specified in the `projectUrl` to your local server
 ```bash
 [Browsersync] Proxying: https://local-url.test
 [Browsersync] Access URLs:
- --------------------------------------
-		Local: https://localhost:3000
-		External: https://192.168.0.25:3000
- --------------------------------------
-		UI: http://localhost:3001
- 		UI External: http://localhost:3001
- --------------------------------------
+--------------------------------------
+Local: https://localhost:3000
+External: https://192.168.0.25:3000
+--------------------------------------
+UI: http://localhost:3001
+UI External: http://localhost:3001
+--------------------------------------
 ```
 
 Using the IP address, you can open it on any device (mobile phone or a tablet) that is connected to the same network, and you'll see how your site looks like on them.
@@ -38,15 +38,13 @@ Using the IP address, you can open it on any device (mobile phone or a tablet) t
 By default BrowserSync is not working with the https urls but if you are like us and you use HTTPS in your local enviroment you can simply provide additional key to the Webpack config to make it work.
 
 ```js
-
 module.exports = (env, argv) => {
-
 	const projectConfig = {
 		config: {
 			projectDir: __dirname, // Current project directory absolute path.
 			projectUrl: 'local-url.test', // Used for providing browsersync functionality.
 			projectPath: 'wp-content/themes/your-theme-name', // Project path relative to project root.
-			useSsl: true
+			useSsl: true,
 		},
 	};
 
