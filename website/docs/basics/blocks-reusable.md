@@ -10,13 +10,8 @@ Block editor provides us with the reusable blocks out of the box. These blocks a
 
 ### Register admin sidemenu
 
-Reusable blocks can be accessed from the block editors options page but to help our editors, we like to add a new menu in the admin sidebar where you can easily access all your reusable blocks.
+Reusable blocks can be accessed from the block editors options page but to help our editors, we like to add a new menu in the admin sidebar where you can easily access all your reusable blocks. If you use our custom blocks setup this sidebar menu will be added by default.
 
-You can add your admin side menu for reusable block by running the WP-CLI command:
-
-```shell
-wp boilerplate create_blocks_reusable_sidemenu
-```
 ### Use the reusable block as a partial
 
 We also like to use a reusable block for website parts that were previously hardcoded in the theme and are not a part of the block editor. We like to use this footer of additional options in categories and terms.
