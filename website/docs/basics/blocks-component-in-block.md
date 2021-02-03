@@ -287,3 +287,31 @@ This attribute is available in the options component only. You can't set it via 
 ### How do my example attributes behave when I use components in blocks?
 
 Exactly the same way as attributes.
+
+### I have a component name that has multiple strings in a name, will this work?
+
+By multiple strings in a name we mean for example `jumbotron-cta` component name. The problem here is that we define components with dash and attributes by camelcase so you need to fix this. We have provided you with the helper to camelcase all your componentName strings.
+
+**Example:**
+
+You have a component named `jumbotron-cta` and you want to use it in your block. As described on this page, you will create a `components` key in your `manifest.json` and use `jumbotron-cta`.
+
+```json
+{
+  "components": {
+    "jumbotron-cta": "jumbotron-cta"
+  }
+}
+```
+
+But in all places in your component where you use `setAttributes` you must use [camelize helper](https://github.com/infinum/eightshift-frontend-libs/blob/develop/scripts/helpers/camelize.js)
+
+```js
+
+import { camelize } from '@eightshift/frontend-libs/scripts/helpers';
+
+<ToggleControl
+   label={'Custom Label'}
+   onChange={(value) => setAttributes({ [`${camelize(componentName)}Use`]: value })}
+/>
+```
