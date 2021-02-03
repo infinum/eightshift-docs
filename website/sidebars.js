@@ -44,6 +44,7 @@ module.exports = {
           "basics/writing-styles",
           "basics/fonts",
           "basics/browser-sync",
+          "basics/dynamic-import",
         ]
       },
       {
