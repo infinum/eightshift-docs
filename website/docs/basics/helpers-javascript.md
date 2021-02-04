@@ -8,7 +8,7 @@ sidebar_label: JavaScript
 
 ## checkAttr
 
-Checks if the attributes exist in the attributes list, and adds a default value if they don't.
+Checks whether the attributes exist in the attributes list and adds a default value if they don't.
 
 * @param {string} $key Key to check.
 * @param {array}  $attributes Array of attributes.
@@ -39,7 +39,7 @@ Used to set and get cookie values.
 
 ## debounce
 
-Debounces the provided function. For more information check [this blog post](https://davidwalsh.name/javascript-debounce-function).
+Debounces the provided function. For more information, check [this blog post](https://davidwalsh.name/javascript-debounce-function).
 
 * @param {function} func Provided function to apply debounce.
 * @param {int} wait Wait time for debounce.
@@ -56,7 +56,7 @@ Debounces the provided function. For more information check [this blog post](htt
 
 ## devices
 
-Check if your browser's navigator is a specific device.
+Checks if your browser's navigator is a specific device.
 
 **Usage:**
 
@@ -68,7 +68,7 @@ Check if your browser's navigator is a specific device.
 
 ## dynamicImport
 
-To get (require) all the files using the `require.context` method. It will find all files recursively in the folder using a regex. The following example will require all assets/index.js files inside the custom folder, so there is no need to manually add the files to the build.
+Used to get (require) all the files using the `require.context` method. It will find all files recursively in the folder using a regex. The following example will require all assets/index.js files inside the custom folder, so there is no need to manually add the files to the build.
 
  * @param {object} paths All require.context patch to iterate.
 
@@ -82,7 +82,7 @@ To get (require) all the files using the `require.context` method. It will find 
 
 ## escape-string
 
-Takes provided string and removes special characters. Characters that will be removed: `([;&,.+*~':"!^#$%@[\]()=>|]`.
+Takes the provided string and removes special characters. Characters that will be removed: `([;&,.+*~':"!^#$%@[\]()=>|]`.
 
 * @param {string} $key Key to check.
 
@@ -121,7 +121,7 @@ Useful if you want to show how the responsive behavior looks in the editor.
 
 ## selector
 
-Returns BEM selector for HTML class and check if condition part is set.
+Returns BEM selector for HTML class and checks if the condition part is set.
 
 * @param {boolean} condition Check condition.
 * @param {string}  block BEM Block selector.
@@ -167,7 +167,7 @@ Use this hook to read editor-color-palette colors directly from WP built-in stor
 
 ## overrideInnerBlockAttributes
 
-It is used to set attributes on all innerBlocks. This value will be stored in the Block Editor store and set to a block.
+Used to set attributes on all innerBlocks. This value will be stored in the block editor store and set to a block.
 
 **Usage:**
 
@@ -188,7 +188,7 @@ It is used to set attributes on all innerBlocks. This value will be stored in th
 
 ## overrideInnerBlockSimpleWrapperAttributes
 
-It is used to set attributes on all innerBlocks preset only for simple wrapper setup. This value will be stored in the Block Editor store and set to a block.
+Used to set attributes on all innerBlocks preset only for simple wrapper setup. This value will be stored in the block editor store and set to a block.
 
 **Usage:**
 
@@ -214,23 +214,4 @@ Converts the first letter of a string to uppercase.
   import { ucfirst } from '@eightshift/frontend-libs/scripts/editor';
 
   ucfirst('custom');
-```
-
-## camelize
-
-Returns a camel-cased string.
-
-**Usage:**
-
-```js
-  import { camelize } from '@eightshift/frontend-libs/scripts/editor';
-
-  camelize('custom string');
-  camelize('custom-string');
-```
-
-**Output:**
-
-```js
-customString
 ```

@@ -16,7 +16,7 @@ The output will ask you to input the correct endpoint slug and method (`POST`, `
 
 ## Test it in action
 
-To test it in action you should check the `wp-json` path in your browser, something like this:
+To test it in action, you should check the `wp-json` path in your browser. You can do that with something like this:
 
 `domain.ext/wp-json/routeNamespace/routeVersion/routeName`
 

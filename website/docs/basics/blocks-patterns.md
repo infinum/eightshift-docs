@@ -8,15 +8,15 @@ sidebar_label: Patterns
 
 Block Patterns are predefined block layouts, ready to insert and tweak.
 
-You can check [WordPress documentation](https://developer.wordpress.org/block-editor/developers/block-api/block-patterns/) on this subject.
+You can check the [WordPress documentation](https://developer.wordpress.org/block-editor/developers/block-api/block-patterns/) on this subject.
 
-Patterns are (as we understand them) the same thing as block variations, but the main difference is that you can provide full layouts with patterns. As we described in [this chapter](blocks-variations#limitations). You can also provide the full page layouts with our variations.
+Patterns are (as we understand them) the same thing as block variations. The main difference is that you can provide full layouts with patterns, as described in [this chapter](blocks-variations#limitations). You can also provide the full page layouts with our variations.
 
-This means the only difference between our variations and block patterns are:
+This means that the only differences between our variations and block patterns are:
 
 **Variations**
-- Variations provide data using our manifest.json file (the rest is handled using JavaScript)
-- Variations appear in the editor next to the regular blocks
+- Variations provide data using our manifest.json file (the rest is handled using JavaScript).
+- Variations appear in the editor next to the regular blocks.
 
 **Patterns**
 - Patterns are registered using PHP.

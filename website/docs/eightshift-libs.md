@@ -5,7 +5,7 @@ title: Eightshift Libs
 
 [![docs-source](https://img.shields.io/badge/source-eigthshift--libs-blue?style=for-the-badge&logo=php&labelColor=2a2a2a)](https://github.com/infinum/eightshift-libs)
 
-This library is aimed at bringing the modern backend development tools to the [Eightshift Boilerplate](https://github.com/infinum/eightshift-boilerplate) or [Eightshift Boilerplate Plugin](https://github.com/infinum/eightshift-boilerplate-plugin), but you can use it on any WordPress project.
+This library is aimed at bringing modern back-end development tools to the [Eightshift Boilerplate](https://github.com/infinum/eightshift-boilerplate) or [Eightshift Boilerplate Plugin](https://github.com/infinum/eightshift-boilerplate-plugin), but you can use it on any WordPress project.
 
 It uses a dependency injection container that provides a way to inject dependencies into classes to obey the single responsibility principle (SRP). Every class is responsible for registering its hooks, loaded automatically by the dependency injection container. This provides a more testable environment for your project.
 
@@ -13,13 +13,14 @@ We provide some helpers, abstract classes, interfaces, and abstractions on origi
 
 ## Prerequisites
 
-In our projects, we use object-oriented PHP, design patterns, and SOLID principle. When you work on complex projects, with various third-party integrations, it makes sense to use these. You want your code to be easily extended, testable, and future proof.
+In our projects, we use object-oriented PHP, design patterns, and the SOLID principle. When you work on complex projects with various third-party integrations, it makes sense to use these. You want your code to be easily extended, testable, and future-proof.
 
-If all you need is a simple website, some of these concepts might be too much for you, and you won't see many benefits in using them. Which is totally valid. We need to pick our battles and decide for ourselves what is the best tool for the job.
+If all you need is a simple website, some of these concepts might be too much for you, and you won't see many benefits in using them. This is totally valid. We need to pick our battles and decide for ourselves what is the best tool for the job.
 
-If you want to try our setup, but you might not be as versed in the above concepts, don't worry. We have lots of examples and tried to make them easy to follow.
+If you want to try our setup, but you might not be as versed in the above concepts, don't worry. We have lots of examples and we tried to make them easy to follow.
 
 ### The library contains
+
 - Dependency injection container.
 - PSR-12 autoloader.
 - Autowiring of your service classes.

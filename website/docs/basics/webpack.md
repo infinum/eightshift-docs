@@ -8,7 +8,7 @@ sidebar_label: Webpack
 
 At its core, Webpack is a static module bundler for modern JavaScript applications. When Webpack processes your application, it internally builds a dependency graph that maps every module your project needs and generates one or more bundles. Learn more about Webpack [here](https://webpack.js.org/concepts/).
 
-To put this simply, Webpack takes your development files and creates a production-ready version of them based on the config.
+To put it simply, Webpack takes your development files and creates a production-ready version of them based on the config.
 
 Eightshift Boilerplate comes with everything set for you to use out of the box. In the root of your project, you will find a file called `webpack.config.js`. If you open it, you will see that the configuration is pulled from the Eightshift Frontend Libs library.
 
@@ -54,7 +54,7 @@ const projectConfig = {
 
 ## Add a new custom functionality
 
-Let's say you want to add a custom `html-webpack-plugin` to the build; you can simply use all the native [webpack features](https://webpack.js.org/guides/) by providing it like in the example:
+Let's say you want to add a custom `html-webpack-plugin` to the build. You can simply use all the native [webpack features](https://webpack.js.org/guides/), like in this example:
 
 ```js
 const HtmlWebpackPlugin = require('html-webpack-plugin');
