@@ -22,7 +22,7 @@ This library is aimed at bringing the modern back-end development tools to the [
 * [Documentation](/eightshift-docs/docs/eightshift-libs)
 * [Github](https://github.com/infinum/eightshift-libs)
 
-## Eightshift Front-End Libs
+## Eightshift FrontEnd Libs
 
 This library is meant to bring the modern front-end development tools to the [Eightshift Boilerplate](https://github.com/infinum/eightshift-boilerplate) or [Eightshift Boilerplate Plugin](https://github.com/infinum/eightshift-boilerplate-plugin), but you can use it on any WordPress project.
 

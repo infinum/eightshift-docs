@@ -122,6 +122,6 @@ Well, nowhere. Try to move your way of thinking from Bootstrap or any other fron
 
 Why is that? Because we use component-based development and you should think in that way. Each component is responsible for its own styles.
 
-You should define styles with all sizes, colors, and variations for the heading component and reuse that component whereever you need any kind of heading. The same applies to any other component. This is why you don't need global typography, styles, etc.
+You should define styles with all sizes, colors, and variations for the heading component and reuse that component wherever you need any kind of heading. The same applies to any other component. This is why you don't need global typography, styles, etc.
 
 Global styles and variables are only used for things you want to share across components (that should be reduced to a minimum).
