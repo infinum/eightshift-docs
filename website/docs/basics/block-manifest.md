@@ -90,7 +90,7 @@ This key gives you the ability to use component attributes in your block without
 
 As described before we use `manifest.json` to share stuff across PHP / JS / SCSS so you can easily see its power.
 
-For example, you can use `manifest.json` to store SVG files that you will use on the frontend (PHP) and in the editor / backend (JS) files. Or you can store block options so it is easier to find and add items.
+For example, you can use `manifest.json` to store SVG files that you will use on the front-end (PHP) and in the editor / backend (JS) files. Or you can store block options so it is easier to find and add items.
 
 Let's see how you would share SVG icon across multiple languages:
 

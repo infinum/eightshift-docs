@@ -19,7 +19,7 @@ The library can be used for pure webpack/js/scss functionality, but if the block
 - ESLint ruleset
 - StyleLint ruleset
 - Babel ruleset
-- A collection of useful frontend utility modules
+- A collection of useful front-end utility modules
 - Complete storybook of over 30+ useful blocks and components.
 - Block Editor Block example
 - Block Editor Blocks initial setup for [Eightshift Boilerplate](https://github.com/infinum/eightshift-boilerplate)

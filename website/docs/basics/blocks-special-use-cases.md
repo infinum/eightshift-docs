@@ -14,7 +14,7 @@ These are some of the examples we would like to share with you. We will list all
 
 **Usage:**
 
-- Change attributes in the block editor and on the frontend.
+- Change attributes in the block editor and on the front-end.
 - Set attributes in the database.
 
 **Use Case:**

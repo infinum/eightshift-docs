@@ -70,7 +70,7 @@ Please refer to the [block-structure](block-structure) chapter for more details 
 
 ### Global variables
 
-These are all the global settings you can use in JavaScript, SCSS, and PHP files. We have covered this topic in more detail in the [frontend global setting](global-settings) chapter.
+These are all the global settings you can use in JavaScript, SCSS, and PHP files. We have covered this topic in more detail in the [front-end global setting](global-settings) chapter.
 
 ### Attributes
 

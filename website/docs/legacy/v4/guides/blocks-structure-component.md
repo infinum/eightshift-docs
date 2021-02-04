@@ -35,13 +35,13 @@ JavaScript component for handling component options. Component options are displ
 JavaScript component for handling component toolbars. Toolbars are displayed at the top of every component - things like font-weight, alignment, etc.
 
 ### component-name.php
-This file contains the frontend part (the view) of the component, used in your project when the page renders. This file shouldn't contain any business logic, just presenting the passed attributes.
+This file contains the front-end part (the view) of the component, used in your project when the page renders. This file shouldn't contain any business logic, just presenting the passed attributes.
 
 ### component-name-editor.scss
 This file only contains the editor styles for the component. Editor styles are only applied to the editor screen in the admin.
 
 ### component-name-style.scss
-This file contains the editor and the frontend styles for the component. These styles will be applied to both the editor screen and your front end. This is just the way the core editor is set up. Each component has the `blockClass` attribute that returns a block name with a block prefix, for example: `.block-intro`. You can/must use this naming convention when stying your block. Just like with any other SCSS components, the Block Editor block must also be standalone and easy to copy to different projects (reusable).
+This file contains the editor and the front-end styles for the component. These styles will be applied to both the editor screen and your front end. This is just the way the core editor is set up. Each component has the `blockClass` attribute that returns a block name with a block prefix, for example: `.block-intro`. You can/must use this naming convention when stying your block. Just like with any other SCSS components, the Block Editor block must also be standalone and easy to copy to different projects (reusable).
 
 #### Note on the component styles
 

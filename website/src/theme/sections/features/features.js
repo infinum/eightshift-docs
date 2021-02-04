@@ -75,7 +75,7 @@ export default function Features() {
     {
       icon: 'purple',
       title: 'Eightshift Frontend Libs',
-      desc: 'A collection of useful frontend utility modules and all the tools you need to start building modern Block Editor dynamic blocks.',
+      desc: 'A collection of useful front-end utility modules and all the tools you need to start building modern Block Editor dynamic blocks.',
     },
   ];
 
