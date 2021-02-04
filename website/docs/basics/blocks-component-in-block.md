@@ -23,17 +23,17 @@ If you have a heading component with these attributes:
 `src/Blocks/components/heading/manifest.json`
 ```json
 "attributes": {
-  "headingContent": {
-    "type": "string"
-  },
-  "headingLevel": {
-    "type": "int",
-    "default": 2
-  },
-  "headingSize": {
-    "type": "string",
-    "default": "default"
-  },
+	"headingContent": {
+		"type": "string"
+	},
+	"headingLevel": {
+		"type": "int",
+		"default": 2
+	},
+	"headingSize": {
+		"type": "string",
+		"default": "default"
+	},
 }
 ```
 
@@ -43,13 +43,13 @@ and you want to use the heading component in the Jumbotron block, you can use it
 
 ```json
 "attributes": {
-  "content": {
-    "type": "string"
-    "default": "test",
-  }
+	"content": {
+		"type": "string"
+		"default": "test",
+	}
 },
 "components": {
-  "heading": "heading"
+	"heading": "heading"
 }
 ```
 
@@ -76,14 +76,14 @@ You can do this by following the same principle as before. Here is an example:
 
 ```json
 "attributes": {
-  "content": {
-    "type": "string"
-    "default": "test",
-  }
+	"content": {
+		"type": "string"
+		"default": "test",
+	}
 },
 "components": {
-  "heading": "heading"
-  "paragraph": "paragraph"
+	"heading": "heading"
+	"paragraph": "paragraph"
 }
 ```
 
@@ -97,14 +97,14 @@ If you want to use the heading component in your block, follow this example:
 
 ```json
 "attributes": {
-  "content": {
-    "type": "string"
-    "default": "test",
-  }
+	"content": {
+		"type": "string"
+		"default": "test",
+	}
 },
 "components": {
-  "heading": "heading"
-  "intro": "heading"
+	"heading": "heading"
+	"intro": "heading"
 }
 ```
 
@@ -142,17 +142,17 @@ If you have a heading component with these attributes:
 `src/Blocks/components/heading/manifest.json`
 ```json
 "attributes": {
-  "headingContent": {
-    "type": "string"
-  },
-  "headingLevel": {
-    "type": "int",
-    "default": 2
-  },
-  "headingSize": {
-    "type": "string",
-    "default": "default"
-  },
+	"headingContent": {
+		"type": "string"
+	},
+	"headingLevel": {
+		"type": "int",
+		"default": 2
+	},
+	"headingSize": {
+		"type": "string",
+		"default": "default"
+	},
 }
 ```
 
@@ -162,17 +162,17 @@ and you want to override one or multiple default attributes from the heading com
 
 ```json
 "attributes": {
-  "content": {
-    "type": "string"
-    "default": "test",
-  },
-  "headingSize": {
-    "type": "string",
-    "default": "small"
-  }
+	"content": {
+		"type": "string"
+		"default": "test",
+	},
+	"headingSize": {
+		"type": "string",
+		"default": "small"
+	}
 },
 "components": {
-  "heading": "heading"
+	"heading": "heading"
 }
 ```
 
@@ -200,17 +200,17 @@ If you have a heading component with these attributes:
 `src/Blocks/components/heading/manifest.json`
 ```json
 "attributes": {
-  "headingContent": {
-    "type": "string"
-  },
-  "headingLevel": {
-    "type": "int",
-    "default": 2
-  },
-  "headingSize": {
-    "type": "string",
-    "default": "default"
-  },
+	"headingContent": {
+		"type": "string"
+	},
+	"headingLevel": {
+		"type": "int",
+		"default": 2
+	},
+	"headingSize": {
+		"type": "string",
+		"default": "default"
+	},
 }
 ```
 
@@ -219,13 +219,13 @@ and you have a card component:
 `src/Blocks/components/card/manifest.json`
 ```json
 "attributes": {
-  "superCard": {
-    "type": "boolean"
-    "default": true,
-  },
+	"superCard": {
+		"type": "boolean"
+		"default": true,
+	},
 },
 "components": {
-  "heading": "heading"
+	"heading": "heading"
 }
 ```
 
@@ -234,13 +234,13 @@ and you have a cards grid block:
 `src/Blocks/custom/cards-grid/manifest.json`
 ```json
 "attributes": {
-  "content": {
-    "type": "string"
-    "default": "test",
-  },
+	"content": {
+		"type": "string"
+		"default": "test",
+	},
 },
 "components": {
-  "card": "card"
+	"card": "card"
 }
 ```
 
@@ -287,3 +287,58 @@ This attribute is available in the options component only. You can't set it up v
 ### How do my example attributes behave when I use components in blocks?
 
 Exactly the same way as attributes.
+
+### I have a component name that has multiple strings in a name, will this work?
+
+By multiple strings in a name we mean that component name has multiple words, for example, `jumbotron-cta`. The problem here is that we define components with dash and attributes with camelcase. That's why you have to fix this. We have provided you with a helper. The helper makes camelcase on all your component-name strings.
+
+**Example:**
+
+You have a component named `jumbotron-cta` and you want to use it in your block. As described on this page, you will create a `components` key in your `manifest.json` and use `jumbotron-cta`.
+
+```json
+{
+	"components": {
+		"jumbotron-cta": "jumbotron-cta"
+	}
+}
+```
+
+But in all places in your component where you use `setAttributes` you must use [camelize helper](https://github.com/infinum/eightshift-frontend-libs/blob/develop/scripts/helpers/camelize.js)
+
+```js
+
+import { camelize } from '@eightshift/frontend-libs/scripts/helpers';
+
+<ToggleControl
+	 label={'Custom Label'}
+	 onChange={(value) => setAttributes({ [`${camelize(componentName)}Use`]: value })}
+/>
+```
+
+### I have a component that I want to use manually
+
+We created this cool way of importing attributes and loading components in your blocks or other components. However, that doesn't mean that you can't have instances where you have to load components manually. In that case, you have to provide all the attributes that you want to use manually. The attributes that you didn't provide will not be magically set from the manifest, but you can make your life easier and map it like this.
+
+For example, you have a `card` component that you will use in the `featured-posts` block.
+
+**featured-posts.php**
+```php
+// Fetch and parse manifest using custom helper.
+$cardManifest = Components::getManifest(dirname(__DIR__, 2) . '/components/card');
+
+echo wp_kses_post(
+	Components::render(
+		'card',
+		[
+			'headingColor' => $cardManifest['attributes']['headingColor']['default'],
+			'headingSize' => $cardManifest['attributes']['headingSize']['default'],
+			'headingWeight' => $cardManifest['attributes']['headingWeight']['default'],
+			'headingContent' => __('Custom content for heading', 'textdomain'),
+
+			'paragraphContent' => __('Custom content for paragraph', 'textdomain'),
+			'paragraphSize' => $cardManifest['attributes']['paragraphSize']['default'],
+		]
+	)
+);
+```

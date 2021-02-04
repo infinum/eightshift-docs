@@ -24,10 +24,10 @@ Let's brag a little about what you can expect from this setup:
 
 To use it, you need to understand what makes boilerplate tick. In theory, this is simple; you have two parts.
 
-### 1. Eightshift libs - [docs](eightshift-libs.md) | [github](https://github.com/infinum/eightshift-libs)
+### 1. Eightshift Libs - [docs](eightshift-libs.md) | [github](https://github.com/infinum/eightshift-libs)
 
 This is where all the back-end (PHP) code is kept. Think abstract classes, interfaces, dependency injection, namespacing, asset enqueuing, filter & actions.
 
-### 2. Eightshift frontend libs - [docs](eightshift-frontend-libs.md) | [github](https://github.com/infinum/eightshift-frontend-libs)
+### 2. Eightshift Frontend Libs - [docs](eightshift-frontend-libs.md) | [github](https://github.com/infinum/eightshift-frontend-libs)
 
 This is where all the front-end (JS, SCSS, assets) code is kept.

@@ -10,8 +10,8 @@ title: Integrating Boilerplate in existing project
 99% of the Boilerplate functionality is contained in these 2 libs. In order to have your own project work like a Boilerplate, you need to implement both of these libraries in your project.
 
 Here's what you need to do:
-1. [Install eightshift libs](installation-libs)
-2. [Install eightshift frontend libs](installation-frontend-libs)
+1. [Install Eightshift Libs](installation-libs)
+2. [Install Eightshift Frontend Libs](installation-frontend-libs)
 
 Implementing of this library inside your existing project is not that trivial.
 
@@ -23,7 +23,7 @@ That is why we created a boilerplate repository that incorporates this library. 
 
 **Implementation process:**
 
-1. Install the frontend library and backend library
+1. Install the front-end library and backend library
 
     ```shell script
     npm install @eightshift/frontend-libs

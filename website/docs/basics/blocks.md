@@ -24,7 +24,7 @@ WordPress Core Editor team has provided us with two different kinds of blocks:
 
 These are the blocks that you can see in the core. Almost every block from WordPress comes this way. With regular blocks, you have the same content on the front end as you do in the editor. This was accomplished by providing the same layout in the save callback as in the edit callback.
 
-The drawback of building blocks this way is that you must also provide the HTML markup that you will use on the frontend, inside the save callback. That method saves everything to the database, and you can't just change the HTML markup without some transformations or deprecation methods. If you change the markup while working on it, you'll get an error in the editor screen, and you'll have to add the content again.
+The drawback of building blocks this way is that you must also provide the HTML markup that you will use on the front-end, inside the save callback. That method saves everything to the database, and you can't just change the HTML markup without some transformations or deprecation methods. If you change the markup while working on it, you'll get an error in the editor screen, and you'll have to add the content again.
 
 We don't like this approach because of how it stores the HTML content in the database. Lucky for us, WordPress has provided a different kind of blocks for this matter. They are called dynamic blocks.
 
@@ -32,7 +32,7 @@ We don't like this approach because of how it stores the HTML content in the dat
 
 As you already saw in the previous chapter, the main difference between regular and dynamic blocks is storing content in the database. For many dynamic blocks, the save callback function should be returned as null, which tells the editor to save only the block attributes to the database. These attributes are then passed into the server-side rendering callback, so you can decide how to display the block on the front end of your site.
 
-This means that you write code using React and JSX in the editor, and you must provide the same code in the PHP for the frontend. Yes, it is a lot of work because you must switch technologies and do the same thing multiple times, but we tried to make this process as simple as possible.
+This means that you write code using React and JSX in the editor, and you must provide the same code in the PHP for the front-end. Yes, it is a lot of work because you must switch technologies and do the same thing multiple times, but we tried to make this process as simple as possible.
 
 Follow along and see what we prepared. From now on, we'll be talking only about dynamic blocks in this documentation.
 

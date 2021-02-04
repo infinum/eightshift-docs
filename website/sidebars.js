@@ -44,6 +44,7 @@ module.exports = {
           "basics/writing-styles",
           "basics/fonts",
           "basics/browser-sync",
+          "basics/dynamic-import",
         ]
       },
       {
@@ -68,6 +69,7 @@ module.exports = {
           "basics/blocks-transforms",
           "basics/blocks-hooks",
           "basics/blocks-special-use-cases",
+          "basics/blocks-reusable",
           "basics/blocks-storybook",
         ]
       },

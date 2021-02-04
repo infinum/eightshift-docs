@@ -61,7 +61,7 @@ add_action( 'enqueue_block_editor_assets', [ $this, 'enqueue_block_editor_script
 // Editor only style.
 add_action( 'enqueue_block_editor_assets', [ $this, 'enqueue_block_editor_style' ], 50 );
 
-// Editor and frontend style.
+// Editor and front-end style.
 add_action( 'enqueue_block_assets', [ $this, 'enqueue_block_style' ], 50 );
 
 // Frontend only script.

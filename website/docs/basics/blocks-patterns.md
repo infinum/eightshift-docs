@@ -23,3 +23,32 @@ This means that the only differences between our variations and block patterns a
 - Patterns appear in the editor inside the special tab for patterns.
 
 *We will soon provide WP-CLI command to automaticity create block patterns, boilerplate class, for you to use.*
+
+### Remove all core patterns
+
+If you don't use core blocks, core patterns won't work. Don't confuse your users and remove them (but feel free to add new patterns based on your own custom blocks!)
+
+To remove all core patterns add this code to you `src/Blocks/Blocks.php` class.
+
+Filter goes in the register method:
+```php
+// Remove block patterns.
+add_filter('block_editor_settings', [$this, 'removeCorePatterns']);
+```
+
+Callback method:
+```php
+/**
+	* Remove core block patterns
+	*
+	* @param array $settings Array of block editor settings to filter out.
+	*
+	* @return array Filtered array.
+	*/
+public function removeCorePatterns(array $settings): array
+{
+	$settings['__experimentalBlockPatterns'] = [];
+
+	return $settings;
+}
+```

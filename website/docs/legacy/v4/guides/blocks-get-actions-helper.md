@@ -58,7 +58,7 @@ const actions = {
 
 ## Media Attribute
 
-If the attribute needs to save multiple values at the same time for media (images, video, etc.). `ID` value is used on the frontend using the PHP methods to fetch images, and `URL` is used in the editor to provide image preview.
+If the attribute needs to save multiple values at the same time for media (images, video, etc.). `ID` value is used on the front-end using the PHP methods to fetch images, and `URL` is used in the editor to provide image preview.
 
 `manifest.json`
 

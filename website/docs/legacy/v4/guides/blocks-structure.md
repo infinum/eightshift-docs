@@ -28,7 +28,7 @@ In the case you need to override the default way styles and scripts are enqueued
 This folder contains all the Block Editor blocks defined in your project. Each block is located in the `custom` folder, and every component is located in the `components` folder. Block Editor blocks are comprised of one or more smaller components.
 
 ### assets
-This folder contains all the additional javascript, images, fonts and style functionality for the blocks that you only need to use on the frontend and in the editor (admin).
+This folder contains all the additional javascript, images, fonts and style functionality for the blocks that you only need to use on the front-end and in the editor (admin).
 
 ### components
 This folder contains all the components that are shared across blocks. Components are not registered as blocks.

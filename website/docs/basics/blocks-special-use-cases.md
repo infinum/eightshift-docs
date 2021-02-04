@@ -14,7 +14,7 @@ These are some of the examples we would like to share with you. We will list all
 
 **Usage:**
 
-- Change attributes in the block editor and on the frontend.
+- Change attributes in the block editor and on the front-end.
 - Set attributes in the database.
 
 **Use Case:**
@@ -86,3 +86,87 @@ With WordPress' block editor hooks, we can fix this by not adding the selector t
 **Implementation**
 
 Here you can see our example of this hook used in the [column block](https://github.com/infinum/eightshift-frontend-libs/blob/develop/blocks/init/src/Blocks/custom/column/column-hooks.js).
+
+## How to only use my custom blocks
+
+You can remove all core blocks and any other blocks provided by third-party plugins by adding this filter to your `src/Blocks/Blocks.php` class.
+
+Filter goes in the register method:
+```php
+// Limits the usage of only custom project blocks.
+add_filter('allowed_block_types', [ $this, 'getAllBlocksList' ], 10, 2);
+```
+
+The callback method is set in the parent `AbstractBlocks` class.
+
+## I want to use my custom blocks but add some core or third party plugins blocks
+
+You create a new callback method for the `allowed_block_types` filter. There you can allow all your custom blocks + any other 3rd party / core block you want.
+
+Filter goes in the register method:
+```php
+// Limits the usage of only custom project blocks.
+add_filter('allowed_block_types', [ $this, 'allowedBlocks' ], 10, 2);
+```
+
+Custom callback method:
+```php
+/**
+  * Filter which blocks are displayed in the block editor.
+  *
+  * @param array|bool $allowedBlockTypes Array of block type slugs, or boolean to enable/disable all.
+  * @param object     $post The post resource data.
+  *
+  * @return array
+  */
+public function allowedBlocks($allowedBlockTypes, object $post): array
+{
+  return array_merge(
+    $this->getAllBlocksList($allowedBlockTypes, $post),
+    [
+      'core/paragraph',
+    ]
+  );
+}
+```
+
+## I want to enable blocks only on specific custom post type
+
+You create a new callback method for the `allowed_block_types` filter.
+
+Filter goes in the register method:
+```php
+// Limits the usage of only custom project blocks.
+add_filter('allowed_block_types', [ $this, 'allowedBlockTypes' ], 10, 2);
+```
+
+Custom callback method:
+```php
+/**
+  * Filter which blocks are allowed in what post type.
+  *
+  * @param array|bool $allowedBlockTypes Array of block type slugs, or boolean to enable/disable all.
+  * @param object     $post The post resource data.
+  *
+  * @return array
+  */
+public function allowedBlockTypes($allowedBlockTypes, object $post): array
+{
+  $output = [];
+  $settings = $this->getSettings();
+  $namespace = $settings['namespace'];
+
+  switch ($post->post_type) { // phpcs:ignore Squiz.NamingConventions.ValidVariableName.NotCamelCaps
+    case 'faq':
+      $output = [
+        "{$namespace}/paragraph",
+      ];
+      break;
+    default:
+      $output = $this->getAllBlocksList($allowedBlockTypes, $post);
+      break;
+  }
+
+  return $output;
+}
+```
