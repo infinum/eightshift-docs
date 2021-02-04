@@ -88,11 +88,11 @@ This key gives you the ability to use component attributes in your block without
 
 ## The power of manifest.json
 
-As described before we use `manifest.json` to share stuff across multiple languages so you can easily see its power.
+As described before we use `manifest.json` to share stuff across PHP / JS / SCSS so you can easily see its power.
 
-For example, you can use `manifest.json` to store SVG files that you will use on the frontend(PHP) and backend(JS) files. Or you can store block options so it is easier to find and add items.
+For example, you can use `manifest.json` to store SVG files that you will use on the frontend (PHP) and in the editor / backend (JS) files. Or you can store block options so it is easier to find and add items.
 
-Let's see how would you share SVG icon across multiple languages:
+Let's see how you would share SVG icon across multiple languages:
 
 **manifest.json**
 
@@ -120,6 +120,6 @@ import manifest from 'manifest.json';
 <span dangerouslySetInnerHTML={{ __html: manifest.icon }}></span>
 ```
 
-As you see you can share everything like this and you can find multiple examples here:
+As you can see, you can share anything this way. Here are some additional examples:
 * [Social Links](https://github.com/infinum/eightshift-frontend-libs/blob/develop/blocks/init/src/Blocks/components/social-links/manifest.json)
 * [Button](https://github.com/infinum/eightshift-frontend-libs/blob/develop/blocks/init/src/Blocks/components/button/manifest.json)

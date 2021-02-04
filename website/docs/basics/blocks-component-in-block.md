@@ -290,7 +290,7 @@ Exactly the same way as attributes.
 
 ### I have a component name that has multiple strings in a name, will this work?
 
-By multiple strings in a name we mean for example `jumbotron-cta` component name. The problem here is that we define components with dash and attributes by camelcase so you need to fix this. We have provided you with the helper to camelcase all your componentName strings.
+By multiple strings in a name we mean that component name has multiple words, for example, `jumbotron-cta`. The problem here is that we define components with dash and attributes with camelcase. That's why you have to fix this. We have provided you with a helper. The helper makes camelcase on all your component-name strings.
 
 **Example:**
 
@@ -318,7 +318,7 @@ import { camelize } from '@eightshift/frontend-libs/scripts/helpers';
 
 ### I have a component that I want to use manually
 
-We created this cool way of importing attributes and loading components in your blocks or other components, but that doesn't mean that you can't have instances where you will have to load components manually. In that case, you must provide all attributes that you will like to use manually. Attributes that you didn't provide will not be magically set from the manifest but you can make your life easier and map it like this.
+We created this cool way of importing attributes and loading components in your blocks or other components. However, that doesn't mean that you can't have instances where you have to load components manually. In that case, you have to provide all the attributes that you want to use manually. The attributes that you didn't provide will not be magically set from the manifest, but you can make your life easier and map it like this.
 
 For example, you have a `card` component that you will use in the `featured-posts` block.
 

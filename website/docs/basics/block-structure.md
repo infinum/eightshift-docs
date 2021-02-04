@@ -34,7 +34,7 @@ We suggest you always use the full name and never abbreviate the block name. If 
 
 ### assets
 
-In this folder, you'll define all the custom JavaScript functionality for your block that will only be used on the front end of the application. You must provide the `index.js` file in this folder, and the rest is up to you. We recommend using [JavaScript dynamic imports](dynamic-import) for all your frontend scripts. This ensures that the JavaScript is only loaded in the application when it is used and not before. By using dynamic import, you optimize your application and make it load faster.
+In this folder, you'll define all the custom JavaScript functionality for your block that will only be used on the front end of the application. You must provide the `index.js` file in this folder, as a starting point, and the rest is up to you. We recommend using [JavaScript dynamic imports](dynamic-import) for all your frontend scripts. This ensures that the JavaScript is only loaded in the application when it is used and not before. By using dynamic import, you optimize your application and make it load faster.
 
 ### components
 Components folder holds three files `heading-options.js`, `heading-editor.js`, and `heading-toolbars.js`. Each of these files represents a part of the Block Editor block that is used in the editor. We have separated options, editor, and toolbar into separate components for readability and reusing components in different projects.

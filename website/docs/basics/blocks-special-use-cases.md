@@ -87,7 +87,7 @@ With WordPress Block Editor hooks, we can fix this by not adding the selector to
 
 Here you can see our example of this hook used in the [column block](https://github.com/infinum/eightshift-frontend-libs/blob/develop/blocks/init/src/Blocks/custom/column/column-hooks.js).
 
-## Only use my custom blocks
+## How to only use my custom blocks
 
 You can remove all core blocks and any other blocks provided by third-party plugins by adding this filter to your `src/Blocks/Blocks.php` class.
 
@@ -101,7 +101,7 @@ The callback method is set in the parent `AbstractBlocks` class.
 
 ## I want to use my custom blocks but add some core or third party plugins blocks
 
-You create a new callback method for the `allowed_block_types` filter.
+You create a new callback method for the `allowed_block_types` filter. There you can allow all your custom blocks + any other 3rd party / core block you want.
 
 Filter goes in the register method:
 ```php
@@ -112,7 +112,7 @@ add_filter('allowed_block_types', [ $this, 'allowedBlocks' ], 10, 2);
 Custom callback method:
 ```php
 /**
-  * Filter what blocks are displayed in the block editor.
+  * Filter which blocks are displayed in the block editor.
   *
   * @param array|bool $allowedBlockTypes Array of block type slugs, or boolean to enable/disable all.
   * @param object     $post The post resource data.
@@ -143,7 +143,7 @@ add_filter('allowed_block_types', [ $this, 'allowedBlockTypes' ], 10, 2);
 Custom callback method:
 ```php
 /**
-  * Filter what blocks are allowed in what post type.
+  * Filter which blocks are allowed in what post type.
   *
   * @param array|bool $allowedBlockTypes Array of block type slugs, or boolean to enable/disable all.
   * @param object     $post The post resource data.

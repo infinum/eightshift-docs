@@ -35,7 +35,7 @@ Using the IP address, you can open it on any device (mobile phone or a tablet) t
 
 ## Using SSL for local development
 
-By default BrowserSync is not working with the https urls but if you are like us and you use HTTPS in your local enviroment you can simply provide additional key to the Webpack config to make it work.
+By default BrowserSync does not work with https urls but if you use HTTPS in your local environment you can simply provide additional key to the Webpack config to make it work.
 
 ```js
 module.exports = (env, argv) => {

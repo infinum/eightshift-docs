@@ -201,26 +201,26 @@ So don't remove or change this 😅.
 
 In a nutshell, there is no difference between blocks. The WordPress core block is a block, but we like to make a distinction between what is simple and what is a compound block.
 
-**Simple block** is a block that is used just as is and provides a small functionality like heading, paragraph, button, etc.
+**Simple block** is a block that is used just as is and provides a small isolated functionality. For example: heading, paragraph, button, etc.
 
-**Compound block** is a block that builds from multiple components and provides a bigger functionality.
+**Compound block** is a block built from multiple components. For example: card, featured posts, etc
 
 ### Naming is hard
 
 *There are only two hard things in Computer Science: cache invalidation and naming things. - Phil Karlton*
 
-Yes, naming is hard, and no matter how long is your development experience you will always struggle with names for your components, block, files, variables, functions, etc.
+Yes, naming is hard, and no matter how long your development experience is you will always struggle with names for your components, block, files, variables, functions, etc.
 
 Here are some of our recommendations to ease your pain:
-* You should never name your component based on its usage. For example, you have a component card for custom post-type books, you should never call this component `card-book` bat rather use a more generic name like `card-product`.
-* Make your names as generic as possible for better reusability.
+* Always try to name your block based on **what they are**, rather than **what they will be used for**. For example, if you have a component card for custom post-type `books`, you should never call this component `card-book`. Instead, use a more generic name like `card-product`.
+* Make your names as generic as possible for better reusability, but specific enough to fully understand what the block/component is used for.
 * Always think about the future. How can this feature be used in some other way?
-* When naming your attributes ask yourself: "is this attribute going to be used in any other way?". For example, you have an attribute for adding font-weight: bold to your text. You can create an attribute called font-weight and set it as a `boolean` type and that will be ok if you have only one font-weight. A better way would be to put it as a string and provide and SelectControl component if there is any possibility that in the future you will have additional font-weight.
-* Name booleans positively. Example: `isValid`, `isLoading`, `isComplete`.
+* When naming your attributes ask yourself: "is this attribute going to be used in any other way?". For example, you have an attribute for adding font-weight: bold to your text. You can create an attribute called font-weight and set it as a `boolean` type and that will be ok if you have only one font-weight. A better way would be to put it as a string and provide a `SelectControl` component if there is any possibility that in the future you will have additional font-weight.
+* Name booleans positively as a question. Example: `isValid`, `isLoading`, `isComplete`.
 * Don’t hesitate to use longer names: We use short words even if it doesn’t provide full insight about the code which is a bad thing to do.
 * Use singular names.
 * The variables or functions should be named by their work: Name of variables/functions should always try to express their meaning without diving into the code base try to pack meaningful information inside the name.
 * Naming should be simple enough to be understood by everyone: Using complex words to describe a simple thing only creates hassle while reading the code. Also, use simple English.
-* Prepare yourself to make a mindset that you won’t be writing this project in the future and think about the next person. Your naming will provide an insight into the process and project.
+* You might not be the only person working on your particular project in the future. Think about the next person. Your naming will provide an insight into the process and project.
 * Just try to avoid generic names. Use concrete / specific names, longer names if you need to, attach important details (pack much information) and mainly focus on code readability.
 * **BE CONSISTENT**.

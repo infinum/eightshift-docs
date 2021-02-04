@@ -17,7 +17,7 @@ By writing all our JavaScript code like this we can:
 
 ## How does it work?
 
-In a nutshell, you load all your code using JavaScript promises and Webpack splits all these promises into separate file chinks. Once the condition to resolve the promise is set (generally we check if the selector is present in the DOM), Webpack automatically injects your chink in the DOM and loads it up. This is why you will see in your public folder a bunch of smaller files called (0.js, 1.js, 2.js, etc).
+In a nutshell, you load all your code using JavaScript promises and Webpack splits all these promises into separate file chinks. Once the condition to resolve the promise is set (generally we check if the selector is present in the DOM), Webpack automatically injects your chunk in the DOM and loads it up. This is why you will see in your public folder a bunch of smaller files called (`0.js`, `1.js`, `2.js`, etc).
 
 You don't need to think about anything here because Webpack does it for you.
 
@@ -32,7 +32,7 @@ For example, let's make a carousel. We like to write all our JavaScript code in 
 
 ### index.js
 
-This is a version if you can have multiple instances of this feature on one page. Generally, if you are creating a feature for your block/component you will use this version.
+This is a version where you have multiple instances of this feature on one page. If you are creating a feature for your block/component you will use the following example.
 
 ```js
 import domReady from '@wordpress/dom-ready';
@@ -68,7 +68,7 @@ domReady(() => {
 });
 ```
 
-If you are sure you will have only one instance of this feature on one-page use this code in your index.js file.
+If you are sure you will have only one instance of this feature on one-page use the following code in your `index.js` file.
 
 ```js
 import domReady from '@wordpress/dom-ready';
@@ -80,7 +80,7 @@ domReady(() => {
   const selector = '.js-block-carousel';
   const element = document.querySelector(selector);
 
-  // This is the important part because if this condition is true this promise will resolve and your chink will be loaded in the DOM.
+  // This is the important part. Because of it, your code will only be imported when there's an element on the page that uses it.
   if (element) {
 
     // Normally load and resolve a promise on file import.
@@ -117,12 +117,12 @@ export class CarouselSlider {
     new Swiper(
       this.element,
       {
-        ...
+        // ...
         navigation: {
           nextEl: this.nextElement,
           prevEl: this.prevElement,
         },
-        ...
+        // ...
       }
     );
   }
