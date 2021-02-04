@@ -11,13 +11,13 @@ sidebar_label: Browser Sync
 
 Besides that, you can test your site on various devices on the same network.
 
-If comes by default with the boilerplate, and when you run:
+If comes with the boilerplate by default. When you run:
 
 ```bash
 npm start
 ```
 
-it will proxy the page you've specified in the `projectUrl` to your local server
+it will proxy the page you've specified in the `projectUrl` to your local server.
 
 ```bash
 [Browsersync] Proxying: https://local-url.test
@@ -31,13 +31,13 @@ it will proxy the page you've specified in the `projectUrl` to your local server
  --------------------------------------
 ```
 
-Using the IP address, you can open it on any device (mobile phone or a tablet) that is connected to the same network, and you'll see how your site looks like on them.
+Using the IP address, you can open it on any device (mobile phone or tablet) that is connected to the same network, and see how your site looks on that device.
 
 ## Override default functionality
 
 If you need to override the default settings (because you are using HTTPS or change some default configuration), you'll need to disable the default config and add your own.
 
-For example, if you want to use `HTTPS` instead of `HTTP` in your local development, you'd put in your `webpack.config.js`:
+For example, if you wanted to use `HTTPS` instead of `HTTP` in your local development, you'd put the following in your `webpack.config.js`:
 
 ```js
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');

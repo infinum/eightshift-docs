@@ -6,11 +6,11 @@ sidebar_label: Wrapper
 
 [![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/develop/blocks/init/src/blocks/)
 
-The wrapper is our best and most powerful feature. In a nutshell, the wrapper is nothing more than a high order component (parent component). 
+The wrapper is our best and most powerful feature. In a nutshell, the wrapper is nothing more than a high order component (parent component).
 
 When setting up block registration, we made it so that every block view (PHP part) passes through the wrapper component before it is registered. This gives us the ability to set multiple shared attributes in one component.
 
-The wrapper is designed to be the ultimate top-level component that controls how your block behaves in the website layout. The wrapper is a sort of a 'section' in traditional builders. By default, you can control a whole lot of stuff, but there is an ability to add your custom attributes and fine-tune wrapper to your project needs. Here are some of the features:
+The wrapper is designed to be the ultimate top-level component that controls how your block behaves in the website layout. The wrapper is a sort of a 'section' in traditional builders. By default, you can control a whole lot of stuff, but there is an ability to add your custom attributes and fine-tune the wrapper to your project's needs. Here are some of the features:
 
 > Some attributes are made responsive using the `Responsive` component, and you can control all attributes depending on the media breakpoints.
 
@@ -20,15 +20,15 @@ This attribute controls the usage of the wrapper component. It behaves the same 
 
 ### wrapperUseShowControl
 
-This attribute controls if you are going to see options in the block editor for block use. It behaves the same way as described in [this chapter](blocks-component-in-block#i-dont-want-my-editor-to-be-able-to-change-components-options-in-my-block).
+This attribute controls whether you will see the options for block use in the block editor. It behaves the same way as described in [this chapter](blocks-component-in-block#i-dont-want-my-editor-to-be-able-to-change-components-options-in-my-block).
 
 ### wrapperUseSimple
 
-We wrapped some of the options in a specific condition, and we call it `wrapperUseSimple`. In general, this attribute is set to `true` when you only want simplified options on your block. Natively, it is used inside all of the inner blocks in the column block. Because we don't need wrappers inside wrappers inside wrappers (and so on). It's a good rule of thumb to use a simple wrapper in all of the inner blocks.
+We wrapped some of the options in a specific condition and we call it `wrapperUseSimple`. In general, this attribute is set to `true` when you only want the simplified options on your block. Natively, it is used inside all of the inner blocks in the column block because we don't need wrappers inside wrappers inside wrappers (and so on). It's a good rule of thumb to use a simple wrapper in all of the inner blocks.
 
 ### wrapperUseSimpleShowControl
 
-This attribute controls if you are going to see options in the block editor to use the simple option. It behaves the same way as described in [this chapter](blocks-component-in-block#i-dont-want-my-editor-to-be-able-to-change-components-options-in-my-block).
+This attribute controls whether you are going to see options in the block editor to use the simple option. It behaves the same way as described in [this chapter](blocks-component-in-block#i-dont-want-my-editor-to-be-able-to-change-components-options-in-my-block).
 
 ### wrapperDisable
 
@@ -88,10 +88,10 @@ This attribute adds a divider on the top of the section. The spacing of the divi
 
 ### wrapperDividerBottom (Responsive)
 
-This attribute adds a divider on the bottom of the section. The spacing of the divider from the content is set by `wrapperSpacingBottomIn` attributes.
+This attribute adds a divider at the bottom of the section. The spacing of the divider from the content is set by `wrapperSpacingBottomIn` attributes.
 
 ### wrapperHide (Responsive)
 
-Controls if the section will be showed on a specific breakpoint.
+Controls whether the section will be shown on a specific breakpoint.
 
 > **Important note**: all responsive options are made in `desktop` first way for the block editor because every editor wants to style these firsts. All of the responsive attributes are applied from the large to the mobile breakpoint. So if you set the tablet values, it will be applied to the tablet and mobile breakpoints.

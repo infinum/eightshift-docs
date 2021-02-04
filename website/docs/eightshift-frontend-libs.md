@@ -5,28 +5,28 @@ title: Eightshift Frontend Libs
 
 [![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs)
 
-This library is meant to bring you the modern front-end development tools to the [Eightshift Boilerplate](https://github.com/infinum/eightshift-boilerplate) or [Eightshift Boilerplate Plugin](https://github.com/infinum/eightshift-boilerplate-plugin), but you can use it on any WordPress project.
+This library is meant to bring the modern front-end development tools to the [Eightshift Boilerplate](https://github.com/infinum/eightshift-boilerplate) or [Eightshift Boilerplate Plugin](https://github.com/infinum/eightshift-boilerplate-plugin), but you can use it on any WordPress project.
 
 ## Prerequisites
 
-The knowledge of the core editor components and React.js is recommended, since this library is focused on working with the new Block editor and contains custom blocks. If you want to create your custom blocks, that knowledge will come in handy.
+The knowledge of the core editor components and React.js is recommended, since this library is focused on working with the new block editor and contains custom blocks. If you want to create your custom blocks, that knowledge will come in handy.
 
-The library can be used for pure Webpack/js/scss functionality, but if you want to use our blocks, [Eightshift Libs](https://github.com/infinum/eightshift-libs/) must be used in tandem. Because they handle block registration, etc.
+The library can be used for pure Webpack/js/scss functionality, but if you want to use our blocks, [Eightshift Libs](https://github.com/infinum/eightshift-libs/) must be used in tandem because they handle block registration, etc.
 
-### The library contains
+### The library contains:
 
-- All js packages required for the Webpack build.
-- ESLint ruleset.
-- StyleLint ruleset.
-- Babel ruleset.
-- A collection of useful front-end utility modules.
-- Complete storybook of over 30+ useful blocks and components..
-- Block Editor Block example.
-- Block Editor Blocks initial setup for [Eightshift Boilerplate](https://github.com/infinum/eightshift-boilerplate).
-- Some cool custom components for Block Editor.
-- Complete Webpack build for [Eightshift Boilerplate](https://github.com/infinum/eightshift-boilerplate).
-- Helpers for creating dynamic Block Editor blocks.
-- ...
+- all js packages required for the Webpack build;
+- ESLint ruleset;
+- StyleLint ruleset;
+- Babel ruleset;
+- a collection of useful front-end utility modules;
+- the complete storybook of over 30+ useful blocks and components;
+- block editor block example;
+- block editor blocks initial setup for the [Eightshift Boilerplate](https://github.com/infinum/eightshift-boilerplate);
+- some cool custom components for block editor;
+- the complete Webpack build for [Eightshift Boilerplate](https://github.com/infinum/eightshift-boilerplate);
+- helpers for creating dynamic block editor blocks;
+- and more.
 
 ## How to integrate into an existing project
 

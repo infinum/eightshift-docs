@@ -1,7 +1,7 @@
 ---
 id: blocks-component-in-block
-title: Component In A Block
-sidebar_label: Component In A Block
+title: Component in a Block
+sidebar_label: Component in a Block
 ---
 
 [![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/develop/blocks/init/src/blocks/)
@@ -13,7 +13,7 @@ Try to think of your development process in this way:
 - Each component must be standalone and ideally not depend on any other components (sometimes this is not possible but keep this to a minimum).
 - Components must not be aware of the layout they are used in.
 - No global styles. Instead, all styles should be contained to the block/component. For more details, check [this link](writing-styles).
-- You should define all heading variations in a `heading` component. Then use this component everywhere you have a heading instead of writing a new implementation. In practice: don't do `<h2>$heading</h2>` but render the `heading` component instead using the helpers defined in the [helpers section](). (Heading is an example, but this implies to every component).
+- You should define all heading variations in a `heading` component. You can then use this component everywhere you have a heading instead of writing a new implementation. In practice: don't do `<h2>$heading</h2>` but render the `heading` component instead using the helpers defined in the [helpers section](). The heading is just an example, but this applies to every component.
 - You can have multiple heading components in one block.
 
 ### I want to use one heading component in my block.
@@ -53,7 +53,7 @@ and you want to use the heading component in the Jumbotron block, you can use it
 }
 ```
 
-in your block attributes object, you will now have these keys:
+In your block attributes object, you will now have these keys:
 
 ```json
 
@@ -66,7 +66,7 @@ in your block attributes object, you will now have these keys:
 "content": "test",
 ```
 
-As you see in the example, you can merge component attributes in your block attributes. Keep in mind that with the provided example, the components' attributes will be injected in the block attributes with the same name as they are defined in the components manifest.
+As you can see in the example, you can merge component attributes in your block attributes. Keep in mind that, in the provided example, the components' attributes will be injected in the block attributes with the same name as defined in the components manifest.
 
 ### I want to use one heading and paragraph component in my block.
 
@@ -108,7 +108,7 @@ If you want to use the heading component in your block, follow this example:
 }
 ```
 
-in your block attributes object, you will now have these keys:
+In your block attributes object, you will now have these keys:
 
 ```json
 
@@ -130,9 +130,9 @@ in your block attributes object, you will now have these keys:
 
 We build all our attributes by merging attributes objects in this order:
 
-* global attributes (global settings).
-* wrapper attributes.
-* component attributes.
+* global attributes (global settings);
+* wrapper attributes;
+* component attributes; and
 * block attributes.
 
 By following the basic principle of merging objects, if you have two keys with the same name, the last one will always override the previous. Now that you know how attributes are built, you can follow this example for your answer.
@@ -176,7 +176,7 @@ and you want to override one or multiple default attributes from the heading com
 }
 ```
 
-in your block attributes object, you will now have these keys:
+In your block attributes object, you will now have these keys:
 
 ```json
 
@@ -189,7 +189,7 @@ in your block attributes object, you will now have these keys:
 "content": "test",
 ```
 
-> Keep in mind that we handle the attributes data necessary to have multiple components in one block but you must provide the correct props inside your files to mock the custom attribute names. The best way to see how this is done is to check the [card block](https://github.com/infinum/eightshift-frontend-libs/tree/develop/blocks/init/src/Blocks/custom/card) for example.
+> Keep in mind that we handle the attributes data necessary to have multiple components in one block but you must provide the correct props inside your files to mock the custom attribute names. The best way to see how this is done is to check the [card block](https://github.com/infinum/eightshift-frontend-libs/tree/develop/blocks/init/src/Blocks/custom/card).
 
 ### I want to use a component that uses more components (componentCeption).
 
@@ -254,13 +254,13 @@ in your block attributes object, you will now have these keys:
 "headingSize": "default",
 
 // Attributes from the card component.
-"superCard": true, 
+"superCard": true,
 
 // Attributes from the block.
 "content": "test",
 ```
 
-As you see in the example, you have all attributes from the card and heading component inside your card's grid block.
+As you can see in the example, you have all the attributes from the card and heading component inside your card's grid block.
 
 ### I don't need all the component options in my block.
 
@@ -270,9 +270,9 @@ All our components come with a few common attributes that we recommend you also 
 "buttonUse": true,
 ```
 
-This attribute is available in all three components (editor, toolbar, options), and if set to **false**, it will remove this component from the DOM. This is useful if you want to hide all markup from the DOM.
+This attribute is available in all three components (editor, toolbar, options). If set to **false**, it will remove this component from the DOM. This is useful if you want to hide all markup from the DOM.
 
-For example, you have a Jumbotron block, and you have a heading that you want to populate if necessary. If you add content to the heading, everything looks good. But if you don't add it, in the block editor, you'll still see a placeholder for that heading. That affects how you perceive it, and a user may think this block will look like that on the frontend (with the placeholder text). So if you have a component that you will not populate on some block, switch the toggle to false, and you will hide it from the DOM. This is useful for content editors.
+For example, you have a Jumbotron block and a heading that you want to populate if necessary. If you add content to the heading, everything looks good. But if you don't add it, you'll still see a placeholder for that heading in the block editor. That affects how you perceive it, and a user may think this block will look like that on the front end (with the placeholder text). So if you have a component that you will not populate on some block, switch the toggle to false, and you will hide it from the DOM. This is useful for content editors.
 
 ### I don't want my editor to be able to change component options in my block.
 
@@ -282,7 +282,7 @@ Another attribute that you can use is `buttonShowControls`.
 "buttonShowControls": true,
 ```
 
-This attribute is available in the options component only. You can't set it via block editor, but only as a developer from code. You would use it if you want to use a heading component and set all the defaults, but you don't want your content editor to change how this heading looks. They can add the heading content from the editor section but not change any of the options. You can set this option from the manifest or passing it manually via props.
+This attribute is available in the options component only. You can't set it up via block editor, only from code. You would use it if you wanted to use a heading component and set all the defaults, without your content editor changing how the heading looks. It can add the heading content from the editor section without changing any of the options. You can set this option in the manifest or pass it manually via props.
 
 ### How do my example attributes behave when I use components in blocks?
 

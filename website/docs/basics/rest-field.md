@@ -16,7 +16,7 @@ The output will ask you to input the correct field name and object type (post, g
 
 ## Test it in action
 
-To test it in action you should check the `wp-json` path in your browser, something like this:
+To test it in action, you should check the `wp-json` path in your browser. You can do something like this:
 
 `domain.ext/wp-json/routeNamespace/routeVersion/routeName`
 

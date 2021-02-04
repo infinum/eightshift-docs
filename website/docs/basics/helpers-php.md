@@ -8,31 +8,31 @@ sidebar_label: PHP
 
 ## ensureString
 
-Makes sure the output is string. Useful for converting an array of components into a string.
-If you pass an associative array it will output strings with keys. Used for generating data-attributes from an array.
+Makes sure the output is a string. Useful for converting an array of components into a string.
+If you pass an associative array, it will output strings with keys. Used for generating data-attributes from an array.
 
 - @param array|string $variable Variable we need to convert into a string.
-- @throws ComponentException When $variable is not a string or array.
+- @throws ComponentException When $variable is not a string or an array.
 - @return string
 
 ## classnames
 
-Converts an array of classes into a string which can be echoed.
+Converts an array of classes into a string that can be echoed.
 
 - @param array $classes Array of classes.
 - @return string
 
 ## render
 
-Renders a components and (optionally) passes some attributes to it.
+Renders a component and (optionally) passes some attributes to it.
 
 Note about the `parentClass` attribute: If provided, the component will be wrapped with a parent BEM selector.
 
 For example, if `$attributes['parentClass'] === 'header'` and `$component === 'logo'` are set, the component will be wrapped with a `<div class="header__logo"></div>`.
 
 - @param string $component Component's name or full path (ending with .php).
-- @param array  $attributes Array of attributes that's implicitly passed to component.
-- @param string $parentPath If parent path is provides it will be appended to the file location. If not get_template_directory_uri() will be used as a default parent path.
+- @param array  $attributes Array of attributes that is implicitly passed to the component.
+- @param string $parentPath If parent path is provided, it will be appended to the file location. If not, get_template_directory_uri() will be used as a default parent path.
 - @throws \Exception When we're unable to find the component by $component.
 - @return string
 
@@ -75,7 +75,7 @@ Check if XML is valid. Used for validating SVG files.
 
 ## isJson
 
-Check if json is valid
+Check if json is valid.
 
 - @param string $string String to check.
 - @return bool

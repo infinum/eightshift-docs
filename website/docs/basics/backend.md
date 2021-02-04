@@ -8,7 +8,7 @@ sidebar_label: Backend
 
 In general, you can use anything as-is from the vendor library, or you can modify/add the functionality of existing classes by extending them in your project.
 
-If you are familiar with the extending classes (class inheritance) in PHP language then you can just skip this chapter. For the rest, here are awesome descriptions of how it works:
+If you are familiar with the extending classes (class inheritance) in PHP language, you can skip this chapter. For the rest, here are some awesome descriptions of how it works:
 
 * [Interfaces](https://www.php.net/manual/en/language.oop5.interfaces.php)
 * [Dependency Injection](https://en.wikipedia.org/wiki/Dependency_injection)

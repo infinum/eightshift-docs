@@ -6,7 +6,7 @@ sidebar_label: The Structure
 
 [![docs-source](https://img.shields.io/badge/source-eigthshift--libs-blue?style=for-the-badge&logo=php&labelColor=2a2a2a)](https://github.com/infinum/eightshift-libs)
 
-If you followed the chapters this far and set your first project with all classes from the `wp boilerplate setup_theme` command, you saw that you have an `src` folder in the root of your project.
+If you've followed the chapters this far and set your first project with all the classes from the `wp boilerplate setup_theme` command, you saw that you have an `src` folder in the root of your project.
 
 In that root folder, you have a bunch of folders with classes. We like to structure our projects by features, so for example, all `custom post type` registrations will be located in the `CustomPostType` folder.
 
@@ -61,7 +61,7 @@ As we already mentioned, try to be consistent and organized with your project. H
 
 ### Blocks
 
-Blocks are used, as the name implies, for Block Editor. You can read about blocks in more detail in [Blocks chapter](blocks).
+Blocks are used, as the name implies, for the block editor. You can read about blocks in more detail in [Blocks chapter](blocks).
 
 ### Config
 

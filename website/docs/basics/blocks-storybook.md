@@ -6,11 +6,11 @@ sidebar_label: Storybook
 
 [![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/develop/blocks/init/src/blocks/)
 
-We have created a full storybook that hosts all our blocks/components/variations with a fully functional Block Editor, where you can try how blocks work and behave.
+We have created a full storybook that hosts all our blocks/components/variations with a fully functional block editor, where you can try out how blocks work and behave.
 
 **Visit [Storybook](eightshift-docs/storybook/) for more details.**
 
-> To speedup project build time Eightshift Boilerplate doesn't come with the storybook out of the box, you need to install it. To install Storybook to your project just type this command in you terminal and follow the instructions:
+> To speed up project build time, Eightshift Boilerplate doesn't come with the storybook out of the box; you need to install it. To install Storybook to your project, just type this command in you terminal and follow the instructions:
 
 ```bash
 wp boilerplate create_blocks_storybook
@@ -20,7 +20,7 @@ wp boilerplate create_blocks_storybook
 
 You don't need to have stories in your block/component, but we provided you with the ability to use the Storybook for all of your blocks and components. Why not use it? It will speed up your development time. Trust us.
 
-If you used our way to set up your project, you already have Storybook ready to use. To start Storybook, run this command:
+If you used our way to set up your project, you already have Storybook ready to use. To start the Storybook, run this command:
 
 ```bash
 npm run Storybook
@@ -44,7 +44,7 @@ import readme from './readme.mdx';
 export default {
 	title: `Blocks/${manifest.title}`,
 	parameters: {
-		docs: { 
+		docs: {
 			page: readme
 		}
 	},
@@ -63,10 +63,10 @@ The same as the block's story.
 
 ### Component story
 
-Components are not smart and can't be automatically built into the story. This is why you must create a story of all your component and mock the data. 
+Components are not smart and can't be automatically built into the story. This is why you must create a story of all your components and mock the data.
 You should set all the mock data in the component `manifest.json` and just provide the story's implementation.
 
-Button Block Editor component:
+Button block editor component:
 
 ```jsx
 import React from 'react';
@@ -80,7 +80,7 @@ import { ButtonToolbar } from '../components/button-toolbar';
 export default {
 	title: `Components/${manifest.title}`,
 	parameters: {
-		docs: { 
+		docs: {
 			page: readme
 		}
 	},
@@ -93,7 +93,7 @@ export const editor = () => (
 );
 ```
 
-Button Block Editor Size variation:
+Button block editor size variation:
 
 ```jsx
 import React from 'react';
@@ -107,7 +107,7 @@ import { ButtonToolbar } from '../components/button-toolbar';
 export default {
 	title: `Components/${manifest.title}`,
 	parameters: {
-		docs: { 
+		docs: {
 			page: readme
 		}
 	},
