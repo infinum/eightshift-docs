@@ -19,7 +19,7 @@ By writing all our JavaScript code like this we can:
 
 In a nutshell, you load all your code using JavaScript promises and Webpack splits all these promises into separate file chinks. Once the condition to resolve the promise is set (generally we check if the selector is present in the DOM), Webpack automatically injects your chunk in the DOM and loads it up. This is why you will see in your public folder a bunch of smaller files called (`0.js`, `1.js`, `2.js`, etc).
 
-You don't need to think about anything here because Webpack does it for you.
+You don't need to think about this. Webpack just does it for you.
 
 ## Example
 
@@ -53,7 +53,7 @@ domReady(() => {
       // Loop possible multiple iterations.
       [...elements].forEach((element) => {
 
-        // Load a class for each iteration.
+        // Load a class for all sliders
         const carouselSlider = new CarouselSlider({
           element,
           nextElement: `${selector}-next-arrow`,

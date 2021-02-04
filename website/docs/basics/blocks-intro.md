@@ -185,7 +185,7 @@ public function getCustomCategory(array $categories, \WP_Post $post): array
 
 As we described in [this chapter](blocks), if we don't support something natively from the core or you can't find it in this documentation, you can always use it in the normal native way from the [WordPress documentation](https://developer.wordpress.org/block-editor/tutorials/block-tutorial/). Also, if you think we are missing something, please open a [pull request](https://github.com/infinum/eightshift-frontend-libs/pulls) or an [issue](https://github.com/infinum/eightshift-frontend-libs/issues) on our GitHub repository.
 
-### Why is my blocks folder called custom and not blocks, for example?
+### Why is my blocks folder called `custom` and not `blocks`, for example?
 
 The idea was to put all your custom blocks inside the custom folder and all core block in the core folder. This boilerplate is not designed only for your custom block, but you can use it as an ultimate block setup.
 
@@ -217,10 +217,9 @@ Here are some of our recommendations to ease your pain:
 * Always think about the future. How can this feature be used in some other way?
 * When naming your attributes ask yourself: "is this attribute going to be used in any other way?". For example, you have an attribute for adding font-weight: bold to your text. You can create an attribute called font-weight and set it as a `boolean` type and that will be ok if you have only one font-weight. A better way would be to put it as a string and provide a `SelectControl` component if there is any possibility that in the future you will have additional font-weight.
 * Name booleans positively as a question. Example: `isValid`, `isLoading`, `isComplete`.
-* Don’t hesitate to use longer names: We use short words even if it doesn’t provide full insight about the code which is a bad thing to do.
+* Don’t hesitate to use longer names.
 * Use singular names.
 * The variables or functions should be named by their work: Name of variables/functions should always try to express their meaning without diving into the code base try to pack meaningful information inside the name.
 * Naming should be simple enough to be understood by everyone: Using complex words to describe a simple thing only creates hassle while reading the code. Also, use simple English.
 * You might not be the only person working on your particular project in the future. Think about the next person. Your naming will provide an insight into the process and project.
-* Just try to avoid generic names. Use concrete / specific names, longer names if you need to, attach important details (pack much information) and mainly focus on code readability.
 * **BE CONSISTENT**.

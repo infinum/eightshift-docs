@@ -26,6 +26,8 @@ This means that the only differences between our variations and block patterns a
 
 ### Remove all core patterns
 
+If you don't use core blocks, core patterns won't work. Don't confuse your users and remove them (but feel free to add new patterns based on your own custom blocks!)
+
 To remove all core patterns add this code to you `src/Blocks/Blocks.php` class.
 
 Filter goes in the register method:
