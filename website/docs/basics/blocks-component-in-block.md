@@ -342,3 +342,60 @@ echo wp_kses_post(
 	)
 );
 ```
+
+### I want to limit which options are shown for components inside a block
+
+Let's say you have a block that has a `Heading` component inside it.
+
+The `Heading` has 10 text sizes and 5 colors, but for that block only 2 colors and 3 text sizes are allowed.
+
+With the `filterComponentOptions` helper you can limit which options are shown in the editor.
+
+Implementing it is easy:
+1) In your **block** manifest add a key inside `options` that contains all the options you want visible. Options that are not added will use all the options defined in the component's manifest.
+
+   For example:
+   ```json
+   "options" : {
+	   "heading": {
+		   "colors": [
+			   "primary",
+			   "black"
+		   ],
+		   "sizes": [
+			   "xxl",
+			   "xl"
+		   ]
+	   }
+   }
+   ```
+	❗️ **Note**
+	
+	In case your option is an object with a `label` and a `value` key (eg. when you have something in a select menu), you only need to provide the `value`
+
+2. In the **components** your block uses, inside the `<component-name>-editor.js` file:
+
+	- Import the helper from Frontend Libs
+	`import { filterComponentOptions } from '@eightshift/frontend-libs/scripts/editor'`,
+
+	- Call the helper function
+	`filterComponentOptions(attributes, componentName, options)`
+
+		- `options` should be defined in the component, if not import them from the manifest
+
+		- `componentName` is usually already defined, if not you can get it from the manifest - `manifest.componentName`
+
+3. In your **block**'s editor, add the key to the child component's editor
+
+	For example:
+	```js
+	<HeadingOptions
+		{...attributes}
+		headingOptions={manifest.options.heading}
+		setAttributes={setAttributes}
+	/>
+	```
+	
+	❗️ **Note**
+
+	Make sure the attribute is named as `<component-name>Options` (e.g. `headingOptions`).
