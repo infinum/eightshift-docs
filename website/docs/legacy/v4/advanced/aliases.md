@@ -86,7 +86,7 @@ dynamicImport(require.context('./../../custom', true, /assets\/index.js$/));
 
 ## EightshiftBlocksRegisterBlocks
 
-Alias providing blocks registration. For more details check [here](/eightshift-docs/docs/guides/blocks-registration).
+Alias providing blocks registration. For more details check [here](/eightshift-docs/docs/legacy/v4/guides/blocks-registration).
 
 ## EightshiftBlocksUcfirst
 
@@ -100,7 +100,7 @@ ucfirst('custom string');
 
 ## EightshiftBlocksGetActions
 
-Alias providing blocks actions helper. For more details check [here](/eightshift-docs/docs/guides/blocks-get-actions-helper).
+Alias providing blocks actions helper. For more details check [here](legacy/v4/guides/blocks-get-actions-helper).
 
 ## EightshiftBlocksUtilityHelpersPath
 

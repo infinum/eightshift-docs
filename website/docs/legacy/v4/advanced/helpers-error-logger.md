@@ -7,7 +7,7 @@ title: Error Logger
 
 Object trait is located in `Eightshift Libs`. To extend it, use `Eightshift_Libs\Helpers\Error_Logger` class.
 
-If you are working with Ajax or REST API in your project, this logger will come in handy. We have created this simple trait helper that you can use in any PHP class as a [trait](/eightshift-docs/docs/guides/extending-classes). To see all of the class helper go [here](https://github.com/infinum/eightshift-libs/blob/develop/src/helpers/trait-error-logger.php).
+If you are working with Ajax or REST API in your project, this logger will come in handy. We have created this simple trait helper that you can use in any PHP class as a [trait](/eightshift-docs/docs/legacy/v4/guides/extending-classes). To see all of the class helper go [here](https://github.com/infinum/eightshift-libs/blob/develop/src/helpers/trait-error-logger.php).
 
 
 ## rest_response_handler

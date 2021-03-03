@@ -19,7 +19,7 @@ The usage of any of these classes is optional, and you can use only what you nee
 
 Each of these classes implement actions that can be deregistered using the standard [WordPress way](https://developer.wordpress.org/reference/functions/remove_action/).
 
-Enqueue classes work in combination with [webpack build](/eightshift-docs/docs/advanced/webpack) of your project.
+Enqueue classes work in combination with [webpack build](/eightshift-docs/docs/legacy/v4/advanced/webpack) of your project.
 
 File names are defined inside class constants that can be changed by extending the class and providing the overrides for the constants. If you change the file names, you must provide changes to the webpack build process as well.
 
@@ -114,5 +114,3 @@ Provided methods:
 * `get_admin_style_dependencies()`
 * `get_media()`
 * `script_in_footer()`
-
-
