@@ -399,7 +399,7 @@ To achieve this you must prepare your component to be able to use this feature:
 }
 ```
 
-2. Each option in your component must have `getOptions` helper used in the prop that is used to provide options.
+2. Each option in your component must have `getOptions` helper used in the prop that is used to provide options. Details about the helper can be found [here](helpers-javascript#getoptions).
 
 **SelectControl Example:**
 ```js
