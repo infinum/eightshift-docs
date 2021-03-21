@@ -343,59 +343,121 @@ echo wp_kses_post(
 );
 ```
 
-### I want to limit which options are shown for components inside a block
+### I want to limit which options are shown for components inside a block/component
 
 Let's say you have a block that has a `Heading` component inside it.
 
-The `Heading` has 10 text sizes and 5 colors, but for that block only 2 colors and 3 text sizes are allowed.
+The `Heading` has 10 text sizes and 5 colors, but for that block, only 2 colors and 3 text sizes are allowed.
+To achieve this you must prepare your component to be able to use this feature:
 
-With the `filterComponentOptions` helper you can limit which options are shown in the editor.
+1. Your component options must be named the same name as their attribute value. In the example, you can see that the options key for `typographySize` is the same name as in attributes.
 
-Implementing it is easy:
-1) In your **block** manifest add a key inside `options` that contains all the options you want visible. Options that are not added will use all the options defined in the component's manifest.
+```json
+{
+  "attributes": {
+    "typographySize": {
+      "type": "string",
+      "default": "16-text-roman"
+    },
+    "typographyColor": {
+      "type": "string",
+      "default": "black",
+      "variable": true,
+      "color": true
+    },
+  },
+  "options": {
+    "typographySize": [
+      {
+        "label": "180 Display",
+        "value": "180-default"
+      },
+      {
+        "label": "120 Display",
+        "value": "120-default"
+      },
+      {
+        "label": "80 Display",
+        "value": "80-default"
+      },
+      {
+        "label": "52 Display",
+        "value": "52-default"
+      },
+      {
+        "label": "36 Text",
+        "value": "36-text"
+      }
+    ],
+    "typographyColor": [
+      "black",
+      "white",
+      "grey100",
+      "grey200"
+    ]
+  }
+}
+```
 
-   For example:
-   ```json
-   "options" : {
-	   "heading": {
-		   "colors": [
-			   "primary",
-			   "black"
-		   ],
-		   "sizes": [
-			   "xxl",
-			   "xl"
-		   ]
-	   }
-   }
-   ```
-	❗️ **Note**
-	
-	In case your option is an object with a `label` and a `value` key (eg. when you have something in a select menu), you only need to provide the `value`
+2. Each option in your component must have `getOptions` helper used in the prop that is used to provide options.
 
-2. In the **components** your block uses, inside the `<component-name>-editor.js` file:
+**SelectControl Example:**
+```js
+<SelectControl
+  label={
+    <>
+      <Icon icon={icons.textSize} />
+      {__('Text size', 'eightshift-boilerplate')}
+    </>
+  }
+  value={typographySize}
+  options={getOptions(manifest, componentName, 'size', options)}
+  onChange={(value) => setAttributes({ [`${componentName}Size`]: value })}
+/>
+```
 
-	- Import the helper from Frontend Libs
-	`import { filterComponentOptions } from '@eightshift/frontend-libs/scripts/editor'`,
+**ColorPaletteCustom Example:**
+```js
+<ColorPaletteCustom
+  label={
+    <>
+      <Icon icon={icons.color} />
+      {__('Color', 'eightshift-boilerplate')}
+    </>
+  }
+  colors={getOptionColors(getOptions(manifest, componentName, 'color', options))}
+  value={typographyColor}
+  onChange={(value) => setAttributes({ [`${componentName}Color`]: value })}
+/>
+```
 
-	- Call the helper function
-	`filterComponentOptions(attributes, componentName, options)`
+3. In the component/blocks that you are going to override options, you must provide an options prop that is going to override the default one.
 
-		- `options` should be defined in the component, if not import them from the manifest
+**heading-options.js**
+```js
+<HeadingOptions
+  options={options}
+  // ...
+/>
+```
 
-		- `componentName` is usually already defined, if not you can get it from the manifest - `manifest.componentName`
+4. In the component/blocks that you are going to override options, you must provide the override in the `manifest.json` by following the same naming as in the component.
 
-3. In your **block**'s editor, add the key to the child component's editor
+```json
+{
+  "options": {
+    "headingSize": [
+      "80-default",
+      "52-default"
+    ],
+    "headingColor": [
+      "black",
+      "white"
+    ]
+  }
+}
+```
 
-	For example:
-	```js
-	<HeadingOptions
-		{...attributes}
-		headingOptions={manifest.options.heading}
-		setAttributes={setAttributes}
-	/>
-	```
-	
-	❗️ **Note**
+An this is it you are now able to override options from the parent block/component.
 
-	Make sure the attribute is named as `<component-name>Options` (e.g. `headingOptions`).
+> Keep in mind that you can only override SelectControl, ColorPaletteCustom, and AlignmentToolbar.
