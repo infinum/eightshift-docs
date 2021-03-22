@@ -461,3 +461,184 @@ To achieve this you must prepare your component to be able to use this feature:
 An this is it you are now able to override options from the parent block/component.
 
 > Keep in mind that you can only override SelectControl, ColorPaletteCustom, and AlignmentToolbar.
+
+### I want to only pass attributes to the component that I'm going to use
+
+At one point in time, we agreed on naming standards for all component attributes and that way we are sure that you wouldn't get any collisions when using multiple components. So we said it is ok to spread all attributes to the component and let the component handle what it needs. Well, that approach is ok but it can bite you in the a.. at the point that you least expect.
+
+That is why we created this [props helper](helpers-javascript#props).
+
+As described in [this chapter](blocks-component-in-block#i-want-to-limit-which-options-are-shown-for-components-inside-a-blockcomponent) you must follow the attributes naming convention and use `components` key in the block/component manifest.
+
+**Lets set a layout for this example:**
+* components
+  * heading
+  * typography
+* custom
+  * heading
+
+You have block `heading` that uses component `heading` and that component uses another component called `typography`.
+We are putting only necessary stuff in the example:
+
+**Block Heading manifest.json:**
+```json
+{
+  "blockName": "heading",
+  "components": {
+    "heading": "heading"
+  },
+}
+```
+
+In the `components` key, you must provide components that you are going to be using in this block. There are more options at the beginning of this chapter.
+
+**Block heading-editor.js:**
+```js
+import React from 'react';
+import { props } from '@eightshift/frontend-libs/scripts/editor';
+import { HeadingEditor as HeadingEditorComponent } from '../../../components/heading/components/heading-editor';
+import manifest from './../manifest.json';
+
+export const HeadingEditor = ({attributes, setAttributes}) => {
+  const {
+    blockName,
+  } = manifest;
+
+  const {
+    blockClass,
+  } = attributes;
+
+  return (
+    <div className={blockClass}>
+      <HeadingEditorComponent
+        setAttributes={setAttributes}
+        {...props(attributes, blockName, '', true)}
+      />
+    </div>
+  );
+};
+```
+
+In JavaScript, you spread the results of the props helper.
+
+**Block heading.php:**
+```php
+<?php
+
+/**
+ * Template for the Heading Block view.
+ *
+ * @package Redesign
+ */
+
+use Redesign\Blocks\Blocks;
+use RedesignVendor\EightshiftLibs\Helpers\Components;
+
+$manifest = Components::getManifest(__DIR__);
+$blockName = $attributes['blockName'] ?? $manifest['blockName'];
+
+$blockClass =  Components::checkAttr('blockClass', $attributes, $manifest);
+
+?>
+
+<div class="<?php echo esc_attr($blockClass); ?>">
+  <?php
+  echo Components::render( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+    'heading',
+    Blocks::props($attributes, $blockName, '', true)
+  );
+  ?>
+</div>
+```
+
+In PHP you just provide the results of the props helper. As you can see in the [props helper docs](helpers-javascript#props) you must provide the fourth parameter to be `true` to distinguish is this block or component.
+
+Now let's see how the `Component heading` looks like.
+
+**Component Heading manifest.json:**
+```json
+{
+  "componentName": "heading",
+  "components": {
+    "heading": "typography"
+  },
+}
+```
+
+In `Component heading` we are using the `typography` component but we are not using the default name but rather we are changing the attribute names from `typography` to `heading`.
+
+**Component heading-editor.js:**
+
+*The same is for options or toolbar components!*
+
+```js
+import React from 'react';
+import { props } from '@eightshift/frontend-libs/scripts/editor';
+import { TypographyEditor } from './../../typography/components/typography-editor';
+import manifest from './../manifest.json';
+ 
+export const HeadingEditor = (attributes) => {
+  const {
+    setAttributes,
+    componentName = manifest.componentName,
+    blockClass,
+  } = attributes;
+
+  return (
+    <>
+      <TypographyEditor
+        selectorClass={componentName}
+        blockClass={blockClass}
+        setAttributes={setAttributes}
+        {...props(attributes, 'typography', componentName)}
+      />
+    </>
+  );
+};
+```
+
+The difference here is that you don't need to provide the fourth parameter here because this is a component. In this example, you are swiping attribute names so we must provide the target component name as a `second parameter and the current component name as a `third` parameter.
+
+**Component heading.php**
+```php
+<?php
+
+use Redesign\Blocks\Blocks;
+use RedesignVendor\EightshiftLibs\Helpers\Components;
+
+$manifest = Components::getManifest(__DIR__);
+$componentName = $attributes['componentName'] ?? $manifest['componentName'];
+
+$blockClass = $attributes['blockClass'] ?? '';
+
+echo Components::render( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+  'typography',
+  array_merge(
+    [
+      'selectorClass' => 'heading',
+      'blockClass' => $blockClass,
+    ],
+    Blocks::props($attributes, 'typography', $componentName)
+  )
+);
+```
+
+In PHP is similar to what it was in the block.
+
+**Typography**
+
+There is nothing special that you need to do in the last component in the tree other than following the attributes naming convention.
+
+**To sum-up**
+
+Block:
+* `Components` key in the `manifest.json` is used to provide/change the attribute names on the block registration process.
+* `Props helper` will provide all the attributes used in the block and add it will follow the dependency tree to the end so all attributes from the children components will also be provided as a result of this helper.
+
+Components:
+* `Components` key in the `manifest.json` is used to determine the dependency tree when passing the attributes from parent to the children.
+* `Props helper` will provide only attributes that are used in the children's components recursively. The sam as props helper in the block.
+
+For more details please read the [props helper docs](helpers-javascript#props).
+
+> You should avoid spreading attributes as props but rather use this helper because it provides only what is used in the component.
