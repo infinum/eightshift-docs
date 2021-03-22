@@ -470,7 +470,7 @@ That is why we created this [props helper](helpers-javascript#props).
 
 As described in [this chapter](blocks-component-in-block#i-want-to-limit-which-options-are-shown-for-components-inside-a-blockcomponent) you must follow the attributes naming convention and use `components` key in the block/component manifest.
 
-**Lets set a layout for this example:**
+**Let's set a layout for this example:**
 * components
   * heading
   * typography
