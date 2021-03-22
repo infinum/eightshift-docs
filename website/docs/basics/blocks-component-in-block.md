@@ -441,7 +441,7 @@ To achieve this you must prepare your component to be able to use this feature:
 />
 ```
 
-4. In the component/blocks that you are going to override options, you must provide the override in the `manifest.json` by following the same naming as in the component.
+4. In the component/blocks for which you are going to override options, you must provide the override in the `manifest.json` by following the same naming as in the component.
 
 ```json
 {
