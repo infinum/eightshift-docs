@@ -623,7 +623,7 @@ echo Components::render( // phpcs:ignore WordPress.Security.EscapeOutput.OutputN
 );
 ```
 
-In PHP is similar to what it was in the block.
+The PHP part looks similar to the JS block part.
 
 **Typography**
 
