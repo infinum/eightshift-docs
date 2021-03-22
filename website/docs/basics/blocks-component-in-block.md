@@ -490,7 +490,7 @@ We are putting only relevant code in the example:
 }
 ```
 
-In the `components` key, you must provide components that you are going to be using in this block. There are more options at the beginning of this chapter.
+In the `components` key, you must provide components that you are going to be using in this block. There are more options in the example at the beginning of this chapter.
 
 **Block heading-editor.js:**
 ```js
