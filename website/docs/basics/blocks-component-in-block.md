@@ -551,7 +551,7 @@ $blockClass =  Components::checkAttr('blockClass', $attributes, $manifest);
 </div>
 ```
 
-In PHP you just provide the results of the props helper. As you can see in the [props helper docs](helpers-javascript#props) you must provide the fourth parameter to be `true` to distinguish is this block or component.
+In PHP you just provide the results of the props helper. As you can see in the [props helper docs](helpers-javascript#props) you must provide the fourth parameter to be `true` to distinguish if this is a block or a component.
 
 Now let's see how the `Component heading` looks like.
 
