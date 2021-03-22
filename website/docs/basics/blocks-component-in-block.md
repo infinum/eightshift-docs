@@ -629,7 +629,7 @@ The PHP part looks similar to the JS block part.
 
 There is nothing special that you need to do in the last component in the tree other than following the attributes naming convention.
 
-**To sum-up**
+**Summing it all up**
 
 Block:
 * `Components` key in the `manifest.json` is used to provide/change the attribute names on the block registration process.
