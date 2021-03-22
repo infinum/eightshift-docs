@@ -431,7 +431,7 @@ To achieve this you must prepare your component to be able to use this feature:
 />
 ```
 
-3. In the component/blocks that you are going to override options, you must provide an options prop that is going to override the default one.
+3. In the component/blocks for which you are going to override the options, you must provide an options prop that is going to override the default one.
 
 **heading-options.js**
 ```js
