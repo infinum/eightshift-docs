@@ -464,7 +464,7 @@ And this is it. You are now able to override the options from the parent block/c
 
 ### I want to only pass attributes to the component that I'm going to use
 
-At one point in time, we agreed on naming standards for all component attributes and that way we are sure that you wouldn't get any collisions when using multiple components. So we said it is ok to spread all attributes to the component and let the component handle what it needs. Well, that approach is ok but it can bite you in the a.. at the point that you least expect.
+At one point in time, we agreed on naming standards for all component attributes. That way we made sure that you wouldn't get any collisions when using multiple components. So we said it is ok to spread all attributes to the component and let the component handle what it needs. Well, that approach is ok but it can bite you in the a.. at the point that you least expect.
 
 That is why we created this [props helper](helpers-javascript#props).
 
