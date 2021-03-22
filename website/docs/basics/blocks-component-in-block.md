@@ -342,3 +342,303 @@ echo wp_kses_post(
 	)
 );
 ```
+
+### I want to limit which options are shown for components inside a block/component
+
+Let's say you have a block that has a `Heading` component inside it.
+
+The `Heading` has 10 text sizes and 5 colors, but for that block, only 2 colors and 3 text sizes are allowed.
+To achieve this you must prepare your component to be able to use this feature:
+
+1. Your component options must be named the same name as their attribute value. In the example, you can see that the options key for `typographySize` is the same name as in the attributes.
+
+```json
+{
+  "attributes": {
+    "typographySize": {
+      "type": "string",
+      "default": "16-text-roman"
+    },
+    "typographyColor": {
+      "type": "string",
+      "default": "black",
+      "variable": true,
+      "color": true
+    },
+  },
+  "options": {
+    "typographySize": [
+      {
+        "label": "180 Display",
+        "value": "180-default"
+      },
+      {
+        "label": "120 Display",
+        "value": "120-default"
+      },
+      {
+        "label": "80 Display",
+        "value": "80-default"
+      },
+      {
+        "label": "52 Display",
+        "value": "52-default"
+      },
+      {
+        "label": "36 Text",
+        "value": "36-text"
+      }
+    ],
+    "typographyColor": [
+      "black",
+      "white",
+      "grey100",
+      "grey200"
+    ]
+  }
+}
+```
+
+2. Every option in your component must use `getOptions` helper for the prop that is used to provide options. Details about the helper can be found [here](helpers-javascript#getoptions).
+
+**SelectControl Example:**
+```js
+<SelectControl
+  label={
+    <>
+      <Icon icon={icons.textSize} />
+      {__('Text size', 'eightshift-boilerplate')}
+    </>
+  }
+  value={typographySize}
+  options={getOptions(manifest, componentName, 'size', options)}
+  onChange={(value) => setAttributes({ [`${componentName}Size`]: value })}
+/>
+```
+
+**ColorPaletteCustom Example:**
+```js
+<ColorPaletteCustom
+  label={
+    <>
+      <Icon icon={icons.color} />
+      {__('Color', 'eightshift-boilerplate')}
+    </>
+  }
+  colors={getOptionColors(getOptions(manifest, componentName, 'color', options))}
+  value={typographyColor}
+  onChange={(value) => setAttributes({ [`${componentName}Color`]: value })}
+/>
+```
+
+3. In the component/blocks for which you are going to override the options, you must provide an options prop that is going to override the default one.
+
+**heading-options.js**
+```js
+<HeadingOptions
+  options={options}
+  // ...
+/>
+```
+
+4. In the component/blocks for which you are going to override options, you must provide the override in the `manifest.json` by following the same naming as in the component.
+
+```json
+{
+  "options": {
+    "headingSize": [
+      "80-default",
+      "52-default"
+    ],
+    "headingColor": [
+      "black",
+      "white"
+    ]
+  }
+}
+```
+
+And this is it. You are now able to override the options from the parent block/component.
+
+> Keep in mind that you can only override SelectControl, ColorPaletteCustom, and AlignmentToolbar.
+
+### I want to only pass attributes to the component that I'm going to use
+
+At one point in time, we agreed on naming standards for all component attributes. That way we made sure that you wouldn't get any collisions when using multiple components. So we said it is ok to spread all attributes to the component and let the component handle what it needs. Well, that approach is ok but it can bite you in the a.. at the point that you least expect.
+
+That is why we created this [props helper](helpers-javascript#props).
+
+As described in [this chapter](blocks-component-in-block#i-want-to-limit-which-options-are-shown-for-components-inside-a-blockcomponent) you must follow the attributes naming convention and use `components` key in the block/component manifest.
+
+**Let's set a layout for this example:**
+* components
+  * heading
+  * typography
+* custom
+  * heading
+
+You have block `heading` that uses component `heading` and that component uses another component called `typography`.
+We are putting only relevant code in the example:
+
+**Block Heading manifest.json:**
+```json
+{
+  "blockName": "heading",
+  "components": {
+    "heading": "heading"
+  },
+}
+```
+
+In the `components` key, you must provide components that you are going to be using in this block. There are more options in the example at the beginning of this chapter.
+
+**Block heading-editor.js:**
+```js
+import React from 'react';
+import { props } from '@eightshift/frontend-libs/scripts/editor';
+import { HeadingEditor as HeadingEditorComponent } from '../../../components/heading/components/heading-editor';
+import manifest from './../manifest.json';
+
+export const HeadingEditor = ({attributes, setAttributes}) => {
+  const {
+    blockName,
+  } = manifest;
+
+  const {
+    blockClass,
+  } = attributes;
+
+  return (
+    <div className={blockClass}>
+      <HeadingEditorComponent
+        setAttributes={setAttributes}
+        {...props(attributes, blockName, '', true)}
+      />
+    </div>
+  );
+};
+```
+
+In JavaScript, you spread the results of the props helper.
+
+**Block heading.php:**
+```php
+<?php
+
+/**
+ * Template for the Heading Block view.
+ *
+ * @package Redesign
+ */
+
+use Redesign\Blocks\Blocks;
+use RedesignVendor\EightshiftLibs\Helpers\Components;
+
+$manifest = Components::getManifest(__DIR__);
+$blockName = $attributes['blockName'] ?? $manifest['blockName'];
+
+$blockClass =  Components::checkAttr('blockClass', $attributes, $manifest);
+
+?>
+
+<div class="<?php echo esc_attr($blockClass); ?>">
+  <?php
+  echo Components::render( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+    'heading',
+    Blocks::props($attributes, $blockName, '', true)
+  );
+  ?>
+</div>
+```
+
+In PHP you just provide the results of the props helper. As you can see in the [props helper docs](helpers-javascript#props) you must provide the fourth parameter to be `true` to distinguish if this is a block or a component.
+
+Now, let's see how the `Component heading` looks like.
+
+**Heading component manifest.json:**
+```json
+{
+  "componentName": "heading",
+  "components": {
+    "heading": "typography"
+  },
+}
+```
+
+In the `heading` component we are using the `typography` component but we are not using the default component name. Instead, we are changing the attribute name from `typography` to `heading`.
+
+**Component heading-editor.js:**
+
+*The same is for options or toolbar components!*
+
+```js
+import React from 'react';
+import { props } from '@eightshift/frontend-libs/scripts/editor';
+import { TypographyEditor } from './../../typography/components/typography-editor';
+import manifest from './../manifest.json';
+ 
+export const HeadingEditor = (attributes) => {
+  const {
+    setAttributes,
+    componentName = manifest.componentName,
+    blockClass,
+  } = attributes;
+
+  return (
+    <>
+      <TypographyEditor
+        selectorClass={componentName}
+        blockClass={blockClass}
+        setAttributes={setAttributes}
+        {...props(attributes, 'typography', componentName)}
+      />
+    </>
+  );
+};
+```
+
+The difference here is that you don't need to provide the fourth parameter because this is a component. In this example, you are swapping attribute names so we must provide the target component name as a `second` parameter and the current component name as a `third` parameter.
+
+**heading.php part**
+```php
+<?php
+
+use Redesign\Blocks\Blocks;
+use RedesignVendor\EightshiftLibs\Helpers\Components;
+
+$manifest = Components::getManifest(__DIR__);
+$componentName = $attributes['componentName'] ?? $manifest['componentName'];
+
+$blockClass = $attributes['blockClass'] ?? '';
+
+echo Components::render( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+  'typography',
+  array_merge(
+    [
+      'selectorClass' => 'heading',
+      'blockClass' => $blockClass,
+    ],
+    Blocks::props($attributes, 'typography', $componentName)
+  )
+);
+```
+
+The PHP part looks similar to the JS block part.
+
+**Typography**
+
+There is nothing special that you need to do in the last component in the tree other than following the attributes naming convention.
+
+**Summing it all up**
+
+Block:
+* `Components` key in the `manifest.json` is used to provide/change the attribute names on the block registration process.
+* `Props helper` will provide all the attributes used in the block and it will follow the dependency tree to the end so that all the attributes from the children components will also be provided as a result.
+
+Components:
+* `Components` key in the `manifest.json` is used to determine the dependency tree when passing the attributes from parent to children.
+* `Props helper` will provide only those attributes that are used in the children's components recursively. The same as props helper in the block.
+
+For more details please read the [props helper docs](helpers-javascript#props).
+
+> You should avoid spreading attributes as props but rather use this helper because it provides only what is used in the component.

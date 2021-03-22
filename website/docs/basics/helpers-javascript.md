@@ -6,6 +6,26 @@ sidebar_label: JavaScript
 
 [![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/develop/blocks/init/src/blocks/)
 
+## camelize
+
+Returns a camel-cased string.
+
+* @param {string} string Add string to convert.
+
+**Usage:**
+
+```js
+import { checkAttr } from '@eightshift/frontend-libs/scripts/helpers';
+
+camelize('New super Test-title');
+```
+
+**Output:**
+
+```js
+newSuperTestTitle
+```
+
 ## checkAttr
 
 Checks whether the attributes exist in the attributes list and adds a default value if they don't.
@@ -18,9 +38,9 @@ Checks whether the attributes exist in the attributes list and adds a default va
 **Usage:**
 
 ```js
-  import { checkAttr } from '@eightshift/frontend-libs/scripts/helpers';
+	import { checkAttr } from '@eightshift/frontend-libs/scripts/helpers';
 
-  checkAttr('buttonUse', attributes, manifest, $componentName);
+	checkAttr('buttonUse', attributes, manifest, $componentName);
 ```
 
 ## cookies
@@ -30,11 +50,11 @@ Used to set and get cookie values.
 **Usage:**
 
 ```js
-  import { cookies } from '@eightshift/frontend-libs/scripts/helpers';
+	import { cookies } from '@eightshift/frontend-libs/scripts/helpers';
 
-  cookies.setCookie('gdpr', '2', cookies.setOneDay(), '/');
+	cookies.setCookie('gdpr', '2', cookies.setOneDay(), '/');
 
-  cookies.getCookie('gdpr');
+	cookies.getCookie('gdpr');
 ```
 
 ## debounce
@@ -47,11 +67,11 @@ Debounces the provided function. For more information, check [this blog post](ht
 **Usage:**
 
 ```js
-  import { debounce } from '@eightshift/frontend-libs/scripts/helpers';
+	import { debounce } from '@eightshift/frontend-libs/scripts/helpers';
 
-  debounce(() => {
-    // callback function.
-  }, 250);
+	debounce(() => {
+		// callback function.
+	}, 250);
 ```
 
 ## devices
@@ -61,9 +81,9 @@ Checks if your browser's navigator is a specific device.
 **Usage:**
 
 ```js
-  import { device } from '@eightshift/frontend-libs/scripts/helpers';
+	import { device } from '@eightshift/frontend-libs/scripts/helpers';
 
-  device.iPhone();
+	device.iPhone();
 ```
 
 ## dynamicImport
@@ -75,9 +95,31 @@ Used to get (require) all the files using the `require.context` method. It will 
 **Usage:**
 
 ```js
-  import { dynamicImport } from '@eightshift/frontend-libs/scripts/helpers';
+	import { dynamicImport } from '@eightshift/frontend-libs/scripts/helpers';
 
-  dynamicImport(require.context('./../../custom', true, /assets\/index.js$/));
+	dynamicImport(require.context('./../../custom', true, /assets\/index.js$/));
+```
+
+## elementChildrenHeight
+
+Returns the height of the element measured by the height of its children.
+
+* @param {object} element DOM element
+
+**Usage:**
+
+```js
+import { dynamicImport } from '@eightshift/frontend-libs/scripts/helpers';
+
+elementChildrenHeight('.js-item');
+```
+
+**Output:**
+
+```js
+<div class="js-item" style="height: 100px"></div>
+<div class="js-item" style="height: 100px"></div>
+<div class="js-item" style="height: 100px"></div>
 ```
 
 ## escape-string
@@ -89,9 +131,9 @@ Takes the provided string and removes special characters. Characters that will b
 **Usage:**
 
 ```js
-  import { escapeString } from '@eightshift/frontend-libs/scripts/helpers';
+	import { escapeString } from '@eightshift/frontend-libs/scripts/helpers';
 
-  escapeString.escapeString('Special string');
+	escapeString.escapeString('Special string');
 ```
 
 ## responsiveSelectors
@@ -108,15 +150,15 @@ Useful if you want to show how the responsive behavior looks in the editor.
 **Usage:**
 
 ```js
-  import { responsiveSelectors } from '@eightshift/frontend-libs/scripts/helpers';
+	import { responsiveSelectors } from '@eightshift/frontend-libs/scripts/helpers';
 
-  responsiveSelectors($attributes['width'], 'width', $blockClass);
+	responsiveSelectors($attributes['width'], 'width', $blockClass);
 ```
 
 **Output:**
 
 ```js
-  .block-column__width-large--4
+	.block-column__width-large--4
 ```
 
 ## selector
@@ -132,23 +174,76 @@ Returns BEM selector for HTML class and checks if the condition part is set.
 **Usage:**
 
 ```js
-  import { selector } from '@eightshift/frontend-libs/scripts/helpers';
+	import { selector } from '@eightshift/frontend-libs/scripts/helpers';
 
-  selector(!(buttonContent && buttonUrl), `${componentClass}-placeholder`);
+	selector(!(buttonContent && buttonUrl), `${componentClass}-placeholder`);
 
-  selector(test, componentClass, elementClass);
+	selector(test, componentClass, elementClass);
 
-  selector(!newTest, componentClass, elementClass, modifierClass);
+	selector(!newTest, componentClass, elementClass, modifierClass);
 ```
 
 **Equivalent:**
 
 ```js
-  !(buttonContent && buttonUrl) ? `${componentClass}-placeholder` : '';
+	!(buttonContent && buttonUrl) ? `${componentClass}-placeholder` : '';
 
-  test ? `${componentClass}__${elementClass}` : '';
+	test ? `${componentClass}__${elementClass}` : '';
 
-  !(newTest) ? `${componentClass}__${elementClass}--${modifierClass}` : '';
+	!(newTest) ? `${componentClass}__${elementClass}--${modifierClass}` : '';
+
+```
+
+## getOptionsColor
+
+Use this hook to filter the global colors out of the component or block manifest
+
+* @param {array} colors Array of colors to filter.
+
+**Usage:**
+
+```js
+import { getOptions } from '@eightshift/frontend-libs/scripts/editor';
+
+<ColorPaletteCustom
+		label={
+			<>
+				<Icon icon={icons.color} />
+				{__('Color', 'eightshift-frontend-libs')}
+			</>
+		}
+		colors={getOptionColors(getOptions(manifest, componentName, 'color', options))}
+		value={headingColor}
+		onChange={(value) => setAttributes({ [`${componentName}Color`]: value })}
+/>
+```
+
+## getOptions
+
+Provides the ability to override component options from the parent block/component.
+The components must have the same option names as attribute standard with `componentName` prefix.
+
+* @param {object} manifest Original manifest from the component.
+* @param {string} componentName Current componentName. This is changed depending on the passed componentName.
+* @param {string} attribute Attribute name to check without componentName prefix. Value is auto camelCased.
+* @param {object} options Options provided by the parent block/component.
+
+**Usage:**
+
+```js
+import { getOptions } from '@eightshift/frontend-libs/scripts/editor';
+
+<SelectControl
+	label={
+		<>
+			<Icon icon={icons.size} />
+			{__('Type', 'eightshift-frontend-libs')}
+		</>
+	}
+	value={buttonType}
+	options={getOptions(manifest, componentName, 'type', options)}
+	onChange={(value) => setAttributes({ [`${componentName}Type`]: value })}
+/>
 ```
 
 ## getPaletteColors
@@ -160,9 +255,163 @@ Use this hook to read editor-color-palette colors directly from WP built-in stor
 **Usage:**
 
 ```js
-  import { getPaletteColors } from '@eightshift/frontend-libs/scripts/editor';
+	import { getPaletteColors } from '@eightshift/frontend-libs/scripts/editor';
 
-  getPaletteColors();
+	getPaletteColors();
+```
+
+## outputCssVariablesGlobal
+
+Get global manifest.json and return `globalVariables` as CSS variables.
+
+* @param array globalManifest Array of global variables data.
+
+**Data:**
+```js
+const manifestGlobal = {
+	"globalVariables": {
+		"maxCols": 12,
+		"breakpoints": {
+			"mobile": 479,
+			"tablet": 1279,
+			"desktop": 1919,
+			"large": 1920
+		},
+		"containers": {
+			"default": "1330px"
+		},
+		"gutters": {
+			"none": "0",
+			"default": "25px",
+			"big": "50px"
+		},
+		"sectionSpacing": {
+			"min":  -300,
+			"max":  300,
+			"step": 10
+		},
+		"sectionInSpacing": {
+			"min":  0,
+			"max":  300,
+			"step": 10
+		},
+		"colors": [
+			{
+				"name": "Infinum",
+				"slug": "infinum",
+				"color": "#D8262C"
+			},
+			{
+				"name": "Black",
+				"slug": "black",
+				"color": "#111111"
+			}
+		]
+	}
+};
+```
+
+**Usage:**
+
+```js
+import { getUnique } from '@eightshift/frontend-libs/scripts/editor';
+import globalSettings from './../../manifest.json';
+
+outputCssVariablesGlobal(globalSettings);
+```
+
+**Output:**
+
+```js
+<style>
+	:root {
+		--global-max-cols: 12;
+		--global-breakpoints-mobile: 479;
+		--global-breakpoints-tablet: 1279;
+		--global-breakpoints-desktop: 1919;
+		--global-breakpoints-large: 1920;
+		--global-containers-default: 1330px;
+		--global-gutters-none: 0;
+		--global-gutters-default: 25px;
+		--global-gutters-big: 50px;
+		--global-section-spacing-min: -300;
+		--global-section-spacing-max: 300;
+		--global-section-spacing-step: 10;
+		--global-section-in-spacing-min: 0;
+		--global-section-in-spacing-max: 300;
+		--global-section-in-spacing-step: 10;
+		--global-colors-infinum: #D8262C;
+		--global-colors-black: #111111;
+		--global-colors-white: #FFFFFF;
+	}
+</style>
+```
+
+## outputCssVariables
+
+Get component/block options and process them in CSS variables.
+
+If the attribute key has a `variable` key then that attribute will be outputted to the inline style for CSS variables.
+
+If you provide an additional key `color`, the helper will check the global manifest and output the CSS variable for the color name.
+
+* @param array  attributes Built attributes.
+* @param array  manifest Component/block manifest data.
+* @param string unique Unique key.
+
+**Data:**
+```js
+const manifest = {
+	"attributes": {
+		"typographyColor": {
+			"type": "string",
+			"default": "black",
+			"variable": true,
+			"color": true
+		},
+		"typographyColorUse": {
+			"type": "boolean",
+			"default": true,
+			"variable": true
+		}
+	},
+}
+```
+
+**Usage:**
+```js
+import { outputCssVariables, getUnique } from '@eightshift/frontend-libs/scripts/editor';
+
+const unique = getUnique();
+
+{outputCssVariables(attributes, manifest, unique)}
+```
+
+**Output:**
+```js
+<style>
+	.typography[data-id='fc21d857791af57b67680a14c24f7530'] {
+		--typography-color: var(--global-colors-black);
+		--typography-color-use: 1;
+	}
+</style>
+```
+
+## getUnique
+
+Return unique ID for block processing.
+
+**Usage:**
+```js
+import { getUnique } from '@eightshift/frontend-libs/scripts/editor';
+
+getUnique();
+```
+
+**Output:**
+
+```js
+891273981374b98127419287
 ```
 
 ## overrideInnerBlockAttributes
@@ -172,18 +421,18 @@ Used to set attributes on all innerBlocks. This value will be stored in the bloc
 **Usage:**
 
 ```js
-  import { useSelect } from '@wordpress/data';
-  import { overrideInnerBlockAttributes } from '@eightshift/frontend-libs/scripts/editor';
+	import { useSelect } from '@wordpress/data';
+	import { overrideInnerBlockAttributes } from '@eightshift/frontend-libs/scripts/editor';
 
-  useSelect((select) => {
-    overrideInnerBlockAttributes(
-      select,
-      props.clientId,
-      {
-        wrapperDisable: true,
-      }
-    );
-  });
+	useSelect((select) => {
+		overrideInnerBlockAttributes(
+			select,
+			props.clientId,
+			{
+				wrapperDisable: true,
+			}
+		);
+	});
 ```
 
 ## overrideInnerBlockSimpleWrapperAttributes
@@ -193,15 +442,76 @@ Used to set attributes on all innerBlocks preset only for simple wrapper setup. 
 **Usage:**
 
 ```js
-  import { useSelect } from '@wordpress/data';
-  import { overrideInnerBlockSimpleWrapperAttributes } from '@eightshift/frontend-libs/scripts/editor';
+	import { useSelect } from '@wordpress/data';
+	import { overrideInnerBlockSimpleWrapperAttributes } from '@eightshift/frontend-libs/scripts/editor';
 
-  useSelect((select) => {
-    overrideInnerBlockSimpleWrapperAttributes(
-      select,
-      props.clientId,
-    );
-  });
+	useSelect((select) => {
+		overrideInnerBlockSimpleWrapperAttributes(
+			select,
+			props.clientId,
+		);
+	});
+```
+
+## props
+
+Output only attributes that are used in the component and remove everything else.
+
+* @param {object}  attributes Object of attributes from block/component.
+* @param {string}  realName Old key to use, generally this is the name of the block/component.
+* @param {string}  newName New key to use to rename attributes.
+* @param {boolean} isBlock Check if helper is used on block or component.
+* @param {string}  globalManifestData If global manifest is not provided use the default path.
+
+**Data:**
+```js
+const attributes = {
+	buttonColor: 'red',
+	buttonSize: 'big',
+	buttonIcon: 'blue',
+	blockName: 'button',
+	wrapperSize: 'big',
+	wrapperType: 'normal',
+};
+
+const blockName = 'button';
+const componentName = 'button';
+```
+
+**Usage:**
+
+```js
+import { props } from '@eightshift/frontend-libs/scripts/editor';
+
+{...props(attributes, blockName, '', true)}
+
+{...props(attributes, componentName)}
+
+{...props(attributes, 'typography', componentName)}
+```
+
+**Output:**
+
+```js
+{
+	buttonColor: 'red',
+	buttonSize: 'big',
+	buttonIcon: 'blue',
+	blockName: 'button',
+};
+
+{
+	buttonColor: 'red',
+	buttonSize: 'big',
+	buttonIcon: 'blue',
+	blockName: 'button',
+};
+
+{
+	typographyColor: 'red',
+	typographySize: 'big',
+	typographyIcon: 'blue',
+};
 ```
 
 ## ucfirst
@@ -211,7 +521,7 @@ Converts the first letter of a string to uppercase.
 **Usage:**
 
 ```js
-  import { ucfirst } from '@eightshift/frontend-libs/scripts/editor';
+	import { ucfirst } from '@eightshift/frontend-libs/scripts/editor';
 
-  ucfirst('custom');
+	ucfirst('custom');
 ```
