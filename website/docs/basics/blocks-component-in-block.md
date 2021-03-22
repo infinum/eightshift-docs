@@ -565,7 +565,7 @@ Now, let's see how the `Component heading` looks like.
 }
 ```
 
-In `Component heading` we are using the `typography` component but we are not using the default name but rather we are changing the attribute names from `typography` to `heading`.
+In the `heading` component we are using the `typography` component but we are not using the default component name. Instead, we are changing the attribute name from `typography` to `heading`.
 
 **Component heading-editor.js:**
 
