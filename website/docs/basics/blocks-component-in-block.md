@@ -350,7 +350,7 @@ Let's say you have a block that has a `Heading` component inside it.
 The `Heading` has 10 text sizes and 5 colors, but for that block, only 2 colors and 3 text sizes are allowed.
 To achieve this you must prepare your component to be able to use this feature:
 
-1. Your component options must be named the same name as their attribute value. In the example, you can see that the options key for `typographySize` is the same name as in attributes.
+1. Your component options must be named the same name as their attribute value. In the example, you can see that the options key for `typographySize` is the same name as in the attributes.
 
 ```json
 {
