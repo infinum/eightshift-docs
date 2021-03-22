@@ -636,8 +636,8 @@ Block:
 * `Props helper` will provide all the attributes used in the block and it will follow the dependency tree to the end so that all the attributes from the children components will also be provided as a result.
 
 Components:
-* `Components` key in the `manifest.json` is used to determine the dependency tree when passing the attributes from parent to the children.
-* `Props helper` will provide only attributes that are used in the children's components recursively. The sam as props helper in the block.
+* `Components` key in the `manifest.json` is used to determine the dependency tree when passing the attributes from parent to children.
+* `Props helper` will provide only those attributes that are used in the children's components recursively. The same as props helper in the block.
 
 For more details please read the [props helper docs](helpers-javascript#props).
 

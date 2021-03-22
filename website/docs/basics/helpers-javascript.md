@@ -102,7 +102,7 @@ Used to get (require) all the files using the `require.context` method. It will 
 
 ## elementChildrenHeight
 
-Returns height of the element measured by height of its children.
+Returns the height of the element measured by the height of its children.
 
 * @param {object} element DOM element
 
@@ -220,13 +220,13 @@ import { getOptions } from '@eightshift/frontend-libs/scripts/editor';
 
 ## getOptions
 
-Provides ability to override component options from the parent block/component
-The components must have the same options name as attribute standard with componentName prefix.
+Provides the ability to override component options from the parent block/component.
+The components must have the same option names as attribute standard with `componentName` prefix.
 
 * @param {object} manifest Original manifest from the component.
 * @param {string} componentName Current componentName. This is changed depending on the passed componentName.
-* @param {string} attribute Attribute name to check without componentName prefix. Value is auto titleCased.
-* @param {object} options Options provide by the parent block/component.
+* @param {string} attribute Attribute name to check without componentName prefix. Value is auto camelCased.
+* @param {object} options Options provided by the parent block/component.
 
 **Usage:**
 
@@ -262,7 +262,7 @@ Use this hook to read editor-color-palette colors directly from WP built-in stor
 
 ## outputCssVariablesGlobal
 
-Get Global Manifest.json and return globalVariables as css variables.
+Get global manifest.json and return `globalVariables` as CSS variables.
 
 * @param array globalManifest Array of global variables data.
 
@@ -349,11 +349,11 @@ outputCssVariablesGlobal(globalSettings);
 
 ## outputCssVariables
 
-Get component/block options and process them in css variables.
+Get component/block options and process them in CSS variables.
 
-If the attribute key has `variable` key than that attribute will be outputted to the inline style for css variables.
+If the attribute key has a `variable` key then that attribute will be outputted to the inline style for CSS variables.
 
-If you provide an additional key `color`, the helper will check global manifest and output css variable for color name.
+If you provide an additional key `color`, the helper will check the global manifest and output the CSS variable for the color name.
 
 * @param array  attributes Built attributes.
 * @param array  manifest Component/block manifest data.
