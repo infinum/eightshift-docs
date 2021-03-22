@@ -597,7 +597,7 @@ export const HeadingEditor = (attributes) => {
 };
 ```
 
-The difference here is that you don't need to provide the fourth parameter here because this is a component. In this example, you are swiping attribute names so we must provide the target component name as a `second parameter and the current component name as a `third` parameter.
+The difference here is that you don't need to provide the fourth parameter because this is a component. In this example, you are swapping attribute names so we must provide the target component name as a `second` parameter and the current component name as a `third` parameter.
 
 **Component heading.php**
 ```php
