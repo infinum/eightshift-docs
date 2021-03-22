@@ -458,7 +458,7 @@ To achieve this you must prepare your component to be able to use this feature:
 }
 ```
 
-An this is it you are now able to override options from the parent block/component.
+And this is it. You are now able to override the options from the parent block/component.
 
 > Keep in mind that you can only override SelectControl, ColorPaletteCustom, and AlignmentToolbar.
 
