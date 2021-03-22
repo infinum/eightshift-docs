@@ -555,7 +555,7 @@ In PHP you just provide the results of the props helper. As you can see in the [
 
 Now, let's see how the `Component heading` looks like.
 
-**Component Heading manifest.json:**
+**Heading component manifest.json:**
 ```json
 {
   "componentName": "heading",
