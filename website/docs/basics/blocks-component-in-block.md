@@ -633,7 +633,7 @@ There is nothing special that you need to do in the last component in the tree o
 
 Block:
 * `Components` key in the `manifest.json` is used to provide/change the attribute names on the block registration process.
-* `Props helper` will provide all the attributes used in the block and add it will follow the dependency tree to the end so all attributes from the children components will also be provided as a result of this helper.
+* `Props helper` will provide all the attributes used in the block and it will follow the dependency tree to the end so that all the attributes from the children components will also be provided as a result.
 
 Components:
 * `Components` key in the `manifest.json` is used to determine the dependency tree when passing the attributes from parent to the children.
