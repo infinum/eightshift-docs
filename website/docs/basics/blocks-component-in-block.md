@@ -478,7 +478,7 @@ As described in [this chapter](blocks-component-in-block#i-want-to-limit-which-o
   * heading
 
 You have block `heading` that uses component `heading` and that component uses another component called `typography`.
-We are putting only necessary stuff in the example:
+We are putting only relevant code in the example:
 
 **Block Heading manifest.json:**
 ```json
