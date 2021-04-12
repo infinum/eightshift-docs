@@ -6,7 +6,7 @@ sidebar_label: Styles
 
 [![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/develop/blocks/init/src/blocks/)
 
-We decided to remove all support for IE 11 and at that point, a bunch of doors opened up for new features and cool stuff. One of those features is CSS variables with block manifest and global settings.
+We decided to remove all support for IE 11.  That decision opened up doors that lead to new, awesome features and all the cool stuff. One of those features is CSS variables with block manifest and global settings.
 
 Let's dig into the implementation of CSS variables in your project.
 
@@ -14,7 +14,7 @@ Let's dig into the implementation of CSS variables in your project.
 
 To be able to use CSS variables you need to implement two helpers in your blocks/components: `outputCssVariables` and `getUnique`. For more details on these helpers, you can read [here](helpers-javascript#outputcssvariables). 
 
-There are a few differences between the JavaScript and PHP implementation due to how React handles component re-rendering.
+There are a few differences between the JavaScript and PHP implementation due to a way React handles component re-rendering.
 
 **typography-editor.js**
 ```js
@@ -60,11 +60,11 @@ echo Components::outputCssVariables($attributes, $manifest, $unique); // phpcs:i
   // Regular component implementation
 </div>
 ```
-Now that we have helpers in place let's see how they work and what features they offer.
+Now that we have helpers in place, let's see how they work and what features they offer.
 
 ## Details
 
-CSS variables helper consists of 2 helpers. `outputCssVariables` helper will output all CSS variables set in your blocks/component manifest and `getUnique` helper will make sure that variables are applied only to the correct block/component.
+CSS variables helper consists of 2 helpers. `outputCssVariables` helper will output all CSS variables set in your blocks/component manifest and `getUnique` helper will make sure that variables are applied only to the exact block/component.
 
 If you check your rendered website you can see that you have something like this:
 ```html
