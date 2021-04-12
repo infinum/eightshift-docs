@@ -243,7 +243,7 @@ If you have an attribute that represent colors from global variables, you can ou
 --typography-color: var(--global-colors-white);
 ```
 
-## Complex attributes
+## Complex attribute variables
 
 If you have attributes stored as objects (for example used in the `SelectControl` component), by default CSS variable generator will output the `value` stored in the attribute.
 Setting the `variable` key to `select`, the CSS variable generator will look for the `variable` key in the manifest `options` field.
@@ -289,7 +289,7 @@ If the `variable` key is not set in options, the `value` key will be used as fal
 --typography-size: somethingNew
 ```
 
-### Complex variables - Editor only
+### Complex attribute variables inside the Block editor
 
 If you want to show different variables on the frontend and in the editor you can use the `variableEditor` key to output a different variable inside the block editor.
 
