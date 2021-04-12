@@ -6,7 +6,7 @@ sidebar_label: Writing Styles
 
 [![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs)
 
-> This chapter is only relevant in setup without CSS variables, if you are using CSS variables please skip to [Blocks Styles chapter](blocks-styles).
+> > This chapter is only relevant in setups that don't use CSS variables. If you are using CSS variables please skip to the [Blocks Styles chapter](blocks-styles) chapter.
 
 Everyone says that writing styles is easy and that is usually doesn't require a lot of thinking. But, like everything in programming, if you don't think about it, the problems add up, and you end up with a headache.
 

@@ -12,9 +12,9 @@ Let's dig into the implementation of CSS variables in your project.
 
 ## Setup
 
-To be able to use CSS variable you need to implement two helpers `outputCssVariables` and `getUnique` in your block/component. For more details on these helpers, you can read [here](helpers-javascript#outputcssvariables). 
+To be able to use CSS variables you need to implement two helpers in your blocks/components: `outputCssVariables` and `getUnique`. For more details on these helpers, you can read [here](helpers-javascript#outputcssvariables). 
 
-There are a few small differences between implementation in JavaScript and PHP due to how React handles components re-rendering.
+There are a few differences between the JavaScript and PHP implementation due to how React handles component re-rendering.
 
 **typography-editor.js**
 ```js
@@ -24,7 +24,7 @@ import manifest from '../manifest.json';
 
 export const TypographyEditor = (attributes) => {
 
-  // We need to use memo in order to optimise components re-render.
+  // We need to use memo in order to optimise component re-rendering.
   const unique = useMemo(() => getUnique(), []);
 
   return (
@@ -60,11 +60,11 @@ echo Components::outputCssVariables($attributes, $manifest, $unique); // phpcs:i
   // Regular component implementation
 </div>
 ```
-Now that we have helpers in place let's see how they are working and what features they have to offer.
+Now that we have helpers in place let's see how they work and what features they offer.
 
 ## Details
 
-CSS variables helper work in a combination of 2 helpers. `outputCssVariables` helper will output all CSS variables set in your blocks/component manifest and `getUnique` helper will make sure that variables are only applied to the correct block/component.
+CSS variables helper consists of 2 helpers. `outputCssVariables` helper will output all CSS variables set in your blocks/component manifest and `getUnique` helper will make sure that variables are applied only to the correct block/component.
 
 If you check your rendered website you can see that you have something like this:
 ```html
@@ -78,14 +78,14 @@ If you check your rendered website you can see that you have something like this
 <div class="typography" data-id="210c9bbf733ef5c6aa74c49168ac29a7">...</div>
 ```
 
-This is it for all the magic of CSS variables. Now let us see it in action and all those additional features you can utilize.
+This is all that's required for the magic of CSS variables to work! Now let's see it in action and check out all additional features you can use.
 
 ## Global variables
 
-Now that we know how CSS variables are outputted we have one additional helper to describe. This helper is loaded in `application-blocks-editor.js` file and it is called `outputCssVariablesGlobal(globalSettings);`.
-It is used to output all CSS variables from the global manifest under the `globalVariables` key to `:root` selector.
+Now that we know how CSS variables are generated, we have one more helper to describe.
+The `outputCssVariablesGlobal(globalSettings);` helper is called in the `application-blocks-editor.js` file. It is used to output all CSS variables from the global manifest under the `globalVariables` key, into the `:root` selector.
 
-> Those variables are available in all your blocks/components.
+> All of these variables are available to use inside your blocks/components.
 
 **Global Manifest:**
 ```json
@@ -168,16 +168,16 @@ It is used to output all CSS variables from the global manifest under the `globa
 </style>
 ```
 
-To use global variable just call:
+You can use a global variable like any other CSS variable:
 ```css
-var(--global-colors-infinum);
+color: var(--global-colors-infinum);
 ```
 
-## Variable Default
+## Variable Defaults
 
-As we said in the beginning, all CSS variables are controlled with the block/component manifest but we didn't want to output all attributes as CSS variables (because you don't need them all), so you need to set what attributes you are going to output.
+As we said in the beginning, all CSS variables are defined within the block/component manifest. To avoid outputting all of the variables (because you might not need them all), the attributes that will be output as variables need to be defined.
 
-To output attribute as CSS variable, you need to set the `variable` key to `default`. This way you will get the output of the default value or value set in the database.
+To output an attribute as a CSS variable, you need to set the `variable` key to `default`. This way you will get the output of the default value or value set in the database.
 
 **Manifest:**
 ```json
@@ -213,9 +213,9 @@ To output attribute as CSS variable, you need to set the `variable` key to `defa
 --typography-size: 120-default
 ```
 
-## Variable Color
+## Color variables
 
-If you have attributes that represent color used from the global variable you can output the CSS variable for color directly.
+If you have an attribute that represent colors from global variables, you can output the CSS variable for color directly.
 
 **Manifest:**
 ```json
@@ -249,14 +249,14 @@ If you have attributes that represent color used from the global variable you ca
 --typography-color: var(--global-colors-infinum);
 ```
 
-## Variable Select
+## Complex attributes
 
-If you have attributes that are used in the `SelectControl` component by default CSS variable will output the `value` stored in the attribute.
-If you set the variable to `select`, the CSS variable will look for the `variable` key in the manifest options.
+If you have attributes stored as objects (for example used in the `SelectControl` component), by default CSS variable generator will output the `value` stored in the attribute.
+Setting the `variable` key to `select`, the CSS variable generator will look for the `variable` key in the manifest `options` field.
 
-If the `variable` key is not set in options, the fallback will be the `value` key.
+If the `variable` key is not set in options, the `value` key will be used as fallback.
 
-> You can write any CSS selector, variable in the custom variable key.
+> You can write any CSS declaration or variable in the custom variable key.
 
 **Manifest:**
 ```json
@@ -295,30 +295,29 @@ If the `variable` key is not set in options, the fallback will be the `value` ke
 --typography-size: somethingNew
 ```
 
-### Variable Select - Editor only
+### Complex variables - Editor only
 
-If you want to show different variables on the frontend and editor you can use the additional key `variableEditor` to output variable only for the editor.
-This way fronted will get the `variable` key and editor `variableEditor` key.
+If you want to show different variables on the frontend and in the editor you can use the `variableEditor` key to output a different variable inside the block editor.
 
-We have made fallbacks if you don't put `variableEditor` on all the options.
+If `variableEditor` is not present on all the options, the fallback behaviour is as follows:
 
-**Fallback tree - editor:**
-* variableEditor
-* variable
-* value
+**Block editor fallback tree:**
+* `variableEditor`
+* `variable`
+* `value`
 
-**Fallback tree:**
-* variable
-* value
+**Frontend fallback tree:**
+* `variable`
+* `value`
 
-## Variable Boolean
+## Boolean variables
 
-If you have attributes that are used in the `ToggleControl` component by default CSS variable will output the `value` stored in the attribute.
-If you set the variable to `boolean`, the CSS variable will look for the `index` key in the manifest options. The first key is the `false` value, and the second is the `true` value.
+By default, the CSS variable generator will output values stored in attributes. That means that boolean variables will get output as variables with `true` and `false` values, which might be something you don't want.
+If you set the `variable` key to `boolean`, the CSS variable generator will look for the `index` array in the manifest options. The first value reprents the value if attribute is `false`, and the second when it's `true`.
 
-If the `variable` key is not set in options fallback does default.
+If the `variable` key is not set in options, the fallback is to output the value inside the CSS variable.
 
-> You can write any CSS selector, variable in the custom variable key.
+> You can write any CSS declaration or variable in the custom variable key.
 
 **Manifest:**
 ```json
@@ -344,14 +343,14 @@ If the `variable` key is not set in options fallback does default.
 --typography-size: somethingTrue
 ```
 
-### Variable Boolean - Editor only
+### Boolean variables inside the Block editor
 
-If you want to show different variables on the frontend and editor you can use additional index places. The third key is the `editor false` value and the fourth key is the` editor true` value. Fallback is also in a place like in select.
+If you want to show different variables on the frontend and inside the Block editor you can use add values to the `index` key in options. The third value represents the value if false and the fourth editor value if true. Fallback tree is same as in Complex variables.
 
-## Manual Variables
+## Manual variables
 
-We made the option to add custom CSS variables in the output no matter the attributes. To use it, just add top-level key `variables` in the manifest and add each variable as an array item.
-Manual variables will just be added at the bottom of the output.
+There is an option to add custom CSS variables that get output independently from all the attributes. Just add a top-level `variables` key inside the manifest and add each variable as an array item.
+Manual variables will be added at the end of the output.
 
 **Manifest:**
 ```json
@@ -374,10 +373,10 @@ Manual variables will just be added at the bottom of the output.
 --variable3: test3;
 ```
  
-## Manual Variables - Editor only
+## Manual variables inside the Block editor
 
-If you want to add manual attributes only to the editor you can use the `variablesEditor` key. Everything else applies from the `Manual Variables`.
-If you combine `variablesEditor` and `variables` in one manifest, both of them will be outputted in the editor but only `variables` will be outputted on the frontend.
+If you want to add manual variables that only apply inside the Block editor you can use the `variablesEditor` key. Everything works the same as described in the _Manual variables_ section.
+If you define both `variablesEditor` and `variables`, both will be output in the editor, but only `variables` will be output on the frontend.
 
 **Manifest:**
 ```json
