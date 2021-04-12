@@ -122,11 +122,6 @@ The `outputCssVariablesGlobal(globalSettings);` helper is called in the `applica
     },
     "colors": [
       {
-        "name": "Infinum",
-        "slug": "infinum",
-        "color": "#D8262C"
-      },
-      {
         "name": "Black",
         "slug": "black",
         "color": "#111111"
@@ -161,7 +156,6 @@ The `outputCssVariablesGlobal(globalSettings);` helper is called in the `applica
     --global-section-in-spacing-min: 0;
     --global-section-in-spacing-max: 300;
     --global-section-in-spacing-step: 10;
-    --global-colors-infinum: #D8262C;
     --global-colors-black: #111111;
     --global-colors-white: #FFFFFF;
   }
@@ -170,7 +164,7 @@ The `outputCssVariablesGlobal(globalSettings);` helper is called in the `applica
 
 You can use a global variable like any other CSS variable:
 ```css
-color: var(--global-colors-infinum);
+color: var(--global-colors-white);
 ```
 
 ## Variable Defaults
@@ -223,16 +217,16 @@ If you have an attribute that represent colors from global variables, you can ou
   "attributes": {
     "typographyColor": {
       "type": "string",
-      "default": "infinum",
+      "default": "white",
       "variable": "color"
     }
   },
   "options": {
     "typographyColor": [
       {
-        "name": "Infinum",
-        "slug": "infinum",
-        "color": "#D8262C"
+        "name": "White",
+        "slug": "white",
+        "color": "#ffffff"
       },
       {
         "name": "Black",
@@ -246,7 +240,7 @@ If you have an attribute that represent colors from global variables, you can ou
 
 **Output:**
 ```css
---typography-color: var(--global-colors-infinum);
+--typography-color: var(--global-colors-white);
 ```
 
 ## Complex attributes
