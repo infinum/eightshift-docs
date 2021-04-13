@@ -26,10 +26,8 @@
   "scripts": {
     "start": "docusaurus start",
     "build": "docusaurus build",
-    "buildDevelop": "docusaurus build --out-dir=build/develop",
     "swizzle": "docusaurus swizzle",
-    "deploy": "docusaurus deploy",
-    "deployDevelop": "docusaurus deploy --out-dir=build/develop"
+    "deploy": "docusaurus deploy"
   },
   "dependencies": {
     "@docusaurus/core": "^2.0.0-alpha.50",
