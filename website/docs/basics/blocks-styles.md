@@ -343,7 +343,7 @@ If you want to show different variables on the frontend and inside the Block edi
 
 ## Custom variables
 
-If you need to set up many variables based on the single attribute value you can use variable key `custom`. This key will search in the `options` for the attribute key and output the CSS variables based on the attribute value. Each custom variable key must be an `object`. You will also get the original key in the output will as well.
+If you need to set up many variables based on a single attribute value you can use the `custom` key. This key will search through the `options` for the attribute key and output the CSS variables based on values. Each custom variable key must be an `object`. You will also get the original key in the output.
 
 **Manifest:**
 ```json
