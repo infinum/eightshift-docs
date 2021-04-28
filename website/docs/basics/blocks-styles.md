@@ -24,18 +24,18 @@ import manifest from '../manifest.json';
 
 export const TypographyEditor = (attributes) => {
 
-  // We need to use memo in order to optimise component re-rendering.
-  const unique = useMemo(() => getUnique(), []);
+	// We need to use memo in order to optimise component re-rendering.
+	const unique = useMemo(() => getUnique(), []);
 
-  return (
-    <>
-      {outputCssVariables(attributes, manifest, unique)}
+	return (
+		<>
+			{outputCssVariables(attributes, manifest, unique)}
 
-      <div data-id={unique}>
-        {/*Regular component implementation*/}
-      </div>
-    </>
-  );
+			<div data-id={unique}>
+				{/*Regular component implementation*/}
+			</div>
+		</>
+	);
 };
 ```
 
@@ -57,7 +57,7 @@ echo Components::outputCssVariables($attributes, $manifest, $unique); // phpcs:i
 ?>
 
 <div data-id="<?php echo esc_attr($unique); ?>">
-  // Regular component implementation
+	// Regular component implementation
 </div>
 ```
 Now that we have helpers in place, let's see how they work and what features they offer.
@@ -69,10 +69,10 @@ CSS variables helper consists of 2 helpers. `outputCssVariables` helper will out
 If you check your rendered website you can see that you have something like this:
 ```html
 <style>
-  .typography[data-id='210c9bbf733ef5c6aa74c49168ac29a7'] {
-    --typography-color: var(--global-colors-black);
-    --typography-content-align: left;
-  }
+	.typography[data-id='210c9bbf733ef5c6aa74c49168ac29a7'] {
+		--typography-color: var(--global-colors-black);
+		--typography-content-align: left;
+	}
 </style>
 
 <div class="typography" data-id="210c9bbf733ef5c6aa74c49168ac29a7">...</div>
@@ -90,75 +90,75 @@ The `outputCssVariablesGlobal(globalSettings);` helper is called in the `applica
 **Global Manifest:**
 ```json
 {
-  "namespace": "eightshift-boilerplate",
-  "background": "#D8262C",
-  "foreground": "#FFFFFF",
-  "globalVariables": {
-    "customBlocksName": "eightshift-block",
-    "maxCols": 12,
-    "breakpoints": {
-      "mobile": 479,
-      "tablet": 1279,
-      "desktop": 1919,
-      "large": 1920
-    },
-    "containers": {
-      "default": "1330px"
-    },
-    "gutters": {
-      "none": "0",
-      "default": "25px",
-      "big": "50px"
-    },
-    "sectionSpacing": {
-      "min":  -300,
-      "max":  300,
-      "step": 10
-    },
-    "sectionInSpacing": {
-      "min":  0,
-      "max":  300,
-      "step": 10
-    },
-    "colors": [
-      {
-        "name": "Black",
-        "slug": "black",
-        "color": "#111111"
-      },
-      {
-        "name": "White",
-        "slug": "white",
-        "color": "#FFFFFF"
-      }
-    ]
-  }
+	"namespace": "eightshift-boilerplate",
+	"background": "#D8262C",
+	"foreground": "#FFFFFF",
+	"globalVariables": {
+		"customBlocksName": "eightshift-block",
+		"maxCols": 12,
+		"breakpoints": {
+			"mobile": 479,
+			"tablet": 1279,
+			"desktop": 1919,
+			"large": 1920
+		},
+		"containers": {
+			"default": "1330px"
+		},
+		"gutters": {
+			"none": "0",
+			"default": "25px",
+			"big": "50px"
+		},
+		"sectionSpacing": {
+			"min":  -300,
+			"max":  300,
+			"step": 10
+		},
+		"sectionInSpacing": {
+			"min":  0,
+			"max":  300,
+			"step": 10
+		},
+		"colors": [
+			{
+				"name": "Black",
+				"slug": "black",
+				"color": "#111111"
+			},
+			{
+				"name": "White",
+				"slug": "white",
+				"color": "#FFFFFF"
+			}
+		]
+	}
 }
 ```
 
 **Output:**
 ```html
 <style>
-  :root {
-    --global-custom-blocks-name: eightshift-block;
-    --global-max-cols: 12;
-    --global-breakpoints-mobile: 479;
-    --global-breakpoints-tablet: 1279;
-    --global-breakpoints-desktop: 1919;
-    --global-breakpoints-large: 1920;
-    --global-containers-default: 1330px;
-    --global-gutters-none: 0;
-    --global-gutters-default: 25px;
-    --global-gutters-big: 50px;
-    --global-section-spacing-min: -300;
-    --global-section-spacing-max: 300;
-    --global-section-spacing-step: 10;
-    --global-section-in-spacing-min: 0;
-    --global-section-in-spacing-max: 300;
-    --global-section-in-spacing-step: 10;
-    --global-colors-black: #111111;
-    --global-colors-white: #FFFFFF;
-  }
+	:root {
+		--global-custom-blocks-name: eightshift-block;
+		--global-max-cols: 12;
+		--global-breakpoints-mobile: 479;
+		--global-breakpoints-tablet: 1279;
+		--global-breakpoints-desktop: 1919;
+		--global-breakpoints-large: 1920;
+		--global-containers-default: 1330px;
+		--global-gutters-none: 0;
+		--global-gutters-default: 25px;
+		--global-gutters-big: 50px;
+		--global-section-spacing-min: -300;
+		--global-section-spacing-max: 300;
+		--global-section-spacing-step: 10;
+		--global-section-in-spacing-min: 0;
+		--global-section-in-spacing-max: 300;
+		--global-section-in-spacing-step: 10;
+		--global-colors-black: #111111;
+		--global-colors-white: #FFFFFF;
+	}
 </style>
 ```
 
@@ -176,29 +176,29 @@ To output an attribute as a CSS variable, you need to set the `variable` key to 
 **Manifest:**
 ```json
 {
-  "attributes": {
-    "typographySize": {
-      "type": "string",
-      "default": "120-default",
-      "variable": "default"
-    }
-  },
-  "options": {
-    "typographySize": [
-      {
-        "label": "180 Display",
-        "value": "180-default"
-      },
-      {
-        "label": "120 Display",
-        "value": "120-default"
-      },
-      {
-        "label": "80 Display",
-        "value": "80-default"
-      }
-    ]
-  }
+	"attributes": {
+		"typographySize": {
+			"type": "string",
+			"default": "120-default",
+			"variable": "default"
+		}
+	},
+	"options": {
+		"typographySize": [
+			{
+				"label": "180 Display",
+				"value": "180-default"
+			},
+			{
+				"label": "120 Display",
+				"value": "120-default"
+			},
+			{
+				"label": "80 Display",
+				"value": "80-default"
+			}
+		]
+	}
 }
 ```
 
@@ -214,27 +214,27 @@ If you have an attribute that represent colors from global variables, you can ou
 **Manifest:**
 ```json
 {
-  "attributes": {
-    "typographyColor": {
-      "type": "string",
-      "default": "white",
-      "variable": "color"
-    }
-  },
-  "options": {
-    "typographyColor": [
-      {
-        "name": "White",
-        "slug": "white",
-        "color": "#ffffff"
-      },
-      {
-        "name": "Black",
-        "slug": "black",
-        "color": "#111111"
-      },
-    ]
-  }
+	"attributes": {
+		"typographyColor": {
+			"type": "string",
+			"default": "white",
+			"variable": "color"
+		}
+	},
+	"options": {
+		"typographyColor": [
+			{
+				"name": "White",
+				"slug": "white",
+				"color": "#ffffff"
+			},
+			{
+				"name": "Black",
+				"slug": "black",
+				"color": "#111111"
+			},
+		]
+	}
 }
 ```
 
@@ -255,32 +255,32 @@ If the `variable` key is not set in options, the `value` key will be used as fal
 **Manifest:**
 ```json
 {
-  "attributes": {
-    "typographySize": {
-      "type": "string",
-      "default": "120-default",
-      "variable": "select"
-    }
-  },
-  "options": {
-    "typographySize": [
-      {
-        "label": "180 Display",
-        "value": "180-default",
-        "variable": "something"
-      },
-      {
-        "label": "120 Display",
-        "value": "120-default",
-        "variable": "somethingNew"
-      },
-      {
-        "label": "80 Display",
-        "value": "80-default",
-        "variable": "somethingNew2"
-      }
-    ]
-  }
+	"attributes": {
+		"typographySize": {
+			"type": "string",
+			"default": "120-default",
+			"variable": "select"
+		}
+	},
+	"options": {
+		"typographySize": [
+			{
+				"label": "180 Display",
+				"value": "180-default",
+				"variable": "something"
+			},
+			{
+				"label": "120 Display",
+				"value": "120-default",
+				"variable": "somethingNew"
+			},
+			{
+				"label": "80 Display",
+				"value": "80-default",
+				"variable": "somethingNew2"
+			}
+		]
+	}
 }
 ```
 
@@ -316,19 +316,19 @@ If the `variable` key is not set in options, the fallback is to output the value
 **Manifest:**
 ```json
 {
-  "attributes": {
-    "typographyUse": {
-      "type": "boolean",
-      "default": true,
-      "variable": "boolean"
-    }
-  },
-  "options": {
-    "typographyUse": [
-      "somethingFalse",
-      "somethingTrue"
-    ]
-  }
+	"attributes": {
+		"typographyUse": {
+			"type": "boolean",
+			"default": true,
+			"variable": "boolean"
+		}
+	},
+	"options": {
+		"typographyUse": [
+			"somethingFalse",
+			"somethingTrue"
+		]
+	}
 }
 ```
 
@@ -341,6 +341,70 @@ If the `variable` key is not set in options, the fallback is to output the value
 
 If you want to show different variables on the frontend and inside the Block editor you can use add values to the `index` key in options. The third value represents the value if false and the fourth editor value if true. Fallback tree is same as in Complex variables.
 
+## Custom variables
+
+If you need to set up many variables based on the single attribute value you can use variable key `custom`. This key will search in the `options` for the attribute key and output the CSS variables based on the attribute value. Each custom variable key must be an `object`. You will also get the original key in the output will as well.
+
+**Manifest:**
+```json
+{
+	"attributes": {
+		"imageAlign": {
+			"type": "string",
+			"default": "center center",
+			"variable": "custom"
+		}
+	},
+	"options": {
+		"imageAlign": {
+			"top left": {
+				"horizontal": "flex-start",
+				"vertical": "flex-start"
+			},
+			"top center": {
+				"horizontal": "center",
+				"vertical": "flex-start"
+			},
+			"top right": {
+				"horizontal": "flex-end",
+				"vertical": "flex-start"
+			},
+			"center left": {
+				"horizontal": "flex-start",
+				"vertical": "center"
+			},
+			"center center": {
+				"horizontal": "center",
+				"vertical": "center"
+			},
+			"center right": {
+				"horizontal": "flex-end",
+				"vertical": "center"
+			},
+			"bottom left": {
+				"horizontal": "flex-start",
+				"vertical": "flex-end"
+			},
+			"bottom center": {
+				"horizontal": "center",
+				"vertical": "flex-end"
+			},
+			"bottom right": {
+				"horizontal": "flex-end",
+				"vertical": "flex-end"
+			}
+		}
+	},
+}
+```
+
+**Output:**
+```css
+--image-align: center center; 
+--image-align-horizontal: center;
+--image-align-vertical: center;
+```
+
 ## Manual variables
 
 There is an option to add custom CSS variables that get output independently from all the attributes. Just add a top-level `variables` key inside the manifest and add each variable as an array item.
@@ -349,14 +413,14 @@ Manual variables will be added at the end of the output.
 **Manifest:**
 ```json
 {
-  "attributes": {
-    // ...
-  },
-  "variables": [
-    "--variable1: test1",
-    "--variable2: test2",
-    "--variable3: test3"
-  ]
+	"attributes": {
+		// ...
+	},
+	"variables": [
+		"--variable1: test1",
+		"--variable2: test2",
+		"--variable3: test3"
+	]
 }
 ```
 
@@ -375,14 +439,14 @@ If you define both `variablesEditor` and `variables`, both will be output in the
 **Manifest:**
 ```json
 {
-  "attributes": {
-    // ...
-  },
-  "variablesEditor": [
-    "--variable1: test1",
-    "--variable2: test2",
-    "--variable3: test3"
-  ]
+	"attributes": {
+		// ...
+	},
+	"variablesEditor": [
+		"--variable1: test1",
+		"--variable2: test2",
+		"--variable3: test3"
+	]
 }
 ```
 
