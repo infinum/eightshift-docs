@@ -289,21 +289,6 @@ If the `variable` key is not set in options, the `value` key will be used as fal
 --typography-size: 0.12em;
 ```
 
-### Complex attribute variables inside the Block editor
-
-If you want to show different variables on the frontend and in the editor you can use the `variableEditor` key to output a different variable inside the block editor.
-
-If `variableEditor` is not present on all the options, the fallback behaviour is as follows:
-
-**Block editor fallback tree:**
-* `variableEditor`
-* `variable`
-* `value`
-
-**Frontend fallback tree:**
-* `variable`
-* `value`
-
 ## Boolean variables
 
 By default, the CSS variable generator will output values stored in attributes. That means that boolean variables will get output as variables with `true` and `false` values, which might be something you don't want.
@@ -337,10 +322,6 @@ If the `variable` key is not set in options, the fallback is to output the value
 --typography-use: block;
 ```
 
-### Boolean variables inside the Block editor
-
-If you want to show different variables on the frontend and inside the Block editor you can use add values to the `index` key in options. The third value represents the value if false and the fourth editor value if true. Fallback tree is same as in Complex variables.
-
 ## Custom variables
 
 If you need to set up many variables based on a single attribute value you can use the `custom` key. This key will search through the `options` for the attribute key and output the CSS variables based on values. Each custom variable key must be an `object`. You will also get the original key in the output.
@@ -357,43 +338,41 @@ If you need to set up many variables based on a single attribute value you can u
 	},
 	"options": {
 		"imageAlign": {
-			"variable": {
-				"top left": {
-					"horizontal": "flex-start",
-					"vertical": "flex-start"
-				},
-				"top center": {
-					"horizontal": "center",
-					"vertical": "flex-start"
-				},
-				"top right": {
-					"horizontal": "flex-end",
-					"vertical": "flex-start"
-				},
-				"center left": {
-					"horizontal": "flex-start",
-					"vertical": "center"
-				},
-				"center center": {
-					"horizontal": "center",
-					"vertical": "center"
-				},
-				"center right": {
-					"horizontal": "flex-end",
-					"vertical": "center"
-				},
-				"bottom left": {
-					"horizontal": "flex-start",
-					"vertical": "flex-end"
-				},
-				"bottom center": {
-					"horizontal": "center",
-					"vertical": "flex-end"
-				},
-				"bottom right": {
-					"horizontal": "flex-end",
-					"vertical": "flex-end"
-				}
+			"top left": {
+				"horizontal": "flex-start",
+				"vertical": "flex-start"
+			},
+			"top center": {
+				"horizontal": "center",
+				"vertical": "flex-start"
+			},
+			"top right": {
+				"horizontal": "flex-end",
+				"vertical": "flex-start"
+			},
+			"center left": {
+				"horizontal": "flex-start",
+				"vertical": "center"
+			},
+			"center center": {
+				"horizontal": "center",
+				"vertical": "center"
+			},
+			"center right": {
+				"horizontal": "flex-end",
+				"vertical": "center"
+			},
+			"bottom left": {
+				"horizontal": "flex-start",
+				"vertical": "flex-end"
+			},
+			"bottom center": {
+				"horizontal": "center",
+				"vertical": "flex-end"
+			},
+			"bottom right": {
+				"horizontal": "flex-end",
+				"vertical": "flex-end"
 			}
 		}
 	},
@@ -406,21 +385,6 @@ If you need to set up many variables based on a single attribute value you can u
 --image-align-horizontal: center;
 --image-align-vertical: center;
 ```
-
-### Custom variables inside the Block editor
-
-If you want to show different variables on the frontend and in the editor you can use the `variableEditor` key to output a different variable inside the block editor.
-
-> If you provide override for the Block Editor you must set all inner variables.
-
-If `variableEditor` is not present on all the options, the fallback behaviour is as follows:
-
-**Block editor fallback tree:**
-* `variableEditor`
-* `variable`
-
-**Frontend fallback tree:**
-* `variable`
 
 ## Manual variables
 
