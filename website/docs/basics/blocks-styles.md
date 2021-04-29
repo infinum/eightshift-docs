@@ -252,6 +252,8 @@ If the `variable` key is not set in options, the `value` key will be used as fal
 
 > You can write any CSS declaration or variable in the custom variable key.
 
+### Variable as string:
+
 **Manifest:**
 ```json
 {
@@ -287,6 +289,49 @@ If the `variable` key is not set in options, the `value` key will be used as fal
 **Output:**
 ```css
 --typography-size: 0.12em;
+```
+
+### Variable as object:
+
+**Manifest:**
+```json
+{
+	"attributes": {
+		"typographySize": {
+			"type": "string",
+			"default": "80-default",
+			"variable": "select"
+		}
+	},
+	"options": {
+		"typographySize": [
+			{
+				"label": "180 Display",
+				"value": "180-default",
+				"variable": "180px"
+			},
+			{
+				"label": "120 Display",
+				"value": "120-default",
+				"variable": "0.12em"
+			},
+			{
+				"label": "80 Display",
+				"value": "80-default",
+				"variable": {
+					"font-size": "80px",
+					"line-size": "1.5"
+				}
+			}
+		]
+	}
+}
+```
+
+**Output:**
+```css
+--typography-size-font-size: 80px;
+--typography-size-line-size: 1.5;
 ```
 
 ## Boolean variables
