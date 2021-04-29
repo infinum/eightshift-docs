@@ -52,6 +52,10 @@ This function is the PHP equivalent of the JavaScript function on this [link](he
 
 This function is the PHP equivalent of the JavaScript function on this [link](helpers-javascript).
 
+## checkAttrResponsive
+
+This function is the PHP equivalent of the JavaScript function on this [link](helpers-javascript).
+
 ## selector
 
 This function is the PHP equivalent of the JavaScript function on this [link](helpers-javascript).

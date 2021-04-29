@@ -267,17 +267,17 @@ If the `variable` key is not set in options, the `value` key will be used as fal
 			{
 				"label": "180 Display",
 				"value": "180-default",
-				"variable": "something"
+				"variable": "180px"
 			},
 			{
 				"label": "120 Display",
 				"value": "120-default",
-				"variable": "somethingNew"
+				"variable": "0.12em"
 			},
 			{
 				"label": "80 Display",
 				"value": "80-default",
-				"variable": "somethingNew2"
+				"variable": "80%"
 			}
 		]
 	}
@@ -286,7 +286,7 @@ If the `variable` key is not set in options, the `value` key will be used as fal
 
 **Output:**
 ```css
---typography-size: somethingNew
+--typography-size: 0.12em;
 ```
 
 ### Complex attribute variables inside the Block editor
@@ -325,8 +325,8 @@ If the `variable` key is not set in options, the fallback is to output the value
 	},
 	"options": {
 		"typographyUse": [
-			"somethingFalse",
-			"somethingTrue"
+			"none",
+			"block"
 		]
 	}
 }
@@ -334,7 +334,7 @@ If the `variable` key is not set in options, the fallback is to output the value
 
 **Output:**
 ```css
---typography-size: somethingTrue
+--typography-use: block;
 ```
 
 ### Boolean variables inside the Block editor
@@ -357,41 +357,43 @@ If you need to set up many variables based on a single attribute value you can u
 	},
 	"options": {
 		"imageAlign": {
-			"top left": {
-				"horizontal": "flex-start",
-				"vertical": "flex-start"
-			},
-			"top center": {
-				"horizontal": "center",
-				"vertical": "flex-start"
-			},
-			"top right": {
-				"horizontal": "flex-end",
-				"vertical": "flex-start"
-			},
-			"center left": {
-				"horizontal": "flex-start",
-				"vertical": "center"
-			},
-			"center center": {
-				"horizontal": "center",
-				"vertical": "center"
-			},
-			"center right": {
-				"horizontal": "flex-end",
-				"vertical": "center"
-			},
-			"bottom left": {
-				"horizontal": "flex-start",
-				"vertical": "flex-end"
-			},
-			"bottom center": {
-				"horizontal": "center",
-				"vertical": "flex-end"
-			},
-			"bottom right": {
-				"horizontal": "flex-end",
-				"vertical": "flex-end"
+			"variable": {
+				"top left": {
+					"horizontal": "flex-start",
+					"vertical": "flex-start"
+				},
+				"top center": {
+					"horizontal": "center",
+					"vertical": "flex-start"
+				},
+				"top right": {
+					"horizontal": "flex-end",
+					"vertical": "flex-start"
+				},
+				"center left": {
+					"horizontal": "flex-start",
+					"vertical": "center"
+				},
+				"center center": {
+					"horizontal": "center",
+					"vertical": "center"
+				},
+				"center right": {
+					"horizontal": "flex-end",
+					"vertical": "center"
+				},
+				"bottom left": {
+					"horizontal": "flex-start",
+					"vertical": "flex-end"
+				},
+				"bottom center": {
+					"horizontal": "center",
+					"vertical": "flex-end"
+				},
+				"bottom right": {
+					"horizontal": "flex-end",
+					"vertical": "flex-end"
+				}
 			}
 		}
 	},
@@ -404,6 +406,21 @@ If you need to set up many variables based on a single attribute value you can u
 --image-align-horizontal: center;
 --image-align-vertical: center;
 ```
+
+### Custom variables inside the Block editor
+
+If you want to show different variables on the frontend and in the editor you can use the `variableEditor` key to output a different variable inside the block editor.
+
+> If you provide override for the Block Editor you must set all inner variables.
+
+If `variableEditor` is not present on all the options, the fallback behaviour is as follows:
+
+**Block editor fallback tree:**
+* `variableEditor`
+* `variable`
+
+**Frontend fallback tree:**
+* `variable`
 
 ## Manual variables
 
