@@ -30,17 +30,85 @@ newSuperTestTitle
 
 Checks whether the attributes exist in the attributes list and adds a default value if they don't.
 
-* @param {string} $key Key to check.
-* @param {array}  $attributes Array of attributes.
-* @param {array}  $manifest Array of default attributes from manifest.json.
-* @param {string} $componentName The real component name.
+* @param {string} key Key to check.
+* @param {array}  attributes Array of attributes.
+* @param {array}  manifest Array of default attributes from manifest.json.
+* @param {string} componentName The real component name.
 
 **Usage:**
 
 ```js
 	import { checkAttr } from '@eightshift/frontend-libs/scripts/helpers';
 
-	checkAttr('buttonUse', attributes, manifest, $componentName);
+	checkAttr('buttonUse', attributes, manifest, componentName);
+```
+
+## checkAttrResponsive
+
+Map and check attributes for responsive object.
+
+* @param {string} keyName Key name to find in responsiveAttributes object.
+* @param {array}  attributes Array of attributes.
+* @param {array}  manifest Array of default attributes from manifest.json.
+* @param {string} componentName The real component name.
+* @throws \Exception If missing responsiveAttributes or keyName in responsiveAttributes.
+* @throws \Exception If missing keyName in responsiveAttributes.
+* @return mixed
+
+**Manifest:**
+
+```json
+{
+	"attributes": {
+		"headingContentSpacingLarge": {
+			"type": "integer",
+			"variable": "default",
+			"default": 10,
+		},
+		"headingContentSpacingDesktop": {
+			"type": "integer",
+			"variable": "default",
+			"default": 5,
+		},
+		"headingContentSpacingTablet": {
+			"type": "integer",
+			"variable": "default",
+			"default": 3,
+		},
+		"headingContentSpacingMobile": {
+			"type": "integer",
+			"variable": "default",
+			"default": 1,
+		}
+	},
+	"responsiveAttributes": {
+		"headingContentSpacing": {
+			"large": "headingContentSpacingLarge",
+			"desktop": "headingContentSpacingDesktop",
+			"tablet": "headingContentSpacingTablet",
+			"mobile": "headingContentSpacingMobile"
+		}
+	}
+}
+```
+
+**Usage:**
+
+```js
+	import { checkAttrResponsive } from '@eightshift/frontend-libs/scripts/helpers';
+
+	checkAttrResponsive('headingContentSpacing', attributes, manifest, componentName);
+```
+
+**Output:**
+
+```js
+[
+	large: 10,
+	desktop: 5,
+	tablet: 3,
+	mobile: 1,
+]
 ```
 
 ## cookies
