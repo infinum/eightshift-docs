@@ -369,7 +369,7 @@ If the `variable` key is not set in options, the fallback is to output the value
 
 ## Custom variables
 
-If you need a more complex setup with multiple variables for a single attribute value you can use the `custom` key. It will output the CSS variables based on values defined in the `options`. Each custom variable key must be an `object`. The original key is also output.
+If you need a more complex setup with multiple variables for a single attribute value you can use the `custom` key. It will output the CSS variables based on values defined in the `options`. Each custom variable key must be an `object`.
 
 **Manifest:**
 ```json
