@@ -252,7 +252,7 @@ If the `variable` key is not set in options, the `value` key will be used as fal
 
 > You can write any CSS declaration or variable in the custom variable key.
 
-### Variable as string:
+### Variable as a string:
 
 **Manifest:**
 ```json
@@ -291,7 +291,7 @@ If the `variable` key is not set in options, the `value` key will be used as fal
 --typography-size: 0.12em;
 ```
 
-### Variable as object:
+### Variable as an object:
 
 **Manifest:**
 ```json
@@ -320,7 +320,7 @@ If the `variable` key is not set in options, the `value` key will be used as fal
 				"value": "80-default",
 				"variable": {
 					"font-size": "80px",
-					"line-size": "1.5"
+					"line-height": "1.5"
 				}
 			}
 		]
@@ -331,7 +331,7 @@ If the `variable` key is not set in options, the `value` key will be used as fal
 **Output:**
 ```css
 --typography-size-font-size: 80px;
---typography-size-line-size: 1.5;
+--typography-size-line-height: 1.5;
 ```
 
 ## Boolean variables
@@ -369,7 +369,7 @@ If the `variable` key is not set in options, the fallback is to output the value
 
 ## Custom variables
 
-If you need to set up many variables based on a single attribute value you can use the `custom` key. This key will search through the `options` for the attribute key and output the CSS variables based on values. Each custom variable key must be an `object`. You will also get the original key in the output.
+If you need a more complex setup with multiple variables for a single attribute value you can use the `custom` key. It will output the CSS variables based on values defined in the `options`. Each custom variable key must be an `object`. The original key is also output.
 
 **Manifest:**
 ```json
