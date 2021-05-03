@@ -21,6 +21,7 @@ There are a few differences between the JavaScript and PHP implementation due to
 import React, { useMemo } from 'react';
 import { outputCssVariables, getUnique } from '@eightshift/frontend-libs/scripts/editor';
 import manifest from '../manifest.json';
+import globalManifest from './../../../manifest.json';
 
 export const TypographyEditor = (attributes) => {
 
@@ -29,7 +30,7 @@ export const TypographyEditor = (attributes) => {
 
 	return (
 		<>
-			{outputCssVariables(attributes, manifest, unique)}
+			{outputCssVariables(attributes, manifest, unique, globalManifest)}
 
 			<div data-id={unique}>
 				{/*Regular component implementation*/}
@@ -49,10 +50,11 @@ export const TypographyEditor = (attributes) => {
 
 use EightshiftLibs\Helpers\Components;
 
+$globalManifest = Components::getManifest(dirname(__DIR__, 2));
 $manifest = Components::getManifest(__DIR__);
 
 $unique = Components::getUnique();
-echo Components::outputCssVariables($attributes, $manifest, $unique); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+echo Components::outputCssVariables($attributes, $manifest, $unique, $globalManifest); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 ?>
 
@@ -167,15 +169,22 @@ You can use a global variable like any other CSS variable:
 color: var(--global-colors-white);
 ```
 
-## Variable Defaults
+## Variables
 
-As we said in the beginning, all CSS variables are defined within the block/component manifest. To avoid outputting all of the variables (because you might not need them all), the attributes that will be output as variables need to be defined.
+As we said in the beginning, all CSS variables are defined within the block/component manifest. To avoid outputting all the variables (because you might not need them all), the attributes that will be output as variables need to be defined.
 
 To output an attribute as a CSS variable, you need to set the `variable` key to `default`. This way you will get the output of the default value or value set in the database.
+
+All css variables are prepared and ready to be used in the responsive manner. 
+
+## Default type
+
+Variable `default` will output all variables from the list no matter what you have selected in the attribute. You can use unlimited variables.
 
 **Manifest:**
 ```json
 {
+	"componentClass": "typography",
 	"attributes": {
 		"typographySize": {
 			"type": "string",
@@ -183,144 +192,12 @@ To output an attribute as a CSS variable, you need to set the `variable` key to 
 			"variable": "default"
 		}
 	},
-	"options": {
+	"variables": {
 		"typographySize": [
 			{
-				"label": "180 Display",
-				"value": "180-default"
-			},
-			{
-				"label": "120 Display",
-				"value": "120-default"
-			},
-			{
-				"label": "80 Display",
-				"value": "80-default"
-			}
-		]
-	}
-}
-```
-
-**Output:**
-```css
---typography-size: 120-default
-```
-
-## Color variables
-
-If you have an attribute that represent colors from global variables, you can output the CSS variable for color directly.
-
-**Manifest:**
-```json
-{
-	"attributes": {
-		"typographyColor": {
-			"type": "string",
-			"default": "white",
-			"variable": "color"
-		}
-	},
-	"options": {
-		"typographyColor": [
-			{
-				"name": "White",
-				"slug": "white",
-				"color": "#ffffff"
-			},
-			{
-				"name": "Black",
-				"slug": "black",
-				"color": "#111111"
-			},
-		]
-	}
-}
-```
-
-**Output:**
-```css
---typography-color: var(--global-colors-white);
-```
-
-## Complex attribute variables
-
-If you have attributes stored as objects (for example used in the `SelectControl` component), by default CSS variable generator will output the `value` stored in the attribute.
-Setting the `variable` key to `select`, the CSS variable generator will look for the `variable` key in the manifest `options` field.
-
-If the `variable` key is not set in options, the `value` key will be used as fallback.
-
-> You can write any CSS declaration or variable in the custom variable key.
-
-### Variable as a string:
-
-**Manifest:**
-```json
-{
-	"attributes": {
-		"typographySize": {
-			"type": "string",
-			"default": "120-default",
-			"variable": "select"
-		}
-	},
-	"options": {
-		"typographySize": [
-			{
-				"label": "180 Display",
-				"value": "180-default",
-				"variable": "180px"
-			},
-			{
-				"label": "120 Display",
-				"value": "120-default",
-				"variable": "0.12em"
-			},
-			{
-				"label": "80 Display",
-				"value": "80-default",
-				"variable": "80%"
-			}
-		]
-	}
-}
-```
-
-**Output:**
-```css
---typography-size: 0.12em;
-```
-
-### Variable as an object:
-
-**Manifest:**
-```json
-{
-	"attributes": {
-		"typographySize": {
-			"type": "string",
-			"default": "80-default",
-			"variable": "select"
-		}
-	},
-	"options": {
-		"typographySize": [
-			{
-				"label": "180 Display",
-				"value": "180-default",
-				"variable": "180px"
-			},
-			{
-				"label": "120 Display",
-				"value": "120-default",
-				"variable": "0.12em"
-			},
-			{
-				"label": "80 Display",
-				"value": "80-default",
 				"variable": {
-					"font-size": "80px",
-					"line-height": "1.5"
+					"typography-size": "120px",
+					"typography-line-height": "calc(var(--typography-size) * 1.2)"
 				}
 			}
 		]
@@ -330,110 +207,49 @@ If the `variable` key is not set in options, the `value` key will be used as fal
 
 **Output:**
 ```css
---typography-size-font-size: 80px;
---typography-size-line-height: 1.5;
+--typography-size: 120px;
+--typography-line-height: 144px;
 ```
 
-## Boolean variables
+## Value type
 
-By default, the CSS variable generator will output values stored in attributes. That means that boolean variables will get output as variables with `true` and `false` values, which might be something you don't want.
-If you set the `variable` key to `boolean`, the CSS variable generator will look for the `index` array in the manifest options. The first value reprents the value if attribute is `false`, and the second when it's `true`.
-
-If the `variable` key is not set in options, the fallback is to output the value inside the CSS variable.
-
-> You can write any CSS declaration or variable in the custom variable key.
+Variable `value` will output all variables depending on attributes value. Everything else is the same as in the default type.
 
 **Manifest:**
 ```json
 {
+	"componentClass": "typography",
 	"attributes": {
-		"typographyUse": {
-			"type": "boolean",
-			"default": true,
-			"variable": "boolean"
+		"typographySize": {
+			"type": "string",
+			"default": "120-default",
+			"variable": "default"
 		}
 	},
-	"options": {
-		"typographyUse": [
-			"none",
-			"block"
-		]
+	"variables": {
+		"typographySize": {
+			"120-default": [
+				{
+					"variable": {
+						"typography-size": "120px",
+						"typography-line-height": "calc(var(--typography-size) * 1.2)"
+					}
+				}
+			]
+		}
 	}
 }
 ```
 
 **Output:**
 ```css
---typography-use: block;
-```
-
-## Custom variables
-
-If you need a more complex setup with multiple variables for a single attribute value you can use the `custom` key. It will output the CSS variables based on values defined in the `options`. Each custom variable key must be an `object`.
-
-**Manifest:**
-```json
-{
-	"attributes": {
-		"imageAlign": {
-			"type": "string",
-			"default": "center center",
-			"variable": "custom"
-		}
-	},
-	"options": {
-		"imageAlign": {
-			"top left": {
-				"horizontal": "flex-start",
-				"vertical": "flex-start"
-			},
-			"top center": {
-				"horizontal": "center",
-				"vertical": "flex-start"
-			},
-			"top right": {
-				"horizontal": "flex-end",
-				"vertical": "flex-start"
-			},
-			"center left": {
-				"horizontal": "flex-start",
-				"vertical": "center"
-			},
-			"center center": {
-				"horizontal": "center",
-				"vertical": "center"
-			},
-			"center right": {
-				"horizontal": "flex-end",
-				"vertical": "center"
-			},
-			"bottom left": {
-				"horizontal": "flex-start",
-				"vertical": "flex-end"
-			},
-			"bottom center": {
-				"horizontal": "center",
-				"vertical": "flex-end"
-			},
-			"bottom right": {
-				"horizontal": "flex-end",
-				"vertical": "flex-end"
-			}
-		}
-	},
-}
-```
-
-**Output:**
-```css
---image-align: center center; 
---image-align-horizontal: center;
---image-align-vertical: center;
+--typography-size: 120px;
+--typography-line-height: 144px;
 ```
 
 ## Manual variables
 
-There is an option to add custom CSS variables that get output independently from all the attributes. Just add a top-level `variables` key inside the manifest and add each variable as an array item.
+There is an option to add custom CSS variables that get output independently from all the attributes. Just add a top-level `variablesCustom` key inside the manifest and add each variable as an array item.
 Manual variables will be added at the end of the output.
 
 **Manifest:**
@@ -442,7 +258,7 @@ Manual variables will be added at the end of the output.
 	"attributes": {
 		// ...
 	},
-	"variables": [
+	"variablesCustom": [
 		"--variable1: test1",
 		"--variable2: test2",
 		"--variable3: test3"
@@ -481,4 +297,216 @@ If you define both `variablesEditor` and `variables`, both will be output in the
 --variable1: test1;
 --variable2: test2;
 --variable3: test3;
+```
+
+
+## Additional options and examples
+### Color
+
+Here is an example how to output global variable as a css variable.
+
+**Manifest:**
+```json
+{
+	"componentClass": "typography",
+	"attributes": {
+		"typographyColor": {
+			"type": "string",
+			"default": "white",
+			"variable": "default"
+		}
+	},
+	"variables": {
+		"typographyColor": [
+			{
+				"variable": {
+					"typography-color": "var(--global-colors-white)"
+				}
+			}
+		]
+	}
+}
+```
+
+**Output:**
+```css
+--typography-color: var(--global-colors-white);
+```
+
+### Responsive
+
+All variables are prepared to be responsive. If you set multiple keys in the manifest list that variable will be outputted in the correct media query. Breakpoints are taken from the global manifest.
+
+If you don't specify breakpoint key, that item will not be wrapped in the media query.
+
+**Manifest:**
+```json
+{
+	"componentClass": "typography",
+	"attributes": {
+		"typographySize": {
+			"type": "string",
+			"default": "120-default",
+			"variable": "default"
+		}
+	},
+	"variables": {
+		"typographySize": [
+			{
+				"variable": {
+					"typography-size": "30px"
+				}
+			},
+			{
+				"breakpoint": "tablet",
+				"variable": {
+					"typography-size": "80px"
+				}
+			}
+			{
+				"breakpoint": "large",
+				"variable": {
+					"typography-size": "120px"
+				}
+			}
+		]
+	}
+}
+```
+
+**Output:**
+```css
+.typography[data-id='210c9bbf733ef5c6aa74c49168ac29a7'] {
+	--typography-size: 30px;
+}
+
+@media(min-width: 1279px) {
+	.typography[data-id='210c9bbf733ef5c6aa74c49168ac29a7'] {
+		--typography-size: 80px;
+	}
+}
+
+@media(min-width: 1920px) {
+	.typography[data-id='210c9bbf733ef5c6aa74c49168ac29a7'] {
+		--typography-size: 120px;
+	}
+}
+```
+
+### Responsive Inverse
+
+By default we use mobile first approach but if you need desktop first you can use `inverse: true` key.
+
+**Manifest:**
+```json
+{
+	"componentClass": "typography",
+	"attributes": {
+		"typographySize": {
+			"type": "string",
+			"default": "120-default",
+			"variable": "default"
+		}
+	},
+	"variables": {
+		"typographySize": [
+			{
+				"variable": {
+					"typography-size": "120px"
+				}
+			},
+			{
+				"breakpoint": "tablet",
+				"inverse": true,
+				"variable": {
+					"typography-size": "80px"
+				}
+			}
+			{
+				"breakpoint": "mobile",
+				"inverse": true,
+				"variable": {
+					"typography-size": "320px"
+				}
+			}
+		]
+	}
+}
+```
+
+**Output:**
+```css
+.typography[data-id='210c9bbf733ef5c6aa74c49168ac29a7'] {
+	--typography-size: 120px;
+}
+
+@media(max-width: 1279px) {
+	.typography[data-id='210c9bbf733ef5c6aa74c49168ac29a7'] {
+		--typography-size: 80px;
+	}
+}
+
+@media(max-width: 479px) {
+	.typography[data-id='210c9bbf733ef5c6aa74c49168ac29a7'] {
+		--typography-size: 30px;
+	}
+}
+```
+
+### Magic Variable
+
+Magic variable is used to return the attribute value where you want it in the css variables. To use it just put `%value%` in you css variables.
+
+**Manifest:**
+```json
+{
+	"componentClass": "typography",
+	"attributes": {
+		"typographySize": {
+			"type": "string",
+			"default": "120",
+			"variable": "default"
+		}
+	},
+	"variables": {
+		"typographySize": [
+			{
+				"variable": {
+					"typography-size": "30px"
+				}
+			},
+			{
+				"breakpoint": "tablet",
+				"variable": {
+					"typography-size": "80px"
+				}
+			}
+			{
+				"breakpoint": "large",
+				"variable": {
+					"typography-size": "%value%px"
+				}
+			}
+		]
+	}
+}
+```
+
+**Output:**
+```css
+.typography[data-id='210c9bbf733ef5c6aa74c49168ac29a7'] {
+	--typography-size: 30px;
+}
+
+@media(min-width: 1279px) {
+	.typography[data-id='210c9bbf733ef5c6aa74c49168ac29a7'] {
+		--typography-size: 80px;
+	}
+}
+
+@media(min-width: 1920px) {
+	.typography[data-id='210c9bbf733ef5c6aa74c49168ac29a7'] {
+		--typography-size: 120px;
+	}
+}
 ```
