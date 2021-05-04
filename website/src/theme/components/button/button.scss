@@ -1,0 +1,59 @@
+$button: (
+  button: (
+    mobile: (
+      position: relative,
+      display: inline-flex,
+      align-items: center,
+      justify-content: center,
+      text-decoration: none,
+      font-weight: bold,
+      text-align: center,
+      cursor: pointer,
+      border-radius: 50px,
+      text-transform: uppercase,
+      padding: 5px 45px,
+      transition: all 0.3s ease-in,
+    ),
+  ),
+  sizes: (
+    mobile: (
+      default: (
+        font-size: 14px,
+        line-height: 1.43,
+        height: 48px,
+      ),
+    ),
+  ),
+  colors: (
+    default: (
+      normal: (
+        background-color: $base-elephant-color,
+        color: $base-white-color,
+      ),
+      hover: (
+        background-color: $base-mandy-color,
+        color: $base-white-color,
+      ),
+    ),
+  ),
+);
+
+.shift-button {
+  @include responsive($button, button);
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &__color {
+    @include link-modifiers($button, colors);
+  }
+
+  &__size {
+    @include responsive-modifiers($button, sizes);
+  }
+}
