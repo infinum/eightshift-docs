@@ -171,11 +171,11 @@ color: var(--global-colors-white);
 
 ## Variables
 
-As we said in the beginning, all CSS variables are defined within the block/component manifest. To avoid outputting all the variables (because you might not need them all), the attributes that will be output as variables need to be defined.
+As we said in the beginning, all CSS variables are defined within the block/component manifest.
 
-To output an attribute as a CSS variable, you need to set the `variable` key to `default`. This way you will get the output of the default value or value set in the database.
+To output an attribute as a CSS variable, you need to set the `variables` key in the block/component `manifest` and define the variable markdown.
 
-All css variables are prepared and ready to be used in the responsive manner. 
+All css variables are prepared and ready to be used in the responsive manner.
 
 ## Default type
 
@@ -188,8 +188,7 @@ Variable `default` will output all variables from the list no matter what you ha
 	"attributes": {
 		"typographySize": {
 			"type": "string",
-			"default": "120-default",
-			"variable": "default"
+			"default": "120-default"
 		}
 	},
 	"variables": {
@@ -222,8 +221,7 @@ Variable `value` will output all variables depending on attributes value. Everyt
 	"attributes": {
 		"typographySize": {
 			"type": "string",
-			"default": "120-default",
-			"variable": "default"
+			"default": "120-default"
 		}
 	},
 	"variables": {
@@ -312,8 +310,7 @@ Here is an example how to output global variable as a css variable.
 	"attributes": {
 		"typographyColor": {
 			"type": "string",
-			"default": "white",
-			"variable": "default"
+			"default": "white"
 		}
 	},
 	"variables": {
@@ -335,9 +332,13 @@ Here is an example how to output global variable as a css variable.
 
 ### Responsive
 
-All variables are prepared to be responsive. If you set multiple keys in the manifest list that variable will be outputted in the correct media query. Breakpoints are taken from the global manifest.
+All variables are prepared to be responsive. If you set multiple keys in the manifest list that variable will be outputted in the correct media query. Breakpoints are taken from the global manifest and the order of the output breakpoints.
+
+> Global breakpoints must follow the convention from the smallest size to the largest.
 
 If you don't specify breakpoint key, that item will not be wrapped in the media query.
+
+If you write breakpoint that isn't defined in the global manifest, that condition will be ignored.
 
 **Manifest:**
 ```json
@@ -346,8 +347,7 @@ If you don't specify breakpoint key, that item will not be wrapped in the media 
 	"attributes": {
 		"typographySize": {
 			"type": "string",
-			"default": "120-default",
-			"variable": "default"
+			"default": "120-default"
 		}
 	},
 	"variables": {
@@ -395,7 +395,9 @@ If you don't specify breakpoint key, that item will not be wrapped in the media 
 
 ### Responsive Inverse
 
-By default we use mobile first approach but if you need desktop first you can use `inverse: true` key.
+By default, we use mobile first approach but if you need desktop first you can use `inverse: true` key.
+
+> If you have multiple mobile/desktop first breakpoints, output will sort them mobile first and then desktop first after that.
 
 **Manifest:**
 ```json
@@ -404,8 +406,7 @@ By default we use mobile first approach but if you need desktop first you can us
 	"attributes": {
 		"typographySize": {
 			"type": "string",
-			"default": "120-default",
-			"variable": "default"
+			"default": "120-default"
 		}
 	},
 	"variables": {
@@ -464,8 +465,7 @@ Magic variable is used to return the attribute value where you want it in the cs
 	"attributes": {
 		"typographySize": {
 			"type": "string",
-			"default": "120",
-			"variable": "default"
+			"default": "120"
 		}
 	},
 	"variables": {
