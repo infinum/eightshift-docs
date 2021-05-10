@@ -454,9 +454,9 @@ By default, we use mobile first approach but if you need desktop first you can u
 }
 ```
 
-### Magic Variable
+### Attribute value replacement
 
-Magic variable is used to return the attribute value where you want it in the css variables. To use it just put `%value%` in you css variables.
+Attribute value replacement variable is used to return the attribute value where you want it in the css variables. To use it just put `%value%` in you css variables.
 
 **Manifest:**
 ```json
