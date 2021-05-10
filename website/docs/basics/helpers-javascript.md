@@ -419,51 +419,12 @@ outputCssVariablesGlobal(globalSettings);
 
 Get component/block options and process them in CSS variables.
 
-If the attribute key has a `variable` key then that attribute will be outputted to the inline style for CSS variables.
+For detailed usage check [block styles](blocks-styles);
 
-If you provide an additional key `color`, the helper will check the global manifest and output the CSS variable for the color name.
-
-* @param array  attributes Built attributes.
-* @param array  manifest Component/block manifest data.
-* @param string unique Unique key.
-
-**Data:**
-```js
-const manifest = {
-	"attributes": {
-		"typographyColor": {
-			"type": "string",
-			"default": "black",
-			"variable": true,
-			"color": true
-		},
-		"typographyColorUse": {
-			"type": "boolean",
-			"default": true,
-			"variable": true
-		}
-	},
-}
-```
-
-**Usage:**
-```js
-import { outputCssVariables, getUnique } from '@eightshift/frontend-libs/scripts/editor';
-
-const unique = getUnique();
-
-{outputCssVariables(attributes, manifest, unique)}
-```
-
-**Output:**
-```js
-<style>
-	.typography[data-id='fc21d857791af57b67680a14c24f7530'] {
-		--typography-color: var(--global-colors-black);
-		--typography-color-use: 1;
-	}
-</style>
-```
+* @param array  $attributes Built attributes.
+* @param array  $manifest Component/block manifest data.
+* @param string $unique Unique key.
+* @param array  $globalManifest Global manifest array.
 
 ## getUnique
 
