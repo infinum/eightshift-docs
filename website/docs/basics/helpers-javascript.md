@@ -8,19 +8,38 @@ sidebar_label: JavaScript
 
 ## checkAttr
 
-Checks whether the attributes exist in the attributes list and adds a default value if they don't.
+Checks whether the attributes exist in the attributes list. If value is not set, it checks for default value. If default value is not set, it adds fallback value depending on type, or if `undefinedAllowed` is set to `true`, it sets it to `undefined`.
 
-* @param {string} $key Key to check.
-* @param {array}  $attributes Array of attributes.
-* @param {array}  $manifest Array of default attributes from manifest.json.
-* @param {string} $componentName The real component name.
+* @param {string}  key Key to check.
+* @param {array}   attributes Array of attributes.
+* @param {array}   manifest Array of default attributes from manifest.json.
+* @param {string}  componentName The real component name.
+* @param {boolean} undefinedAllowed Allowed detection of undefined values.
 
 **Usage:**
 
 ```js
   import { checkAttr } from '@eightshift/frontend-libs/scripts/helpers';
 
-  checkAttr('buttonUse', attributes, manifest, $componentName);
+  checkAttr('buttonUse', attributes, manifest, componentName, undefinedAllowed);
+```
+
+## checkAttrResponsive
+
+Runs `checkAttr` on responsive object from `responsiveAttributes` key from manifest.
+
+* @param {string}  key Key to check.
+* @param {array}   attributes Array of attributes.
+* @param {array}   manifest Array of default attributes from manifest.json.
+* @param {string}  componentName The real component name.
+* @param {boolean} undefinedAllowed Allowed detection of undefined values.
+
+**Usage:**
+
+```js
+  import { checkAttrResponsive } from '@eightshift/frontend-libs/scripts/helpers';
+
+  checkAttrResponsive('wrapperWidth', attributes, manifest, componentName, undefinedAllowed);
 ```
 
 ## cookies
