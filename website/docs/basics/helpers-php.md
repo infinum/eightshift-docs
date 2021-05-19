@@ -50,7 +50,11 @@ This function is the PHP equivalent of the JavaScript function on this [link](he
 
 ## checkAttr
 
-This function is the PHP equivalent of the JavaScript function on this [link](helpers-javascript).
+This function is the really similar to the same JavaScript function on this [link](helpers-javascript). Except there is no last parameter which is used only in wp-admin to detect `undefined` attributes.
+
+## checkAttrResponsive
+
+This function is also the really similar to the same JavaScript function on this [link](helpers-javascript). Except there is no last parameter which is used only in wp-admin to detect `undefined` attributes.
 
 ## checkAttrResponsive
 
