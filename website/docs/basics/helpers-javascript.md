@@ -28,29 +28,31 @@ newSuperTestTitle
 
 ## checkAttr
 
-Checks whether the attributes exist in the attributes list and adds a default value if they don't.
+Checks whether the attributes exist in the attributes list. If the value is not set, it checks for the default value. If the default value is not set, it adds a fallback value depending on the type, or if `undefinedAllowed` is set to `true`, it sets it to `undefined`.
 
-* @param {string} key Key to check.
-* @param {array}  attributes Array of attributes.
-* @param {array}  manifest Array of default attributes from manifest.json.
-* @param {string} componentName The real component name.
+* @param {string}  key Key to check.
+* @param {array}   attributes Array of attributes.
+* @param {array}   manifest Array of default attributes from manifest.json.
+* @param {string}  componentName The real component name.
+* @param {boolean} undefinedAllowed Allowed detection of undefined values.
 
 **Usage:**
 
 ```js
 	import { checkAttr } from '@eightshift/frontend-libs/scripts/helpers';
 
-	checkAttr('buttonUse', attributes, manifest, componentName);
+	checkAttr('buttonUse', attributes, manifest, componentName, undefinedAllowed);
 ```
 
 ## checkAttrResponsive
 
-Map and check attributes for responsive object.
+Map and check attributes for responsive object from `responsiveAttributes` property from manifest.
 
-* @param {string} keyName Key name to find in responsiveAttributes object.
-* @param {array}  attributes Array of attributes.
-* @param {array}  manifest Array of default attributes from manifest.json.
-* @param {string} componentName The real component name.
+* @param {string}  keyName Key name to find in responsiveAttributes object.
+* @param {array}   attributes Array of attributes.
+* @param {array}   manifest Array of default attributes from manifest.json.
+* @param {string}  componentName The real component name.
+* @param {boolean} undefinedAllowed Allowed detection of undefined values.
 * @throws \Exception If missing responsiveAttributes or keyName in responsiveAttributes.
 * @throws \Exception If missing keyName in responsiveAttributes.
 * @return mixed
@@ -97,7 +99,7 @@ Map and check attributes for responsive object.
 ```js
 	import { checkAttrResponsive } from '@eightshift/frontend-libs/scripts/helpers';
 
-	checkAttrResponsive('headingContentSpacing', attributes, manifest, componentName);
+	checkAttrResponsive('headingContentSpacing', attributes, manifest, componentName, undefinedAllowed);
 ```
 
 **Output:**

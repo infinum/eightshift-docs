@@ -50,7 +50,11 @@ This function is the PHP equivalent of the JavaScript function on this [link](he
 
 ## checkAttr
 
-This function is the PHP equivalent of the JavaScript function on this [link](helpers-javascript).
+This function is the PHP equivalent of [this JavaScript function](helpers-javascript), except there is no `undefinedAllowed` parameter - it's used only on the WordPress admin side.
+
+## checkAttrResponsive
+
+This function is the PHP equivalent of [this JavaScript function](helpers-javascript), except there is no `undefinedAllowed` parameter - it's used only on the WordPress admin side.
 
 ## checkAttrResponsive
 
