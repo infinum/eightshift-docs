@@ -28,7 +28,7 @@ newSuperTestTitle
 
 ## checkAttr
 
-Checks whether the attributes exist in the attributes list. If value is not set, it checks for default value. If default value is not set, it adds fallback value depending on type, or if `undefinedAllowed` is set to `true`, it sets it to `undefined`.
+Checks whether the attributes exist in the attributes list. If the value is not set, it checks for the default value. If the default value is not set, it adds a fallback value depending on the type, or if `undefinedAllowed` is set to `true`, it sets it to `undefined`.
 
 * @param {string}  key Key to check.
 * @param {array}   attributes Array of attributes.
