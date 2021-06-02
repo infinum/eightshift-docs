@@ -111,7 +111,7 @@ module.exports = (env, argv) => {
 
 ## Add a new entrypoint
 
-Let's say you want to add a new, separate JS and/or CSS build for some specific functionality. This functionality may or may not have anything to do with your WordPress theme or plugin, but it needs to be in separate files. To do that you'd need to add a new entrypoint for webpack to build:
+Let's say you want to add a new, separate JS and/or CSS build for some specific functionality. This functionality may or may not have anything to do with your WordPress theme or plugin, but it needs to be in separate files. To do that you'd need to add a new entrypoint for webpack to build in `webpack.config.js`:
 
 ```js
 module.exports = (env, argv) => {
