@@ -565,8 +565,8 @@ Attribute value replacement variable is used to return the attribute value where
 ## Responsive variables
 
 What this option does is reduce multiplying the code. Let's say you have 3 breakpoints and for each breakpoint, since it can be set separately, you have to have 3 attributes. To avoid setting the same variables for each attribute, you can map all of the attribute names into one under an overall key(in the example down below `wrapperHide`) in `responsiveAttributes` property in manifest. Mapping should be done by adding `breakpoint` as a key (let's say `large`) and an attribute name (in this case `wrapperHideLarge`) as a value. The overall key can then be used in `variables` as a template for the "real" attributes (this can also be used in `variablesEditor`).
-Note: If there is a need for an extra variable, or overriding some of the automatically generated variables (from the helper). The variables will be outputted below the responsive variables. *Example2*
-Note2: It is important to take care of the order placed in responsive attributes since generating variables is relying on it. Also, ensure that you use `inverse` property in the right way. 
+_Note: If there is a need for an extra variable, or overriding some of the automatically generated variables (from the helper). The variables will be outputted below the responsive variables. *Example2*_
+_Note2: It is important to take care of the order placed in responsive attributes since generating variables is relying on it. Also, ensure that you use `inverse` property in the right way._
 
 **Example1**
 ```json
@@ -719,7 +719,7 @@ Note2: It is important to take care of the order placed in responsive attributes
 
 ```
 
-**Example1**
+**Example2**
 ```json
 {
 	"componentName": "wrapper",
@@ -773,6 +773,7 @@ Note2: It is important to take care of the order placed in responsive attributes
 					}
 				}
 			],
+		}
 	}
 }
 ```
