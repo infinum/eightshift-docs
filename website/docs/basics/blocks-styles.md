@@ -245,6 +245,57 @@ Variable `value` will output all variables depending on attributes value. Everyt
 --typography-line-height: 144px;
 ```
 
+## Variables Editor 
+
+Editor variables behave exactly the same as `variables`, except they will be printed out only in editor part.
+They are mostly used for overriding of the actual behavior inside the admin for the purpose of better control of the content.
+Example is based on common case where you don't want to remove element from the editor part but still somehow indicate that it will be hidden.
+
+**Manifest:**
+```json
+{
+	"componentName": "wrapper",
+	"title": "Wrapper",
+	"componentClass": "wrapper",
+	"attributes": {
+		"wrapperHide": {
+			"type": "boolean",
+			"default": false
+		}
+	},
+	"variables": {
+		"wrapperHide": {
+			"true": [
+				{
+					"variable": {
+						"wrapper-display": "none"
+					}
+				}
+			],
+		}
+	},
+	"variablesEditor": {
+		"wrapperHide": {
+			"true": [
+				{
+					"variable": {
+						"wrapper-display-opacity": "0.5",
+						"wrapper-display": "var(--wrapper-display-type, grid)"
+					}
+				}
+			]
+		}
+	}
+}
+```
+
+**Output:**
+```css
+--wrapper-display: none;
+--wrapper-display-opacity: 0.5;
+--wrapper-display: var(--wrapper-display-type, grid);
+```
+
 ## Manual variables
 
 There is an option to add custom CSS variables that get output independently from all the attributes. Just add a top-level `variablesCustom` key inside the manifest and add each variable as an array item.
@@ -273,8 +324,8 @@ Manual variables will be added at the end of the output.
  
 ## Manual variables inside the Block editor
 
-If you want to add manual variables that only apply inside the Block editor you can use the `variablesEditor` key. Everything works the same as described in the _Manual variables_ section.
-If you define both `variablesEditor` and `variables`, both will be output in the editor, but only `variables` will be output on the frontend.
+If you want to add manual variables that only apply inside the Block editor you can use the `variablesCustomEditor` key. Everything works the same as described in the _Manual variables_ section.
+If you define both `variablesCustomEditor` and `variables`, both will be output in the editor, but only `variables` will be output on the frontend.
 
 **Manifest:**
 ```json
@@ -282,7 +333,7 @@ If you define both `variablesEditor` and `variables`, both will be output in the
 	"attributes": {
 		// ...
 	},
-	"variablesEditor": [
+	"variablesCustomEditor": [
 		"--variable1: test1",
 		"--variable2: test2",
 		"--variable3: test3"
