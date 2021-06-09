@@ -561,3 +561,228 @@ Attribute value replacement variable is used to return the attribute value where
 	}
 }
 ```
+
+## Responsive variables
+
+What this option does is reduce multiplying the code. Let's say you have 3 breakpoints and for each breakpoint, since it can be set separately, you have to have 3 attributes. To avoid setting the same variables for each attribute, you can map all of the attribute names into one under an overall key(in the example down below `wrapperHide`) in `responsiveAttributes` property in manifest. Mapping should be done by adding `breakpoint` as a key (let's say `large`) and an attribute name (in this case `wrapperHideLarge`) as a value. The overall key can then be used in `variables` as a template for the "real" attributes (this can also be used in `variablesEditor`).
+Note: If there is a need for an extra variable, or overriding some of the automatically generated variables (from the helper). The variables will be outputted below the responsive variables. *Example2*
+Note2: It is important to take care of the order placed in responsive attributes since generating variables is relying on it. Also, ensure that you use `inverse` property in the right way. 
+
+**Example1**
+```json
+{
+	"componentName": "wrapper",
+	"title": "Wrapper",
+	"componentClass": "wrapper",
+	"attributes": {
+		"wrapperHideLarge": {
+			"type": "boolean",
+			"default": false
+		},
+		"wrapperHideDesktop": {
+			"type": "boolean"
+		},
+		"wrapperHideTablet": {
+			"type": "boolean"
+		}
+	},
+	"responsiveAttributes": {
+		"wrapperHide": {
+			"large": "wrapperHideLarge",
+			"desktop": "wrapperHideDesktop",
+			"tablet": "wrapperHideTablet"
+		}
+	},
+	"variables": {
+		"wrapperHide": {
+			"true": [
+				{
+					"inverse": true,
+					"variable": {
+						"wrapper-display": "none"
+					}
+				}
+			],
+			"false": [
+				{
+					"inverse": true,
+					"variable": {
+						"wrapper-display": "var(--wrapper-display-type, grid)"
+					}
+				}
+			]
+		}
+	}
+}
+```
+
+**Transformed:**
+```json
+{
+	"componentName": "wrapper",
+	"title": "Wrapper",
+	"componentClass": "wrapper",
+	"attributes": {
+		"wrapperHide": {
+			"type": "boolean",
+			"default": false
+		}
+	},
+	"responsiveAttributes": {
+		"wrapperHideLarge": {
+			"type": "boolean",
+			"default": false
+		},
+		"wrapperHideDesktop": {
+			"type": "boolean"
+		},
+		"wrapperHideTablet": {
+			"type": "boolean"
+		}
+	},
+	"variables": {
+		"wrapperHideLarge": {
+			"true": [
+				{
+					"variable": {
+						"wrapper-display": "none"
+					}
+				}
+			],
+			"false": [
+				{
+					"variable": {
+						"wrapper-display": "var(--wrapper-display-type, grid)"
+					}
+				}
+			]
+		},
+		"wrapperHideDesktop": {
+			"true": [
+				{
+					"inverse": true,
+					"breakpoint": "desktop",
+					"variable": {
+						"wrapper-display": "none"
+					}
+				}
+			],
+			"false": [
+				{
+					"inverse": true,
+					"breakpoint": "desktop",
+					"variable": {
+						"wrapper-display": "var(--wrapper-display-type, grid)"
+					}
+				}
+			]
+		},
+		"wrapperHideTablet": {
+			"true": [
+				{
+					"inverse": true,
+					"breakpoint": "desktop",
+					"variable": {
+						"wrapper-display": "none"
+					}
+				}
+			],
+			"false": [
+				{
+					"inverse": true,
+					"breakpoint": "desktop",
+					"variable": {
+						"wrapper-display": "var(--wrapper-display-type, grid)"
+					}
+				}
+			]
+		}
+	}
+}
+```
+
+**Output**
+```css
+.wrapper[data-id='210c9bbf733ef5c6aa74c49168ac29a7'] {
+	--wrapper-display: var(--wrapper-display-type, grid);
+}
+@media(max-width: 1920px) {
+	.wrapper[data-id='210c9bbf733ef5c6aa74c49168ac29a7'] {
+		--wrapper-display: none;
+	}
+}
+@media(max-width: 1279px) {
+	.wrapper[data-id='210c9bbf733ef5c6aa74c49168ac29a7'] {
+		--wrapper-display: var(--wrapper-display-type, grid);
+	}
+}
+
+```
+
+**Example1**
+```json
+{
+	"componentName": "wrapper",
+	"title": "Wrapper",
+	"componentClass": "wrapper",
+	"attributes": {
+		"wrapperHideLarge": {
+			"type": "boolean",
+			"default": false
+		},
+		"wrapperHideDesktop": {
+			"type": "boolean"
+		},
+		"wrapperHideTablet": {
+			"type": "boolean"
+		}
+	},
+	"responsiveAttributes": {
+		"wrapperHide": {
+			"large": "wrapperHideLarge",
+			"desktop": "wrapperHideDesktop",
+			"tablet": "wrapperHideTablet"
+		}
+	},
+	"variables": {
+		"wrapperHide": {
+			"true": [
+				{
+					"inverse": true,
+					"variable": {
+						"wrapper-display": "none"
+					}
+				}
+			],
+			"false": [
+				{
+					"inverse": true,
+					"variable": {
+						"wrapper-display": "var(--wrapper-display-type, grid)"
+					}
+				}
+			]
+		},
+		"wrapperHideLarge": {
+			"true": [
+				{
+					"inverse": true,
+					"variable": {
+						"wrapper-display": "block",
+						"wrapper-opacity": 0
+					}
+				}
+			],
+	}
+}
+```
+
+**Output**
+```css
+.wrapper[data-id='210c9bbf733ef5c6aa74c49168ac29a7'] {
+	--wrapper-display: none;
+	--wrapper-display: block;
+	--wrapper-opacity: 0;
+}
+
+```
