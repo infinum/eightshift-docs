@@ -245,11 +245,10 @@ Variable `value` will output all variables depending on attributes value. Everyt
 --typography-line-height: 144px;
 ```
 
-## Variables Editor 
+## Editor variables 
 
-Editor variables behave exactly the same as `variables`, except they will be printed out only in editor part.
-They are mostly used for overriding of the actual behavior inside the admin for the purpose of better control of the content.
-Example is based on common case where you don't want to remove element from the editor part but still somehow indicate that it will be hidden.
+Editor variables behave just like regular `variables`, except they are output only inside the Block Editor.
+They are mostly used for overriding specific behaviour, e.g. showing a hidden element as half-transparent instead of hiding it completely.
 
 **Manifest:**
 ```json
@@ -298,7 +297,7 @@ Example is based on common case where you don't want to remove element from the 
 
 ## Manual variables
 
-There is an option to add custom CSS variables that get output independently from all the attributes. Just add a top-level `variablesCustom` key inside the manifest and add each variable as an array item.
+Custom CSS variables can be generated and output independently from all the attributes through the `variablesCustom` key. Add it inside the manifest (top level) and add each variable as an array item.
 Manual variables will be added at the end of the output.
 
 **Manifest:**
@@ -564,11 +563,16 @@ Attribute value replacement variable is used to return the attribute value where
 
 ## Responsive variables
 
-What this option does is reduce multiplying the code. Let's say you have 3 breakpoints and for each breakpoint, since it can be set separately, you have to have 3 attributes. To avoid setting the same variables for each attribute, you can map all of the attribute names into one under an overall key(in the example down below `wrapperHide`) in `responsiveAttributes` property in manifest. Mapping should be done by adding `breakpoint` as a key (let's say `large`) and an attribute name (in this case `wrapperHideLarge`) as a value. The overall key can then be used in `variables` as a template for the "real" attributes (this can also be used in `variablesEditor`).
-_Note: If there is a need for an extra variable, or overriding some of the automatically generated variables (from the helper). The variables will be outputted below the responsive variables. *Example2*_
-_Note2: It is important to take care of the order placed in responsive attributes since generating variables is relying on it. Also, ensure that you use `inverse` property in the right way._
+Responsive variables are used for eliminating unnecessary code duplication. For example, if you have 4 separate attributes used for setting a responsive variable where all the attributes have the same output (e.g. `%value%`), the variables can get cluttered rather quickly.
 
-**Example1**
+In a top-level manifest key `responsiveAttributes`, you can place a new key (e.g. `wrapperHide`) that represents a common key for your responsive variables. Inside of it, you can list your responsive variables (e.g. `wrapperHideLarge`, `wrapperHideDesktop`, `wrapperHideTablet`, `wrapperHideMobile`) as a key-value pair. The key represents a breakpoint name, and the value represents responsive variable(<breakpoint>: <responsiveVariableName>). Afterwards, you can add that common key inside the `variables` (and/or `variablesEditor`) key and configure the output template.
+
+Best practice is to have the attributes named consistently with your breakpoints - in the _<variableName><breakpointName>_ format (see example below).
+
+**Note**: If you need an extra variable, or are overriding some of the auto-generated variables (from the helper), the variables will be output after the responsive variables. (see _Example 2_)
+**Note 2:** Order of responsive attributes is important since generating variables relies on that order. Make sure to use the `inverse` option properly.
+
+**Example 1**
 ```json
 {
 	"componentName": "wrapper",
@@ -719,7 +723,7 @@ _Note2: It is important to take care of the order placed in responsive attribute
 
 ```
 
-**Example2**
+**Example 2**
 ```json
 {
 	"componentName": "wrapper",
