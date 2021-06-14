@@ -56,10 +56,6 @@ This function is the PHP equivalent of [this JavaScript function](helpers-javasc
 
 This function is the PHP equivalent of [this JavaScript function](helpers-javascript), except there is no `undefinedAllowed` parameter - it's used only on the WordPress admin side.
 
-## checkAttrResponsive
-
-This function is the PHP equivalent of the JavaScript function on this [link](helpers-javascript).
-
 ## selector
 
 This function is the PHP equivalent of the JavaScript function on this [link](helpers-javascript).

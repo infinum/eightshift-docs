@@ -245,9 +245,59 @@ Variable `value` will output all variables depending on attributes value. Everyt
 --typography-line-height: 144px;
 ```
 
+## Editor variables 
+
+Editor variables behave just like regular `variables`, except they are output only inside the Block Editor.
+They are mostly used for overriding specific behaviour, e.g. showing a hidden element as half-transparent instead of hiding it completely.
+
+**Manifest:**
+```json
+{
+	"componentName": "wrapper",
+	"title": "Wrapper",
+	"componentClass": "wrapper",
+	"attributes": {
+		"wrapperHide": {
+			"type": "boolean",
+			"default": false
+		}
+	},
+	"variables": {
+		"wrapperHide": {
+			"true": [
+				{
+					"variable": {
+						"wrapper-display": "none"
+					}
+				}
+			],
+		}
+	},
+	"variablesEditor": {
+		"wrapperHide": {
+			"true": [
+				{
+					"variable": {
+						"wrapper-display-opacity": "0.5",
+						"wrapper-display": "var(--wrapper-display-type, grid)"
+					}
+				}
+			]
+		}
+	}
+}
+```
+
+**Output:**
+```css
+--wrapper-display: none;
+--wrapper-display-opacity: 0.5;
+--wrapper-display: var(--wrapper-display-type, grid);
+```
+
 ## Manual variables
 
-There is an option to add custom CSS variables that get output independently from all the attributes. Just add a top-level `variablesCustom` key inside the manifest and add each variable as an array item.
+Custom CSS variables can be generated and output independently from all the attributes through the `variablesCustom` key. Add it inside the manifest (top level) and add each variable as an array item.
 Manual variables will be added at the end of the output.
 
 **Manifest:**
@@ -273,8 +323,8 @@ Manual variables will be added at the end of the output.
  
 ## Manual variables inside the Block editor
 
-If you want to add manual variables that only apply inside the Block editor you can use the `variablesEditor` key. Everything works the same as described in the _Manual variables_ section.
-If you define both `variablesEditor` and `variables`, both will be output in the editor, but only `variables` will be output on the frontend.
+If you want to add manual variables that only apply inside the Block editor you can use the `variablesCustomEditor` key. Everything works the same as described in the _Manual variables_ section.
+If you define both `variablesCustomEditor` and `variables`, both will be output in the editor, but only `variables` will be output on the frontend.
 
 **Manifest:**
 ```json
@@ -282,7 +332,7 @@ If you define both `variablesEditor` and `variables`, both will be output in the
 	"attributes": {
 		// ...
 	},
-	"variablesEditor": [
+	"variablesCustomEditor": [
 		"--variable1: test1",
 		"--variable2: test2",
 		"--variable3: test3"
@@ -509,4 +559,235 @@ Attribute value replacement variable is used to return the attribute value where
 		--typography-size: 120px;
 	}
 }
+```
+
+## Responsive variables
+
+Responsive variables are used for eliminating unnecessary code duplication. For example, if you have 4 separate attributes used for setting a responsive variable where all the attributes have the same output (e.g. `%value%`), the variables can get cluttered rather quickly.
+
+In a top-level manifest key `responsiveAttributes`, you can place a new key (e.g. `wrapperHide`) that represents a common key for your responsive variables. Inside of it, you can list your responsive variables (e.g. `wrapperHideLarge`, `wrapperHideDesktop`, `wrapperHideTablet`, `wrapperHideMobile`) as a key-value pair. The key represents a breakpoint name, and the value represents responsive variable(<breakpoint>: <responsiveVariableName>). Afterwards, you can add that common key inside the `variables` (and/or `variablesEditor`) key and configure the output template.
+
+Best practice is to have the attributes named consistently with your breakpoints - in the _<variableName><breakpointName>_ format (see example below).
+
+**Note**: If you need an extra variable, or are overriding some of the auto-generated variables (from the helper), the variables will be output after the responsive variables. (see _Example 2_)
+**Note 2:** Order of responsive attributes is important since generating variables relies on that order. Make sure to use the `inverse` option properly.
+
+**Example 1**
+```json
+{
+	"componentName": "wrapper",
+	"title": "Wrapper",
+	"componentClass": "wrapper",
+	"attributes": {
+		"wrapperHideLarge": {
+			"type": "boolean",
+			"default": false
+		},
+		"wrapperHideDesktop": {
+			"type": "boolean"
+		},
+		"wrapperHideTablet": {
+			"type": "boolean"
+		}
+	},
+	"responsiveAttributes": {
+		"wrapperHide": {
+			"large": "wrapperHideLarge",
+			"desktop": "wrapperHideDesktop",
+			"tablet": "wrapperHideTablet"
+		}
+	},
+	"variables": {
+		"wrapperHide": {
+			"true": [
+				{
+					"inverse": true,
+					"variable": {
+						"wrapper-display": "none"
+					}
+				}
+			],
+			"false": [
+				{
+					"inverse": true,
+					"variable": {
+						"wrapper-display": "var(--wrapper-display-type, grid)"
+					}
+				}
+			]
+		}
+	}
+}
+```
+
+**Transformed:**
+```json
+{
+	"componentName": "wrapper",
+	"title": "Wrapper",
+	"componentClass": "wrapper",
+	"attributes": {
+		"wrapperHide": {
+			"type": "boolean",
+			"default": false
+		}
+	},
+	"responsiveAttributes": {
+		"wrapperHideLarge": {
+			"type": "boolean",
+			"default": false
+		},
+		"wrapperHideDesktop": {
+			"type": "boolean"
+		},
+		"wrapperHideTablet": {
+			"type": "boolean"
+		}
+	},
+	"variables": {
+		"wrapperHideLarge": {
+			"true": [
+				{
+					"variable": {
+						"wrapper-display": "none"
+					}
+				}
+			],
+			"false": [
+				{
+					"variable": {
+						"wrapper-display": "var(--wrapper-display-type, grid)"
+					}
+				}
+			]
+		},
+		"wrapperHideDesktop": {
+			"true": [
+				{
+					"inverse": true,
+					"breakpoint": "desktop",
+					"variable": {
+						"wrapper-display": "none"
+					}
+				}
+			],
+			"false": [
+				{
+					"inverse": true,
+					"breakpoint": "desktop",
+					"variable": {
+						"wrapper-display": "var(--wrapper-display-type, grid)"
+					}
+				}
+			]
+		},
+		"wrapperHideTablet": {
+			"true": [
+				{
+					"inverse": true,
+					"breakpoint": "desktop",
+					"variable": {
+						"wrapper-display": "none"
+					}
+				}
+			],
+			"false": [
+				{
+					"inverse": true,
+					"breakpoint": "desktop",
+					"variable": {
+						"wrapper-display": "var(--wrapper-display-type, grid)"
+					}
+				}
+			]
+		}
+	}
+}
+```
+
+**Output**
+```css
+.wrapper[data-id='210c9bbf733ef5c6aa74c49168ac29a7'] {
+	--wrapper-display: var(--wrapper-display-type, grid);
+}
+@media(max-width: 1920px) {
+	.wrapper[data-id='210c9bbf733ef5c6aa74c49168ac29a7'] {
+		--wrapper-display: none;
+	}
+}
+@media(max-width: 1279px) {
+	.wrapper[data-id='210c9bbf733ef5c6aa74c49168ac29a7'] {
+		--wrapper-display: var(--wrapper-display-type, grid);
+	}
+}
+
+```
+
+**Example 2**
+```json
+{
+	"componentName": "wrapper",
+	"title": "Wrapper",
+	"componentClass": "wrapper",
+	"attributes": {
+		"wrapperHideLarge": {
+			"type": "boolean",
+			"default": false
+		},
+		"wrapperHideDesktop": {
+			"type": "boolean"
+		},
+		"wrapperHideTablet": {
+			"type": "boolean"
+		}
+	},
+	"responsiveAttributes": {
+		"wrapperHide": {
+			"large": "wrapperHideLarge",
+			"desktop": "wrapperHideDesktop",
+			"tablet": "wrapperHideTablet"
+		}
+	},
+	"variables": {
+		"wrapperHide": {
+			"true": [
+				{
+					"inverse": true,
+					"variable": {
+						"wrapper-display": "none"
+					}
+				}
+			],
+			"false": [
+				{
+					"inverse": true,
+					"variable": {
+						"wrapper-display": "var(--wrapper-display-type, grid)"
+					}
+				}
+			]
+		},
+		"wrapperHideLarge": {
+			"true": [
+				{
+					"inverse": true,
+					"variable": {
+						"wrapper-display": "block",
+						"wrapper-opacity": 0
+					}
+				}
+			],
+		}
+	}
+}
+```
+
+**Output**
+```css
+.wrapper[data-id='210c9bbf733ef5c6aa74c49168ac29a7'] {
+	--wrapper-display: none;
+	--wrapper-display: block;
+	--wrapper-opacity: 0;
+}
+
 ```
