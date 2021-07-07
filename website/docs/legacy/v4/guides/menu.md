@@ -20,7 +20,7 @@ To add the custom menu, you must provide an array for custom menu locations as e
 	public function getMenuPositions(): array
 	{
 		return [
-			'header_main_nav' => \esc_html__('Main Menu', 'eightshiftstartertask'),
+			'header_main_nav' => \esc_html__('Main Menu', 'eightshift-boilerplate'),
 		];
 	}
 ```
