@@ -3,7 +3,7 @@ id: frontend-libs
 title: Eightshift Frontend Libs
 ---
 
-[GitHub Repo](https://github.com/infinum/eightshift-frontend-libs)
+[![docs-source](https://img.shields.io/badge/version--2.0.0-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs)
 
 This library is aimed at bringing the modern front end development tools to the [Eightshift Boilerplate](https://github.com/infinum/eightshift-boilerplate) or [Eightshift Boilerplate Plugin](https://github.com/infinum/eightshift-boilerplate-plugin), but you can use it on any WordPress project.
 

@@ -4,6 +4,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Layout from '@theme/Layout';
 import Intro from '../theme/sections/intro/intro';
 import Why from '../theme/sections/why/why';
+import Panels from '../theme/sections/panels/panels';
 import GetStarted from '../theme/sections/get-started/get-started';
 import Features from '../theme/sections/features/features';
 import Footer from '../theme/sections/footer/footer';
@@ -24,6 +25,7 @@ export default function Home() {
       <Why />
       <GetStarted />
       <Features />
+      <Panels />
       <Footer />
       <Foot />
     </Layout>

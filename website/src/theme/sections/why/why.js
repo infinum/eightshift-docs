@@ -15,7 +15,7 @@ export default function Why() {
         <Heading
           componentClass={component}
           title={'Why you would love to use this?'}
-          subtitle={'Easily use our pre-made 100% customizable existing Gutenberg blocks & components or create your own designs. Browse the collection of useful front-end utility modules and all the tools you need to start building modern Gutenberg dynamic blocks. There’s a bunch of Helpers to write better code (automatic code linting). All code is written following the latest object-oriented programming paradigms.'}
+          subtitle={'Easily use our pre-made 100% customizable existing Gutenberg blocks & components or create your own designs. Browse the collection of useful front-end utility modules and all the tools you need to start building modern Gutenberg dynamic blocks. There’s a bunch of helpers to write better code made by developers for developers. All code is written following the latest object-oriented programming paradigms.'}
           align={'left'}
           titleSize={'medium'}
         />
