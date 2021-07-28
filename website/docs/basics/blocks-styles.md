@@ -565,9 +565,9 @@ Attribute value replacement variable is used to return the attribute value where
 
 Responsive variables are used for eliminating unnecessary code duplication. For example, if you have 4 separate attributes used for setting a responsive variable where all the attributes have the same output (e.g. `%value%`), the variables can get cluttered rather quickly.
 
-In a top-level manifest key `responsiveAttributes`, you can place a new key (e.g. `wrapperHide`) that represents a common key for your responsive variables. Inside of it, you can list your responsive variables (e.g. `wrapperHideLarge`, `wrapperHideDesktop`, `wrapperHideTablet`, `wrapperHideMobile`) as a key-value pair. The key represents a breakpoint name, and the value represents responsive variable(<breakpoint>: <responsiveVariableName>). Afterwards, you can add that common key inside the `variables` (and/or `variablesEditor`) key and configure the output template.
+In a top-level manifest key `responsiveAttributes`, you can place a new key (e.g. `wrapperHide`) that represents a common key for your responsive variables. Inside of it, you can list your responsive variables (e.g. `wrapperHideLarge`, `wrapperHideDesktop`, `wrapperHideTablet`, `wrapperHideMobile`) as a key-value pair. The key represents a breakpoint name, and the value represents responsive variable(`breakpoint`: `responsiveVariableName`). Afterwards, you can add that common key inside the `variables` (and/or `variablesEditor`) key and configure the output template.
 
-Best practice is to have the attributes named consistently with your breakpoints - in the _<variableName><breakpointName>_ format (see example below).
+Best practice is to have the attributes named consistently with your breakpoints - in the _`variableName``breakpointName`_ format (see example below).
 
 **Note**: If you need an extra variable, or are overriding some of the auto-generated variables (from the helper), the variables will be output after the responsive variables. (see _Example 2_)
 **Note 2:** Order of responsive attributes is important since generating variables relies on that order. Make sure to use the `inverse` option properly.
