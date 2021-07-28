@@ -30,7 +30,7 @@ The library can be used for pure Webpack/js/scss functionality, but if you want 
 
 ## How to integrate into an existing project
 
-Please visit this [link](legacy/v5/advanced/custom-eightshift-frontend-libs-usage) for more details.
+Please visit this [link](legacy/v4/advanced/installation-boilerplate-custom) for more details.
 
 ## Who do I talk to?
 

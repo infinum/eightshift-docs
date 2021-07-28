@@ -94,6 +94,115 @@ module.exports = {
     "Legacy": [
       {
         "type": "category",
+        "label": "v5",
+        "items":[
+          {
+            "type": "category",
+            "label": "Getting Started",
+            "items": [
+              "legacy/v5/welcome",
+              "legacy/v5/eightshift-libs",
+              "legacy/v5/eightshift-frontend-libs",
+              "legacy/v5/requirements",
+              "legacy/v5/theme",
+              "legacy/v5/plugin",
+            ]
+          },
+          {
+            "type": "category",
+            "label": "Basics",
+            "items": [
+              'legacy/v5/basics/basics',
+              'legacy/v5/basics/wp-cli',
+              {
+                "type": "category",
+                "label": "Backend Stuff",
+                "items": [
+                  "legacy/v5/basics/backend",
+                  "legacy/v5/basics/namespaces",
+                  "legacy/v5/basics/extending-classes",
+                  "legacy/v5/basics/autowiring",
+                  "legacy/v5/basics/example-class",
+                  "legacy/v5/basics/the-structure",
+                  "legacy/v5/basics/manifest",
+                  {
+                    "type": "category",
+                    "label": "Rest",
+                    "items": [
+                      "legacy/v5/basics/rest",
+                      "legacy/v5/basics/rest-field",
+                      "legacy/v5/basics/rest-route",
+                    ]
+                  },
+                ]
+              },
+              {
+                "type": "category",
+                "label": "Frontend Stuff",
+                "items": [
+                  "legacy/v5/basics/frontend",
+                  "legacy/v5/basics/webpack",
+                  "legacy/v5/basics/library",
+                  "legacy/v5/basics/global-settings",
+                  "legacy/v5/basics/writing-styles",
+                  "legacy/v5/basics/fonts",
+                  "legacy/v5/basics/browser-sync",
+                  "legacy/v5/basics/dynamic-import",
+                ]
+              },
+              {
+                "type": "category",
+                "label": "Blocks",
+                "items": [
+                  "legacy/v5/basics/blocks",
+                  "legacy/v5/basics/blocks-important",
+                  "legacy/v5/basics/blocks-intro",
+                  "legacy/v5/basics/blocks-registration",
+                  "legacy/v5/basics/blocks-structure",
+                  "legacy/v5/basics/blocks-global-manifest",
+                  "legacy/v5/basics/block-structure",
+                  "legacy/v5/basics/blocks-component-structure",
+                  "legacy/v5/basics/block-manifest",
+                  "legacy/v5/basics/blocks-component-manifest",
+                  "legacy/v5/basics/blocks-attributes",
+                  "legacy/v5/basics/blocks-component-in-block",
+                  "legacy/v5/basics/blocks-wrapper",
+                  "legacy/v5/basics/blocks-variations",
+                  "legacy/v5/basics/blocks-patterns",
+                  "legacy/v5/basics/blocks-transforms",
+                  "legacy/v5/basics/blocks-hooks",
+                  "legacy/v5/basics/blocks-special-use-cases",
+                  "legacy/v5/basics/blocks-reusable",
+                  "legacy/v5/basics/blocks-styles",
+                  "legacy/v5/basics/blocks-storybook",
+                ]
+              },
+              {
+                "type": "category",
+                "label": "Helpers",
+                "items": [
+                  'legacy/v5/basics/helpers',
+                  'legacy/v5/basics/helpers-javascript',
+                  'legacy/v5/basics/helpers-scss',
+                  'legacy/v5/basics/helpers-php',
+                ]
+              },
+            ]
+          },
+          {
+            "type": "category",
+            "label": "Advanced",
+            "items": [
+              'legacy/v5/advanced/additional-libraries',
+              'legacy/v5/advanced/the-eightshift-way',
+              'legacy/v5/advanced/custom-eightshift-libs-usage',
+              'legacy/v5/advanced/custom-eightshift-frontend-libs-usage',
+            ]
+          },
+        ]
+      },
+      {
+        "type": "category",
         "label": "v4",
         "items": [
           {
