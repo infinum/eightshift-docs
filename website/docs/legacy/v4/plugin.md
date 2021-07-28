@@ -16,6 +16,9 @@ Eightshift boilerplate contains all the tools you need to start building a moder
 2. [Composer](https://getcomposer.org/)
 
 ## Quick start
+
+[![docs-source](https://img.shields.io/badge/version--1.0.0-eigthshift--boilerplate--plugin-important?style=for-the-badge&logo=)](https://github.com/infinum/eightshift-boilerplate)
+
 Let's create a **new plugin**!
 
 Navigate to your WordPress plugin folder (`wp-content/plugins`) and run the following command:
