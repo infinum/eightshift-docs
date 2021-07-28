@@ -32,7 +32,7 @@ If you want to try our setup, but you might not be as versed in the above concep
 
 ## How to integrate into an existing project
 
-Please visit this [link](legacy/v5/advanced/custom-eightshift-libs-usage) for more details.
+Please visit this [link](advanced/custom-eightshift-libs-usage) for more details.
 
 ## Who do I talk to?
 
