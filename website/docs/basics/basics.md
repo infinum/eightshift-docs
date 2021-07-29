@@ -1,7 +1,6 @@
 ---
 id: basics
 title: Basics
-sidebar_label: Basics
 ---
 
 Before WordPress 5.0 release, the themes were mostly PHP based on some JavaScript and CSS. Now it's a bit different because we have PHP in the core, JavaScript (specifically React.js) in the block editor, and some styles in the editor and the theme parts of the website.

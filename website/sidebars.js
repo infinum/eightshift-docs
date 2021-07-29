@@ -5,6 +5,7 @@ module.exports = {
       "eightshift-libs",
       "eightshift-frontend-libs",
       "requirements",
+      "versions",
       "theme",
       "plugin",
     ],
@@ -104,6 +105,7 @@ module.exports = {
               "legacy/v5/eightshift-libs",
               "legacy/v5/eightshift-frontend-libs",
               "legacy/v5/requirements",
+              "legacy/v5/versions",
               "legacy/v5/theme",
               "legacy/v5/plugin",
             ]
@@ -211,6 +213,7 @@ module.exports = {
             "items": [
               "legacy/v4/theme",
               "legacy/v4/plugin",
+              "legacy/v4/versions",
             ]
           },
           {
