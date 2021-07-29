@@ -15,7 +15,7 @@ The library can be used for pure Webpack/J/Scss functionality, but if you want t
 
 ### The library contains:
 
-- All Js packages required for the Webpack build
+- All JS packages required for the Webpack build
 - ESLint ruleset
 - StyleLint ruleset
 - Babel ruleset
