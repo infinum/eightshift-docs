@@ -63,6 +63,19 @@ We have defined a few command prefixes:
 - **setup** - commands that runs multiple already defined commands from the list.
 - **use** - commands used for blocks and block-related stuff. They will copy various files and folders from the blocks folder to your project.
 
-> **Make WP-CLI your best friend, and your coding life will be much more comfortable, trust me.**
+> **Make WP-CLI your best friend, and your coding life will be much more comfortable, trust us.**
 
-We will explain the classes that we think are necessary and should be described in more detail. For the rest of the classes, you can find the descriptions by running `--help` after each command.
+We will explain some classes, in more detail, that we think are necessary in the next chapter. For the rest of the classes, you can find the descriptions by running `--help` after each command.
+
+## Running commands in multisite
+
+When you are running a multisite setup you must always provide the additional `--url` parameter because without that parameter WordPress will always run the code from the currently primary domain set in the `wp-config.php`.
+
+Here is an example for command running from the primary domain:
+
+`wp boilerplate create_config`
+
+and here is an example for command running in the sub site:
+
+`wp boilerplate create_config --url='custom.domain.com'`
+
