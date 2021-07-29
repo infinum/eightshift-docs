@@ -14,7 +14,7 @@ npx create-wp-project plugin
 
 The script will prompt you for a plugin name and local development URL (used for BrowserSync). After that, your new plugin will be installed:
 
-![](https://raw.githubusercontent.com/infinum/eightshift-frontend-libs/develop/package/setup.gif)
+![](/eightshift-docs/img/setup.gif)
 
 After the script is finished, please follow the instructions provided by the setup script.
 
