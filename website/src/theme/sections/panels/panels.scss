@@ -1,0 +1,33 @@
+$panels: (
+  panels: (
+    mobile: (
+      padding: 0 0 55px,
+    ),
+    tablet: (
+      padding: 0 0 80px,
+    ),
+  ),
+  heading: (
+    mobile: (
+      max-width: 580px,
+    ),
+  ),
+  image: (
+    mobile: (
+      max-width: 100%,
+      height: auto,
+    ),
+  ),
+);
+
+.panels {
+  @include responsive($panels, panels);
+
+  &__heading {
+    @include responsive($panels, heading);
+  }
+
+  &__image {
+    @include responsive($panels, image);
+  }
+}

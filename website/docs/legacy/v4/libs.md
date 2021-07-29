@@ -3,7 +3,7 @@ id: libs
 title: Eightshift Libs
 ---
 
-[GitHub Repo](https://github.com/infinum/eightshift-libs/?target=_blank)
+[![docs-source](https://img.shields.io/badge/version--2.0.0-eigthshift--libs-blue?style=for-the-badge&logo=php&labelColor=2a2a2a)](https://github.com/infinum/eightshift-libs)
 
 This library is aimed at bringing the modern backend development tools to the [Eightshift Boilerplate](https://github.com/infinum/eightshift-boilerplate) or [Eightshift Boilerplate Plugin](https://github.com/infinum/eightshift-boilerplate-plugin), but you can use it on any WordPress project.
 

@@ -57,7 +57,7 @@ export default function GetStarted() {
         <Heading
           componentClass={component}
           title={'Choose one of the options to get started'}
-          subtitle={'We\'ve built a bot to automate the tedious process of adding project contributors, so you can focus on your project instead of managing your ReadMe.'}
+          subtitle={'We\'ve built a bot to automate the tedious process of setting up a new project, so you can focus on your code. Just choose where you want to start.'}
         />
         <div className={`${component}__content`}>
           {items}
