@@ -29,7 +29,7 @@ In order to be able to test boilerplate with different library versions you can 
 
 #### Example:
 
-If you want to pull a `develop` branch for the Eightshift frontend libs and `release/3.1.0` branch of the Eightshift libs your command will look like this:
+If you want to pull a `develop` branch for the Eightshift frontend libs and a specific branch of the Eightshift libs your command will look like this:
 
 ```bash
 npx create-wp-project --eightshiftLibsBranch="release/3.1.0" --eightshiftFrontendLibsBranch="develop"
