@@ -22,7 +22,7 @@ Let's brag a little about what you can expect from this setup:
 - **Cache busting** - Each time you build assets, we generate a new URL for each asset file. This means you'll never see the old cached version while developing or after pushing your code to production.
 
 
-To use it, you need to understand what makes this boilerplate tick. In theory, this is simple; you have two parts.
+To use it, you need to understand what makes this boilerplate tick. It consists of two parts:
 
 ### 1. Eightshift Libs - [docs](eightshift-libs) | [github](https://github.com/infinum/eightshift-libs)
 
