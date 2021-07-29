@@ -41,6 +41,12 @@ You can also specify the version of the `create-wp-project` script like this:
 npx create-wp-project@2.0.12 --eightshiftLibsBranch="release/3.1.0" --eightshiftFrontendLibsBranch="develop"
 ```
 
+You can get a list of available script arguments by running:
+
+```bash
+npx create-wp-project --help
+```
+
 > You can specify both libraries at once or only one.
 
 ## What is next?
