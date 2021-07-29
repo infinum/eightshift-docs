@@ -22,7 +22,7 @@ If you want to try our setup, but you might not be as versed in the above concep
 ### The library contains
 
 - Dependency injection container
-- PSR-12 autoloader
+- PSR-4 autoloader
 - Autowiring of your service classes
 - WP-CLI commands to get all the features in your project using a single terminal command
 - Interfaces
