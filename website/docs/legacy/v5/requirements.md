@@ -20,9 +20,3 @@ Make sure that you have all these packages installed and ready to use on your sy
 
 
 If it doesn't return any errors, you are good to go.
-
-# Now you must decide!
-
-We have prepared you for all your development needs. Now, you must decide what you are going to develop next:
-* [New Theme](theme)
-* [New Plugin](plugin)

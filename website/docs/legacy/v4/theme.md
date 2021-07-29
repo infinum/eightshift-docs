@@ -4,8 +4,6 @@ title: Create new WordPress theme
 sidebar_label: Theme Setup
 ---
 
-[![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/develop/setup/create-wp-project)
-
 Eightshift boilerplate contains all the tools you need to start building a modern WordPress theme, using all the latest front end development tools.
 
 [Please go here if you wish to setup a plugin instead](https://infinum.github.io/eightshift-docs/docs/plugin/).
@@ -16,8 +14,6 @@ Eightshift boilerplate contains all the tools you need to start building a moder
 2. [Composer](https://getcomposer.org/)
 
 ## Quick start
-
-[![docs-source](https://img.shields.io/badge/version--4.0.0-eigthshift--boilerplate-blueviolet?style=for-the-badge&logo=)](https://github.com/infinum/eightshift-boilerplate)
 
 Let's create a new theme!
 

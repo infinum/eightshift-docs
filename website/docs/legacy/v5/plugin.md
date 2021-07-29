@@ -4,8 +4,6 @@ title: Create a new WordPress plugin
 sidebar_label: Create New Plugin
 ---
 
-[![docs-source](https://img.shields.io/badge/version--1.0.0-eigthshift--boilerplate--plugin-important?style=for-the-badge&logo=)](https://github.com/infinum/eightshift-boilerplate)
-
 Let's create a new plugin!
 
 Navigate to your WordPress plugins folder and run the following command:
