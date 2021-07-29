@@ -13,7 +13,7 @@ We provide helpers, abstract classes, interfaces, and abstractions on original W
 
 ## Prerequisites
 
-In our projects, we use object-oriented PHP, design patterns, and the SOLID principle. When you work on complex projects with various third-party integrations, it makes sense to use the best tools available. You want your code to be easily extended, testable, and future-proof.
+In our projects, we use object-oriented PHP, design patterns, and the SOLID principle. When you work on complex projects with various third-party integrations, it makes sense to use our boilerplate. You want your code to be easily extended, testable, and future-proof.
 
 If all you need is a simple website, some of these concepts might be too much for you, and you won't see many benefits in using them. This is totally valid. We need to pick our battles and decide for ourselves what is the best tool for the job.
 
