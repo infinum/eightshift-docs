@@ -86,6 +86,10 @@ Paste event handler.
 
 Output only attributes that are used in the component and remove everything else.
 
+### getAttributes
+
+Get Block attributes combined in one: "shared, global, wrapper, components, block".
+
 ### getExample
 
 Get Block example attributes combined in one: "components and block".
