@@ -8,3 +8,5 @@ Each project has helper classes that help you with your project code. Helpers ar
 - [JavaScript Helpers](helpers-javascript)
 - [Scss Helpers](helpers-scss)
 - [Php Helpers](helpers-php)
+
+In general, we like our helpers especially in the block editor, because we need to have the same features both on JavaScript and Php and with helpers this can be done really easy.
