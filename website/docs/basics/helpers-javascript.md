@@ -5,553 +5,193 @@ title: JavaScript
 
 [![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/develop/blocks/init/src/blocks/)
 
-## camelize
-
-Returns a camel-cased string.
-
-* @param {string} string Add string to convert.
-
-**Usage:**
+All JavaScript helper can be imported from this folder `@eightshift/frontend-libs/scripts`, so you don't need to think about the internal folder structure of Eightshift Frontend Libs. If you want multiple functions imported just concatenate them in the import like this:
 
 ```js
-import { checkAttr } from '@eightshift/frontend-libs/scripts/helpers';
-
-camelize('New super Test-title');
+import {
+	camelize,
+	checkAttr,
+	props,
+	...
+} from '@eightshift/frontend-libs/scripts';
 ```
 
-**Output:**
-
-```js
-newSuperTestTitle
-```
-
-## checkAttr
-
-Checks whether the attributes exist in the attributes list. If the value is not set, it checks for the default value. If the default value is not set, it adds a fallback value depending on the type, or if `undefinedAllowed` is set to `true`, it sets it to `undefined`.
-
-* @param {string}  key Key to check.
-* @param {array}   attributes Array of attributes.
-* @param {array}   manifest Array of default attributes from manifest.json.
-* @param {string}  componentName The real component name.
-* @param {boolean} undefinedAllowed Allowed detection of undefined values.
-
-**Usage:**
-
-```js
-	import { checkAttr } from '@eightshift/frontend-libs/scripts/helpers';
-
-	checkAttr('buttonUse', attributes, manifest, componentName, undefinedAllowed);
-```
-
-## checkAttrResponsive
-
-Map and check attributes for responsive object from `responsiveAttributes` property from manifest.
-
-* @param {string}  keyName Key name to find in responsiveAttributes object.
-* @param {array}   attributes Array of attributes.
-* @param {array}   manifest Array of default attributes from manifest.json.
-* @param {string}  componentName The real component name.
-* @param {boolean} undefinedAllowed Allowed detection of undefined values.
-* @throws \Exception If missing responsiveAttributes or keyName in responsiveAttributes.
-* @throws \Exception If missing keyName in responsiveAttributes.
-* @return mixed
+# [Editor helpers](https://github.com/infinum/eightshift-frontend-libs/tree/develop/scripts/editor)
 
-**Manifest:**
+These are all helpers generally only in Block Editor.
 
-```json
-{
-	"attributes": {
-		"headingContentSpacingLarge": {
-			"type": "integer",
-			"variable": "default",
-			"default": 10,
-		},
-		"headingContentSpacingDesktop": {
-			"type": "integer",
-			"variable": "default",
-			"default": 5,
-		},
-		"headingContentSpacingTablet": {
-			"type": "integer",
-			"variable": "default",
-			"default": 3,
-		},
-		"headingContentSpacingMobile": {
-			"type": "integer",
-			"variable": "default",
-			"default": 1,
-		}
-	},
-	"responsiveAttributes": {
-		"headingContentSpacing": {
-			"large": "headingContentSpacingLarge",
-			"desktop": "headingContentSpacingDesktop",
-			"tablet": "headingContentSpacingTablet",
-			"mobile": "headingContentSpacingMobile"
-		}
-	}
-}
-```
+### icons
 
-**Usage:**
+All UI icons.
 
-```js
-	import { checkAttrResponsive } from '@eightshift/frontend-libs/scripts/helpers';
+### illustrations
 
-	checkAttrResponsive('headingContentSpacing', attributes, manifest, componentName, undefinedAllowed);
-```
+Illustrations for helper modals.
 
-**Output:**
+### blockIcons
 
-```js
-[
-	large: 10,
-	desktop: 5,
-	tablet: 3,
-	mobile: 1,
-]
-```
+Block icons, primarily used in block manifests.
 
-## cookies
+### getActions
 
-Used to set and get cookie values.
+Create attributes actions from blocks manifest.json.
+This helper is deprecated and should not be used anymore.
 
-**Usage:**
+### getOption
 
-```js
-	import { cookies } from '@eightshift/frontend-libs/scripts/helpers';
+Provides ability to override component options from the parent block/component.
 
-	cookies.setCookie('gdpr', '2', cookies.setOneDay(), '/');
+### getOptionColors
 
-	cookies.getCookie('gdpr');
-```
+Use this hook to filter the global colors out of the component or block manifest.
+This function is deprecated and getOption should be used.
 
-## debounce
+### getOptions
 
-Debounces the provided function. For more information, check [this blog post](https://davidwalsh.name/javascript-debounce-function).
+Combines two objects of options, one from current component and the other from the parent component.
 
-* @param {function} func Provided function to apply debounce.
-* @param {int} wait Wait time for debounce.
+### getPaletteColors
 
-**Usage:**
+Use this hook to read editor-color-palette colors directly from WP built in store.
 
-```js
-	import { debounce } from '@eightshift/frontend-libs/scripts/helpers';
+### inserter
 
-	debounce(() => {
-		// callback function.
-	}, 250);
-```
+Development inserter made to insert one or multiple blocks in the dom using console.
 
-## devices
+### outputCssVariablesGlobal
 
-Checks if your browser's navigator is a specific device.
+Get Global manifest.json and return global variables as CSS variables.
 
-**Usage:**
-
-```js
-	import { device } from '@eightshift/frontend-libs/scripts/helpers';
-
-	device.iPhone();
-```
-
-## dynamicImport
-
-Used to get (require) all the files using the `require.context` method. It will find all files recursively in the folder using a regex. The following example will require all assets/index.js files inside the custom folder, so there is no need to manually add the files to the build.
-
- * @param {object} paths All require.context patch to iterate.
-
-**Usage:**
-
-```js
-	import { dynamicImport } from '@eightshift/frontend-libs/scripts/helpers';
-
-	dynamicImport(require.context('./../../custom', true, /assets\/index.js$/));
-```
-
-## elementChildrenHeight
-
-Returns the height of the element measured by the height of its children.
-
-* @param {object} element DOM element
-
-**Usage:**
-
-```js
-import { dynamicImport } from '@eightshift/frontend-libs/scripts/helpers';
-
-elementChildrenHeight('.js-item');
-```
-
-**Output:**
-
-```js
-<div class="js-item" style="height: 100px"></div>
-<div class="js-item" style="height: 100px"></div>
-<div class="js-item" style="height: 100px"></div>
-```
-
-## escape-string
-
-Takes the provided string and removes special characters. Characters that will be removed: `([;&,.+*~':"!^#$%@[\]()=>|]`.
-
-* @param {string} $key Key to check.
-
-**Usage:**
-
-```js
-	import { escapeString } from '@eightshift/frontend-libs/scripts/helpers';
-
-	escapeString.escapeString('Special string');
-```
-
-## responsiveSelectors
-
-Create responsive selectors used for responsive attributes.
-
-Useful if you want to show how the responsive behavior looks in the editor.
-
-* @param {array}   items        Array of breakpoints.
-* @param {string}  selector     Selector for this breakpoint.
-* @param {string}  parent       Parent block selector.
-* @param {boolean} use_modifier If false, you can use this selector for visibility.
-
-**Usage:**
-
-```js
-	import { responsiveSelectors } from '@eightshift/frontend-libs/scripts/helpers';
-
-	responsiveSelectors($attributes['width'], 'width', $blockClass);
-```
-
-**Output:**
-
-```js
-	.block-column__width-large--4
-```
-
-## selector
-
-Returns BEM selector for HTML class and checks if the condition part is set.
-
-* @param {boolean} condition Check condition.
-* @param {string}  block BEM Block selector.
-* @param {string}  element BEM Element selector.
-* @param {string}  modifier BEM Modifier selector.
-* @return {string}
-
-**Usage:**
-
-```js
-	import { selector } from '@eightshift/frontend-libs/scripts/helpers';
-
-	selector(!(buttonContent && buttonUrl), `${componentClass}-placeholder`);
-
-	selector(test, componentClass, elementClass);
-
-	selector(!newTest, componentClass, elementClass, modifierClass);
-```
-
-**Equivalent:**
-
-```js
-	!(buttonContent && buttonUrl) ? `${componentClass}-placeholder` : '';
-
-	test ? `${componentClass}__${elementClass}` : '';
-
-	!(newTest) ? `${componentClass}__${elementClass}--${modifierClass}` : '';
-
-```
-
-## getOptionsColor
-
-Use this hook to filter the global colors out of the component or block manifest
-
-* @param {array} colors Array of colors to filter.
-
-**Usage:**
-
-```js
-import { getOptions } from '@eightshift/frontend-libs/scripts/editor';
-
-<ColorPaletteCustom
-		label={
-			<>
-				<Icon icon={icons.color} />
-				{__('Color', 'eightshift-frontend-libs')}
-			</>
-		}
-		colors={getOptionColors(getOptions(manifest, componentName, 'color', options))}
-		value={headingColor}
-		onChange={(value) => setAttributes({ [`${componentName}Color`]: value })}
-/>
-```
-
-## getOptions
-
-Provides the ability to override component options from the parent block/component.
-The components must have the same option names as attribute standard with `componentName` prefix.
-
-* @param {object} manifest Original manifest from the component.
-* @param {string} componentName Current componentName. This is changed depending on the passed componentName.
-* @param {string} attribute Attribute name to check without componentName prefix. Value is auto camelCased.
-* @param {object} options Options provided by the parent block/component.
-
-**Usage:**
-
-```js
-import { getOptions } from '@eightshift/frontend-libs/scripts/editor';
-
-<SelectControl
-	label={
-		<>
-			<Icon icon={icons.size} />
-			{__('Type', 'eightshift-frontend-libs')}
-		</>
-	}
-	value={buttonType}
-	options={getOptions(manifest, componentName, 'type', options)}
-	onChange={(value) => setAttributes({ [`${componentName}Type`]: value })}
-/>
-```
-
-## getPaletteColors
-
-Use this hook to read editor-color-palette colors directly from WP built-in store.
-
-* Requires WP => 5.3
-
-**Usage:**
-
-```js
-	import { getPaletteColors } from '@eightshift/frontend-libs/scripts/editor';
-
-	getPaletteColors();
-```
-
-## outputCssVariablesGlobal
-
-Get global manifest.json and return `globalVariables` as CSS variables.
-
-* @param array globalManifest Array of global variables data.
-
-**Data:**
-```js
-const manifestGlobal = {
-	"globalVariables": {
-		"maxCols": 12,
-		"breakpoints": {
-			"mobile": 479,
-			"tablet": 1279,
-			"desktop": 1919,
-			"large": 1920
-		},
-		"containers": {
-			"default": "1330px"
-		},
-		"gutters": {
-			"none": "0",
-			"default": "25px",
-			"big": "50px"
-		},
-		"sectionSpacing": {
-			"min":  -300,
-			"max":  300,
-			"step": 10
-		},
-		"sectionInSpacing": {
-			"min":  0,
-			"max":  300,
-			"step": 10
-		},
-		"colors": [
-			{
-				"name": "Infinum",
-				"slug": "infinum",
-				"color": "#D8262C"
-			},
-			{
-				"name": "Black",
-				"slug": "black",
-				"color": "#111111"
-			}
-		]
-	}
-};
-```
-
-**Usage:**
-
-```js
-import { getUnique } from '@eightshift/frontend-libs/scripts/editor';
-import globalSettings from './../../manifest.json';
-
-outputCssVariablesGlobal(globalSettings);
-```
-
-**Output:**
-
-```js
-<style>
-	:root {
-		--global-max-cols: 12;
-		--global-breakpoints-mobile: 479;
-		--global-breakpoints-tablet: 1279;
-		--global-breakpoints-desktop: 1919;
-		--global-breakpoints-large: 1920;
-		--global-containers-default: 1330px;
-		--global-gutters-none: 0;
-		--global-gutters-default: 25px;
-		--global-gutters-big: 50px;
-		--global-section-spacing-min: -300;
-		--global-section-spacing-max: 300;
-		--global-section-spacing-step: 10;
-		--global-section-in-spacing-min: 0;
-		--global-section-in-spacing-max: 300;
-		--global-section-in-spacing-step: 10;
-		--global-colors-infinum: #D8262C;
-		--global-colors-black: #111111;
-		--global-colors-white: #FFFFFF;
-	}
-</style>
-```
-
-## outputCssVariables
+### outputCssVariables
 
 Get component/block options and process them in CSS variables.
 
-For detailed usage check [block styles](blocks-styles);
+### getUnique
 
-* @param array  $attributes Built attributes.
-* @param array  $manifest Component/block manifest data.
-* @param string $unique Unique key.
-* @param array  $globalManifest Global manifest array.
+Returns a unique ID generally used for css variables.
 
-## getUnique
-
-Return unique ID for block processing.
-
-**Usage:**
-```js
-import { getUnique } from '@eightshift/frontend-libs/scripts/editor';
-
-getUnique();
-```
-
-**Output:**
-
-```js
-891273981374b98127419287
-```
-
-## overrideInnerBlockAttributes
+### overrideInnerBlockAttributes
 
 Used to set attributes on all innerBlocks. This value will be stored in the block editor store and set to a block.
 
-**Usage:**
-
-```js
-	import { useSelect } from '@wordpress/data';
-	import { overrideInnerBlockAttributes } from '@eightshift/frontend-libs/scripts/editor';
-
-	useSelect((select) => {
-		overrideInnerBlockAttributes(
-			select,
-			props.clientId,
-			{
-				wrapperDisable: true,
-			}
-		);
-	});
-```
-
-## overrideInnerBlockSimpleWrapperAttributes
+### overrideInnerBlockSimpleWrapperAttributes
 
 Used to set attributes on all innerBlocks preset only for simple wrapper setup. This value will be stored in the block editor store and set to a block.
 
-**Usage:**
+### pasteInto
 
-```js
-	import { useSelect } from '@wordpress/data';
-	import { overrideInnerBlockSimpleWrapperAttributes } from '@eightshift/frontend-libs/scripts/editor';
+Paste event handler.
 
-	useSelect((select) => {
-		overrideInnerBlockSimpleWrapperAttributes(
-			select,
-			props.clientId,
-		);
-	});
-```
-
-## props
+### props
 
 Output only attributes that are used in the component and remove everything else.
 
-* @param {object}  attributes Object of attributes from block/component.
-* @param {string}  realName Old key to use, generally this is the name of the block/component.
-* @param {string}  newName New key to use to rename attributes.
-* @param {boolean} isBlock Check if helper is used on block or component.
-* @param {string}  globalManifestData If global manifest is not provided use the default path.
+### getExample
 
-**Data:**
-```js
-const attributes = {
-	buttonColor: 'red',
-	buttonSize: 'big',
-	buttonIcon: 'blue',
-	blockName: 'button',
-	wrapperSize: 'big',
-	wrapperType: 'normal',
-};
+Get Block example attributes combined in one: "components and block".
 
-const blockName = 'button';
-const componentName = 'button';
-```
+### registerBlocks
 
-**Usage:**
+Register all Block Editor blocks using WP `registerBlockType` method.
 
-```js
-import { props } from '@eightshift/frontend-libs/scripts/editor';
+### registerVariations
 
-{...props(attributes, blockName, '', true)}
+Register all Variations Editor blocks using WP `registerBlockVariation` method.
 
-{...props(attributes, componentName)}
+### ucfirst
 
-{...props(attributes, 'typography', componentName)}
-```
+Convert the first letter of the string to uppercase.
 
-**Output:**
+# [General helpers](https://github.com/infinum/eightshift-frontend-libs/tree/develop/scripts/helpers)
 
-```js
-{
-	buttonColor: 'red',
-	buttonSize: 'big',
-	buttonIcon: 'blue',
-	blockName: 'button',
-};
+These are all helpers generally used anywhere.
 
-{
-	buttonColor: 'red',
-	buttonSize: 'big',
-	buttonIcon: 'blue',
-	blockName: 'button',
-};
+### camelize
 
-{
-	typographyColor: 'red',
-	typographySize: 'big',
-	typographyIcon: 'blue',
-};
-```
+Returns a camelCase-formatted string.
 
-## ucfirst
+### checkAttr
 
-Converts the first letter of a string to uppercase.
+Check if attribute exist in attributes list and add default value if not.
 
-**Usage:**
+### checkAttrResponsive
 
-```js
-	import { ucfirst } from '@eightshift/frontend-libs/scripts/editor';
+Map and check attributes for responsive object.
 
-	ucfirst('custom');
-```
+### cookies
+
+Helper to set and unset cookies.
+
+### debounce
+
+Debounces the provided function.
+
+### devices
+
+Detect a certain device, so specific functionality can be implemented for it.
+
+### dynamicImport
+
+Loop all paths required using require.context method.
+
+### elementChildrenHeight
+
+Returns height of the element measured by height of its children.
+
+### escape-string
+
+Takes the provided string and removes special characters
+
+### navigator
+
+The `Navigator.vibrate()` method pulses the vibration hardware on the device, if such hardware exists.
+
+### responsiveSelectors
+
+Create responsive selectors used for responsive attributes.
+
+### selector
+
+Returns BEM selector for HTML class and checks if the condition part is set.
+
+### truncateMiddle
+
+Slices the string and inputs the provided separator after the specified characters.
+
+# [Plugins helpers](https://github.com/infinum/eightshift-frontend-libs/tree/develop/scripts/plugins)
+
+These are all helpers generally only in specific plugins.
+
+### yoastSeo
+
+This helper will search all blocks and components manifests and find attributes that have "seo": "true" key.
+This key will be added in to the content and proceed by the YoastSeo Analysis plugin.
+
+# [Storybook helpers](https://github.com/infinum/eightshift-frontend-libs/tree/develop/scripts/storybook)
+
+These are all helpers generally only in Storybook.
+
+### blockDetails
+
+Combine block details in one object.
+
+### Gutenberg
+
+Load actual Block Editor and all the magic.
+
+### storybookDefaultMocksCategories
+
+Manually populate categories for blocks. This is generated in the PHP part of the real project.
+
+### storybookDefaultMocksColorPalette
+
+Manually populate blocks color palette. This is generated in the PHP part of the real project.
+
+### storybookWindowObjects,
+
+Loading WP build files.
+
+### storybookWpStyles
+
+Loading styles for block editor.
+
