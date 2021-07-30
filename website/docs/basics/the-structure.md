@@ -99,7 +99,7 @@ This class is used to store every exception that can be thrown from the project.
 
 ### Helpers
 
-All our helpers are stored here and in general you can directly use these classes without need to extend them. But if you want to extend the functionality of our helpers you can put them in this folder.
+All our helpers are stored here and in general, you can directly use these classes without extending them. But if you want to extend the functionality of our helpers you can put them in this folder.
 
 ### I18n
 
@@ -123,7 +123,7 @@ This class is used to add all custom project implementation for media like addin
 
 ### Menu
 
-This class is used to register menu position.
+This class is used to register menu positions.
 
 ### ModifyAdminAppearance
 
