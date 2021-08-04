@@ -18,7 +18,7 @@ import {
 
 # [Editor helpers](https://github.com/infinum/eightshift-frontend-libs/tree/develop/scripts/editor)
 
-These are all helpers generally only in Block Editor.
+All of these helpers are generally only used in the Block Editor.
 
 ### icons
 
@@ -104,7 +104,7 @@ Register all Variations Editor blocks using WP `registerBlockVariation` method.
 
 ### ucfirst
 
-Convert the first letter of the string to uppercase.
+Convert the first letter of a string to uppercase.
 
 # [General helpers](https://github.com/infinum/eightshift-frontend-libs/tree/develop/scripts/helpers)
 
