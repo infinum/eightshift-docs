@@ -20,8 +20,4 @@ Sass mixing, functions, and helpers are located in Eightshift Frontend Libs. The
 @import '@eightshift/frontend-libs/styles/index.scss';
 ```
 
-But if you are using our default `setup_theme` setup, you are all set. Eightshift Frontend Libs are in your project, injected in the `_shared.scss` file.
-
-## We have some defaults
-
-For Eightshift Boilerplate to look presentable and have some styling, we created some variables and colors for us to use. So if you find some variable in your project and you have no idea where it comes from, that is on us, and your best place to check is [here for global variables](https://github.com/infinum/eightshift-frontend-libs/blob/master/styles/scss/_core.scss) and [here for colors](https://github.com/infinum/eightshift-frontend-libs/blob/develop/styles/scss/_colors.scss).
+But if you used our `wp boilerplate setup_theme` command, you are all set. Eightshift Frontend Libs are injected in the `_shared.scss` file in your project.

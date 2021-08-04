@@ -25,9 +25,9 @@ Here is a quick overview of how this works:
 - PSR-4 should detect your new class if you followed the PSR-4 naming standard.
 - The new class is added to the `classmap` array inside the `vendor` folder.
 - Autowiring class reads the new class, checks if your class has any class dependencies, and injects them.
-- It just works.
+- And it just works.
 
-To put it shortly: just add a new class (that is PSR-4 compliant) with or without some class dependencies and everything will be automatically resolved/injected.
+**To put it shortly**: just add a new class (that is PSR-4 compliant) with or without some class dependencies and everything will be automatically resolved/injected.
 
 ### What if I have to mock or manually call a class?
 
@@ -38,7 +38,7 @@ We can think of these scenarios where you want to load a class manually:
 - Your classes have a custom structure and autowiring can't resolve it.
 - You want to provide a primitive parameter (`string`, `int`, etc.) inside a constructor method.
 
-In those cases, you can manually provide your DI container with the implementation using the `getServiceClasses` method inside the `src>Main>Main` class.
+In those cases, you can manually provide your DI container with the implementation using the `getServiceClasses` method inside the `src>Main>Main.php` class.
 
 Provide the method and add your custom implementation like this:
 
@@ -56,7 +56,9 @@ Provide the method and add your custom implementation like this:
     return [
 
       // If you are using a class as a DI.
-      ProjectNamespace\Rest\Routes\DocumentsRoute::class => [ProjectNamespace\Query\Documents\QueryDocuments::class],
+      ProjectNamespace\Rest\Routes\DocumentsRoute::class => [
+        ProjectNamespace\Query\Documents\QueryDocuments::class
+      ],
 
       // If you just want to include a simple class with no DI.
       ProjectNamespace\CoolFolder\CoolClass::class,
@@ -71,7 +73,7 @@ This just means that you are not using dependency injection (since you have noth
 
 ### What if my class has a **primitive parameter** (`string`, `int`, etc.) inside a constructor method?
 
-If your class **has** a primitive parameter defined in the constructor method, autowiring will **not know** how to handle this because you manually need to provide the primitive parameters at the point of usage. You can find more information about that [here](#what-if-i-have-to-mock-or-manually-call-a-class).
+If your class **has** a primitive parameter defined in the constructor method, autowiring will **not know** how to handle this so you must manually provide the primitive parameters at the point of usage. You can find more information about that [here](#what-if-i-have-to-mock-or-manually-call-a-class).
 
 ### What if my class does have another class as a parameter inside a constructor method?
 
@@ -79,7 +81,7 @@ This works out of the box, but you shouldn't really do this.
 
 A good coding practice is that your class should never depend on the concrete class implementation because you have tightly coupled your class to another class. This makes it hard to test and your code becomes hard to modify. Imagine that you have put a concrete implementation as a dependency, only to get feedback from the client that you need to change that implementation for a completely different one. Making the changes means that you'll need to track all the places in your codebase where you have used some functionality from this class, and change it completely.
 
-**You should always code against interfaces and not implementation.**
+> You should always code against interfaces and not implementation.
 
 We can't stress this enough because as your project grows, so will your headaches. Also, when you start testing your code, that is when your hair will begin to fall off. We recommend reading Uncle Bob Martin's [Clean Code](http://cleancoder.com/products). That will save you a lot of sleepless nights, and you'll learn tons of tips and tricks for writing clean code.
 

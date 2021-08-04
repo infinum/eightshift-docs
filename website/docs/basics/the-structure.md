@@ -5,7 +5,7 @@ title: The Structure
 
 [![docs-source](https://img.shields.io/badge/source-eigthshift--libs-blue?style=for-the-badge&logo=php&labelColor=2a2a2a)](https://github.com/infinum/eightshift-libs)
 
-If you've followed the chapters this far and set your first project with all the classes from the `wp boilerplate setup_theme` command, you saw that you have an `src` folder in the root of your project.
+If you've followed the chapters this far and have set your first project with all the classes from the `wp boilerplate setup_theme` command, you saw that you have an `src` folder in the root of your project.
 
 In that root folder, you have a bunch of folders with classes. We like to structure our projects by features, so for example, all `custom post type` registrations will be located in the `CustomPostType` folder.
 
@@ -19,11 +19,7 @@ As we already mentioned, try to be consistent and organized with your project. H
 
 - src
 	- Blocks
-		- assets
-		- components
-		- custom
-		- variations
-		- wrapper
+	- Columns
 	- Config
 	- CustomMeta
 	- CustomPostType
@@ -32,15 +28,17 @@ As we already mentioned, try to be consistent and organized with your project. H
 		- Admin
 		- Blocks
 		- Theme
+	- Exception
+	- Helpers
 	- I18n
 	- Login
 	- Main
 	- Manifest
 	- Media
+	- Menu
 	- ModifyAdminAppearance
+	- Plugin
 	- Rest
-		- Field
-		- Routes
 	- ThemeOptions
 	- View
 - .storybook
@@ -61,6 +59,10 @@ As we already mentioned, try to be consistent and organized with your project. H
 ### Blocks
 
 Blocks are used, as the name implies, for the block editor. You can read about blocks in more detail in [Blocks chapter](blocks).
+
+### Columns
+
+This class contains all the custom admin listing columns hooks for your project, like post type, taxonomy and user lists.
 
 ### Config
 
@@ -91,6 +93,14 @@ The usage of any of these classes is optional, and you can use only what you nee
 
 We named all our files with `application` in prefix. If you don't like the name, you can change it by providing the project overrides for constants used in the Eightshift-Libs. If you change the file names, you must make changes to the Webpack build process as well. For modifying the Webpack part you can check in the [Webpack chapter](webpack).
 
+### Exception
+
+This class is used to store every exception that can be thrown from the project.
+
+### Helpers
+
+All our helpers are stored here and in general, you can directly use these classes without extending them. But if you want to extend the functionality of our helpers you can put them in this folder.
+
 ### I18n
 
 This class is used to define all hooks related to the languages and translations for your project.
@@ -111,9 +121,17 @@ This class provides `manifest.json` file location and helpers to return the full
 
 This class is used to add all custom project implementation for media like adding custom image size, enabling SVG image, etc.
 
+### Menu
+
+This class is used to register menu positions.
+
 ### ModifyAdminAppearance
 
 This class is used to change admin appearance. We use it to change the admin color palette depending on the environment.
+
+### Plugin
+
+This class is used only in the Eightshift boilerplate plugin and it holds files required for activation and deactivation of the plugin.
 
 ### Rest
 
