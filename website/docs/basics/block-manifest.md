@@ -71,7 +71,7 @@ This key provides you the ability to give an example mockup of your attributes. 
 
 ### attributes
 Attributes key is an object of attributes where you define and set up default values for a block. These attributes are then passed in the editor as props, and the PHP view part in the `$attributes` variable.
-We are using the same structure as described in the [block editor documentation](https://developer.wordpress.org/block-editor/developers/block-api/block-attributes/).
+We are using the same structure as described in the [block editor documentation](https://developer.wordpress.org/block-editor/developers/block-api/block-attributes/). For more details please check [this chapter](blocks-attributes).
 
 ### hasInnerBlocks
 `default: false`

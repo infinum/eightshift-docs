@@ -12,3 +12,90 @@ The reason for this is that you can't control what key of that object is stored 
 You can also look at this from the Reacts perspective: setting the entire object every time the key changes is bad for performance.
 
 Yes, you can use objects, but we recommend using them only when you want to store multiple keys simultaneously.
+
+### Structure 
+
+All attributes in the block/component must begin with the exact same prefix as it is defined in the `blockName` or `componentName`.
+
+Block example:
+```json
+{
+  "blockName": "heading",
+  "attributes": {
+    "headingContent": {
+      "type": "string"
+    },
+    "headingLevel": {
+      "type": "integer",
+      "default": 2
+    }
+  }
+}
+```
+
+or
+
+```json
+{
+  "blockName": "intro",
+  "attributes": {
+    "introContent": {
+      "type": "string"
+    },
+    "introLevel": {
+      "type": "integer",
+      "default": 2
+    }
+  }
+}
+```
+
+Component example:
+```json
+{
+  "componentName": "heading",
+  "attributes": {
+    "headingContent": {
+      "type": "string"
+    },
+    "headingLevel": {
+      "type": "integer",
+      "default": 2
+    }
+  }
+}
+```
+
+or
+
+```json
+{
+  "componentName": "intro",
+  "attributes": {
+    "introContent": {
+      "type": "string"
+    },
+    "introLevel": {
+      "type": "integer",
+      "default": 2
+    }
+  }
+}
+```
+
+If you have a block/component that contains multiple words you should name it with a dash just like the block/component folder name, but the attributes must follow the `camelCase` naming standard like this:
+
+```json
+{
+  "componentName": "intro-heading",
+  "attributes": {
+    "introHeadingContent": {
+      "type": "string"
+    },
+    "introHeadingLevel": {
+      "type": "integer",
+      "default": 2
+    }
+  }
+}
+```
