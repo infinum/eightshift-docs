@@ -7,7 +7,7 @@ title: Storybook
 
 We have created a full storybook that hosts all our blocks/components/variations with a fully functional block editor, where you can try out how blocks work and behave.
 
-**Visit [Storybook](eightshift-docs/storybook/) for more details.**
+**Visit [Storybook](/eightshift-docs/storybook/) for more details.**
 
 > To speed up project build time, Eightshift Boilerplate doesn't come with the storybook out of the box; you need to install it. To install Storybook to your project, just type this command in you terminal and follow the instructions:
 
@@ -22,7 +22,7 @@ You don't need to have stories in your block/component, but we provided you with
 If you used our way to set up your project, you already have Storybook ready to use. To start the Storybook, run this command:
 
 ```bash
-npm run Storybook
+npm run storybook
 ```
 
 In your project, you also have the `.storybook` folder, where all the configuration for Storybook is defined.
