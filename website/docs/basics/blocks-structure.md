@@ -20,6 +20,8 @@ Your folder structure should be like this:
     * Blocks.php
     * manifest.json
 
+Don't be confused with the upper and lower case folder names, those are like that on purpose. Everything under the `Block` folder is considered a view so they are written in lower caps, and the Blocks.php file is still a part of the PHP PSR-4 standard so it must be written like every other **service class**.
+
 ### Blocks folder
 This folder contains all the blocks defined in your project. Every block is located in the `custom` folder, and every component is located in the `components` folder. Blocks can be created from multiple block editor components or your project components.
 
@@ -36,10 +38,10 @@ This folder contains all the custom blocks defined and used in your project. Ple
 This folder contains all the variations blocks defined and used in your project. Please refer to the [variations](blocks-variations) chapter for more details.
 
 ### Wrapper
-This folder contains a wrapper component that wraps all blocks with shared variables and gives blocks the ability to behave as a section. Please refer to the [wrapper](blocks-wrapper) chapter for more details.
+This folder contains a wrapper component that wraps all blocks with shared variables and gives blocks the ability to behave as a layout section. Please refer to the [wrapper](blocks-wrapper) chapter for more details.
 
 ### Manifest.json
-This file contains global settings for the project. It must contain `namespace` and `background` keys. Everything else is optional. Here you can store data you intend to share across toolbars, components, and blocks. Please refer to the [block manifest](block-manifest) chapter for more details.
+This file contains global settings for your project. It must contain `namespace` and `background` keys. Everything else is optional. Here you can store data you intend to share across toolbars, components, and blocks. Please refer to the [block manifest](block-manifest) chapter for more details.
 
 ### Blocks.php
 

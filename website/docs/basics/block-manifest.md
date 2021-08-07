@@ -40,7 +40,12 @@ This file contains all the configuration required for a block to work. It's used
       "type": "number",
       "default": 2
     }
-  }
+  },
+  "hasInnerBlocks": false,
+  "components": {},
+  "responsiveAttributes": {},
+  "variables": {},
+  "options": {}
 }
 ```
 
@@ -84,6 +89,25 @@ If the `hasInnerBlocks` key is set to true, the block's `save` method for inner 
 *custom feature*
 
 This key gives you the ability to use component attributes in your block without mapping all the component's attributes every time. Please check [this chapter](blocks-component-in-block) for more details.
+
+### responsiveAttributes
+
+*custom feature*
+
+This key is used to combine multiple attributes with the similar name for the responsive breakpoints. Please check [this chapter](blocks-styles) for more details.
+
+### variables
+
+*custom feature*
+
+This key is used to provide output for CSS variables. Please check [this chapter](blocks-styles) for more details.
+
+### options
+
+*custom feature*
+
+This key is used to provide options used in the Block Editor options like SelectControl or RangeControl. With this key you can pass options and change theme depending on the component used. Please check [this chapter](blocks-component-in-block) for more details.
+
 
 ## The power of manifest.json
 

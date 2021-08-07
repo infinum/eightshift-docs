@@ -31,6 +31,8 @@ We suggest you always use the full name and never abbreviate the block name. If 
   * heading-transforms.js
   * manifest.json
 
+For example, you can check the [storybook](https://infinum.github.io/eightshift-docs/storybook).
+
 ### assets
 
 In this folder, you'll define all the custom JavaScript functionality for your block that will only be used on the front end of the application. You must provide the `index.js` file in this folder, as a starting point, and the rest is up to you. We recommend using [JavaScript dynamic imports](dynamic-import) for all your front-end scripts. This ensures that the JavaScript is only loaded in the application when it is used and not before. By using dynamic import, you optimize your application and make it load faster.
@@ -66,14 +68,14 @@ Holds only the editor styling for the block. You should be using this file to ov
 
 Corrections in the grid layout are necessary because the block editor adds additional HTML and we can't change it.
 
-Please read the [writing styles](writing-styles) chapter for more details.
+Please read the [blocks styles](blocks-styles) chapter for more details.
 
 _This file is optional_.
 
 ### heading-style.scss
 Holds all the front-end and editor styling for the component.
 
-Please read the [writing styles](writing-styles) chapter for more details.
+Please read the [blocks styles](blocks-styles) chapter for more details.
 
 _This file is optional_.
 
