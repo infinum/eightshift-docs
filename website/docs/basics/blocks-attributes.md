@@ -15,7 +15,7 @@ Yes, you can use objects, but we recommend using them only when you want to stor
 
 ### Structure 
 
-All attributes in the block/component must begin with the exact same prefix as it is defined in the `blockName` or `componentName`.
+All attributes in the block/component must begin with the exact same prefix as it is defined in the `blockName` or `componentName`. The reason behind this naming standard is that our helpers can automaticity resolve and know what prefix to use when renaming the component name in the dependency tree. For more details about this feature please check [this chapter](blocks-component-in-block).
 
 Block example:
 ```json
