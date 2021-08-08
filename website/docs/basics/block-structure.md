@@ -68,7 +68,7 @@ Holds only the editor styling for the block. You should be using this file to ov
 
 Corrections in the grid layout are necessary because the block editor adds additional HTML and we can't change it.
 
-Please read the [blocks styles](blocks-styles) chapter for more details.
+Please read the [block styles](blocks-styles) chapter for more details.
 
 _This file is optional_.
 

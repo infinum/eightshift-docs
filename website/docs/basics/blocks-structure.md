@@ -40,7 +40,7 @@ This folder contains all the variations blocks defined and used in your project.
 ### Wrapper
 This folder contains a wrapper component that wraps all blocks with shared variables and gives blocks the ability to behave as a layout section. Please refer to the [wrapper](blocks-wrapper) chapter for more details.
 
-### Manifest.json
+### manifest.json
 This file contains global settings for your project. It must contain `namespace` and `background` keys. Everything else is optional. Here you can store data you intend to share across toolbars, components, and blocks. Please refer to the [block manifest](block-manifest) chapter for more details.
 
 ### Blocks.php

@@ -70,12 +70,12 @@ or
 
 ```json
 {
-  "componentName": "intro",
+  "componentName": "description",
   "attributes": {
-    "introContent": {
+    "descriptionContent": {
       "type": "string"
     },
-    "introLevel": {
+    "descriptionLevel": {
       "type": "integer",
       "default": 2
     }

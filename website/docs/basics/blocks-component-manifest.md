@@ -86,7 +86,7 @@ For more details please check [this chapter](blocks-attributes).
 
 ### options
 
-These keys are used to provide a single point of reference for component options used in the options part. If you have a `SelectControl` component or a `ColorSelector`, you can set all your options here and use those options in the options section and story for mocking components. Please check [this chapter](blocks-component-in-block) for more details.
+These keys are used to provide a single point of reference for component options used in the options part. If you have a `SelectControl` or a `ColorSelector` component, you can set all your options here and use those options in the options section and story for mocking components. Please check [this chapter](blocks-component-in-block) for more details.
 
 ### components
 
