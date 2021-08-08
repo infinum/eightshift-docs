@@ -75,7 +75,7 @@ _This file is optional_.
 ### heading-style.scss
 Holds all the front-end and editor styling for the component.
 
-Please read the [blocks styles](blocks-styles) chapter for more details.
+Please read the [block styles](blocks-styles) chapter for more details.
 
 _This file is optional_.
 
