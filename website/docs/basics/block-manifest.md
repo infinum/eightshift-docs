@@ -106,7 +106,7 @@ This key is used to provide output for CSS variables. Please check [this chapter
 
 *custom feature*
 
-This key is used to provide options used in the Block Editor options like SelectControl or RangeControl. With this key you can pass options and change theme depending on the component used. Please check [this chapter](blocks-component-in-block) for more details.
+This key is used to provide options used in the Block Editor options for components like SelectControl or RangeControl. With this key, you can pass options and change them depending on the component used. Please check [this chapter](blocks-component-in-block) for more details.
 
 
 ## The power of manifest.json
