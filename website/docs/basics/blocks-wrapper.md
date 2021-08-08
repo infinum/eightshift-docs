@@ -52,3 +52,7 @@ This attribute disables the wrapper completely. When this attribute is set to `t
 ### wrapperParentClass
 
 This attribute is interesting to use if, for example, you have a carousel block with inner blocks. To provide the markup necessary for the carousel script to work, you need to add some items selector (a div). With this key, you can pass a parent item class, and all of your items will be wrapped with this selector and a class.
+
+## Wrapper limitations
+
+In wrapper you **can't** use `components` key in the manifest to automaticity add additional components like you can in the blocks or components. If you want to add component to a wrapper you must manually add it the old fashion way.
