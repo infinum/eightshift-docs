@@ -82,43 +82,11 @@ The same as in the blocks manifest. Please check [this chapter](block-manifest) 
 
 ### attributes
 
-The same as in the blocks manifest. Please check [this chapter](block-manifest) for more details.
-All attributes in the component must begin with the exact same prefix as it is defined in the `componentName`.
-
-For example:
-
-```json
-{
-  "componentName": "heading",
-  "attributes": {
-		"headingContent": {
-			"type": "string"
-		},
-		"headingLevel": {
-			"type": "integer",
-			"default": 2
-		}
-	}
-}
-
-or
-
-  "componentName": "intro",
-  "attributes": {
-		"introContent": {
-			"type": "string"
-		},
-		"introLevel": {
-			"type": "integer",
-			"default": 2
-		}
-	}
-}
-```
+For more details please check [this chapter](blocks-attributes).
 
 ### options
 
-These keys are used to provide a single point of reference for component options used in the options part. If you have a `SelectControl` component or a `ColorSelector`, you can set all your options here and use those options in the options section and story for mocking components.
+These keys are used to provide a single point of reference for component options used in the options part. If you have a `SelectControl` or a `ColorSelector` component, you can set all your options here and use those options in the options section and story for mocking components. Please check [this chapter](blocks-component-in-block) for more details.
 
 ### components
 

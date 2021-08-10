@@ -23,7 +23,7 @@ You don't need to have stories in your block/component, but we provided you with
 If you used our way to set up your project, you already have Storybook ready to use. To start the Storybook, run this command:
 
 ```bash
-npm run Storybook
+npm run storybook
 ```
 
 In your project, you also have the `.storybook` folder, where all the configuration for Storybook is defined.

@@ -54,7 +54,7 @@ module.exports = {
         'items': [
           'basics/blocks',
           'basics/blocks-important',
-          'basics/blocks-intro',
+          'basics/blocks-faq',
           'basics/blocks-registration',
           'basics/blocks-structure',
           'basics/blocks-global-manifest',
