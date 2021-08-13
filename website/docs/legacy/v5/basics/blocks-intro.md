@@ -223,3 +223,5 @@ Here are some of our recommendations to ease your pain:
 * Naming should be simple enough to be understood by everyone: Using complex words to describe a simple thing only creates hassle while reading the code. Also, use simple English.
 * You might not be the only person working on your particular project in the future. Think about the next person. Your naming will provide an insight into the process and project.
 * **BE CONSISTENT**.
+
+<div class="legacy-badge legacy-badge--v5"></div>

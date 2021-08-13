@@ -51,3 +51,5 @@ If the `hasInnerBlocks` key is set to true, blocks `save` method for inner block
 `default: true`
 
 If the `hasWrapper` key is set to false, blocks PHP render method will not be passed to the wrapper component.
+
+<div class="legacy-badge legacy-badge--v4"></div>

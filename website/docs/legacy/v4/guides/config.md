@@ -105,3 +105,5 @@ Config::get_config( 'custom filter name' );
 Output:
 eb-custom-filter-name
 ```
+
+<div class="legacy-badge legacy-badge--v4"></div>

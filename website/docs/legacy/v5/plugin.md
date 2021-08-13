@@ -25,3 +25,5 @@ All additional steps after the initial setup are done using WP_CLI commands, so 
 Now that we have the plugin set on your local environment, let's do something with it.
 
 Please make sure you read the [Basics chapter](basics/basics) to better understand how the project is set and what is included to make your developing experience as smooth as possible.
+
+<div class="legacy-badge legacy-badge--v5"></div>

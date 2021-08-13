@@ -51,3 +51,5 @@ This is the main service class responsible for registering all the PHP parts of 
 * default color pallet;
 * what blocks you are going to use; and
 * all the custom functionality that you will write for the project.
+
+<div class="legacy-badge legacy-badge--v5"></div>

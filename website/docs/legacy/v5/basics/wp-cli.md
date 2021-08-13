@@ -67,3 +67,5 @@ We have defined a few command prefixes:
 > **Make WP-CLI your best friend, and your coding life will be much more comfortable, trust me.**
 
 We will explain the classes that we think are necessary and should be described in more detail. For the rest of the classes, you can find the descriptions by running `--help` after each command.
+
+<div class="legacy-badge legacy-badge--v5"></div>

@@ -33,3 +33,5 @@ For example, with the default setup, your project will have the namespace you de
 - Also, every package you additionally install will follow the same convention: `EightshiftBoilerplateVendor\SomePackageNamespace`.
 
 To sum it up: you don't need to change the default vendor prefix if you only run one theme or one plugin with Eightshift Boilerplate. But if you have multiple Eightshift Boilerplate powered themes or plugins installed, please change the vendor prefix on each of the projects.
+
+<div class="legacy-badge legacy-badge--v5"></div>

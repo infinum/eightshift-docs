@@ -52,3 +52,5 @@ module.exports = (env, argv) => {
 	return require('./node_modules/@eightshift/frontend-libs/webpack')(argv.mode, projectConfig);
 };
 ```
+
+<div class="legacy-badge legacy-badge--v5"></div>

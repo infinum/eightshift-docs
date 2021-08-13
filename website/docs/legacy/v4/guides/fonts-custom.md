@@ -78,3 +78,5 @@ body {
   ...
 }
 ```
+
+<div class="legacy-badge legacy-badge--v4"></div>

@@ -102,3 +102,5 @@ To test it in action for default boilerplate the link would be:
 `domain.ext/wp-json/eightshift-boilerplate/v2/posts`.
 
 This link will be different based on your project implementation.
+
+<div class="legacy-badge legacy-badge--v4"></div>

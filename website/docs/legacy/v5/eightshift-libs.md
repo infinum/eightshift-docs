@@ -35,3 +35,5 @@ Please visit this [link](legacy/v4/advanced/installation-boilerplate-custom) for
 ## Who do I talk to?
 
 If you have any questions or problems, please [open an issue](https://github.com/infinum/eightshift-libs/issues) on GitHub, and we will do our best to give you a timely answer.
+
+<div class="legacy-badge legacy-badge--v5"></div>

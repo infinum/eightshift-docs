@@ -33,3 +33,5 @@ If provided, the component will be wrapped with a parent BEM selector. For examp
 * @param  string $component  Component's name or full path (ending with .php).
 * @param  array  $attributes Array of attributes that are implicitly passed to the component.
 * @return string
+
+<div class="legacy-badge legacy-badge--v4"></div>

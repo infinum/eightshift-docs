@@ -18,3 +18,5 @@ If you are familiar with the extending classes (class inheritance) in PHP langua
 * [Traits](https://www.php.net/manual/en/language.oop5.traits.php)
 
 Please get acquainted with these concepts before you continue because they will help you in the later chapters.
+
+<div class="legacy-badge legacy-badge--v5"></div>

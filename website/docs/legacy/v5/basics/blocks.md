@@ -54,3 +54,5 @@ Our setup's main advantage is that you don't need to do a bunch of boilerplate e
 - Linting standards.
 - Multiple helpers work the same on JS and PHP side, so it is easy to copy code from one language to another.
 - And much, much more.
+
+<div class="legacy-badge legacy-badge--v5"></div>

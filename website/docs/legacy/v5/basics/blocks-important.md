@@ -29,3 +29,5 @@ You **don't need to restart** Webpack watch when you:
 * make changes on anything other than blockName in the manifest.json.
 
 > Remember this note because, in 90 per cent of cases, your error occurs when you made changes to the files and didn't restart the Webpack watch.
+
+<div class="legacy-badge legacy-badge--v5"></div>
