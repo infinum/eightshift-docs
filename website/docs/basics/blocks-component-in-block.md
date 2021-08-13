@@ -14,13 +14,13 @@ Try to think of your development process in this way:
 - No global styles. Instead, all styles should be contained to the block/component. For more details, check [this link](blocks-styles).
 - You should define all heading variations in a `heading` component. You can then use this component everywhere you have a heading instead of writing a new implementation. In practice: don't do `<h2>$heading</h2>` but render the `heading` component instead using the helpers defined in the [helpers section](helpers). The heading is just an example, but this applies to every component.
 - You can have multiple heading components in one block.
-- **JavaScript and PHP part of the block/component must be 99% te same this is why we wrote all those helpers.**
+- **JavaScript and PHP part of the block/component must be 99% the same this is why we wrote all those helpers.**
 
 ## Manifest setup
 
-In order to use our way or passing props you must understand a few things, you must use our helpers and you must set `components` key in the manifest.
+In order to use our way of passing props, there are a few prerequisites you must follow. You must use our helpers and you must set `components` key in the manifest.
 
-As we described in the [block manifest](block-manifest) chapter each block/component can have `components` key. This key is used in the registration of the block attributes in the block editor and as a dependency tree for passing props in the childeren components.
+As we described in the [block manifest](block-manifest) chapter each block/component can have a `components` key. This key is used in the registration of the block attributes in the block editor and as a dependency tree for passing props in the children components.
 
 **Default setup:**
 ```json
@@ -31,7 +31,7 @@ As we described in the [block manifest](block-manifest) chapter each block/compo
 
 Components key is an object that can have multiple items added. 
 
-> Key represents the name that is going to be used for this component in this block/component and the prefix used in tha attributes (more on this later).
+> Key represents the name that is going to be used for this component in this block/component and the prefix used in the attributes (more on this later).
 
 > Value represents the real component name that you have in your project. 
 
@@ -47,7 +47,7 @@ Components key is an object that can have multiple items added.
 
 This block/component uses two components, one is heading and the other is paragraphy and they are using the default names.
 
-**Multiple components setup with the same type:**
+**Multiple components set up with the components of the same type:**
 ```json
 "components": {
 	"heading": "heading",
@@ -56,11 +56,11 @@ This block/component uses two components, one is heading and the other is paragr
 }
 ```
 
-This block/component uses three components, one is heading and the other heading is renamed to intro and the last one is paragraphy.
+This block/component uses three components, two headings (one of which is renamed to `intro`) and a paragraph.
 
 ## Important helpers
 
-As we described earlier in order to use our setup you must use our helpers. Here are some of the helper you should get familiar with:
+As we described earlier, in order to use our setup you must use our helpers. Here are some of the helpers you should get familiar with:
 
 * props - [JS](https://github.com/infinum/eightshift-frontend-libs/blob/develop/scripts/editor/props.js) - [PHP](https://github.com/infinum/eightshift-libs/blob/develop/src/Helpers/Components.php)
 * getOptions - [JS](https://github.com/infinum/eightshift-frontend-libs/blob/develop/scripts/editor/get-options.js) - [PHP](https://github.com/infinum/eightshift-libs/blob/develop/src/Helpers/Components.php)
@@ -71,14 +71,14 @@ As we described earlier in order to use our setup you must use our helpers. Here
 
 For more details please check our helpers sections for [JavaScript](helpers-javascript) and [PHP](helpers-php).
 
-> Keep in mind that you can always ignore our setup and use the React native way of passing props to components by prop drilling.
+> Keep in mind that you can always ignore our setup and use the React way of passing props to components by prop drilling.
 
 
 ## Setting up attributes
 
-> Each attribute must have the component name prefix in each attribute. This is one of the biggest requirement for our setup to work.
+> Each attribute must have the component name prefix in each attribute. This is one of the biggest requirements in order for our setup to work.
 
-By defining components key in the block registration phase we are drilling down from block to the last component and setting up attribute names according to you setup. In order for everything to work we had to add/change prefixes to each component attribute in corelation where this attribute is used in the dependency tree. It is not so hard as it souns so let us show you some graphical examples:
+By defining components key in the block registration phase we are drilling down from block to the last component and setting up attribute names according to your setup. In order for everything to work, we had to add/change prefixes to each component attribute in relation to where this attribute is used in the dependency tree. It is not so hard as it sounds so let us show you some graphical examples:
 
 ![Attributes 1](/eightshift-docs/img/docs/attributes-1.png)
 
@@ -139,11 +139,11 @@ In your block attributes object, you will now have these keys:
 "jumbotronContent": "test",
 ```
 
-As you can see in the example, each block/component attribute must have prefix and we ara than stacking that prefixed in the final output.
+As you can see in the example, each block/component attribute must have a prefix, and we are then stacking that prefixed in the final output.
 
 ### I want to override one heading attribute in my block.
 
-We build all our attributes by merging attributes objects in this order:
+We build all our attributes by merging attribute's objects in this order:
 
 * global attributes (global settings)
 * wrapper attributes
@@ -207,9 +207,9 @@ In your block attributes object, you will now have these keys:
 "jumbotronContent": "test",
 ```
 
-As you can see in the example, to overide tha component attribute you just set that attribute to a different value but you must respect the attribute prefix.
+As you can see in the example, to override the component attribute you just set that attribute to a different value but you must respect the attribute prefix.
 
-### I want to use one heading and paragraph component in my block.
+### I want to use one heading and a paragraph component in my block.
 
 You can do this by following the same principle as before. Here is an example:
 
@@ -359,7 +359,7 @@ All our components come with a few common attributes that we recommend you also 
 
 This attribute is available in all three components (editor, toolbar, options). If set to **false**, it will remove this component from the DOM. This is useful if you want to hide all markup from the DOM.
 
-For example, you have a Jumbotron block and a heading that you want to populate if necessary. If you add content to the heading, everything looks good. But if you don't add it, you'll still see a placeholder for that heading in the block editor. That affects how you perceive it, and a editor may think this block will look like that on the front end (with the placeholder text). So if you have a component that you will not populate on some block, switch the toggle to false, and you will hide it from the DOM. This is useful for content editors.
+For example, you have a Jumbotron block and a heading that you want to populate if necessary. If you add content to the heading, everything looks good. But if you don't add it, you'll still see a placeholder for that heading in the block editor. This affects how you perceive it, and an editor may think this block will look like that on the front end (with the placeholder text). So if you have a component that you will not populate on some block, switch the toggle to false, and you will hide it from the DOM. This is useful for content editors.
 
 ### I don't want my editor to be able to change component options in my block.
 
@@ -436,7 +436,7 @@ To achieve this you must prepare your component to be able to use this feature:
 
 1. Your component options must be named the same name as their attribute value. In the example, you can see that the options key for `typographySize` is the same name as in the attributes.
 
-`src/Blocks/components/heading/heading.php`
+`src/Blocks/components/heading/manifest.json`
 
 ```json
 {
@@ -551,7 +551,7 @@ And this is it. You are now able to override the options from the parent block/c
 
 At one point in time, we agreed on naming standards for all component attributes. That way we made sure that you wouldn't get any collisions when using multiple components. So we said it is ok to spread all attributes to the component and let the component handle what it needs. Well, that approach is ok but it can bite you in the a.. at the point that you least expect.
 
-That is why we created [props helper](helpers-javascript) that determins what attributes are passed to what component depending on the dependency tree.
+That is why we created [props helper](helpers-javascript) that determines what attributes are passed to what component depending on the dependency tree.
 
 **Let's set a layout for this example:**
 * components
@@ -622,7 +622,7 @@ use EightshiftBoilerplateVendor\EightshiftLibs\Helpers\Components;
 ```
 
 
-Now, let's see how the `component heading` looks like.
+Now, let's see how the component `heading` looks like.
 
 `src/Blocks/components/heading/manifest.json`
 
@@ -732,9 +732,9 @@ You can also do this and this is why we created the third parameter in the props
 />
 ```
 
-typographyContent attribute will follow the naming prefix when passed to a child but the disableEdit will remain the same name in all the childrens.
+typographyContent attribute will follow the naming prefix when passed to a child but the disableEdit will remain the same name in all the children.
 
-Here as a third parameter you can also pass all include attributes but they will not get prefixed:
+Here, as a third parameter, you can also pass all include attributes but they will not get prefixed:
 
 ```js
 <ImageEditor
