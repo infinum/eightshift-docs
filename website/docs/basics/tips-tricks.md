@@ -11,7 +11,7 @@ When you are writing a JavaScript part of the block you should always have your 
 
 ### When to restart your Webpack watch?
 
-As we described in the previous chapters Webpack watch is used to monitor all your code changes and update the compiled files with your latest changes. We have set our folder structure in a way so we can have files automatically included in the build. Here are some of the times you must restart you Webpack watch:
+As we described in the previous chapters Webpack watch is used to monitor all your code changes and update the compiled files with your latest changes. We have set our folder structure in a way so we can have files automatically included in the build. However, there are some times you must restart your Webpack watch:
 
 * Adding a new block/component.
 * Changing the block/component folder name.
