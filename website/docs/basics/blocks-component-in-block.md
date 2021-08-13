@@ -109,7 +109,7 @@ If you have a heading component with these attributes:
 }
 ```
 
-and you want to use the heading component in the Jumbotron block, you can use it by adding a component's key in the Jumbotron block manifest like this:
+and you want to use the heading component in the Jumbotron block, you can use it by adding a component key in the Jumbotron block manifest like this:
 
 `src/Blocks/custom/jumbotron/manifest.json`
 
@@ -126,7 +126,7 @@ and you want to use the heading component in the Jumbotron block, you can use it
 }
 ```
 
-In your block attributes object, you will now have these keys:
+in your block attribute's object, you will now have these keys:
 
 ```json
 
@@ -390,9 +390,6 @@ For example, you have a `card` component that you will use in the `featured-post
 `src/Blocks/custom/featured-posts/featured-posts.php`
 
 ```php
-// Fetch and parse manifest using custom helper.
-$cardManifest = Components::getManifest(dirname(__DIR__, 2) . '/components/card');
-
 echo wp_kses_post(
 	Components::render(
 		'card',
@@ -410,9 +407,6 @@ By providing the forth parameter to a render method you can also add default att
 
 **featured-posts.php**
 ```php
-// Fetch and parse manifest using custom helper.
-$cardManifest = Components::getManifest(dirname(__DIR__, 2) . '/components/card');
-
 echo wp_kses_post(
 	Components::render(
 		'card',
