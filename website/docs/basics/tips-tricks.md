@@ -7,7 +7,7 @@ Since we are creating our projects using this setup, we are going to share our t
 
 ### Always disable cache when you are writing block editor components
 
-When you are writing an JavaScript part of the block you should always have your browser inspector open and checkbox checked for disabling browser cache in the network tab. WordPress core is caching JS files and you may not always get the latest changes fo you code in the editor. This way you can be sure that everything is up to date.
+When you are writing a JavaScript part of the block you should always have your browser inspector open and checkbox checked for disabling browser cache in the network tab. WordPress core is caching JS files and you may not always get the latest changes of your code in the editor. This way you can be sure that everything is up to date.
 
 ### When to restart your Webpack watch?
 
