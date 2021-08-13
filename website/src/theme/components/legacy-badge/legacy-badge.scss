@@ -1,0 +1,25 @@
+$legacyBadge: (
+  background-color: $base-elephant-color,
+  color: $base-white-color,
+);
+
+.legacy-badge {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+  background-color: map-get-strict($legacyBadge, background-color);
+  color: map-get-strict($legacyBadge, color);
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.4;
+
+  &--v4::before {
+    content: 'Please be careful, you are reading version 4 legacy page!';
+  }
+
+  &--v5::before {
+    content: 'Please be careful, you are reading version 5 legacy page!';
+  }
+}
