@@ -21,3 +21,5 @@ To test it in action, you should check the `wp-json` path in your browser. You c
 `domain.ext/wp-json/routeNamespace/routeVersion/routeName`
 
 > This link will be different based on your project implementation.
+
+<div class="legacy-badge legacy-badge--v5"></div>

@@ -38,3 +38,5 @@ You can get a list of available script arguments by running:
 ```bash
 npx create-wp-project --help
 ```
+
+<div class="legacy-badge legacy-badge--v4"></div>

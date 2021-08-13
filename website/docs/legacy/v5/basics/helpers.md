@@ -9,3 +9,5 @@ Each project has helper classes that help you with your project code. Helpers ar
 - [JavaScript Helpers](helpers-javascript)
 - [Scss Helpers](helpers-scss)
 - [Php Helpers](helpers-php)
+
+<div class="legacy-badge legacy-badge--v5"></div>

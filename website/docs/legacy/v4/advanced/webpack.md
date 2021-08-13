@@ -99,3 +99,5 @@ module.exports = (env, argv) => {
 ```
 
 If you want to override the defaults from the libs, first put it in the `overrides` array, then provide your own config as described above.
+
+<div class="legacy-badge legacy-badge--v4"></div>

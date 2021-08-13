@@ -35,3 +35,5 @@ Please visit this [link](advanced/installation-boilerplate-custom) for more deta
 ## Who do I talk to?
 
 If you have any questions or problems, please [open an issue](https://github.com/infinum/eightshift-frontend-libs/issues) on github and we will do our best to give you a timely answer.
+
+<div class="legacy-badge legacy-badge--v4"></div>

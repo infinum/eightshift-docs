@@ -123,3 +123,5 @@ import manifest from 'manifest.json';
 As you can see, you can share anything this way. Here are some additional examples:
 * [Social Links](https://github.com/infinum/eightshift-frontend-libs/blob/develop/blocks/init/src/Blocks/components/social-links/manifest.json)
 * [Button](https://github.com/infinum/eightshift-frontend-libs/blob/develop/blocks/init/src/Blocks/components/button/manifest.json)
+
+<div class="legacy-badge legacy-badge--v5"></div>

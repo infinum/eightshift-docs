@@ -10,3 +10,4 @@ In general, we have created all block registration in the manifest.json file. We
 
 To be able to register all block, please check this [file](https://github.com/infinum/eightshift-frontend-libs/blob/develop/blocks/init/src/blocks/assets/scripts/application-blocks-editor.js).
 
+<div class="legacy-badge legacy-badge--v4"></div>

@@ -245,3 +245,5 @@ And that's it. Autowiring knows how to resolve the dependencies, you didn't tigh
 This chapter may be a bit long, but we wanted to make sure you understand our motivation behind it. We often work on large projects with lots of third-party integrations, and having a good project structure and architecture makes the projects more durable. It makes them less prone to bugs (if you write tests) and makes implementing new features and removing obsolete ones a lot easier.
 
 Do you need to use it? Not really. Especially on really simple projects. Should you? We think you'll benefit from it in the long run.
+
+<div class="legacy-badge legacy-badge--v5"></div>

@@ -25,3 +25,5 @@ If instead, you would like to check out what we have prepared regarding the Java
 On the other hand, if you would like to see our extensive **Dynamic Blocks** collection and learn how you can use them with all the developer's flexibility and as little code duplication as possible, check out this link:
 
 [Block editor blocks](blocks)
+
+<div class="legacy-badge legacy-badge--v5"></div>

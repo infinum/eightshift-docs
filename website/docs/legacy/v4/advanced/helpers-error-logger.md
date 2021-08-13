@@ -20,3 +20,5 @@ Ensure correct response for rest using the handler function.
 * @param array|null  $data   Response additional data.
 
 * @return \WP_Error|array \WP_Error instance with error message and status or array.
+
+<div class="legacy-badge legacy-badge--v4"></div>

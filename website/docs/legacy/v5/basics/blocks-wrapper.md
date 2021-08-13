@@ -95,3 +95,5 @@ This attribute adds a divider at the bottom of the section. The spacing of the d
 Controls whether the section will be shown on a specific breakpoint.
 
 > **Important note**: all responsive options are made in `desktop` first way for the block editor because every editor wants to style these firsts. All of the responsive attributes are applied from the large to the mobile breakpoint. So if you set the tablet values, it will be applied to the tablet and mobile breakpoints.
+
+<div class="legacy-badge legacy-badge--v5"></div>

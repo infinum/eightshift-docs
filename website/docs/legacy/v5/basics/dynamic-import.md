@@ -128,3 +128,5 @@ export class CarouselSlider {
   }
 }
 ```
+
+<div class="legacy-badge legacy-badge--v5"></div>

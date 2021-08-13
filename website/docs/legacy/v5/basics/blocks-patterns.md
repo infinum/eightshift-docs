@@ -52,3 +52,5 @@ public function removeCorePatterns(array $settings): array
 	return $settings;
 }
 ```
+
+<div class="legacy-badge legacy-badge--v5"></div>

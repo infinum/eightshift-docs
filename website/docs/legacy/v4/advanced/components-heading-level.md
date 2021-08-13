@@ -41,3 +41,5 @@ Defines the selected level value to show in a heading.
 #### onChange
 
 On Change callback method for saving the attributes of the component.
+
+<div class="legacy-badge legacy-badge--v4"></div>

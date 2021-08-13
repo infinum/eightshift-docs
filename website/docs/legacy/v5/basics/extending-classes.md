@@ -94,3 +94,5 @@ As you can see from the provided example, we created a new class and extended th
 In your new class, you have a `register` method that must be in every class that registers WordPress action hooks or filters. We call these **service classes**.
 
 Your class contains three action hooks now. From this example, you can see that, if you don't want to use some functionality, remove the action, and it will not be used anymore. For more details on what each hook's callback does, go to the extended class in the Eightshift-libs and see the logic defined there.
+
+<div class="legacy-badge legacy-badge--v5"></div>

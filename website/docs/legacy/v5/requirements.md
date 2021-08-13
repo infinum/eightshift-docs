@@ -20,3 +20,5 @@ Make sure that you have all these packages installed and ready to use on your sy
 
 
 If it doesn't return any errors, you are good to go.
+
+<div class="legacy-badge legacy-badge--v5"></div>

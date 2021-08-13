@@ -38,3 +38,5 @@ if (!empty($footerPartialId)) {
 ```
 
 > Notes about reusable blocks, they're not native WP search friendly (as in the content you only have the WP block comment markup that there's a specific reusable block there). So if you use a lot of these in the content of a page / post, it might affect your search relevancy.
+
+<div class="legacy-badge legacy-badge--v5"></div>

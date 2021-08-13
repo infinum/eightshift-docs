@@ -59,3 +59,5 @@ This file behaves the same as in blocks. Please check the [block structure](bloc
 This file contains all the configuration for a component. It is not fully necessary, but we encourage you to use it because it provides many possibilities.
 
 For more details, check the [component manifest](blocks-component-manifest) chapter.
+
+<div class="legacy-badge legacy-badge--v5"></div>

@@ -18,3 +18,5 @@ By following our structure, we can find all files using the `require.context` re
 You can check out how this works inside the `src/Blocks/assets/scripts/application-blocks-editor.js` file.
 
 Please follow our [blocks structure folder](blocks-structure) to see the naming standard and how blocks are set.
+
+<div class="legacy-badge legacy-badge--v5"></div>

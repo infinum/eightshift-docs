@@ -77,3 +77,5 @@ These are all the global settings you can use in JavaScript, SCSS, and PHP files
 We don't have this key in the example, but you can set the default attributes in this file, and they will be applied to all the blocks.
 
 Please refer to the [blocks attributes](blocks-attributes) chapter for more details.
+
+<div class="legacy-badge legacy-badge--v5"></div>

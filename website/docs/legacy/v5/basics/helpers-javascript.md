@@ -556,3 +556,5 @@ Converts the first letter of a string to uppercase.
 
 	ucfirst('custom');
 ```
+
+<div class="legacy-badge legacy-badge--v5"></div>

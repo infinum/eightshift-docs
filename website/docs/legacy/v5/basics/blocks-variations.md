@@ -23,3 +23,5 @@ As we saw from our testing, you are not limited to only changing the block's def
 ### Changes from native WordPress block variations API
 
 `parentName` key is the only addition to the original documentation. We implemented this key to be able to connect the original block with its variation. This key must be the same as it is defined in the original blocks `blockName` key.
+
+<div class="legacy-badge legacy-badge--v5"></div>

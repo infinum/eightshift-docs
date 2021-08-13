@@ -18,3 +18,5 @@ Now that you understand what makes Eightshift tick, here is a quick reminder abo
 We have prepared you for all your development needs. Now, you must decide what you are going to develop next:
 * [New Theme](theme)
 * [New Plugin](plugin)
+
+<div class="legacy-badge legacy-badge--v5"></div>
