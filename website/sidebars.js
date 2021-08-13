@@ -8,6 +8,7 @@ module.exports = {
       'versions',
       'theme',
       'plugin',
+      'additional-libraries'
     ],
     'Basics': [
       'basics/basics',
@@ -85,12 +86,7 @@ module.exports = {
           'basics/helpers-php',
         ]
       },
-    ],
-    'Advanced': [
-      'advanced/additional-libraries',
-      'advanced/the-eightshift-way',
-      'advanced/custom-eightshift-libs-usage',
-      'advanced/custom-eightshift-frontend-libs-usage',
+      'basics/tips-tricks',
     ],
     'Legacy': [
       {
