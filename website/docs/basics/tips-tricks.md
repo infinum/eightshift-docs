@@ -3,7 +3,7 @@ id: tips-tricks
 title: Tips & Tricks
 ---
 
-As we are making our projects using this setup we are going to share our tips and tricks for faster development, easier debugging and some cool ideas we had along the way.
+Since we are creating our projects using this setup, we are going to share our tips and tricks for faster development, easier debugging and some cool ideas we had along the way.
 
 ### Always disable cache when you are writing block editor components
 
