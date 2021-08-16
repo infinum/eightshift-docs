@@ -1,7 +1,6 @@
 ---
 id: manifest
 title: Manifest
-sidebar_label: Manifest
 ---
 
 [![docs-source](https://img.shields.io/badge/source-eigthshift--libs-blue?style=for-the-badge&logo=php&labelColor=2a2a2a)](https://github.com/infinum/eightshift-libs)
@@ -12,7 +11,7 @@ This class provides `manifest.json` file location and helpers to return the full
 
 ## How to use it
 
-First, install the manifest class if you didn't use the default project installation using this command:
+First, install the manifest class using this command:
 
 `wp boilerplate create_manifest`
 
@@ -48,6 +47,8 @@ $logo = \apply_filters(Manifest::MANIFEST_ITEM, 'logo.svg');
 And that's it. This filter will check the public folder for the `manifest.json` file, parse it, and return the value of the provided key.
 
 If there is no `manifest.json` file or you provided the wrong asset name, there will be a descriptive message for you.
+
+> If you are using multiple boilerplates in one project don't forget to change the filter name defined in the `MANIFEST_ITEM` constant.
 
 ## Why not just fetch the asset the old-fashioned way?
 

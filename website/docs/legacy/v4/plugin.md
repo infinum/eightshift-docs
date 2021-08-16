@@ -4,8 +4,6 @@ title: Create new WordPress plugin
 sidebar_label: Plugin Setup
 ---
 
-[![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/develop/setup/create-wp-project)
-
 Eightshift boilerplate contains all the tools you need to start building a modern WordPress plugin, using all the latest front end development tools.
 
 [Please go here if you wish to setup a theme instead](https://infinum.github.io/eightshift-docs/docs/theme/).
@@ -16,6 +14,7 @@ Eightshift boilerplate contains all the tools you need to start building a moder
 2. [Composer](https://getcomposer.org/)
 
 ## Quick start
+
 Let's create a **new plugin**!
 
 Navigate to your WordPress plugin folder (`wp-content/plugins`) and run the following command:
@@ -39,3 +38,5 @@ You can get a list of available script arguments by running:
 ```bash
 npx create-wp-project --help
 ```
+
+<div class="legacy-badge legacy-badge--v4"></div>

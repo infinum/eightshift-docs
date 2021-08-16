@@ -1,7 +1,6 @@
 ---
 id: block-structure
 title: Block Structure
-sidebar_label: Block Structure
 ---
 
 [![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/develop/blocks/init/src/blocks/)
@@ -31,6 +30,8 @@ We suggest you always use the full name and never abbreviate the block name. If 
   * heading-hooks.js
   * heading-transforms.js
   * manifest.json
+
+For example, you can check the [storybook](https://infinum.github.io/eightshift-docs/storybook).
 
 ### assets
 
@@ -67,14 +68,14 @@ Holds only the editor styling for the block. You should be using this file to ov
 
 Corrections in the grid layout are necessary because the block editor adds additional HTML and we can't change it.
 
-Please read the [writing styles](writing-styles) chapter for more details.
+Please read the [block styles](blocks-styles) chapter for more details.
 
 _This file is optional_.
 
 ### heading-style.scss
 Holds all the front-end and editor styling for the component.
 
-Please read the [writing styles](writing-styles) chapter for more details.
+Please read the [block styles](blocks-styles) chapter for more details.
 
 _This file is optional_.
 

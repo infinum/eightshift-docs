@@ -39,3 +39,5 @@ or you can import it directly like this, but be careful where your node_modules 
 ```scss
 @import 'node_modules/@eightshift/frontend-libs/styles/scss/eightshift-frontend-libs.scss';
 ```
+
+<div class="legacy-badge legacy-badge--v4"></div>

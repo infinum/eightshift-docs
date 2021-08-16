@@ -1,7 +1,6 @@
 ---
 id: block-manifest
 title: Block Manifest
-sidebar_label: Block Manifest
 ---
 
 [![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/develop/blocks/init/src/blocks/)
@@ -41,7 +40,12 @@ This file contains all the configuration required for a block to work. It's used
       "type": "number",
       "default": 2
     }
-  }
+  },
+  "hasInnerBlocks": false,
+  "components": {},
+  "responsiveAttributes": {},
+  "variables": {},
+  "options": {}
 }
 ```
 
@@ -67,7 +71,7 @@ This key provides you the ability to give an example mockup of your attributes. 
 
 ### attributes
 Attributes key is an object of attributes where you define and set up default values for a block. These attributes are then passed in the editor as props, and the PHP view part in the `$attributes` variable.
-We are using the same structure as described in the [block editor documentation](https://developer.wordpress.org/block-editor/developers/block-api/block-attributes/).
+We are using the same structure as described in the [block editor documentation](https://developer.wordpress.org/block-editor/developers/block-api/block-attributes/). For more details please check [this chapter](blocks-attributes).
 
 ### hasInnerBlocks
 `default: false`
@@ -85,6 +89,25 @@ If the `hasInnerBlocks` key is set to true, the block's `save` method for inner 
 *custom feature*
 
 This key gives you the ability to use component attributes in your block without mapping all the component's attributes every time. Please check [this chapter](blocks-component-in-block) for more details.
+
+### responsiveAttributes
+
+*custom feature*
+
+This key is used to combine multiple attributes with the similar name for the responsive breakpoints. Please check [this chapter](blocks-styles) for more details.
+
+### variables
+
+*custom feature*
+
+This key is used to provide output for CSS variables. Please check [this chapter](blocks-styles) for more details.
+
+### options
+
+*custom feature*
+
+This key is used to provide options used in the Block Editor options for components like SelectControl or RangeControl. With this key, you can pass options and change them depending on the component used. Please check [this chapter](blocks-component-in-block) for more details.
+
 
 ## The power of manifest.json
 

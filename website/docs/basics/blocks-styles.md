@@ -1,7 +1,6 @@
 ---
 id: blocks-styles
 title: Styles
-sidebar_label: Styles
 ---
 
 [![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/develop/blocks/init/src/blocks/)
@@ -12,14 +11,15 @@ Let's dig into the implementation of CSS variables in your project.
 
 ## Setup
 
-To be able to use CSS variables you need to implement two helpers in your blocks/components: `outputCssVariables` and `getUnique`. For more details on these helpers, you can read [here](helpers-javascript#outputcssvariables). 
+To be able to use CSS variables you need to implement two helpers in your blocks/components: `outputCssVariables` and `getUnique`. For more details on these helpers, you can read [here](helpers-javascript). 
 
 There are a few differences between the JavaScript and PHP implementation due to a way React handles component re-rendering.
 
-**typography-editor.js**
+**JavaScript component:**
+
 ```js
 import React, { useMemo } from 'react';
-import { outputCssVariables, getUnique } from '@eightshift/frontend-libs/scripts/editor';
+import { outputCssVariables, getUnique } from '@eightshift/frontend-libs/scripts';
 import manifest from '../manifest.json';
 import globalManifest from './../../../manifest.json';
 
@@ -40,28 +40,24 @@ export const TypographyEditor = (attributes) => {
 };
 ```
 
-**typography.php**
-```php
-/**
- * Template for the Typography Component.
- *
- * @package Eightshift_Boilerplate
- */
+**PHP view:**
 
+```php
 use EightshiftLibs\Helpers\Components;
 
 $globalManifest = Components::getManifest(dirname(__DIR__, 2));
 $manifest = Components::getManifest(__DIR__);
 
 $unique = Components::getUnique();
-echo Components::outputCssVariables($attributes, $manifest, $unique, $globalManifest); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 ?>
 
 <div data-id="<?php echo esc_attr($unique); ?>">
+	<?php echo Components::outputCssVariables($attributes, $manifest, $unique, $globalManifest); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 	// Regular component implementation
 </div>
 ```
+
 Now that we have helpers in place, let's see how they work and what features they offer.
 
 ## Details
@@ -70,14 +66,15 @@ CSS variables helper consists of 2 helpers. `outputCssVariables` helper will out
 
 If you check your rendered website you can see that you have something like this:
 ```html
-<style>
-	.typography[data-id='210c9bbf733ef5c6aa74c49168ac29a7'] {
-		--typography-color: var(--global-colors-black);
-		--typography-content-align: left;
-	}
-</style>
-
-<div class="typography" data-id="210c9bbf733ef5c6aa74c49168ac29a7">...</div>
+<div class="typography" data-id="210c9bbf733ef5c6aa74c49168ac29a7">
+	<style>
+		.typography[data-id='210c9bbf733ef5c6aa74c49168ac29a7'] {
+			--typography-color: var(--global-colors-black);
+			--typography-content-align: left;
+		}
+	</style>
+	...
+</div>
 ```
 
 This is all that's required for the magic of CSS variables to work! Now let's see it in action and check out all additional features you can use.
@@ -87,7 +84,7 @@ This is all that's required for the magic of CSS variables to work! Now let's se
 Now that we know how CSS variables are generated, we have one more helper to describe.
 The `outputCssVariablesGlobal(globalSettings);` helper is called in the `application-blocks-editor.js` file. It is used to output all CSS variables from the global manifest under the `globalVariables` key, into the `:root` selector.
 
-> All of these variables are available to use inside your blocks/components.
+> All of these variables are available to use inside any blocks/components.
 
 **Global Manifest:**
 ```json
@@ -323,7 +320,7 @@ Manual variables will be added at the end of the output.
  
 ## Manual variables inside the Block editor
 
-If you want to add manual variables that only apply inside the Block editor you can use the `variablesCustomEditor` key. Everything works the same as described in the _Manual variables_ section.
+If you want to add manual variables that only apply inside the Block editor you can use the `variablesCustomEditor` key. Everything works the same as described in the **Manual variables** section.
 If you define both `variablesCustomEditor` and `variables`, both will be output in the editor, but only `variables` will be output on the frontend.
 
 **Manifest:**
@@ -567,10 +564,11 @@ Responsive variables are used for eliminating unnecessary code duplication. For 
 
 In a top-level manifest key `responsiveAttributes`, you can place a new key (e.g. `wrapperHide`) that represents a common key for your responsive variables. Inside of it, you can list your responsive variables (e.g. `wrapperHideLarge`, `wrapperHideDesktop`, `wrapperHideTablet`, `wrapperHideMobile`) as a key-value pair. The key represents a breakpoint name, and the value represents responsive variable(`breakpoint`: `responsiveVariableName`). Afterwards, you can add that common key inside the `variables` (and/or `variablesEditor`) key and configure the output template.
 
-Best practice is to have the attributes named consistently with your breakpoints - in the _`variableName``breakpointName`_ format (see example below).
+Best practice is to have the attributes named consistently with your breakpoints - in the **`variableName``breakpointName`** format (see example below).
 
-**Note**: If you need an extra variable, or are overriding some of the auto-generated variables (from the helper), the variables will be output after the responsive variables. (see _Example 2_)
-**Note 2:** Order of responsive attributes is important since generating variables relies on that order. Make sure to use the `inverse` option properly.
+> If you need an extra variable, or are overriding some of the auto-generated variables (from the helper), the variables will be output after the responsive variables. (see **Example 2**)
+
+> Order of responsive attributes is important since generating variables relies on that order. Make sure to use the `inverse` option properly.
 
 **Example 1**
 ```json

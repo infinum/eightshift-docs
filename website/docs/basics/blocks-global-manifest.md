@@ -1,7 +1,6 @@
 ---
 id: blocks-global-manifest
 title: Global Manifest
-sidebar_label: Global Manifest
 ---
 
 [![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/develop/blocks/init/src/blocks/)
@@ -13,29 +12,46 @@ Currently, our default global manifest looks like this:
 ```json
 {
   "namespace": "eightshift-boilerplate",
-  "background": "#900000",
-  "foreground": "#FFFFFF",
+  "background": "#FBF9FF",
+  "foreground": "#9973E3",
   "globalVariables": {
     "customBlocksName": "eightshift-block",
     "maxCols": 12,
+    "baseFont": "Inter",
+    "zIndex": {
+      "header": 100,
+      "drawer": 99,
+      "overlay": 98
+    },
+    "breakpoints": {
+      "mobile": 480,
+      "tablet": 960,
+      "desktop": 1920,
+      "large": 1921
+    },
     "containers": {
-      "default": "1330px"
+      "default": "66rem"
     },
     "gutters": {
       "none": "0",
-      "default": "25px",
-      "big": "50px"
+      "default": "1.25rem",
+      "big": "2.5rem"
     },
     "sectionSpacing": {
-      "min":  0,
-      "max":  300,
+      "min": -300,
+      "max": 300,
+      "step": 10
+    },
+    "sectionInSpacing": {
+      "min": 0,
+      "max": 300,
       "step": 10
     },
     "colors": [
       {
         "name": "Primary",
         "slug": "primary",
-        "color": "#C3151B"
+        "color": "#9973E3"
       },
       {
         "name": "Black",
@@ -43,9 +59,19 @@ Currently, our default global manifest looks like this:
         "color": "#000000"
       },
       {
+        "name": "Light",
+        "slug": "light",
+        "color": "#CCCCCC"
+      },
+      {
         "name": "White",
         "slug": "white",
         "color": "#FFFFFF"
+      },
+      {
+        "name": "Eightshift",
+        "slug": "eightshift",
+        "color": "#0D3636"
       }
     ]
   }
@@ -56,7 +82,10 @@ As you can see, we have some global configuration for blocks and some SCSS varia
 
 ### Namespace
 
-All blocks must have a valid block name to be registered. A valid block consists of namespace and block name, like this: `eightshift-boilerplate/heading`.
+All blocks must have a valid block name to be registered. A valid block consists of namespace and block name, like this:
+```
+eightshift-boilerplate/heading
+```
 
 To remove the need to write namespace multiple times across multiple blocks, we have defined the namespace in the global manifest, and we use it in the block registration process.
 
@@ -70,7 +99,7 @@ Please refer to the [block-structure](block-structure) chapter for more details 
 
 ### Global variables
 
-These are all the global settings you can use in JavaScript, SCSS, and PHP files. We have covered this topic in more detail in the [front-end global setting](global-settings) chapter.
+These are all the global settings you can use in JavaScript, SCSS, and PHP files. We have covered this topic in more detail in the [block-styles](blocks-styles) chapter.
 
 ### Attributes
 

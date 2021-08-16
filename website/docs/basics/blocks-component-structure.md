@@ -1,7 +1,6 @@
 ---
 id: blocks-component-structure
 title: Component Structure
-sidebar_label: Component Structure
 ---
 
 [![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/develop/blocks/init/src/blocks/)
@@ -56,6 +55,6 @@ This file behaves the same as in blocks. Please check the [block structure](bloc
 This file behaves the same as in blocks. Please check the [block structure](block-structure#heading-stylescss) chapter for more details.
 
 ### manifest.json
-This file contains all the configuration for a component. It is not fully necessary, but we encourage you to use it because it provides many possibilities.
+This file contains all the configuration for a component.
 
 For more details, check the [component manifest](blocks-component-manifest) chapter.

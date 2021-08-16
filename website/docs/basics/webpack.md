@@ -1,7 +1,6 @@
 ---
 id: webpack
 title: Webpack
-sidebar_label: Webpack
 ---
 
 [![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs)
@@ -30,24 +29,32 @@ const projectConfig = {
     ... everything from default setup
   },
   overrides: [
+    // Located in project.js
     'application',
     'applicationAdmin',
     'applicationBlocks',
     'applicationBlocksEditor',
     'filename',
+
+    // Located in base.js
     'cleanWebpackPlugin',
-    'terserPlugin',
-    'browserSyncPlugin',
     'providePlugin',
-    'manifestPlugin',
+    'definePlugin',
     'miniCssExtractPlugin',
-    'copyWebpackPlugin',
-    'optimizeCSSAssetsPlugin',
+    'webpackManifestPlugin',
+    'dependencyExtractionWebpackPlugin',
+    'runtimeChunk',
     'js',
-    'scss',
     'images',
     'fonts',
-    'runtimeChunk',
+    'scss',
+
+    // Located in development.js
+    'browserSyncPlugin',
+
+    // Located in production.js
+    'terserPlugin',
+    'cssMinimizerPlugin',
   ],
 }
 ```
@@ -64,9 +71,14 @@ module.exports = (env, argv) => {
   ...
 
   return {
+    // Load all projects config from eightshift-frontend-libs.
     ...project,
+
     plugins: [
+      // Load all plugins config from eightshift-frontend-libs.
       ...project.plugins,
+
+      // Add your custom implementation.
       new HtmlWebpackPlugin(),
     ],
   };
@@ -84,7 +96,7 @@ module.exports = (env, argv) => {
 
   const projectConfig = {
     config: {
-      ... everything from default setup
+      // ... everything from default setup
     },
     overrides: [
       'browserSyncPlugin', // this removes our configuration.
@@ -95,8 +107,11 @@ module.exports = (env, argv) => {
   const project = require('./node_modules/@eightshift/frontend-libs/webpack')(argv.mode, projectConfig);
 
   return {
+    // Load all projects config from eightshift-frontend-libs.
     ...project,
+
     plugins: [
+      // Load all plugins config from eightshift-frontend-libs.
       ...project.plugins,
 
       // This provides your configuration.
@@ -111,20 +126,25 @@ module.exports = (env, argv) => {
 
 ## Add a new entrypoint
 
-Let's say you want to add a new, separate JS and/or CSS build for some specific functionality. This functionality may or may not have anything to do with your WordPress theme or plugin, but it needs to be in separate files. To do that you'd need to add a new entrypoint for webpack to build in `webpack.config.js`:
+Let's say you want to add a new, separate JS and/or CSS build for some specific functionality. This functionality may or may not have anything to do with your WordPress theme or plugin, but it needs to be in separate files. To do that you'd need to add a new entrypoint for Webpack to build in `webpack.config.js`:
 
 ```js
 module.exports = (env, argv) => {
 
   ...
 
-	return {
-		...project,
-		entry: {
-			...project.entry,
-			newBuild: path.resolve(projectConfig.config.projectDir, 'assets', 'application-newBuild.js'),
-		},
-	};
+  return {
+    // Load all projects config from eightshift-frontend-libs.
+    ...project,
+
+    entry: {
+      // Load all entry points config from eightshift-frontend-libs.
+      ...project.entry,
+
+      // Your custom build entrypoint.
+      newBuild: path.resolve(projectConfig.config.projectDir, 'assets', 'application-newBuild.js'),
+    },
+  };
 };
 ```
 

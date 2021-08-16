@@ -1,7 +1,6 @@
 ---
 id: blocks-special-use-cases
 title: Special Use Cases
-sidebar_label: Special Use Cases
 ---
 
 [![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/develop/blocks/init/src/blocks/)
@@ -21,7 +20,7 @@ These are some of the examples we would like to share with you. We will list all
 
 Let's say you have a carousel block, and you have a generic image block that you can use as a standalone block. You create a carousel block and set in its manifest limitation to show only the image block to be inserted as an inner block. This is easy to do: you just add your image block to an `allowedBlocks` array inside the carousel block and everything will work.
 
-But now you have some default attributes set in that image block that you don't want to be set if the block is added using the innerBlock in the carousel. You can change that using our [overrideInnerBlockAttributes](helpers-javascript#overrideinnerblockattributes) helper. Just add this helper to your block entry point, add the attributes you want to change, and you are all set.
+But now you have some default attributes set in that image block that you don't want to be set if the block is added using the innerBlock in the carousel. You can change that using our [overrideInnerBlockAttributes](helpers-javascript) helper. Just add this helper to your block entry point, add the attributes you want to change, and you are all set.
 
 Keep in mind that this will be applied to all innerBlocks inside your carousel block. If you want to limit this to a specific block only, you will need to fiddle around with that block's conditions (you can get that specific block name from the props).
 
@@ -43,7 +42,7 @@ Here you can see our example of this helper used in the [carousel block](https:/
 
 All of our blocks come with the wrapper implemented, which is awesome. But sometimes you just don't want to use the wrapper, and you want only to use the simple version of the wrapper. You can provide the attribute overrides in your block, and you are good to go.
 
-But if you need to change attributes in the block added as an innerBlock, you'll have a little problem. You can use the same helper as we did in the previous chapter, or you can use our abstraction of that helper called [overrideInnerBlockSimpleWrapperAttributes](helpers-javascript#overrideinnerblocksimplewrapperattributes).
+But if you need to change attributes in the block added as an innerBlock, you'll have a little problem. You can use the same helper as we did in the previous chapter, or you can use our abstraction of that helper called [overrideInnerBlockSimpleWrapperAttributes](helpers-javascript).
 
 This helper will set the wrapper to a simple variant in all your innerBlocks.
 
@@ -81,7 +80,7 @@ The filter is called: `render_block_data`, and you can put your implementation i
 
 If you tried to create any grid in your block on the front end, you know it is easy, but it is not so with the block editor. The problem is that in the block editor DOM, there are additional divs added over your block that break your HTML structure, and all your styles from flex or grid will not work correctly. If your block depends on some special selector placed in a specific place, you can run into some problems in the block editor.
 
-With WordPress' block editor hooks, we can fix this by not adding the selector to its original location as we do on the front end but adding them to the Block Editor's parent component.
+With WordPress block editor hooks, we can fix this by not adding the selector to its original location as we do on the front end but adding them to the Block Editor's parent component.
 
 **Implementation**
 

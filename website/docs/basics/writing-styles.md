@@ -1,7 +1,6 @@
 ---
 id: writing-styles
 title: Writing Styles
-sidebar_label: Writing Styles
 ---
 
 [![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs)
@@ -24,9 +23,7 @@ You can name your variables whatever you like, but we recommend that you never u
 
 For example, you can call blue color r2d2-color. With this approach, if your designer chooses to change the project's color scheme at any point, you only need to change one variable value and you're done.
 
-We like to use [this site](https://chir.ag/projects/name-that-color) for our color names. Also, we recommend using simple names like:
-
-* Cornflower Blue will be `$base-corn-color` or `$base-flower-color` name.
+We like to use [this site](https://chir.ag/projects/name-that-color) for our color names. Also, we recommend using simple names. For instance, Cornflower Blue color would have `$base-corn-color` or `$base-flower-color` variable name.
 
 ### All external variables must go to a components map
 

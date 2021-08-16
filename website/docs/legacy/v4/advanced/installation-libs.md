@@ -26,3 +26,5 @@ composer require infinum/eightshift-libs
 5. Next thing is to extend class-config.php just like you did with the main class. Here you can find an [example](https://github.com/infinum/eightshift-boilerplate/blob/develop/src/class-config.php) how we did it.
 
 6. You are good to go. Just run `composer dump-autoload` and start extending all our features.
+
+<div class="legacy-badge legacy-badge--v4"></div>

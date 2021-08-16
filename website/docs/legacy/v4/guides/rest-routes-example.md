@@ -129,3 +129,5 @@ To test it in action for default boilerplate the link would be:
 `domain.ext/wp-json/eightshift-boilerplate/v1/custom-route-slug`.
 
 This link will be different based on your project implementation inside `src/class-config.php`.
+
+<div class="legacy-badge legacy-badge--v4"></div>

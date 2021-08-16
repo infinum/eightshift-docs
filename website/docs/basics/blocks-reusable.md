@@ -1,7 +1,6 @@
 ---
 id: blocks-reusable
 title: Reusable Blocks
-sidebar_label: Reusable Blocks
 ---
 
 [![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/develop/blocks/init/src/blocks/)
@@ -17,9 +16,9 @@ Reusable blocks can be accessed from the block editors options page but to help 
 We also like to use a reusable block for website parts that were previously hardcoded in the theme and are not a part of the block editor. We like to use this footer of additional options in categories and terms.
 
 **Here are the steps:**
-1. Create a new reusable block for your partial.
-2. Create a config where you can configure what reusable block are you going to use in your theme. We like to use ACF PRO and its option to create a theme options page.
-3. Call this option in your theme and output your block.
+* Create a new reusable block for your partial.
+* Create a config where you can configure what reusable block are you going to use in your theme. We like to use ACF PRO and its option to create a theme options page.
+* Call this option in your theme and output your block.
 
 The first two steps are easy enough, but here is an example for the third step:
 

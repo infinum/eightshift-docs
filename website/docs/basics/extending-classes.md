@@ -1,13 +1,12 @@
 ---
 id: extending-classes
 title: Extending Classes
-sidebar_label: Extending Classes
 ---
 
 [![docs-source](https://img.shields.io/badge/source-eigthshift--libs-blue?style=for-the-badge&logo=php&labelColor=2a2a2a)](https://github.com/infinum/eightshift-libs)
 
 
-You can extend every class from the library. To follow the good practice, you should never use the class directly from the Eightshift-libs in your service container. Instead, you should create a class in your project and extend the class from the Eightshift-libs. That is why we made all those [WP-CLI](wp-cli) commands you saw in the previous chapter.
+You can extend every class from the library. To follow the good practice, you should never use the class directly from the Eightshift-libs in your service container (except from helpers and traits). Instead, you should create a class in your project and extend the class from the Eightshift-libs. That is why we made all those [WP-CLI](wp-cli) commands you saw in the previous chapter.
 
 We don't do any magic in the Eightshift-libs like in previous versions. All classes contain only the methods you need to call using WordPress hooks or filters.
 

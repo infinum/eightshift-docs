@@ -63,3 +63,5 @@ This package contains [Eightshift Coding Standards for WordPress](https://handbo
 
 * [Documentation](https://github.com/infinum/eightshift-coding-standards/wiki)
 * [Github](https://github.com/infinum/eightshift-coding-standards)
+
+<div class="legacy-badge legacy-badge--v5"></div>

@@ -28,3 +28,5 @@ For example, you can provide custom login logo image for some custom project sty
 }
 
 ```
+
+<div class="legacy-badge legacy-badge--v4"></div>

@@ -3,7 +3,7 @@ id: frontend-libs
 title: Eightshift Frontend Libs
 ---
 
-[![docs-source](https://img.shields.io/badge/version--2.0.0-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs)
+[![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/develop/blocks/init/src/blocks/custom/button)
 
 This library is aimed at bringing the modern front end development tools to the [Eightshift Boilerplate](https://github.com/infinum/eightshift-boilerplate) or [Eightshift Boilerplate Plugin](https://github.com/infinum/eightshift-boilerplate-plugin), but you can use it on any WordPress project.
 
@@ -35,3 +35,5 @@ Please visit this [link](advanced/installation-boilerplate-custom) for more deta
 ## Who do I talk to?
 
 If you have any questions or problems, please [open an issue](https://github.com/infinum/eightshift-frontend-libs/issues) on github and we will do our best to give you a timely answer.
+
+<div class="legacy-badge legacy-badge--v4"></div>

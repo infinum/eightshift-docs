@@ -1,7 +1,6 @@
 ---
 id: global-settings
 title: Global Settings
-sidebar_label: Global Settings
 ---
 
 [![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs)
@@ -12,7 +11,7 @@ Ok, this is the part that we are incredibly proud of. Did you know that you can 
 
 > This feature comes only with the block setup.
 
-If you used the `setup_theme` setup, you are all set. If not, please visit the [blocks chapter](blocks) for more details.
+If you used our `wp boilerplate setup_theme` command, you are all set. If not, please visit the [blocks chapter](blocks) for more details.
 
 ## Why do we use this?
 

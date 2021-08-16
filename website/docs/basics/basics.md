@@ -1,14 +1,11 @@
 ---
 id: basics
 title: Basics
-sidebar_label: Basics
 ---
 
 Before WordPress 5.0 release, the themes were mostly PHP based on some JavaScript and CSS. Now it's a bit different because we have PHP in the core, JavaScript (specifically React.js) in the block editor, and some styles in the editor and the theme parts of the website.
 
 Now that everything is different, we must adapt to the changes as well.
-
-As you already saw in the previous chapters about [Eightshift Libs](eightshift-libs.md) and [Eightshift Frontend Libs](eightshift-frontend-libs.md), we have two different technologies in out boilerplate, so we must separate the documentation the same way.
 
 ## Let's finally start with documentation
 

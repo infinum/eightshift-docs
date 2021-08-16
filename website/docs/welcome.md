@@ -22,12 +22,12 @@ Let's brag a little about what you can expect from this setup:
 - **Cache busting** - Each time you build assets, we generate a new URL for each asset file. This means you'll never see the old cached version while developing or after pushing your code to production.
 
 
-To use it, you need to understand what makes boilerplate tick. In theory, this is simple; you have two parts.
+To use it, you need to understand what makes this boilerplate tick. It consists of two parts:
 
-### 1. Eightshift Libs - [docs](eightshift-libs.md) | [github](https://github.com/infinum/eightshift-libs)
+### 1. Eightshift Libs - [docs](eightshift-libs) | [github](https://github.com/infinum/eightshift-libs)
 
 This is where all the back-end (PHP) code is kept. Think abstract classes, interfaces, dependency injection, namespacing, asset enqueuing, filter & actions.
 
-### 2. Eightshift Frontend Libs - [docs](eightshift-frontend-libs.md) | [github](https://github.com/infinum/eightshift-frontend-libs)
+### 2. Eightshift Frontend Libs - [docs](eightshift-frontend-libs) | [github](https://github.com/infinum/eightshift-frontend-libs)
 
-This is where all the front-end (JS, SCSS, assets) code is kept.
+This is where all the front-end (JS, SCSS, assets, blocks) code is kept.

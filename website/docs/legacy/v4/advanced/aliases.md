@@ -136,3 +136,5 @@ Alias providing custom React component. For more details check [here](components
 ## EightshiftComponentHeadingLevel
 
 Alias providing custom React component. For more details check [here](components-heading-level.md).
+
+<div class="legacy-badge legacy-badge--v4"></div>

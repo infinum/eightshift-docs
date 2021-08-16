@@ -1,12 +1,13 @@
 ---
 id: blocks-variations
 title: Variations
-sidebar_label: Variations
 ---
 
 [![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/develop/blocks/init/src/blocks/)
 
-Block variations allow developers to define instances of existing blocks. An example that you’ll see below is a button block. Perhaps your site has three variations of how to display a block on your site. A block variation can be created for each one so that they are all styled differently. This sounds awfully familiar to block styles, but the concept of variations goes a bit further than that, as you’ll see.
+Block variations allow developers to define instances of existing blocks by changing their default values.
+
+An example that you’ll see below is a button block. Perhaps your site has three variations of how to display a button on your site. You must create a `default` button block and you can create additional variations that changes the default values for the other two buttons. This sounds awfully familiar to block styles, but the concept of variations goes a bit further than that, as you’ll see.
 
 Here is the best article on how to better understand [block variations](https://css-tricks.com/how-to-use-block-variations-in-wordpress/).
 

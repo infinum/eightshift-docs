@@ -74,5 +74,6 @@ class Example_Column extends Base_Post_Columns {
     }
   }
 }
-
 ```
+
+<div class="legacy-badge legacy-badge--v4"></div>

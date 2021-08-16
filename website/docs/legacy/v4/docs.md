@@ -14,3 +14,5 @@ This is where all the backend (PHP) code is kept. Think abstract classes, interf
 ### 2. Eightshift Frontend Libs - [docs](frontend-libs.md) | [github](https://github.com/infinum/eightshift-frontend-libs)
 
 This is where all the front-end (JS, SCSS, assets) code is kept.
+
+<div class="legacy-badge legacy-badge--v4"></div>

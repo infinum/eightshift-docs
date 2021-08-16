@@ -36,3 +36,5 @@ That is why we created a boilerplate repository that incorporates this library. 
 3. Follow the steps on [Eightshift Libs](installation-libs) custom instalation.
 
 4. Follow the steps on [Eightshift Frontend Libs](installation-frontend-libs) custom instalation.
+
+<div class="legacy-badge legacy-badge--v4"></div>

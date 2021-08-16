@@ -1,7 +1,6 @@
 ---
 id: dynamic-import
 title: Dynamic Import
-sidebar_label: Dynamic Import
 ---
 
 [![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs)
@@ -36,35 +35,34 @@ This is a version where you have multiple instances of this feature on one page.
 
 ```js
 import domReady from '@wordpress/dom-ready';
+import { blockJsClass, blockName } from '../manifest.json';
 
 // Use this helper to make sure this code is executed when everything in DOM is set.
 domReady(() => {
 
   // Provide selectors to check.
-  const selector = '.js-block-carousel';
+  const selector = `.${blockJsClass}`;
   const elements = document.querySelectorAll(selector);
 
   // This is the important part because if this condition is true this promise will resolve and your chink will be loaded in the DOM.
-  if (elements.length) {
-
-    // Normally load and resolve a promise on file import.
-    import('./carousel-slider').then(({ CarouselSlider }) => {
-
-      // Loop possible multiple iterations.
-      [...elements].forEach((element) => {
-
-        // Load a class for all sliders
-        const carouselSlider = new CarouselSlider({
-          element,
-          nextElement: `${selector}-next-arrow`,
-          prevElement: `${selector}-prev-arrow`,
-        });
-
-        // Run and init function that starts everything in your class.
-        carouselSlider.init();
-      });
-    });
+  if (!elements.length) {
+    return;
   }
+
+  // Normally load and resolve a promise on file import.
+  const { CarouselSlider } = await import('./carousel-slider');
+
+  // Loop possible multiple iterations.
+  [...elements].forEach((element) => {
+    const carouselSlider = new CarouselSlider({
+      element,
+      nextElement: `${selector}-next-arrow`,
+      prevElement: `${selector}-prev-arrow`,
+    });
+
+    // Run and init function that starts everything in your class.
+    carouselSlider.init();
+  });
 });
 ```
 
@@ -72,30 +70,31 @@ If you are sure you will have only one instance of this feature on one-page use 
 
 ```js
 import domReady from '@wordpress/dom-ready';
+import { blockJsClass, blockName } from '../manifest.json';
 
 // Use this helper to make sure this code is executed when everything in DOM is set.
 domReady(() => {
 
   // Provide selectors to check.
-  const selector = '.js-block-carousel';
+  const selector = `.${blockJsClass}`;
   const element = document.querySelector(selector);
 
   // This is the important part. Because of it, your code will only be imported when there's an element on the page that uses it.
-  if (element) {
-
-    // Normally load and resolve a promise on file import.
-    import('./carousel-slider').then(({ CarouselSlider }) => {
-      // Load a class for each iteration.
-      const carouselSlider = new CarouselSlider({
-        element,
-        nextElement: `${selector}-next-arrow`,
-        prevElement: `${selector}-prev-arrow`,
-      });
-
-      // Run and init function that starts everything in your class.
-      carouselSlider.init();
-    });
+  if (!element) {
+    return;
   }
+
+  // Normally load and resolve a promise on file import.
+  const { CarouselSlider } = await import('./carousel-slider');
+
+  const carouselSlider = new CarouselSlider({
+    element,
+    nextElement: `${selector}-next-arrow`,
+    prevElement: `${selector}-prev-arrow`,
+  });
+
+  // Run and init function that starts everything in your class.
+  carouselSlider.init();
 });
 ```
 
