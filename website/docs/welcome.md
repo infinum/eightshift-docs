@@ -3,7 +3,7 @@ id: welcome
 title: Welcome
 ---
 
-## Eightshift Development Kit TEST
+## Eightshift Development Kit
 
 Eightshift Development Kit contains all the tools you need to start building a modern WordPress theme, using all the latest front-end and back-end development tools.
 
