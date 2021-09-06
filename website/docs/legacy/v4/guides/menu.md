@@ -34,7 +34,7 @@ To use it just call this helper in your template.
 ```js
 use Eightshift_Libs\Menu\Menu;
 
-Menu::bemMenu( 'header_main_default', 'main-navigation' );
+Menu::bemMenu( 'header_main_nav', 'main-navigation' );
 ```
 
 You can also provide multiple parameters to the helper. All the details are [found here](https://github.com/infinum/eightshift-libs/blob/404aeab50beef38f788c864d7c0312858b097e81/src/menu/class-menu.php#L69).
