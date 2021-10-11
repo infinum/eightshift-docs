@@ -59,14 +59,6 @@ This plugin is made on our Eightshift Boilerplate. It lets you create a cool-loo
 * [Documentation](https://github.com/infinum/eightshift-forms/wiki)
 * [Github](https://github.com/infinum/eightshift-forms)
 
-## Eightshift Dashboard Monitor
-
-[![GitHub tag](https://img.shields.io/github/tag/infinum/eightshift-dashboard-monitor.svg?style=for-the-badge)](https://github.com/infinum/eightshift-dashboard-monitor)
-
-This plugin lets you connect all your projects safely and monitor all plugin/theme/core versions. You can assign the developer to a project and notify them once anything in that project is out of date.
-
-* [Documentation](https://github.com/infinum/eightshift-dashboard-monitor/wiki)
-* [Github](https://github.com/infinum/eightshift-dashboard-monitor)
 
 ## Eightshift Coding Standard
 
