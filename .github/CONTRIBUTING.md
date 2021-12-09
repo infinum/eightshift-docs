@@ -1,4 +1,4 @@
-Hi there! Thanks for helping out in improving our Eightshift Libs.
+Hi there! Thanks for helping out in improving our Eightshift Docs.
 
 ## Reporting an issue
 
