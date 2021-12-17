@@ -1,6 +1,5 @@
-<p align="center">
-	<img alt="Eightshift Frontend Libs" src="https://repository-images.githubusercontent.com/236449101/77ca190e-d3c9-41a3-9f76-2cc04a6bab62"/>
-</p>
+![image](https://user-images.githubusercontent.com/77000136/146529640-fb4a0dc8-af62-4249-ae05-fa3286b46a22.png#gh-light-mode-only)
+![image](https://user-images.githubusercontent.com/77000136/146529660-5a68acb5-e6a3-4634-8603-5c03e52779ea.png#gh-dark-mode-only)
 
 [![GitHub tag](https://img.shields.io/github/tag/infinum/eightshift-docs.svg?style=for-the-badge)](https://github.com/infinum/eightshift-docs)
 [![GitHub stars](https://img.shields.io/github/stars/infinum/eightshift-docs.svg?style=for-the-badge&label=Stars)](https://github.com/infinum/eightshift-docs/)
