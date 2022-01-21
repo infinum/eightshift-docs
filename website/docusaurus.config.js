@@ -38,6 +38,12 @@ module.exports = {
           position: 'right',
         },
         {
+          to: '/blog',
+          activeBasePath: 'blog',
+          label: 'Blog',
+          position: 'right',
+        },
+        {
           to: '/storybook/',
           activeBasePath: 'storybook',
           label: 'Storybook',
