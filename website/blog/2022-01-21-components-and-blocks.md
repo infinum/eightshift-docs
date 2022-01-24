@@ -7,7 +7,7 @@ tags: [eightshift, boilerplate, components, blocks]
 image: #
 hide_table_of_contents: false
 ---
-In this blog post, we'll give you a practical explanation about the difference between components and blocks. For a truly in-depth explanation about components and blocks, you can refer to [our documentation](https://infinum.github.io/eightshift-docs/docs/basics/blocks). More specific explanation about component in a block can be found in [Component in a Block](https://infinum.github.io/eightshift-docs/docs/basics/blocks-component-in-block/) section.
+In this blog post, we'll give you a practical explanation about the difference between components and blocks. For a truly in-depth explanation about components and blocks, you can refer to [our documentation](https://infinum.github.io/eightshift-docs/docs/basics/blocks). A more specific explanation about component in a block can be found in [Component in a Block](https://infinum.github.io/eightshift-docs/docs/basics/blocks-component-in-block/) section.
 
 <!--truncate-->
 One of the things that is really confusing to newcomers is the difference between components and blocks. Let's break it all down.
@@ -21,7 +21,7 @@ Let's say we have a component that consists of an image and a heading. Image and
 Here are a few examples of how this new component can be used:
 - displaying a post
 - displaying a user or an author
-- displaying a photo with the with the photographer's name
+- displaying a photo with the photographer's name
 - and many more...
 
 As you can already see, there are many ways you can use this component. What helps even more to expand the usability of this component are `attributes`. Let's say we have the following attributes:
@@ -34,7 +34,7 @@ As you can already see, there are many ways you can use this component. What hel
 These attributes give you the option to modify the look of the component, so this specific component can be used for the following:
 
 - **related posts** - rectangular image on the left side, 25% image width, heading takes up the remaining 75%, medium heading colored in blue
-- **user avatar** - circular image on the left side, 25% image width, small heading coloured in black
+- **user avatar** - circular image on the left side, 25% image width, small heading colored in black
 - **photo of the day** - rectangular image on the right side which takes 75% width and photographer's name is written in medium blue text
 - **featured posts** - rectangular image on top, large heading in red color
 
@@ -47,10 +47,10 @@ So, what about blocks? Blocks can consist of one or more components and, most im
 
 Now that we have our component, let's call it `card-simple`, we can use it in a `Featured Posts` block. We already have predefined attributes of how our component should look when used in this block defined in `manifest.json`, but we also need another attribute that will allow us to select which posts will be displayed.
 
-In order to do that, we add a new attribute called `featuredPosts` which defines which posts will be displayed in our block. For each selected post, another `card-simple` component is added and featured image and post title are dynamically added to its image and heading components. More about the query logic and adding new options in a block will be covered in a future post.
+To do that, we add a new attribute called `featuredPosts` which defines which posts will be displayed in our block. For each selected post, another `card-simple` component is added and featured image and post title are dynamically added to its image and heading components. More about the query logic and adding new options in a block will be covered in a future post.
 
 You may be wondering, can you have a block that allows you to use all options of the `card-simple` component? Of course! You can create a block that allows you to set all available options in the editor and manually add content to the image and heading. There are also block variations, which allow you to set up predefined attributes for a block. More about setting up block variations may be covered in one of the future posts.
 
 ### Conclusion
 
-Hopefully, these examples helped you get a better understanding of the difference between components and blocks. It may take a bit more time or practical use to understand the difference and reasoning behind it. Our next chapter will walk you through downloading one of our components and blocks with WP CLI and modifying it.
+Hopefully, these examples helped you get a better understanding of the difference between components and blocks. It may take a bit more time or practical use to understand the difference and reasoning behind it. Our next post will walk you through downloading one of our components and blocks with WP CLI and modifying it.
