@@ -14,7 +14,9 @@ One of the things that is really confusing to newcomers is the difference betwee
 
 ### Component
 
-**A component is like a blank slate, a template without context**. It doesn't know or even care for what it will be used. Can you combine multiple simple components into one complex component? Absolutely! That's exactly what we'll do in the following example. 
+> A component is like a blank slate, a template without context.
+
+It doesn't know or even care for what it will be used. Can you combine multiple simple components into one complex component? Absolutely! That's exactly what we'll do in the following example. 
 
 Let's say we have a component that consists of an image and a heading. Image and heading are two simple components that come with the theme out-of-the-box.
 
@@ -38,14 +40,17 @@ These attributes give you the option to modify the look of the component, so thi
 - **photo of the day** - rectangular image on the right side which takes 75% width and photographer's name is written in medium blue text
 - **featured posts** - rectangular image on top, large heading in red color
 
-You even have the option to add conditional logic, e.g. to have the option for `imageWidth` only when `imagePosition` is set to left or right. And when `imagePosition` is set to top or bottom, it defaults to 100% width.
+You can even add conditional logic to your options, e.g. to have the option for `imageWidth` visible only when `imagePosition` is set to left or right. And when `imagePosition` is set to top or bottom, it defaults to 100% width.
 
 ### Block
 
-So, what about blocks? Blocks can consist of one or more components and, most importantly, allow you to use them in the editor.
-**Blocks are what give components context.**
+So, what about blocks? Blocks can consist of one or more components and, most importantly, allow you to use them in the editor. Technically, blocks can consist of zero components, but we encourage you to build blocks from components because that increases the reusability.
 
-Now that we have our component, let's call it `card-simple`, we can use it in a `Featured Posts` block. We already have predefined attributes of how our component should look when used in this block defined in `manifest.json`, but we also need another attribute that will allow us to select which posts will be displayed.
+> Blocks give context to the components.
+
+Now that we have our component - let's call it `card-simple` - we can use it in a `Featured Posts` block. In **component's** `manifest.json`, we've already defined how we want it to look by setting some defaults. When using this component in our block, we can override some attributes in **block's** `manifest.json`. Since it will be used for displaying featured posts, we can define that `imagePosition` should be set to **top**.
+
+After defining how we want our component to look while displaying featured posts, we need another attribute which will allow us to choose which posts to display in our block.
 
 To do that, we'll add a new attribute called `featuredPosts` which will define which posts will be displayed in our block. For each selected post, another `card-simple` component is added, and featured image and post title are dynamically added to its image and heading components. More about the query logic and adding new options in a block will be covered in a future post.
 
