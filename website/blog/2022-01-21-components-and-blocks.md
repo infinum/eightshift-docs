@@ -7,14 +7,14 @@ tags: [eightshift, boilerplate, components, blocks]
 image: #
 hide_table_of_contents: false
 ---
-In this blog post, we'll give you a practical explanation about the difference between components and blocks. For a truly in-depth explanation about components and blocks, you can refer to [our documentation](https://infinum.github.io/eightshift-docs/docs/basics/blocks). A more specific explanation about component in a block can be found in [Component in a Block](https://infinum.github.io/eightshift-docs/docs/basics/blocks-component-in-block/) section.
+In this blog post, we'll give you a practical explanation about the difference between components and blocks. For a truly in-depth explanation about components and blocks, you can refer to [our documentation](https://infinum.github.io/eightshift-docs/docs/basics/blocks). A more specific explanation about using components in a block can be found in the [Component in a Block](https://infinum.github.io/eightshift-docs/docs/basics/blocks-component-in-block/) section.
 
 <!--truncate-->
 One of the things that is really confusing to newcomers is the difference between components and blocks. Let's break it all down.
 
 ### Component
 
-**A component is like a blank slate, a template without context**. It doesn't know or even cares for what it will be used. Can you combine multiple simple components into one complex component? Absolutely! That's exactly what we'll do in the following example. 
+**A component is like a blank slate, a template without context**. It doesn't know or even care for what it will be used. Can you combine multiple simple components into one complex component? Absolutely! That's exactly what we'll do in the following example. 
 
 Let's say we have a component that consists of an image and a heading. Image and heading are two simple components that come with the theme out-of-the-box.
 
@@ -24,7 +24,7 @@ Here are a few examples of how this new component can be used:
 - displaying a photo with the photographer's name
 - and many more...
 
-As you can already see, there are many ways you can use this component. What helps even more to expand the usability of this component are `attributes`. Let's say we have the following attributes:
+As you can already see, there are many ways you can use this component. What helps expand the usability of this component even more are `attributes`. Let's say we have the following attributes:
 - `imagePosition` - left, right, top, bottom
 - `imageShape` - rectangular, circular
 - `imageWidth` - 25%, 50%, 75%
@@ -47,7 +47,7 @@ So, what about blocks? Blocks can consist of one or more components and, most im
 
 Now that we have our component, let's call it `card-simple`, we can use it in a `Featured Posts` block. We already have predefined attributes of how our component should look when used in this block defined in `manifest.json`, but we also need another attribute that will allow us to select which posts will be displayed.
 
-To do that, we add a new attribute called `featuredPosts` which defines which posts will be displayed in our block. For each selected post, another `card-simple` component is added and featured image and post title are dynamically added to its image and heading components. More about the query logic and adding new options in a block will be covered in a future post.
+To do that, we'll add a new attribute called `featuredPosts` which will define which posts will be displayed in our block. For each selected post, another `card-simple` component is added, and featured image and post title are dynamically added to its image and heading components. More about the query logic and adding new options in a block will be covered in a future post.
 
 You may be wondering, can you have a block that allows you to use all options of the `card-simple` component? Of course! You can create a block that allows you to set all available options in the editor and manually add content to the image and heading. There are also block variations, which allow you to set up predefined attributes for a block. More about setting up block variations may be covered in one of the future posts.
 

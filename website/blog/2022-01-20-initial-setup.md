@@ -36,7 +36,7 @@ While it may look scary and confusing at first, once you get used to the structu
 
 You may want to try a few of our WP CLI commands to add another component, block, or service class. Running `wp boilerplate --help` will give you a list of commands and their short description. If you need even more details about a specific command, you can type, e.g. `wp boilerplate create_post_type --help`
 
-The final tip for this post is related to troubleshooting. Maybe you tried adding a new class or tried adding a new feature to one of the existing blocks. And now the site has crashed. In tech support the number 1 question is **"Have you tried turning it off and on again?"**. In our case, the number 1 question is:
+The final tip in this post is related to troubleshooting. Maybe you tried to add a new class or a new feature to one of the existing blocks. And now the site has crashed. In tech support, the number 1 question is **"Have you tried turning it off and on again?"**. In our case, the number 1 question is:
 
 **Have you tried `composer dump-autoload` and re-running `npm start`?**
 
