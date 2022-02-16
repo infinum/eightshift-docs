@@ -15,7 +15,7 @@ module.exports = {
       'basics/wp-cli',
       {
         'type': 'category',
-        'label': 'Backend Stuff',
+        'label': 'Backend',
         'items': [
           'basics/backend',
           'basics/namespaces',
@@ -37,7 +37,7 @@ module.exports = {
       },
       {
         'type': 'category',
-        'label': 'Frontend Stuff',
+        'label': 'Frontend',
         'items': [
           'basics/frontend',
           'basics/webpack',
