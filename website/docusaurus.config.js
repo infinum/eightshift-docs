@@ -4,8 +4,9 @@ module.exports = {
   url: 'https://infinum.github.io',
   baseUrl: '/eightshift-docs/',
   favicon: 'img/favicon.png',
-  organizationName: 'infinum', // Usually your GitHub org/user name.
-  projectName: 'eightshift-docs', // Usually your repo name.
+  organizationName: 'infinum',
+  projectName: 'eightshift-docs',
+  staticDirectories: ['static'],
   scripts: [
     {
       src: 'https://buttons.github.io/buttons.js',
@@ -14,17 +15,12 @@ module.exports = {
     }
   ],
   themeConfig: {
-    gtag: {
-      trackingID: 'GTM-P5GG5DH',
-      anonymizeIP: true,
-    },
-    disableDarkMode: true,
     navbar: {
       logo: {
         alt: 'Eightshift Development kit Logo',
         src: 'img/eightshift-dev-kit-logo.svg',
       },
-      links: [
+      items: [
         {
           to: '/get-started',
           activeBasePath: 'pages',
@@ -68,9 +64,14 @@ module.exports = {
       additionalLanguages: ['php'],
     },
     algolia: {
-      apiKey: '921996f662a2a05c1ffbcf2a87146376',
+      appId: 'CWB1S6U3C4',
+      apiKey: 'cbae3fc769aee256328548eff1e91c1c',
       indexName: 'infinum_eightshift',
     },
+    colorMode: {
+      disableSwitch: true
+    },
+    trailingSlash: false
   },
   presets: [
     [
@@ -79,23 +80,29 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
         },
+        gtag: {
+          trackingID: 'GTM-P5GG5DH',
+          anonymizeIP: true,
+        },
         theme: {
           customCss: require.resolve('./src/scss/application.scss'),
+        },
+        blog: {
+          blogTitle: 'Tutorials and articles about Eightshift development kit',
+          blogDescription: 'Tutorials and articles about Eightshift development kit',
+          blogSidebarTitle: 'Latest posts',
+          showReadingTime: true,
+          postsPerPage: 6,
+        },
+        sitemap: {
+          changefreq: 'weekly',
+          priority: 0.5,
         },
       },
     ],
   ],
   plugins: [
     'docusaurus-plugin-sass',
-    [
-      '@docusaurus/plugin-sitemap',
-      {
-        cacheTime: 600 * 1000, // 600 sec - cache purge period
-        changefreq: 'weekly',
-        priority: 0.5,
-        trailingSlash: false,
-      },
-    ],
   ],
   customFields: {
     keywords: [
