@@ -4,7 +4,6 @@ description: This blog post describes how to set up Eightshift Boilerplate theme
 slug: initial-setup
 authors: iobrado
 tags: [eightshift, boilerplate, setup]
-image: #
 hide_table_of_contents: false
 ---
 As is often the case when trying out something new, you might encounter some hiccups. You're trying out our Eightshift Boilerplate, but can't get it to work? Worry not, we'll go through the setup and the most common issues that may occur.
@@ -22,7 +21,7 @@ npx create-wp-project
 
 Just follow the instructions and wait for the theme to download.
 
-![](/eightshift-docs/img/blog/setup-1.png)
+![Setup](/img/blog/setup-1.png)
 
 OK, you went through the process, filled out all required information, but the theme still isn't working. There are a few more instructions in the terminal on what to do next, but you may have skipped them. While the principle **"6 hours of debugging can save you 5 minutes of reading documentation"** is fun, sometimes it's just not worth it. Here's what you should do:
 
@@ -32,7 +31,7 @@ OK, you went through the process, filled out all required information, but the t
 - for easiest initial setup, run `wp boilerplate setup_theme`
 - `npm start` should trigger automatically with the previous command. If it doesn't, you can run it manually to finish the theme build process
 
-![](/eightshift-docs/img/blog/setup-2.png)
+![Setup](/img/blog/setup-2.png)
 
 Congratulations, you've set up your Eightshift theme!
 

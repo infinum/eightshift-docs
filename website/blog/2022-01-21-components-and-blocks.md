@@ -4,7 +4,6 @@ description: Explanation of the difference between components and blocks on a pr
 slug: components-and-blocks
 authors: iobrado
 tags: [eightshift, boilerplate, components, blocks]
-image: #
 hide_table_of_contents: false
 ---
 In this blog post, we'll give you a practical explanation about the difference between components and blocks. For a truly in-depth explanation about components and blocks, you can refer to [our documentation](https://infinum.github.io/eightshift-docs/docs/basics/blocks). A more specific explanation about using components in a block can be found in the [Component in a Block](https://infinum.github.io/eightshift-docs/docs/basics/blocks-component-in-block/) section.
@@ -40,7 +39,7 @@ These attributes give you the option to modify the look of the component, so thi
 - **photo of the day** - rectangular image on the right side which takes 75% width and photographer's name is written in medium blue text
 - **featured posts** - rectangular image on top, large heading in red color
 
-![](/eightshift-docs/img/blog/components.png)
+![](/img/blog/components.png)
 
 You can even add conditional logic to your options, e.g. to have the option for `imageWidth` visible only when `imagePosition` is set to left or right. And when `imagePosition` is set to top or bottom, it defaults to 100% width.
 
