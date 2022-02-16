@@ -37,15 +37,15 @@ $pagination: (
 
     &__link {
       @include responsive($pagination, link);
-      @include link($pagination, link-color);
+      @include link($pagination, link-color);      
+    }
 
-      &--sublabel {
-        display: none;
-      }
+    &__sublabel {
+      display: none;
+    }
 
-      &--label {
-        @include responsive($pagination, label);
-      }
+    &__label {
+      @include responsive($pagination, label);
     }
   }
 

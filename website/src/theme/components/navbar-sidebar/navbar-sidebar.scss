@@ -1,7 +1,7 @@
 $navbar-sidebar: (
   link: (
     mobile: (
-      font-size: 38px,
+      font-size: 24px,
       font-weight: bold,
       line-height: 1.13,
       padding: 15px 0,
@@ -22,7 +22,6 @@ $navbar-sidebar: (
   brand: (
     mobile: (
       height: auto,
-      padding: 20px $base-gutter-size,
     ),
   ),
   items: (
@@ -33,6 +32,7 @@ $navbar-sidebar: (
   menu: (
     mobile: (
       padding: 0,
+    
     ),
   ),
   close: (
@@ -53,6 +53,11 @@ $navbar-sidebar: (
 );
 
 #__docusaurus {
+
+  .theme-doc-sidebar-container {
+    border-right: none;
+  }
+
   .navbar-sidebar {
     $this: &;
   
