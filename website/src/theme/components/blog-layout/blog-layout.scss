@@ -1,0 +1,49 @@
+// This file has multiple nestings because Docusaurus adds its custom selectors that he overrides in build phase and doesn't take into account your overrides.
+// Themes are not mend to be overriden whole but only partial.
+
+$blog-list-page: (
+main-wrapper: map-get-strict($base-containers, default),
+gutter: $base-gutter-size
+);
+
+#__docusaurus {
+	.blog-list-page {
+		.container {
+			max-width: map-get-strict($blog-list-page, main-wrapper);
+			margin: 0 auto !important;
+		}
+
+		header {
+			.col {
+				padding: 0 map-get-strict($blog-list-page, gutter) !important;
+			}
+		}
+
+		footer.docusaurus-mt-lg {
+			margin-top: 50px;
+
+			.col {
+				padding: 0;
+			}
+
+			li {
+				margin-bottom: 25px;
+			}
+		}
+
+		.col--7 {
+			padding: 0 map-get-strict($blog-list-page, gutter) !important;
+			@include flex-grid-width(12);
+			@include media(tablet up) {
+				@include flex-grid-width(7);
+			}
+		}
+
+		.col--3 {
+			display: none;
+			@include media(tablet up) {
+				display: flex;
+			}
+		}
+	}
+}
