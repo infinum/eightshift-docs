@@ -21,7 +21,7 @@ npx create-wp-project
 
 Just follow the instructions and wait for the theme to download.
 
-![Setup](/img/blog/setup-1.png)
+![Setup - initial prompt](/img/blog/setup-1.png)
 
 OK, you went through the process, filled out all required information, but the theme still isn't working. There are a few more instructions in the terminal on what to do next, but you may have skipped them. While the principle **"6 hours of debugging can save you 5 minutes of reading documentation"** is fun, sometimes it's just not worth it. Here's what you should do:
 
@@ -31,7 +31,7 @@ OK, you went through the process, filled out all required information, but the t
 - for easiest initial setup, run `wp boilerplate setup_theme`
 - `npm start` should trigger automatically with the previous command. If it doesn't, you can run it manually to finish the theme build process
 
-![Setup](/img/blog/setup-2.png)
+![Setup - instructions](/img/blog/setup-2.png)
 
 Congratulations, you've set up your Eightshift theme!
 
