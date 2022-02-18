@@ -21,7 +21,7 @@ gutter: $base-gutter-size
 			margin-bottom: 20px;
 
 			.col {
-				padding: 0 map-get-strict($blog-list-page, gutter) !important;
+				padding: 0 !important;
 			}
 
 			li {
