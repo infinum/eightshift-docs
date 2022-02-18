@@ -2,8 +2,8 @@
 // Themes are not mend to be overriden whole but only partial.
 
 $blog-post-page: (
-main-wrapper: map-get-strict($base-containers, default),
-gutter: $base-gutter-size
+	main-wrapper: map-get-strict($base-containers, default),
+	gutter: $base-gutter-size
 );
 
 #__docusaurus {
