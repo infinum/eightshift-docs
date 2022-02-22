@@ -24,11 +24,6 @@ $navbar-sidebar: (
       height: auto,
     ),
   ),
-  items: (
-    mobile: (
-      padding: 10px $base-gutter-size 20px,
-    ),
-  ),
   menu: (
     mobile: (
       padding: 0,
@@ -50,12 +45,42 @@ $navbar-sidebar: (
       display: none,
     ),
   ),
+  gutter: (
+    mobile: (
+      padding: 0 $base-gutter-size,
+    ),
+  ),
+  subitem: (
+    mobile: (
+      font-size: 14px,
+      font-weight: 500,
+      line-height: 1.43,
+      letter-spacing: 0.4px,
+      color: $base-cape-color,
+      font-family: $base-font-family,
+    ),
+  ),
 );
 
 #__docusaurus {
 
   .theme-doc-sidebar-container {
     border-right: none;
+  }
+
+  .theme-doc-sidebar-menu {
+    @include responsive($navbar-sidebar, gutter);
+  }
+
+  .theme-doc-sidebar-item-link-level-2,
+  .theme-doc-sidebar-item-link-level-3,
+  .theme-doc-sidebar-item-link-level-4 {
+    a.menu__link {
+      @include responsive($navbar-sidebar, subitem);
+      &:hover {
+        color: $base-mandy-color;
+      }
+    }
   }
 
   .navbar-sidebar {
@@ -65,10 +90,6 @@ $navbar-sidebar: (
       @include responsive($navbar-sidebar, brand);
     }
   
-    &__items {
-      @include responsive($navbar-sidebar, items);
-    }
-  
     .menu {
       @include responsive($navbar-sidebar, menu);
   
@@ -76,6 +97,14 @@ $navbar-sidebar: (
         @include responsive($navbar-sidebar, link);
         @include link($navbar-sidebar, link-color);
       }
+
+      &__list:first-child {
+        @include responsive($navbar-sidebar, gutter);
+      }
+    }
+
+    &__back {
+      margin: 8px 0 3px -8px;
     }
   }
 

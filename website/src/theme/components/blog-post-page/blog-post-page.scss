@@ -48,6 +48,7 @@ $blog-post-page: (
 	
 			&.col--3,
 			&.col--2 {
+				padding: 0 map-get-strict($blog-list-page, gutter) !important;
 				display: none;
 				@include media(tablet up) {
 					display: flex;
