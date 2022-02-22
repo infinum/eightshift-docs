@@ -60,6 +60,7 @@ $navbar-sidebar: (
       font-family: $base-font-family,
     ),
   ),
+  link-hover-color: $base-mandy-color,
 );
 
 #__docusaurus {
@@ -78,7 +79,7 @@ $navbar-sidebar: (
     a.menu__link {
       @include responsive($navbar-sidebar, subitem);
       &:hover {
-        color: $base-mandy-color;
+        color: map-get-strict($navbar-sidebar, link-hover-color);
       }
     }
   }

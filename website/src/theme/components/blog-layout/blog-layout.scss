@@ -3,7 +3,8 @@
 
 $blog-list-page: (
 	main-wrapper: map-get-strict($base-containers, default),
-	gutter: $base-gutter-size
+	gutter: $base-gutter-size,
+	heading-hover-color: $base-cape-color,
 );
 
 #__docusaurus {
@@ -17,6 +18,14 @@ $blog-list-page: (
 			.col {
 				padding: 0 !important;
 			}
+
+			h2 a {
+				transition: color 0.3s ease-in;
+				&:hover {
+					color: map-get-strict($blog-list-page, heading-hover-color);
+					text-decoration: none;
+				}
+			}
 		}
 
 		footer.docusaurus-mt-lg {
@@ -28,6 +37,16 @@ $blog-list-page: (
 
 			li {
 				margin-bottom: 25px;
+			}
+
+			.text--right.col--3 {
+				a {
+					transition: color 0.3s ease-in;
+					&:hover {
+						color: map-get-strict($blog-list-page, heading-hover-color);
+						text-decoration: none;
+					}
+				}
 			}
 		}
 
