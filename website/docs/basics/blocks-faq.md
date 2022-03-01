@@ -73,7 +73,7 @@ wp boilerplate use_component --help
 
 It depends. You can't use things from the blocks folder like `components`, `custom`, `variations`, `wrapper`, etc. They are meant to be copied to your project, styled, and changed depending on your project's needs.
 
-You can move things from a block to your project using the commands described in [this chapter](blocks-intro#how-can-i-use-your-pre-made-blocks).
+You can move things from a block to your project using the commands described [above](#how-can-i-use-your-pre-made-blocks).
 
 ### I want to change attributes on inner blocks. How do I do it?
 

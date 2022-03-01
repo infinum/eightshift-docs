@@ -30,7 +30,9 @@ The library can be used for pure Webpack/JS/Scss functionality, but if you want 
 
 ## How to integrate into an existing project
 
-Please visit this [link](advanced/custom-eightshift-frontend-libs-usage) for more details.
+The process of integrating the libs into an existing project is not easy, because it really depends on how your theme or plugin is built. Our libs expect the usage of namespacing, and adding namespace in a non namespaced codebase can potentially cause breakage.
+
+You can try to manually add the backend libs using composer and frontend using npm, but the process of connecting everything up can be a complex one. So we recommend starting from a clean slate.
 
 ## Who do I talk to?
 

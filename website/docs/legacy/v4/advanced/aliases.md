@@ -100,7 +100,7 @@ ucfirst('custom string');
 
 ## EightshiftBlocksGetActions
 
-Alias providing blocks actions helper. For more details check [here](legacy/v4/guides/blocks-get-actions-helper).
+Alias providing blocks actions helper. For more details check [here](/eightshift-docs/docs/legacy/v4/guides/blocks-get-actions-helper).
 
 ## EightshiftBlocksUtilityHelpersPath
 

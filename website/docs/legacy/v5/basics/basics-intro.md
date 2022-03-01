@@ -1,6 +1,7 @@
 ---
-id: basics
+id: basics-intro
 title: Basics
+sidebar_label: Basics
 ---
 
 Before WordPress 5.0 release, the themes were mostly PHP based on some JavaScript and CSS. Now it's a bit different because we have PHP in the core, JavaScript (specifically React.js) in the block editor, and some styles in the editor and the theme parts of the website.
@@ -24,3 +25,5 @@ If instead, you would like to check out what we have prepared regarding the Java
 On the other hand, if you would like to see our extensive **Dynamic Blocks** collection and learn how you can use them with all the developer's flexibility and as little code duplication as possible, check out this link:
 
 [Block editor blocks](blocks)
+
+<div class="legacy-badge legacy-badge--v5"></div>
