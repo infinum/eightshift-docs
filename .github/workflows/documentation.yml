@@ -2,14 +2,23 @@ name: documentation
 
 on:
   push:
+    paths-ignore:
+      - '**.md'
     branches:
       - main
+      - develop
   # Allow manually triggering the workflow.
   workflow_dispatch:
 
 defaults:
   run:
     working-directory: ./website
+
+# Cancels all previous workflow runs for the same branch that have not yet completed.
+concurrency:
+  # The concurrency group contains the workflow name and the branch name.
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   checks:
@@ -18,7 +27,7 @@ jobs:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
         with:
-          node-version: '14.x'
+          node-version: '16.x'
       - name: Test Build
         run: |
           if [ -e yarn.lock ]; then
@@ -31,12 +40,14 @@ jobs:
             yarn run build
 
   gh-release:
+    name: Release docs
+    if: ${{ github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
         with:
-          node-version: '14.x'
+          node-version: '16.x'
       - uses: webfactory/ssh-agent@v0.5.0
         with:
           ssh-private-key: ${{ secrets.GH_PAGES_DEPLOY }}
