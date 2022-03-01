@@ -15,15 +15,15 @@ The wrapper is designed to be the ultimate top-level component that controls how
 
 When you open your block editor in the sidebar before every blocks options you will see a `layout` panel that controls the wrapper options:
 
-![Wrapper Closed](/eightshift-docs/img/docs/wrapper-closed.jpg)
+![Wrapper Closed](/img/docs/wrapper-closed.jpg)
 
 We also made a helper button that describes what each wrapper options does when the layout panel is open:
 
-![Wrapper Help Button](/eightshift-docs/img/docs/wrapper-help.jpg)
+![Wrapper Help Button](/img/docs/wrapper-help.jpg)
 
 Here are some of the descriptions that we created but you can add your own icons and options to this modal by providing the additions properties to the `HelpModal` component:
 
-![Wrapper Modal](/eightshift-docs/img/docs/wrapper-modal.jpg)
+![Wrapper Modal](/img/docs/wrapper-modal.jpg)
 
 ## Additional development options
 

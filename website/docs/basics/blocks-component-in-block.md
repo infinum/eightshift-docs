@@ -80,11 +80,11 @@ For more details please check our helpers sections for [JavaScript](helpers-java
 
 By defining components key in the block registration phase we are drilling down from block to the last component and setting up attribute names according to your setup. In order for everything to work, we had to add/change prefixes to each component attribute in relation to where this attribute is used in the dependency tree. It is not so hard as it sounds so let us show you some graphical examples:
 
-![Attributes 1](/eightshift-docs/img/docs/attributes-1.png)
+![Attributes 1](/img/docs/attributes-1.png)
 
-![Attributes 2](/eightshift-docs/img/docs/attributes-2.png)
+![Attributes 2](/img/docs/attributes-2.png)
 
-![Attributes 3](/eightshift-docs/img/docs/attributes-3.png)
+![Attributes 3](/img/docs/attributes-3.png)
 
 ### I want to use one heading component in my block.
 

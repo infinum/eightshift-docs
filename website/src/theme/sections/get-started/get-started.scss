@@ -11,13 +11,13 @@ $get-started: (
     mobile: (
       display: flex,
       flex-wrap: wrap,
-      margin: 0 (-$base-gutter-size / 2) -90px,
+      margin: 0 calc(-1* calc($base-gutter-size / 2)) -90px,
     ),
   ),
   item: (
     mobile: (
       text-align: center,
-      padding: 0 ($base-gutter-size/2),
+      padding: 0 calc($base-gutter-size/2),
       margin-bottom: 90px,
       flex: 0 0 calc-grid-width(12),
     ),

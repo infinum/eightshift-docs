@@ -11,11 +11,11 @@ module.exports = {
       'additional-libraries'
     ],
     'Basics': [
-      'basics/basics',
+      'basics/basics-intro',
       'basics/wp-cli',
       {
         'type': 'category',
-        'label': 'Backend Stuff',
+        'label': 'Backend',
         'items': [
           'basics/backend',
           'basics/namespaces',
@@ -37,7 +37,7 @@ module.exports = {
       },
       {
         'type': 'category',
-        'label': 'Frontend Stuff',
+        'label': 'Frontend',
         'items': [
           'basics/frontend',
           'basics/webpack',
@@ -110,7 +110,7 @@ module.exports = {
             'type': 'category',
             'label': 'Basics',
             'items': [
-              'legacy/v5/basics/basics',
+              'legacy/v5/basics/basics-intro',
               'legacy/v5/basics/wp-cli',
               {
                 'type': 'category',

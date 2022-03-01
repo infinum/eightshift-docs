@@ -16,7 +16,7 @@ $foot: (
     mobile: (
       display: flex,
       flex-direction: column,
-      margin: 0 (-$base-gutter-size / 2),
+      margin: 0 calc(-1* calc($base-gutter-size / 2)),
     ),
     tablet: (
       flex-direction: row,
@@ -25,7 +25,7 @@ $foot: (
   ),
   column: (
     mobile: (
-      padding: 0 ($base-gutter-size/2) 10px,
+      padding: 0 calc($base-gutter-size/2) 10px,
     ),
     tablet: (
       padding-bottom: 0,

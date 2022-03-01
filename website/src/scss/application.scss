@@ -13,6 +13,7 @@
 @import 'core';
 
 // Components.
+@import './../theme/components/blog-sidebar/blog-sidebar';
 @import './../theme/components/heading/heading';
 @import './../theme/components/container/container';
 @import './../theme/components/button/button';
@@ -26,6 +27,8 @@
 @import './../theme/components/legacy-badge/legacy-badge';
 @import './../theme/components/markdown/markdown';
 @import './../theme/components/pagination/pagination';
+@import './../theme/components/blog-layout/blog-layout';
+@import './../theme/components/blog-post-page/blog-post-page';
 
 /* Sections */
 @import './../theme/sections/get-started/get-started';

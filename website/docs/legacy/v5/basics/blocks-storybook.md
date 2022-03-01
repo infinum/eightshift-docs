@@ -8,8 +8,6 @@ sidebar_label: Storybook
 
 We have created a full storybook that hosts all our blocks/components/variations with a fully functional block editor, where you can try out how blocks work and behave.
 
-**Visit [Storybook](eightshift-docs/storybook/) for more details.**
-
 > To speed up project build time, Eightshift Boilerplate doesn't come with the storybook out of the box; you need to install it. To install Storybook to your project, just type this command in you terminal and follow the instructions:
 
 ```bash

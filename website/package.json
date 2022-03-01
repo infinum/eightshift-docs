@@ -1,6 +1,6 @@
 {
   "name": "@eightshift/docs",
-  "version": "5.0.0",
+  "version": "6",
   "description": "A documentation website for Eightshift open source projects.",
   "author": {
     "name": "Eightshift team",
@@ -24,19 +24,23 @@
     "url": "https://github.com/infinum/eightshift-docs/issues"
   },
   "scripts": {
+    "docusaurus": "docusaurus",
     "start": "docusaurus start",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
-    "deploy": "docusaurus deploy"
+    "deploy": "docusaurus deploy",
+    "serve": "docusaurus serve",
+    "clear": "docusaurus clear"
   },
   "dependencies": {
-    "@docusaurus/core": "^2.0.0-alpha.50",
-    "@docusaurus/preset-classic": "^2.0.0-alpha.50",
-    "@eightshift/frontend-libs": "^3.2.2",
-    "docusaurus-plugin-sass": "^0.1.8",
-    "react": "^16.8.4",
-    "react-dom": "^16.8.4",
-    "react-scripts": "^3.4.1"
+    "@docusaurus/core": "^2.0.0-beta.15",
+    "@docusaurus/preset-classic": "^2.0.0-beta.15",
+    "@docusaurus/theme-search-algolia": "^2.0.0-beta.15",
+    "@eightshift/frontend-libs": "^5.0.3",
+    "docusaurus-plugin-sass": "^0.2.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "^5.0.0"
   },
   "browserslist": {
     "production": [

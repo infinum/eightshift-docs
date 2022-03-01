@@ -25,7 +25,7 @@ npx create-wp-project
 
 Script will prompt you for theme name and local development url (used for BrowserSync) and install a new theme:
 
-![](/eightshift-docs/img/setup.gif)
+![](/img/setup.gif)
 
 After the script is finished, you can activate the theme through WP Admin Dashboard.
 
