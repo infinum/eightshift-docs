@@ -11,7 +11,7 @@ module.exports = {
       'additional-libraries'
     ],
     'Basics': [
-      'basics/basics',
+      'basics/basics-intro',
       'basics/wp-cli',
       {
         'type': 'category',
@@ -110,7 +110,7 @@ module.exports = {
             'type': 'category',
             'label': 'Basics',
             'items': [
-              'legacy/v5/basics/basics',
+              'legacy/v5/basics/basics-intro',
               'legacy/v5/basics/wp-cli',
               {
                 'type': 'category',
