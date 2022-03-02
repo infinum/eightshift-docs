@@ -58,7 +58,9 @@ $blog-post-page: (
 			&.col--2 {
 				padding-right: 0;
 				padding-left: 0;
-				@include flex-grid-width(2);
+				@include media(desktop up) {
+					@include flex-grid-width(2);
+				}
 			}
 		}
 	}
