@@ -56,8 +56,8 @@ export default function GetStarted() {
       >
         <Heading
           componentClass={component}
-          title={'Choose one of the options to get started'}
-          subtitle={'We\'ve built a bot to automate the tedious process of setting up a new project, so you can focus on your code. Just choose where you want to start.'}
+          title={'Get started in minutes, not hours'}
+          subtitle={'Boilerplate your project in a few simple steps. Get instructions for setting up an Eightshift Development kit theme or plugin, run a command (or two) and start coding. It\'s that easy.'}
         />
         <div className={`${component}__content`}>
           {items}
