@@ -14,8 +14,8 @@ export default function Panels() {
       >
         <Heading
           componentClass={component}
-          title={'Still not sure about our setup?'}
-          subtitle={'Other than the best developers experience, our blocks just look amazing because we invested a lot of time into making them user-friendly, so you editors can have the best user experience possible. Check out some of our panels yourself.'}
+          title={'An editing experience content editors will love'}
+          subtitle={'Provide the ease of use and flexibility that your content editors crave for. Rely on our user-friendly default blocks or use plug&play editor components to build great experiences. '}
           titleSize={'medium'}
         />
       </Container>
