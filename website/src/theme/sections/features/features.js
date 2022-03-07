@@ -35,12 +35,12 @@ export default function Features() {
     {
       icon: 'red',
       title: 'A build process to love',
-      desc: 'Eightshift Development kit comes with Webpack preconfigured. Build your JavaScript and CSS assets without breaking a sweat. Vendor prefixes? Polyfills? SCSS compilation? Asset minification? All taken care of.'
+      desc: 'Eightshift Development kit comes with Webpack preconfigured, so you can start building your JavaScript and CSS assets from the start. Vendor prefixes? Polyfills? SCSS compilation? Asset minification? All taken care of!'
     },
     {
       icon: 'purple',
       title: 'As responsive as it can get',
-      desc: 'Declare breakpoints once, use them anywhere: from media queries to blocks. Override any attribute value for particular breakpoints without breaking a sweat. Need to tweak that width for tablets? Done.',
+      desc: 'Declare breakpoints once, use them everywhere — from media queries to blocks. Override any attribute value for particular breakpoints without breaking a sweat. Need to tweak that width for tablets? Done.',
     },
     {
       icon: 'red',
