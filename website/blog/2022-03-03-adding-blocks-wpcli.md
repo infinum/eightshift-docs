@@ -1,6 +1,6 @@
 ---
 title: Adding components and blocks with WP-CLI
-description: This blog post describes how to set up Eightshift Boilerplate theme, and covers some of the most common issues that may occur
+description: This blog post covers how to use our WP CLI commands for adding components and blocks into our projects.
 slug: adding-blocks-wpcli
 authors: iobrado
 date: 2022-03-10
