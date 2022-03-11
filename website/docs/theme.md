@@ -22,14 +22,14 @@ All additional steps after the initial setup are done using WP_CLI commands, so 
 
 ## Specify version to create
 
-In order to be able to test boilerplate with different library versions you can provide 2 additions attributes to this command and specify library versions. 
+If you want to specify a version of Eightshift Libs or Frontend Libs to use, you can use add two additional attributes to this command to specify a branch or release to use:
 
 * `--eightshiftLibsBranch`
 * `--eightshiftFrontendLibsBranch`
 
 #### Example:
 
-If you want to pull a `develop` branch for the Eightshift frontend libs and a specific branch of the Eightshift libs your command will look like this:
+If you want to pull the `develop` branch of the Eightshift Frontend libs and a specific release of the Eightshift Libs:
 
 ```bash
 npx create-wp-project --eightshiftLibsBranch="release/3.1.0" --eightshiftFrontendLibsBranch="develop"
@@ -50,6 +50,6 @@ npx create-wp-project --help
 > You can specify both libraries at once or only one.
 
 ## What is next?
-Now that we have the theme set on your local environment, let's do something with it.
+Now that we've set the theme up on your local environment, let's do something with it.
 
 Please make sure you read the [Basics chapter](basics/basics-intro) to understand better how the project is set and what is included to make your developing experience as smooth as possible.
