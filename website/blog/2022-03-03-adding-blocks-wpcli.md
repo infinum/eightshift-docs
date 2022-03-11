@@ -7,7 +7,7 @@ date: 2022-03-10
 tags: [eightshift, boilerplate, wpcli, components, blocks]
 hide_table_of_contents: false
 ---
-Although there are a few basic blocks available after installing the Eightshift theme, there are a lot more blocks available, but you have to add them to your project with WP-CLI. To see the complete list of available components and blocks, please visit our [Storybook](https://infinum.github.io/eightshift-docs/storybook/). 
+Although there are a few basic blocks available after creating a project, there are a lot more blocks available. However, you have to add them to your project with WP-CLI. To see the complete list of available components and blocks, visit our [Storybook](https://infinum.github.io/eightshift-docs/storybook/). 
 
 These can be used out-of-the-box, but also as a good starting point if you need similar blocks in your projects. It will also speed up your development time since you don't have to build everything from scratch.
 
