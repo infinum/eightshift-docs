@@ -3,7 +3,7 @@ id: rest
 title: Rest Intro
 ---
 
-[![docs-source](https://img.shields.io/badge/source-eigthshift--libs-blue?style=for-the-badge&logo=php&labelColor=2a2a2a)](https://github.com/infinum/eightshift-libs)
+[![docs-source](https://img.shields.io/badge/source-eightshift--libs-blue?style=for-the-badge&logo=php&labelColor=2a2a2a)](https://github.com/infinum/eightshift-libs)
 
 
 Depending on the type of projects you are working on, you might need to create a new REST API route or add a new API field to the existing route.

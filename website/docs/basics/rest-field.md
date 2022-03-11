@@ -3,7 +3,7 @@ id: rest-field
 title: Rest Field
 ---
 
-[![docs-source](https://img.shields.io/badge/source-eigthshift--libs-blue?style=for-the-badge&logo=php&labelColor=2a2a2a)](https://github.com/infinum/eightshift-libs)
+[![docs-source](https://img.shields.io/badge/source-eightshift--libs-blue?style=for-the-badge&logo=php&labelColor=2a2a2a)](https://github.com/infinum/eightshift-libs)
 
 This class is used to update the existing Rest API Field or provide a new field to the existing Rest API.
 
