@@ -5,33 +5,33 @@ title: Dynamic Import
 
 [![docs-source](https://img.shields.io/badge/source-eightshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs)
 
-When writing all our JavaScript code we like to make it as fast and optimized as possible and there is no better way of doing that other than utilizing one powerful tool from Webpack called [dynamic imports](https://webpack.js.org/guides/code-splitting/#dynamic-imports).
+As JavaScript code runs on the visitor's device, it's crucial that it's as fast and optimized as possible. A powerful tool from Webpack called [dynamic imports](https://webpack.js.org/guides/code-splitting/#dynamic-imports) helps with that.
 
-This method provides us the ability to write all our JavaScript code but load them in the DOM only when it is used, basically, this is what all JavaScript libraries use out of the box.
+Dynamic imports provide us the ability to load our JavaScript code only when it's used. 
 
-By writing all our JavaScript code like this we can:
-* optimize loading time.
-* reduce the size of finished bundled JavaScript code.
-* have websites that are fast and this can positively impact your Seo rating.
+By writing all JavaScript code using dynamic imports, we can reap significant benefits:
+* optimize loading time
+* reduce the size of finished bundled JavaScript code
+* have websites that are fast, which can positively impact your SEO rating
 
 ## How does it work?
 
-In a nutshell, you load all your code using JavaScript promises and Webpack splits all these promises into separate file chinks. Once the condition to resolve the promise is set (generally we check if the selector is present in the DOM), Webpack automatically injects your chunk in the DOM and loads it up. This is why you will see in your public folder a bunch of smaller files called (`0.js`, `1.js`, `2.js`, etc).
+In a nutshell, you load all your code using JavaScript promises. Webpack splits all these promises into separate file chunks. Once the condition to resolve the promise is set (generally, if a selector is present in the DOM), Webpack automatically injects your chunk in the DOM and loads it up. This is why you will see a bunch of smaller files (`0.js`, `1.js`, `2.js`, etc) in your public folder instead of a single large file.
 
 You don't need to think about this. Webpack just does it for you.
 
 ## Example
 
-For example, let's make a carousel. We like to write all our JavaScript code in classes so we will provide an example for that but you can use this with functions as well.
+For example, let's make a carousel. An Eightshift convention is to write JavaScript code using classes, so we'll provide an example for that. However, you can use this approach with functions as well.
 
-**We have to files:**
+**We have two files:**
 * **index.js** - the main entry point for your JavaScript feature.
 * **className.js** - class with your JavaScript features that you can reuse.
 
 
 ### index.js
 
-This is a version where you have multiple instances of this feature on one page. If you are creating a feature for your block/component you will use the following example.
+This is a version where you have multiple instances of a feature on one page. If you are creating a feature for your block/component, you'll use something along these lines.
 
 ```js
 import domReady from '@wordpress/dom-ready';
@@ -44,7 +44,7 @@ domReady(() => {
   const selector = `.${blockJsClass}`;
   const elements = document.querySelectorAll(selector);
 
-  // This is the important part because if this condition is true this promise will resolve and your chink will be loaded in the DOM.
+  // This is the important part - if this condition is true, this promise will resolve and your chunk will be loaded in the DOM.
   if (!elements.length) {
     return;
   }
@@ -66,7 +66,7 @@ domReady(() => {
 });
 ```
 
-If you are sure you will have only one instance of this feature on one-page use the following code in your `index.js` file.
+If you are sure you will have only one instance of this feature on one-page, you can use the following code in your `index.js` file.
 
 ```js
 import domReady from '@wordpress/dom-ready';
