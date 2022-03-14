@@ -1,13 +1,13 @@
 ---
 title: Adding components and blocks with WP-CLI
-description: This blog post covers how to use our WP CLI commands for adding components and blocks into our projects.
+description: This blog post covers how to use our WP CLI commands for adding components and blocks into your project.
 slug: adding-blocks-wpcli
 authors: iobrado
 date: 2022-03-14
 tags: [eightshift, boilerplate, wpcli, components, blocks]
 hide_table_of_contents: false
 ---
-Although there are a few basic blocks available after creating a project, there are a lot more blocks available. However, you have to add them to your project with WP-CLI. To see the complete list of available components and blocks, visit our [Storybook](https://infinum.github.io/eightshift-docs/storybook/). 
+Although there are a few basic blocks available after creating a project, there are a lot more blocks available in the dev kit. However, you have to add them to your project using WP-CLI (the simplest method). To see the complete list of available components and blocks, visit our [Storybook](https://infinum.github.io/eightshift-docs/storybook/). 
 
 These can be used out-of-the-box, but also as a good starting point if you need similar blocks in your projects. It will also speed up your development time since you don't have to build everything from scratch.
 
@@ -24,7 +24,7 @@ If you've read our [Initial Setup](/blog/initial-setup) post, you're already fam
 
 ### Adding new component and block in our project
 
-Let's say we need a Quote block in our project. After going through the documentation of Quote block, we see that we have one dependency, and that is Quote component. So, to make Quote block available in our project, we need two WP-CLI commands:
+Let's say we need a Quote block in our project. After going through the documentation of the Quote block, we see that we have one dependency, and that is the Quote component. So, to make Quote block available in our project, we need two WP-CLI commands:
 
 ```bash
 wp boilerplate use_component --name=quote
