@@ -3,7 +3,7 @@ title: Adding components and blocks with WP-CLI
 description: This blog post covers how to use our WP CLI commands for adding components and blocks into our projects.
 slug: adding-blocks-wpcli
 authors: iobrado
-date: 2022-03-10
+date: 2022-03-14
 tags: [eightshift, boilerplate, wpcli, components, blocks]
 hide_table_of_contents: false
 ---
@@ -31,7 +31,7 @@ wp boilerplate use_component --name=quote
 wp boilerplate use_block --name=quote
 ```
 
-The order in which you do these commands is not strict, but my personal preference is to go according to dependencies. In this case, Quote component doesn't have any dependencies, while the Quote block has one dependency, and that is Quote component. After entering these commands, run `npm start` again to make sure everything works properly.
+You should do the commands in this order because Quote component doesn't have any dependencies, while the Quote block has one dependency, and that is Quote component. Otherwise, you will get an error. After entering these commands, run `npm start` again to make sure everything works properly.
 
 The Quote block is now ready to use and available in your blocks list. You may use it as-is, or you may want to expand its functionalities with some additional attributes. More about that will be covered in the next blog post.
 
