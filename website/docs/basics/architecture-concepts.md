@@ -22,9 +22,9 @@ Eightshift Libs is entirely object-oriented, providing abstract classes for inte
 
 Our use of OOP allows you to extend, modify or even replace Eightshift Development Kit functionality safely, without breaking compatibility or harming your project.
 
-One of the most important interfaces in Eightshift Libs is the `ServiceInterface`. Classes which implement it are Service. This isn't a common pattern in PHP OOP. In Eightshift Development Kit, a Service class represents a part of the project's functionality, and has a `register() : void` method that sets up the action and filter hooks for the Service. By convention, it also contains a method which provided as a callback to the registered hooks. If you need to add an action or a filter, you should do that in a Service. All your Service classes are automatically loaded, and can be injected using dependency injection.
+One of the most important interfaces in Eightshift Libs is the `ServiceInterface`. Classes that implement it are called service classes. This isn't a common pattern in PHP OOP. In Eightshift Development Kit, a service class represents a part of the project's functionality and has a `register` method that sets up the action and filter hooks for the service. If you need to add an action or a filter, you should do that in a service class. All your service classes are automatically loaded and can have dependencies injected using dependency injection.
 
-To ensure there are no naming collisions caused by Composer dependencies, we use Imposter to contain them in the `{ProjectName}Vendor` namespace. This comes with a few caveats which you should be aware of, and about which you can read more in the [namespaces chapter](namespaces)
+To ensure there are no naming collisions caused by Composer dependencies, we use the [Imposter Composer plugin](https://github.com/infinum/imposter-plugin) to contain them in the `{ProjectName}Vendor` namespace. This comes with a few caveats which you should be aware of, and about which you can read more in the [namespaces chapter](namespaces).
 
 Read more about [namespaces and Imposter](namespaces), [extending classes and service classes](extending-classes), and [dependency injection and autowiring](autowiring).
 
@@ -53,7 +53,7 @@ To learn more about the differences between blocks and components, read [Igor's 
 
 Every Eightshift project has one global `manifest.json` file stored in `src/Blocks/manifest.json`, which contains global settings, properties, and variables. 
 
-Furthermore, every Eightshift block, component and variation has its own manifest file which is used to provide data required for block registration, such as a list of attributes, the block name and the template for the inserter example. These local manifest files allow you to define arrays of options for attribute values which your blocks or components can consume. Manifest files also allow you to define relationships between attribute values and CSS variable values, which allows you a great deal of power when styling your blocks and components, as well as saves time as you don't have to provide conditional CSS classes.
+Furthermore, every Eightshift block, component, and variation has its own manifest file which is used to provide data required for block registration, such as a list of attributes, the block name, and the template for the inserter example. These local manifest files allow you to define arrays of options for attribute values that your blocks or components can consume. Manifest files also allow you to define relationships between attribute values and CSS variable values, which allows you a great deal of power when styling your blocks and components, as well as saves time as you don't have to provide conditional CSS classes.
 
 To learn more about the [global manifest](blocks-global-manifest.md), [block manifest](block-manifest.md), [component manifest](blocks-component-manifest.md) and using [the manifest to provide CSS variables for use in block styling](blocks-styles.md), read the respective articles in the [Blocks chapter](blocks-important). For information about manifest structure, refer to the manifest schemas available in Eightshift Frontend Libs and linked to in the manifest files. 
 
@@ -109,13 +109,13 @@ This chapter also doesn't cover all of the namespaces and classes in Eightshift 
 
 #### Blocks
 
-The Blocks namespace contains the Blocks class used for block registration. This directory also contains shared assets, components, blocks, variations and the wrapper.
+The Blocks namespace contains the Blocks class used for block registration. This directory also contains shared assets, components, blocks, variations, and the wrapper.
 
 Read about blocks in detail in the [Blocks chapter](blocks).
 
 #### Columns
 
-This namespace contains all the custom admin listing columns hooks in your project. These include listing column hooks for post types, taxonomy and user lists, such as `manage_{$post_type}_posts_columns`.
+This namespace contains all the custom admin listing columns hooks in your project. These include listing column hooks for post types, taxonomy, and user lists, such as `manage_{$post_type}_posts_columns`.
 
 #### Config
 
@@ -138,7 +138,7 @@ This namespace contains classes that register all custom taxonomy hooks for your
 These Enqueue namespace classes handle loading JavaScript and CSS assets, depending on the location you want to use it:
 - **Admin** - Used in the admin (not block editor) panel. You can find the files inside the `assets` folder with the `-admin` suffix.
 - **Blocks** - Used in the block editor. You can find the files inside the `src/Blocks/assets` folder. As blocks are complicated, we have files loaded only in the admin-editor part of the project, those files have an `-editor` suffix. The rest of the files with no suffix load on the admin-editor part and the project's front end.
-- **Theme** - Used in the theme (frontend) part of your project. You can find the files inside the `assets` folder with no suffix. You would use these files for stuff related to your project that is not associated with components and blocks. These files are rarely used, as styles and JavaScript functionality are usually provided at component, block or wrapper levels.
+- **Theme** - Used in the theme (frontend) part of your project. You can find the files inside the `assets` folder with no suffix. You would use these files for the assets related to your project that is not associated with components and blocks. These files are rarely used, as styles and JavaScript functionality are usually provided at component, block, or wrapper levels.
 
 Using any of these classes is optional, and you can use only what you need. The `wp boilerplate setup_theme` command will set up all of the three classes already implemented. Keep in mind that Enqueue classes work in combination with the Webpack build of your project.
 
@@ -241,7 +241,6 @@ Provides definitions used for linting PHP files. Read more [about PHPCS](https:/
 #### postcss.config.js
 
 PostCSS works in collaboration with Webpack and defines what additional plugins you are going to use when building your CSS files. Read more [about PostCSS](https://postcss.org/).
-
 
 #### webpack.config.js
 

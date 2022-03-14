@@ -65,6 +65,7 @@ We use these common prefixes for commands:
 > **Make WP-CLI your best friend, and your coding life will be much more comfortable, trust us.**
 
 While we might go into more details about some of these commands, we won't be documenting all of them here - use the built-in manuals for more information about particular commands and to discover what's available. Don't gloss over them, as using `wp boilerplate` is a particularly useful tool when building projects with Eightshift Development Kit.
+
 ## Running commands in multisite
 
 When you are running a multisite setup, you should always provide the additional `--url` parameter. Otherwise, WP-CLI will always run the command on the main site.

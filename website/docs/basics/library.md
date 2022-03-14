@@ -7,7 +7,7 @@ title: SCSS Library
 
 Eightshift Frontend Libs contains a collection of useful SCSS mixins, functions and helpers you can use in projects.
 
-For years, we have collected a list of them. At one point, we felt it was stupid to copy-paste code across multiple projects, so we created Eightshift Frontend Libs. This allows you to use whatever we offer without all that unnecessary clutter.
+For years, we have collected a list of them. At one point, we felt it was ineffective to copy-paste code across multiple projects, so we created Eightshift Frontend Libs. This allows you to use whatever we offer without all that unnecessary clutter.
 
 Check out our documentation and import what you need from Eightshift Frontend Libs.
 
