@@ -94,6 +94,12 @@ export default function ShowcaseGrid() {
     },
   ]);
 
+  // https://reactjs.org/docs/react-dom.html#hydrate
+  const [isClient, setIsClient] = useState(false);
+  useEffect(() => {
+    setIsClient(true)
+  }, []);
+
   const items = itemsData.map((item, index) => {
     const {
       image,
@@ -130,8 +136,9 @@ export default function ShowcaseGrid() {
     )
   });
 
+  /* key={isClient ? 1 : 2} will trigger a rerender of the whole subtree and the images will be aligned with text */
   return (
-    <div className={component}>
+    <div className={component} key={isClient ? 1 : 2}>
       <Container
         componentClass={component}
       >
