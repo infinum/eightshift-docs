@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunk_eightshift_docs=self.webpackChunk_eightshift_docs||[]).push([[2535],{5641:function(t){t.exports=JSON.parse('{"title":"Latest posts","items":[{"title":"Components and blocks","permalink":"/eightshift-docs/blog/components-and-blocks"},{"title":"Initial setup and first steps","permalink":"/eightshift-docs/blog/initial-setup"}]}')}}]);
