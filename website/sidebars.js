@@ -13,6 +13,7 @@ module.exports = {
     'Basics': [
       'basics/basics-intro',
       'basics/wp-cli',
+      'basics/architecture-concepts',
       {
         'type': 'category',
         'label': 'Backend',
@@ -22,7 +23,6 @@ module.exports = {
           'basics/extending-classes',
           'basics/autowiring',
           'basics/example-class',
-          'basics/the-structure',
           'basics/manifest',
           {
             'type': 'category',

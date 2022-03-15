@@ -3,20 +3,20 @@ id: webpack
 title: Webpack
 ---
 
-[![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs)
+[![docs-source](https://img.shields.io/badge/source-eightshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs)
 
-At its core, Webpack is a static module bundler for modern JavaScript applications. When Webpack processes your application, it internally builds a dependency graph that maps every module your project needs and generates one or more bundles. Learn more about Webpack [here](https://webpack.js.org/concepts/).
+At its core, Webpack is a static module bundler for modern JavaScript applications. When Webpack processes your application, it builds an internal dependency graph that maps every module your project needs and generates one or more bundles. [Learn more about Webpack](https://webpack.js.org/concepts/).
 
 To put it simply, Webpack takes your development files and creates a production-ready version of them based on the config.
 
-Eightshift Boilerplate comes with everything set for you to use out of the box. In the root of your project, you will find a file called `webpack.config.js`. If you open it, you will see that the configuration is pulled from the Eightshift Frontend Libs library.
+Eightshift Development Kit comes with everything set up out of the box. In the root of your project, you will find a file called `webpack.config.js`. If you open it, you will see that the configuration is pulled from the Eightshift Frontend Libs library.
 
 You can remove this config and write everything from scratch (keep in mind that this is a lot of work), or you can use our config and extend/remove whatever you need.
 
 ## Override built-in functionality
 
 To remove built-in functionality, add a new array to the config called `overrides`.
-If you provide any of the `overrides keys`, it will remove that config from the feature from the build.
+If you provide any of the `overrides` keys, it will remove that config from the feature from the build.
 
 You can't change our config; you can only remove it and make your own.
 
@@ -59,7 +59,7 @@ const projectConfig = {
 }
 ```
 
-## Add a new custom functionality
+## Add new custom functionality
 
 Let's say you want to add a custom `html-webpack-plugin` to the build. You can simply use all the native [webpack features](https://webpack.js.org/guides/), like in this example:
 

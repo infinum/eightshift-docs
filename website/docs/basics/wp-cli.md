@@ -3,13 +3,13 @@ id: wp-cli
 title: WP-CLI
 ---
 
-[![docs-source](https://img.shields.io/badge/source-eigthshift--libs-blue?style=for-the-badge&logo=php&labelColor=2a2a2a)](https://github.com/infinum/eightshift-libs)
+[![docs-source](https://img.shields.io/badge/source-eightshift--libs-blue?style=for-the-badge&logo=php&labelColor=2a2a2a)](https://github.com/infinum/eightshift-libs)
 
-We have already mentioned the WP-CLI feature of Eightshift Boilerplate. Now, let's dig a little deeper into this awesome feature. We took our time to set up a bunch of WP-CLI commands that will help you set everything up and use all our features without worrying about correct names, files, and organization.
+Eightshift Development Kit provides extensive [WP-CLI](https://wp-cli.org/) tooling, allowing you to automate bootstrapping of common code, adding blocks from the Frontend Libs library to your projects and more using `wp boilerplate`.
 
 ## How it works
 
-In your project's entry point, you have something like this:
+In your project's entry point (usually `functions.php`), you'll find something along these lines:
 
 ```php
 /**
@@ -20,13 +20,13 @@ if (class_exists(Cli::class)) {
 }
 ```
 
-This code loads WP-CLI class from Eightshift Libs responsible for registering all of our custom commands. Keep in mind that, since WP-CLI code loads inside the theme/plugin, that same theme/plugin **must** be activated in the WordPress admin.
+This code loads the WP-CLI class from Eightshift Libs, which handles command registration for all of our commands. As this command registration is part of the theme/plugin code, this means that the same theme/plugin **must be activated** for `wp boilerplate` to work.
 
 To run the WP-CLI command and see what you can use, run this command in your terminal:
 
 `wp boilerplate --help`
 
-> By default, your project's WP-CLI commands run under the parent name `boilerplate` defined in the upper code.
+> By default, your project's WP-CLI commands run under the parent name `boilerplate`, as defined above.
 
 You can change that by simply replacing the string inside the load method like this:
 
@@ -39,7 +39,7 @@ if (class_exists(Cli::class)) {
 }
 ```
 
-Now, your project's WP-CLI loads like this:
+Now, your project's WP-CLI commands are available using:
 
 `wp superCoolTheme --help`.
 
@@ -47,15 +47,14 @@ This is especially handy when you have multiple Eightshift Boilerplate powered t
 
 ## Options and commands
 
-When you type each command in the terminal, it will do some action. Some commands will ask you for additional parameters. You can see them if you run the `command name` and `--help` like this:
+To get to know which commands are available and what do they do, run `wp boilerplate --help`. 
+The `--help` argument is available on all of our commands and provides a description of the command and a list of required and optional parameters for the command.
 
 `wp boilerplate create_config --help`
 
-Under the `OPTIONS`, you can see all required and optional parameters you can pass to the command to fine-tune your output.
-
 ### Commands
 
-We have defined a few command prefixes:
+We use these common prefixes for commands:
 
 - **create** - services classes that will be copied to your project.
 - **init** - additional functions, methods and helpers that will be copied to your project.
@@ -65,16 +64,16 @@ We have defined a few command prefixes:
 
 > **Make WP-CLI your best friend, and your coding life will be much more comfortable, trust us.**
 
-We will explain some classes that we think are necessary in more detail in the next chapter. For the rest of the classes, you can find the descriptions by running `--help` after each command.
+While we might go into more details about some of these commands, we won't be documenting all of them here - use the built-in manuals for more information about particular commands and to discover what's available. Don't gloss over them, as using `wp boilerplate` is a particularly useful tool when building projects with Eightshift Development Kit.
 
 ## Running commands in multisite
 
-When you are running a multisite setup you must always provide the additional `--url` parameter because without that parameter WordPress will always run the code from the current primary domain set in the `wp-config.php`.
+When you are running a multisite setup, you should always provide the additional `--url` parameter. Otherwise, WP-CLI will always run the command on the main site.
 
-Here is an example for command running from the primary domain:
+Here is an example for command running on the primary site:
 
 `wp boilerplate create_config`
 
-and here is an example for command running in the sub site:
+and here is an example for command running on the subsite:
 
 `wp boilerplate create_config --url='custom.domain.com'`
