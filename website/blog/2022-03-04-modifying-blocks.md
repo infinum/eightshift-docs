@@ -1,6 +1,6 @@
 ---
 title: Modifying blocks - Color Theme
-description: Step-by-step guide how to modify and expand functionality of existing blocks.
+description: Step-by-step guide on how to modify and expand the functionality of existing blocks.
 slug: modifying-blocks-color-theme
 authors: iobrado
 date: 2022-03-21
@@ -14,9 +14,9 @@ In our previous post, we covered how to use Storybook and WP-CLI for adding addi
 Since Eightshift Development kit is a starter theme, made for developers to jumpstart and speed up their development, you're welcome to modify files directly in it. There is no need to create a child theme to protect it from updates.
 
 ### Modifying a block or a component?
-Since we used Quote block in our previous post, we will continue using it as an example since it's fairly simple. One of the first questions you may ask yourself could be: "Should I modify a component or a block?". And the answer is - it depends.
+Because we used Quote block in our previous post, we will continue using it as an example since it's a fairly simple one. One of the first questions you may ask yourself could be: "Should I modify a component or a block?". And the answer is - it depends.
 
-If you compare **_components/quote/quote.php_** (component) and **_custom/quote/quote.php_** (block), you'll notice most HTML code is inside a component, while block pretty much only renders the Quote component inside a wrapper. This example will walk you through the whole process of adding a new attribute and its options to a block.
+If you compare **_components/quote/quote.php_** (component) and **_custom/quote/quote.php_** (block), you'll notice that the most of HTML code is inside a component, while the block pretty much only renders the Quote component inside a wrapper. This example will walk you through the whole process of adding a new attribute and its options to a block.
 
 ### What will we do?
 
@@ -29,6 +29,7 @@ We want to add one new feature to this block. An option to choose a color theme 
 ### Adding background
 
 Initial background styling is fairly straightforward. Navigate to **_src/Blocks/components/quote/quote-style.scss_** and paste the following code inside `.quote` class:
+
 ```css
 padding: calc(var(--base-font-size) * 1.6rem);
 border-radius: calc(var(--base-font-size) * 2rem);
@@ -39,11 +40,11 @@ You may notice we're using `calc` instead of directly writing values in rems. Th
 For now, we will add a simple light grey background to see how it looks. We'll replace this value later with a CSS variable.
 >**Note:** don't hardcode hex color values directly inside your component. Instead, use colors defined in your global manifest.
 
-You'll notice that the changes are visible both in the editor and on the frontend. Since Gutenberg editor has some specific quirks, sometimes you will need to add additional styling only for the editor. In case we need to override something in the editor for our Quote component, we would simply create **_quote-editor.scss_**.
+You'll notice that the changes are visible both in the editor and on the frontend. Since Gutenberg editor has some additional markup, sometimes you will need to add additional styling only for the editor. In case we need to override something in the editor for our Quote component, we would simply create **_quote-editor.scss_**.
 
 ### Adding new colors to your project
 
-Since the theme currently doesn't have all the colors we need to implement the color theme feature for our block, we have to add a few new colors to our project. We will use the colors already defined in the manifest for icon color, but we need to add lighter variations of those colors to use them for the background. Navigate to your global manifest, which is located inside **_src/Blocks/manifest.json_** and add the following values inside `colors`:
+Because the theme currently doesn't have all the colors, we need to implement the color theme feature for our block. We will use the colors already defined in the manifest for icon color, but we need to add lighter variations of those colors to use them for the background. Navigate to your global manifest, which is located inside **_src/Blocks/manifest.json_** and add the following values inside `colors`:
 ```json
 {
 	"name": "Light Blue",
@@ -136,7 +137,7 @@ As you can see, the variable name is the same one we used for defining backgroun
 ```
 
 ### Outputting CSS variables in editor
-To make our color theme visible in editor, we have to add few lines of code to **_src/Blocks/components/quote/components/quote-editor.js_** file. First, we need to import a few functions. We need `useMemo` from **_react_**, `outputCssVariables` and `getUnique` from **_@eightshift/frontend-libs/scripts_** and finally, we need data from global manifest.
+To make our color theme visible in editor, we have to add few lines of code to **_src/Blocks/components/quote/components/quote-editor.js_** file. First, we need to import a few functions. We need `useMemo` from **_react_**, `outputCssVariables` and `getUnique` from **_@eightshift/frontend-libs/scripts_** and finally, we need data from the global manifest.
 
 After importing these and defining a unique constant, your code should look like this:
 
@@ -189,7 +190,7 @@ $unique = Components::getUnique();
 	//...
 ```
 
-> Both PHP and JS have the same helpers to make writing code for editor and front view as identical as possible.
+> Both PHP and JS have the same helpers to make writing code for editor and front view as similar as possible.
 
 ### Adding options
 After adding these snippets, you should already see that your block is using the blue color theme, which we defined as the default value for `quoteColorTheme` in the manifest. We want to have an easy way to change the color theme in the editor. Now we'll add a new option which will do just that.
@@ -206,7 +207,7 @@ import {
 } from '@eightshift/frontend-libs/scripts';
 ```
 
-Next, we can add a new attribute in options called `showQuoteColorTheme` and set it to `true` by default. If we will use this component in other blocks, we can use this attribute for showing or hiding Color Theme Options on a specific block that uses the Quote component.
+Next, we can add a new attribute in options called `showQuoteColorTheme` and set it to `true` by default. If we want to use this component in other blocks, we can use this attribute for showing or hiding Color Theme Options on a specific block that uses the Quote component.
 
 Additionally, we need to get values for `quoteUse` and `quoteColorTheme` attributes. We can use the `checkAttr` helper which first checks if a block has saved attribute value. If not, it defaults to a value defined in the manifest.
 
@@ -262,7 +263,7 @@ We add the following CSS:
 }
 ```
 
-Since we've added a new file, we have to run `npm start` again. Now the transition between colors will be much smoother.
+Because we've added a new file, we have to run `npm start` again. Now the transition between colors will be much smoother.
 
 ![Color Theme Change](/img/blog/color-theme-change.gif)
 
