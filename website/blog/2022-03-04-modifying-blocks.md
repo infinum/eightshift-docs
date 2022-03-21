@@ -8,15 +8,15 @@ tags: [eightshift, boilerplate, components, blocks]
 hide_table_of_contents: false
 ---
 
-In our previous post, we covered how to use Storybook and WP-CLI for adding additional blocks into your project. This post will walk you step-by-step on how to modify an existing block.
+In our previous post, we covered how to use Storybook and WP-CLI to add additional blocks to your project. This post will walk you through modifying an existing block step-by-step.
 <!--truncate-->
 
-Since Eightshift Development kit is a starter theme, made for developers to jumpstart and speed up their development, you're welcome to modify files directly in it. There is no need to create a child theme to protect it from updates.
+Since Eightshift Development kit is a starter theme, made for developers to jumpstart and speed up their development, you're welcome to modify files in it directly. There is no need to create a child theme to protect changes from updates.
 
 ### Modifying a block or a component?
-Because we used Quote block in our previous post, we will continue using it as an example since it's a fairly simple one. One of the first questions you may ask yourself could be: "Should I modify a component or a block?". And the answer is - it depends.
+Because we used the Quote block in our previous post, we will continue using it as an example as it's a fairly simple one. One of the first questions you may ask yourself could be: "Should I modify a component or a block?". And the answer is - it depends.
 
-If you compare **_components/quote/quote.php_** (component) and **_custom/quote/quote.php_** (block), you'll notice that the most of HTML code is inside a component, while the block pretty much only renders the Quote component inside a wrapper. This example will walk you through the whole process of adding a new attribute and its options to a block.
+If you compare **_components/quote/quote.php_** (component) and **_custom/quote/quote.php_** (block), you'll notice that most of the HTML code is inside the component, while the block pretty much only renders the Quote component inside a wrapper. This example will walk you through the whole process of adding a new attribute and its options to a block.
 
 ### What will we do?
 
@@ -38,9 +38,9 @@ background-color: global-settings(colors, light);
 You may notice we're using `calc` instead of directly writing values in rems. This way makes it much easier to calculate pixel size since `calc(var(--base-font-size) * 1.6rem)` equals `16px`.
 
 For now, we will add a simple light grey background to see how it looks. We'll replace this value later with a CSS variable.
->**Note:** don't hardcode hex color values directly inside your component. Instead, use colors defined in your global manifest.
+>**Tip:** don't hardcode hex color values directly inside your component. Instead, use colors defined in your global manifest.
 
-You'll notice that the changes are visible both in the editor and on the frontend. Since Gutenberg editor has some additional markup, sometimes you will need to add additional styling only for the editor. In case we need to override something in the editor for our Quote component, we would simply create **_quote-editor.scss_**.
+You'll notice that the changes are visible both in the editor and on the frontend. Since the Gutenberg editor adds some additional markup, sometimes you'll need to add additional styling only for the editor. In case we need to override something in the editor for our Quote component, we would simply create **_quote-editor.scss_**.
 
 ### Adding new colors to your project
 
@@ -65,7 +65,7 @@ Because the theme currently doesn't have all the colors, we need to implement th
 
 ### Adding a new attribute and options to manifest
 
-To choose which color theme we want to use for our Quote block, we need to define it in the manifest. Navigate to **_src/Blocks/components/quote/manifest.json_** and add the following value inside `attributes`:
+For editors to be able to choose which color theme to use for the Quote block, we need to define an attribute for it in the manifest. Navigate to **_src/Blocks/components/quote/manifest.json_** and add the following value inside `attributes`:
 
 ```json
 "quoteColorTheme": {
@@ -74,7 +74,7 @@ To choose which color theme we want to use for our Quote block, we need to defin
 }
 ```
 
-> Double-check the path of manifest used in this example. We're adding it inside the Quote component manifest, not the Quote block manifest. 
+> Double-check the path of the manifest used in this example. We're adding it inside the Quote component manifest, not the Quote block manifest. 
 
 After that, since we want to have a fixed number of options, we need to define available options. We can do that inside `options` which is on the same level as `attributes`:
 ```json
@@ -121,12 +121,12 @@ Our next step is to add CSS variables to the Quote component's manifest. Inside 
 }
 ```
 
-Now, navigate back to Quote component's **_quote-style.scss_** and replace `background-color` which we used for testing with the following value:
+Now, navigate back to Quote component's **_quote-style.scss_** and replace the `background-color` which we used for testing with the following:
 ```css
 background-color: var(--quote-background-color);
 ```
 
-As you can see, the variable name is the same one we used for defining background color variations in the manifest. For icon color, we do the same. After adding a new color to `&__icon` selector, our code should now look like this:
+As you can see, the variable name is the same one we used when defining background color variations in the manifest. For icon color, we do the same. After adding a new color to `&__icon` selector, our code should now look like this:
 
 ```css
 &__icon {
@@ -166,9 +166,9 @@ return (
 			//...
 ```
 
-If you try adding a Quote block in the editor, you should notice that now it has a light blue background with a quote icon in a darker shade of blue. This equals our default value for the `quoteColorTheme` attribute we added in the component's manifest.
+If you try adding a Quote block in the editor, you should notice that it now has a light blue background with a quote icon in a darker shade of blue. This is the default value for the `quoteColorTheme` attribute we added in the component's manifest.
 
-### Outputting CSS variables in PHP template
+### Outputting CSS variables in the PHP template
 The PHP template for the Quote component is located in **_src/Blocks/components/quote/quote.php_**. This process is similar to the one described above, it's just written in PHP. All helper methods we need for this are contained inside the `Components` class, which is already included in this file.
 
 Similar to the JS template, we need a unique value, assign it to `data-id`, and output CSS variables. After adding these, the code should look like this:
