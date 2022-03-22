@@ -3,7 +3,7 @@ title: Modifying blocks - Color Theme
 description: Step-by-step guide on how to modify and expand the functionality of existing blocks.
 slug: modifying-blocks-color-theme
 authors: iobrado
-date: 2022-03-21
+date: 2022-03-22
 tags: [eightshift, boilerplate, components, blocks]
 hide_table_of_contents: false
 ---
@@ -20,11 +20,14 @@ If you compare **_components/quote/quote.php_** (component) and **_custom/quote/
 
 ### What will we do?
 
-We want to add one new feature to this block. An option to choose a color theme for the Quote block. These are the specs:
-- background with rounded corners
-- three color themes: blue, green, yellow
+We want to style the block and add a new feature. An option to choose a color theme for the Quote block. These are the specs:
+- each Quote block has a background with rounded corners
+- option for three color themes: blue, green, yellow
 - the background has a lighter shade of the selected color
 - quote icon has a stronger shade of the selected color
+
+To better help you visualize, this is how the Quote block should look like after making these changes, showcasing all three color theme variations:
+![Color Theme Examples](/img/blog/color-theme-examples.png)
 
 ### Adding background
 
@@ -44,7 +47,7 @@ You'll notice that the changes are visible both in the editor and on the fronten
 
 ### Adding new colors to your project
 
-Because the theme currently doesn't have all the colors, we need to implement the color theme feature for our block. We will use the colors already defined in the manifest for icon color, but we need to add lighter variations of those colors to use them for the background. Navigate to your global manifest, which is located inside **_src/Blocks/manifest.json_** and add the following values inside `colors`:
+Because the theme currently doesn't have all the required colors, we need to add additional colors which will be used for the color theme feature. We will use the colors already defined in the manifest for icon color, but we need to add lighter variations of those colors to use them for the background. Navigate to your global manifest, which is located inside **_src/Blocks/manifest.json_** and add the following values inside `colors`:
 ```json
 {
 	"name": "Light Blue",
