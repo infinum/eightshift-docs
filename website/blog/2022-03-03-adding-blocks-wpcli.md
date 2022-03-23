@@ -44,7 +44,9 @@ wp boilerplate use_block --name=example
 Since our blocks use a predefined structure to make everything register automatically, adding Example block with WP-CLI will generate all required files. After it's added, feel free to rename the folder, as well as files with the name of your block and start modifying all the files. Simply replace "example" with the name of your block.
 
 ### Further reading
+
 Our documentation has all this covered in a lot more detail, so if you would like to better understand the structure of our blocks and components, here are some chapters covering these topics:
-- [Structure](/docs/basics/the-structure)
+
+- [Architecture concepts](/docs/basics/architecture-concepts)
 - [Block Structure](/docs/basics/block-structure)
 - [Component Structure](/docs/basics/blocks-component-structure)

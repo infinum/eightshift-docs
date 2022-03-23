@@ -5,7 +5,6 @@ title: Architecture concepts
 
 ## Project structure
 
-
 [![docs-source](https://img.shields.io/badge/source-eightshift--libs-blue?style=for-the-badge&logo=php&labelColor=2a2a2a)](https://github.com/infinum/eightshift-libs)
 
 Eightshift Development Kit follows a strict project structure to support autoloading, dependency injection and `wp boilerplate` commands, as well as conventions to increase codebase understanding between developers. As an added benefit, following this structure and conventions makes your codebase more consistent and organized.
