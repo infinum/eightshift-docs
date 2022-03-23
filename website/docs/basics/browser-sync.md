@@ -1,16 +1,16 @@
 ---
 id: browser-sync
-title: Browser Sync
+title: Browsersync
 ---
 
-[![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs)
+[![docs-source](https://img.shields.io/badge/source-eightshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs)
 
 
 [Browsersync](https://browsersync.io/docs) is a Node module that enables you to develop sites faster. It will react to any code change and 'refresh' the site without you needing to refresh it. In the background, it runs a small local server. When configured, it will inject a script on your web page to react to any code change.
 
 Besides that, you can test your site on various devices on the same network.
 
-If comes with the boilerplate by default. When you run:
+It's part of the Eightshift Development Kit by default. When you run:
 
 ```bash
 npm start
@@ -34,7 +34,7 @@ Using the IP address, you can open it on any device (mobile phone or tablet) tha
 
 ## Using SSL for local development
 
-By default BrowserSync does not work with https urls but if you use HTTPS in your local environment you can simply provide additional key to the Webpack config to make it work.
+By default, BrowserSync does not work with HTTPS URLs. If you use HTTPS in your local environment you can simply provide an additional key in the Webpack config to make it work.
 
 ```js
 module.exports = (env, argv) => {
