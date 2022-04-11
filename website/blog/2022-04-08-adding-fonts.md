@@ -85,7 +85,7 @@ Run `npm start` to rebuild your **_public_** folder and assets. If you did every
 
 ### Using only one font in a block
 
-There are multiple ways of using fonts in a block. The simplest example is if you have only one font you want to use for that specific block. In this case, we want Heading Block to only use NotoSerif.
+There are multiple ways of using fonts in a block. The simplest example is if you have only one font you want to use for that specific block. In this case, we want the Heading block to only use _Noto Serif_.
 
 To make our secondary font available for use, we need to first define it as a variable. We can do that in **_/assets/styles/parts/utils/_shared-variables.scss_**. We can see there that the base font is already defined, so all we need to do is add our secondary font below.
 
