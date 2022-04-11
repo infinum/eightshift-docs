@@ -11,13 +11,14 @@ hide_table_of_contents: false
 Every project is unique. Logo, colors, fonts, etc. are what define the visual identity of your website. In this post, we'll cover adding fonts to a project.
 <!--truncate-->
 
-### Importing fonts into your project
-[Our documentation](/docs/basics/fonts) covers the necessary steps to add a font to your project, but here we'll cover the process in a bit more detail. To start, we need a font (or two). For this example, I'll use **_SourceSansPro_** and **_NotoSerif_** which I've downloaded from [Google Fonts](https://fonts.google.com/). These are in the `.ttf` format, so convert them to `.woff` and `.woff2. Whatever approach you use is okay - we recommend the following tools:
-- https://convertio.co/ttf-woff/
-- https://cloudconvert.com/ttf-to-woff
-- https://everythingfonts.com/ttf-to-woff
+## Importing fonts into your project
+[Our documentation](/docs/basics/fonts) covers the necessary steps to add a font to your project, but here we'll cover the process in a bit more detail. To start, we need a font (or two). For this example, I'll use **_Source Sans Pro_** and **_Noto Serif_** which I've downloaded from [Google Fonts](https://fonts.google.com/). They are in the `.ttf` format (you may find some which are `.otf`, which will work in the same way), so you need to convert them to `.woff` and `.woff2`. Whatever approach you use is okay - we recommend the following tools:
+- [Convertio](https://convertio.co/ttf-woff/)
+- [Cloud Convert](https://cloudconvert.com/ttf-to-woff)
+- [Everything Fonts](https://everythingfonts.com/ttf-to-woff)
+- [Transfonter](https://transfonter.org/)
 
-Fonts should go inside your theme's **_/assets/fonts_** folder. Copy the fonts you want to use there. You will also notice that this folder contains an **_index.js_** file. This file is used to import fonts into your project. Here's an example of how I imported my fonts:
+Fonts should go inside your theme's **_/assets/fonts_** folder. Copy the fonts you want to use there. You will also notice that this folder contains an **_index.js_** file, used to import fonts into your project. Here's an example of how I imported my fonts:
 ```js
 // SourceSansPro WOFF
 import './SourceSansPro-Bold.woff';
@@ -73,8 +74,9 @@ Next, you can create a new file called **__typography.scss_** inside your **_/as
 @include font-face(global-settings(secondaryFont), 'NotoSerif-Italic', 400, italic);
 @include font-face(global-settings(secondaryFont), 'NotoSerif-Regular', 400);
 ```
+If you would like to know more about the `font-face` mixin, you can take a look at our [Sass documentation](/sass).
 
-Because this is a new file, we have to include it. You can do that inside **_/assets/styles/parts/_shared.scss_** file:
+Because this is a new file, we have to include it. You can do that inside **_/assets/styles/parts/\_shared.scss_** file:
 ```scss
 // Project specific.
 @import 'utils/shared-variables';
@@ -83,13 +85,13 @@ Because this is a new file, we have to include it. You can do that inside **_/as
 
 Run `npm start` to rebuild your **_public_** folder and assets. If you did everything correctly, your build should pass and you will see your fonts inside the **_public_** folder.
 
-### Using only one font in a block
+## Using only one font in a block
 
 There are multiple ways of using fonts in a block. The simplest example is if you have only one font you want to use for that specific block. In this case, we want the Heading block to only use _Noto Serif_.
 
-To make our secondary font available for use, we need to first define it as a variable. We can do that in **_/assets/styles/parts/utils/_shared-variables.scss_**. We can see there that the base font is already defined, so all we need to do is add our secondary font below.
+To make our secondary font available for use, we need to first define it as a variable. We can do that in **_/assets/styles/parts/utils/\_shared-variables.scss_**. We can see there that the base font is already defined, so all we need to do is add our secondary font below.
 
-To make things a bit more consistent, we may also want to rename `--global-font-family` CSS variable to `--base-font-family`. Just don't forget to search/replace this new variable name across your project! Once we're done, it should look like this:
+To make things a bit more consistent, we may also want to rename `--global-font-family` CSS variable to `--base-font-family`. Just don't forget to search/replace this new variable name across your project! Please note that the fallbacks for the fonts can be anything, this is just an example. Once we're done, it should look like this:
 ```scss
 	--base-font-family: var(--global-base-font), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
 		Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
@@ -97,14 +99,14 @@ To make things a bit more consistent, we may also want to rename `--global-font-
 	--secondary-font-family: var(--global-secondary-font), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
 		Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 ```
-After defining `--secondary-font-family` CSS variable, we can go to **_/src/Blocks/components/heading/heading-style.scss_** and add the following rule to the `.heading` class:
+After defining the `--secondary-font-family` CSS variable, we can go to **_/src/Blocks/components/heading/heading-style.scss_** and add the following rule to the `.heading` class:
 ```scss
 	font-family: var(--secondary-font-family);
 ```
 
 And that's it! The Heading block will now use the _Noto Serif_ font.
 
-### Adding an option for selecting fonts
+## Adding an option for selecting fonts
 
 In some cases, you may want to give users the option to choose between fonts that they want to use in their block. For this example, we'll use the `paragraph` block where we want users to have both _Source Sans Pro_ and _Noto Serif_ available.
 
@@ -189,7 +191,7 @@ The control for selecting a font should now be available under Paragraph options
 
 After adding this single line of CSS code, your new option for selecting fonts will now be fully functional.
 
-### Closing thoughts
+## Closing thoughts
 Adding fonts to a project is something you will usually only do when setting up a new project and then forget about it. As you could see in this blog post, this isn't a complicated process, but it has a specific set of steps that have to be taken in order for custom fonts to work in your project.
 
 Of course, there are other ways to include fonts in your project, but the described process is what we recommend and use. This is the (Eightshift) Way.
