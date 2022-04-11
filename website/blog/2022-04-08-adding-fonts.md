@@ -8,7 +8,7 @@ tags: [eightshift, boilerplate, fonts]
 hide_table_of_contents: false
 ---
 
-Each project is different in its way. Logo, various fonts, etc. are what define the visual identity of your website. In this post, we'll cover adding fonts to a project.
+Every project is unique. Logo, colors, fonts, etc. are what define the visual identity of your website. In this post, we'll cover adding fonts to a project.
 <!--truncate-->
 
 ### Importing fonts into your project
