@@ -102,11 +102,11 @@ After defining `--secondary-font-family` CSS variable, we can go to **_/src/Bloc
 	font-family: var(--secondary-font-family);
 ```
 
-And that's it! The Heading Block will now use the NotoSerif font.
+And that's it! The Heading block will now use the _Noto Serif_ font.
 
 ### Adding an option for selecting fonts
 
-In some cases, you may want to give users the option to choose between fonts that they want to use in their block. For this example, we'll use the `paragraph` block where we want users to have both SourceSansPro and NotoSerif font available.
+In some cases, you may want to give users the option to choose between fonts that they want to use in their block. For this example, we'll use the `paragraph` block where we want users to have both _Source Sans Pro_ and _Noto Serif_ available.
 
 First step is to add a new attribute, options and CSS variable values in **_/src/Blocks/components/paragraph/manifest.json_**:
 ```json
