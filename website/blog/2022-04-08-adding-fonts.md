@@ -87,9 +87,9 @@ Run `npm start` to rebuild your **_public_** folder and assets. If you did every
 
 ## Using only one font in a block
 
-There are multiple ways of using fonts in a block. The simplest example is if you have only one font you want to use for that specific block. In this case, we want the Heading block to only use _Noto Serif_.
+There are multiple ways of using fonts in a block. The simplest use case is if you have only one font you want to use for that specific block. In this case, we want the Heading block to only use _Noto Serif_.
 
-To make our secondary font available for use, we need to first define it as a variable. We can do that in **_/assets/styles/parts/utils/\_shared-variables.scss_**. We can see there that the base font is already defined, so all we need to do is add our secondary font below.
+To make our secondary font available for use, we need to first define it as a CSS variable. We can do that in **_/assets/styles/parts/utils/\_shared-variables.scss_**. The base font is already defined, so all we need to do is add our secondary font definition below.
 
 To make things a bit more consistent, we may also want to rename `--global-font-family` CSS variable to `--base-font-family`. Just don't forget to search/replace this new variable name across your project! Please note that the fallbacks for the fonts can be anything, this is just an example. Once we're done, it should look like this:
 ```scss
@@ -106,7 +106,7 @@ After defining the `--secondary-font-family` CSS variable, we can go to **_/src/
 
 And that's it! The Heading block will now use the _Noto Serif_ font.
 
-## Adding an option for selecting fonts
+## Adding a font picker
 
 In some cases, you may want to give users the option to choose between fonts that they want to use in their block. For this example, we'll use the `paragraph` block where we want users to have both _Source Sans Pro_ and _Noto Serif_ available.
 
@@ -136,7 +136,7 @@ First step is to add a new attribute, options and CSS variable values in **_/src
 	}
 ```
 
-After defining a new attribute and options for the font family, we now have to add a variable to **_manifest.json_**. We can add it to the `variables` object. This approach is slightly different from the one explained in the [Modifying blocks](/blog/modifying-blocks) blog post. Here we can use `%value%` wildcard to dynamically add the selected value to our CSS variable.
+After defining the new attribute and options for the font family, we now have to add a variable to **_manifest.json_**. We can add it to the `variables` object. This approach is slightly different from the one explained in the [Modifying blocks](/blog/modifying-blocks) blog post. Here we can use `%value%` wildcard to dynamically add the selected value to our CSS variable.
 ```json
 "paragraphFontFamily": [
 	{
@@ -147,7 +147,7 @@ After defining a new attribute and options for the font family, we now have to a
 ]
 ```
 
-The next step is to go to **_/src/Blocks/components/paragraph/components/paragraph-options.js_** and add a control for the new font family option. The first thing we can add is a new attribute that will allow us to toggle showing the paragraph font family option on other blocks which are using the paragraph component. There might be a case where we want only one font family, so this option may come in handy in some other blocks.
+The next step is to go to **_/src/Blocks/components/paragraph/components/paragraph-options.js_** and add a control for the new font family option. The first thing we can add is a new attribute that will allow us to toggle showing the Paragraph font family option on other blocks which are using the Paragraph component. There might be a case where we want only one font family, so this option may come in handy in some other blocks.
 ```js
 const {
 		setAttributes,
