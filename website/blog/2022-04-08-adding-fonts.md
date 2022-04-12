@@ -18,6 +18,8 @@ Every project is unique. Logo, colors, fonts, etc. are what define the visual id
 - [Everything Fonts](https://everythingfonts.com/ttf-to-woff)
 - [Transfonter](https://transfonter.org/)
 
+> Just make sure you have the proper license for the fonts you are converting.
+
 Fonts should go inside your theme's **_/assets/fonts_** folder. Copy the fonts you want to use there. You will also notice that this folder contains an **_index.js_** file, used to import fonts into your project. Here's an example of how I imported my fonts:
 ```js
 // SourceSansPro WOFF
@@ -48,6 +50,8 @@ import './NotoSerif-BoldItalic.woff2';
 import './NotoSerif-Italic.woff2';
 import './NotoSerif-Regular.woff2';
 ```
+
+> If you don't need to support IE11, don't include `.woff` files. This will save you some bandwidth.
 
 To add these fonts as your base font and secondary font, go to the global manifest located in **_/src/Blocks_** and add the following inside `globalVariables`:
 ```json
@@ -89,7 +93,7 @@ Run `npm start` to rebuild your **_public_** folder and assets. If you did every
 
 There are multiple ways of using fonts in a block. The simplest use case is if you have only one font you want to use for that specific block. In this case, we want the Heading block to only use _Noto Serif_.
 
-To make our secondary font available for use, we need to first define it as a CSS variable. We can do that in **_/assets/styles/parts/utils/\_shared-variables.scss_**. The base font is already defined, so all we need to do is add our secondary font definition below.
+To make our secondary font available for use, we need to first define it as a CSS variable. We can do that in **_/assets/styles/parts/utils/\_shared-variables.scss_**. The base font is already defined there, so all we need to do is add our secondary font definition below it.
 
 To make things a bit more consistent, we may also want to rename `--global-font-family` CSS variable to `--base-font-family`. Just don't forget to search/replace this new variable name across your project! Please note that the fallbacks for the fonts can be anything, this is just an example. Once we're done, it should look like this:
 ```scss
@@ -136,7 +140,7 @@ First step is to add a new attribute, options and CSS variable values in **_/src
 	}
 ```
 
-After defining the new attribute and options for the font family, we now have to add a variable to **_manifest.json_**. We can add it to the `variables` object. This approach is slightly different from the one explained in the [Modifying blocks](/blog/modifying-blocks) blog post. Here we can use `%value%` wildcard to dynamically add the selected value to our CSS variable.
+After defining the new attribute and options for the font family, we now have to add a variable to **_manifest.json_**. We can add it to the `variables` object. This approach is slightly different from the one explained in the [Modifying blocks](/blog/modifying-blocks-color-theme) blog post. Here we can use `%value%` wildcard to dynamically add the selected value to our CSS variable.
 ```json
 "paragraphFontFamily": [
 	{
@@ -180,7 +184,11 @@ Now we have to add an actual control to the options panel which will allow us to
 	);
 ```
 
-The control for selecting a font should now be available under Paragraph options. Saving the choice now works, but the font stays the same both in the editor and on the frontend. The final step we need to make this work is to add a CSS rule that consumes our variable to **_/src/Blocks/components/paragraph/paragraph-style.scss_**:
+The control for selecting a font should now be available under Paragraph options. Saving the choice now works, but the font stays the same both in the editor and on the frontend.
+
+![Font Picker](/img/blog/font-picker.png)
+
+The final step we need to make this work is to add a CSS rule that consumes our variable to **_/src/Blocks/components/paragraph/paragraph-style.scss_**:
 ```scss
 .paragraph {
 	// ...
