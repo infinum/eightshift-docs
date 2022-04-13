@@ -11,7 +11,7 @@ In this blog post, we'll give you a practical explanation about the difference b
 <!--truncate-->
 One of the things that is really confusing to newcomers is the difference between components and blocks. Let's break it all down.
 
-### Component
+## Component
 
 > A component is like a blank slate, a template without context.
 
@@ -43,7 +43,7 @@ These attributes give you the option to modify the look of the component, so thi
 
 You can even add conditional logic to your options, e.g. to have the option for `imageWidth` visible only when `imagePosition` is set to left or right. And when `imagePosition` is set to top or bottom, it defaults to 100% width.
 
-### Block
+## Block
 
 So, what about blocks? Blocks can consist of one or more components and, most importantly, allow you to use them in the editor. Technically, blocks can consist of zero components, but we encourage you to build blocks from components because that increases the reusability.
 
@@ -57,6 +57,6 @@ To do that, we'll add a new attribute called `featuredPosts` which will define w
 
 You may be wondering, can you have a block that allows you to use all options of the `card-simple` component? Of course! You can create a block that allows you to set all available options in the editor and manually add content to the image and heading. There are also block variations, which allow you to set up predefined attributes for a block. More about setting up block variations may be covered in one of the future posts.
 
-### Conclusion
+## Conclusion
 
 Hopefully, these examples helped you get a better understanding of the difference between components and blocks. It may take a bit more time or practical use to understand the difference and reasoning behind it. Our next post will walk you through downloading one of our components and blocks with WP CLI and modifying it.

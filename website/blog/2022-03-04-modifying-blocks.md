@@ -13,12 +13,12 @@ In our previous post, we covered how to use Storybook and WP-CLI to add addition
 
 Since Eightshift Development kit is a starter theme, made for developers to jumpstart and speed up their development, you're welcome to modify files in it directly. There is no need to create a child theme to protect changes from updates.
 
-### Modifying a block or a component?
+## Modifying a block or a component?
 Because we used the Quote block in our previous post, we will continue using it as an example as it's a fairly simple one. One of the first questions you may ask yourself could be: "Should I modify a component or a block?". And the answer is - it depends.
 
 If you compare **_components/quote/quote.php_** (component) and **_custom/quote/quote.php_** (block), you'll notice that most of the HTML code is inside the component, while the block pretty much only renders the Quote component inside a wrapper. This example will walk you through the whole process of adding a new attribute and its options to a block.
 
-### What will we do?
+## What will we do?
 
 We want to style the block and add a new feature. An option to choose a color theme for the Quote block. These are the specs:
 - each Quote block has a background with rounded corners
@@ -29,7 +29,7 @@ We want to style the block and add a new feature. An option to choose a color th
 To better help you visualize, this is how the Quote block should look like after making these changes, showcasing all three color theme variations:
 ![Color Theme Examples](/img/blog/color-theme-examples.png)
 
-### Adding background
+## Adding background
 
 Initial background styling is fairly straightforward. Navigate to **_src/Blocks/components/quote/quote-style.scss_** and paste the following code inside `.quote` class:
 
@@ -45,7 +45,7 @@ For now, we will add a simple light grey background to see how it looks. We'll r
 
 You'll notice that the changes are visible both in the editor and on the frontend. Since the Gutenberg editor adds some additional markup, sometimes you'll need to add additional styling only for the editor. In case we need to override something in the editor for our Quote component, we would simply create **_quote-editor.scss_**.
 
-### Adding new colors to your project
+## Adding new colors to your project
 
 Because the theme currently doesn't have all the required colors, we need to add additional colors which will be used for the color theme feature. We will use the colors already defined in the manifest for icon color, but we need to add lighter variations of those colors to use them for the background. Navigate to your global manifest, which is located inside **_src/Blocks/manifest.json_** and add the following values inside `colors`:
 ```json
@@ -66,7 +66,7 @@ Because the theme currently doesn't have all the required colors, we need to add
 }
 ```
 
-### Adding a new attribute and options to manifest
+## Adding a new attribute and options to manifest
 
 For editors to be able to choose which color theme to use for the Quote block, we need to define an attribute for it in the manifest. Navigate to **_src/Blocks/components/quote/manifest.json_** and add the following value inside `attributes`:
 
@@ -90,7 +90,7 @@ After that, since we want to have a fixed number of options, we need to define a
 }
 ```
 
-### CSS variables
+## CSS variables
 
 Our next step is to add CSS variables to the Quote component's manifest. Inside **_manifest.json_**, on the same level as `attributes`, add the following code:
 ```json
@@ -139,7 +139,7 @@ As you can see, the variable name is the same one we used when defining backgrou
 }
 ```
 
-### Outputting CSS variables in editor
+## Outputting CSS variables in editor
 To make our color theme visible in editor, we have to add few lines of code to **_src/Blocks/components/quote/components/quote-editor.js_** file. First, we need to import a few functions. We need `useMemo` from **_react_**, `outputCssVariables` and `getUnique` from **_@eightshift/frontend-libs/scripts_** and finally, we need data from the global manifest.
 
 After importing these and defining a unique constant, your code should look like this:
@@ -171,7 +171,7 @@ return (
 
 If you try adding a Quote block in the editor, you should notice that it now has a light blue background with a quote icon in a darker shade of blue. This is the default value for the `quoteColorTheme` attribute we added in the component's manifest.
 
-### Outputting CSS variables in the PHP template
+## Outputting CSS variables in the PHP template
 The PHP template for the Quote component is located in **_src/Blocks/components/quote/quote.php_**. This process is similar to the one described above, it's just written in PHP. All helper methods we need for this are contained inside the `Components` class, which is already included in this file.
 
 Similar to the JS template, we need a unique value, assign it to `data-id`, and output CSS variables. After adding these, the code should look like this:
@@ -195,7 +195,7 @@ $unique = Components::getUnique();
 
 > Both PHP and JS have the same helpers to make writing code for editor and front view as similar as possible.
 
-### Adding options
+## Adding options
 After adding these snippets, you should already see that your block is using the blue color theme, which we defined as the default value for `quoteColorTheme` in the manifest. We want to have an easy way to change the color theme in the editor. Now we'll add a new option which will do just that.
 
 We will add these options in **_src/Blocks/components/quote/components/quote-options.js_**. Again, we will start with the imports we will need. First one is `__` from **_@wordpress/i18n_** package. Additional imports we need are from **_@eightshift/frontend-libs/scripts_**, so we will just add those to the list.
@@ -251,7 +251,7 @@ The Color Theme option should now be visible and fully functional inside the Quo
 
 ![Color Theme Options](/img/blog/color-theme-options.png)
 
-### Adding transitions in the editor
+## Adding transitions in the editor
 
 The options work, but you may notice there is no transition in the editor. It is not necessary but will improve the user experience. Since we do not need transition effects on the frontend, we can add these CSS rules only to the editor. To do that, we start by creating **_quote-editor.scss_** file inside **_src/Blocks/components/quote_** folder.
 
@@ -270,7 +270,7 @@ Because we've added a new file, we have to run `npm start` again. Now the transi
 
 ![Color Theme Change](/img/blog/color-theme-change.gif)
 
-### Closing thoughts
+## Closing thoughts
 
 In this post, we've covered the whole process of adding a new attribute. It involves a lot of steps and things to keep in mind, but once you get used to it, you'll be able to add quite powerful features to your blocks.
 

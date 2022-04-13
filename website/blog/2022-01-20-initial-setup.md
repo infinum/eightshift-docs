@@ -11,7 +11,7 @@ As is often the case when trying out something new, you might encounter some hic
 <!--truncate-->
 If you haven't already, be sure to read our official [Eightshift Docs](https://infinum.github.io/eightshift-docs/docs/welcome).
 
-### Setup
+## Setup
 
 To create Eightshift theme, navigate to `wp-content/themes` in your project and type the following in the terminal:
 
@@ -35,7 +35,7 @@ OK, you went through the process, filled out all required information, but the t
 
 Congratulations, you've set up your Eightshift theme!
 
-### Getting to know Eightshift dev tools
+## Getting to know Eightshift dev tools
 
 After successfully setting up the theme and going through files, you'll notice this file structure is quite different from traditional WordPress themes and you may think to yourself: "Oh wow, what did I get myself into?"
 
@@ -47,7 +47,7 @@ The final tip in this post is related to troubleshooting. Maybe you tried to add
 
 > Have you tried `composer dump-autoload` and re-running `npm start`?
 
-### What's next in store?
+## What's next in store?
 
 That's all for this post. In future posts we'll go through some more how-to examples like:
 - the difference between components and blocks
