@@ -8,7 +8,7 @@ tags: [eightshift, boilerplate, assets, images, icons]
 hide_table_of_contents: false
 ---
 
-Previously we went through the process of adding fonts to your project. While the process of adding additional assets like images or icons has some similarities to adding fonts, it also has its unique steps. In this post, we'll cover multiple ways of adding assets and using them on your site.
+Previously, we went through the process of adding fonts to your project. While the process of adding additional assets like images or icons has some similarities to adding fonts, it also has its unique steps. In this post, we'll cover multiple ways of adding assets and using them on your site.
 <!--truncate-->
 
 ## Adding images
@@ -33,7 +33,7 @@ You can see how this is being used for rendering both favicon and header logo in
 
 > **Tip**: Don't hardcode the filter name in the `apply_filters` function. Always call it via class constants.
 
-For better organization, you can add additional folders (e.g. **_icons_**, **_placeholders_**) inside **_assets/images_** folder. Here's an example how to include them:
+For better organization, you can add additional folders (e.g. **_icons_**, **_placeholders_**) inside the **_assets/images_** folder. Here's an example of how to include them:
 
 ```js
 // Icons
@@ -46,11 +46,11 @@ import './placeholders/page.png';
 
 ## Using SVG files from manifest
 
-Another approach you can take is to include an SVG file inside your component or block manifest. As a matter of fact, we already mentioned that component in a previous blog post about [Modifying Blocks](/blog/modifying-blocks-color-theme). We are talking about Quote component.
+If you recall from a previous blog post about [Modifying Blocks](/blog/modifying-blocks-color-theme), you might have already seen an alternative approach to including SVG files in your block or component.
 
 > If you don't have it in your project, be sure to read our blog post about adding blocks and components by using [WP CLI](/blog/adding-blocks-wpcli).
 
-Open **_src/Blocks/components/quote/manifest.json_** and you'll see that all icons used by the component are defined inside `icons` as key-value pairs. Key represents the name which we will use to fetch the icon, while the value is SVG code.
+Open **_src/Blocks/components/quote/manifest.json_** and you'll see that all icons used by the component are defined inside `icons` as key-value pairs. Key represents the name that we will use to fetch the icon, while the value is SVG code.
 
 ```json
 "resources": {
@@ -58,9 +58,9 @@ Open **_src/Blocks/components/quote/manifest.json_** and you'll see that all ico
 }
 ```
 
-In order to make minification of SVG files as easy as possible, our teammate Goran made an awesome tool called [SVG2WP](https://svg-2-wp.goranalkovic.com/). Some of the options include making attributes JSX compatible, or replacing the color value with `currentColor`, which can then be used to change the SVG color through CSS.
+In order to make the minification of SVG files as easy as possible, our teammate Goran made an awesome tool called [SVG2WP](https://svg-2-wp.goranalkovic.com/). Some of the options include making attributes JSX compatible, or replacing the color value with `currentColor`, which can then be used to change the SVG color through CSS.
 
-If you've been reading through these blog posts regularly, then you've already seen the use of `currentColor`. In our blog post about [Modifying Blocks](/blog/modifying-blocks-color-theme), we modified the color of the SVG.
+You've already seen the use of `currentColor` in the above-mentioned blog post, where we've modified the color of the SVG.
 
 The output of the icon on frontend is very simple. In the Quote component, it was done the following way:
 ```php
@@ -71,7 +71,7 @@ The output of the icon on frontend is very simple. In the Quote component, it wa
 </i>
 ```
 
-An excellent example where you can see in even more detail how SVGs are being used is our `icon` component. It isn't included in Eightshift theme by default, so you have to add it to your project with WP CLI. To include it in your project, use the following command:
+An excellent example, where you can see in even more detail how SVGs are being used, is our `icon` component. It isn't included in Eightshift theme by default, so you have to add it to your project with WP CLI. To include it in your project, use the following command:
 
 ```bash
 wp boilerplate use_component --name=icon
@@ -88,7 +88,6 @@ echo Components::render(
 		'iconName' => 'download',
 	]
 );
-?>
 ```
 
 Here are some examples of icons available out-of-the-box in our Icon component:
@@ -97,7 +96,7 @@ Here are some examples of icons available out-of-the-box in our Icon component:
 
 ## Using icons for editor and block options
 
-When developing your blocks and adding new options, you may need to add some icons to improve the user experience. We have many icons already available for use. You can see the full list in our [Storybook](/storybook) under `Editor -> Icons` section. We already added the icon when adding a new Color Theme option for the Quote block. Here is the simplified version:
+When developing your blocks and adding new options, you may need to add icons to improve the user experience. We have many icons already available for use. You can see the full list in our [Storybook](/storybook) under `Editor -> Icons` section. We already added the icon when adding a new Color Theme option for the Quote block. Here is the simplified version:
 ```jsx
 import { ColorPaletteCustom, IconLabel, icons } from '@eightshift/frontend-libs/scripts';
 
