@@ -3,7 +3,7 @@ title: Using assets in a project
 description: Step-by-step guide on how to add assets like images or icons to your theme.
 slug: using-assets
 authors: iobrado
-date: 2022-05-02
+date: 2022-04-28
 tags: [eightshift, boilerplate, assets, images, icons]
 hide_table_of_contents: false
 ---
@@ -50,7 +50,7 @@ If you recall from a previous blog post about [Modifying Blocks](/blog/modifying
 
 > If you don't have it in your project, be sure to read our blog post about adding blocks and components by using [WP CLI](/blog/adding-blocks-wpcli).
 
-Open **_src/Blocks/components/quote/manifest.json_** and you'll see that all icons used by the component are defined inside `icons` as key-value pairs. Key represents the name that we will use to fetch the icon, while the value is SVG code.
+Open **_src/Blocks/components/quote/manifest.json_** and you'll see that the icon used by the component is defined inside `resources` as a key-value pair. Key represents the name that we will use to fetch the icon, while the value is SVG code.
 
 ```json
 "resources": {
@@ -80,7 +80,6 @@ wp boilerplate use_component --name=icon
 If you include the Icon component inside a block, you will have the option to choose between multiple icons defined in the manifest. Another way to render SVGs from the Icon component is by using the `Components::render` helper method:
 
 ```php
-<?php
 echo Components::render(
 	'icon',
 	[
