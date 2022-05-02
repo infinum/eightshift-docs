@@ -11,7 +11,7 @@ As a development company, we make a lot of helpful stuff for all of our projects
 
 All the tools you need to start building a modern WordPress project using the latest front-end development tools.
 
-* [Documentation](/eightshift-docs/docs/welcome)
+* [Documentation](/docs/welcome)
 * [Github](https://github.com/infinum/eightshift-boilerplate)
 
 ## Eightshift Libs
@@ -20,7 +20,7 @@ All the tools you need to start building a modern WordPress project using the la
 
 This library is aimed at bringing the modern back-end development tools to the [Eightshift Boilerplate](https://github.com/infinum/eightshift-boilerplate) or [Eightshift Boilerplate Plugin](https://github.com/infinum/eightshift-boilerplate-plugin), but you can use it on any WordPress project.
 
-* [Documentation](/eightshift-docs/docs/eightshift-libs)
+* [Documentation](/docs/eightshift-libs)
 * [Github](https://github.com/infinum/eightshift-libs)
 
 ## Eightshift FrontEnd Libs
@@ -29,7 +29,7 @@ This library is aimed at bringing the modern back-end development tools to the [
 
 This library is meant to bring the modern front-end development tools to the [Eightshift Boilerplate](https://github.com/infinum/eightshift-boilerplate) or [Eightshift Boilerplate Plugin](https://github.com/infinum/eightshift-boilerplate-plugin), but you can use it on any WordPress project.
 
-* [Documentation](/eightshift-docs/docs/eightshift-frontend-libs)
+* [Documentation](/docs/eightshift-frontend-libs)
 * [Github](https://github.com/infinum/eightshift-frontend-libs)
 
 ## Eightshift Docs
@@ -38,7 +38,7 @@ This library is meant to bring the modern front-end development tools to the [Ei
 
 This library hosts all the documentation you have read so far and all of these cool layout pages. We made it on [Docusaurus v2](https://v2.docusaurus.io/).
 
-* [Documentation](/eightshift-docs/docs/welcome)
+* [Documentation](/docs/welcome)
 * [Github](https://github.com/infinum/eightshift-docs)
 
 ## Eightshift Storybook
@@ -47,7 +47,7 @@ This library hosts all the documentation you have read so far and all of these c
 
 This library hosts all the packages necessary for loading Storybook in your project. We are making updates as a new core version comes out and tag the release according to the core release.
 
-* [Documentation](/eightshift-docs/docs/basics/blocks-storybook)
+* [Documentation](/docs/basics/blocks-storybook)
 * [Github](https://github.com/infinum/eightshift-storybook)
 
 ## Eightshift Forms

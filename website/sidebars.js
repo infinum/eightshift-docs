@@ -93,19 +93,7 @@ module.exports = {
         'type': 'category',
         'label': 'v5',
         'items':[
-          {
-            'type': 'category',
-            'label': 'Getting Started',
-            'items': [
-              'legacy/v5/welcome',
-              'legacy/v5/eightshift-libs',
-              'legacy/v5/eightshift-frontend-libs',
-              'legacy/v5/requirements',
-              'legacy/v5/versions',
-              'legacy/v5/theme',
-              'legacy/v5/plugin',
-            ]
-          },
+          'legacy/v5/versions',
           {
             'type': 'category',
             'label': 'Basics',
@@ -187,40 +175,13 @@ module.exports = {
               },
             ]
           },
-          {
-            'type': 'category',
-            'label': 'Advanced',
-            'items': [
-              'legacy/v5/advanced/additional-libraries',
-              'legacy/v5/advanced/the-eightshift-way',
-              'legacy/v5/advanced/custom-eightshift-libs-usage',
-              'legacy/v5/advanced/custom-eightshift-frontend-libs-usage',
-            ]
-          },
         ]
       },
       {
         'type': 'category',
         'label': 'v4',
         'items': [
-          {
-            'type': 'category',
-            'label': 'Getting Started',
-            'items': [
-              'legacy/v4/theme',
-              'legacy/v4/plugin',
-              'legacy/v4/versions',
-            ]
-          },
-          {
-            'type': 'category',
-            'label': 'The Basics',
-            'items': [
-              'legacy/v4/introduction',
-              'legacy/v4/libs',
-              'legacy/v4/frontend-libs'
-            ]
-          },
+          'legacy/v4/versions',
           {
             'type': 'category',
             'label': 'Guides',
@@ -283,7 +244,6 @@ module.exports = {
             'type': 'category',
             'label': 'Advanced',
             'items': [
-              'legacy/v4/advanced/docs-storybook',
               'legacy/v4/advanced/docs-sass',
               'legacy/v4/advanced/webpack',
               'legacy/v4/advanced/browsersync',
@@ -306,15 +266,6 @@ module.exports = {
                   'legacy/v4/advanced/components-heading-level'
                 ]
               },
-              {
-                'type': 'category',
-                'label': 'Custom Installation',
-                'items': [
-                  'legacy/v4/advanced/installation-boilerplate-custom',
-                  'legacy/v4/advanced/installation-libs',
-                  'legacy/v4/advanced/installation-frontend-libs'
-                ]
-              }
             ]
           },
         ]

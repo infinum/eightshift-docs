@@ -11,7 +11,7 @@ For years, we have collected a list of useful SASS mixins, functions, and other 
 
 Check out our documentation and import what you need from Eightshift Frontend Libs.
 
-**Visit [SassDocs](/eightshift-docs/sass) for more details.**
+**Visit [SassDocs](/sass) for more details.**
 
 ## How to use it
 
