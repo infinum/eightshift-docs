@@ -8,8 +8,8 @@ $blog-list-page: (
 	hover-color: $base-mandy-color,
 );
 
-#__docusaurus {
-	.blog-list-page {
+.blog-list-page {
+	#__docusaurus {
 		.container {
 			max-width: map-get-strict($blog-list-page, main-wrapper);
 			margin: 0 auto !important;

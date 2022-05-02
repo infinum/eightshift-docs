@@ -6,8 +6,8 @@ $blog-post-page: (
 	gutter: $base-gutter-size
 );
 
-#__docusaurus {
-	.blog-post-page {
+.blog-post-page {
+	#__docusaurus {
 		.container {
 			max-width: map-get-strict($blog-post-page, main-wrapper);
 			margin: 0 auto !important;

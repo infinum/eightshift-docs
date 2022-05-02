@@ -33,10 +33,10 @@
     "clear": "docusaurus clear"
   },
   "dependencies": {
-    "@docusaurus/core": "^2.0.0-beta.15",
-    "@docusaurus/preset-classic": "^2.0.0-beta.15",
-    "@docusaurus/theme-search-algolia": "^2.0.0-beta.15",
-    "@eightshift/frontend-libs": "^5.0.3",
+    "@docusaurus/core": "^2.0.0-beta.18",
+    "@docusaurus/preset-classic": "^2.0.0-beta.18",
+    "@docusaurus/theme-search-algolia": "^2.0.0-beta.18",
+    "@eightshift/frontend-libs": "^6.0.2",
     "docusaurus-plugin-sass": "^0.2.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
