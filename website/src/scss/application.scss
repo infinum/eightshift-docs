@@ -1,12 +1,8 @@
 /* stylelint-disable docusaurus/copyright-header */
 @import 'media-blender';
-@import 'normalize-scss';
-@include normalize();
 @import '@eightshift/frontend-libs/styles/index.scss';
 
 /* Utils */
-@import 'utils/colors';
-@import 'utils/defaults';
 @import 'utils/shared-variables';
 
 // Config.
@@ -40,3 +36,6 @@
 @import './../theme/sections/foot/foot';
 @import './../theme/sections/iframe/iframe';
 @import './../theme/sections/showcase-grid/showcase-grid';
+
+/* Pages */
+@import './../theme/pages/storybook'

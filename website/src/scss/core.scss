@@ -1,25 +1,18 @@
-$core-map: (
-  font-family: $base-font-family,
-  color: $base-elephant-color,
-  background-color: $base-cararra-color,
-  font-size: $base-font-size,
-);
-
 *,
 *::after,
 *::before {
-  @include box-sizing;
+	@include box-sizing;
 }
 
 html {
-  font-size: map-get-strict($core-map, font-size);
+	font-size: var(--global-font-size-default);
 }
 
 body {
-  @include font-smoothing;
-  font-family: map-get-strict($core-map, font-family);
-  color: map-get-strict($core-map, color);
-  background-color: map-get-strict($core-map, background-color);
-  position: relative;
-  overflow-x: hidden;
+	@include font-smoothing;
+	font-family: var(--global-font-family);
+	color: var(--global-colors-elephant);
+	background-color: var(--global-colors-cararra);
+	position: relative;
+	overflow-x: hidden;
 }

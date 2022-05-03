@@ -1,115 +1,71 @@
-$navbar-sidebar: (
-  link: (
-    mobile: (
-      font-size: 24px,
-      font-weight: bold,
-      line-height: 1.13,
-      padding: 15px 0,
-      letter-spacing: -1.5px,
-      font-family: $base-font-family-alternative,
-      transition: all 0.3s ease-in,
-    )
-  ),
-  link-color: (
-    normal: (
-      color: $base-elephant-color,
-    ),
-    hover: (
-      color: $base-mandy-color,
-      background-color: transparent,
-    ),
-  ),
-  brand: (
-    mobile: (
-      height: auto,
-    ),
-  ),
-  menu: (
-    mobile: (
-      padding: 0,
-    
-    ),
-  ),
-  close: (
-    mobile: (
-      border-radius: 50px,
-      width: 45px,
-      height: 44px,
-      padding: 0,
-      display: flex,
-      align-items: center,
-      justify-content: center,
-      transition: all 0.3s ease-in,
-    ),
-    desktop: (
-      display: none,
-    ),
-  ),
-  gutter: (
-    mobile: (
-      padding: 0 $base-gutter-size,
-    ),
-  ),
-  subitem: (
-    mobile: (
-      font-size: 14px,
-      font-weight: 500,
-      line-height: 1.43,
-      letter-spacing: 0.4px,
-      color: $base-cape-color,
-      font-family: $base-font-family,
-    ),
-  ),
-  link-hover-color: $base-mandy-color,
-);
-
 #__docusaurus {
+	.theme-doc-sidebar-container {
+		border-right: none;
+	}
 
-  .theme-doc-sidebar-container {
-    border-right: none;
-  }
+	.theme-doc-sidebar-item-link-level-2,
+	.theme-doc-sidebar-item-link-level-3,
+	.theme-doc-sidebar-item-link-level-4 {
+		a.menu__link {
+			@extend .paragraph-size--medium;
+			font-weight: 500;
+			letter-spacing: 0.4px;
+			color: var(--global-colors-cape);
+			font-family: var(--global-font-family);
 
-  .theme-doc-sidebar-menu {
-    @include responsive($navbar-sidebar, gutter);
-  }
+			&:hover {
+				color: var(--global-colors-mandy);
+			}
+		}
+	}
 
-  .theme-doc-sidebar-item-link-level-2,
-  .theme-doc-sidebar-item-link-level-3,
-  .theme-doc-sidebar-item-link-level-4 {
-    a.menu__link {
-      @include responsive($navbar-sidebar, subitem);
-      &:hover {
-        color: map-get-strict($navbar-sidebar, link-hover-color);
-      }
-    }
-  }
+	.navbar-sidebar {
+		$this: &;
 
-  .navbar-sidebar {
-    $this: &;
-  
-    &__brand {
-      @include responsive($navbar-sidebar, brand);
-    }
-  
-    .menu {
-      @include responsive($navbar-sidebar, menu);
-  
-      &__link {
-        @include responsive($navbar-sidebar, link);
-        @include link($navbar-sidebar, link-color);
-      }
+		&__brand {
+			height: auto,
+		}
 
-      &__list:first-child {
-        @include responsive($navbar-sidebar, gutter);
-      }
-    }
+		.menu {
+			padding: 0;
 
-    &__back {
-      margin: 8px 0 3px -8px;
-    }
-  }
+			&__link {
+				@extend .paragraph-size--large;
+				font-weight: bold;
+				padding: 15px 0;
+				letter-spacing: -1.5px;
+				font-family: var(--global-font-family-alternative);
+				transition: all 0.3s ease-in;
+				color: var(--global-colors-elephant);
 
-  .menu.menu--responsive .menu__button {
-    @include responsive($navbar-sidebar, close);
-  }
+				&:hover {
+					color: var(--global-colors-mandy);
+					background-color: transparent;
+				}
+			}
+
+			&__list:first-child {
+				padding: 0 var(--global-gutter),
+			}
+		}
+
+		&__back {
+			margin: 8px 0 3px -8px;
+		}
+	}
+
+	.menu.menu--responsive .menu__button {
+		border-radius: 50px;
+		width: 45px;
+		height: 44px;
+		padding: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: all 0.3s ease-in;
+
+		@include media(desktop up) {
+			display: none;
+		}
+	}
 }

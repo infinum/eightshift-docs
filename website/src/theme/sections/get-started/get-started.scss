@@ -1,127 +1,89 @@
-$get-started: (
-  get-started: (
-    mobile: (
-      padding: 0 0 100px,
-    ),
-    tablet: (
-      padding: 0 0 200px,
-    ),
-  ),
-  content: (
-    mobile: (
-      display: flex,
-      flex-wrap: wrap,
-      margin: 0 calc(-1* calc($base-gutter-size / 2)) -90px,
-    ),
-  ),
-  item: (
-    mobile: (
-      text-align: center,
-      padding: 0 calc($base-gutter-size/2),
-      margin-bottom: 90px,
-      flex: 0 0 calc-grid-width(12),
-    ),
-    tablet: (
-      flex: 0 0 calc-grid-width(6),
-    ),
-  ),
-  item-even:(
-    mobile: (
-      padding-top: 0,
-    ),
-    tablet: (
-      padding-top: 80px,
-    ),
-  ),
-  icon: (
-    mobile: (
-      width: 230px,
-      height: 200px,
-      position: relative,
-      margin: 0 auto 25px,
-    ),
-  ),
-  icon-img: (
-    mobile: (
-      position: absolute,
-      left: 0,
-      right: 0,
-      top: 0,
-      bottom: 0,
-    ),
-  ),
-  label: (
-    mobile: (
-      font-size: 32px,
-      font-weight: bold,
-      line-height: 1.19,
-      letter-spacing: -1px,
-      font-family: $base-font-family-alternative,
-      color: $base-elephant-color,
-      max-width: 300px,
-      margin: 0 auto 25px,
-    ),
-  ),
-  theme: $base-picton-color,
-  plugin: $base-mandy-color,
-);
-
 .shift-get-started {
-  $this: &;
-  @include responsive($get-started, get-started);
+	$this: &;
+	padding: 40px 0 100px;
 
-  &__content {
-    @include responsive($get-started, content);
-  }
+	@include media(tablet up) {
+		padding: 80px 0 200px;
+	}
 
-  &__item {
-    @include responsive($get-started, item);
+	&__content {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 calc(-1* calc(var(--global-gutter) / 2)) -90px;
+	}
 
-    &:nth-child(even) {
-      @include responsive($get-started, item-even);
-    }
+	&__item {
+		text-align: center;
+		padding: 0 calc(var(--global-gutter)/2);
+		margin-bottom: 90px;
+		flex: 0 0 calc-grid-width(12);
 
-    &--plugin {
-      #{$this}__label-highlight {
-        color: map-get-strict($get-started, plugin);
-      }
-    }
+		@include media(tablet up) {
+			flex: 0 0 calc-grid-width(6);
+		}
 
-    &--theme {
-      #{$this}__label-highlight {
-        color: map-get-strict($get-started, theme);
-      }
-    }
-  }
+		&:nth-child(even) {
+			padding-top: 0;
 
-  &__link {
-    &:hover {
-      text-decoration: none;
+			@include media(tablet up) {
+				padding-top: 80px;
+			}
+		}
 
-      #{$this}__shift-arrow {
-        @extend %shift-arrow-hover;
-      }
+		&--plugin {
+			#{$this}__label-highlight {
+				color: var(--global-colors-mandy);
+			}
+		}
 
-      #{$this}__icon-bg {
-        transform: rotate(5deg);
-        transition: all 0.3s ease-in,
-      }
-    }
-  }
+		&--theme {
+			#{$this}__label-highlight {
+				color: var(--global-colors-picton);
+			}
+		}
+	}
 
-  &__icon {
-    @include responsive($get-started, icon);
-  }
+	&__link {
+		&:hover {
+			text-decoration: none;
 
-  &__icon-img {
-    @include responsive($get-started, icon-img);
-  }
+			#{$this}__shift-arrow {
+				@extend %shift-arrow-hover;
+			}
 
-  &__icon-bg {
-    transition: all 0.3s ease-in,
-  }
+			#{$this}__icon-bg {
+				transform: rotate(5deg);
+				transition: all 0.3s ease-in,
+			}
+		}
+	}
 
-  &__label {
-    @include responsive($get-started, label);
-  }
+	&__icon {
+		width: 230px;
+		height: 200px;
+		position: relative;
+		margin: 0 auto 25px;
+	}
+
+	&__icon-img {
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+	}
+
+	&__icon-bg {
+		transition: all 0.3s ease-in,
+	}
+
+	&__label {
+		@extend .heading-size--big;
+		font-weight: bold;
+		letter-spacing: -1px;
+		font-family: var(--global-font-family-alternative);
+		color: var(--global-colors-elephant);
+		max-width: 300px;
+		margin: 0 auto 25px;
+	}
 }

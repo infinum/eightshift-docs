@@ -1,33 +1,16 @@
-$panels: (
-  panels: (
-    mobile: (
-      padding: 0 0 55px,
-    ),
-    tablet: (
-      padding: 0 0 80px,
-    ),
-  ),
-  heading: (
-    mobile: (
-      max-width: 580px,
-    ),
-  ),
-  image: (
-    mobile: (
-      max-width: 100%,
-      height: auto,
-    ),
-  ),
-);
-
 .panels {
-  @include responsive($panels, panels);
+	padding: 0 0 55px;
 
-  &__heading {
-    @include responsive($panels, heading);
-  }
+	@include media(tablet up) {
+		padding: 0 0 80px
+	}
 
-  &__image {
-    @include responsive($panels, image);
-  }
+	&__heading {
+		max-width: 580px;
+	}
+
+	&__image {
+		max-width: 100%;
+			height: auto;
+	}
 }

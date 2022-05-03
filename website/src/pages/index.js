@@ -11,23 +11,24 @@ import Footer from '../theme/sections/footer/footer';
 import Foot from '../theme/sections/foot/foot';
 
 export default function Home() {
-  const context = useDocusaurusContext();
-  const {siteConfig = {}} = context;
+	const context = useDocusaurusContext();
+	const {siteConfig = {}} = context;
 
-  return (
-    <Layout
-      title={siteConfig.title}
-      description={siteConfig.tagline}
-      keywords={siteConfig.customFields.keywords}
-      metaImage={useBaseUrl(`img/${siteConfig.customFields.image}`)}
-    >
-      <Intro />
-      <Why />
-      <GetStarted />
-      <Features />
-      <Panels />
-      <Footer />
-      <Foot />
-    </Layout>
-  );
+	return (
+		<Layout
+			title={siteConfig.title}
+			description={siteConfig.tagline}
+			keywords={siteConfig.customFields.keywords}
+			metaImage={useBaseUrl(`img/${siteConfig.customFields.image}`)}
+			wrapperClassName={'page-home'}
+		>
+			<Intro />
+			<Why />
+			<GetStarted />
+			<Features />
+			<Panels />
+			<Footer />
+			<Foot />
+		</Layout>
+	);
 }
