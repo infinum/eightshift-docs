@@ -1,66 +1,112 @@
 // This file has multiple nestings because Docusaurus adds its custom selectors that he overrides in build phase and doesn't take into account your overrides.
 // Themes are not mend to be overriden whole but only partial.
 
-$blog-post-page: (
-	main-wrapper: map-get-strict($base-containers, default),
-	gutter: $base-gutter-size
-);
+.blog-post-page {
+	#__docusaurus {
+		aside {
+			@extend %left-sidebar;
+			max-width: initial;
 
-#__docusaurus {
-	.blog-post-page {
-		.container {
-			max-width: map-get-strict($blog-post-page, main-wrapper);
-			margin: 0 auto !important;
+			@include media(desktop up) {
+				display: block;
+			}
+
+			nav {
+				padding: calc(var(--global-header-height) + var(--global-docs-top-spacing)) var(--global-gutter);
+			}
 		}
 
-		.markdown blockquote {
-			padding: 10px;
+		.container > .row {
+			margin: 0;
+
+			.col {
+				flex: initial;
+			}
 		}
 
 		header {
+			display: flex;
+			flex-flow: column;
 			margin-bottom: 20px;
 
-			.col {
-				padding: 0 !important;
+			> *:first-child {
+				order: 2;
+				margin-bottom: 20px !important;
+			}
+
+			> *:nth-child(2) {
+				order: 1;
+			}
+
+			> *:nth-child(3) {
+				order: 3;
+				margin-top: 0 !important;
+				margin-bottom: 0 !important;
+			}
+		}
+
+		div[class^="blogPostData"] {
+			@extend .paragraph-size--small;
+			margin-top: 0 !important;
+			margin-bottom: 5px !important;
+			color: var(--global-colors-pewter);
+			font-style: italic;
+		}
+
+		.avatar {
+			color: var(--global-colors-pewter);
+			margin-bottom: 0 !important;
+
+			&__name {
+				@extend .paragraph-size--medium;
+			}
+
+			&__subtitle {
+				@extend .paragraph-size--small;
+				font-style: italic;
+			}
+		}
+
+		footer {
+			margin-top: 40px !important;
+			display: block;
+
+			b {
+				display: none;
+			}
+
+			ul {
+				margin-left: 0 !important;
+				display: inline-flex;
+				flex-wrap: wrap;
+				margin-bottom: 0;
 			}
 
 			li {
-				margin-bottom: 25px;
+				display: block;
 			}
-		}
 
-		footer.docusaurus-mt-lg {
-			margin-top: 50px;
+			a {
+				display: block;
+				color: var(--global-colors-pewter);
+				transition: {
+					property: color;
+					timing-function: ease-out;
+					duration: 0.3s;
+				}
+
+				&:hover {
+					background-color: var(--global-colors-mandy);
+					border-color: var(--global-colors-mandy);
+					color: var(--global-colors-white);
+				}
+			}
 
 			.col {
 				padding: 0;
-			}
-		}
-
-		.col {
-			&.col--7 {
-				padding: 0 map-get-strict($blog-post-page, gutter);
-				@include flex-grid-width(12);
-				@include media(desktop up) {
-					@include flex-grid-width(7);
-				}
-			}
-	
-			&.col--3,
-			&.col--2 {
-				padding: 0 map-get-strict($blog-list-page, gutter) !important;
-				display: none;
-				@include media(tablet up) {
-					display: flex;
-				}
-			}
-	
-			&.col--2 {
-				padding-right: 0;
-				padding-left: 0;
-				@include media(desktop up) {
-					@include flex-grid-width(2);
-				}
+				flex: inherit;
+				max-width: 100%;
+				@extend .paragraph-size--small;
 			}
 		}
 	}

@@ -2,7 +2,7 @@
 title: Using assets in a project
 description: Step-by-step guide on how to add assets like images or icons to your theme.
 slug: using-assets
-authors: iobrado
+authors: obradovic
 date: 2022-04-28
 tags: [eightshift, boilerplate, assets, images, icons]
 hide_table_of_contents: false

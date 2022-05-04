@@ -5,17 +5,20 @@ import Layout from '@theme/Layout';
 import Iframe from '../theme/sections/iframe/iframe';
 
 export default function Sass() {
-  const context = useDocusaurusContext();
-  const {siteConfig = {}} = context;
+	const context = useDocusaurusContext();
+	const {siteConfig = {}} = context;
 
-  return (
-    <Layout
-      title={'Scss'}
-      description={siteConfig.tagline}
-      keywords={siteConfig.customFields.keywords}
-      metaImage={useBaseUrl(`img/${siteConfig.customFields.image}`)}
-    >
-        <Iframe src="https://infinum.github.io/eightshift-frontend-libs/sassdocs/" />
-    </Layout>
-  );
+	return (
+		<Layout
+			title={'Scss'}
+			description={siteConfig.tagline}
+			keywords={siteConfig.customFields.keywords}
+			metaImage={useBaseUrl(`img/${siteConfig.customFields.image}`)}
+			wrapperClassName={'page-sass'}
+		>
+			<Iframe
+				src="https://infinum.github.io/eightshift-frontend-libs/sassdocs/"
+			/>
+		</Layout>
+	);
 };

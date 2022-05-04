@@ -1,144 +1,105 @@
-$navbar: (
-  nav: (
-    mobile: (
-      box-shadow: none,
-      height: var(--ifm-navbar-height),
-      background-color: $base-cararra-color,
-      padding: 0,
-    ),
-  ),
-  inner: (
-    mobile: (
-      padding: 0 $base-gutter-size,
-      margin: 0 auto,
-    ),
-  ),
-  link: (
-    mobile: (
-      font-size: 16px,
-      font-weight: 500,
-      line-height: 1.5,
-      padding: 0 20px,
-      transition: all 0.3s ease-in,
-    )
-  ),
-  link-color: (
-    normal: (
-      color: $base-cape-color,
-    ),
-    hover: (
-      color: $base-mandy-color,
-    ),
-  ),
-  brand: (
-    mobile: (
-      height: auto,
-      margin: 0,
-    ),
-  ),
-  logo: (
-    mobile: (
-      height: auto,
-      max-width: 156px,
-      margin: 0,
-    ),
-  ),
-  search: (
-    mobile: (
-      height: 48px,
-      padding-left: 20px,
-      display: none,
-    ),
-    tablet: (
-      display: block,
-    )
-  ),
-  search-input: (
-    mobile: (
-      width: 122px,
-      height: 100%,
-      background-color: $base-white-color,
-      padding-left: 40px,
-      padding-right: 20px,
-      font-family: $base-font-family,
-      font-size: 16px,
-      font-weight: 500,
-      line-height: 1.5,
-      color: $base-nevada-color,
-      transition: all 0.3s ease-in,
-    ),
-  ),
-  search-input-focus: (
-    mobile: (
-      width: 300px,
-      transition: all 0.3s ease-in,
-    ),
-  ),
-  search-input-placeholder: (
-    mobile: (
-      color: $base-nevada-color,
-    ),
-  ),
-  toggle: (
-    mobile: (
-      background-color: $base-white-color,
-      border-radius: 50%,
-      width: 40px,
-      height: 40px,
-      display: flex,
-      align-items: center,
-      justify-content: center,
-      padding: 9px,
-      margin-right: 20px,
-    ),
-    desktop: (
-      display: none,
-    ),
-  )
-);
-
 #__docusaurus .navbar {
-  $this: &;
-  @include responsive($navbar, nav);
+	$this: &;
+	box-shadow: none;
+	height: var(--global-header-height);
+	background-color: var(--global-colors-white);
+	padding: 0;
+	display: flex;
+	box-shadow: 0 2px 3px var(--global-shadow-elephant);
 
-  &__inner {
-    @include responsive($navbar, inner);
-  }
+	&__inner {
+		padding: 0 var(--global-gutter);
+		margin: 0 auto;
+	}
 
-  &__link {
-    @include responsive($navbar, link);
-    @include link($navbar, link-color);
-  }
+	&__link {
+		@extend .paragraph-size--medium;
+		font-weight: 500;
+		padding: 0 20px;
+		transition: {
+			property: color;
+			timing-function: ease-out;
+			duration: 0.3s;
+		}
+		color: var(--global-colors-cape);
 
-  &__brand {
-    @include responsive($navbar, brand);
-  }
+		&:hover {
+			color: var(--global-colors-mandy);
+		}
+	}
 
-  &__logo {
-    @include responsive($navbar, logo);
-  }
+	&__brand {
+		height: auto;
+		margin: 0;
+	}
 
-  &__search {
-    @include responsive($navbar, search);
-  }
+	&__logo {
+		height: auto;
+		max-width: 156px;
+		margin: 0;
 
-  &__search-input {
-    @include responsive($navbar, search-input);
+		img {
+			display: block;
+		}
+	}
 
-    &:focus {
-      @include responsive($navbar, search-input-focus);
-    }
+	&__search {
+		height: 48px;
+		padding-left: 20px;
+		display: none;
 
-    &::placeholder {
-      @include responsive($navbar, search-input-placeholder);
-    }
-  }
+		@include media(tablet up) {
+			display: block;
+		}
+	}
 
-  &__toggle {
-    @include responsive($navbar, toggle);
+	&__search-input {
+		width: 122px;
+		height: 100%;
+		background-color: var(--global-colors-white);
+		padding-left: 40px;
+		padding-right: 20px;
+		font-family: var(--global-font-family);
+		@extend .paragraph-size--medium;
+		font-weight: 500;
+		color: var(--global-colors-nevada);
+		transition: {
+			property: width;
+			timing-function: ease-out;
+			duration: 0.3s;
+		}
 
-    &:focus {
-      outline: none;
-    }
-  }
+		&:focus {
+			width: 300px;
+			transition: {
+				property: width;
+				timing-function: ease-out;
+				duration: 0.3s;
+			}
+		}
+
+		&::placeholder {
+			color: var(--global-colors-nevada);
+		}
+	}
+
+	&__toggle {
+		background-color: var(--global-colors-white);
+		border-radius: 50%;
+		width: var(--global-mobile-nav-button-size);
+		height: var(--global-mobile-nav-button-size);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 9px;
+		margin-right: 20px;
+
+		@include media(desktop up) {
+			display: none;
+		}
+
+		&:focus {
+			outline: none;
+		}
+	}
 }

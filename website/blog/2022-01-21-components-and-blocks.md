@@ -2,11 +2,11 @@
 title: Components and blocks
 description: Explanation of the difference between components and blocks on a practical example
 slug: components-and-blocks
-authors: iobrado
+authors: obradovic
 tags: [eightshift, boilerplate, components, blocks]
 hide_table_of_contents: false
 ---
-In this blog post, we'll give you a practical explanation about the difference between components and blocks. For a truly in-depth explanation about components and blocks, you can refer to [our documentation](https://infinum.github.io/eightshift-docs/docs/basics/blocks). A more specific explanation about using components in a block can be found in the [Component in a Block](https://infinum.github.io/eightshift-docs/docs/basics/blocks-component-in-block/) section.
+In this blog post, we'll give you a practical explanation about the difference between components and blocks. For a truly in-depth explanation about components and blocks, you can refer to [our documentation](/docs/basics/blocks). A more specific explanation about using components in a block can be found in the [Component in a Block](/docs/basics/blocks-component-in-block/) section.
 
 <!--truncate-->
 One of the things that is really confusing to newcomers is the difference between components and blocks. Let's break it all down.

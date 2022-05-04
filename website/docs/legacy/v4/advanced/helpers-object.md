@@ -7,7 +7,7 @@ title: Object
 
 Object trait is located in `Eightshift Libs`. To extend it, use `Eightshift_Libs\Helpers\Object_Helper` class.
 
-All of us have some custom helpers and stuff that we use around on multiple the project. We have created this simple trait helper that you can use in any PHP class as a [trait](/eightshift-docs/docs/legacy/v4/guides/extending-classes). To see all of the class helper go [here](https://github.com/infinum/eightshift-libs/blob/develop/src/helpers/class-object-helper.php).
+All of us have some custom helpers and stuff that we use around on multiple the project. We have created this simple trait helper that you can use in any PHP class as a [trait](/docs/legacy/v4/guides/extending-classes).
 
 ## is_valid_xml
 

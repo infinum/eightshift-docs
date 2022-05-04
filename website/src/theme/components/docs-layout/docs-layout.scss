@@ -1,89 +1,87 @@
 // This file has multiple nestings because Docusaurus adds its custom selectors that he overrides in build phase and doesn't take into account your overrides.
 // Themes are not mend to be overriden whole but only partial.
 
-$layout: (
-  right-sidebar-padding: $base-gutter-size,
-  main-wrapper: map-get-strict($base-containers, default),
-  main-wrapper-gutter: $base-gutter-size
-);
+.docs-wrapper,
+.blog-post-page  {
+	#__docusaurus {
+		--bottom-spacing: 60px;
 
-#__docusaurus {
-  .main-wrapper {
-    width: 100%;
+		.breadcrumbs__link {
+			background-color: transparent;
+			color: var(--global-colors-elephant);
+		}
 
-    div[class^="docPage_"] {
-      flex-wrap: wrap;
-      max-width: map-get-strict($layout, main-wrapper);
-      padding: 0 map-get-strict($layout, main-wrapper-gutter);
-      margin: 0 auto;
-    }
+		// Content.
+		.main-wrapper {
+			width: 100%;
+			background-color: var(--global-colors-white);
 
-    main[class^="docMainContainer_"] {
-      @include flex-grid-width(12);
+			.container {
+				padding: 0 !important;
+				margin: 0;
+				max-width: initial;
+			}
 
-      @include media(desktop up) {
-        @include flex-grid-width(9);
-      }
-    }
+			main {
+				padding: var(--global-docs-top-spacing) var(--global-gutter);
 
-    main[class^="docItemContainer_"] {
-      padding: 0;
-    }
+				@include media(desktop up) {
+					padding: {
+						top: var(--global-docs-top-spacing);
+						right: calc(var(--global-gutter) * 2);
+						bottom: var(--bottom-spacing);
+						left: calc(var(--global-gutter) * 2);
+					}
+					max-width: calc(100% - var(--global-sidebar-width));
+				}
 
-    div[class^="docSidebarContainer_"] {
-      border-right: none;
+				@include media(large up) {
+					padding-right: calc(var(--global-sidebar-width) + calc(var(--global-gutter) * 2));
+				}
 
-      @include media(tablet up) {
-        display: block;
-        @include flex-grid-width(3);
-      }
-    }
+				.row {
+					margin: 0;
+					display: block;
+				}
+	
+				.col {
+					padding: 0;
+					max-width: initial !important;
+				}
+			}
 
-    div[class^="sidebar_"] {
-      padding-bottom: 35px;
-    }
+			article {
+				max-width: 70ch;
+				margin: 0 auto;
 
-    article {
-      header {
-        h1 {
-          margin-top: 0;
-          margin-bottom: 20px;
-        }
-      }
-    }
+				h1 {
+					@extend .heading-size--huge;
+					margin-top: 0;
+					margin-bottom: 20px;
+				}
 
-    .container {
-      padding: 0 !important;
-      margin: 0;
-      max-width: initial;
-    }
+				h2 {
+					@extend .heading-size--big;
+				}
 
-    .row {
-      margin: 0;
-  
-      .col {
-        @include flex-grid-width(12);
-        padding: 0;
+				h3 {
+					@extend .heading-size--large;
+				}
 
-        @include media(desktop up) {
-          @include flex-grid-width(9);
-          padding: 0 map-get-strict($layout, main-wrapper-gutter);
-        }
-  
-        @include media(large up) {
-          padding: 0 80px;
-        }
+			}
 
-        &.col--3 {
-          padding-right: 0;
-          padding-left: 0;
-          @include flex-grid-width(3);
-        }
-      }
-    }
+			div[class^="tableOfContents_"] {
+				display: none;
 
-    div[class^="tableOfContents_"] {
-      top: var(--ifm-navbar-height);
-    }
-  }
+				@include media(large up) {
+					display: block;
+					top: var(--global-header-height);
+					position: fixed;
+					right: 0;
+					padding-top: var(--global-docs-top-spacing);
+					padding-right: var(--global-gutter);
+				}
+			}
+		}
+	}
 }

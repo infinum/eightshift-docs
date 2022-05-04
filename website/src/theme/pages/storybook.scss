@@ -1,0 +1,5 @@
+.page-storybook {
+	.shift-iframe {
+		top: calc(var(--global-header-height) - 10px);
+	}
+}

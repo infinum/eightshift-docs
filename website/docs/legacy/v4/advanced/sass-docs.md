@@ -5,7 +5,7 @@ title: Sass
 
 For years we have collected a list of useful SASS mixins, functions, and all other stuff that you can use in a project. You don't need to have all this in your project; check out our documentation and import it from Eightshift Frontend Libs.
 
-**Visit [SassDocs](/eightshift-docs/sass) for more details.**
+**Visit [SassDocs](/sass) for more details.**
 
 ## Default usage
 Sass mixing, functions, helpers are located in `node_modules/@eighshift/frontent-libs/styles/scss/eightshift-frontend-libs.scss` file. If you are using our webpack build then you are all set, and you can use it by importing it to your project like this:

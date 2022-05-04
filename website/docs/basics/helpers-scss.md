@@ -8,7 +8,7 @@ title: Scss
 
 For years, we have collected a list of useful SASS mixins, placeholders, and functions you can use in a project. You don't need to have all of this in your project. Check out our documentation and see what we have in store for you.
 
-**Visit [SassDocs](/eightshift-docs/sass) for more details.**
+**Visit [SassDocs](/sass) for more details.**
 
 ## Default usage
 

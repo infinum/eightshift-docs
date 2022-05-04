@@ -1,105 +1,70 @@
-$markdown: (
-  p: (
-    mobile: (
-      font-size: 16px,
-      font-weight: 500,
-      line-height: 1.7,
-      color: $base-cape-color,
-    ),
-  ),
-  code: (
-    mobile: (
-      background-color: $base-charade-color,
-      font-family: $base-block-family-code,
-      font-weight: 500,
-      font-size: 16px,
-      line-height: 1.5,
-      color: $base-white-color,
-    ),
-  ),
-  a: (
-    normal: (
-      color: $base-mandy-color,
-      transition: all 0.3s ease-in,
-    ),
-    hover: (
-      color: $base-cape-color,
-      text-decoration: none,
-    ),
-  ),
-  li: (
-    mobile: (
-      padding: 5px 0,
-      font-size: 16px,
-      font-weight: 500,
-      line-height: 1.7,
-      color: $base-cape-color,
-    ),
-  ),
-  strong: (
-    mobile: (
-      color: $base-elephant-color,
-    ),
-  ),
-  blockquote: (
-    mobile: (
-      background-color: $base-egg-color,
-      border-color: $base-mandy-color,
-      font-size: 16px,
-      font-weight: 500,
-      line-height: 1.7,
-      color: $base-cape-color,
-    ),
-  ),
-  blockquote-code: (
-    mobile: (
-      background-color: $base-chamois-color,
-      color: $base-cape-color,
-    ),
-  ),
-  token-line: (
-    mobile: (
-      font-size: 14px,
-      font-weight: 500,
-      font-family: $base-block-family-code,
-    ),
-  ),
-);
-
 .markdown {
-  > p {
-    @include responsive($markdown, p);
-  }
+	> p {
+		@extend .paragraph-size--medium;
+		font-weight: 500;
+		color: var(--global-colors-cape);
 
-  a {
-    @include link($markdown, a);
-  }
+		code {
+			padding: 2px 5px;
+		}
+	}
 
-  li {
-    @include responsive($markdown, li);
-  }
+	a {
+		color: var(--global-colors-mandy);
+		transition: {
+			property: color;
+			timing-function: ease-out;
+			duration: 0.3s;
+		}
 
-  strong {
-    @include responsive($markdown, strong);
-  }
+		&:hover {
+			color: var(--global-colors-cape);
+			text-decoration: none;
+		}
+	}
 
-  blockquote {
-    @include responsive($markdown, blockquote);
+	li {
+		@extend .paragraph-size--medium;
+		padding: 5px 0;
+		font-weight: 500;
+		color: var(--global-colors-cape);
+	}
 
-    code {
-      @include responsive($markdown, blockquote-code);
-    }
-  }
+	strong {
+		color: var(--global-colors-elephant);
+	}
 
-  code {
-    @include responsive($markdown, code);
-  }
+	blockquote {
+		@extend .paragraph-size--medium;
+		background-color: var(--global-colors-egg);
+		border-color: var(--global-colors-mandy);
+		font-weight: 500;
+		color: var(--global-colors-cape);
+		padding: 10px;
+		border-radius: var(--global-border-radius);
 
-  div[class^="codeBlock_"] {
-    border-radius: 0;
-  }
+		code {
+			background-color: var(--global-colors-chamois);
+			color: var(--global-colors-cape);
+		}
+	}
 
-  .token-line {
-    @include responsive($markdown, token-line);
-  }
+	code {
+		@extend .paragraph-size--medium;
+		background-color: var(--global-colors-charade);
+		font-family: var(--global-block-family-code);
+		font-weight: 500;
+		border-radius: var(--global-border-radius);
+		color: var(--global-colors-white);
+	}
+
+	div[class^="codeBlock_"] {
+		border-radius: 0;
+	}
+
+	.token-line {
+		@extend .paragraph-size--small;
+		font-weight: 500;
+		font-family: var(--global-block-family-code);
+	}
 }
