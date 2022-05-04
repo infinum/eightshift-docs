@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunk_eightshift_docs=self.webpackChunk_eightshift_docs||[]).push([[1541],{5094:function(s){s.exports=JSON.parse('{"allTagsPath":"/eightshift-docs/blog/tags","slug":"/eightshift-docs/blog/tags/images","name":"images","count":1,"permalink":"/eightshift-docs/blog/tags/images"}')}}]);
