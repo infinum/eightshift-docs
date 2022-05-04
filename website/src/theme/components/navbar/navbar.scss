@@ -2,7 +2,7 @@
 	$this: &;
 	box-shadow: none;
 	height: var(--global-header-height);
-	background-color: var(--global-colors-cararra);
+	background-color: var(--global-colors-white);
 	padding: 0;
 	display: flex;
 	box-shadow: 0 2px 3px var(--global-shadow-elephant);
@@ -16,7 +16,11 @@
 		@extend .paragraph-size--medium;
 		font-weight: 500;
 		padding: 0 20px;
-		transition: all 0.3s ease-in;
+		transition: {
+			property: color;
+			timing-function: ease-out;
+			duration: 0.3s;
+		}
 		color: var(--global-colors-cape);
 
 		&:hover {
@@ -33,6 +37,10 @@
 		height: auto;
 		max-width: 156px;
 		margin: 0;
+
+		img {
+			display: block;
+		}
 	}
 
 	&__search {
@@ -55,11 +63,19 @@
 		@extend .paragraph-size--medium;
 		font-weight: 500;
 		color: var(--global-colors-nevada);
-		transition: all 0.3s ease-in;
+		transition: {
+			property: width;
+			timing-function: ease-out;
+			duration: 0.3s;
+		}
 
 		&:focus {
 			width: 300px;
-			transition: all 0.3s ease-in;
+			transition: {
+				property: width;
+				timing-function: ease-out;
+				duration: 0.3s;
+			}
 		}
 
 		&::placeholder {

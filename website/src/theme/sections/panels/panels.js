@@ -11,6 +11,7 @@ export default function Panels() {
 			<Container
 				componentClass={component}
 				size={'small'}
+				spacingBottom={'none'}
 			>
 				<Heading
 					componentClass={component}
@@ -22,6 +23,7 @@ export default function Panels() {
 			<Container
 				componentClass={component}
 				size={'medium'}
+				spacingTop={'none'}
 			>
 				<div className={`${component}__content`}>
 					<img className={`${component}__image`} src={useBaseUrl('img/img-panels@2x.png')} />

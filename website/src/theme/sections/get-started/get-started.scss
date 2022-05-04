@@ -1,10 +1,5 @@
 .shift-get-started {
 	$this: &;
-	padding: 40px 0 100px;
-
-	@include media(tablet up) {
-		padding: 80px 0 200px;
-	}
 
 	&__content {
 		display: flex;
@@ -53,7 +48,11 @@
 
 			#{$this}__icon-bg {
 				transform: rotate(5deg);
-				transition: all 0.3s ease-in,
+				transition: {
+					property: transform;
+					timing-function: ease-out;
+					duration: 0.3s;
+				}
 			}
 		}
 	}
@@ -74,7 +73,11 @@
 	}
 
 	&__icon-bg {
-		transition: all 0.3s ease-in,
+		transition: {
+			property: transform;
+			timing-function: ease-out;
+			duration: 0.3s;
+		}
 	}
 
 	&__label {

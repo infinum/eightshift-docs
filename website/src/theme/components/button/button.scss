@@ -10,7 +10,11 @@
 	border-radius: 50px;
 	text-transform: uppercase;
 	padding: 5px 45px;
-	transition: all 0.3s ease-in;
+	transition: {
+		property: color, background-color, border-color;
+		timing-function: ease-out;
+		duration: 0.3s;
+	}
 
 	&:hover {
 		text-decoration: none;

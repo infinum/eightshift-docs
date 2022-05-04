@@ -11,7 +11,11 @@
 
 	a {
 		color: var(--global-colors-mandy);
-		transition: all 0.3s ease-in;
+		transition: {
+			property: color;
+			timing-function: ease-out;
+			duration: 0.3s;
+		}
 
 		&:hover {
 			color: var(--global-colors-cape);

@@ -56,6 +56,7 @@ export default function Footer() {
 			<Container
 				componentClass={component}
 				size={'medium'}
+				bgColor={'light'}
 			>
 				<Heading
 					componentClass={component}

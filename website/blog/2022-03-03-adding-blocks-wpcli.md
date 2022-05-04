@@ -2,7 +2,7 @@
 title: Adding components and blocks with WP-CLI
 description: This blog post covers how to use our WP CLI commands for adding components and blocks into your project.
 slug: adding-blocks-wpcli
-authors: iobrado
+authors: obradovic
 date: 2022-03-14
 tags: [eightshift, boilerplate, wpcli, components, blocks]
 hide_table_of_contents: false

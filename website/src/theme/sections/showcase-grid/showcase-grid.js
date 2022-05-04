@@ -92,6 +92,30 @@ export default function ShowcaseGrid() {
 			desc: 'Immunicom’s Immunopheresis™ is designed to empower patients to best live their lives while receiving revolutionary cancer treatment.',
 			link: 'https://immunicom.com/',
 		},
+		{
+			image: useBaseUrl('img/showcase/productive.jpg'),
+			label: 'Productive',
+			desc: 'Productive is a one-stop shop for agencies of all types and sizes. Start now and get a strong grip on operations and profitability.',
+			link: 'https://productive.io/',
+		},
+		{
+			image: useBaseUrl('img/showcase/smiley.jpg'),
+			label: 'Smiley',
+			desc: 'Smiley is a leading lifestyle brand that forged a relationship with generations of musical and cultural movements.',
+			link: 'https://smiley.com/',
+		},
+		{
+			image: useBaseUrl('img/showcase/saferinternet.jpg'),
+			label: 'Safeinternet',
+			desc: 'Welcome to the UK Safer Internet Centre, where you can find online safety tips, advice and resources to help children and young people stay safe online.',
+			link: 'https://saferinternet.org.uk/',
+		},
+		{
+			image: useBaseUrl('img/showcase/greenwichvillage.jpg'),
+			label: 'Greenwich Village',
+			desc: 'The Village Alliance has been a leading advocate for the Greenwich Village community for nearly thirty years.',
+			link: 'https://greenwichvillage.nyc/',
+		},
 	]);
 
 	// https://reactjs.org/docs/react-dom.html#hydrate
@@ -154,6 +178,7 @@ export default function ShowcaseGrid() {
 			<Container
 				componentClass={component}
 				size={'smaller'}
+				spacingBottom={'small'}
 			>
 				<Heading
 					componentClass={component}

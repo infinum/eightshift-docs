@@ -19,7 +19,7 @@ export default function Button(props) {
 				${component}
 				${component}__size--${size}
 				${component}__color--${color}
-				${componentClass}__${component}
+				${component}__${componentClass}
 			`}
 			to={href}>
 			{label}

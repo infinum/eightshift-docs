@@ -17,7 +17,7 @@ export default function Heading(props) {
 			{title &&
 				<div className={`
 					${component}
-					${componentClass}__${component}
+					${component}__${componentClass}
 					${component}__align--${align}
 				`}>
 					{title &&

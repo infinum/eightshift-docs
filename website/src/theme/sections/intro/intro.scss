@@ -1,11 +1,4 @@
 .shift-intro {
-	padding-top: 70px;
-	padding-bottom: 80px;
-
-	@include media(tablet up) {
-		padding-top: 160px;
-	}
-
 	&__title {
 		font-size: var(--global-font-size-big);
 		line-height: 1.13;

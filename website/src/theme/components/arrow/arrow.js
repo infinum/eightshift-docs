@@ -9,7 +9,12 @@ export default function Arrow(props) {
 		componentClass,
 	} = props;
 
+	const arrowClass=`
+		${component}
+		${componentClass}__${component}
+	`;
+
 	return (
-		<img className={` ${component} ${componentClass}__${component}`} src={useBaseUrl('img/ic-arrow.svg')} />
+		<img className={arrowClass} src={useBaseUrl('img/ic-arrow.svg')} />
 	);
 }

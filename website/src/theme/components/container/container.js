@@ -7,6 +7,9 @@ export default function Container(props) {
 	const {
 		componentClass,
 		size='default',
+		spacingTop='default',
+		spacingBottom='default',
+		bgColor='none',
 		children,
 	} = props;
 
@@ -15,10 +18,17 @@ export default function Container(props) {
 			{children &&
 				<div className={`
 					${component}
-					${component}__size--${size}
-					${componentClass}__${component}
+					${component}__spacing-top--${spacingTop}
+					${component}__spacing-bottom--${spacingBottom}
+					${component}__bg-color--${bgColor}
+					${component}__${componentClass}
 				`}>
-				 {children}
+					<div className={`
+						${component}__inner
+						${component}__inner-size--${size}
+					`}>
+				 		{children}
+					</div>
 				</div>
 			}
 		</>

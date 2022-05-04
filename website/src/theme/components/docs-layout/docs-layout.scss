@@ -6,11 +6,6 @@
 	#__docusaurus {
 		--bottom-spacing: 60px;
 
-		// Sidebar.
-		.menu {
-			padding-top: 30px;
-		}
-
 		.breadcrumbs__link {
 			background-color: transparent;
 			color: var(--global-colors-elephant);
@@ -28,35 +23,64 @@
 			}
 
 			main {
-				padding: 30px var(--global-gutter);
+				padding: var(--global-docs-top-spacing) var(--global-gutter);
 
 				@include media(desktop up) {
-					padding: 30px calc(var(--global-gutter) * 2) var(--bottom-spacing);
+					padding: {
+						top: var(--global-docs-top-spacing);
+						right: calc(var(--global-gutter) * 2);
+						bottom: var(--bottom-spacing);
+						left: calc(var(--global-gutter) * 2);
+					}
+					max-width: calc(100% - var(--global-sidebar-width));
 				}
-			}
 
-			aside {
-				border-right: none;
-				background-color: var(--global-colors-cararra);
-				position: relative;
-				padding-bottom: var(--bottom-spacing);
-				padding: 0 var(--global-gutter),
+				@include media(large up) {
+					padding-right: calc(var(--global-sidebar-width) + calc(var(--global-gutter) * 2));
+				}
+
+				.row {
+					margin: 0;
+					display: block;
+				}
+	
+				.col {
+					padding: 0;
+					max-width: initial !important;
+				}
 			}
 
 			article {
 				max-width: 70ch;
 				margin: 0 auto;
 
-				header {
-					h1 {
-						margin-top: 0;
-						margin-bottom: 20px;
-					}
+				h1 {
+					@extend .heading-size--huge;
+					margin-top: 0;
+					margin-bottom: 20px;
 				}
+
+				h2 {
+					@extend .heading-size--big;
+				}
+
+				h3 {
+					@extend .heading-size--large;
+				}
+
 			}
 
 			div[class^="tableOfContents_"] {
-				top: var(--ifm-navbar-height);
+				display: none;
+
+				@include media(large up) {
+					display: block;
+					top: var(--global-header-height);
+					position: fixed;
+					right: 0;
+					padding-top: var(--global-docs-top-spacing);
+					padding-right: var(--global-gutter);
+				}
 			}
 		}
 	}

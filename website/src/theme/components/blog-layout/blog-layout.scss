@@ -4,11 +4,7 @@
 .blog-list-page {
 	#__docusaurus {
 		.main-wrapper {
-			padding: 40px 0 50px;
-
-			@include media(tablet up) {
-				padding-top: 80px;
-			}
+			padding: var(--global-container-spacing-default) 0;
 
 			aside {
 				display: none;
@@ -27,7 +23,7 @@
 
 			main {
 				max-width: var(--global-container-default);
-				padding: 40px var(--global-gutter);
+				padding: 0 var(--global-gutter);
 				margin: 0 auto;
 				flex: initial;
 				display: grid;
@@ -54,11 +50,16 @@
 						font-family: var(--global-font-family-alternative);
 						letter-spacing: -2px;
 						color: var(--global-colors-elephant);
+						margin-bottom: 10px;
 					}
 
 					a {
 						color: var(--global-colors-elephant);
-						transition: all 0.3s ease-in;
+						transition: {
+							property: color;
+							timing-function: ease-out;
+							duration: 0.3s;
+						}
 
 						&:hover {
 							text-decoration: none;
@@ -70,6 +71,7 @@
 						@extend .paragraph-size--small;
 						color: var(--global-colors-pewter);
 						font-style: italic;
+						margin-top: 0 !important;
 					}
 
 					.row {
@@ -105,7 +107,11 @@
 					a {
 						display: block;
 						color: var(--global-colors-pewter);
-						transition: all 0.3s ease-in;
+						transition: {
+							property: color;
+							timing-function: ease-out;
+							duration: 0.3s;
+						}
 
 						&:hover {
 							background-color: var(--global-colors-mandy);

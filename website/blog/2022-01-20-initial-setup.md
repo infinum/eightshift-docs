@@ -2,7 +2,7 @@
 title: Initial setup and first steps
 description: This blog post describes how to set up Eightshift Boilerplate theme, and covers some of the most common issues that may occur
 slug: initial-setup
-authors: iobrado
+authors: obradovic
 tags: [eightshift, boilerplate, setup]
 hide_table_of_contents: false
 ---

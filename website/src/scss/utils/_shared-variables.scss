@@ -13,9 +13,6 @@ https://github.com/infinum/eightshift-frontend-libs/blob/develop/styles/scss/_co
 @include font-face('IBMPlexMono', '/fonts/IBMPlexMono-Medium', 500);
 
 :root {
-	--ifm-navbar-height: 100px;
-	--ifm-navbar-sidebar-width: 90vw;
-
 	--global-font-family: 'IBMPlexSans', sans-serif;
 	--global-font-family-alternative: 'MarkPro', monospace;
 	--global-block-family-code: 'IBMPlexMono', monospace;
@@ -58,6 +55,13 @@ https://github.com/infinum/eightshift-frontend-libs/blob/develop/styles/scss/_co
 	--global-border-radius: 6px;
 	
 	--global-header-height: 80px;
+	--global-sidebar-width: 300px;
+	--global-docs-top-spacing: 30px;
+	--global-container-spacing-default: 60px;
+	
+	@include media(tablet up) {
+		--global-container-spacing-default: 100px;
+	}
 }
 
 .heading-size {

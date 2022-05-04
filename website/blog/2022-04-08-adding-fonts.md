@@ -2,7 +2,7 @@
 title: Adding fonts
 description: An intro to adding fonts to your project.
 slug: adding-fonts
-authors: iobrado
+authors: obradovic
 date: 2022-04-12
 tags: [eightshift, boilerplate, fonts]
 hide_table_of_contents: false

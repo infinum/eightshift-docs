@@ -1,10 +1,5 @@
 .shift-footer {
 	$this: &;
-	padding: 0 0 140px;
-
-	@include media(tablet up) {
-		padding: 0 0 205px
-	}
 
 	&__content {
 		display: flex;
@@ -29,7 +24,11 @@
 
 	&__icon {
 		margin-bottom: 25px;
-		transition: all 0.3s ease-in;
+		transition: {
+			property: transform;
+			timing-function: ease-out;
+			duration: 0.3s;
+		}
 	}
 
 	&__label {
@@ -49,7 +48,11 @@
 			}
 
 			#{$this}__icon {
-				transition: all 0.3s ease-in;
+				transition: {
+					property: transform;
+					timing-function: ease-out;
+					duration: 0.3s;
+				}
 				transform: translateY(-5px);
 			}
 		}

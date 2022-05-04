@@ -8,10 +8,15 @@ function Foot() {
 
 	return (
 		<div className={component}>
-			<Container componentClass={component}>
+			<Container
+				componentClass={component}
+				spacingBottom={'small'}
+				spacingTop={'none'}
+				bgColor={'light'}
+			>
 				<div className={`${component}__columns`}>
 					<div className={`${component}__column ${component}__column--left`}>
-						{'Made with 🧡 by '}
+						Made with &hearts; by &nbsp;
 						<a href="https://eightshift.com/" target="_blank" rel="noopener noreferrer" className={`${component}__link`}>
 							{'Eightshift'}
 						</a>
@@ -22,7 +27,7 @@ function Foot() {
 					</div>
 					<div className={`${component}__column ${component}__column--right`}>
 						<span className={`${component}__copy`}>
-							{'© Eightshift. All rights reserved'}
+							{'© Eightshift. All rights reserved.'}
 						</span>
 						<span className={`${component}__logo-wrap`}>
 							{'Part of '}

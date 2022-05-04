@@ -2,7 +2,7 @@
 title: Components and blocks
 description: Explanation of the difference between components and blocks on a practical example
 slug: components-and-blocks
-authors: iobrado
+authors: obradovic
 tags: [eightshift, boilerplate, components, blocks]
 hide_table_of_contents: false
 ---

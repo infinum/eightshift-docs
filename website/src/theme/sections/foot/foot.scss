@@ -1,14 +1,8 @@
 .shift-foot {
 	color: var(--global-colors-pewter);
-	padding: 0 0 15px;
 	font-size: var(--global-font-size-small);
 	font-weight: 500;
 	line-height: 1.44;
-
-	@include media(tablet up) {
-		font-size: var(--global-font-size-default);
-		padding: 0 0 45px;
-	}
 
 	&__columns {
 		display: flex;
@@ -76,7 +70,7 @@
 		flex: 1 0 auto;
 
 		@include media(tablet up) {
-			margin-right: 40px
+			margin-right: 10px
 		}
 	}
 }

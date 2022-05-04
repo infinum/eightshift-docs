@@ -1,10 +1,6 @@
 .shift-features {
 	$this: &;
-	padding: 0 0 110px;
-
-	@include media(tablet up) {
-		padding: 0 0 140px;
-	}
+	background-color: var(--global-colors-cararra);
 
 	&__content {
 		display: flex;
@@ -25,7 +21,11 @@
 		&:hover {
 			#{$this}__title::before {
 				transform: rotate(45deg);
-				transition: all 0.3s ease-in,
+				transition: {
+					property: transform;
+					timing-function: ease-out;
+					duration: 0.3s;
+				}
 			}
 		}
 	}
@@ -50,7 +50,6 @@
 			top: 7px;
 			width: 16px;
 			height: 16px;
-			transition: all 0.3s ease-in,
 		}
 
 		&--red::before {

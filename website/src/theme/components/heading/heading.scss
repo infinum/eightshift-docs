@@ -1,10 +1,11 @@
 .shift-heading {
 	text-align: center;
 	max-width: 750px;
-	margin: 0 auto 60px;
+	margin: 0 auto;
+	padding-bottom: 60px;
 
 	@include media(tablet up) {
-		margin-bottom: 75px;
+		padding-bottom: 75px;
 	}
 
 	&__align {
@@ -43,7 +44,11 @@
 		a {
 			text-decoration: underline;
 			color: var(--global-colors-mandy);
-			transition: all 0.3s ease-in;
+			transition: {
+				property: color;
+				timing-function: ease-out;
+				duration: 0.3s;
+			}
 		}
 	}
 }
