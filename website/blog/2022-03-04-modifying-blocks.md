@@ -2,7 +2,7 @@
 title: Modifying blocks - Color Theme
 description: Step-by-step guide on how to modify and expand the functionality of existing blocks.
 slug: modifying-blocks-color-theme
-authors: iobrado
+authors: obradovic
 date: 2022-03-22
 tags: [eightshift, boilerplate, components, blocks]
 hide_table_of_contents: false

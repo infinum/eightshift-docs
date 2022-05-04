@@ -1,70 +1,136 @@
 // This file has multiple nestings because Docusaurus adds its custom selectors that he overrides in build phase and doesn't take into account your overrides.
 // Themes are not mend to be overriden whole but only partial.
 
-$blog-list-page: (
-	main-wrapper: map-get-strict($base-containers, default),
-	gutter: $base-gutter-size,
-	color: $base-elephant-color,
-	hover-color: $base-mandy-color,
-);
+.blog-list-page {
+	#__docusaurus {
+		.main-wrapper {
+			padding: var(--global-container-spacing-default) 0;
 
-#__docusaurus {
-	.blog-list-page {
-		.container {
-			max-width: map-get-strict($blog-list-page, main-wrapper);
-			margin: 0 auto !important;
-		}
-
-		header {
-			.col {
-				padding: 0 !important;
+			aside {
+				display: none;
 			}
 
-			h2 a {
-				color: map-get-strict($blog-list-page, color);
-				transition: color 0.3s ease-in;
-				&:hover {
-					color: map-get-strict($blog-list-page, hover-color);
-					text-decoration: none;
+			.container {
+				padding: 0 !important;
+				margin: 0;
+				max-width: initial;
+			}
+
+			.row {
+				display: block;
+				margin: 0;
+			}
+
+			main {
+				max-width: var(--global-container-default);
+				padding: 0 var(--global-gutter);
+				margin: 0 auto;
+				flex: initial;
+				display: grid;
+				grid-template-columns: repeat(var(--grid-size, 1), 1fr);
+				grid-gap: 30px 80px;
+
+				@include media(tablet) {
+					--grid-size: 2
+				}
+
+				@include media(desktop up) {
+					--grid-size: 3
 				}
 			}
-		}
 
-		footer.docusaurus-mt-lg {
-			margin-top: 50px;
+			article {
+				margin-bottom: 0 !important;
+				border-bottom: 1px solid var(--global-colors-sapling);
+				padding-bottom: 50px;
 
-			.col {
-				padding: 0;
-			}
+				header {
+					h2 {
+						@extend .heading-size--large;
+						font-family: var(--global-font-family-alternative);
+						letter-spacing: -2px;
+						color: var(--global-colors-elephant);
+						margin-bottom: 10px;
+					}
 
-			li {
-				margin-bottom: 25px;
-			}
+					a {
+						color: var(--global-colors-elephant);
+						transition: {
+							property: color;
+							timing-function: ease-out;
+							duration: 0.3s;
+						}
 
-			.text--right.col--3 {
-				a {
-					color: map-get-strict($blog-list-page, color);
-					transition: color 0.3s ease-in;
-					&:hover {
-						color: map-get-strict($blog-list-page, hover-color);
-						text-decoration: none;
+						&:hover {
+							text-decoration: none;
+							color: var(--global-colors-mandy);
+						}
+					}
+
+					div[class^="blogPostData"] {
+						@extend .paragraph-size--small;
+						color: var(--global-colors-pewter);
+						font-style: italic;
+						margin-top: 0 !important;
+					}
+
+					.row {
+						display: none;
+					}
+				}
+
+				.markdown {
+					p {
+						@extend .paragraph-size--default;
+					}
+				}
+
+				footer {
+					margin-top: 40px !important;
+					display: block;
+
+					b {
+						display: none;
+					}
+
+					ul {
+						margin-left: 0 !important;
+						display: inline-flex;
+						flex-wrap: wrap;
+						margin-bottom: 0;
+					}
+
+					li {
+						display: block;
+					}
+
+					a {
+						display: block;
+						color: var(--global-colors-pewter);
+						transition: {
+							property: color;
+							timing-function: ease-out;
+							duration: 0.3s;
+						}
+
+						&:hover {
+							background-color: var(--global-colors-mandy);
+							border-color: var(--global-colors-mandy);
+							color: var(--global-colors-white);
+						}
+					}
+
+					.col {
+						padding: 0;
+						flex: inherit;
+						max-width: 100%;
+						@extend .paragraph-size--small;
 					}
 				}
 			}
-		}
 
-		.col--7 {
-			padding: 0 map-get-strict($blog-list-page, gutter) !important;
-			@include flex-grid-width(12);
-			@include media(tablet up) {
-				@include flex-grid-width(7);
-			}
-		}
-
-		.col--3 {
-			display: none;
-			@include media(tablet up) {
-				display: flex;
+			.pagination-nav {
+				display: none;
 			}
 		}
 	}

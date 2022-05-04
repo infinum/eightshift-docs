@@ -3,13 +3,18 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 export default function Arrow(props) {
 
-  const component = 'shift-arrow';
+	const component = 'shift-arrow';
 
-  const {
-    componentClass,
-  } = props;
+	const {
+		componentClass,
+	} = props;
 
-  return (
-    <img className={` ${component} ${componentClass}__${component}`} src={useBaseUrl('img/ic-arrow.svg')} />
-  );
+	const arrowClass=`
+		${component}
+		${componentClass}__${component}
+	`;
+
+	return (
+		<img className={arrowClass} src={useBaseUrl('img/ic-arrow.svg')} />
+	);
 }

@@ -2,15 +2,16 @@ import React from 'react';
 
 export default function iFrame(props) {
 
-  const component = 'shift-iframe';
+	const component = 'shift-iframe';
 
-  const {
-    src
-  } = props;
+	const {
+		src,
+		type = '',
+	} = props;
 
-  return (
-    <div className={component}>
-      <iframe className={`${component}__frame`} src={src} />
-    </div>
-  );
+	return (
+		<div className={`${component} ${type && `${component}--${type}`}`}>
+			<iframe className={`${component}__frame`} src={src} />
+		</div>
+	);
 };

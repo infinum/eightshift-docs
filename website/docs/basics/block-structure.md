@@ -31,7 +31,7 @@ We suggest you always use the full name and never abbreviate the block name. If 
   * heading-transforms.js
   * manifest.json
 
-For example, you can check the [storybook](https://infinum.github.io/eightshift-docs/storybook).
+For example, you can check the [storybook](/storybook).
 
 ### assets
 

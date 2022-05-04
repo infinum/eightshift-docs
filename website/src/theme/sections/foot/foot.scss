@@ -1,122 +1,76 @@
-$foot: (
-  foot: (
-    mobile: (
-      color: $base-pewter-color,
-      padding: 0 0 15px,
-      font-size: 14px,
-      font-weight: 500,
-      line-height: 1.44,
-    ),
-    tablet: (
-      font-size: 18px,
-      padding: 0 0 45px,
-    ),
-  ),
-  columns: (
-    mobile: (
-      display: flex,
-      flex-direction: column,
-      margin: 0 calc(-1* calc($base-gutter-size / 2)),
-    ),
-    tablet: (
-      flex-direction: row,
-      justify-content: space-between,
-    )
-  ),
-  column: (
-    mobile: (
-      padding: 0 calc($base-gutter-size/2) 10px,
-    ),
-    tablet: (
-      padding-bottom: 0,
-    )
-  ),
-  column-left: (
-    mobile: (
-      text-align: center,
-    ),
-    tablet: (
-      text-align: left,
-    ),
-  ),
-  column-right: (
-    mobile: (
-      text-align: center,
-      display: flex,
-      flex-direction: column,
-    ),
-    tablet: (
-      text-align: right,
-      flex-direction: row,
-    ),
-  ),
-  logo-wrap: (
-    mobile: (
-      display: inline-flex,
-      align-items: center,
-      justify-content: center,
-      margin-top: 15px,
-      flex: 1 0 auto,
-    ),
-    tablet: (
-      margin-top: 0,
-    ),
-  ),
-  logo: (
-    mobile: (
-      margin-left: 10px,
-    ),
-  ),
-  copy: (
-    mobile: (
-      flex: 1 0 auto,
-    ),
-    tablet: (
-      margin-right: 40px,
-    ),
-  ),
-  link: (
-    normal: (
-      color: $base-cape-color,
-    ),
-    hover: (
-      color: $base-mandy-color,
-    ),
-  ),
-);
-
 .shift-foot {
-  @include responsive($foot, foot);
+	color: var(--global-colors-pewter);
+	font-size: var(--global-font-size-small);
+	font-weight: 500;
+	line-height: 1.44;
 
-  &__columns {
-    @include responsive($foot, columns);
-  }
+	&__columns {
+		display: flex;
+		flex-direction: column;
+		margin: 0 calc(-1* calc(var(--global-gutter) / 2));
 
-  &__column {
-    @include responsive($foot, column);
+		@include media(tablet up) {
+			flex-direction: row;
+			justify-content: space-between;
+		}
+	}
 
-    &--left {
-      @include responsive($foot, column-left);
-    }
+	&__column {
+		padding: 0 calc(var(--global-gutter)/2) 10px;
 
-    &--right {
-      @include responsive($foot, column-right);
-    }
-  }
+		@include media(tablet up) {
+			padding-bottom: 0;
+		}
 
-  &__logo-wrap {
-    @include responsive($foot, logo-wrap);
-  }
+		&--left {
+			text-align: center;
 
-  &__logo {
-    @include responsive($foot, logo);
-  }
+			@include media(tablet up) {
+				text-align: left;
+			}
+		}
 
-  &__link {
-    @include link($foot, link);
-  }
+		&--right {
+			text-align: center;
+			display: flex;
+			flex-direction: column;
 
-  &__copy {
-    @include responsive($foot, copy);
-  }
+			@include media(tablet up) {
+				text-align: right;
+				flex-direction: row;
+			}
+		}
+	}
+
+	&__logo-wrap {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		margin-top: 15px;
+		flex: 1 0 auto;
+
+		@include media(tablet up) {
+			margin-top: 0;
+		}
+	}
+
+	&__logo {
+		margin-left: 10px;
+	}
+
+	&__link {
+		color: var(--global-colors-cape);
+
+		&:hover {
+			color: var(--global-colors-mandy)
+		}
+	}
+
+	&__copy {
+		flex: 1 0 auto;
+
+		@include media(tablet up) {
+			margin-right: 10px
+		}
+	}
 }

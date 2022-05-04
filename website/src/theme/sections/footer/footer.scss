@@ -1,83 +1,60 @@
-$footer: (
-  footer: (
-    mobile: (
-      padding: 0 0 140px,
-    ),
-    tablet: (
-      padding: 0 0 205px,
-    ),
-  ),
-  content: (
-    mobile: (
-      display: flex,
-      flex-wrap: wrap,
-      margin: 0 calc(-1* calc($base-gutter-size / 2)) -70px,
-    ),
-  ),
-  item: (
-    mobile: (
-      text-align: center,
-      padding: 0 calc($base-gutter-size/2),
-      margin-bottom: 70px,
-      flex: 0 0 calc-grid-width(12),
-    ),
-    tablet: (
-      flex: 0 0 calc-grid-width(6),
-    ),
-    desktop: (
-      flex: 0 0 calc-grid-width(3),
-    ),
-  ),
-  icon: (
-    mobile: (
-      margin-bottom: 25px,
-      transition: all 0.3s ease-in,
-    ),
-  ),
-  label: (
-    mobile: (
-      font-size: 24px,
-      font-weight: bold,
-      line-height: 1.13,
-      color: $base-elephant-color,
-      font-family: $base-font-family-alternative,
-      margin-bottom: 30px,
-    ),
-  ),
-);
-
 .shift-footer {
-  $this: &;
-  @include responsive($footer, footer);
+	$this: &;
 
-  &__content {
-    @include responsive($footer, content);
-  }
+	&__content {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 calc(-1* calc(var(--global-gutter) / 2)) -70px;
+	}
 
-  &__item {
-    @include responsive($footer, item);
-  }
+	&__item {
+		text-align: center;
+		padding: 0 calc(var(--global-gutter)/2);
+		margin-bottom: 70px;
+		flex: 0 0 calc-grid-width(12);
 
-  &__icon {
-    @include responsive($footer, icon);
-  }
+		@include media(tablet) {
+			flex: 0 0 calc-grid-width(6)
+		}
 
-  &__label {
-    @include responsive($footer, label);
-  }
+		@include media(desktop up) {
+			flex: 0 0 calc-grid-width(3)
+		}
+	}
 
-  &__link {
-    &:hover {
-      text-decoration: none;
+	&__icon {
+		margin-bottom: 25px;
+		transition: {
+			property: transform;
+			timing-function: ease-out;
+			duration: 0.3s;
+		}
+	}
 
-      #{$this}__shift-arrow {
-        @extend %shift-arrow-hover;
-      }
+	&__label {
+		@extend .paragraph-size--large;
+		font-weight: bold;
+		color: var(--global-colors-elephant);
+		font-family: var(--global-font-family-alternative);
+		margin-bottom: 30px;
+	}
 
-      #{$this}__icon {
-        transition: all 0.3s ease-in;
-        transform: translateY(-5px);
-      }
-    }
-  }
+	&__link {
+		&:hover {
+			text-decoration: none;
+
+			#{$this}__shift-arrow {
+				@extend %shift-arrow-hover;
+			}
+
+			#{$this}__icon {
+				transition: {
+					property: transform;
+					timing-function: ease-out;
+					duration: 0.3s;
+				}
+				transform: translateY(-5px);
+			}
+		}
+	}
 }

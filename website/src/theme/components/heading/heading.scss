@@ -1,87 +1,54 @@
-$heading: (
-  heading: (
-    mobile: (
-      text-align: center,
-      max-width: 750px,
-      margin: 0 auto 60px,
-    ),
-    tablet: (
-      margin-bottom: 75px,
-    )
-  ),
-  heading-left: (
-    mobile: (
-      text-align: left,
-      margin-left: 0,
-      margin-right: 0,
-    ),
-  ),
-  title: (
-    mobile: (
-      font-family: $base-font-family-alternative,
-      letter-spacing: -2px,
-      color: $base-elephant-color,
-    ),
-  ),
-  title-sizes: (
-    mobile: (
-      default: (
-        font-size: 32px,
-        line-height: 1.19,
-      ),
-      medium: (
-        font-size: 32px,
-        line-height: 1.19,
-      ),
-    ),
-    tablet: (
-      default: (
-        font-size: 64px,
-        line-height: 1.03,
-      ),
-      medium: (
-        font-size: 48px,
-        line-height: 1.13,
-      ),
-    ),
-  ),
-  subtitle: (
-    mobile: (
-      font-size: 18px,
-      line-height: 1.56,
-      color: $base-cape-color,
-      margin-top: 20px,
-    ),
-    tablet: (
-      margin-top: 40px,
-    ),
-  ),
-  link-color: $base-mandy-color,
-);
-
 .shift-heading {
-  @include responsive($heading, heading);
+	text-align: center;
+	max-width: 750px;
+	margin: 0 auto;
+	padding-bottom: 60px;
 
-  &__align {
-    &--left {
-      @include responsive($heading, heading-left);
-    }
-  }
+	@include media(tablet up) {
+		padding-bottom: 75px;
+	}
 
-  &__title {
-    @include responsive($heading, title);
-  }
+	&__align {
+		&--left {
+			text-align: left;
+			margin-left: 0;
+			margin-right: 0;
+		}
+	}
 
-  &__title-size {
-    @include responsive-modifiers($heading, title-sizes);
-  }
+	&__title {
+		font-family: var(--global-font-family-alternative);
+		letter-spacing: -2px;
+		color: var(--global-colors-elephant);
+	}
 
-  &__subtitle {
-    @include responsive($heading, subtitle);
+	&__title-size {
+		&--default {
+			@extend .heading-size--huge;
+		}
 
-    a {
-      text-decoration: underline;
-      color: map-get-strict($heading, link-color)
-    }
-  }
+		&--medium {
+			@extend .heading-size--big;
+		}
+	}
+
+	&__subtitle {
+		@extend .paragraph-size--default;
+		color: var(--global-colors-cape);
+		margin-top: 20px;
+
+		@include media(tablet up) {
+			margin-top: 40px,;
+		}
+
+		a {
+			text-decoration: underline;
+			color: var(--global-colors-mandy);
+			transition: {
+				property: color;
+				timing-function: ease-out;
+				duration: 0.3s;
+			}
+		}
+	}
 }
