@@ -15,6 +15,7 @@ export default function Intro() {
 			<Container
 				componentClass={component}
 				size={'medium'}
+				bgColor={'light'}
 			>
 				<div className={`${component}__title`} dangerouslySetInnerHTML={{__html: 'Eightshift<br/>Development<br/>kit'}}></div>
 				<div className={`${component}__image`}>

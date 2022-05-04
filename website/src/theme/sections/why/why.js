@@ -12,7 +12,6 @@ export default function Why() {
 				componentClass={component}
 				size={'small'}
 				spacingBottom={'none'}
-				bgColor={'light'}
 			>
 				<Heading
 					componentClass={component}
@@ -26,7 +25,6 @@ export default function Why() {
 				componentClass={component}
 				size={'medium'}
 				spacingTop={'none'}
-				bgColor={'light'}
 			>
 				<div className={`${component}__content`}>
 					<img className={`${component}__image ${component}__image--desktop`} src={useBaseUrl('img/img-why-boilerplate@2x.png')} />
