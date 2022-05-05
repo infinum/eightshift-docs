@@ -33,20 +33,6 @@ body:
       validations:
           required: false
 
-    - type: textarea
-      attributes:
-          label: Environment info
-          description: |
-               Please include as many relevant details about the environment you are working on.
-          placeholder: |
-            - PHP version
-            - Development environment (MAMP, XAMPP, VVV, Docker, Laravel Valet, none if on live server)
-            - Server type (Apache, Nginx, IIS)
-            - Operating System and version
-            - Libs version
-      validations:
-          required: false
-
     - type: dropdown
       id: existing
       attributes:
