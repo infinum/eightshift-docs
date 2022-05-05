@@ -88,6 +88,10 @@ module.exports = {
 			},
 			'basics/tips-tricks',
 		],
+		'Migrations': [
+			'migrations/6-7',
+			'migrations/5-6',
+		],
 		'Legacy': [
 			{
 				'type': 'category',

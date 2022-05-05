@@ -68,6 +68,10 @@
 					@extend .heading-size--large;
 				}
 
+				h4 {
+					@extend .paragraph-size--large;
+				}
+
 			}
 
 			div[class^="tableOfContents_"] {
