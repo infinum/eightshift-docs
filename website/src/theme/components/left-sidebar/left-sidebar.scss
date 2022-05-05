@@ -5,6 +5,7 @@
 	display: none;
 	margin-top: calc(-1 * var(--global-header-height));
 	border-right: none;
+	min-height: 100vh;
 
 	> * {
 		display: flex;

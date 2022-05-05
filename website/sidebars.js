@@ -91,6 +91,95 @@ module.exports = {
 		'Legacy': [
 			{
 				'type': 'category',
+				'label': 'v6',
+				'items':[
+					'legacy/v6/versions',
+					{
+						'type': 'category',
+						'label': 'Basics',
+						'items': [
+							'legacy/v6/basics/basics-intro',
+							'legacy/v6/basics/wp-cli',
+							'legacy/v6/basics/architecture-concepts',
+							{
+								'type': 'category',
+								'label': 'Backend',
+								'items': [
+									'legacy/v6/basics/backend',
+									'legacy/v6/basics/namespaces',
+									'legacy/v6/basics/extending-classes',
+									'legacy/v6/basics/autowiring',
+									'legacy/v6/basics/example-class',
+									'legacy/v6/basics/manifest',
+									{
+										'type': 'category',
+										'label': 'Rest',
+										'items': [
+											'legacy/v6/basics/rest',
+											'legacy/v6/basics/rest-field',
+											'legacy/v6/basics/rest-route',
+										]
+									},
+								]
+							},
+							{
+								'type': 'category',
+								'label': 'Frontend',
+								'items': [
+									'legacy/v6/basics/frontend',
+									'legacy/v6/basics/webpack',
+									'legacy/v6/basics/library',
+									'legacy/v6/basics/global-settings',
+									'legacy/v6/basics/writing-styles',
+									'legacy/v6/basics/fonts',
+									'legacy/v6/basics/browser-sync',
+									'legacy/v6/basics/dynamic-import',
+								]
+							},
+							{
+								'type': 'category',
+								'label': 'Blocks',
+								'items': [
+									'legacy/v6/basics/blocks',
+									'legacy/v6/basics/blocks-important',
+									'legacy/v6/basics/blocks-faq',
+									'legacy/v6/basics/blocks-registration',
+									'legacy/v6/basics/blocks-structure',
+									'legacy/v6/basics/blocks-global-manifest',
+									'legacy/v6/basics/block-structure',
+									'legacy/v6/basics/blocks-component-structure',
+									'legacy/v6/basics/block-manifest',
+									'legacy/v6/basics/blocks-component-manifest',
+									'legacy/v6/basics/blocks-attributes',
+									'legacy/v6/basics/blocks-component-in-block',
+									'legacy/v6/basics/blocks-wrapper',
+									'legacy/v6/basics/blocks-variations',
+									'legacy/v6/basics/blocks-patterns',
+									'legacy/v6/basics/blocks-transforms',
+									'legacy/v6/basics/blocks-hooks',
+									'legacy/v6/basics/blocks-special-use-cases',
+									'legacy/v6/basics/blocks-reusable',
+									'legacy/v6/basics/blocks-styles',
+									'legacy/v6/basics/blocks-storybook',
+								]
+							},
+							{
+								'type': 'category',
+								'label': 'Helpers',
+								'items': [
+									'legacy/v6/basics/helpers',
+									'legacy/v6/basics/helpers-javascript',
+									'legacy/v6/basics/helpers-scss',
+									'legacy/v6/basics/helpers-php',
+								]
+							},
+							'legacy/v6/basics/tips-tricks',
+						],
+					}
+				],
+			},
+			{
+				'type': 'category',
 				'label': 'v5',
 				'items':[
 					'legacy/v5/versions',

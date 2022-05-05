@@ -58,6 +58,10 @@
 		color: var(--global-colors-white);
 	}
 
+	pre code {
+		padding: 20px;
+	}
+
 	div[class^="codeBlock_"] {
 		border-radius: 0;
 	}
