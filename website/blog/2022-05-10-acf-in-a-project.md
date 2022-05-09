@@ -2,7 +2,7 @@
 title: ACF in a project
 description: Example of using ACF in your project
 slug: acf-in-a-project
-authors: iobrado
+authors: obradovic
 date: 2022-05-10
 tags: [eightshift, boilerplate, acf, advanced custom fields, theme options]
 hide_table_of_contents: false
@@ -88,7 +88,7 @@ class IntroAcfMeta extends AbstractAcfMeta
 }
 ```
 
-The final step is to go back to Custom Fields in WP Admin and delete your field group from there, to prevent registering the fields twice. After adding field definitions in PHP and removing them in WP Admin, your field should be visible when editing Posts.
+The final step is to go back to the Custom Fields in WP Admin and either delete or deactivate your field group from there, to prevent registering the fields twice. After adding field definitions in PHP and removing them in WP Admin, your field should be visible when editing Posts.
 
 ## Using get_field()
 
@@ -118,7 +118,7 @@ This command generates a class with two methods. The first one, `createThemeOpti
 
 ![ACF Theme Options](/img/blog/acf-theme-options.png)
 
-To add fields to your Theme Options, follow the steps from the **_Getting PHP code export_** section of this post and add the fields inside the `'fields' => []` array.
+To add fields to your Theme Options, follow the steps from the **_Exporting PHP code_** section of this post and add the fields inside the `'fields' => []` array.
 
 
 
