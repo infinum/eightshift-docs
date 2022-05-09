@@ -8,20 +8,20 @@ tags: [eightshift, boilerplate, acf, advanced custom fields, theme options]
 hide_table_of_contents: false
 ---
 
-If you've been working with WordPress for a while, you must have heard of **_Advanced Custom Fields_** plugin (**_ACF_** for short). While the use of blocks has simplified content editing and meta fields are not as needed anymore, there are still cases where having meta fields is very useful.
+If you've worked with WordPress for long enough, you've heard of the **_Advanced Custom Fields_** plugin (**_ACF_** for short). While the use of blocks has simplified content editing, making meta fields less of a necessity, there are still cases in which meta fields are very useful.
 <!--truncate-->
 
 ## Ways of registering ACF fields
 
-There are multiple approaches to register ACF fields. The easiest way is through WP Admin interface. But, if you're using Git, this approach isn't the best since the fields are being saved in the database, which means you would have to export and import fields into your staging and production environment each time you make a change.
+There are multiple approaches to ACF field registration. The easiest way to register fields is using the WP Admin interface. However, if you're using Git, this approach isn't the best since the fields are being saved in the database, which means you would have to export and import fields across environments each time you make a change.
 
-The recommended way is to register the fields with PHP. There is also an option to register the fields with **_.json_** files, but in Eightshift dev kit, we already have some goodies which will make registering fields with PHP a breeze.
+We recommend registering the fields using PHP, which will allow you to version your field definitions using git. There is also an option to register the fields with **_.json_** files, but in Eightshift Development kit, we already have some goodies which will make field registration a breeze.
 
-## Getting PHP code export
+## Exporting PHP code
 
-The easiest way to get the PHP code that you will use for registering ACF fields is by adding those fields through the WP Admin ACF interface first. As an example, I'll add a field group called **_Intro_**, which will contain one text field of the same name. That field group will be displayed only on posts. You can add a few more fields, but for the sake of simplicity, I'll use only one field.
+The easiest way to get the PHP code that you will use for registering ACF fields is by adding those fields through the WP Admin ACF interface first. As an example, I'll add a field group called **_Intro_**, which will contain one text field of the same name. That field group will be displayed only on posts. You can add a few more fields, but for the sake of simplicity, I'll only use one field.
 
-When you set all the fields you need, save them and go to `Custom Fields -> Tools`. Here you will see the option to **_Export Field Groups_**. Simply select which field groups you want to export and select **_Generate PHP_**.
+When you define all the fields you need, save them and go to `Custom Fields -> Tools`. Here you will see an option to **_Export Field Groups_**. Simply select the field groups which you want to export and select **_Generate PHP_**.
 
 ![ACF PHP code export](/img/blog/acf-generate-php.png)
 
@@ -29,7 +29,7 @@ This will generate a PHP code snippet that you can use in your theme. But now yo
 
 ## CustomMeta class
 
-Those ACF goodies in Eightshift dev kit I talked about earlier? Let me introduce you to one of them. We have a WP CLI command which we can use to generate a CustomMeta class where we can add our field groups. The command is `wp boilerplate create_acf_meta`. This command has one required parameter, and that is `name`. To create a class that we will use for registering our custom fields, we'll use the following command:
+Those ACF goodies in Eightshift Development kit I talked about earlier? Let me introduce you to one of them. We have a WP CLI command which we can use to generate a CustomMeta class where we can add our field groups. The command is `wp boilerplate create_acf_meta`. This command has one required parameter, and that is `name`. To create a class that we will use for registering our custom fields, we'll use the following command:
 
 ```bash
 wp boilerplate create_acf_meta --name=intro
@@ -88,11 +88,11 @@ class IntroAcfMeta extends AbstractAcfMeta
 }
 ```
 
-The final step is to go back to Custom Fields in WP Admin and delete your field group from there. Your field should now be visible when editing Posts.
+The final step is to go back to Custom Fields in WP Admin and delete your field group from there, to prevent registering the fields twice. After adding field definitions in PHP and removing them in WP Admin, your field should be visible when editing Posts.
 
 ## Using get_field()
 
-To fetch the saved meta value, we use ACF's `get_field()` function, but here are a few tips that could improve your code quality. First, you should check if that function exists. If ACF gets for whatever reason deactivated on your site, it won't break your site. The second one is using class constant instead of hardcoding the field name. With these practices in mind, your code should look like this:
+To fetch the saved meta value, we use ACF's `get_field()` function, but here are a few tips that could improve your code quality. First, you should check if that function exists. That way, if ACF is deactivated on your site for whatever reason, your site won't break. The second tip is to use a class constant instead of hardcoding the field name. With these practices in mind, your code should look like this:
 
 ```php
 use YourNamespace\CustomMeta\IntroAcfMeta;
@@ -108,13 +108,13 @@ if (function_exists('get_field')) {
 
 ## Theme Options
 
-ACF's Options page has a wide array of uses and there's a very likely chance you may also need some sort of Theme Options in your project. To make the implementation of Theme Options a bit easier, we have a CLI command which generates the `ThemeOptions` class in your project. Just use the following command:
+ACF's Options page has a wide array of uses and it's very likely that you'll need some sort of Theme Options in your project. To make the implementation of Theme Options a bit easier, we have a CLI command which generates the `ThemeOptions` class in your project. Just use the following command:
 
 ```bash
 wp boilerplate create_theme_options
 ```
 
-This command generates a class with two methods. The first one, `createThemeOptionsPage()` creates Theme Options page and adds it to WP Admin sidebar. The second one, `registerThemeOptions()`, is what registers the fields you will have in Theme Options. Here is an example how Theme Options look after being created with WP CLI.
+This command generates a class with two methods. The first one, `createThemeOptionsPage()` creates a Theme Options page and adds it to the WP Admin sidebar. The second one, `registerThemeOptions()`, is what registers the fields you will have in Theme Options. Here is an example how Theme Options look after being created using `wp boilerplate`:
 
 ![ACF Theme Options](/img/blog/acf-theme-options.png)
 
