@@ -13,13 +13,13 @@ If you've worked with WordPress for long enough, you've heard of the **_Advanced
 
 ## Ways of registering ACF fields
 
-There are multiple approaches to ACF field registration. The easiest way to register fields is using the WP Admin interface. However, if you're using Git, this approach isn't the best since the fields are being saved in the database, which means you would have to export and import fields across environments each time you make a change.
+There are multiple approaches to ACF field registration. The easiest way to register fields is using the WP Admin interface. However, if you're using Git, this may not be the best way to do it since the fields are being saved in the database, which means you would have to export and import fields across environments each time you make a change.
 
 We recommend registering the fields using PHP, which will allow you to version your field definitions using git. There is also an option to register the fields with **_.json_** files, but in Eightshift Development kit, we already have some goodies which will make field registration a breeze.
 
 ## Exporting PHP code
 
-The easiest way to get the PHP code that you will use for registering ACF fields is by adding those fields through the WP Admin ACF interface first. As an example, I'll add a field group called **_Intro_**, which will contain one text field of the same name. That field group will be displayed only on posts. You can add a few more fields, but for the sake of simplicity, I'll only use one field.
+The approach we use for registering ACF fields is by adding those fields through the WP Admin ACF interface first. As an example, I'll add a field group called **_Intro_**, which will contain one text field of the same name. That field group will be displayed only on posts. You can add a few more fields, but for the sake of simplicity, I'll only use one field.
 
 When you define all the fields you need, save them and go to `Custom Fields -> Tools`. Here you will see an option to **_Export Field Groups_**. Simply select the field groups which you want to export and select **_Generate PHP_**.
 
