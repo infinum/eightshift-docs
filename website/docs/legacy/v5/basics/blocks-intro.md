@@ -124,7 +124,7 @@ Easy. We have a method you can extend that limits your project's block to the on
 
 ```php
   // Limits the usage of only custom project blocks.
-  add_filter('allowed_block_types', [ $this, 'getAllBlocksList' ], 10, 2);
+  add_filter('allowed_block_types_all', [ $this, 'getAllBlocksList' ], 10, 2);
 ```
 
 ### How to allow only one pattern category?
