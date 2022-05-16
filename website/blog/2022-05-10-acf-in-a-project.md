@@ -8,7 +8,7 @@ tags: [eightshift, boilerplate, acf, advanced custom fields, theme options]
 hide_table_of_contents: false
 ---
 
-If you've worked with WordPress for long enough, you've heard of the **_Advanced Custom Fields_** plugin (**_ACF_** for short). While the use of blocks has simplified content editing, making meta fields less of a necessity, there are still cases in which meta fields are very useful.
+If you've worked with WordPress for a long time, you've heard of the **_Advanced Custom Fields_** plugin (**_ACF_** for short). While the use of blocks has simplified content editing, thus making meta fields less of a necessity, there are still cases in which meta fields are very useful.
 <!--truncate-->
 
 ## Ways of registering ACF fields
@@ -19,17 +19,17 @@ We recommend registering the fields using PHP, which will allow you to version y
 
 ## Exporting PHP code
 
-The approach we use for registering ACF fields is by adding those fields through the WP Admin ACF interface first. As an example, I'll add a field group called **_Intro_**, which will contain one text field of the same name. That field group will be displayed only on posts. You can add a few more fields, but for the sake of simplicity, I'll only use one field.
+The approach we use for registering ACF fields is by adding those fields first through the WP Admin ACF interface. As an example, We'll add a field group called **_Intro_**, which will contain one text field of the same name. That field group will be displayed only on posts. You can add a few more fields, but for the sake of simplicity, we'll only use one field.
 
 When you define all the fields you need, save them and go to `Custom Fields -> Tools`. Here you will see an option to **_Export Field Groups_**. Simply select the field groups which you want to export and select **_Generate PHP_**.
 
 ![ACF PHP code export](/img/blog/acf-generate-php.png)
 
-This will generate a PHP code snippet that you can use in your theme. But now you may be wondering, where exactly should that code go?
+This will generate a PHP code snippet that you can use in your theme. Now you may be wondering, where exactly should that code go?
 
 ## CustomMeta class
 
-Those ACF goodies in Eightshift Development kit I talked about earlier? Let me introduce you to one of them. We have a WP CLI command which we can use to generate a CustomMeta class where we can add our field groups. The command is `wp boilerplate create_acf_meta`. This command has one required parameter, and that is `name`. To create a class that we will use for registering our custom fields, we'll use the following command:
+Those ACF goodies in Eightshift Development kit we talked about earlier? Let us introduce you to one of them. We have a WP CLI command which we can use to generate a CustomMeta class where we can add our field groups. The command is `wp boilerplate create_acf_meta`. This command has one required parameter, and that is `name`. To create a class that we will use for registering our custom fields, we'll use the following command:
 
 ```bash
 wp boilerplate create_acf_meta --name=intro
@@ -88,7 +88,7 @@ class IntroAcfMeta extends AbstractAcfMeta
 }
 ```
 
-The final step is to go back to the Custom Fields in WP Admin and either delete or deactivate your field group from there, to prevent registering the fields twice. After adding field definitions in PHP and removing them in WP Admin, your field should be visible when editing Posts.
+The final step is to go back to the Custom Fields in WP admin and either delete or deactivate your field group from there, to prevent registering the fields twice. After adding field definitions in PHP and removing them in WP admin, your field should be visible when editing posts.
 
 ## Using get_field()
 
@@ -119,9 +119,6 @@ This command generates a class with two methods. The first one, `createThemeOpti
 ![ACF Theme Options](/img/blog/acf-theme-options.png)
 
 To add fields to your Theme Options, follow the steps from the **_Exporting PHP code_** section of this post and add the fields inside the `'fields' => []` array.
-
-
-
 ## Tip - create a helper class
 
 In this blog post, we covered the whole process of registering and using ACF fields in your project. But, if you are using a lot of ACF fields, wrapping each `get_field()` function with a `function_exists()` conditional may become tedious at some point. For that reason, it may be a good idea to create a helper class that you can use for ACF functions.
