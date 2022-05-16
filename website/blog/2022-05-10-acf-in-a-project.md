@@ -3,7 +3,7 @@ title: ACF in a project
 description: Example of using ACF in your project
 slug: acf-in-a-project
 authors: obradovic
-date: 2022-05-10
+date: 2022-05-17
 tags: [eightshift, boilerplate, acf, advanced custom fields, theme options]
 hide_table_of_contents: false
 ---
@@ -13,9 +13,9 @@ If you've worked with WordPress for a long time, you've heard of the **_Advanced
 
 ## Ways of registering ACF fields
 
-There are multiple approaches to ACF field registration. The easiest way to register fields is using the WP Admin interface. However, if you're using Git, this may not be the best way to do it since the fields are being saved in the database, which means you would have to export and import fields across environments each time you make a change.
+There are multiple approaches to ACF field registration. The easiest way to register fields is using the WP admin interface, but this approach has a few drawbacks. If you have many fields, this can impact performance since you're fetching fields registration via the database. Another drawback is if you have multiple environments (e.g. local, staging, production), you'll have to export the fields and import them to other environments.
 
-We recommend registering the fields using PHP, which will allow you to version your field definitions using git. There is also an option to register the fields with **_.json_** files, but in Eightshift Development kit, we already have some goodies which will make field registration a breeze.
+Other ways of registering ACF fields are either via PHP or JSON. We prefer to use PHP because it can use OPcache to speed things up even more. If you are using Git, this approach is even better because you can commit the PHP code used for registering fields for easier portability accross different environments. For that reason, Eightshift Development kit already has some goodies which will make field registration a breeze.
 
 ## Exporting PHP code
 
