@@ -139,6 +139,13 @@ Easy. We have a method you can extend that limits your project's block to the on
   add_filter('allowed_block_types_all', [ $this, 'getAllBlocksList' ], 10, 2);
 ```
 
+> Important note: For WordPress versions > 5 and < 5.8 you would need to use the example bellow.
+
+```php
+  // Limits the usage of only custom project blocks - legacy.
+  add_filter('allowed_block_types', [ $this, 'getAllBlocksListOld' ], 10, 2);
+```
+
 ### How to allow only one pattern category?
 
 *Coming soon*

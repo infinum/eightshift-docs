@@ -96,6 +96,13 @@ Filter goes in the register method:
 add_filter('allowed_block_types_all', [ $this, 'getAllBlocksList' ], 10, 2);
 ```
 
+> Important note: For WordPress versions > 5 and < 5.8 you would need to use the example bellow.
+
+```php
+  // Limits the usage of only custom project blocks - legacy.
+  add_filter('allowed_block_types', [ $this, 'getAllBlocksListOld' ], 10, 2);
+```
+
 The callback method is set in the parent `AbstractBlocks` class.
 
 ## I want to use my custom blocks but add some core or third party plugins blocks
@@ -127,6 +134,13 @@ public function allowedBlocks($allowedBlockTypes, object $post): array
     ]
   );
 }
+```
+
+> Important note: For WordPress versions > 5 and < 5.8 you would need to use the filter example bellow. Also change the first argument of array_merge in `allowedBlocks` function to `$this->getAllBlocksListOld($allowedBlockTypes, $post)`
+
+```php
+  // Limits the usage of only custom project blocks - legacy.
+  add_filter('allowed_block_types', [ $this, 'allowedBlocks' ], 10, 2);
 ```
 
 ## I want to enable blocks only on specific custom post type
@@ -168,4 +182,11 @@ public function allowedBlockTypes($allowedBlockTypes, object $post): array
 
   return $output;
 }
+```
+
+> Important note: For WordPress versions > 5 and < 5.8 you would need to use the filter example bellow. And also change the default switch case in the `allowedBlockTypes` function to `$output = $this->getAllBlocksListOld($allowedBlockTypes, $post);`
+
+```php
+  // Limits the usage of only custom project blocks - legacy.
+  add_filter('allowed_block_types', [ $this, 'allowedBlocks' ], 10, 2);
 ```

@@ -94,19 +94,19 @@ You can remove all core blocks and any other blocks provided by third-party plug
 Filter goes in the register method:
 ```php
 // Limits the usage of only custom project blocks.
-add_filter('allowed_block_types_all', [ $this, 'getAllBlocksList' ], 10, 2);
+add_filter('allowed_block_types', [ $this, 'getAllBlocksList' ], 10, 2);
 ```
 
 The callback method is set in the parent `AbstractBlocks` class.
 
 ## I want to use my custom blocks but add some core or third party plugins blocks
 
-You create a new callback method for the `allowed_block_types_all` filter. There you can allow all your custom blocks + any other 3rd party / core block you want.
+You create a new callback method for the `allowed_block_types` filter. There you can allow all your custom blocks + any other 3rd party / core block you want.
 
 Filter goes in the register method:
 ```php
 // Limits the usage of only custom project blocks.
-add_filter('allowed_block_types_all', [ $this, 'allowedBlocks' ], 10, 2);
+add_filter('allowed_block_types', [ $this, 'allowedBlocks' ], 10, 2);
 ```
 
 Custom callback method:
@@ -132,12 +132,12 @@ public function allowedBlocks($allowedBlockTypes, object $post): array
 
 ## I want to enable blocks only on specific custom post type
 
-You create a new callback method for the `allowed_block_types_all` filter.
+You create a new callback method for the `allowed_block_types` filter.
 
 Filter goes in the register method:
 ```php
 // Limits the usage of only custom project blocks.
-add_filter('allowed_block_types_all', [ $this, 'allowedBlockTypes' ], 10, 2);
+add_filter('allowed_block_types', [ $this, 'allowedBlockTypes' ], 10, 2);
 ```
 
 Custom callback method:
