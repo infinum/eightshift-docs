@@ -13,9 +13,9 @@ If you've worked with WordPress for a long time, you've heard of the **_Advanced
 
 ## Ways of registering ACF fields
 
-There are multiple approaches to ACF field registration. The easiest way to register fields is using the WP admin interface, but this approach has a few drawbacks. If you have many fields, this can impact performance since you're fetching fields registration via the database. Another drawback is if you have multiple environments (e.g. local, staging, production), you'll have to export the fields and import them to other environments.
+There are multiple approaches to ACF field registration. The easiest way to register fields is using the WP admin interface, but this approach has a few drawbacks. If you have many fields, this can impact performance because you are registering fields dynamically (information about registered fields is stored in the database). Another drawback is if you have multiple environments (e.g. local, staging, production), you'll have to export the fields and import them to other environments.
 
-Other ways of registering ACF fields are either via PHP or JSON. We prefer to use PHP because it can use OPcache to speed things up even more. If you are using Git, this approach is even better because you can commit the PHP code used for registering fields for easier portability accross different environments. For that reason, Eightshift Development kit already has some goodies which will make field registration a breeze.
+Other ways of registering ACF fields are either via PHP (code) or by reading from a JSON file. We prefer to use PHP because you can use OPcache to speed up field registration even more. If you are using Git, this approach is even better because you can commit the PHP code used for registering fields for easier portability across different environments. For that reason, Eightshift Development kit already has some goodies which will make field registration a breeze.
 
 ## Exporting PHP code
 
