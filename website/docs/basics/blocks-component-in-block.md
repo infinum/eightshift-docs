@@ -590,7 +590,7 @@ export const HeadingEditor = ({ attributes, setAttributes }) => {
 
 In JavaScript, you spread the results of the props helper.
 
-And this is how the PHP template looks like.
+The PHP template should look like this:
 
 `src/Blocks/custom/heading/heading.php`
 
@@ -728,7 +728,7 @@ You can also do this and this is why we created the third parameter in the props
 
 typographyContent attribute will follow the naming prefix when passed to a child but the disableEdit will remain the same name in all the children.
 
-Any of the included attributes can be passed as a third parameter here, but they will not be prefixed:
+Any of the included attributes can be passed as the third parameter here, but they will not be prefixed:
 
 ```js
 <ImageEditor
