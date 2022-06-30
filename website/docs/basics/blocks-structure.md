@@ -47,8 +47,8 @@ This file contains global settings for your project. It must contain `namespace`
 
 This is the main service class responsible for registering all the PHP parts of the blocks like:
 
-* dynamic blocks view;
-* custom category for your blocks;
-* default color pallet;
-* what blocks you are going to use; and
-* all the custom functionality that you will write for the project.
+* dynamic blocks view
+* custom category for your blocks
+* default color palette
+* what blocks you are going to use
+* all the custom functionality that you will write for the project
