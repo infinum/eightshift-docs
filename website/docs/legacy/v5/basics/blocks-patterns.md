@@ -16,7 +16,7 @@ This means that the only differences between our variations and block patterns a
 
 **Variations**
 - Variations provide data using our manifest.json file (the rest is handled using JavaScript).
-- Variations appear in the editor next to the regular blocks.
+- Variations appear in the editor next to the static blocks.
 
 **Patterns**
 - Patterns are registered using PHP.
