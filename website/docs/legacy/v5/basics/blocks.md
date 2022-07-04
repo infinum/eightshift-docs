@@ -22,7 +22,7 @@ WordPress Core Editor team has provided us with two different kinds of blocks:
 
 ### Static blocks
 
-These are the blocks that you can see in the core. Almost every block from WordPress comes this way. With Static blocks, you have the same content on the front end as you do in the editor. This was accomplished by providing the same layout in the save callback as in the edit callback.
+These are the blocks that you can see in the core. Almost every block from WordPress comes this way. With static blocks, you have the same content on the front end as you do in the editor. This was accomplished by providing the same layout in the save callback as in the edit callback.
 
 The drawback of building blocks this way is that you must also provide the HTML markup that you will use on the front-end, inside the save callback. That method saves everything to the database, and you can't just change the HTML markup without some transformations or deprecation methods. If you change the markup while working on it, you'll get an error in the editor screen, and you'll have to add the content again.
 
