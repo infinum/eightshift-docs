@@ -62,11 +62,11 @@ This block/component uses three components, two headings (one of which is rename
 
 As we described earlier, in order to use our setup you must use our helpers. Here are some of the helpers you should get familiar with:
 
-* props - [JS](https://github.com/infinum/eightshift-frontend-libs/blob/develop/scripts/editor/props.js) - [PHP](https://github.com/infinum/eightshift-libs/blob/develop/src/Helpers/Components.php)
-* getOptions - [JS](https://github.com/infinum/eightshift-frontend-libs/blob/develop/scripts/editor/get-options.js) - [PHP](https://github.com/infinum/eightshift-libs/blob/develop/src/Helpers/Components.php)
-* getOption - [JS](https://github.com/infinum/eightshift-frontend-libs/blob/develop/scripts/editor/get-options.js) - [PHP](https://github.com/infinum/eightshift-libs/blob/develop/src/Helpers/Components.php)
-* getAttrKey - [JS](https://github.com/infinum/eightshift-frontend-libs/blob/develop/scripts/helpers/check-attr.js) - [PHP](https://github.com/infinum/eightshift-libs/blob/develop/src/Helpers/Components.php)
-* checkAttr - [JS](https://github.com/infinum/eightshift-frontend-libs/blob/develop/scripts/helpers/check-attr.js) - [PHP](https://github.com/infinum/eightshift-libs/blob/develop/src/Helpers/Components.php)
+* props - [JS](https://github.com/infinum/eightshift-frontend-libs/blob/develop/scripts/editor/attributes.js) - [PHP](https://github.com/infinum/eightshift-libs/blob/develop/src/Helpers/AttributesTrait.php)
+* getOptions - [JS](https://github.com/infinum/eightshift-frontend-libs/blob/develop/scripts/editor/options.js)
+* getOption - [JS](https://github.com/infinum/eightshift-frontend-libs/blob/develop/scripts/editor/options.js)
+* getAttrKey - [JS](https://github.com/infinum/eightshift-frontend-libs/blob/develop/scripts/editor/attributes.js) - [PHP](https://github.com/infinum/eightshift-libs/blob/develop/src/Helpers/AttributesTrait.php)
+* checkAttr - [JS](https://github.com/infinum/eightshift-frontend-libs/blob/develop/scripts/editor/attributes.js) - [PHP](https://github.com/infinum/eightshift-libs/blob/develop/src/Helpers/AttributesTrait.php)
 * render - [PHP](https://github.com/infinum/eightshift-libs/blob/develop/src/Blocks/AbstractBlocks.php)
 
 For more details please check our helpers sections for [JavaScript](helpers-javascript) and [PHP](helpers-php).
@@ -377,7 +377,7 @@ Exactly the same way as attributes.
 
 ### I have a component name that has multiple strings in a name, will this work?
 
-By multiple strings in a name we mean that component name has multiple words, for example, `jumbotron-cta`. The problem here is that we define components with kebab-case and attributes with camelcase.
+By multiple strings in a name we mean that component name has multiple words, for example, `jumbotron-cta`. The problem here is that we define components with kebab-case and attributes with camelCase.
 
 The short answer is **yes** this will work.
 
@@ -568,7 +568,7 @@ We are putting only relevant code in the example:
 }
 ```
 
-In the `components` key, you must provide components that you are going to be using in this block. There are more options in the example at the beginning of this chapter.
+In the `components` key, you must provide components that you are going to be using in this block. There are more options in the [example](#i-want-to-use-one-heading-component-in-my-block) at the beginning of this chapter.
 
 `src/Blocks/custom/heading/components/heading-editor.js`
 
@@ -589,6 +589,8 @@ export const HeadingEditor = ({ attributes, setAttributes }) => {
 ```
 
 In JavaScript, you spread the results of the props helper.
+
+The PHP template should look like this:
 
 `src/Blocks/custom/heading/heading.php`
 
@@ -651,13 +653,11 @@ export const HeadingEditor = (attributes) => {
 	} = attributes;
 
 	return (
-		<>
-			<TypographyEditor
-				{...props('heading', attributes, {
-					blockClass: componentClass,
-				})}
-			/>
-		</>
+		<TypographyEditor
+			{...props('heading', attributes, {
+				blockClass: componentClass,
+			})}
+		/>
 	);
 };
 ```
@@ -711,7 +711,7 @@ For more details please read the [props helper docs](helpers-javascript).
 
 ### Passing setAttributes to components
 
-As we described earlier props helper knows what to pass to a child component but there are some wild cards here. When you are passing props from block to component you must pass setAttributes down as props but if if you are passing props from component to component you don't need to. This is because we added some automatic includes in our props helper that you can check [here](https://github.com/infinum/eightshift-frontend-libs/blob/develop/scripts/editor/props.js).
+As we described earlier props helper knows what to pass to a child component but there are some wild cards here. When you are passing props from block to component you must pass setAttributes down as props but if if you are passing props from component to component you don't need to. This is because we added some automatic includes in our props helper that you can check [here](https://github.com/infinum/eightshift-frontend-libs/blob/develop/scripts/editor/attributes.js).
 
 ### Manualy overiding attributes from the code
 
@@ -728,7 +728,7 @@ You can also do this and this is why we created the third parameter in the props
 
 typographyContent attribute will follow the naming prefix when passed to a child but the disableEdit will remain the same name in all the children.
 
-Here, as a third parameter, you can also pass all include attributes but they will not get prefixed:
+Any of the included attributes can be passed as the third parameter here, but they will not be prefixed:
 
 ```js
 <ImageEditor
