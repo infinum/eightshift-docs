@@ -27,6 +27,7 @@
 		"docusaurus": "docusaurus",
 		"start": "docusaurus start",
 		"build": "docusaurus build",
+		"deploy": "docusaurus deploy",
 		"serve": "docusaurus serve",
 		"clear": "docusaurus clear"
 	},
