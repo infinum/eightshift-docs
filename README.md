@@ -20,6 +20,8 @@ To run docs locally:
 3. Run `npm install`
 4. Run `npm start`
 
+Deployment is done through GitHub Actions by pushing the code to the main branch.
+
 ## Who do I talk to?
 
 If you have any questions or problems, please [open an issue](https://github.com/infinum/eightshift-docs/issues) on github and we will do our best to give you a timely answer.
