@@ -20,7 +20,7 @@ To run docs locally:
 3. Run `npm install`
 4. Run `npm start`
 
-Deploy is done using Github Actions by pushing the code to the main branch.
+Deployment is done through GitHub Actions by pushing the code to the main branch.
 
 ## Who do I talk to?
 
