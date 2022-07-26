@@ -4,8 +4,8 @@
   <ShortName>Eightshift Development kit</ShortName>
   <Description>Search Eightshift Development kit</Description>
   <InputEncoding>UTF-8</InputEncoding>
-  <Image width="16" height="16" type="image/x-icon">https://infinum.github.io/eightshift-docs/img/favicon.png</Image>
-  <Url type="text/html" method="get" template="https://infinum.github.io/eightshift-docs/search?q={searchTerms}"/>
-  <Url type="application/opensearchdescription+xml" rel="self" template="https://infinum.github.io/eightshift-docs/opensearch.xml" />
-  <moz:SearchForm>https://infinum.github.io/eightshift-docs/</moz:SearchForm>
+  <Image width="16" height="16" type="image/x-icon">https://infinum.github.io/img/favicon.png</Image>
+  <Url type="text/html" method="get" template="https://infinum.github.io/search?q={searchTerms}"/>
+  <Url type="application/opensearchdescription+xml" rel="self" template="https://infinum.github.io/opensearch.xml" />
+  <moz:SearchForm>https://infinum.github.io/</moz:SearchForm>
 </OpenSearchDescription>
