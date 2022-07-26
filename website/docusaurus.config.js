@@ -2,7 +2,7 @@ module.exports = {
 	title: 'Eightshift Development kit',
 	tagline: 'All the tools you need to start building a modern WordPress project, using all the latest front end development tools.',
 	url: 'https://infinum.github.io',
-	baseUrl: '/eightshift-docs/',
+	baseUrl: '/',
 	favicon: 'img/favicon.png',
 	organizationName: 'infinum',
 	projectName: 'eightshift-docs',
