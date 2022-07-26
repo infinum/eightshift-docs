@@ -121,18 +121,13 @@ Custom callback method:
   * Filter which blocks are displayed in the block editor.
   *
   * @param array|bool $allowedBlockTypes Array of block type slugs, or boolean to enable/disable all.
-  * @param object     $post The post resource data.
+  * @param WP_Block_Editor_Context $blockEditorContext The current block editor context.
   *
   * @return array
   */
-public function allowedBlocks($allowedBlockTypes, object $post): array
+public function allowedBlocks($allowedBlockTypes, WP_Block_Editor_Context $blockEditorContext): array
 {
-  return array_merge(
-    $this->getAllBlocksList($allowedBlockTypes, $post),
-    [
-      'core/paragraph',
-    ]
-  );
+  return $this->getAllBlocksList(['core/paragraph'], $blockEditorContext);
 }
 ```
 
@@ -159,24 +154,24 @@ Custom callback method:
   * Filter which blocks are allowed in what post type.
   *
   * @param array|bool $allowedBlockTypes Array of block type slugs, or boolean to enable/disable all.
-  * @param object     $post The post resource data.
+  * @param WP_Block_Editor_Context $blockEditorContext The current block editor context.
   *
   * @return array
   */
-public function allowedBlockTypes($allowedBlockTypes, object $post): array
+public function allowedBlockTypes($allowedBlockTypes, WP_Block_Editor_Context $blockEditorContext): array
 {
   $output = [];
   $settings = $this->getSettings();
   $namespace = $settings['namespace'];
 
-  switch ($post->post_type) { // phpcs:ignore Squiz.NamingConventions.ValidVariableName.NotCamelCaps
+  switch ($blockEditorContext->post->post_type) {
     case 'faq':
       $output = [
         "{$namespace}/paragraph",
       ];
       break;
     default:
-      $output = $this->getAllBlocksList($allowedBlockTypes, $post);
+      $output = $this->getAllBlocksList($allowedBlockTypes, $blockEditorContext);
       break;
   }
 
