@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
         <title>Eightshift Development kit Blog</title>
-        <link>https://infinum.github.io/blog</link>
+        <link>https://eightshift.com/blog</link>
         <description>Eightshift Development kit Blog</description>
         <lastBuildDate>Tue, 17 May 2022 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
@@ -10,7 +10,7 @@
         <language>en</language>
         <item>
             <title><![CDATA[ACF in a project]]></title>
-            <link>https://infinum.github.io/blog/acf-in-a-project</link>
+            <link>https://eightshift.com/blog/acf-in-a-project</link>
             <guid>acf-in-a-project</guid>
             <pubDate>Tue, 17 May 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[Example of using ACF in your project]]></description>
@@ -23,7 +23,7 @@
         </item>
         <item>
             <title><![CDATA[Using assets in a project]]></title>
-            <link>https://infinum.github.io/blog/using-assets</link>
+            <link>https://eightshift.com/blog/using-assets</link>
             <guid>using-assets</guid>
             <pubDate>Thu, 28 Apr 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[Step-by-step guide on how to add assets like images or icons to your theme.]]></description>
@@ -36,7 +36,7 @@
         </item>
         <item>
             <title><![CDATA[Adding fonts]]></title>
-            <link>https://infinum.github.io/blog/adding-fonts</link>
+            <link>https://eightshift.com/blog/adding-fonts</link>
             <guid>adding-fonts</guid>
             <pubDate>Tue, 12 Apr 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[An intro to adding fonts to your project.]]></description>
@@ -47,7 +47,7 @@
         </item>
         <item>
             <title><![CDATA[Modifying blocks - Color Theme]]></title>
-            <link>https://infinum.github.io/blog/modifying-blocks-color-theme</link>
+            <link>https://eightshift.com/blog/modifying-blocks-color-theme</link>
             <guid>modifying-blocks-color-theme</guid>
             <pubDate>Tue, 22 Mar 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[Step-by-step guide on how to modify and expand the functionality of existing blocks.]]></description>
@@ -60,7 +60,7 @@
         </item>
         <item>
             <title><![CDATA[Adding components and blocks with WP-CLI]]></title>
-            <link>https://infinum.github.io/blog/adding-blocks-wpcli</link>
+            <link>https://eightshift.com/blog/adding-blocks-wpcli</link>
             <guid>adding-blocks-wpcli</guid>
             <pubDate>Mon, 14 Mar 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[This blog post covers how to use our WP CLI commands for adding components and blocks into your project.]]></description>
@@ -73,7 +73,7 @@
         </item>
         <item>
             <title><![CDATA[Components and blocks]]></title>
-            <link>https://infinum.github.io/blog/components-and-blocks</link>
+            <link>https://eightshift.com/blog/components-and-blocks</link>
             <guid>components-and-blocks</guid>
             <pubDate>Fri, 21 Jan 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[Explanation of the difference between components and blocks on a practical example]]></description>
@@ -85,7 +85,7 @@
         </item>
         <item>
             <title><![CDATA[Initial setup and first steps]]></title>
-            <link>https://infinum.github.io/blog/initial-setup</link>
+            <link>https://eightshift.com/blog/initial-setup</link>
             <guid>initial-setup</guid>
             <pubDate>Thu, 20 Jan 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[This blog post describes how to set up Eightshift Boilerplate theme, and covers some of the most common issues that may occur]]></description>
