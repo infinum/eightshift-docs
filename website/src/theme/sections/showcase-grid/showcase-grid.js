@@ -33,12 +33,6 @@ export default function ShowcaseGrid() {
 			link: 'https://solplanet.net/',
 		},
 		{
-			image: useBaseUrl('img/showcase/eightshift.jpg'),
-			label: 'Eightshift',
-			desc: 'We build fully-custom websites that are performant and beautiful. You need it, we have it.',
-			link: 'https://eightshift.com/',
-		},
-		{
 			image: useBaseUrl('img/showcase/design-islands.jpg'),
 			label: 'Design Islands',
 			desc: 'Explore a world of failed concepts and projects gone wrong, wild iterations, forgotten illustrations, lessons learned, small tips and short reviews.',
