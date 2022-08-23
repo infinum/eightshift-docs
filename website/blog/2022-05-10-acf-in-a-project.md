@@ -1,6 +1,6 @@
 ---
-title: ACF in a project
-description: Example of using ACF in your project
+title: How to use ACF in your project
+description: Example of using ACF plugin in your project
 slug: acf-in-a-project
 authors: obradovic
 date: 2022-05-17
