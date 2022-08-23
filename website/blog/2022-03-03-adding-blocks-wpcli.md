@@ -12,6 +12,9 @@ Although there are a few basic blocks available after creating a project, there 
 These can be used out-of-the-box, but also as a good starting point if you need similar blocks in your projects. It will also speed up your development time since you don't have to build everything from scratch.
 
 <!--truncate-->
+
+> _**Last updated: 23rd August, 2022**_
+
 ## Storybook
 
 Storybook allows you to preview how the components and blocks look and which options they have available. Since Storybook is interactive, you can try out most of the options. Think of it as a catalog with all custom blocks we've built and made ready for public use.

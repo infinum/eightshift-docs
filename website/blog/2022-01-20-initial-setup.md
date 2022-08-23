@@ -9,6 +9,9 @@ hide_table_of_contents: false
 As is often the case when trying out something new, you might encounter some hiccups. You're trying out our Eightshift Boilerplate, but can't get it to work? Worry not, we'll go through the setup and the most common issues that may occur.
 
 <!--truncate-->
+
+> _**Last updated: 23rd August, 2022**_
+
 If you haven't already, be sure to read our official [Eightshift Docs](/docs/welcome).
 
 ## Setup
