@@ -64,9 +64,9 @@ All blocks/components have some kind of documentation and in that documentation 
 
 You can check all available blocks/components using these two commands
 ```shell
-wp boilerplate use_block --help
+wp boilerplate blocks use-block --help
 
-wp boilerplate use_component --help
+wp boilerplate blocks use-component --help
 ```
 
 ### Can I use block/component from Eightshift-frontend-libs directly?
