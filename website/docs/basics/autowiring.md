@@ -220,7 +220,7 @@ class DocumentsRoute extends AbstractRoute implements CallableRouteInterface
     $this->queryDocuments = $queryDocuments;
   }
 
-  // Here gog the rest of the DocumentsRoute implementation.
+  // Here goes the rest of the DocumentsRoute implementation.
 }
 ```
 
