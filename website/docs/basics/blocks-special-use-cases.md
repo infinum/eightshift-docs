@@ -35,6 +35,7 @@ Here you can see our example of this helper used in the [carousel block](https:/
 ## Provide simple wrapper to all innerBlock
 
 **Usage:**
+
 - Change attributes in the block editor and on the front end.
 - Set attributes in the database.
 
@@ -93,14 +94,14 @@ You can remove all core blocks and any other blocks provided by third-party plug
 Filter goes in the register method:
 ```php
 // Limits the usage of only custom project blocks.
-add_filter('allowed_block_types_all', [ $this, 'getAllBlocksList' ], 10, 2);
+add_filter('allowed_block_types_all', [$this, 'getAllBlocksList'], 10, 2);
 ```
 
 > Important note: For WordPress versions > 5 and < 5.8 you would need to use the example bellow.
 
 ```php
   // Limits the usage of only custom project blocks - legacy.
-  add_filter('allowed_block_types', [ $this, 'getAllBlocksListOld' ], 10, 2);
+  add_filter('allowed_block_types', [$this, 'getAllBlocksListOld'], 10, 2);
 ```
 
 The callback method is set in the parent `AbstractBlocks` class.
@@ -112,7 +113,7 @@ You create a new callback method for the `allowed_block_types_all` filter. There
 Filter goes in the register method:
 ```php
 // Limits the usage of only custom project blocks.
-add_filter('allowed_block_types_all', [ $this, 'allowedBlocks' ], 10, 2);
+add_filter('allowed_block_types_all', [$this, 'allowedBlocks'], 10, 2);
 ```
 
 Custom callback method:
@@ -135,7 +136,7 @@ public function allowedBlocks($allowedBlockTypes, WP_Block_Editor_Context $block
 
 ```php
   // Limits the usage of only custom project blocks - legacy.
-  add_filter('allowed_block_types', [ $this, 'allowedBlocks' ], 10, 2);
+  add_filter('allowed_block_types', [$this, 'allowedBlocks'], 10, 2);
 ```
 
 ## I want to enable blocks only on specific custom post type
@@ -145,7 +146,7 @@ You create a new callback method for the `allowed_block_types_all` filter.
 Filter goes in the register method:
 ```php
 // Limits the usage of only custom project blocks.
-add_filter('allowed_block_types_all', [ $this, 'allowedBlockTypes' ], 10, 2);
+add_filter('allowed_block_types_all', [$this, 'allowedBlockTypes'], 10, 2);
 ```
 
 Custom callback method:
@@ -179,9 +180,9 @@ public function allowedBlockTypes($allowedBlockTypes, WP_Block_Editor_Context $b
 }
 ```
 
-> Important note: For WordPress versions > 5 and < 5.8 you would need to use the filter example bellow. And also change the default switch case in the `allowedBlockTypes` function to `$output = $this->getAllBlocksListOld($allowedBlockTypes, $post);`
+> Important note: For WordPress versions > 5 and < 5.8 you would need to use the filter example bellow. And also change the default switch case in the `allowedBlockTypes` function to `$output = $this->getAllBlocksListOld($allowedBlockTypes, $post);`
 
 ```php
   // Limits the usage of only custom project blocks - legacy.
-  add_filter('allowed_block_types', [ $this, 'allowedBlocks' ], 10, 2);
+  add_filter('allowed_block_types', [$this, 'allowedBlocks'], 10, 2);
 ```
