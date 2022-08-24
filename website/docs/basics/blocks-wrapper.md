@@ -39,7 +39,7 @@ This attribute controls whether you will see the options for block use in the bl
 
 ### wrapperUseSimple
 
-We wrapped some of the options in a specific condition and we call it `wrapperUseSimple`. In general, this attribute is set to `true` when you only want the simplified options on your block. Natively, it is used inside all of the inner blocks in the column block because we don't need wrappers inside wrappers inside wrappers (and so on). It's a good rule of thumb to use a simple wrapper in all of the inner blocks.
+We wrapped some options in a specific condition and we call it `wrapperUseSimple`. In general, this attribute is set to `true` when you only want the simplified options on your block. Natively, it is used inside all the inner blocks in the column block because we don't need wrappers inside wrappers inside wrappers (and so on). It's a good rule of thumb to use a simple wrapper in all the inner blocks.
 
 ### wrapperUseSimpleShowControl
 
