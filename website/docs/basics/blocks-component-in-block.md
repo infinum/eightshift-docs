@@ -387,14 +387,12 @@ For example, you have a `card` component that you will use in the `featured-post
 `src/Blocks/custom/featured-posts/featured-posts.php`
 
 ```php
-echo wp_kses_post(
-	Components::render(
-		'card',
-		Components::props('card', $attributes, [
-			'cardHeadingContent' => __('Custom content for heading', 'textdomain'),
-			'cardParagraphContent' => __('Custom content for paragraph', 'textdomain'),
-		])
-	)
+echo Components::render(
+    'card',
+    Components::props('card', $attributes, [
+        'cardHeadingContent' => __('Custom content for heading', 'textdomain'),
+        'cardParagraphContent' => __('Custom content for paragraph', 'textdomain'),
+    ])
 );
 ```
 
@@ -404,19 +402,16 @@ By providing the forth parameter to a render method you can also add default att
 
 **featured-posts.php**
 ```php
-echo wp_kses_post(
-	Components::render(
-		'card',
-		Components::props('card', $attributes, [
-			'cardHeadingContent' => __('Custom content for heading', 'textdomain'),
-			'cardParagraphContent' => __('Custom content for paragraph', 'textdomain'),
-		]),
-		'',
-		true
-	)
+echo Components::render(
+    'card',
+    Components::props('card', $attributes, [
+        'cardHeadingContent' => __('Custom content for heading', 'textdomain'),
+        'cardParagraphContent' => __('Custom content for paragraph', 'textdomain'),
+    ]),
+    '',
+    true
 );
 ```
-
 
 ### I want to limit which options are shown for components inside a block/component
 
@@ -503,7 +498,7 @@ const headingColor = checkAttr('headingColor', attributes, manifest);
 />
 ```
 
-3. In the component/blocks for which you are going to override the options, you must provide an options prop that is going to override the default one also following the described attribute prefixes.
+3. In the component/block for which you are going to override the options, you must provide an option prop that is going to override the default one also following the described attribute prefixes.
 
 **heading-options.js**
 ```js
@@ -606,14 +601,13 @@ use EightshiftBoilerplateVendor\EightshiftLibs\Helpers\Components;
 
 <div>
 	<?php
-	echo Components::render( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	echo Components::render(
 		'heading',
 		Components::props('heading', $attributes)
 	);
 	?>
 </div>
 ```
-
 
 Now, let's see how the component `heading` looks like.
 
@@ -678,7 +672,7 @@ $manifest = Components::getManifest(__DIR__);
 
 $componentClass = $manifest['componentClass'] ?? '';
 
-Components::render( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+echo Components::render(
 	'typography',
 	Components::props('heading', $attributes, [
 		'blockClass' => $componentClass
@@ -710,7 +704,7 @@ For more details please read the [props helper docs](helpers-javascript).
 
 As we described earlier props helper knows what to pass to a child component but there are some wild cards here. When you are passing props from block to component you must pass setAttributes down as props but if if you are passing props from component to component you don't need to. This is because we added some automatic includes in our props helper that you can check [here](https://github.com/infinum/eightshift-frontend-libs/blob/develop/scripts/editor/attributes.js).
 
-### Manualy overiding attributes from the code
+### Manually overriding attributes from the code
 
 You can also do this and this is why we created the third parameter in the props helper in order to be able to pass attributes via code and still be able to use automatic attributes prefixes that the props helper provides:
 
