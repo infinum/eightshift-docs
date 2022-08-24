@@ -161,16 +161,11 @@ In your block manifest, you can define in what category your block will appear. 
   add_filter('block_categories', [ $this, 'getCustomCategory' ]);
 ```
 
-### How can I add a new blocks category?
+### How can I add a new block category?
 
 You can provide your implementation, or you can extend our method for registering a custom category. Here is how you do it:
 
 ```php
- /**
-  * Register all the hooks
-  *
-  * @return void
-  */
 public function register(): void
 {
   // Create a new custom category for custom blocks.
@@ -194,7 +189,7 @@ public function getCustomCategory(array $categories, \WP_Post $post): array
     [
       [
         'slug' => 'custom-category-name',
-        'title' => \esc_html__('Custom Category', 'project text domain'),
+        'title' => \esc_html__('Custom Category', 'project-text-domain'),
         'icon' => 'admin-settings',
       ],
     ]

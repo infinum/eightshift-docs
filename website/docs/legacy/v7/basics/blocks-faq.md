@@ -192,7 +192,7 @@ public function getCustomCategory(array $categories, \WP_Post $post): array
     [
       [
         'slug' => 'custom-category-name',
-        'title' => \esc_html__('Custom Category', 'project text domain'),
+        'title' => \esc_html__('Custom Category', 'project-text-domain'),
         'icon' => 'admin-settings',
       ],
     ]
