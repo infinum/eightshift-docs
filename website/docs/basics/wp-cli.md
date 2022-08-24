@@ -15,8 +15,8 @@ In your project's entry point (usually `functions.php`), you'll find something a
 /**
  * Run all WP-CLI commands.
  */
-if (class_exists(Cli::class)) {
-  (new Cli())->load('boilerplate');
+if (\class_exists(Cli::class)) {
+	(new Cli())->load('boilerplate');
 }
 ```
 
@@ -34,7 +34,7 @@ You can change that by simply replacing the string inside the load method like t
 /**
  * Run all WP-CLI commands.
  */
-if (class_exists(Cli::class)) {
+if (\class_exists(Cli::class)) {
   (new Cli())->load('superCoolTheme');
 }
 ```
@@ -50,7 +50,7 @@ This is especially handy when you have multiple Eightshift Boilerplate powered t
 To get to know which commands are available and what do they do, run `wp boilerplate --help`. 
 The `--help` argument is available on all of our commands and provides a description of the command and a list of required and optional parameters for the command.
 
-`wp boilerplate create_config --help`
+`wp boilerplate create config --help`
 
 ### Commands
 
@@ -72,8 +72,8 @@ When you are running a multisite setup, you should always provide the additional
 
 Here is an example for command running on the primary site:
 
-`wp boilerplate create_config`
+`wp boilerplate create config`
 
 and here is an example for command running on the subsite:
 
-`wp boilerplate create_config --url='custom.domain.com'`
+`wp boilerplate create config --url='custom.domain.com'`
