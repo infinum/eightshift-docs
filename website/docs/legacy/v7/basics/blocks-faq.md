@@ -52,7 +52,7 @@ The answer is the same as the previous one. In the global `manifest.json`, we ha
 
 In your terminal, write
 ```shell
-wp boilerplate blocks use-block --name=example
+wp boilerplate use_block --name=example
 ```
 and style that block however you seem fit.
 
@@ -64,9 +64,9 @@ All blocks/components have some kind of documentation and in that documentation 
 
 You can check all available blocks/components using these two commands
 ```shell
-wp boilerplate blocks use-block --help
+wp boilerplate use_block --help
 
-wp boilerplate blocks use-component --help
+wp boilerplate use_component --help
 ```
 
 ### Can I use block/component from Eightshift-frontend-libs directly?
