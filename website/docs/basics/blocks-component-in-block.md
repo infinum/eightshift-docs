@@ -73,7 +73,6 @@ For more details please check our helpers sections for [JavaScript](helpers-java
 
 > Keep in mind that you can always ignore our setup and use the React way of passing props to components by prop drilling.
 
-
 ## Setting up attributes
 
 > Each attribute must have the component name prefix in each attribute. This is one of the biggest requirements in order for our setup to work.
@@ -99,7 +98,7 @@ If you have a heading component with these attributes:
 		"type": "string"
 	},
 	"headingLevel": {
-		"type": "int",
+		"type": "integer",
 		"default": 2
 	},
 	"headingSize": {
@@ -129,7 +128,6 @@ and you want to use the heading component in the Jumbotron block, you can use it
 in your block attribute's object, you will now have these keys:
 
 ```json
-
 // Attributes from the component.
 "jumbotronHeadingContent": "",
 "jumbotronHeadingLevel": 2,
@@ -163,7 +161,7 @@ We are using the same component as before:
 		"type": "string"
 	},
 	"headingLevel": {
-		"type": "int",
+		"type": "integer",
 		"default": 2
 	},
 	"headingSize": {
@@ -288,7 +286,7 @@ If you have a heading component with these attributes:
 		"type": "string"
 	},
 	"headingLevel": {
-		"type": "int",
+		"type": "integer",
 		"default": 2
 	},
 	"headingSize": {
@@ -334,7 +332,6 @@ and you have a cards grid block:
 in your block attributes object, you will now have these keys:
 
 ```json
-
 // Attributes from the heading component.
 "cardsGridCardHeadingContent": "",
 "cardsGridCardHeadingLevel": 2,
