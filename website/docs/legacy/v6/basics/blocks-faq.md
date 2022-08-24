@@ -52,7 +52,7 @@ The answer is the same as the previous one. In the global `manifest.json`, we ha
 
 In your terminal, write
 ``` shell
-wp boilerplate use_block --name=example
+wp boilerplate blocks use-block --name=example
 ```
 and style that block however you seem fit.
 

@@ -6,7 +6,7 @@ title: Faq
 [![docs-source](https://img.shields.io/badge/source-eightshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/develop/blocks/init/src/blocks/)
 
 Before we dive into blocks and see how everything is set, we should describe this setup's mindset.
-If you've managed to set up your project by this point with the [WP-CLI](wp-cli) command `setup_theme`, you might have a few questions. We will try to answer all those questions here.
+If you've managed to set up your project by this point with the [WP-CLI](wp-cli) command `init theme`, you might have a few questions. We will try to answer all those questions here.
 
 ### Why do all my blocks look the same and have the same name structure?
 
@@ -52,7 +52,7 @@ The answer is the same as the previous one. In the global `manifest.json`, we ha
 
 In your terminal, write
 ``` shell
-wp boilerplate use_block --name=example
+wp boilerplate blocks use-block --name=example
 ```
 and style that block however you seem fit.
 

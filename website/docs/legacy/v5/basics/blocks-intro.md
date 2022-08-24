@@ -51,7 +51,7 @@ The answer is the same as the previous one. In the global `manifest.json`, we ha
 
 ### If I want to create a new block/component, what do I do?
 
-In your terminal, write `wp boilerplate use_block --name=example` and style that block however you seem fit.
+In your terminal, write `wp boilerplate blocks use-block --name=example` and style that block however you seem fit.
 
 ### How can I use your pre-made blocks?
 
