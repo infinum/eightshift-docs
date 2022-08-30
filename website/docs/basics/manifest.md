@@ -15,7 +15,7 @@ This class provides the location of the `manifest.json` file and helpers to retu
 
 First, install the manifest class using this command:
 
-`wp boilerplate create_manifest`
+`wp boilerplate create manifest`
 
 You will see a custom filter you can use to fetch an item from the public folder in your class. This is the custom filter:
 

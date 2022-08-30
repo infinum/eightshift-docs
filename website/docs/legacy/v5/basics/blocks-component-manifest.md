@@ -28,7 +28,7 @@ A component manifest is a bit different than the block manifest. The main differ
       "type": "string"
     },
     "headingLevel": {
-      "type": "int",
+      "type": "integer",
       "default": 2
     },
     "headingSize": {

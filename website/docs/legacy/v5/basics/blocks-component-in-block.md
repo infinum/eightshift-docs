@@ -27,7 +27,7 @@ If you have a heading component with these attributes:
 		"type": "string"
 	},
 	"headingLevel": {
-		"type": "int",
+		"type": "integer",
 		"default": 2
 	},
 	"headingSize": {
@@ -146,7 +146,7 @@ If you have a heading component with these attributes:
 		"type": "string"
 	},
 	"headingLevel": {
-		"type": "int",
+		"type": "integer",
 		"default": 2
 	},
 	"headingSize": {
@@ -204,7 +204,7 @@ If you have a heading component with these attributes:
 		"type": "string"
 	},
 	"headingLevel": {
-		"type": "int",
+		"type": "integer",
 		"default": 2
 	},
 	"headingSize": {

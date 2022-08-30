@@ -97,12 +97,18 @@ For example, let's say you have a `SteeringWheel` class:
 class SteeringWheel implements CarPartInterface
 ```
 
-and you want to have this as a dependency in Car class. Your Car class has the following constructor:
+and you want to have this as a dependency in `Car` class. Your `Car` class would have the following constructor:
 
 ```php
-public function __construct(CarPartInterface $steeringWheel)
-{
-  $this->steeringWheel = $steeringWheel;
+class Car {
+
+    private $steeringWheel;
+
+    public function __construct(CarPartInterface $steeringWheel)
+    {
+      $this->steeringWheel = $steeringWheel;
+    }
+
 }
 ```
 
@@ -112,7 +118,7 @@ If you understand everything from the upper example, you can just skip the next 
 
 #### Example
 
-Let's set a scene. You have created a `DocumentsRoute` class and it needs some functionality from the `QueryDocuments` class.
+Let's set a scene. You have created a `DocumentsRoute` class, and it needs some functionality from the `QueryDocuments` class.
 
 Steps you need to follow are:
 
@@ -136,19 +142,12 @@ Let us provide you with some code examples:
 
 **src/Query/Documents/QueryDocumentsInterface.php**
 ```php
-/**
- * The file that holds a QueryDocuments interface.
- *
- * @package ProjectNamespace\Query\Documents;
- */
+<?php
 
 declare(strict_types=1);
 
 namespace ProjectNamespace\Query\Documents;
 
-/**
- * Interface for querying documents
- */
 interface QueryDocumentsInterface
 {
 
@@ -165,11 +164,7 @@ interface QueryDocumentsInterface
 
 **src/Query/Documents/QueryDocuments.php**
 ```php
-/**
- * The file for querying all the documents
- *
- * @package ProjectNamespace\Query\Documents
- */
+<?php
 
 declare(strict_types=1);
 
@@ -177,9 +172,6 @@ namespace ProjectNamespace\Query\Documents;
 
 use ProjectNamespaceVendor\EightshiftLibs\Services\ServiceInterface;
 
-/**
- * QueryDocuments class.
- */
 class QueryDocuments implements ServiceInterface, QueryDocumentsInterface
 {
     /**
@@ -191,18 +183,14 @@ class QueryDocuments implements ServiceInterface, QueryDocumentsInterface
    */
   public function getDocumentsData(int $id = 0): string
   {
-    // here goes the implementation of getDocumentsData method.
+    // Code.
   }
 }
 ```
 
 **src/Rest/Routes/DocumentsRoute.php**
 ```php
-/**
- * The class register route for DocumentsRoute endpoint
- *
- * @package ProjectNamespace\Rest\Routes
- */
+<?php
 
 declare(strict_types=1);
 
@@ -212,9 +200,6 @@ use ProjectNamespace\Query\Documents\QueryDocumentsInterface;
 use ProjectNamespaceVendor\EightshiftLibs\Rest\Routes\AbstractRoute;
 use ProjectNamespaceVendor\EightshiftLibs\Rest\CallableRouteInterface;
 
-/**
- * Class DocumentsRoute
- */
 class DocumentsRoute extends AbstractRoute implements CallableRouteInterface
 {
 
@@ -235,7 +220,7 @@ class DocumentsRoute extends AbstractRoute implements CallableRouteInterface
     $this->queryDocuments = $queryDocuments;
   }
 
-  // here goes the rest of the DocumentsRoute implementation.
+  // Here goes the rest of the DocumentsRoute implementation.
 }
 ```
 

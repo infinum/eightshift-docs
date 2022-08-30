@@ -51,7 +51,7 @@ The answer is the same as the previous one. In the global `manifest.json`, we ha
 ### If I want to create a new block/component, what do I do?
 
 In your terminal, write
-``` shell
+```shell
 wp boilerplate use_block --name=example
 ```
 and style that block however you seem fit.
@@ -63,7 +63,7 @@ All blocks/components have some kind of documentation and in that documentation 
 ### How can I use your pre-made blocks?
 
 You can check all available blocks/components using these two commands
-``` shell
+```shell
 wp boilerplate use_block --help
 
 wp boilerplate use_component --help
@@ -192,7 +192,7 @@ public function getCustomCategory(array $categories, \WP_Post $post): array
     [
       [
         'slug' => 'custom-category-name',
-        'title' => \esc_html__('Custom Category', 'project text domain'),
+        'title' => \esc_html__('Custom Category', 'project-text-domain'),
         'icon' => 'admin-settings',
       ],
     ]
