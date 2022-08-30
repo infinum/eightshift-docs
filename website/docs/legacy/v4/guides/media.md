@@ -3,7 +3,7 @@ id: media
 title: Media
 ---
 
-[![docs-source](https://img.shields.io/badge/source-eigthshift--boilerplate-red?style=for-the-badge&logo=wordpress&labelColor=2a2a2a)](https://github.com/infinum/eightshift-boilerplate/blob/develop/src/media/class-media.php)
+[![docs-source](https://img.shields.io/badge/source-eigthshift--boilerplate-red?style=for-the-badge&logo=wordpress&labelColor=2a2a2a)](https://github.com/infinum/eightshift-boilerplate/blob/v4.0.0/src/media/class-media.php)
 
 Media class is located in `project`. It extends `Eightshift_Libs\Media\Media` class.
 

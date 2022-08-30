@@ -3,7 +3,7 @@ id: menu
 title: Menu
 ---
 
-[![docs-source](https://img.shields.io/badge/source-eigthshift--boilerplate-red?style=for-the-badge&logo=wordpress&labelColor=2a2a2a)](https://github.com/infinum/eightshift-boilerplate/blob/develop/src/menu/class-menu.php)
+[![docs-source](https://img.shields.io/badge/source-eigthshift--boilerplate-red?style=for-the-badge&logo=wordpress&labelColor=2a2a2a)](https://github.com/infinum/eightshift-boilerplate/blob/v4.0.0/src/menu/class-menu.php)
 
 Menu class is located in `project`. It extends `Eightshift_Libs\Menu\Menu` class.
 

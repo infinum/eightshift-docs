@@ -3,7 +3,7 @@ id: taxonomy
 title: Taxonomy
 ---
 
-[![docs-source](https://img.shields.io/badge/source-eigthshift--libs-blue?style=for-the-badge&logo=php&labelColor=2a2a2a)](https://github.com/infinum/eightshift-libs/tree/develop/src/custom-taxonomy)
+[![docs-source](https://img.shields.io/badge/source-eigthshift--libs-blue?style=for-the-badge&logo=php&labelColor=2a2a2a)](https://github.com/infinum/eightshift-libs/blob/v2.0.0/src/custom-taxonomy)
 
 Custom Taxonomy class is located in `Eightshift Libs`. To extend it, use `Eightshift_Libs\Custom_Taxonomy\Base_Taxonomy` class. This is an abstract class.
 

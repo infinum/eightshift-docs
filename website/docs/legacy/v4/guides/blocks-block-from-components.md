@@ -3,7 +3,7 @@ id: blocks-block-from-components
 title: Creating Block from Components
 ---
 
-[![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/develop/blocks/init/src/blocks/custom/button)
+[![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/blob/v2.0.0/blocks/init/src/blocks/custom/button)
 
 You may wonder: what is the difference between components and blocks? Aren't they the same thing?
 
@@ -128,7 +128,7 @@ export const CardEditor = (props) => {
 };
 ```
 
-Notice how we've imported the [`image-editor`](https://github.com/infinum/eightshift-frontend-libs/blob/develop/blocks/init/src/blocks/components/image/components/image-editor.js) component from the project's component folder. Note that in your project you'd just copy this component from the frontend-libs blocks (that is you'd copy the entire folder in your project as previously described).
+Notice how we've imported the [`image-editor`](https://github.com/infinum/eightshift-frontend-libs/blob/v2.0.0/blocks/init/src/blocks/components/image/components/image-editor.js) component from the project's component folder. Note that in your project you'd just copy this component from the frontend-libs blocks (that is you'd copy the entire folder in your project as previously described).
 
 Our card editor component will have an `<ImageEditor />` component and two `<RichText />` components (which come from the core editor).
 

@@ -3,7 +3,7 @@ id: blocks-structure-block-item
 title: Block Structure Item
 ---
 
-[![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/develop/blocks/init/src/blocks/custom/example)
+[![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/blob/v2.0.0/blocks/init/src/blocks/custom/example)
 
 For the library to work and register blocks dynamically, a specific folder structure and naming must be followed. Individual blocks are placed in the `custom` folder.
 

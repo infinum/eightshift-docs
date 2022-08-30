@@ -3,7 +3,7 @@ id: di-container
 title: Dependency injection container
 ---
 
-[![docs-source](https://img.shields.io/badge/source-eigthshift--libs-blue?style=for-the-badge&logo=php&labelColor=2a2a2a)](https://github.com/infinum/eightshift-libs/blob/develop/src/class-main.php)
+[![docs-source](https://img.shields.io/badge/source-eigthshift--libs-blue?style=for-the-badge&logo=php&labelColor=2a2a2a)](https://github.com/infinum/eightshift-libs/blob/v2.0.0/src/class-main.php)
 
 Dependency injection is a way of implementing inversion of control design pattern. It's used to handle the dependencies between multiple classes without the direct instantiation of one class in another - which causes tight coupling in the code, and makes it less testable and harder to maintain.
 Dependency injection is a way of implementing inversion of control design pattern. It's used to handle the dependencies between multiple classes without the direct instantiation of one class in another - which causes tight coupling in the code and makes it less testable and harder to maintain.
@@ -16,7 +16,7 @@ new SuperClass()
 
 that should be avoided because it tightly couples two classes.
 
-Eightshift libs are using [PHP-DI](http://php-di.org/) as an implementation of a dependency injection container. We'll explain the implementation by following the [eightshift-boilerplate](https://github.com/infinum/eightshift-boilerplate/blob/develop/src/class-main.php) example.
+Eightshift libs are using [PHP-DI](http://php-di.org/) as an implementation of a dependency injection container. We'll explain the implementation by following the [eightshift-boilerplate](https://github.com/infinum/eightshift-boilerplate/blob/v4.0.0/src/class-main.php) example.
 
 In your main class, which is used to store all the dependencies in your code, and which extends the main eightshift-lib class (`Eightshift_Libs\Core\Main`), you need to define a method called `get_service_classes()` which contains an array of service classes (those that have a way to register hooks in your WordPress project):
 
@@ -56,7 +56,7 @@ protected function get_service_classes() : array {
 }
 ```
 
-Whenever a class has a dependency on another class, you'd add this dependency through a process of constructor injection. For instance, the `Enqueue_Admin` class depends on both the `Config` and `Manifest` classes. Looking at the [implementation](https://github.com/infinum/eightshift-libs/blob/develop/src/enqueue/class-enqueue-admin.php) we have:
+Whenever a class has a dependency on another class, you'd add this dependency through a process of constructor injection. For instance, the `Enqueue_Admin` class depends on both the `Config` and `Manifest` classes. Looking at the [implementation](https://github.com/infinum/eightshift-libs/blob/v2.0.0/src/enqueue/class-enqueue-admin.php) we have:
 
 ```js
 class Enqueue_Admin implements Service {

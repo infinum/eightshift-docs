@@ -3,7 +3,7 @@ id: components-color-palette
 title: Color Palette
 ---
 
-[![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/blob/develop/components/color-palette-custom/color-palette-custom.js)
+[![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/blob/v2.0.0/components/color-palette-custom/color-palette-custom.js)
 
 This is a custom React component that renders a custom color picker exactly the same as the native block editor component, but on the `save` method in the attributes, we save the color name and not the color hex value.
 

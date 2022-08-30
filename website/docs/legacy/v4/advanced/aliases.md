@@ -74,7 +74,7 @@ Alias providing [Swiper](https://www.npmjs.com/package/swiper).
 
 ## EightshiftBlocksDynamicImport
 
-To get (require) all the files using the `require.context` method, we created a helper located [here](https://github.com/infinum/eightshift-frontend-libs/blob/develop/scripts/helpers/dynamic-import.js).
+To get (require) all the files using the `require.context` method, we created a helper located [here](https://github.com/infinum/eightshift-frontend-libs/blob/v2.0.0/scripts/helpers/dynamic-import.js).
 
 It will find all files recursively in the folder using a regex. The following example will require all `assets/index.js` files inside the `custom` folder, so there is no need to add the files to the build manually.
 

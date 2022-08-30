@@ -3,7 +3,7 @@ id: blocks-filter-block-attributes-override
 title: Filter Attributes Override
 ---
 
-[![docs-source](https://img.shields.io/badge/source-eigthshift--libs-blue?style=for-the-badge&logo=php&labelColor=2a2a2a)](https://github.com/infinum/eightshift-libs/blob/develop/src/blocks/class-blocks.php)
+[![docs-source](https://img.shields.io/badge/source-eigthshift--libs-blue?style=for-the-badge&logo=php&labelColor=2a2a2a)](https://github.com/infinum/eightshift-libs/blob/v2.0.0/src/blocks/class-blocks.php)
 
 This filter gives you the ability to hook your changes to block/wrapper attributes after they are registered in the block editor but before they are rendered in React.
 
