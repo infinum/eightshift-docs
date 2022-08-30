@@ -3,7 +3,7 @@ id: helpers-scss
 title: Scss
 ---
 
-[![docs-source](https://img.shields.io/badge/source-eightshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/develop/blocks/init/src/blocks/)
+[![docs-source](https://img.shields.io/badge/source-eightshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/develop/blocks/init/src/Blocks/)
 
 
 For years, we have collected a list of useful SASS mixins, placeholders, and functions you can use in a project. You don't need to have all of this in your project. Check out our documentation and see what we have in store for you.

@@ -3,7 +3,7 @@ id: blocks-special-use-cases
 title: Special Use Cases
 ---
 
-[![docs-source](https://img.shields.io/badge/source-eightshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/develop/blocks/init/src/blocks/)
+[![docs-source](https://img.shields.io/badge/source-eightshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/develop/blocks/init/src/Blocks/)
 
 In our clients' projects, we noticed that sometimes you need to provide something special to your blocks, like changing the block editor block DOM structure or the attributes added inside the inner blocks.
 
