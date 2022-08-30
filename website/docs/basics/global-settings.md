@@ -11,7 +11,7 @@ Ok, this is the part that we are incredibly proud of. Did you know that you can 
 
 > This feature comes only with the block setup.
 
-If you used our `wp boilerplate init themeg` command, you are all set. If not, please visit the [blocks chapter](blocks) for more details.
+If you used our `wp boilerplate init theme` command, you are all set. If not, please visit the [blocks chapter](blocks) for more details.
 
 ## Why do we use this?
 
