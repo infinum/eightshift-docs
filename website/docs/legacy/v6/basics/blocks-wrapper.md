@@ -3,7 +3,7 @@ id: blocks-wrapper
 title: Wrapper
 ---
 
-[![docs-source](https://img.shields.io/badge/source-eightshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/develop/blocks/init/src/blocks/)
+[![docs-source](https://img.shields.io/badge/source-eightshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/5.0.0/blocks/init/src/blocks/)
 
 The wrapper is our best and most powerful feature. In a nutshell, the wrapper is nothing more than a high order component (parent component).
 
