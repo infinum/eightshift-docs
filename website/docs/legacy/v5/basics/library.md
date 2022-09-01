@@ -4,7 +4,7 @@ title: Library
 sidebar_label: Library
 ---
 
-[![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs)
+[![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/4.0.0)
 
 
 For years, we have collected a list of useful SASS mixins, functions, and other stuff you can use in a project. At one point, we felt stupid for copy/pasting code across multiple projects, so we created Eightshift Frontend Libs. This library allows you to use whatever we offer without all that unnecessary clutter.

@@ -4,7 +4,7 @@ title: Writing Styles
 sidebar_label: Writing Styles
 ---
 
-[![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs)
+[![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/4.0.0)
 
 > This chapter is only relevant in setups that don't use CSS variables. If you are using CSS variables please skip to the [Blocks Styles chapter](blocks-styles) chapter.
 
