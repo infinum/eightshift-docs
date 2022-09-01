@@ -3,7 +3,7 @@ id: enqueue
 title: Enqueue
 ---
 
-[![docs-source](https://img.shields.io/badge/source-eigthshift--libs-blue?style=for-the-badge&logo=php&labelColor=2a2a2a)](https://github.com/infinum/eightshift-libs/blob/v2.0.0/src/enqueue)
+[![docs-source](https://img.shields.io/badge/source-eigthshift--libs-blue?style=for-the-badge&logo=php&labelColor=2a2a2a)](https://github.com/infinum/eightshift-libs/tree/v2.0.0/src/enqueue)
 
 When enqueuing assets you can either use ready made classes from the libs:
 
@@ -103,7 +103,7 @@ Class constants:
 
 Each of these 3 classes extends `Eightshift_Libs\Enqueue\Assets` class that holds some useful methods that you can extend. These methods can be used in all enqueue classes.
 
-You can find the Assets class [here](https://github.com/infinum/eightshift-libs/blob/v2.0.0/src/enqueue).
+You can find the Assets class [here](https://github.com/infinum/eightshift-libs/tree/v2.0.0/src/enqueue).
 
 Provided methods:
 

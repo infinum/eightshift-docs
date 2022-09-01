@@ -3,7 +3,7 @@ id: blocks-structure-block-item
 title: Block Structure Item
 ---
 
-[![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/blob/v2.0.0/blocks/init/src/blocks/custom/example)
+[![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/v2.0.0/blocks/init/src/blocks/custom/example)
 
 For the library to work and register blocks dynamically, a specific folder structure and naming must be followed. Individual blocks are placed in the `custom` folder.
 
@@ -32,7 +32,7 @@ This file represents the `edit` callback method used in WordPress `registerBlock
 We are not using the `save` callback component because this library is used to create dynamic blocks. The `edit` method describes how your block will be rendered in the editor once the block is used.
 
 ### block-name.php
-This file will pass the properties you've set in the `block-name.js` and use the `render_block_view()` method from the [eightshift libs](https://github.com/infinum/eightshift-blocks/blob/44c168f74ba57cc596f352d34a3e4c6441fc2b8b/src/class-blocks.php#L193). It is used to provide front-end layout for your block.
+This file will pass the properties you've set in the `block-name.js` and use the `render_block_view()` method from the [eightshift libs](https://github.com/infinum/eightshift-libs/tree/v2.0.0/src/blocks/class-blocks.php#L295). It is used to provide front-end layout for your block.
 
 ### block-name-editor.scss
 Holds only the editor styling for the block. You should be using this file to override styles in the editor set by the component. In 90% of cases, you will not need to write any overrides here. But if you are using any columns layout like a grid, flex, etc., you may need to add some corrections.

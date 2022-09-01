@@ -2,7 +2,7 @@
 id: login
 title: Login
 ---
-[![docs-source](https://img.shields.io/badge/source-eigthshift--libs-blue?style=for-the-badge&logo=php&labelColor=2a2a2a)](https://github.com/infinum/eightshift-libs/blob/v2.0.0/src/login/class-login.php)
+[![docs-source](https://img.shields.io/badge/source-eigthshift--libs-blue?style=for-the-badge&logo=php&labelColor=2a2a2a)](https://github.com/infinum/eightshift-libs/tree/v2.0.0/src/login/class-login.php)
 
 Login class is located in `Eightshift Libs`. To extend it use `Eightshift_Libs\Login\Login` class.
 

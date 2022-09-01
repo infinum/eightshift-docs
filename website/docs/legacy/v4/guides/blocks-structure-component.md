@@ -3,7 +3,7 @@ id: blocks-structure-component
 title: Component Structure
 ---
 
-[![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/blob/v2.0.0/blocks/init/src/blocks/components/button)
+[![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/v2.0.0/blocks/init/src/blocks/components/button)
 
 Component naming and folder structure are not as strict as in the case of the block, but for the sake of consistency, it would be better to follow the same principles.
 
