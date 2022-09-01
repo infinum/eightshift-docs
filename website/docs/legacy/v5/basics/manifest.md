@@ -4,7 +4,7 @@ title: Manifest
 sidebar_label: Manifest
 ---
 
-[![docs-source](https://img.shields.io/badge/source-eigthshift--libs-blue?style=for-the-badge&logo=php&labelColor=2a2a2a)](https://github.com/infinum/eightshift-libs)
+[![docs-source](https://img.shields.io/badge/source-eigthshift--libs-blue?style=for-the-badge&logo=php&labelColor=2a2a2a)](https://github.com/infinum/eightshift-libs/tree/3.0.0/)
 
 In the build process, Webpack creates all the static files from your assets folder and also `manifest.json` inside the public folder. The manifest file contains a key/value list that we use to call the location of the assets dynamically.
 

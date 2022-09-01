@@ -4,7 +4,7 @@ title: Component in a Block
 sidebar_label: Component in a Block
 ---
 
-[![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/develop/blocks/init/src/blocks/)
+[![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/blob/4.0.0/blocks/init/src/blocks/)
 
 Blocks and components work perfectly together because they are made that way. We simplified this as much as possible but there always a few things you need to do manually.
 
@@ -189,7 +189,7 @@ In your block attributes object, you will now have these keys:
 "content": "test",
 ```
 
-> Keep in mind that we handle the attributes data necessary to have multiple components in one block but you must provide the correct props inside your files to mock the custom attribute names. The best way to see how this is done is to check the [card block](https://github.com/infinum/eightshift-frontend-libs/tree/develop/blocks/init/src/Blocks/custom/card).
+> Keep in mind that we handle the attributes data necessary to have multiple components in one block but you must provide the correct props inside your files to mock the custom attribute names. The best way to see how this is done is to check the [card block](https://github.com/infinum/eightshift-frontend-libs/blob/4.0.0/blocks/init/src/Blocks/custom/card).
 
 ### I want to use a component that uses more components (componentCeption).
 

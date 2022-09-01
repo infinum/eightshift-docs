@@ -4,7 +4,7 @@ title: The Structure
 sidebar_label: The Structure
 ---
 
-[![docs-source](https://img.shields.io/badge/source-eigthshift--libs-blue?style=for-the-badge&logo=php&labelColor=2a2a2a)](https://github.com/infinum/eightshift-libs)
+[![docs-source](https://img.shields.io/badge/source-eigthshift--libs-blue?style=for-the-badge&logo=php&labelColor=2a2a2a)](https://github.com/infinum/eightshift-libs/tree/3.0.0/)
 
 If you've followed the chapters this far and set your first project with all the classes from the `wp boilerplate setup_theme` command, you saw that you have an `src` folder in the root of your project.
 
