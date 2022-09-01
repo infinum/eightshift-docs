@@ -4,7 +4,7 @@ title: Hooks
 sidebar_label: Hooks
 ---
 
-[![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/blob/4.0.0/blocks/init/src/blocks/)
+[![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/4.0.0/blocks/init/src/blocks/)
 
 WordPress block editor hooks provide the same functionalities as PHP hooks. They are used to modify the behavior of the existing blocks.
 
