@@ -74,7 +74,7 @@ We are using the same structure as described in the [block editor documentation]
 
 *custom feature*
 
-If the `hasInnerBlocks` key is set to true, the block's `save` method for inner blocks will be used. This method is used when the block has [`InnerBlocks`](https://github.com/WordPress/gutenberg/tree/master/packages/block-editor/src/components/inner-blocks). In the PHP view file, you will have the `$innerBlockContent` variable available. Here is an example of what happens in the back:
+If the `hasInnerBlocks` key is set to true, the block's `save` method for inner blocks will be used. This method is used when the block has [`InnerBlocks`](https://github.com/WordPress/gutenberg/tree/trunk/packages/block-editor/src/components/inner-blocks). In the PHP view file, you will have the `$innerBlockContent` variable available. Here is an example of what happens in the back:
 
 ```js
   save = () => createElement(InnerBlocks.Content);
@@ -121,7 +121,7 @@ import manifest from 'manifest.json';
 ```
 
 As you can see, you can share anything this way. Here are some additional examples:
-* [Social Links](https://github.com/infinum/eightshift-frontend-libs/blob/develop/blocks/init/src/Blocks/components/social-links/manifest.json)
-* [Button](https://github.com/infinum/eightshift-frontend-libs/blob/develop/blocks/init/src/Blocks/components/button/manifest.json)
+* [Social Links](https://github.com/infinum/eightshift-frontend-libs/tree/4.0.0/blocks/init/src/Blocks/components/social-links/manifest.json)
+* [Button](https://github.com/infinum/eightshift-frontend-libs/tree/4.0.0/blocks/init/src/Blocks/components/button/manifest.json)
 
 <div class="legacy-badge legacy-badge--v5"></div>

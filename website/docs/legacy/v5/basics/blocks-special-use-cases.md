@@ -31,7 +31,7 @@ The next time you add your image to the carousel, it will automatically change t
 
 **Implementation**
 
-Here you can see our example of this helper used in the [carousel block](https://github.com/infinum/eightshift-frontend-libs/blob/develop/blocks/init/src/Blocks/custom/carousel/carousel-block.js).
+Here you can see our example of this helper used in the [carousel block](https://github.com/infinum/eightshift-frontend-libs/tree/4.0.0/blocks/init/src/Blocks/custom/carousel/carousel-block.js).
 
 ## Provide simple wrapper to all innerBlock
 
@@ -49,7 +49,7 @@ This helper will set the wrapper to a simple variant in all your innerBlocks.
 
 **Implementation**
 
-Here you can see our example of this helper used in the [column block](https://github.com/infinum/eightshift-frontend-libs/blob/develop/blocks/init/src/Blocks/custom/column/column-block.js).
+Here you can see our example of this helper used in the [column block](https://github.com/infinum/eightshift-frontend-libs/tree/4.0.0/blocks/init/src/Blocks/custom/column/column-block.js).
 
 ## Override innerBlock attributes only on the front end
 
@@ -85,7 +85,7 @@ With WordPress' block editor hooks, we can fix this by not adding the selector t
 
 **Implementation**
 
-Here you can see our example of this hook used in the [column block](https://github.com/infinum/eightshift-frontend-libs/blob/develop/blocks/init/src/Blocks/custom/column/column-hooks.js).
+Here you can see our example of this hook used in the [column block](https://github.com/infinum/eightshift-frontend-libs/tree/4.0.0/blocks/init/src/Blocks/custom/column/column-hooks.js).
 
 ## How to only use my custom blocks
 

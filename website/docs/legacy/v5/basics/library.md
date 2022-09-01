@@ -25,6 +25,6 @@ But if you are using our default `setup_theme` setup, you are all set. Eightshif
 
 ## We have some defaults
 
-For Eightshift Boilerplate to look presentable and have some styling, we created some variables and colors for us to use. So if you find some variable in your project and you have no idea where it comes from, that is on us, and your best place to check is [here for global variables](https://github.com/infinum/eightshift-frontend-libs/blob/master/styles/scss/_core.scss) and [here for colors](https://github.com/infinum/eightshift-frontend-libs/blob/develop/styles/scss/_colors.scss).
+For Eightshift Boilerplate to look presentable and have some styling, we created some variables and colors for us to use. So if you find some variable in your project and you have no idea where it comes from, that is on us, and your best place to check is [here for global variables](https://github.com/infinum/eightshift-frontend-libs/tree/4.0.0/styles/scss/_core.scss) and [here for colors](https://github.com/infinum/eightshift-frontend-libs/tree/4.0.0/styles/scss/_colors.scss).
 
 <div class="legacy-badge legacy-badge--v5"></div>

@@ -304,7 +304,7 @@ You have a component named `jumbotron-cta` and you want to use it in your block.
 }
 ```
 
-But in all places in your component where you use `setAttributes` you must use [camelize helper](https://github.com/infinum/eightshift-frontend-libs/blob/develop/scripts/helpers/camelize.js)
+But in all places in your component where you use `setAttributes` you must use [camelize helper](https://github.com/infinum/eightshift-frontend-libs/tree/4.0.0/scripts/helpers/camelize.js)
 
 ```js
 
