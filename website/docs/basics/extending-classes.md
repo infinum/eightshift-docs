@@ -15,7 +15,7 @@ We don't do any magic in the Eightshift-libs like in previous versions. All clas
 Let's look at a way to add a class that enqueues theme front-end scripts and styles.
 Go to the **root** of your theme. Using the terminal, run this command:
 
-`wp boilerplate create_enqueue_admin`
+`wp boilerplate create enqueue-admin`
 
 This command will output something like this in your project, taking care of your projects namespace and vendor prefixes, as well as the package name and the text-domain:
 

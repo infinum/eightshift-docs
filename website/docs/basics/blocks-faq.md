@@ -3,10 +3,10 @@ id: blocks-faq
 title: Faq
 ---
 
-[![docs-source](https://img.shields.io/badge/source-eightshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/develop/blocks/init/src/blocks/)
+[![docs-source](https://img.shields.io/badge/source-eightshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/develop/blocks/init/src/Blocks/)
 
 Before we dive into blocks and see how everything is set, we should describe this setup's mindset.
-If you've managed to set up your project by this point with the [WP-CLI](wp-cli) command `setup_theme`, you might have a few questions. We will try to answer all those questions here.
+If you've managed to set up your project by this point with the [WP-CLI](wp-cli) command `init theme`, you might have a few questions. We will try to answer all those questions here.
 
 ### Why do all my blocks look the same and have the same name structure?
 
@@ -51,8 +51,9 @@ The answer is the same as the previous one. In the global `manifest.json`, we ha
 ### If I want to create a new block/component, what do I do?
 
 In your terminal, write
-``` shell
-wp boilerplate use_block --name=example
+
+```shell
+wp boilerplate blocks use-block --name=example
 ```
 and style that block however you seem fit.
 
@@ -63,10 +64,11 @@ All blocks/components have some kind of documentation and in that documentation 
 ### How can I use your pre-made blocks?
 
 You can check all available blocks/components using these two commands
-``` shell
-wp boilerplate use_block --help
 
-wp boilerplate use_component --help
+```shell
+wp boilerplate blocks use-block --help
+
+wp boilerplate blocks use-component --help
 ```
 
 ### Can I use block/component from Eightshift-frontend-libs directly?
@@ -159,16 +161,11 @@ In your block manifest, you can define in what category your block will appear. 
   add_filter('block_categories', [ $this, 'getCustomCategory' ]);
 ```
 
-### How can I add a new blocks category?
+### How can I add a new block category?
 
 You can provide your implementation, or you can extend our method for registering a custom category. Here is how you do it:
 
 ```php
- /**
-  * Register all the hooks
-  *
-  * @return void
-  */
 public function register(): void
 {
   // Create a new custom category for custom blocks.
@@ -192,7 +189,7 @@ public function getCustomCategory(array $categories, \WP_Post $post): array
     [
       [
         'slug' => 'custom-category-name',
-        'title' => \esc_html__('Custom Category', 'project text domain'),
+        'title' => \esc_html__('Custom Category', 'project-text-domain'),
         'icon' => 'admin-settings',
       ],
     ]

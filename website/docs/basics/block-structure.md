@@ -3,7 +3,7 @@ id: block-structure
 title: Block Structure
 ---
 
-[![docs-source](https://img.shields.io/badge/source-eightshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/develop/blocks/init/src/blocks/)
+[![docs-source](https://img.shields.io/badge/source-eightshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/develop/blocks/init/src/Blocks/)
 
 Your custom blocks are placed in the `src/Blocks/custom` folder.
 
@@ -38,7 +38,7 @@ For example, you can check the [storybook](/storybook).
 In this folder, you'll define all the custom JavaScript functionality for your block that will only be used on the front end of the application. You must provide the `index.js` file in this folder, as a starting point, and the rest is up to you. We recommend using [JavaScript dynamic imports](dynamic-import) for all your front-end scripts. This ensures that the JavaScript is only loaded in the application when it is used and not before. By using dynamic import, you optimize your application and make it load faster.
 
 ### components
-Components folder holds three files: `heading-options.js`, `heading-editor.js`, and `heading-toolbars.js`. Each of these files represents a part of the block editor block that is used in the editor. We have separated options, editor, and toolbar into separate components for readability and reusing components in different projects.
+The components folder holds three files: `heading-options.js`, `heading-editor.js`, and `heading-toolbars.js`. Each of these files represents a part of the block editor block that is used in the editor. We have separated options, editor, and toolbar into separate components for readability and reusing components in different projects.
 
 ### docs
 Contains everything a block needs to be run inside the Storybook. This part is optional. However, it will speed up your development time and provide you with much-needed documentation.

@@ -19,11 +19,11 @@ npm start
 it will proxy the page you've specified in the `projectUrl` to your local server.
 
 ```bash
-[Browsersync] Proxying: https://local-url.test
+[Browsersync] Proxying: http://local-url.test
 [Browsersync] Access URLs:
 --------------------------------------
-Local: https://localhost:3000
-External: https://192.168.0.25:3000
+Local: http://localhost:3000
+External: http://192.168.0.25:3000
 --------------------------------------
 UI: http://localhost:3001
 UI External: http://localhost:3001
@@ -51,3 +51,6 @@ module.exports = (env, argv) => {
 	return require('./node_modules/@eightshift/frontend-libs/webpack')(argv.mode, projectConfig);
 };
 ```
+
+Do note that in order for Browsersync to work correctly and utilise the hot reload functionality, the Chrome dev tools must be visible and the 'Disable cache' option must be enabled in the Network tab. Otherwise, the changes will be cached by the browser.
+Similar should be set for other browsers as well.

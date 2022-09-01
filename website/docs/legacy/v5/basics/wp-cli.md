@@ -4,7 +4,7 @@ title: WP-CLI
 sidebar_label: WP-CLI
 ---
 
-[![docs-source](https://img.shields.io/badge/source-eigthshift--libs-blue?style=for-the-badge&logo=php&labelColor=2a2a2a)](https://github.com/infinum/eightshift-libs)
+[![docs-source](https://img.shields.io/badge/source-eigthshift--libs-blue?style=for-the-badge&logo=php&labelColor=2a2a2a)](https://github.com/infinum/eightshift-libs/tree/3.0.0/)
 
 We have already mentioned the WP-CLI feature of Eightshift Boilerplate. Now, let's dig a little deeper into this awesome feature. We took our time to set up a bunch of WP-CLI commands that will help you set everything up and use all our features without worrying about correct names, files, and organization.
 

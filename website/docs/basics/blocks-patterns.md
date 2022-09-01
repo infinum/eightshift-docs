@@ -3,7 +3,7 @@ id: blocks-patterns
 title: Patterns
 ---
 
-[![docs-source](https://img.shields.io/badge/source-eightshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/develop/blocks/init/src/blocks/)
+[![docs-source](https://img.shields.io/badge/source-eightshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/develop/blocks/init/src/Blocks/)
 
 Block Patterns are predefined block layouts, ready to insert and tweak.
 
@@ -32,22 +32,13 @@ To remove all core patterns add this code to you `src/Blocks/Blocks.php` class.
 Filter goes in the register method:
 ```php
 // Remove block patterns.
-add_filter('block_editor_settings', [$this, 'removeCorePatterns']);
+\add_filter('init', [$this, 'removeCorePatterns'], 9);
 ```
 
 Callback method:
 ```php
-/**
-	* Remove core block patterns
-	*
-	* @param array $settings Array of block editor settings to filter out.
-	*
-	* @return array Filtered array.
-	*/
-public function removeCorePatterns(array $settings): array
+public function removeCorePatterns(): void
 {
-	$settings['__experimentalBlockPatterns'] = [];
-
-	return $settings;
+	remove_theme_support('core-block-patterns');
 }
 ```

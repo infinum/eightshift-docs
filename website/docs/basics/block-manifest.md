@@ -3,7 +3,7 @@ id: block-manifest
 title: Block Manifest
 ---
 
-[![docs-source](https://img.shields.io/badge/source-eightshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/develop/blocks/init/src/blocks/)
+[![docs-source](https://img.shields.io/badge/source-eightshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/develop/blocks/init/src/Blocks/)
 
 
 This file contains all the configuration required for a block to work. It's used in WordPress [`registerBlockType`](https://developer.wordpress.org/block-editor/developers/block-api/block-registration/) method to register a block. Using `manifest.json`, we can provide a configuration in JavaScript and PHP part of the block in one file.
@@ -37,7 +37,7 @@ This file contains all the configuration required for a block to work. It's used
       "type": "string"
     },
     "level": {
-      "type": "number",
+      "type": "integer",
       "default": 2
     }
   },
@@ -49,11 +49,11 @@ This file contains all the configuration required for a block to work. It's used
 }
 ```
 
-Most of the keys are the same as the `registerBlockType` method. If you can't find the description here, please check the [official documentation](https://developer.wordpress.org/block-editor/developers/block-api/block-registration/), but we also have some custom features here:
+Most of the keys are the same as in the [block.json metadata](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-metadata/). If you can't find the description here, please check the [official documentation](https://developer.wordpress.org/block-editor/developers/block-api/block-registration/). We also have some custom features here, not present in the `block.json` file:
 
 ### namespace
 
-*native feature*
+*custom feature*
 
 The block's namespace is set globally in the global manifest for all your custom blocks, but you can override them on each block if you need to.
 
@@ -108,7 +108,6 @@ This key is used to provide output for CSS variables. Please check [this chapter
 
 This key is used to provide options used in the Block Editor options for components like SelectControl or RangeControl. With this key, you can pass options and change them depending on the component used. Please check [this chapter](blocks-component-in-block) for more details.
 
-
 ## The power of manifest.json
 
 As described before we use `manifest.json` to share stuff across PHP / JS / SCSS so you can easily see its power.
@@ -133,7 +132,7 @@ Let's see how you would share SVG icon across multiple languages:
 ```php
 $manifest = Components::getManifest(__DIR__);
 
-echo wp_kses_post($manifest['icon']);
+echo wp_kses_post($manifest['icon']); // Make sure you have allowed filters for all SVG attributes.
 ```
 
 **block-name-editor.js**

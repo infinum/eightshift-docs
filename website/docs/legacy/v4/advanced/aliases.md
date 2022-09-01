@@ -3,7 +3,7 @@ id: helpers-aliases-helpers
 title: Aliases
 ---
 
-[![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/develop/scripts)
+[![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/v2.0.0/scripts)
 
 We have created a lot of helpful aliases that you can use in your project.
 
@@ -74,7 +74,7 @@ Alias providing [Swiper](https://www.npmjs.com/package/swiper).
 
 ## EightshiftBlocksDynamicImport
 
-To get (require) all the files using the `require.context` method, we created a helper located [here](https://github.com/infinum/eightshift-frontend-libs/blob/develop/scripts/helpers/dynamic-import.js).
+To get (require) all the files using the `require.context` method, we created a helper located [here](https://github.com/infinum/eightshift-frontend-libs/tree/v2.0.0/scripts/helpers/dynamic-import.js).
 
 It will find all files recursively in the folder using a regex. The following example will require all `assets/index.js` files inside the `custom` folder, so there is no need to add the files to the build manually.
 
@@ -104,7 +104,7 @@ Alias providing blocks actions helper. For more details check [here](/docs/legac
 
 ## EightshiftBlocksUtilityHelpersPath
 
-We have also created a bunch of JavaScript helpers located in the [helpers folder](https://github.com/infinum/eightshift-frontend-libs/tree/develop/scripts/helpers).
+We have also created a bunch of JavaScript helpers located in the [helpers folder](https://github.com/infinum/eightshift-frontend-libs/tree/v2.0.0/scripts/helpers).
 
 This alias provides only path to the helpers folder.
 

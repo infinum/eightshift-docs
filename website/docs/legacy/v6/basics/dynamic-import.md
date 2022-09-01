@@ -3,7 +3,7 @@ id: dynamic-import
 title: Dynamic Import
 ---
 
-[![docs-source](https://img.shields.io/badge/source-eightshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs)
+[![docs-source](https://img.shields.io/badge/source-eightshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/5.0.0)
 
 As JavaScript code runs on the visitor's device, it's crucial that it's as fast and optimized as possible. A powerful tool from Webpack called [dynamic imports](https://webpack.js.org/guides/code-splitting/#dynamic-imports) helps with that.
 

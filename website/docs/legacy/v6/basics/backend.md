@@ -3,7 +3,7 @@ id: backend
 title: General
 ---
 
-[![docs-source](https://img.shields.io/badge/source-eightshift--libs-blue?style=for-the-badge&logo=php&labelColor=2a2a2a)](https://github.com/infinum/eightshift-libs)
+[![docs-source](https://img.shields.io/badge/source-eightshift--libs-blue?style=for-the-badge&logo=php&labelColor=2a2a2a)](https://github.com/infinum/eightshift-libs/tree/4.0.0)
 
 In general, you can use anything as-is from the vendor library, or you can modify/add the functionality of existing classes by extending them in your project.
 

@@ -9,7 +9,7 @@ This class is used to update an existing REST API Field or provide a new field t
 
 To create a new class for extending an REST API field, run this command:
 
-`wp boilerplate create_rest_field`
+`wp boilerplate create rest-field --prompt`
 
 The output will ask you to input the correct field name and object type (post, get, etc.). Everything else will be done for you, setting the namespace, package, vendor prefixes, class, and folder name, and you will be set to write your field implementation in the `fieldCallback` method.
 

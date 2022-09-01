@@ -3,7 +3,7 @@ id: blocks-styles
 title: Styles
 ---
 
-[![docs-source](https://img.shields.io/badge/source-eightshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/develop/blocks/init/src/blocks/)
+[![docs-source](https://img.shields.io/badge/source-eightshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/develop/blocks/init/src/Blocks/)
 
 We decided to remove all support for IE 11.  That decision opened up doors that lead to new, awesome features and all the cool stuff. One of those features is CSS variables with block manifest and global settings.
 
@@ -53,7 +53,7 @@ $unique = Components::getUnique();
 ?>
 
 <div data-id="<?php echo esc_attr($unique); ?>">
-	<?php echo Components::outputCssVariables($attributes, $manifest, $unique, $globalManifest); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+	<?php echo Components::outputCssVariables($attributes, $manifest, $unique, $globalManifest); ?>
 	// Regular component implementation
 </div>
 ```
@@ -562,7 +562,7 @@ Attribute value replacement variable is used to return the attribute value where
 
 Responsive variables are used for eliminating unnecessary code duplication. For example, if you have 4 separate attributes used for setting a responsive variable where all the attributes have the same output (e.g. `%value%`), the variables can get cluttered rather quickly.
 
-In a top-level manifest key `responsiveAttributes`, you can place a new key (e.g. `wrapperHide`) that represents a common key for your responsive variables. Inside of it, you can list your responsive variables (e.g. `wrapperHideLarge`, `wrapperHideDesktop`, `wrapperHideTablet`, `wrapperHideMobile`) as a key-value pair. The key represents a breakpoint name, and the value represents responsive variable(`breakpoint`: `responsiveVariableName`). Afterwards, you can add that common key inside the `variables` (and/or `variablesEditor`) key and configure the output template.
+In a top-level manifest key `responsiveAttributes`, you can place a new key (e.g. `wrapperHide`) that represents a common key for your responsive variables. Inside it, you can list your responsive variables (e.g. `wrapperHideLarge`, `wrapperHideDesktop`, `wrapperHideTablet`, `wrapperHideMobile`) as a key-value pair. The key represents a breakpoint name, and the value represents responsive variable(`breakpoint`: `responsiveVariableName`). Afterwards, you can add that common key inside the `variables` (and/or `variablesEditor`) key and configure the output template.
 
 Best practice is to have the attributes named consistently with your breakpoints - in the **`variableName``breakpointName`** format (see example below).
 
@@ -787,5 +787,4 @@ Best practice is to have the attributes named consistently with your breakpoints
 	--wrapper-display: block;
 	--wrapper-opacity: 0;
 }
-
 ```

@@ -5,13 +5,13 @@ title: Global Settings
 
 [![docs-source](https://img.shields.io/badge/source-eightshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs)
 
-> This chapter is only relevant in setups that don't use CSS variables. If you are using CSS variables please skip to the [Blocks Styles chapter](blocks-styles) chapter.
+> This chapter is only relevant in setups that don't use CSS variables. If you are using CSS variables please skip to the [Blocks Styles chapter](blocks-styles).
 
 Ok, this is the part that we are incredibly proud of. Did you know that you can pass values from the JSON manifest or some other file directly to SCSS? Yes, we had the same facial expression when we found out. For this to work, we used Webpack and its excellent features.
 
 > This feature comes only with the block setup.
 
-If you used our `wp boilerplate setup_theme` command, you are all set. If not, please visit the [blocks chapter](blocks) for more details.
+If you used our `wp boilerplate init theme` command, you are all set. If not, please visit the [blocks chapter](blocks) for more details.
 
 ## Why do we use this?
 

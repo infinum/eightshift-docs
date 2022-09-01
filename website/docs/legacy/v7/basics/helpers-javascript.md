@@ -3,7 +3,7 @@ id: helpers-javascript
 title: JavaScript
 ---
 
-[![docs-source](https://img.shields.io/badge/source-eightshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/develop/blocks/init/src/blocks/)
+[![docs-source](https://img.shields.io/badge/source-eightshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/6.0.0/blocks/init/src/blocks/)
 
 All JavaScript helpers can be imported from the `@eightshift/frontend-libs/scripts` folder, so you don't need to think about the internal folder structure of Eightshift Frontend Libs. If you want multiple functions imported just concatenate them in the import like this:
 
@@ -16,7 +16,7 @@ import {
 } from '@eightshift/frontend-libs/scripts';
 ```
 
-# [Editor helpers](https://github.com/infinum/eightshift-frontend-libs/tree/develop/scripts/editor)
+# [Editor helpers](https://github.com/infinum/eightshift-frontend-libs/tree/6.0.0/scripts/editor)
 
 All of these helpers are generally only used in the Block Editor.
 
@@ -106,7 +106,7 @@ Register all Variations Editor blocks using WP `registerBlockVariation` method.
 
 Convert the first letter of a string to uppercase.
 
-# [General helpers](https://github.com/infinum/eightshift-frontend-libs/tree/develop/scripts/helpers)
+# [General helpers](https://github.com/infinum/eightshift-frontend-libs/tree/6.0.0/scripts/helpers)
 
 These are all helpers generally used anywhere.
 
@@ -162,7 +162,7 @@ Returns BEM selector for HTML class and checks if the condition part is set.
 
 Slices the string and inputs the provided separator after the specified characters.
 
-# [Plugins helpers](https://github.com/infinum/eightshift-frontend-libs/tree/develop/scripts/plugins)
+# [Plugins helpers](https://github.com/infinum/eightshift-frontend-libs/tree/6.0.0/scripts/plugins)
 
 These are all helpers generally only in specific plugins.
 
@@ -171,7 +171,7 @@ These are all helpers generally only in specific plugins.
 This helper will search all blocks and components manifests and find attributes that have "seo": "true" key.
 This key will be added in to the content and proceed by the YoastSeo Analysis plugin.
 
-# [Storybook helpers](https://github.com/infinum/eightshift-frontend-libs/tree/develop/scripts/storybook)
+# [Storybook helpers](https://github.com/infinum/eightshift-frontend-libs/tree/6.0.0/scripts/storybook)
 
 These are all helpers generally only in Storybook.
 

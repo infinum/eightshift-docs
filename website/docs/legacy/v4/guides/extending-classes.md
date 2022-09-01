@@ -3,7 +3,7 @@ id: extending-classes
 title: Extending Classes
 ---
 
-[![docs-source](https://img.shields.io/badge/source-eigthshift--libs-blue?style=for-the-badge&logo=php&labelColor=2a2a2a)](https://github.com/infinum/eightshift-libs)
+[![docs-source](https://img.shields.io/badge/source-eigthshift--libs-blue?style=for-the-badge&logo=php&labelColor=2a2a2a)](https://github.com/infinum/eightshift-libs/tree/v2.0.0)
 
 We are providing abstract classes, interfaces, helpers, dependency injection and namespaces for your project. In general, you can use anything as-is from the vendor library, or you can modify/add the functionality of existing classes by extending them in your project.
 

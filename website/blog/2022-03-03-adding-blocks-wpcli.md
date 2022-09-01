@@ -12,6 +12,9 @@ Although there are a few basic blocks available after creating a project, there 
 These can be used out-of-the-box, but also as a good starting point if you need similar blocks in your projects. It will also speed up your development time since you don't have to build everything from scratch.
 
 <!--truncate-->
+
+> _**Last updated: 23rd August, 2022**_
+
 ## Storybook
 
 Storybook allows you to preview how the components and blocks look and which options they have available. Since Storybook is interactive, you can try out most of the options. Think of it as a catalog with all custom blocks we've built and made ready for public use.
@@ -20,27 +23,33 @@ Each entry in Storybook should have documentation that explains the block in mor
 
 ## WP-CLI commands
 
-If you've read our [Initial Setup](/blog/initial-setup) post, you're already familiar with our custom WP-CLI commands. For implementing additional components, we have `wp boilerplate use_component` command. For blocks, we have `wp_boilerplate use_block` command.
+If you've read our [Initial Setup](/blog/initial-setup) post, you're already familiar with our custom WP-CLI commands. For implementing additional components, we have `wp boilerplate blocks use-component --name=` command. For blocks, we have `wp boilerplate blocks use-block --name=` command.
 
 ## Adding new component and block in our project
 
 Let's say we need a Quote block in our project. After going through the documentation of the Quote block, we see that we have one dependency, and that is the Quote component. So, to make Quote block available in our project, we need two WP-CLI commands:
 
 ```bash
-wp boilerplate use_component --name=quote
-wp boilerplate use_block --name=quote
+wp boilerplate blocks use-block --name=quote
+wp boilerplate blocks use-component --name=quote
 ```
 
-You should do the commands in this order because Quote component doesn't have any dependencies, while the Quote block has one dependency, and that is Quote component. Otherwise, you will get an error. After entering these commands, run `npm start` again to make sure everything works properly.
+When entering the `wp boilerplate blocks use-block --name='quote'` command, you'll notice the note about a block dependency on the Quote component. So you should run the second command as well.
+
+![Setup - instructions](/img/blog/wpcli-1.png)
+
+After entering these commands, run `npm start` again to make sure everything works properly.
 
 The Quote block is now ready to use and available in your blocks list. You may use it as-is, or you may want to expand its functionalities with some additional attributes. More about that will be covered in the next blog post.
 
 ## Using Example block
 
 If you want to build a block almost from scratch, you can use our Example block. This is a very simple block that generates all necessary files with some example options. To add an Example block to your project, use the following WP-CLI command:
+
 ```bash
-wp boilerplate use_block --name=example
+wp boilerplate blocks use-block --name=example
 ```
+
 Since our blocks use a predefined structure to make everything register automatically, adding Example block with WP-CLI will generate all required files. After it's added, feel free to rename the folder, as well as files with the name of your block and start modifying all the files. Simply replace "example" with the name of your block.
 
 ## Further reading

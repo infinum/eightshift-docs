@@ -3,7 +3,7 @@ id: menu
 title: Menu
 ---
 
-[![docs-source](https://img.shields.io/badge/source-eigthshift--boilerplate-red?style=for-the-badge&logo=wordpress&labelColor=2a2a2a)](https://github.com/infinum/eightshift-boilerplate/blob/develop/src/menu/class-menu.php)
+[![docs-source](https://img.shields.io/badge/source-eigthshift--boilerplate-red?style=for-the-badge&logo=wordpress&labelColor=2a2a2a)](https://github.com/infinum/eightshift-boilerplate/tree/v4.0.0/src/menu/class-menu.php)
 
 Menu class is located in `project`. It extends `Eightshift_Libs\Menu\Menu` class.
 
@@ -37,6 +37,6 @@ use Eightshift_Libs\Menu\Menu;
 Menu::bem_menu( 'header_main_nav', 'main-navigation' );
 ```
 
-You can also provide multiple parameters to the helper. All the details are [found here](https://github.com/infinum/eightshift-libs/blob/404aeab50beef38f788c864d7c0312858b097e81/src/menu/class-menu.php#L69).
+You can also provide multiple parameters to the helper. All the details are [found here](https://github.com/infinum/eightshift-libs/tree/404aeab50beef38f788c864d7c0312858b097e81/src/menu/class-menu.php#L69).
 
 <div class="legacy-badge legacy-badge--v4"></div>

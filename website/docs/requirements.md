@@ -17,5 +17,4 @@ Make sure that you have all these packages installed and ready to use on your sy
 - `wp --info`
 - `git --version`
 
-
 If it doesn't return any errors, you are good to go.
