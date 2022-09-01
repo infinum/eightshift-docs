@@ -3,7 +3,7 @@ id: webpack
 title: Webpack
 ---
 
-[![docs-source](https://img.shields.io/badge/source-eightshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs)
+[![docs-source](https://img.shields.io/badge/source-eightshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/6.0.0)
 
 At its core, Webpack is a static module bundler for modern JavaScript applications. When Webpack processes your application, it builds an internal dependency graph that maps every module your project needs and generates one or more bundles. [Learn more about Webpack](https://webpack.js.org/concepts/).
 

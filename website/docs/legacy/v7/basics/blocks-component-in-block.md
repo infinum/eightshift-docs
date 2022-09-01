@@ -3,7 +3,7 @@ id: blocks-component-in-block
 title: Component in a Block
 ---
 
-[![docs-source](https://img.shields.io/badge/source-eightshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/develop/blocks/init/src/blocks/)
+[![docs-source](https://img.shields.io/badge/source-eightshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/6.0.0/blocks/init/src/blocks/)
 
 Blocks and components work perfectly together because they are made that way. We simplified this as much as possible but there always a few things you need to do manually.
 
@@ -62,12 +62,12 @@ This block/component uses three components, two headings (one of which is rename
 
 As we described earlier, in order to use our setup you must use our helpers. Here are some of the helpers you should get familiar with:
 
-* props - [JS](https://github.com/infinum/eightshift-frontend-libs/blob/develop/scripts/editor/attributes.js) - [PHP](https://github.com/infinum/eightshift-libs/blob/develop/src/Helpers/AttributesTrait.php)
-* getOptions - [JS](https://github.com/infinum/eightshift-frontend-libs/blob/develop/scripts/editor/options.js)
-* getOption - [JS](https://github.com/infinum/eightshift-frontend-libs/blob/develop/scripts/editor/options.js)
-* getAttrKey - [JS](https://github.com/infinum/eightshift-frontend-libs/blob/develop/scripts/editor/attributes.js) - [PHP](https://github.com/infinum/eightshift-libs/blob/develop/src/Helpers/AttributesTrait.php)
-* checkAttr - [JS](https://github.com/infinum/eightshift-frontend-libs/blob/develop/scripts/editor/attributes.js) - [PHP](https://github.com/infinum/eightshift-libs/blob/develop/src/Helpers/AttributesTrait.php)
-* render - [PHP](https://github.com/infinum/eightshift-libs/blob/develop/src/Blocks/AbstractBlocks.php)
+* props - [JS](https://github.com/infinum/eightshift-frontend-libs/tree/6.0.0/scripts/editor/attributes.js) - [PHP](https://github.com/infinum/eightshift-libs/tree/5.0.0/src/Helpers/AttributesTrait.php)
+* getOptions - [JS](https://github.com/infinum/eightshift-frontend-libs/tree/6.0.0/scripts/editor/options.js)
+* getOption - [JS](https://github.com/infinum/eightshift-frontend-libs/tree/6.0.0/scripts/editor/options.js)
+* getAttrKey - [JS](https://github.com/infinum/eightshift-frontend-libs/tree/6.0.0/scripts/editor/attributes.js) - [PHP](https://github.com/infinum/eightshift-libs/tree/5.0.0/src/Helpers/AttributesTrait.php)
+* checkAttr - [JS](https://github.com/infinum/eightshift-frontend-libs/tree/6.0.0/scripts/editor/attributes.js) - [PHP](https://github.com/infinum/eightshift-libs/tree/5.0.0/src/Helpers/AttributesTrait.php)
+* render - [PHP](https://github.com/infinum/eightshift-libs/tree/5.0.0/src/Blocks/AbstractBlocks.php)
 
 For more details please check our helpers sections for [JavaScript](helpers-javascript) and [PHP](helpers-php).
 
@@ -711,7 +711,7 @@ For more details please read the [props helper docs](helpers-javascript).
 
 ### Passing setAttributes to components
 
-As we described earlier props helper knows what to pass to a child component but there are some wild cards here. When you are passing props from block to component you must pass setAttributes down as props but if if you are passing props from component to component you don't need to. This is because we added some automatic includes in our props helper that you can check [here](https://github.com/infinum/eightshift-frontend-libs/blob/develop/scripts/editor/attributes.js).
+As we described earlier props helper knows what to pass to a child component but there are some wild cards here. When you are passing props from block to component you must pass setAttributes down as props but if if you are passing props from component to component you don't need to. This is because we added some automatic includes in our props helper that you can check [here](https://github.com/infinum/eightshift-frontend-libs/tree/6.0.0/scripts/editor/attributes.js).
 
 ### Manualy overiding attributes from the code
 

@@ -3,7 +3,7 @@ id: library
 title: SCSS Library
 ---
 
-[![docs-source](https://img.shields.io/badge/source-eightshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs)
+[![docs-source](https://img.shields.io/badge/source-eightshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/6.0.0)
 
 Eightshift Frontend Libs contains a collection of useful SCSS mixins, functions and helpers you can use in projects.
 
