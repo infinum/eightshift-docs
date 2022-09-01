@@ -3,11 +3,11 @@ id: webpack
 title: Webpack
 ---
 
-[![docs-source](https://img.shields.io/badge/source-eigthshift--boilerplate-red?style=for-the-badge&logo=wordpress&labelColor=2a2a2a)](https://github.com/infinum/eightshift-boilerplate/blob/develop/webpack.config.js)
+[![docs-source](https://img.shields.io/badge/source-eigthshift--boilerplate-red?style=for-the-badge&logo=wordpress&labelColor=2a2a2a)](https://github.com/infinum/eightshift-boilerplate/tree/v4.0.0/webpack.config.js)
 
 At its core, webpack is a static module bundler for modern JavaScript applications. When webpack processes your application, it internally builds a dependency graph which maps every module your project needs and generates one or more bundles. Learn more about webpack [here](https://webpack.js.org/concepts/).
 
-Look at how the config is set up on [Eightshift Boilerplate repo](https://github.com/infinum/eightshift-boilerplate/blob/develop/webpack.config.js).
+Look at how the config is set up on [Eightshift Boilerplate repo](https://github.com/infinum/eightshift-boilerplate/tree/v4.0.0/webpack.config.js).
 
 In order to use this library, you'll need to have a `webpack.config.js` file in the root of your project.
 

@@ -3,7 +3,7 @@ id: browsersync
 title: Browsersync
 ---
 
-[![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/blob/develop/webpack/development.js)
+[![docs-source](https://img.shields.io/badge/source-eigthshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/v2.0.0/webpack/development.js)
 
 [Browsersync](https://browsersync.io/docs) is a Node module that enables you to develop sites faster. It will react to any code change and will 'refresh' the site without you needing to refresh it. In the background, it runs a small local server. When configured it will inject a script on your web page that will react to any code change.
 

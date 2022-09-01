@@ -3,7 +3,7 @@ id: config
 title: Project Config
 ---
 
-[![docs-source](https://img.shields.io/badge/source-eigthshift--boilerplate-red?style=for-the-badge&logo=wordpress&labelColor=2a2a2a)](https://github.com/infinum/eightshift-boilerplate/blob/develop/src/class-config.php)
+[![docs-source](https://img.shields.io/badge/source-eigthshift--boilerplate-red?style=for-the-badge&logo=wordpress&labelColor=2a2a2a)](https://github.com/infinum/eightshift-boilerplate/tree/v4.0.0/src/class-config.php)
 
 Project config is located in `src/class-config.php`, and it extends `Eightshift_Libs\Core\Config` class from the lib.
 
@@ -18,7 +18,7 @@ This class is used to define all the important methods for your project:
 * get_project_path()
 * get_config()
 
-Some methods are mandatory and are defined in [config interface](https://github.com/infinum/eightshift-libs/blob/develop/src/interface-config-data.php) the rest are provided inside the project.
+Some methods are mandatory and are defined in [config interface](https://github.com/infinum/eightshift-libs/tree/v2.0.0/src/interface-config-data.php) the rest are provided inside the project.
 
 ## get_project_name()
 

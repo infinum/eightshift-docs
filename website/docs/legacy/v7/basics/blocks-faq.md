@@ -3,7 +3,7 @@ id: blocks-faq
 title: Faq
 ---
 
-[![docs-source](https://img.shields.io/badge/source-eightshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/develop/blocks/init/src/blocks/)
+[![docs-source](https://img.shields.io/badge/source-eightshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/6.0.0/blocks/init/src/blocks/)
 
 Before we dive into blocks and see how everything is set, we should describe this setup's mindset.
 If you've managed to set up your project by this point with the [WP-CLI](wp-cli) command `setup_theme`, you might have a few questions. We will try to answer all those questions here.
@@ -58,7 +58,7 @@ and style that block however you seem fit.
 
 ### What if I add a block and it throws an error that it is missing some components, what do I do?
 
-All blocks/components have some kind of documentation and in that documentation we have a list of dependencies each block/component needs to have in the project in order for it to work. For example you can look in the [heading block](https://github.com/infinum/eightshift-frontend-libs/blob/develop/blocks/init/src/Blocks/custom/heading/docs/readme.mdx), as you can see the heading blocks depends on the heading component, so if you install a heading block before heading component it will resolve in to an error. So please be sure that your block/component installation follows the correct order.
+All blocks/components have some kind of documentation and in that documentation we have a list of dependencies each block/component needs to have in the project in order for it to work. For example you can look in the [heading block](https://github.com/infinum/eightshift-frontend-libs/tree/6.0.0/blocks/init/src/Blocks/custom/heading/docs/readme.mdx), as you can see the heading blocks depends on the heading component, so if you install a heading block before heading component it will resolve in to an error. So please be sure that your block/component installation follows the correct order.
 
 ### How can I use your pre-made blocks?
 

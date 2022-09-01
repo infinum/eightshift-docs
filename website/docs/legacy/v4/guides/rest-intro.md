@@ -19,7 +19,7 @@ and 2 abstract classes:
 
 In general, you will use only what you need from the provided options.
 
-Full details of Rest API implementation can be found here: [Eightshift-libs Rest](https://github.com/infinum/eightshift-libs/tree/develop/src/rest)
+Full details of Rest API implementation can be found here: [Eightshift-libs Rest](https://github.com/infinum/eightshift-libs/tree/v2.0.0/src/rest)
 
 
 ## Interface-callable-field.php

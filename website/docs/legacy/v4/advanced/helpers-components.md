@@ -3,11 +3,11 @@ id: helpers-components-helpers
 title: Components
 ---
 
-[![docs-source](https://img.shields.io/badge/source-eigthshift--libs-blue?style=for-the-badge&logo=php&labelColor=2a2a2a)](https://github.com/infinum/eightshift-libs/blob/develop/src/helpers/class-components.php)
+[![docs-source](https://img.shields.io/badge/source-eigthshift--libs-blue?style=for-the-badge&logo=php&labelColor=2a2a2a)](https://github.com/infinum/eightshift-libs/tree/v2.0.0/src/helpers/class-components.php)
 
 Components helper is located in `Eightshift Libs`. To extend it, use `Eightshift_Libs\Helpers\Components` class.
 
-We have created this simple helper that you can use in any PHP class as a static helper. To see all of the components helpers go [here](https://github.com/infinum/eightshift-libs/blob/develop/src/helpers/class-components.php).
+We have created this simple helper that you can use in any PHP class as a static helper. To see all of the components helpers go [here](https://github.com/infinum/eightshift-libs/tree/v2.0.0/src/helpers/class-components.php).
 
 ## ensure_string
 

@@ -3,7 +3,7 @@ id: wp-cli
 title: WP-CLI
 ---
 
-[![docs-source](https://img.shields.io/badge/source-eightshift--libs-blue?style=for-the-badge&logo=php&labelColor=2a2a2a)](https://github.com/infinum/eightshift-libs)
+[![docs-source](https://img.shields.io/badge/source-eightshift--libs-blue?style=for-the-badge&logo=php&labelColor=2a2a2a)](https://github.com/infinum/eightshift-libs/tree/5.0.0)
 
 Eightshift Development Kit provides extensive [WP-CLI](https://wp-cli.org/) tooling, allowing you to automate bootstrapping of common code, adding blocks from the Frontend Libs library to your projects and more using `wp boilerplate`.
 

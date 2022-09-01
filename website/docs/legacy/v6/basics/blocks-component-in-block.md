@@ -3,7 +3,7 @@ id: blocks-component-in-block
 title: Component in a Block
 ---
 
-[![docs-source](https://img.shields.io/badge/source-eightshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/develop/blocks/init/src/blocks/)
+[![docs-source](https://img.shields.io/badge/source-eightshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/5.0.0/blocks/init/src/blocks/)
 
 Blocks and components work perfectly together because they are made that way. We simplified this as much as possible but there always a few things you need to do manually.
 
@@ -62,12 +62,12 @@ This block/component uses three components, two headings (one of which is rename
 
 As we described earlier, in order to use our setup you must use our helpers. Here are some of the helpers you should get familiar with:
 
-* props - [JS](https://github.com/infinum/eightshift-frontend-libs/blob/develop/scripts/editor/attributes.js) - [PHP](https://github.com/infinum/eightshift-libs/blob/develop/src/Helpers/AttributesTrait.php)
+* props - [JS](https://github.com/infinum/eightshift-frontend-libs/blob/develop/scripts/editor/attributes.js) - [PHP](https://github.com/infinum/eightshift-libs/tree/4.0.0/src/Helpers/AttributesTrait.php)
 * getOptions - [JS](https://github.com/infinum/eightshift-frontend-libs/blob/develop/scripts/editor/options.js)
 * getOption - [JS](https://github.com/infinum/eightshift-frontend-libs/blob/develop/scripts/editor/options.js)
-* getAttrKey - [JS](https://github.com/infinum/eightshift-frontend-libs/blob/develop/scripts/editor/attributes.js) - [PHP](https://github.com/infinum/eightshift-libs/blob/develop/src/Helpers/AttributesTrait.php)
-* checkAttr - [JS](https://github.com/infinum/eightshift-frontend-libs/blob/develop/scripts/editor/attributes.js) - [PHP](https://github.com/infinum/eightshift-libs/blob/develop/src/Helpers/AttributesTrait.php)
-* render - [PHP](https://github.com/infinum/eightshift-libs/blob/develop/src/Blocks/AbstractBlocks.php)
+* getAttrKey - [JS](https://github.com/infinum/eightshift-frontend-libs/blob/develop/scripts/editor/attributes.js) - [PHP](https://github.com/infinum/eightshift-libs/tree/4.0.0/src/Helpers/AttributesTrait.php)
+* checkAttr - [JS](https://github.com/infinum/eightshift-frontend-libs/blob/develop/scripts/editor/attributes.js) - [PHP](https://github.com/infinum/eightshift-libs/tree/4.0.0/src/Helpers/AttributesTrait.php)
+* render - [PHP](https://github.com/infinum/eightshift-libs/tree/4.0.0/src/Blocks/AbstractBlocks.php)
 
 For more details please check our helpers sections for [JavaScript](helpers-javascript) and [PHP](helpers-php).
 

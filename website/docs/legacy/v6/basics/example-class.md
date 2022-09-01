@@ -3,7 +3,7 @@ id: example-class
 title: Example Class
 ---
 
-[![docs-source](https://img.shields.io/badge/source-eightshift--libs-blue?style=for-the-badge&logo=php&labelColor=2a2a2a)](https://github.com/infinum/eightshift-libs)
+[![docs-source](https://img.shields.io/badge/source-eightshift--libs-blue?style=for-the-badge&logo=php&labelColor=2a2a2a)](https://github.com/infinum/eightshift-libs/tree/4.0.0)
 
 As you've already seen in the [WP-CLI](wp-cli) chapter, we have many finished features prepared for you. However, we want to make things even easier for you, so we created an example service class for you to use.
 
