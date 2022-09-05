@@ -1,6 +1,6 @@
 ---
 title: Block Variations
-description: Intro to block variations and examples how to use them
+description: Intro to block variations and examples of how to use them
 slug: block-variations
 authors: obradovic
 date: 2022-09-07
@@ -8,7 +8,7 @@ tags: [eightshift, boilerplate, block, variations]
 hide_table_of_contents: false
 ---
 
-Let's picture the following scenario. You create a block with many options and want multiple versions of that block available with already set options. That's where variations come in handy!
+Let's picture the following scenario: You just created a block with many options and now you want multiple versions of that block available with pre-set options. That's where variations come in handy!
 <!--truncate-->
 
 ## What are variations?
@@ -26,7 +26,7 @@ Our new card should consist of the following components:
 
 ## How to register a block variation?
 
-The process of registering block variations is fairly simple. In order to register a block variation, go to **src/Blocks/variations**, add a new folder, let's call it `card-resource`. Inside that folder, all you need to do is add a `manifest.json` file. It is also recommended to add a `docs` folder in which you can add a readme file and storybook.
+The process of registering block variations is fairly simple. In order to register a block variation, go to **src/Blocks/variations**, add a new folder, and let's call it `card-resource`. Inside that folder, all you need to do is add a `manifest.json` file. It is also recommended to add a `docs` folder in which you can add a readme file and storybook file.
 
 Inside your `manifest.json` file, add the attributes to define the new default attributes for this variation. Here is an example:
 
@@ -50,7 +50,6 @@ Inside your `manifest.json` file, add the attributes to define the new default a
 		"inserter"
 	]
 }
-
 ```
 
 After adding this code, your new block variation should now be visible in the block list. It's that easy!
