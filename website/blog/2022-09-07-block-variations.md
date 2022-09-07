@@ -63,33 +63,54 @@ The following example is very basic, but it will give you an idea of how to prov
 
 > If you don't have Carousel block in your project yet, you can add it with the following WP-CLI command: `wp boilerplate blocks use-block --name="carousel"`
 
-Once you have the `Carousel` block up and running, create a variation called `Carousel Loop`. Here is the code you can add to the `manifest.json` file for that variation.
+Once you have the `Carousel` block up and running, create a variation called `Carousel Loop`. For this variation, we want the following:
+- loop
+- pagination
+- two images per slide
+
+We will also add some placeholder images so you can immediately test the Carousel block variation. Here is the code you can add to the `manifest.json` file for that variation.
 ```json
 {
 	"$schema": "https://raw.githubusercontent.com/infinum/eightshift-frontend-libs/develop/schemas/variation.json",
 	"parentName": "carousel",
 	"name": "carousel-loop",
 	"title": "Carousel Loop",
-	"description" : "Carousel block variation with custom settings",
+	"description" : "Carousel block variation with loop and pagination enabled, along with multiple image blocks with placeholders. Displays two images per slide.",
 	"icon": {
 		"src": "es-card"
 	},
 	"attributes": {
 		"carouselIsLoop": true,
 		"carouselShowPagination": true,
-		"carouselShowItems": 1
+		"carouselShowItems": 2
 	},
 	"innerBlocks": [
 		{
 			"name": "eightshift-boilerplate/image",
 			"attributes": {
-				"imageImageFull":true
+				"imageImageFull":true,
+				"imageImageUrl": "https://loremflickr.com/400/400"
 			}
 		},
 		{
 			"name": "eightshift-boilerplate/image",
 			"attributes": {
-				"imageImageFull":true
+				"imageImageFull":true,
+				"imageImageUrl": "https://loremflickr.com/400/400"
+			}
+		},
+		{
+			"name": "eightshift-boilerplate/image",
+			"attributes": {
+				"imageImageFull":true,
+				"imageImageUrl": "https://loremflickr.com/400/400"
+			}
+		},
+		{
+			"name": "eightshift-boilerplate/image",
+			"attributes": {
+				"imageImageFull":true,
+				"imageImageUrl": "https://loremflickr.com/400/400"
 			}
 		}
 	],
