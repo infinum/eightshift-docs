@@ -130,7 +130,10 @@
 			}
 
 			.pagination-nav {
-				display: none;
+				border-top: none;
+				grid-column: 1 / -1;
+				padding-top: 0;
+				margin-top: 30px;
 			}
 		}
 	}
