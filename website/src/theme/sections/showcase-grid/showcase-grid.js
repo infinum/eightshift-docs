@@ -33,12 +33,6 @@ export default function ShowcaseGrid() {
 			link: 'https://solplanet.net/',
 		},
 		{
-			image: useBaseUrl('img/showcase/design-islands.jpg'),
-			label: 'Design Islands',
-			desc: 'Explore a world of failed concepts and projects gone wrong, wild iterations, forgotten illustrations, lessons learned, small tips and short reviews.',
-			link: 'https://design.infinum.com/',
-		},
-		{
 			image: useBaseUrl('img/showcase/academy.jpg'),
 			label: 'Infinum Academy',
 			desc: 'Learn how to build apps. For free. No practical experience? No problem. People who build apps every day are teaching how to create software from scratch. By the end of the course, you will have built your very own app.',
@@ -91,12 +85,6 @@ export default function ShowcaseGrid() {
 			label: 'Productive',
 			desc: 'Productive is a one-stop shop for agencies of all types and sizes. Start now and get a strong grip on operations and profitability.',
 			link: 'https://productive.io/',
-		},
-		{
-			image: useBaseUrl('img/showcase/smiley.jpg'),
-			label: 'Smiley',
-			desc: 'Smiley is a leading lifestyle brand that forged a relationship with generations of musical and cultural movements.',
-			link: 'https://smiley.com/',
 		},
 		{
 			image: useBaseUrl('img/showcase/saferinternet.jpg'),
