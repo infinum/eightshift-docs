@@ -4,22 +4,82 @@ import Heading from '../../components/heading/heading';
 import Container from '../../components/container/container';
 import Arrow from '../../components/arrow/arrow';
 
-export default function ShowcaseGrid() {
+function shuffleArray(array) {
+	for (var i = array.length - 1; i > 0; i--) {
+			var j = Math.floor(Math.random() * (i + 1));
+			var temp = array[i];
+			array[i] = array[j];
+			array[j] = temp;
+	}
+
+	return array;
+}
+
+
+export default function ShowcaseGrid(props) {
+	const {
+		privateType,
+	} = props;
 
 	const component = 'showcase-grid';
 
-	function shuffleArray(array) {
-		for (var i = array.length - 1; i > 0; i--) {
-				var j = Math.floor(Math.random() * (i + 1));
-				var temp = array[i];
-				array[i] = array[j];
-				array[j] = temp;
-		}
+	const headingTitle = privateType ? 'Showcase Infinum' : 'Showcase';
+	const headingSubTitle = privateType ? 'See all the awesome websites people from the Infinum WordPress team have built.' : 'See the awesome websites people are building with Eightshift Boilerplate.';
+	const ctaTitle = privateType ? 'Want to contact us?' : 'Want to showcase your project?';
+	const ctaSubTitle = privateType ? 'If you want to contact us please use our contact form on the <a target="_blank" rel="noopener noreferrer" rel="nofollow" href="https://infinum.com/contact/">Infinum web</a>' : 'If you want to show case your project on this list please open an issue on on the <a target="_blank" rel="noopener noreferrer" rel="nofollow" href="https://github.com/infinum/eightshift-docs/issues">Eightshift-Docs github</a>';
 
-		return array;
-	}
+	const privateData = [
+		{
+			image: useBaseUrl('img/showcase/tarisio.jpg'),
+			label: 'Tariso',
+			desc: 'Tarisio is a web-based auction house specializing in stringed instruments and bows. Its online auctions provide a global marketplace for fine violin sales.',
+			link: 'https://tarisio.com/',
+		},
+		{
+			image: useBaseUrl('img/showcase/t2.jpg'),
+			label: 'T2 auctions',
+			desc: 'Auctions for the Violin Trade.',
+			link: 'https://t2-auctions.com/',
+		},
+		{
+			image: useBaseUrl('img/showcase/rasco.jpg'),
+			label: 'Rasco',
+			desc: 'One of the leading manufacturers of municipal equipment in Europe: we produce snow ploughs (snowplow), spreaders, crane mowers and vehicle upgrades.',
+			link: 'https://rasco.hr/',
+		},
+		{
+			image: useBaseUrl('img/showcase/lynx.jpg'),
+			label: 'Lynx',
+			desc: 'LYNX is a 2m³ vacuum road sweeper exceeding expectations. Modern design, functionality, power and ease of use for clean streets.',
+			link: 'https://lynx.rasco.hr/',
+		},
+		{
+			image: useBaseUrl('img/showcase/hak.jpg'),
+			label: 'HAK Revija',
+			desc: 'HAK news portal.',
+			link: 'https://revijahak.hr/',
+		},
+		{
+			image: useBaseUrl('img/showcase/crveninosovi.jpg'),
+			label: 'Crveni nosovi',
+			desc: 'Our mission is to restore the feeling of joy, happiness and optimism in difficult life circumstances.',
+			link: 'https://www.crveninosovi.hr/',
+		},
+		{
+			image: useBaseUrl('img/showcase/vcfa.jpg'),
+			label: 'VCFA',
+			desc: 'Learn with accomplished teachers and artistic colleagues from around the world. You’ll create new work, refine your vision, and enhance your critical and creative skills.',
+			link: 'https://vcfa.edu/',
+		},
+		{
+			image: useBaseUrl('img/showcase/go.jpg'),
+			label: 'Malta Go',
+			desc: 'GO is Malta’s leading communications services company. As the first quad play provider in Malta we provide mobile, fixed line, internet and TV services to more than 500,000 customers.',
+			link: 'https://www.go.com.mt/',
+		},
+	];
 
-	const itemsData = shuffleArray([
+	const publicData = [
 		{
 			image: useBaseUrl('img/showcase/infinum.jpg'),
 			label: 'Infinum Web',
@@ -63,6 +123,36 @@ export default function ShowcaseGrid() {
 			link: 'https://brand.a1.group/',
 		},
 		{
+			image: useBaseUrl('img/showcase/a1-digitalcampus.jpg'),
+			label: 'A1 Digital Campus',
+			desc: 'At the A1 digital.campus you will find free, innovative workshops on future digital topics such as "Coding" and "Robotics" for children and young people. In addition, we organize hackathons and even our own start-up school.',
+			link: 'https://a1digitalcampus.at/',
+		},
+		{
+			image: useBaseUrl('img/showcase/a1-wholesale.jpg'),
+			label: 'A1 Wholesale',
+			desc: 'Success begins with the right partner. A1 Wholesale is known for its reliability and technical know-how. No wonder more than 24 million retail customers in CEE count on us: mobile phone providers, fixed network operators, internet providers, MVNO and broadcasting companies.',
+			link: 'https://wholesale.a1.at/',
+		},
+		{
+			image: useBaseUrl('img/showcase/a1-internationalbusiness.jpg'),
+			label: 'A1 International business',
+			desc: 'Success begins with the right partner. A1 International Business is known for its reliability and technical know-how. No wonder more than 24 million retail customers in CEE count on us: mobile phone providers, fixed network operators, internet providers, MVNO and broadcasting companies.',
+			link: 'https://internationalbusiness.a1.group/',
+		},
+		{
+			image: useBaseUrl('img/showcase/a1-esg.jpg'),
+			label: 'A1 ESG',
+			desc: 'ESG stands for Environment, Social and Governance and embodies the responsibility that companies bear internally and for their surrounding due to their actions.',
+			link: 'https://esg.a1.group/',
+		},
+		{
+			image: useBaseUrl('img/showcase/a1-towers.jpg'),
+			label: 'A1 Towers',
+			desc: 'In line with global trends in the telecommunications industry, in November 2021, A1 Hrvatska de-merged its passive mobile network infrastructure operation from the rest of its business operations.',
+			link: 'https://a1towers.hr/',
+		},
+		{
 			image: useBaseUrl('img/showcase/tvornica-snova.jpg'),
 			label: 'Tvornica Snova',
 			desc: 'Personalized books will allow each child to become the protagonist of their own story.',
@@ -98,7 +188,15 @@ export default function ShowcaseGrid() {
 			desc: 'The Village Alliance has been a leading advocate for the Greenwich Village community for nearly thirty years.',
 			link: 'https://greenwichvillage.nyc/',
 		},
-	]);
+		{
+			image: useBaseUrl('img/showcase/biller.jpg'),
+			label: 'Biller',
+			desc: 'Let\'s make buying easier, by empowering your business buyers to use Buy Now, Pay Later. Add Biller to your checkout and watch your conversion increase.',
+			link: 'https://biller.ai/',
+		},
+	];
+
+	const itemsData = privateType ? [...publicData, ...privateData] : publicData;
 
 	// https://reactjs.org/docs/react-dom.html#hydrate
 	const [isClient, setIsClient] = useState(false);
@@ -106,7 +204,7 @@ export default function ShowcaseGrid() {
 		setIsClient(true)
 	}, []);
 
-	const items = itemsData.map((item, index) => {
+	const items = shuffleArray(itemsData).map((item, index) => {
 		const {
 			image,
 			label,
@@ -150,8 +248,8 @@ export default function ShowcaseGrid() {
 			>
 				<Heading
 					componentClass={component}
-					title={'Showcase'}
-					subtitle={'See the awesome websites people are building with Eightshift Boilerplate.'}
+					title={headingTitle}
+					subtitle={headingSubTitle}
 				/>
 				<div className={`${component}__content`}>
 					{items}
@@ -164,8 +262,8 @@ export default function ShowcaseGrid() {
 			>
 				<Heading
 					componentClass={component}
-					title={'Want to showcase your project?'}
-					subtitle={'If you want to show case your project on this list please open an issue on on the <a target="_blank" rel="noopener noreferrer" rel="nofollow" href="https://github.com/infinum/eightshift-docs/issues">Eightshift-Docs github</a>'}
+					title={ctaTitle}
+					subtitle={ctaSubTitle}
 				/>
 			</Container>
 		</div>
