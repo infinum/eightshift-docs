@@ -12,13 +12,13 @@ export default function Showcase() {
 
 	return (
 		<Layout
-			title={'Showcase'}
+			title={'Showcase Infinum'}
 			description={siteConfig.tagline}
 			keywords={siteConfig.customFields.keywords}
 			metaImage={useBaseUrl(`img/${siteConfig.customFields.image}`)}
 			wrapperClassName={'page-showcase'}
 		>
-			<ShowcaseGrid privateType={false} />
+			<ShowcaseGrid privateType={true}/>
 			<Footer />
 			<Foot />
 		</Layout>
