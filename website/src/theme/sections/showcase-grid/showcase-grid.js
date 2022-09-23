@@ -194,6 +194,12 @@ export default function ShowcaseGrid(props) {
 			desc: 'Let\'s make buying easier, by empowering your business buyers to use Buy Now, Pay Later. Add Biller to your checkout and watch your conversion increase.',
 			link: 'https://biller.ai/',
 		},
+		{
+			image: useBaseUrl('img/showcase/dept.jpg'),
+			label: 'Dept Agency',
+			desc: 'Pioneering tech and marketing to help brands stay ahead.',
+			link: 'https://www.deptagency.com/',
+		},
 	];
 
 	const itemsData = privateType ? [...publicData, ...privateData] : publicData;
