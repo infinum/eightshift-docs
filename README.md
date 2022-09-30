@@ -1,5 +1,4 @@
-![image](https://user-images.githubusercontent.com/77000136/146529640-fb4a0dc8-af62-4249-ae05-fa3286b46a22.png#gh-light-mode-only)
-![image](https://user-images.githubusercontent.com/77000136/146529660-5a68acb5-e6a3-4634-8603-5c03e52779ea.png#gh-dark-mode-only)
+![image](https://repository-images.githubusercontent.com/236449101/e89c31b2-a180-4258-9f67-608b4050c484)
 
 [![GitHub tag](https://img.shields.io/github/tag/infinum/eightshift-docs.svg?style=for-the-badge)](https://github.com/infinum/eightshift-docs)
 [![GitHub stars](https://img.shields.io/github/stars/infinum/eightshift-docs.svg?style=for-the-badge&label=Stars)](https://github.com/infinum/eightshift-docs/)
@@ -11,7 +10,7 @@ A documentation website for Eightshift open source projects.
 
 Visit:
 
-[https://infinum.github.io/eightshift-docs/](https://infinum.github.io/eightshift-docs/).
+[https://eightshift.com/](https://eightshift.com/).
 
 To run docs locally:
 
