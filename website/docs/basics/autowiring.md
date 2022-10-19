@@ -15,7 +15,7 @@ In a nutshell, we use a dependency injection (DI) container to load all your ser
 
 Autowiring runs inside the `Main` service class as an extended class of our `AbstractMain` class. You can install the main class using this command:
 
-`wp boilerplate create_main`
+`wp boilerplate create main`
 
 ## How it works
 

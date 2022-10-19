@@ -9,7 +9,7 @@ title: Architecture concepts
 
 Eightshift Development Kit follows a strict project structure to support autoloading, dependency injection and `wp boilerplate` commands, as well as conventions to increase codebase understanding between developers. As an added benefit, following this structure and conventions makes your codebase more consistent and organized.
 
-While Eightshift Development Kit provides required theme files and common theme files such as `style.css` and `functions.php`, they're used differently to what you might expect if you've worked with WordPress themes previously. For instance, `style.css` is used only to register theme metadata, and doesn't contain any actual styles, as they're built using Webpack and use cache busting. `functions.php` simply bootstraps the execution lifecycle. We also provide very basic template partials, such as `single.php`, which you can acommodate to your needs. An idea to consider is replacing some of them with pages that are editable in Gutenberg.
+While Eightshift Development Kit provides required theme files and common theme files such as `style.css` and `functions.php`, they're used differently to what you might expect if you've worked with WordPress themes previously. For instance, `style.css` is used only to register theme metadata, and doesn't contain any actual styles, as they're built using Webpack and use cache busting. `functions.php` simply bootstraps the execution lifecycle. We also provide very basic template partials, such as `single.php`, which you can accommodate to your needs. An idea to consider is replacing some of them with pages that are editable in Gutenberg.
 
 While you'll find some additional configuration files such as `webpack.config.js` in the project root, the majority of your projects codebase should live in the `src` directory, which is autoloaded via Composer following PSR-4 conventions. This implies that every directory under `src` is a namespace under your base namespace (which is your project name), and PHP files inside of those directories are classes in that namespace, with exceptions for filenames that aren't in `StudlyCase`. 
 
@@ -61,7 +61,7 @@ To learn more about the [global manifest](blocks-global-manifest.md), [block man
 Your project might contain a different set of namespaces and classes in the `src` folder, depending on what you've included using wp boilerplate commands.
 By default, your project will include the `Blocks`, `Config`, `Enqueue`, `Main`, `Manifest` and `Menu` namespaces. You can include classes from Eightshift Libs to provide additional functionality manually or using wp boilerplate.
 
-This chapter also doesn't cover all of the namespaces and classes in Eightshift Libs, or their use. Check out the source code documentation for all available namespaces and classes.
+This chapter also doesn't cover all the namespaces and classes in Eightshift Libs, or their use. Check out the source code documentation for all available namespaces and classes.
 
 - src
 	- Blocks
@@ -126,11 +126,11 @@ This class contains all the custom meta hooks for your project.
 
 #### CustomPostType
 
-This namespace contains classes that register all custom post type hooks for your project. For better code consistency and to save time on boilerplating, Eightshift Development Kit provides an example class implementation you can use with `wp boilerplate create_post_type`.
+This namespace contains classes that register all custom post type hooks for your project. For better code consistency and to save time on boilerplating, Eightshift Development Kit provides an example class implementation you can use with `wp boilerplate create post-type`.
 
 #### CustomTaxonomy
 
-This namespace contains classes that register all custom taxonomy hooks for your project. For better code consistency and to save time on boilerplating, Eightshift Development Kit provides an example class implementation you can use with `wp boilerplate create_taxonomy`.
+This namespace contains classes that register all custom taxonomy hooks for your project. For better code consistency and to save time on boilerplating, Eightshift Development Kit provides an example class implementation you can use with `wp boilerplate create taxonomy`.
 
 #### Enqueue
 
@@ -139,9 +139,9 @@ These Enqueue namespace classes handle loading JavaScript and CSS assets, depend
 - **Blocks** - Used in the block editor. You can find the files inside the `src/Blocks/assets` folder. As blocks are complicated, we have files loaded only in the admin-editor part of the project, those files have an `-editor` suffix. The rest of the files with no suffix load on the admin-editor part and the project's front end.
 - **Theme** - Used in the theme (frontend) part of your project. You can find the files inside the `assets` folder with no suffix. You would use these files for the assets related to your project that is not associated with components and blocks. These files are rarely used, as styles and JavaScript functionality are usually provided at component, block, or wrapper levels.
 
-Using any of these classes is optional, and you can use only what you need. The `wp boilerplate setup_theme` command will set up all of the three classes already implemented. Keep in mind that Enqueue classes work in combination with the Webpack build of your project.
+Using any of these classes is optional, and you can use only what you need. The `wp boilerplate init theme` command will set up all the three classes already implemented. Keep in mind that Enqueue classes work in combination with the Webpack build of your project.
 
-All of the asset files mentioned are prefixed with `application`. If you don't like the prefix, you can change it by providing project overrides for constants used in Eightshift Libs. If you change the file names, you must make changes to the Webpack build process as well. For modifying the Webpack configuration, read the [Webpack chapter](webpack).
+All the asset files mentioned are prefixed with `application`. If you don't like the prefix, you can change it by providing project overrides for constants used in Eightshift Libs. If you change the file names, you must make changes to the Webpack build process as well. For modifying the Webpack configuration, read the [Webpack chapter](webpack).
 
 #### Exception
 

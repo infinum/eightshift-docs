@@ -21,4 +21,4 @@ SCSS mixins, functions, and helpers are located in Eightshift Frontend Libs. The
 @import '@eightshift/frontend-libs/styles/index.scss';
 ```
 
-However, if you used our `wp boilerplate setup_theme` command, you are all set. Eightshift Frontend Libs are injected in the `_shared.scss` file in your project.
+However, if you used our `wp boilerplate init theme` command, you are all set. Eightshift Frontend Libs are injected in the `_shared.scss` file in your project.
