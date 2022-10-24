@@ -16,5 +16,3 @@ The output will ask you to input the correct folder path relative to the `src` f
 Everything else will be done for you, setting the namespace, package, vendor prefixes, class and folder name, and you will be set to write your class.
 
 After that, add your WordPress hooks to the register method, provide its callback, and let the magic happen.
-
-<div class="legacy-badge legacy-badge--v5"></div>

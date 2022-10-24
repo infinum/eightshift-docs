@@ -34,5 +34,3 @@ import { ColorPaletteCustom } from 'EightshiftComponentColorPalette';
 ### Options
 
 All the options are the same as in the native block editor component that you can see [here](https://developer.wordpress.org/block-editor/components/color-palette/).
-
-<div class="legacy-badge legacy-badge--v4"></div>

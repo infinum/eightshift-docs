@@ -66,5 +66,3 @@ class Admin_Enqueue extends Enqueue_Admin {
 This way, only `add_action( 'admin_enqueue_scripts', [ $this, 'enqueue_scripts' ] );` hook will run, and only admin scripts will be loaded. You just need to be sure to modify your webpack settings so that admin CSS scripts are not bundled.
 
 You can do this with other classess in the lib - `Blocks`, `Columns`, `Manifest`, etc. in the same way.
-
-<div class="legacy-badge legacy-badge--v4"></div>

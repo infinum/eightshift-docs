@@ -124,5 +124,3 @@ These keys are used to provide a single point of reference for component options
 ### components
 
 The same as in the blocks manifest. Please check [this chapter](block-manifest) for more details.
-
-<div class="legacy-badge legacy-badge--v5"></div>

@@ -8,5 +8,3 @@ title: Shortcode
 Shortcode class is located in `Eightshift Libs`. To extend it use `Eightshift_Libs\Helpers\Shortcode` class.
 
 This class has a method `get_shortcode` that allows programaticall output of specific shortcode. It is more optimized implemetation of `do_shortcode` function. Full explanations can be read [in this article](https://codesymphony.co/dont-do_shortcode/)
-
-<div class="legacy-badge legacy-badge--v4"></div>

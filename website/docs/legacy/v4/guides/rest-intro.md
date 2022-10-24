@@ -49,5 +49,3 @@ Please check the implementation details in [this example](rest-field-example.md)
 Abstract class used in Rest API Route for adding a new Rest API route.
 
 Please check the implementation details in [this example](rest-routes-example.md).
-
-<div class="legacy-badge legacy-badge--v4"></div>

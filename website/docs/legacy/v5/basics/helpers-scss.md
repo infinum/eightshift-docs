@@ -34,5 +34,3 @@ and add this import in your project:
 ```scss
 @import '@eightshift/frontend-libs/styles/index.scss';
 ```
-
-<div class="legacy-badge legacy-badge--v5"></div>

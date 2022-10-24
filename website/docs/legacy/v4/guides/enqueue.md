@@ -114,5 +114,3 @@ Provided methods:
 * `get_admin_style_dependencies()`
 * `get_media()`
 * `script_in_footer()`
-
-<div class="legacy-badge legacy-badge--v4"></div>

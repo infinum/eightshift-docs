@@ -13,5 +13,3 @@ The reason for this is that you can't control what key of that object is stored 
 You can also look at this from the Reacts perspective: setting the entire object every time the key changes is bad for performance.
 
 Yes, you can use objects, but we recommend using them only when you want to store multiple keys simultaneously.
-
-<div class="legacy-badge legacy-badge--v5"></div>
