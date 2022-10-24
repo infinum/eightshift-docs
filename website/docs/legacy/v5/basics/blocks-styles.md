@@ -790,5 +790,3 @@ Best practice is to have the attributes named consistently with your breakpoints
 	--wrapper-opacity: 0;
 }
 ```
-
-<div class="legacy-badge legacy-badge--v5"></div>

@@ -46,5 +46,3 @@ This file contains the editor and the front-end styles for the component. These 
 #### Note on the component styles
 
 Component styles should only style the inner component layout and styles such as font sizes, alignment, etc. Any layout placement should be handled either by the wrapper, or a layout.
-
-<div class="legacy-badge legacy-badge--v4"></div>

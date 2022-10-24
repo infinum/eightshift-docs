@@ -13,5 +13,3 @@ You can check the [WordPress documentation](https://developer.wordpress.org/bloc
 We didn't change anything regarding the original documentation; we simply provided you with the structured file where you can write all your transformations.
 
 Please follow this [example](https://github.com/infinum/eightshift-frontend-libs/tree/4.0.0/blocks/init/src/Blocks/custom/heading/heading-transforms.js) for more inspiration.
-
-<div class="legacy-badge legacy-badge--v5"></div>

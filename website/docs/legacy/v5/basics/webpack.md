@@ -129,5 +129,3 @@ module.exports = (env, argv) => {
 ```
 
 Next thing you'd do is create `application-newBuild.js` in `assets/` directory, in which you'd import and JS or SCSS partials. After restarting the build process, the results should be visible in `public/` directory as new JS or CSS files.
-
-<div class="legacy-badge legacy-badge--v5"></div>

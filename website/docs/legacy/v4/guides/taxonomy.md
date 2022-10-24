@@ -101,5 +101,3 @@ class Blog_Taxonomy extends Base_Taxonomy {
   }
 }
 ```
-
-<div class="legacy-badge legacy-badge--v4"></div>

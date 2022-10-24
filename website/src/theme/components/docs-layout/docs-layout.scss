@@ -23,6 +23,7 @@
 			}
 
 			main {
+				position: relative;
 				padding: var(--global-docs-top-spacing) var(--global-gutter);
 
 				@include media(desktop up) {

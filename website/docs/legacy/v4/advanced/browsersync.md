@@ -80,5 +80,3 @@ module.exports = (env, argv) => {
 	};
 };
 ```
-
-<div class="legacy-badge legacy-badge--v4"></div>

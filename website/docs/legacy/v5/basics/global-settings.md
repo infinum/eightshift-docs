@@ -121,5 +121,3 @@ background-color: $black-color;
 ```
 
 > If you add/remove/change any value in the `manifest.json` file, please restart your Webpack watch because it won't recognize that change.
-
-<div class="legacy-badge legacy-badge--v5"></div>

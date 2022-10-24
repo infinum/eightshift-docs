@@ -121,5 +121,3 @@ class Projects extends Base_Post_Type {
 }
 
 ```
-
-<div class="legacy-badge legacy-badge--v4"></div>
