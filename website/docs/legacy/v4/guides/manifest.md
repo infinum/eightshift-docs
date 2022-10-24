@@ -34,5 +34,3 @@ Output:
 ```
 https://domain.com/wp-content/themes/eightshift-boilerplate/public/logo.svg
 ```
-
-<div class="legacy-badge legacy-badge--v4"></div>

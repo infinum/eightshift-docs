@@ -117,5 +117,3 @@ Call a shortcode function by tag name.
 - @param array       $attr The attributes to pass to the shortcode function. Optional.
 - @param string|null $content The shortcodes content. Default is null (none).
 - @return string|bool False on failure, the result of the shortcode on success.
-
-<div class="legacy-badge legacy-badge--v5"></div>

@@ -183,5 +183,3 @@ Readme is always good to have. You should always define here how to set up a new
 ### webpack.config.js
 
 This file provides all the definitions used for building your JavaScript and CSS files. We will cover this in more detail in the [Webpack chapter](webpack).
-
-<div class="legacy-badge legacy-badge--v5"></div>

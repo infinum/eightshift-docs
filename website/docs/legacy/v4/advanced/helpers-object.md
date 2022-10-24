@@ -47,5 +47,3 @@ Sort array by order key. It is used to sort terms.
 
 * @param array $items Items array to sort. Must have order key.
 * @return array
-
-<div class="legacy-badge legacy-badge--v4"></div>

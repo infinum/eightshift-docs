@@ -642,5 +642,3 @@ Components:
 For more details please read the [props helper docs](helpers-javascript#props).
 
 > You should avoid spreading attributes as props but rather use this helper because it provides only what is used in the component.
-
-<div class="legacy-badge legacy-badge--v5"></div>

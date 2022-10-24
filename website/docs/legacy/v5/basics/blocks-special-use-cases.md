@@ -170,5 +170,3 @@ public function allowedBlockTypes($allowedBlockTypes, object $post): array
   return $output;
 }
 ```
-
-<div class="legacy-badge legacy-badge--v5"></div>

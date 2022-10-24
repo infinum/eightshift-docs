@@ -72,5 +72,3 @@ It looks like this:
 ```
 
 For manifest.json details please check this [link](blocks-structure-manifest.md).
-
-<div class="legacy-badge legacy-badge--v4"></div>

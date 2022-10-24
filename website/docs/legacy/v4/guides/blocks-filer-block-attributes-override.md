@@ -48,5 +48,3 @@ Then in the filter provide a callback method that contains the overrides.
     return $attr;
   }
 ```
-
-<div class="legacy-badge legacy-badge--v4"></div>
