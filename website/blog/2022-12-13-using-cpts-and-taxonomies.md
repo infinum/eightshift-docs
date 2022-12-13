@@ -37,11 +37,15 @@ Sometimes all these parameters can be a bit confusing, so here's a quick referen
 | rewrite_url        | Singular        | kebab-case    | project  |
 | rest_endpoint_slug | Plural          | kebab-case    | projects |
 
+There is a reason for this naming convention. For example:
+- `slug` is attached to a single custom post type in the database, which is why it is written in singular
+- `rest_endpoint_slug` is used to fetch a collection of posts from that custom post type, which is why it should be written in plural
+
 ## Registering Taxonomies
-Now that we have the new custom post type, we need a way to group the projects. We'll create a custom taxonomy called `Project Category`. As with the CPT registration, the easiest way to register taxonomies is by using the following WP-CLI command:
+Now that we have the new custom post type, we need a way to group the projects. We'll create a custom taxonomy called `Project Technology`. As with the CPT registration, the easiest way to register taxonomies is by using the following WP-CLI command:
 
 ```bash
-wp boilerplate create taxonomy --label='Project Category' --plural_label='Project Categories' --slug='project-category' --rest_endpoint_slug='project-categories' --post_type_slug='project'
+wp boilerplate create taxonomy --label='Project Technology' --plural_label='Project Technologies' --slug='project-technology' --rest_endpoint_slug='project-technologies' --post_type_slug='project'
 ```
 
 Similar suggestions apply to the parameters when naming taxonomies as well. Be sure to write the correct post type slug for which you are registering this new taxonomy!
@@ -50,7 +54,7 @@ Similar suggestions apply to the parameters when naming taxonomies as well. Be s
 When checking your codebase after adding these new custom post types and taxonomies, you'll notice the post types are located inside the `src/CustomPostType` folder, and the taxonomies are located inside the `src/CustomTaxonomy` folder. Following the **Single Responsibility Principle**, each post type or taxonomy is in a separate class.
 
 ## Modifying options
-Our custom post type and taxonomy are ready to use, but we still want to make some changes. For starters, we want another icon and for the Projects to be located below the Posts in WordPress admin menu. In `src/CustomPostType/ProjectPostType.php`, find the `MENU_POSITION` constant and change it to `5`. The lower the number, the higher it will be in the menu.
+Our custom post type and taxonomy are ready to use, but we still want to make some changes. For starters, we want another icon and for the Projects to be located below the Posts in the WordPress admin menu. In `src/CustomPostType/ProjectPostType.php`, find the `MENU_POSITION` constant and change it to `5`. The lower the number, the higher it will be in the menu.
 
 Next, we want to update the icon representing the new post type in the menu. These icons are named dashicons. Change the `MENU_ICON` constant to `dashicons-clipboard`. If you want another icon for your CPT, here is the list of [available dashicons](https://developer.wordpress.org/resource/dashicons/). Finally, we want to remove the author and comments. In `getPostTypeArguments()` method, find the key `supports` in the return value and remove `author` and `comments` from the array.
 
@@ -59,3 +63,5 @@ Something that can happen when working on your project is that you have the same
 
 ## Further reading
 For the best overview of all the options you have when registering your custom post type or taxonomy, we recommend checking the official WordPress docs for the [register_post_type()](https://developer.wordpress.org/reference/functions/register_post_type/) and [register_taxonomy()](https://developer.wordpress.org/reference/functions/register_taxonomy/) functions.
+
+If you would like to know more about taxonomies and terms, along with how they are stored in the database, you can read more about it in the [Categories, Tags, & Custom Taxonomies](https://developer.wordpress.org/themes/basics/categories-tags-custom-taxonomies/) page of the WordPress docs.
