@@ -12,9 +12,9 @@ Although Block Patterns may be similar to Block Variations, there are some diffe
 <!--truncate-->
 
 ## What are Block Patterns and why use them?
-Block Patterns are predefined block layouts that allow you to speed up adding new content and make it look more consistent. The basic idea is to have a blank template that consists of multiple blocks, that already have predefined options, and all you have to do is add content to these blocks.
+Block Patterns are predefined block layouts which allow you to speed up adding new content and make it look more consistent. The basic idea is to have a ready template which consists of multiple blocks, that already have predefined options, and all you have to do is add content to these blocks.
 
-They can be used in multiple ways. You can create sections composed of a few blocks which you can then easily insert anywhere on the site. Also, you have the option to create complex page layouts which could be used for writing blog posts, for example.
+They can be used in multiple ways. You can create sections composed of few blocks which you can then easily insert anywhere on the site. You can also create complex page layouts which could be used for writing blog posts, for example.
 
 ## Technical differences
 As explained in the [Eightshift Development kit documentation](https://eightshift.com/docs/basics/blocks-patterns), the main difference between variations and patterns are:
@@ -129,4 +129,4 @@ In editor, in the Pattern tab, you should now see your new pattern category and 
 ![New pattern category and block pattern](/img/blog/block-pattern-example.png)
 
 ## Things to keep in mind
-Since Block Patterns just add content which you can then modify at will, it becomes an issue if you've already used this pattern on multiple places and then notice you missed something. Fixing the pattern in code will apply the changes on all new patterns you add, but you will have to fix this manually in the editor everywhere where you've already used that pattern.
+Block patterns add layout and content which you can then modify at will per instance. These instances are not synchronised with the code-base so it becomes an issue if you've already used a pattern on multiple places on the site and then notice you've missed something in the pattern configuration phase. Fixing the pattern in the code-base will apply the changes on all newly added instances, but you will have to fix the misconfigured instances manually.
