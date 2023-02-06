@@ -178,7 +178,7 @@ export default function ShowcaseGrid(props) {
 		},
 		{
 			image: useBaseUrl('img/showcase/saferinternet.jpg'),
-			label: 'Safeinternet',
+			label: 'Safer Internet',
 			desc: 'Welcome to the UK Safer Internet Centre, where you can find online safety tips, advice and resources to help children and young people stay safe online.',
 			link: 'https://saferinternet.org.uk/',
 		},
