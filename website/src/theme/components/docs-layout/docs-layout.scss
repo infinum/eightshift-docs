@@ -51,6 +51,14 @@
 				}
 			}
 
+			aside {
+				> * {
+					> * {
+						padding-top: 0;
+					}
+				}
+			}
+
 			article {
 				max-width: 70ch;
 				margin: 0 auto;

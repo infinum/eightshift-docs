@@ -89,11 +89,101 @@ module.exports = {
 			'basics/tips-tricks',
 		],
 		'Migrations': [
+			'migrations/8-9',
 			'migrations/7-8',
 			'migrations/6-7',
 			'migrations/5-6',
 		],
 		'Legacy': [
+			{
+				'type': 'category',
+				'label': 'v8',
+				'items':[
+					'legacy/v8/versions',
+					{
+						'type': 'category',
+						'label': 'Basics',
+						'items': [
+							'legacy/v8/basics/basics-intro',
+							'legacy/v8/basics/wp-cli',
+							'legacy/v8/basics/architecture-concepts',
+							{
+								'type': 'category',
+								'label': 'Backend',
+								'items': [
+									'legacy/v8/basics/backend',
+									'legacy/v8/basics/namespaces',
+									'legacy/v8/basics/extending-classes',
+									'legacy/v8/basics/autowiring',
+									'legacy/v8/basics/example-class',
+									'legacy/v8/basics/manifest',
+									{
+										'type': 'category',
+										'label': 'Rest',
+										'items': [
+											'legacy/v8/basics/rest',
+											'legacy/v8/basics/rest-field',
+											'legacy/v8/basics/rest-route',
+										]
+									},
+								]
+							},
+							{
+								'type': 'category',
+								'label': 'Frontend',
+								'items': [
+									'legacy/v8/basics/frontend',
+									'legacy/v8/basics/webpack',
+									'legacy/v8/basics/library',
+									'legacy/v8/basics/global-settings',
+									'legacy/v8/basics/writing-styles',
+									'legacy/v8/basics/fonts',
+									'legacy/v8/basics/browser-sync',
+									'legacy/v8/basics/dynamic-import',
+								]
+							},
+							{
+								'type': 'category',
+								'label': 'Blocks',
+								'items': [
+									'legacy/v8/basics/blocks',
+									'legacy/v8/basics/blocks-important',
+									'legacy/v8/basics/blocks-faq',
+									'legacy/v8/basics/blocks-registration',
+									'legacy/v8/basics/blocks-structure',
+									'legacy/v8/basics/blocks-global-manifest',
+									'legacy/v8/basics/block-structure',
+									'legacy/v8/basics/blocks-component-structure',
+									'legacy/v8/basics/block-manifest',
+									'legacy/v8/basics/blocks-component-manifest',
+									'legacy/v8/basics/blocks-attributes',
+									'legacy/v8/basics/blocks-component-in-block',
+									'legacy/v8/basics/blocks-wrapper',
+									'legacy/v8/basics/blocks-variations',
+									'legacy/v8/basics/blocks-patterns',
+									'legacy/v8/basics/blocks-transforms',
+									'legacy/v8/basics/blocks-hooks',
+									'legacy/v8/basics/blocks-special-use-cases',
+									'legacy/v8/basics/blocks-reusable',
+									'legacy/v8/basics/blocks-styles',
+									'legacy/v8/basics/blocks-storybook',
+								]
+							},
+							{
+								'type': 'category',
+								'label': 'Helpers',
+								'items': [
+									'legacy/v8/basics/helpers',
+									'legacy/v8/basics/helpers-javascript',
+									'legacy/v8/basics/helpers-scss',
+									'legacy/v8/basics/helpers-php',
+								]
+							},
+							'legacy/v8/basics/tips-tricks',
+						],
+					}
+				]
+			},
 			{
 				'type': 'category',
 				'label': 'v7',
