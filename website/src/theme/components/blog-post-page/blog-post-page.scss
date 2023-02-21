@@ -59,6 +59,20 @@
 
 			&__name {
 				@extend .paragraph-size--medium;
+
+				a {
+					display: block;
+					color: var(--global-colors-mandy);
+					transition: {
+						property: color;
+						timing-function: ease-out;
+						duration: 0.3s;
+					}
+
+					&:hover {
+						color: var(--global-colors-charade);
+					}
+				}
 			}
 
 			&__subtitle {
