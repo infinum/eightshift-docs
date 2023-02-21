@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunk_eightshift_docs=self.webpackChunk_eightshift_docs||[]).push([[6245],{8e3:function(t){t.exports=JSON.parse('{"permalink":"/blog/tags/block","page":1,"postsPerPage":6,"totalPages":1,"totalCount":1,"blogDescription":"Tutorials and articles about Eightshift development kit","blogTitle":"Tutorials and articles about Eightshift development kit"}')}}]);

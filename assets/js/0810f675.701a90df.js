@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunk_eightshift_docs=self.webpackChunk_eightshift_docs||[]).push([[9133],{5784:function(s){s.exports=JSON.parse('{"allTagsPath":"/blog/tags","name":"custom post type","count":1,"permalink":"/blog/tags/custom-post-type"}')}}]);
