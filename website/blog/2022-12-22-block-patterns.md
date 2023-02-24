@@ -12,7 +12,7 @@ Although Block Patterns may be similar to Block Variations, there are some diffe
 <!--truncate-->
 
 ## What are Block Patterns and why use them?
-Block Patterns are predefined block layouts which allow you to speed up adding new content and make it look more consistent. The basic idea is to have a ready template which consists of multiple blocks, that already have predefined options, and all you have to do is add content to these blocks.
+Block Patterns are predefined block layouts which allow you to add content faster and make it look more consistent. The basic idea is to have a ready-made template which consists of multiple blocks, that have options predefined, and all you have to do is add content to these blocks.
 
 They can be used in multiple ways. You can create sections composed of few blocks which you can then easily insert anywhere on the site. You can also create complex page layouts which could be used for writing blog posts, for example.
 
@@ -87,7 +87,7 @@ For these methods to work, we need to add them to the `register()` method of our
 \add_action('after_setup_theme', [$this, 'removeBlockPatternsCore'], 20);
 ```
 
-If you try searching for patterns in your editor, you'll notice they are no longer available. Now we can move on to adding our block pattern categories. The best approach is to define the pattern category names as constants inside your class. We will add two categories, **Templates** and **Sections**. We can add the following code inside our class:
+If you try searching for patterns in your editor, you'll notice they are no longer available. Now we can move on to adding our block pattern categories. The best approach is to define the pattern category names as constants inside your class. In this example, we will add two categories: **Templates** and **Sections**. We can add the following code inside our class:
 ```php
 class ManagePatternCategories implements ServiceInterface
 {
@@ -129,4 +129,4 @@ In editor, in the Pattern tab, you should now see your new pattern category and 
 ![New pattern category and block pattern](/img/blog/block-pattern-example.png)
 
 ## Things to keep in mind
-Block patterns add layout and content which you can then modify at will per instance. These instances are not synchronised with the code-base so it becomes an issue if you've already used a pattern on multiple places on the site and then notice you've missed something in the pattern configuration phase. Fixing the pattern in the code-base will apply the changes on all newly added instances, but you will have to fix the misconfigured instances manually.
+Block patterns add layout and content which you can then modify at will per instance. These instances are not synchronised with the codebase so it becomes an issue if you've already used a pattern on multiple places on the site and then notice you've missed something in the pattern configuration phase. Fixing the pattern in the codebase will apply the changes on all newly added instances, but you will have to fix the misconfigured instances manually.
