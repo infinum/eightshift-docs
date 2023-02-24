@@ -3,7 +3,7 @@ title: Block Patterns
 description: Intro to block patterns and examples how to use them
 slug: block-patterns
 authors: obradovic
-date: 2022-03-01
+date: 2023-03-01
 tags: [eightshift, boilerplate, block, patterns]
 hide_table_of_contents: false
 ---
