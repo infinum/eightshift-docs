@@ -52,4 +52,4 @@ npx create-wp-project --help
 ## What is next?
 Now that we've set the theme up on your local environment, let's do something with it.
 
-Please make sure you read the [Basics chapter](basics/basics-intro) to understand better how the project is set and what is included to make your developing experience as smooth as possible.
+Please make sure you read the [Basics chapter](/docs/basics/basics-intro) to understand better how the project is set and what is included to make your developing experience as smooth as possible.
