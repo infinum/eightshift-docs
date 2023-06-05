@@ -9,7 +9,7 @@ tags: [eightshift, boilerplate, components, blocks]
 hide_table_of_contents: false
 ---
 
-From time to time, you may have to create a block or a more complex component that is using the same component two or more times. In this blog post, we'll explain how it works in a bit more detail.
+From time to time, you may need to create a block or a more complex component that uses more than one instance the same component. In this blog post, we'll explain how it works in a bit more detail.
 <!--truncate-->
 
 An example of this use case is the Card component, which uses two heading components. You may get the general idea by just going through the code and trying to reverse-engineer it, but this example will give you a much better understanding of how it works and how to use it. First, let's cover some basics.
@@ -43,22 +43,19 @@ As you can see, one heading component has the `intro` key, while the other one h
 This method does all the heavy lifting for us. It replaces the default attribute names with the ones we provide. There is both the PHP and JS version of it.
 
 ```php
-Components::render(
-	'heading',
-	Components::props('intro', $attributes, [
-		'selectorClass' => 'intro',
-		'blockClass' => $componentClass
-	])
-),
+Components::render('heading', Components::props('intro', $attributes, [
+	'selectorClass' => 'intro',
+	'blockClass' => $componentClass
+]))
 ```
 
 ```js
 
 <HeadingEditor
-{...props('intro', attributes, {
-selectorClass: 'intro',
-blockClass: componentClass,
-})}
+	{...props('intro', attributes, {
+		selectorClass: 'intro',
+		blockClass: componentClass,
+	})}
 />
 
 ```
@@ -86,12 +83,12 @@ Once the new block is added to your project, rename it. Also, don’t forget to 
 We should start with `manifest.json`, where we define the components we'll use and set the default attributes. For now, just define the components and their keys:
 
 ```json
-	"components": {
-		"heading": "heading",
-		"lists": "lists",
-		"secondaryHeading": "heading",
-		"secondaryLists": "lists"
-	}
+"components": {
+	"heading": "heading",
+	"lists": "lists",
+	"secondaryHeading": "heading",
+	"secondaryLists": "lists"
+}
 ```
 
 The first section has the default key names, while the "duplicates" have different key names.
@@ -253,13 +250,13 @@ When the new colors are added to the Lists component, we can set these new color
 
 ```json
 "comparisonListsColor": {
-			"type": "string",
-			"default": "green-haze"
-		},
-		"comparisonSecondaryListsColor": {
-			"type": "string",
-			"default": "milano-red"
-		}
+	"type": "string",
+	"default": "green-haze"
+},
+"comparisonSecondaryListsColor": {
+	"type": "string",
+	"default": "milano-red"
+}
 ```
 
 The first list will now have green bullet points, and the second one will have red bullet points.
