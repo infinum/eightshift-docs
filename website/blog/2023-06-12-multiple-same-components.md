@@ -93,7 +93,7 @@ We should start with `manifest.json`, where we define the components we'll use a
 
 The first section has the default key names, while the "duplicates" have different key names.
 
-After manifest, we can move to the JS part. As this is a fairly simple block without any advanced options or layouts, we need to add two `HeadingEditor` components and two `ListEditor` components. To make styling easier, we can separate them in two `div` elements. When you’re finished, your code should look like this:
+After manifest, we can move to the JS part. As this is a fairly simple block without any advanced options or layouts, we need to add two `HeadingEditor` components and two `ListsEditor` components. To make styling easier, we can separate them in two `div` elements. When you’re finished, your code should look like this:
 
 ```jsx
 import React from 'react';
