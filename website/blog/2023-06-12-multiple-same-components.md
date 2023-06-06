@@ -9,7 +9,7 @@ tags: [eightshift, boilerplate, components, blocks]
 hide_table_of_contents: false
 ---
 
-From time to time, you may need to create a block or a more complex component that uses more than one instance the same component. In this blog post, we'll explain how it works in a bit more detail.
+From time to time, you may need to create a block or a more complex component that uses more than one instance of the same component. In this blog post, we'll explain how this works in a bit more detail.
 <!--truncate-->
 
 An example of this use case is the Card component, which uses two heading components. You may get the general idea by just going through the code and trying to reverse-engineer it, but this example will give you a much better understanding of how it works and how to use it. First, let's cover some basics.
