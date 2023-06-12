@@ -108,13 +108,9 @@ export const ComparisonEditor = ({ attributes, setAttributes }) => {
 		blockClass,
 	} = attributes;
 
-	const comparisonPrimaryClass = classnames(
-		selector(blockClass, blockClass, 'primary'),
-	);
+	const comparisonPrimaryClass = selector(blockClass, blockClass, 'primary');
 
-	const comparisonSecondaryClass = classnames(
-		selector(blockClass, blockClass, 'secondary'),
-	);
+	const comparisonSecondaryClass = selector(blockClass, blockClass, 'secondary');
 
 	return (
 		<div className={blockClass}>
@@ -227,13 +223,9 @@ $manifest = Components::getManifest(__DIR__);
 
 $blockClass = $attributes['blockClass'] ?? '';
 
-$comparisonPrimaryClass = Components::classnames([
-	Components::selector($blockClass, $blockClass, 'primary'),
-]);
+$comparisonPrimaryClass = Components::selector($blockClass, $blockClass, 'primary');
 
-$comparisonSecondaryClass = Components::classnames([
-	Components::selector($blockClass, $blockClass, 'secondary'),
-]);
+$comparisonSecondaryClass = Components::selector($blockClass, $blockClass, 'secondary');
 
 $unique = Components::getUnique();
 
