@@ -101,16 +101,24 @@ import { __ } from '@wordpress/i18n';
 import { HeadingEditor } from '../../../components/heading/components/heading-editor';
 import { ListsEditor } from '../../../components/lists/components/lists-editor';
 
-import { props } from '@eightshift/frontend-libs/scripts';
+import { props, classnames, selector } from '@eightshift/frontend-libs/scripts';
 
 export const ComparisonEditor = ({ attributes, setAttributes }) => {
 	const {
 		blockClass,
 	} = attributes;
 
+	const comparisonPrimaryClass = classnames(
+		selector(blockClass, blockClass, 'primary'),
+	);
+
+	const comparisonSecondaryClass = classnames(
+		selector(blockClass, blockClass, 'secondary'),
+	);
+
 	return (
 		<div className={blockClass}>
-			<div className={`${blockClass}__primary`}>
+			<div className={comparisonPrimaryClass}>
 				<HeadingEditor
 					{...props('heading', attributes, {
 						blockClass: blockClass,
@@ -125,7 +133,7 @@ export const ComparisonEditor = ({ attributes, setAttributes }) => {
 					})}
 				/>
 			</div>
-			<div className={`${blockClass}__secondary`}>
+			<div className={comparisonSecondaryClass}>
 				<HeadingEditor
 					{...props('secondaryHeading', attributes, {
 						selectorClass: 'secondary-heading',
@@ -219,19 +227,27 @@ $manifest = Components::getManifest(__DIR__);
 
 $blockClass = $attributes['blockClass'] ?? '';
 
+$comparisonPrimaryClass = Components::classnames([
+	Components::selector($blockClass, $blockClass, 'primary'),
+]);
+
+$comparisonSecondaryClass = Components::classnames([
+	Components::selector($blockClass, $blockClass, 'secondary'),
+]);
+
 $unique = Components::getUnique();
 
 ?>
 
 <div class="<?php echo esc_attr($blockClass); ?>">
 	<?php echo Components::outputCssVariables($attributes, $manifest, $unique, $globalManifest); ?>
-	<div class="<?php echo esc_attr("{$blockClass}__primary"); ?>">
+	<div class="<?php echo esc_attr($comparisonPrimaryClass); ?>">
 		<?php
 			echo Components::render('heading', Components::props('heading', $attributes)),
 			Components::render('lists', Components::props('lists', $attributes));
 		?>
 	</div>
-	<div class="<?php echo esc_attr("{$blockClass}__secondary"); ?>">
+	<div class="<?php echo esc_attr($comparisonSecondaryClass); ?>">
 		<?php
 			echo Components::render('heading', Components::props('secondaryHeading', $attributes)),
 			Components::render('lists', Components::props('secondaryLists', $attributes));
