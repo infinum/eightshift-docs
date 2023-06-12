@@ -101,7 +101,7 @@ import { __ } from '@wordpress/i18n';
 import { HeadingEditor } from '../../../components/heading/components/heading-editor';
 import { ListsEditor } from '../../../components/lists/components/lists-editor';
 
-import { props, classnames, selector } from '@eightshift/frontend-libs/scripts';
+import { props, selector } from '@eightshift/frontend-libs/scripts';
 
 export const ComparisonEditor = ({ attributes, setAttributes }) => {
 	const {
