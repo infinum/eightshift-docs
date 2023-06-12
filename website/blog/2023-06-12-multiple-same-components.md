@@ -120,7 +120,7 @@ export const ComparisonEditor = ({ attributes, setAttributes }) => {
 						blockClass: blockClass,
 						setAttributes: setAttributes,
 					})}
-					/>
+				/>
 
 				<ListsEditor
 					{...props('lists', attributes, {
@@ -136,7 +136,7 @@ export const ComparisonEditor = ({ attributes, setAttributes }) => {
 						blockClass: blockClass,
 						setAttributes: setAttributes,
 					})}
-					/>
+				/>
 
 				<ListsEditor
 					{...props('secondaryLists', attributes, {
