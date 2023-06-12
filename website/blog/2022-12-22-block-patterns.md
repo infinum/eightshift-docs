@@ -54,7 +54,7 @@ wp boilerplate create service-example --folder=BlockPatterns --file_name=ManageP
 Now that we have our service class, we'll add methods for removing core patterns and pattern categories. First, the method for removing core categories.
 ```php
 /**
- * Unregisters core block pattern categories
+ * Unregisters core block pattern categories.
  *
  * @return void
  */
@@ -71,7 +71,7 @@ The second method will remove all core patterns
 
 ```php
 /**
- * Removes support for core block patterns
+ * Removes support for core block patterns.
  *
  * @return void
  */
@@ -97,7 +97,7 @@ class ManagePatternCategories implements ServiceInterface
 	// Removed parts of code for better readability.
 
 	/**
-	 * Removes support for core block patterns
+	 * Registers new pattern categories.
 	 *
 	 * @return void
 	 */

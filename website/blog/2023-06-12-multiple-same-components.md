@@ -279,7 +279,7 @@ If you’re ever in doubt of what is the exact attribute name, you can always `v
 Array
 (
     [prefix] => comparisonSecondaryLists
-		// ...
+    // ...
     [comparisonSecondaryListsOrdered] => ul
     [comparisonSecondaryListsSize] => body:regular
     [comparisonSecondaryListsColor] => milano-red
