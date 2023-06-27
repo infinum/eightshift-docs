@@ -71,7 +71,7 @@ wp boilerplate blocks use-block --help
 wp boilerplate blocks use-component --help
 ```
 
-### Can I use block/component from Eightshift-frontend-libs directly?
+### Can I use block/component from Eightshift Frontend Libs directly?
 
 It depends. You can't use things from the blocks folder like `components`, `custom`, `variations`, `wrapper`, etc. They are meant to be copied to your project, styled, and changed depending on your project's needs.
 
