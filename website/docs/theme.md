@@ -16,9 +16,7 @@ The script will prompt you for a theme name and local development URL (used for 
 
 ![](/img/setup.gif)
 
-After the script is finished, please follow the instructions provided by the setup script.
-
-All additional steps after the initial setup are done using WP_CLI commands, so please make sure that you have WP-CLI set and ready to use.
+After the script is finished, your new theme will be set up and activated.
 
 ## Specify version to create
 
@@ -29,7 +27,7 @@ If you want to specify a version of Eightshift Libs or Frontend Libs to use, you
 
 #### Example:
 
-If you want to pull the `develop` branch of the Eightshift Frontend libs and a specific release of the Eightshift Libs:
+If you want to pull the `develop` branch of the Eightshift Frontend Libs and a specific release of the Eightshift Libs:
 
 ```bash
 npx create-wp-project --eightshiftLibsBranch="release/3.1.0" --eightshiftFrontendLibsBranch="develop"

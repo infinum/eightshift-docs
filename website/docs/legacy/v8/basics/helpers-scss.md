@@ -14,7 +14,7 @@ For years, we have collected a list of useful SASS mixins, placeholders, and fun
 
 Eightshift Frontend Libs styles library is already implemented in your WordPress project, so you don't need to worry about implementation.
 
-All our sass mixing, functions and helpers are located in `node_modules/@eighshift/frontent-libs/styles/scss/eightshift-frontend-libs.scss` file.
+All our sass mixing, functions and helpers are located in `node_modules/@eighshift/frontend-libs/styles/scss/eightshift-frontend-libs.scss` file.
 
 We imported that library into this file: `/assets/styles/parts/_shared.scss`.
 

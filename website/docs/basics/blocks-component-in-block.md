@@ -29,11 +29,11 @@ As we described in the [block manifest](block-manifest) chapter each block/compo
 }
 ```
 
-Components key is an object that can have multiple items added. 
+Components key is an object that can have multiple items added.
 
 > Key represents the name that is going to be used for this component in this block/component and the prefix used in the attributes (more on this later).
 
-> Value represents the real component name that you have in your project. 
+> Value represents the real component name that you have in your project.
 
 > Each key and value names can be written in the kebab-case or camelCase but we recommend using camelCase.
 
@@ -45,7 +45,7 @@ Components key is an object that can have multiple items added.
 }
 ```
 
-This block/component uses two components, one is heading and the other is paragraphy and they are using the default names.
+This block/component uses two components, one is heading and the other is paragraph and they are using the default names.
 
 **Multiple components set up with the components of the same type:**
 ```json
@@ -68,6 +68,7 @@ As we described earlier, in order to use our setup you must use our helpers. Her
 * getAttrKey - [JS](https://github.com/infinum/eightshift-frontend-libs/blob/develop/scripts/editor/attributes.js) - [PHP](https://github.com/infinum/eightshift-libs/blob/develop/src/Helpers/AttributesTrait.php)
 * checkAttr - [JS](https://github.com/infinum/eightshift-frontend-libs/blob/develop/scripts/editor/attributes.js) - [PHP](https://github.com/infinum/eightshift-libs/blob/develop/src/Helpers/AttributesTrait.php)
 * render - [PHP](https://github.com/infinum/eightshift-libs/blob/develop/src/Blocks/AbstractBlocks.php)
+* renderPartial - [PHP](https://github.com/infinum/eightshift-libs/blob/develop/src/Helpers/Components.php)
 
 For more details please check our helpers sections for [JavaScript](helpers-javascript) and [PHP](helpers-php).
 
@@ -269,7 +270,7 @@ In your block attributes object, you will now have these keys:
 
 For example, if you have a block called cards grid that uses a card component, that card component uses a heading component.
 
-Structure: 
+Structure:
 
 * Cards
 	* Card
@@ -633,7 +634,7 @@ import React from 'react';
 import { props } from '@eightshift/frontend-libs/scripts';
 import { TypographyEditor } from './../../typography/components/typography-editor';
 import manifest from './../manifest.json';
- 
+
 export const HeadingEditor = (attributes) => {
 	const {
 		componentClass,
