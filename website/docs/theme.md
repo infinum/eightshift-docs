@@ -16,9 +16,7 @@ The script will prompt you for a theme name and local development URL (used for 
 
 ![](/img/setup.gif)
 
-After the script is finished, please follow the instructions provided by the setup script.
-
-All additional steps after the initial setup are done using WP-CLI commands, so please make sure that you have WP-CLI set and ready to use.
+After the script is finished, your new theme will be set up and activated.
 
 ## Specify version to create
 

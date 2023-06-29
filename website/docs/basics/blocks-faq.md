@@ -16,7 +16,7 @@ This is so because we defined the name structure for all our blocks and componen
 
 The main difference is that blocks are available in the block editor's block picker, and components are not. With that being said, blocks are registered using the `registerBlockType` method, and components are just here for you to bundle some functionality in one place and reuse it wherever you need.
 
-For more information about blocks, read the [block structure](block-structure) chapter. To find out more about components, read the [component structure](blocks-component-structure) chapter.
+For more information about blocks, read the [block structure](block-structure) chapter. To find out more about components, read the [component structure](blocks-component-structure) chapter. You can also read our blog post that explains the [difference between components and blocks](/blog/components-and-blocks/) with some examples.
 
 ### Do I need to have Storybook stories in my block?
 
@@ -26,11 +26,11 @@ For more details on how to write stories, check out [this chapter](blocks-storyb
 
 ### Do you support block variations, and how can I use them?
 
-Yes, we do. All block variations are located in the `src/Blocks/variations` folder. For more information about this, please check the [variations](blocks-variations) chapter.
+Yes, we do. All block variations are located in the `src/Blocks/variations` folder. For more information about this, please check the [variations](blocks-variations) chapter and check out our [blog post](/blog/block-variations/) where we explain step-by-step how to register a new block variation.
 
 ### Do you support patterns, and how can I use them?
 
-Yes, we do. For more information, please read the [patterns](blocks-patterns) chapter.
+Yes, we do. For more information, please read the [patterns](blocks-patterns) chapter. We also have a blog post that describes [Block Patterns](/blog/block-patterns/) in more detail.
 
 ### What is a wrapper?
 
@@ -150,7 +150,7 @@ Easy. We have a method you can extend that limits your project's block to the on
 
 ### How to allow only one pattern category?
 
-*Coming soon*
+In the blog post about Block Patterns we covered how to [manage pattern categories](/blog/block-patterns/#managing-pattern-categories). That section should give you an idea how to remove core categories and how to register one or more custom pattern categories.
 
 ### Can I have blocks in multiple categories?
 

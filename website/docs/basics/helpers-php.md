@@ -35,6 +35,18 @@ For example, if `$attributes['parentClass'] === 'header'` and `$component === 'l
 - @throws \Exception When we're unable to find the component by $component.
 - @return string
 
+## renderPartial
+
+Render component/block partial.
+
+- @param string $type Type of content block, component, variable, etc.
+- @param string $parent Parent block/component name.
+- @param string $name Name of the partial. It can be without extension so .php is used.
+- @param array<string, mixed> $attributes Attributes that will be passed to partial.
+- @param string $partialFolderName Partial folder name.
+- @throws ComponentException When we're unable to find the partial.
+- @return string Partial html.
+
 ## getManifest
 
 Get `manifest json`. Used for getting block/components manifest.
@@ -42,6 +54,10 @@ Get `manifest json`. Used for getting block/components manifest.
 - @param string $path Absolute path to manifest folder.
 - @throws \Exception When we're unable to find the component by $component.
 - @return array
+
+## props
+
+This function is the PHP equivalent of the JavaScript function on this [link](helpers-javascript).
 
 ## responsiveSelectors
 
