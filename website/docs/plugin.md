@@ -18,7 +18,7 @@ The script will prompt you for a plugin name and local development URL (used for
 
 After the script is finished, please follow the instructions provided by the setup script.
 
-All additional steps after the initial setup are done using WP_CLI commands, so please make sure that you have WP-CLI set and ready to use.
+All additional steps after the initial setup are done using WP-CLI commands, so please make sure that you have WP-CLI set and ready to use.
 
 ## What is next?
 

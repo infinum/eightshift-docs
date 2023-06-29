@@ -53,7 +53,7 @@ This library hosts all the packages necessary for loading Storybook in your proj
 
 ## Code quality tools
 
-### Eightshift Coding Standard
+### Eightshift Coding Standards
 
 [![GitHub tag](https://img.shields.io/github/tag/infinum/eightshift-coding-standards.svg?style=for-the-badge)](https://github.com/infinum/eightshift-coding-standards)
 

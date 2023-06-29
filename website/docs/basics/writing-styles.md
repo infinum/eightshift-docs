@@ -7,7 +7,7 @@ title: Writing Styles
 
 > This chapter is only relevant in setups that don't use CSS variables. If you are using CSS variables please skip to the [Blocks Styles chapter](blocks-styles) chapter.
 
-Everyone says that writing styles is easy and that is usually doesn't require a lot of thinking. But, like everything in programming, if you don't think about it, the problems add up, and you end up with a headache.
+Everyone says that writing styles is easy and that it usually doesn't require a lot of thinking. But, like everything in programming, if you don't think about it, the problems add up, and you end up with a headache.
 
 Here are some of the recommendations that we use when writing our styles. It's also how we manage everything to be as modular as possible.
 

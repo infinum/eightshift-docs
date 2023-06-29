@@ -6,9 +6,9 @@ title: Extending Classes
 [![docs-source](https://img.shields.io/badge/source-eightshift--libs-blue?style=for-the-badge&logo=php&labelColor=2a2a2a)](https://github.com/infinum/eightshift-libs)
 
 
-You can extend every class from the library. To follow the good practice, you should never use the class directly from the Eightshift-libs in your service container (except from helpers and traits). Instead, you should create a class in your project and extend the class from the Eightshift-libs. That is why we made all those [WP-CLI](wp-cli) commands you saw in the previous chapter.
+You can extend every class from the library. To follow the good practice, you should never use the class directly from the Eightshift Libs in your service container (except from helpers and traits). Instead, you should create a class in your project and extend the class from the Eightshift Libs. That is why we made all those [WP-CLI](wp-cli) commands you saw in the previous chapter.
 
-We don't do any magic in the Eightshift-libs like in previous versions. All classes contain only the methods you need to call using WordPress hooks or filters.
+We don't do any magic in the Eightshift Libs like in previous versions. All classes contain only the methods you need to call using WordPress hooks or filters.
 
 ## Example
 
@@ -88,8 +88,8 @@ class EnqueueAdmin extends AbstractEnqueueAdmin
 }
 ```
 
-As you can see from the provided example, we created a new class and extended the functionality from the Eightshift-libs.
+As you can see from the provided example, we created a new class and extended the functionality from the Eightshift Libs.
 
 In your new class, you have a `register` method that must be in every class that registers WordPress action hooks or filters. We call these **service classes**.
 
-Your class contains three action hooks now. From this example, you can see that, if you don't want to use some functionality, remove the action, and it will not be used anymore. For more details on what each hook's callback does, go to the extended class in the Eightshift-libs and see the logic defined there.
+Your class contains three action hooks now. From this example, you can see that, if you don't want to use some functionality, remove the action, and it will not be used anymore. For more details on what each hook's callback does, go to the extended class in the Eightshift Libs and see the logic defined there.
