@@ -123,7 +123,10 @@ module.exports = {
 					anonymizeIP: true,
 				},
 				theme: {
-					customCss: require.resolve('@infinum/docusaurus-theme/dist/style.css'),
+					customCss: [
+						require.resolve('./src/theme/styles.css'),
+						require.resolve('@infinum/docusaurus-theme/dist/style.css'),
+					],
 				},
 				blog: {
 					blogTitle: 'Tutorials and articles about Eightshift development kit',
