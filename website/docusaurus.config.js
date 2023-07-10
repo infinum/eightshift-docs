@@ -1,9 +1,11 @@
+const codeTheme = require('prism-react-renderer/themes/dracula');
+
 module.exports = {
 	title: 'Eightshift Development kit',
 	tagline: 'All the tools you need to start building a modern WordPress project, using all the latest front end development tools.',
 	url: 'https://eightshift.com',
 	baseUrl: '/',
-	favicon: 'img/favicon.png',
+	favicon: '/img/favicon.png',
 	organizationName: 'infinum',
 	projectName: 'eightshift-docs',
 	staticDirectories: ['static'],
@@ -17,16 +19,10 @@ module.exports = {
 	themeConfig: {
 		navbar: {
 			logo: {
-				alt: 'Eightshift Development kit Logo',
-				src: 'img/eightshift-dev-kit-logo.svg',
+				alt: 'Eightshift DevKit Logo',
+				src: '/img/logo.svg',
 			},
 			items: [
-				{
-					to: '/get-started',
-					activeBasePath: 'pages',
-					label: 'Get Started',
-					position: 'right',
-				},
 				{
 					to: 'docs/welcome',
 					activeBasePath: 'welcome',
@@ -59,17 +55,59 @@ module.exports = {
 				},
 			],
 		},
-		prism: {
-			theme: require('prism-react-renderer/themes/dracula'),
-			additionalLanguages: ['php'],
+		footer: {
+			links: [
+				{
+					title: 'Community',
+					items: [
+						{
+							label: 'Facebook',
+							href: 'https://facebook.com/infinumcom',
+							icon: 'facebook',
+						},
+						{
+							label: 'Instagram',
+							href: 'https://instagram.com/infinumcom/',
+							icon: 'instagram',
+						},
+						{
+							label: 'Twitter',
+							href: 'https://twitter.com/infinum',
+							icon: 'twitter',
+						},
+						{
+							label: 'Clutch',
+							href: 'https://clutch.co/profile/infinum',
+							icon: 'clutch',
+						},
+						{
+							label: 'Dribbble',
+							href: 'https://dribbble.com/infinum',
+							icon: 'dribbble',
+						},
+						{
+							label: 'LinkedIn',
+							href: 'https://linkedin.com/company/infinum/',
+							icon: 'linkedin',
+						},
+					],
+				},
+			],
+			copyright: 'Made with ❤️ by Infinum team.',
 		},
 		algolia: {
 			appId: 'CWB1S6U3C4',
 			apiKey: 'cbae3fc769aee256328548eff1e91c1c',
 			indexName: 'infinum_eightshift',
 		},
+		prism: {
+			theme: codeTheme,
+			additionalLanguages: ['php'],
+		},
 		colorMode: {
-			disableSwitch: true
+			defaultMode: 'light',
+			disableSwitch: true,
+			respectPrefersColorScheme: false,
 		},
 		trailingSlash: false
 	},
@@ -85,7 +123,7 @@ module.exports = {
 					anonymizeIP: true,
 				},
 				theme: {
-					customCss: require.resolve('./src/scss/application.scss'),
+					customCss: require.resolve('@infinum/docusaurus-theme/dist/style.css'),
 				},
 				blog: {
 					blogTitle: 'Tutorials and articles about Eightshift development kit',
@@ -101,9 +139,6 @@ module.exports = {
 			},
 		],
 	],
-	plugins: [
-		'docusaurus-plugin-sass',
-	],
 	customFields: {
 		keywords: [
 			'wordpress tools',
@@ -111,7 +146,8 @@ module.exports = {
 			'wordpress project',
 			'Gutenberg blocks',
 			'development kit',
-			'wordpress kit'
+			'wordpress kit',
+			'devkit'
 		],
 		image: 'img-why-boilerplate@2x.png',
 	}
