@@ -24,7 +24,9 @@ This code loads the WP-CLI class from Eightshift Libs, which handles command reg
 
 To run the WP-CLI command and see what you can use, run this command in your terminal:
 
-`wp boilerplate --help`
+```bash
+wp boilerplate --help
+```
 
 :::note
 By default, your project's WP-CLI commands run under the parent name `boilerplate`, as defined above.
@@ -43,7 +45,9 @@ if (\class_exists(Cli::class)) {
 
 Now, your project's WP-CLI commands are available using:
 
-`wp superCoolTheme --help`.
+```bash
+wp superCoolTheme --help
+```
 
 This is especially handy when you have multiple Eightshift Boilerplate powered themes or plugins installed. In that case, you should change the WP-CLI parent name on each of the projects.
 
