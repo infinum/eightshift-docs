@@ -41,7 +41,10 @@ background-color: global-settings(colors, light);
 You may notice we're using `calc` instead of directly writing values in rems. This way makes it much easier to calculate pixel size since `calc(var(--base-font-size) * 1.6rem)` equals `16px`.
 
 For now, we will add a simple light grey background to see how it looks. We'll replace this value later with a CSS variable.
->**Tip:** don't hardcode hex color values directly inside your component. Instead, use colors defined in your global manifest.
+
+:::tip
+Don't hardcode hex color values directly inside your component. Instead, use colors defined in your global manifest.
+:::
 
 You'll notice that the changes are visible both in the editor and on the frontend. Since the Gutenberg editor adds some additional markup, sometimes you'll need to add additional styling only for the editor. In case we need to override something in the editor for our Quote component, we would simply create **_quote-editor.scss_**.
 
