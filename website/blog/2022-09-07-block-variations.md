@@ -15,7 +15,9 @@ Let's picture the following scenario: You just created a block with many options
 
 Block variations allow us to override default block attributes. We can select a variation from the block list with all preset options instead of manually setting them.
 
-> Please note that you cannot add new attributes in variations. Only attributes that exist in the parent block can be used.
+:::note
+You cannot add new attributes in variations. Only attributes that exist in the parent block can be used.
+:::
 
 For example, we have a `Card` block. If we want to use it for something like downloading PDF files, we may not need image or paragraph components. A simple text that describes type of the file, title of the file and a download button are all we need in this case.
 
@@ -61,7 +63,9 @@ Other than overriding default attributes with variations, you can do much more w
 
 The following example is very basic, but it will give you an idea of how to provide inner block data. It can easily be reproduced with our `Carousel` block if you want to try it yourself.
 
-> If you don't have Carousel block in your project yet, you can add it with the following WP-CLI command: `wp boilerplate blocks use-block --name="carousel"`
+:::note
+If you don't have Carousel block in your project yet, you can add it with the following WP-CLI command: `wp boilerplate blocks use-block --name="carousel"`
+:::
 
 Once you have the `Carousel` block up and running, create a variation called `Carousel Loop`. For this variation, we want the following:
 - loop

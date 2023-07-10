@@ -45,7 +45,9 @@ You can get a list of available script arguments by running:
 npx create-wp-project --help
 ```
 
-> You can specify both libraries at once or only one.
+:::tip
+You can specify both libraries at once or only one.
+:::
 
 ## What is next?
 Now that we've set the theme up on your local environment, let's do something with it.

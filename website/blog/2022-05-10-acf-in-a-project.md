@@ -60,7 +60,7 @@ class IntroAcfMeta extends AbstractAcfMeta
 	 * Intro field name.
 	 */
 	public const INTRO_FIELD_NAME = 'intro';
-	
+
 	/**
 	 * Render acf fields.
 	 *
@@ -104,7 +104,9 @@ if (function_exists('get_field')) {
 }
 ```
 
-> It's better to use class constants because if you decide to change the field name, you will have to change it only in one place.
+:::tip
+It's better to use class constants because if you decide to change the field name, you will have to change it only in one place.
+:::
 
 ## Theme Options
 

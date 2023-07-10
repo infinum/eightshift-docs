@@ -98,7 +98,7 @@ module.exports = {
 			{
 				'type': 'category',
 				'label': 'v8',
-				'items':[
+				'items': [
 					'legacy/v8/versions',
 					{
 						'type': 'category',
@@ -187,7 +187,7 @@ module.exports = {
 			{
 				'type': 'category',
 				'label': 'v7',
-				'items':[
+				'items': [
 					'legacy/v7/versions',
 					{
 						'type': 'category',
@@ -276,7 +276,7 @@ module.exports = {
 			{
 				'type': 'category',
 				'label': 'v6',
-				'items':[
+				'items': [
 					'legacy/v6/versions',
 					{
 						'type': 'category',
@@ -365,7 +365,7 @@ module.exports = {
 			{
 				'type': 'category',
 				'label': 'v5',
-				'items':[
+				'items': [
 					'legacy/v5/versions',
 					{
 						'type': 'category',

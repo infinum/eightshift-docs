@@ -26,7 +26,9 @@ To run the WP-CLI command and see what you can use, run this command in your ter
 
 `wp boilerplate --help`
 
-> By default, your project's WP-CLI commands run under the parent name `boilerplate`, as defined above.
+:::note
+By default, your project's WP-CLI commands run under the parent name `boilerplate`, as defined above.
+:::
 
 You can change that by simply replacing the string inside the load method like this:
 
@@ -47,7 +49,7 @@ This is especially handy when you have multiple Eightshift Boilerplate powered t
 
 ## Options and commands
 
-To get to know which commands are available and what do they do, run `wp boilerplate --help`. 
+To get to know which commands are available and what do they do, run `wp boilerplate --help`.
 The `--help` argument is available on all of our commands and provides a description of the command and a list of required and optional parameters for the command.
 
 `wp boilerplate create config --help`
@@ -62,7 +64,9 @@ We use these common prefixes for commands:
 - **setup** - commands that runs multiple already defined commands from the list.
 - **use** - commands used for blocks and block-related stuff. They will copy various files and folders from the blocks folder to your project.
 
-> **Make WP-CLI your best friend, and your coding life will be much more comfortable, trust us.**
+:::success Tip
+**Make WP-CLI your best friend, and your coding life will be much more comfortable, trust us.**
+:::
 
 While we might go into more details about some of these commands, we won't be documenting all of them here - use the built-in manuals for more information about particular commands and to discover what's available. Don't gloss over them, as using `wp boilerplate` is a particularly useful tool when building projects with Eightshift Development Kit.
 

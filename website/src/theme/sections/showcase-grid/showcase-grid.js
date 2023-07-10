@@ -1,32 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import Heading from '../../components/heading/heading';
-import Container from '../../components/container/container';
-import Arrow from '../../components/arrow/arrow';
+import { ShowcaseCard, CtaImageButton } from '@infinum/docusaurus-theme';
+import { EsOpenSource } from '../os-projects';
 
-function shuffleArray(array) {
-	for (var i = array.length - 1; i > 0; i--) {
-			var j = Math.floor(Math.random() * (i + 1));
-			var temp = array[i];
-			array[i] = array[j];
-			array[j] = temp;
-	}
-
-	return array;
-}
-
+const shuffleArray = (array) => array.map(value => ({ value, sort: Math.random() }))
+	.sort((a, b) => a.sort - b.sort)
+	.map(({ value }) => value);
 
 export default function ShowcaseGrid(props) {
 	const {
 		privateType,
 	} = props;
 
-	const component = 'showcase-grid';
-
-	const headingTitle = privateType ? 'Showcase Infinum' : 'Showcase';
-	const headingSubTitle = privateType ? 'See all the awesome websites people from the Infinum WordPress team have built.' : 'See the awesome websites people are building with Eightshift Boilerplate.';
-	const ctaTitle = privateType ? 'Want to contact us?' : 'Want to showcase your project?';
-	const ctaSubTitle = privateType ? 'If you want to contact us please use our contact form on the <a target="_blank" rel="noopener noreferrer" rel="nofollow" href="https://infinum.com/contact/">Infinum web</a>' : 'If you want to show case your project on this list please open an issue on on the <a target="_blank" rel="noopener noreferrer" rel="nofollow" href="https://github.com/infinum/eightshift-docs/issues">Eightshift-Docs github</a>';
+	const headingTitle = privateType ? 'Infinum showcase' : 'Showcase';
+	const headingSubtitle = privateType ? "See all the awesome websites built by Infinum's WordPress team." : 'See the awesome websites people are building with Eightshift Boilerplate.';
+	const ctaTitle = privateType ? "Let's get in touch" : (<span>Want to add your <br /> project to the list?</span>);
+	const ctaSubtitle = privateType ? 'Contact us' : 'Open an issue on GitHub';
+	const ctaUrl = privateType ? 'https://infinum.com/contact/' : 'https://github.com/infinum/eightshift-docs/issues';
 
 	const privateData = [
 		{
@@ -196,7 +186,7 @@ export default function ShowcaseGrid(props) {
 		},
 		{
 			image: useBaseUrl('img/showcase/dept.jpg'),
-			label: 'Dept Agency',
+			label: 'DEPT®',
 			desc: 'Pioneering tech and marketing to help brands stay ahead.',
 			link: 'https://www.deptagency.com/',
 		},
@@ -218,60 +208,36 @@ export default function ShowcaseGrid(props) {
 			desc,
 		} = item;
 
-		const icons = [
-			'yellow',
-			'blue',
-			'green',
-			'red',
-			'purple',
-		];
-
-		const random = Math.floor(Math.random() * icons.length);
-
 		return (
-			<div className={`${component}__item`} key={index}>
-				<a className={`${component}__link`} href={link} target="_blank" rel="noopener noreferrer">
-					<div className={`${component}__icon`}>
-						<img className={`${component}__img`} src={image} alt={label} title={label}/>
-					</div>
-					<div className={`${component}__label ${component}__label--${icons[random]}`}>
-						{label}
-					</div>
-					<div className={`${component}__desc`}>
-						{desc}
-					</div>
-					<Arrow componentClass={component} />
-				</a>
-			</div>
+			<ShowcaseCard
+				key={index}
+				url={link}
+				imageUrl={image}
+				imageAlt={label}
+				title={label}
+				description={desc}
+			/>
 		)
 	});
 
-	/* key={isClient ? 1 : 2} will trigger a rerender of the whole subtree and the images will be aligned with text */
 	return (
-		<div className={component} key={isClient ? 1 : 2}>
-			<Container
-				componentClass={component}
-			>
-				<Heading
-					componentClass={component}
-					title={headingTitle}
-					subtitle={headingSubTitle}
-				/>
-				<div className={`${component}__content`}>
-					{items}
-				</div>
-			</Container>
-			<Container
-				componentClass={component}
-				size={'smaller'}
-				spacingBottom={'small'}
-			>
-				<Heading
-					componentClass={component}
-					title={ctaTitle}
-					subtitle={ctaSubTitle}
-				/>
-			</Container>
-		</div>
+		// key={isClient ? 1 : 2} will trigger a rerender of the whole subtree and the images will be aligned with text
+		<Fragment key={isClient ? 1 : 2}>
+			<h1 className='es-big-title es-h-center'>{headingTitle}</h1>
+			<p className='es-big-subtitle es-text-center es-h-center'>{headingSubtitle}</p>
+
+			<div className='es-showcase-grid'>
+				{items}
+			</div>
+
+			<CtaImageButton
+				title={ctaTitle}
+				buttonLabel={ctaSubtitle}
+				buttonUrl={ctaUrl}
+				imageUrl='/img/showcase/cta.svg'
+			/>
+
+			<EsOpenSource gray />
+		</Fragment>
 	);
 }

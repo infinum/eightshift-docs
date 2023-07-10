@@ -118,7 +118,9 @@ Let's see how you would share SVG icon across multiple languages:
 
 **manifest.json**
 
-> Note: because this is a `JSON` file you must convert all double quotes to single because otherwise, you will get a fatal error.
+:::note
+Because this is a `JSON` file you must convert all double quotes to single because otherwise, you will get a fatal error.
+:::
 
 ```json
 {

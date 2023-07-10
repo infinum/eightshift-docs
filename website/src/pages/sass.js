@@ -2,7 +2,6 @@ import React from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Layout from '@theme/Layout';
-import Iframe from '../theme/sections/iframe/iframe';
 
 export default function Sass() {
 	const context = useDocusaurusContext();
@@ -10,15 +9,13 @@ export default function Sass() {
 
 	return (
 		<Layout
-			title={'Scss'}
+			title='SCSS'
 			description={siteConfig.tagline}
 			keywords={siteConfig.customFields.keywords}
 			metaImage={useBaseUrl(`img/${siteConfig.customFields.image}`)}
-			wrapperClassName={'page-sass'}
+			wrapperClassName='es-single-full-screen-child'
 		>
-			<Iframe
-				src="https://infinum.github.io/eightshift-frontend-libs/sassdocs/"
-			/>
+			<iframe className='es-full-size' src='https://infinum.github.io/eightshift-frontend-libs/sassdocs/' />
 		</Layout>
 	);
 };
