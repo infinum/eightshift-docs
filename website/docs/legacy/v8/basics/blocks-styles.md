@@ -11,7 +11,7 @@ Let's dig into the implementation of CSS variables in your project.
 
 ## Setup
 
-To be able to use CSS variables you need to implement two helpers in your blocks/components: `outputCssVariables` and `getUnique`. For more details on these helpers, you can read [here](helpers-javascript). 
+To be able to use CSS variables you need to implement two helpers in your blocks/components: `outputCssVariables` and `getUnique`. For more details on these helpers, you can read [here](helpers-javascript).
 
 There are a few differences between the JavaScript and PHP implementation due to a way React handles component re-rendering.
 
@@ -84,7 +84,9 @@ This is all that's required for the magic of CSS variables to work! Now let's se
 Now that we know how CSS variables are generated, we have one more helper to describe.
 The `outputCssVariablesGlobal(globalSettings);` helper is called in the `application-blocks-editor.js` file. It is used to output all CSS variables from the global manifest under the `globalVariables` key, into the `:root` selector.
 
-> All of these variables are available to use inside any blocks/components.
+:::note :es-hide-title:
+All of these variables are available to use inside any blocks/components.
+:::
 
 **Global Manifest:**
 ```json
@@ -242,7 +244,7 @@ Variable `value` will output all variables depending on attributes value. Everyt
 --typography-line-height: 144px;
 ```
 
-## Editor variables 
+## Editor variables
 
 Editor variables behave just like regular `variables`, except they are output only inside the Block Editor.
 They are mostly used for overriding specific behaviour, e.g. showing a hidden element as half-transparent instead of hiding it completely.
@@ -317,7 +319,7 @@ Manual variables will be added at the end of the output.
 --variable2: test2;
 --variable3: test3;
 ```
- 
+
 ## Manual variables inside the Block editor
 
 If you want to add manual variables that only apply inside the Block editor you can use the `variablesCustomEditor` key. Everything works the same as described in the **Manual variables** section.
@@ -381,7 +383,9 @@ Here is an example how to output global variable as a css variable.
 
 All variables are prepared to be responsive. If you set multiple keys in the manifest list that variable will be outputted in the correct media query. Breakpoints are taken from the global manifest and the order of the output breakpoints.
 
-> Global breakpoints must follow the convention from the smallest size to the largest.
+:::caution Important
+Global breakpoints must follow the convention from the smallest size to the largest.
+:::
 
 If you don't specify breakpoint key, that item will not be wrapped in the media query.
 
@@ -444,7 +448,9 @@ If you write breakpoint that isn't defined in the global manifest, that conditio
 
 By default, we use mobile first approach but if you need desktop first you can use `inverse: true` key.
 
-> If you have multiple mobile/desktop first breakpoints, output will sort them mobile first and then desktop first after that.
+:::note
+If you have multiple mobile/desktop-first breakpoints, output will sort them mobile first and then desktop first after that.
+:::
 
 **Manifest:**
 ```json
@@ -566,9 +572,13 @@ In a top-level manifest key `responsiveAttributes`, you can place a new key (e.g
 
 Best practice is to have the attributes named consistently with your breakpoints - in the **`variableName``breakpointName`** format (see example below).
 
-> If you need an extra variable, or are overriding some of the auto-generated variables (from the helper), the variables will be output after the responsive variables. (see **Example 2**)
+:::tip
+If you need an extra variable, or are overriding some of the auto-generated variables (from the helper), the variables will be output after the responsive variables. (see **Example 2**)
+:::
 
-> Order of responsive attributes is important since generating variables relies on that order. Make sure to use the `inverse` option properly.
+:::note
+Order of responsive attributes is important since generating variables relies on that order. Make sure to use the `inverse` option properly.
+:::
 
 **Example 1**
 ```json

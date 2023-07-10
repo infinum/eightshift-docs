@@ -9,7 +9,9 @@ Since WordPress 5.0, we were introduced to the new editing experience using the 
 
 Don't get discouraged just yet, because the WordPress team has made the process of creating blocks relatively easy. But we are not here to talk about the simple stuff. We want to do more complex projects with custom blocks, so follow along and see what we have prepared here.
 
-> You can read everything regarding blocks in the [WordPress documentation](https://developer.wordpress.org/block-editor/tutorials/block-tutorial/). We will not be explaining how everything natively works in this documentation. Instead, we will only describe how to use our setup and how it correlates with the native one. Everything that you can't find here, please look up in the WordPress Handbook.
+:::info :es-hide-title:
+You can read everything regarding blocks in the [WordPress documentation](https://developer.wordpress.org/block-editor/tutorials/block-tutorial/). We will not be explaining how everything natively works in this documentation. Instead, we will only describe how to use our setup and how it correlates with the native one. Everything that you can't find here, please look up in the WordPress Handbook.
+:::
 
 ## Types of blocks
 

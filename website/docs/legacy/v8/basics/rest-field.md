@@ -21,4 +21,6 @@ To test it in action, you should check the `wp-json` path in your browser. You c
 
 and find the field name.
 
-> This link will be different based on your project implementation.
+:::note :es-hide-title:
+This link will be different based on your project implementation.
+:::

@@ -7,7 +7,9 @@ title: Storybook
 
 We have created a full storybook that hosts all our blocks/components/variations with a fully functional block editor, where you can try out how blocks work and behave.
 
-> To speed up project build time, Eightshift Boilerplate doesn't come with the storybook out of the box; you need to install it. To install Storybook to your project, just type this command in you terminal and follow the instructions:
+:::note :es-hide-title:
+To speed up project build time, Eightshift Boilerplate doesn't come with Storybook out of the box; you need to install it. To install Storybook to your project, just type this command in you terminal and follow the instructions:
+:::
 
 ```bash
 wp boilerplate blocks use-storybook

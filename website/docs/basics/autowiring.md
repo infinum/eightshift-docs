@@ -81,7 +81,9 @@ This works out of the box, but you shouldn't really do this.
 
 A good coding practice is that your class should never depend on the concrete class implementation because you have tightly coupled your class to another class. This makes it hard to test and your code becomes hard to modify. Imagine that you have put a concrete implementation as a dependency, only to get feedback from the client that you need to change that implementation for a completely different one. Making the changes means that you'll need to track all the places in your codebase where you have used some functionality from this class, and change it completely.
 
-> You should always code against interfaces and not implementation.
+:::success Good practices
+You should always code against interfaces and not implementation.
+:::
 
 We can't stress this enough because as your project grows, so will your headaches. Also, when you start testing your code, that is when your hair will begin to fall off. We recommend reading Uncle Bob Martin's [Clean Code](http://cleancoder.com/products). That will save you a lot of sleepless nights, and you'll learn tons of tips and tricks for writing clean code.
 
@@ -89,7 +91,9 @@ We can't stress this enough because as your project grows, so will your headache
 
 This will automatically be resolved (same as with class parameters) if you follow one simple rule:
 
-> Variable name in your constructor method needs to match the class name (which implements the interface) in camelCase.
+:::caution Important
+Variable name in your constructor method needs to match the class name (which implements the interface) in camelCase.
+:::
 
 For example, let's say you have a `SteeringWheel` class:
 
