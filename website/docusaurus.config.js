@@ -44,7 +44,7 @@ module.exports = {
 				{
 					to: '/sass',
 					activeBasePath: 'sass',
-					label: 'Sass',
+					label: 'SCSS',
 					position: 'right',
 				},
 				{
