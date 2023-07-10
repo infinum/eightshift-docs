@@ -23,14 +23,13 @@ export default function Home() {
 				subtitle='All the tools you need to start building a modern WordPress project, using all the latest front end development tools.'
 				buttonLabel='Get started'
 				buttonUrl='#get-started'
-				imageUrl='/img/homepage/w-logo.png'
-				extendImage
+				imageUrl='/img/homepage/w-logo.svg'
 				gray
 			/>
 
 			<ImageAndText
 				title='A WordPress boilerplate from the future'
-				imageUrl='/img/homepage/block-cards.png'
+				imageUrl='/img/homepage/block-cards.svg'
 				gray
 			>
 				Eightshift Development kit makes building complex WordPress themes and plugins painless.
@@ -114,7 +113,7 @@ export default function Home() {
 			<FeatureShowcase
 				title='An editing experience content editors will love'
 				text='Provide the ease of use and flexibility that your content editors crave for. Rely on our user-friendly default blocks or use plug&play editor components to build great experiences.'
-				imageUrl='/img/homepage/block-editor.png'
+				imageUrl='/img/homepage/block-editor.webp'
 				gray
 			/>
 
