@@ -24,7 +24,7 @@ export const EsOpenSource = (props) => {
 					url: 'https://github.com/infinum/eightshift-boilerplate-plugin'
 				},
 				{
-					icon: osProjectIcons.eightshiftLibs,
+					icon: osProjectIcons.eightshiftLibs1,
 					text: 'Eightshift Libs',
 					url: 'https://github.com/infinum/eightshift-libs'
 				},
