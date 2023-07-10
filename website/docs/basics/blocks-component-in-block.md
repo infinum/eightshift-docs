@@ -31,11 +31,17 @@ As we described in the [block manifest](block-manifest) chapter each block/compo
 
 Components key is an object that can have multiple items added.
 
-> Key represents the name that is going to be used for this component in this block/component and the prefix used in the attributes (more on this later).
+:::success :es-hide-title:
+**Key** represents the name that is going to be used for this component in this block/component and the prefix used in the attributes (more on this later).
+:::
 
-> Value represents the real component name that you have in your project.
+:::info :es-hide-title:
+**Value** represents the real component name that you have in your project.
+:::
 
-> Each key and value names can be written in the kebab-case or camelCase but we recommend using camelCase.
+:::tip :es-hide-title:
+Each key and value names can be written in the `kebab-case` or `camelCase` but we recommend using `camelCase`.
+:::
 
 **Multiple components setup:**
 ```json
@@ -72,11 +78,15 @@ As we described earlier, in order to use our setup you must use our helpers. Her
 
 For more details please check our helpers sections for [JavaScript](helpers-javascript) and [PHP](helpers-php).
 
-> Keep in mind that you can always ignore our setup and use the React way of passing props to components by prop drilling.
+:::tip Good to know
+You can always ignore our setup and use the React way of passing props to components by prop drilling.
+:::
 
 ## Setting up attributes
 
-> Each attribute must have the component name prefix in each attribute. This is one of the biggest requirements in order for our setup to work.
+:::caution Important
+Each attribute must have the component name prefix in each attribute. This is one of the biggest requirements in order for our setup to work.
+:::
 
 By defining components key in the block registration phase we are drilling down from block to the last component and setting up attribute names according to your setup. In order for everything to work, we had to add/change prefixes to each component attribute in relation to where this attribute is used in the dependency tree. It is not so hard as it sounds so let us show you some graphical examples:
 
@@ -532,7 +542,9 @@ const headingColor = checkAttr('headingColor', attributes, manifest);
 
 And this is it. You are now able to override the options from the parent block/component.
 
-> Keep in mind that you can only override SelectControl, ColorPaletteCustom, and AlignmentToolbar.
+:::tip
+Keep in mind that you can only override `SelectControl`, `ColorPaletteCustom`, and `AlignmentToolbar`.
+:::
 
 ### I want to only pass attributes to the component that I'm going to use
 
@@ -699,7 +711,9 @@ Components:
 
 For more details please read the [props helper docs](helpers-javascript).
 
-> You should avoid spreading attributes as props but rather use this helper because it provides only what is used in the component.
+:::tip
+Avoid spreading attributes as props but rather use this helper because it provides only what is used in the component.
+:::
 
 ### Passing setAttributes to components
 

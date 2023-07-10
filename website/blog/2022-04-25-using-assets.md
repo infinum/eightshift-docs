@@ -31,7 +31,9 @@ The filter we are using is called `manifest-item` and we use it to get the URL o
 
 You can see how this is being used for rendering both favicon and header logo in your theme's **_header.php_** file.
 
-> **Tip**: Don't hardcode the filter name in the `apply_filters` function. Always call it via class constants.
+:::tip
+Don't hardcode the filter name in the `apply_filters` function. Always call it via class constants.
+:::
 
 For better organization, you can add additional folders (e.g. **_icons_**, **_placeholders_**) inside the **_assets/images_** folder. Here's an example of how to include them:
 
@@ -48,7 +50,9 @@ import './placeholders/page.png';
 
 If you recall from a previous blog post about [Modifying Blocks](/blog/modifying-blocks-color-theme), you might have already seen an alternative approach to including SVG files in your block or component.
 
-> If you don't have it in your project, be sure to read our blog post about adding blocks and components by using [WP CLI](/blog/adding-blocks-wpcli).
+:::info :es-hide-title:
+If you don't have it in your project, be sure to read our blog post about adding blocks and components by using [WP CLI](/blog/adding-blocks-wpcli).
+:::
 
 Open **_src/Blocks/components/quote/manifest.json_** and you'll see that the icon used by the component is defined inside `resources` as a key-value pair. Key represents the name that we will use to fetch the icon, while the value is SVG code.
 

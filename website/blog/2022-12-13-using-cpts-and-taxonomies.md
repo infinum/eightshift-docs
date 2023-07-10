@@ -23,7 +23,9 @@ For this exercise, we'll create a new post type called `Projects`. To make the p
 wp boilerplate create post-type --label='Project' --plural_label='Projects' --slug='project' --rewrite_url='project' --rest_endpoint_slug='projects'
 ```
 
-> If your new CPT is not working, try flushing rewrite rules by re-saving the settings in **Settings -> Permalinks** or by using `wp cache flush` CLI command
+:::tip
+If your new CPT is not working, try flushing rewrite rules by re-saving the settings in **Settings -> Permalinks** or by using `wp cache flush` CLI command
+:::
 
 Your new post type is registered and ready to use! Easy, right?
 

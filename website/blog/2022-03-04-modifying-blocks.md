@@ -77,7 +77,9 @@ For editors to be able to choose which color theme to use for the Quote block, w
 }
 ```
 
-> Double-check the path of the manifest used in this example. We're adding it inside the Quote component manifest, not the Quote block manifest. 
+:::caution
+Double-check the path of the manifest used in this example. We're adding it inside the Quote component manifest, not the Quote block manifest.
+:::
 
 After that, since we want to have a fixed number of options, we need to define available options. We can do that inside `options` which is on the same level as `attributes`:
 ```json
@@ -193,7 +195,9 @@ $unique = Components::getUnique();
 	//...
 ```
 
-> Both PHP and JS have the same helpers to make writing code for editor and front view as similar as possible.
+:::note
+Both PHP and JS have the same helpers to make writing code for editor and front view as similar as possible.
+:::
 
 ## Adding options
 After adding these snippets, you should already see that your block is using the blue color theme, which we defined as the default value for `quoteColorTheme` in the manifest. We want to have an easy way to change the color theme in the editor. Now we'll add a new option which will do just that.

@@ -13,9 +13,11 @@ One of the things that is really confusing to newcomers is the difference betwee
 
 ## Component
 
-> A component is like a blank slate, a template without context.
+:::note :es-hide-title:
+A component is like a blank slate, a template without context.
+:::
 
-It doesn't know or even care for what it will be used. Can you combine multiple simple components into one complex component? Absolutely! That's exactly what we'll do in the following example. 
+It doesn't know or even care for what it will be used. Can you combine multiple simple components into one complex component? Absolutely! That's exactly what we'll do in the following example.
 
 Let's say we have a component that consists of an image and a heading. Image and heading are two simple components that come with the theme out-of-the-box.
 
@@ -47,7 +49,9 @@ You can even add conditional logic to your options, e.g. to have the option for 
 
 So, what about blocks? Blocks can consist of one or more components and, most importantly, allow you to use them in the editor. Technically, blocks can consist of zero components, but we encourage you to build blocks from components because that increases the reusability.
 
-> Blocks give context to the components.
+:::note :es-hide-title:
+Blocks give context to the components.
+:::
 
 Now that we have our component - let's call it `card-simple` - we can use it in a `Featured Posts` block. In **component's** `manifest.json`, we've already defined how we want it to look by setting some defaults. When using this component in our block, we can override some attributes in **block's** `manifest.json`. Since it will be used for displaying featured posts, we can define that `imagePosition` should be set to **top**.
 

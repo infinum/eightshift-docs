@@ -27,4 +27,6 @@ You **don't need to restart** Webpack watch when you:
 * add/remove PHP implementation in the files; and
 * make changes on anything other than blockName in the manifest.json.
 
-> Remember this note because, in 90 per cent of cases, your error occurs when you made changes to the files and didn't restart the Webpack watch.
+:::caution :es-hide-title:
+Remember this note because, in 90 percent of cases, your error occurs when you made changes to the files and didn't restart the Webpack watch.
+:::

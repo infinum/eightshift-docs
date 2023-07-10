@@ -10,7 +10,9 @@ As is often the case when trying out something new, you might encounter some hic
 
 <!--truncate-->
 
-> _**Last updated: 23rd August, 2022**_
+:::info Last update
+August 23, 2022
+:::
 
 If you haven't already, be sure to read our official [Eightshift Docs](/docs/welcome).
 
@@ -48,7 +50,9 @@ You may want to try a few of our WP CLI commands to add another component, block
 
 The final tip in this post is related to troubleshooting. Maybe you tried to add a new class or a new feature to one of the existing blocks. And now the site has crashed. In tech support, the number 1 question is **"Have you tried turning it off and on again?"**. In our case, the number 1 question is:
 
-> Have you tried `composer dump-autoload` and re-running `npm start`?
+:::tip
+Have you tried `composer dump-autoload` and re-running `npm start`?
+:::
 
 ## What's next in store?
 

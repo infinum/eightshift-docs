@@ -18,7 +18,9 @@ Every project is unique. Logo, colors, fonts, etc. are what define the visual id
 - [Everything Fonts](https://everythingfonts.com/ttf-to-woff)
 - [Transfonter](https://transfonter.org/)
 
-> Just make sure you have the proper license for the fonts you are converting.
+:::caution Warning
+Make sure you have the proper license for the fonts you are converting.
+:::
 
 Fonts should go inside your theme's **_/assets/fonts_** folder. Copy the fonts you want to use there. You will also notice that this folder contains an **_index.js_** file, used to import fonts into your project. Here's an example of how I imported my fonts:
 ```js
@@ -51,7 +53,9 @@ import './NotoSerif-Italic.woff2';
 import './NotoSerif-Regular.woff2';
 ```
 
-> If you don't need to support IE11, don't include `.woff` files. This will save you some bandwidth.
+:::tip
+If you don't need to support IE11, don't include `.woff` files. This will save you some bandwidth.
+:::
 
 To add these fonts as your base font and secondary font, go to the global manifest located in **_/src/Blocks_** and add the following inside `globalVariables`:
 ```json

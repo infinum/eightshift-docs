@@ -26,7 +26,9 @@ Keep in mind that this will be applied to all innerBlocks inside your carousel b
 
 The next time you add your image to the carousel, it will automatically change those attributes.
 
-> Important note: If for some reason, you copy the inner block from the carousel to the top-level editor, this helper will not fire and not change back to original attributes. You have to manually remove those attributes from the Code editor in the admin.
+:::caution Important
+If for some reason, you copy the inner block from the carousel to the top-level editor, this helper will not fire and not change back to original attributes. You have to manually remove those attributes from the Code editor in the admin.
+:::
 
 **Implementation**
 
@@ -97,7 +99,9 @@ Filter goes in the register method:
 add_filter('allowed_block_types_all', [$this, 'getAllBlocksList'], 10, 2);
 ```
 
-> Important note: For WordPress versions > 5 and < 5.8 you would need to use the example bellow.
+:::caution Important
+For WordPress versions > 5 and < 5.8 you would need to use the example below.
+:::
 
 ```php
   // Limits the usage of only custom project blocks - legacy.
@@ -132,7 +136,9 @@ public function allowedBlocks($allowedBlockTypes, WP_Block_Editor_Context $block
 }
 ```
 
-> Important note: For WordPress versions > 5 and < 5.8 you would need to use the filter example bellow. Also change the first argument of array_merge in `allowedBlocks` function to `$this->getAllBlocksListOld($allowedBlockTypes, $post)`
+:::caution Important
+For WordPress versions > 5 and < 5.8 you would need to use the filter example below. Also change the first argument of array_merge in `allowedBlocks` function to `$this->getAllBlocksListOld($allowedBlockTypes, $post)`
+:::
 
 ```php
   // Limits the usage of only custom project blocks - legacy.
@@ -180,7 +186,9 @@ public function allowedBlockTypes($allowedBlockTypes, WP_Block_Editor_Context $b
 }
 ```
 
-> Important note: For WordPress versions > 5 and < 5.8 you would need to use the filter example bellow. And also change the default switch case in the `allowedBlockTypes` function to `$output = $this->getAllBlocksListOld($allowedBlockTypes, $post);`
+:::caution Important
+For WordPress versions > 5 and < 5.8 you would need to use the filter example below. And also change the default switch case in the `allowedBlockTypes` function to `$output = $this->getAllBlocksListOld($allowedBlockTypes, $post);`
+:::
 
 ```php
   // Limits the usage of only custom project blocks - legacy.
