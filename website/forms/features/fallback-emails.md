@@ -1,6 +1,6 @@
 ---
 id: fallback-emails
-title: Fallback emails
+title: Fallback e-mails
 ---
 
 *Coming soon*
