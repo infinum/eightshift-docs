@@ -14,11 +14,6 @@ export const EsOpenSource = (props) => {
 					url: 'https://github.com/infinum/eightshift-boilerplate'
 				},
 				{
-					icon: osProjectIcons.eightshiftCodingStandard,
-					text: 'Eightshift Coding Standards for WordPress',
-					url: 'https://github.com/infinum/eightshift-coding-standards'
-				},
-				{
 					icon: osProjectIcons.boilerplate,
 					text: 'Eightshift Boilerplate Plugin',
 					url: 'https://github.com/infinum/eightshift-boilerplate-plugin'
@@ -47,7 +42,12 @@ export const EsOpenSource = (props) => {
 					icon: osProjectIcons.storybook,
 					text: 'Eightshift Storybook',
 					url: 'https://github.com/infinum/eightshift-storybook'
-				}
+				},
+				{
+					icon: osProjectIcons.eightshiftCodingStandard,
+					text: 'Eightshift Coding Standards for WordPress',
+					url: 'https://github.com/infinum/eightshift-coding-standards'
+				},
 			]}
 		/>
 	);
