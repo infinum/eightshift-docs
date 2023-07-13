@@ -1,6 +1,6 @@
 ---
 id: multiflow-forms
-title: Multiflow forms
+title: Multi-flow forms
 ---
 
 *Coming soon*
