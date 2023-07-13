@@ -25,14 +25,14 @@ module.exports = {
 			items: [
 				{
 					to: 'docs/welcome',
-					activeBasePath: 'welcome',
-					label: 'Docs',
+					activeBasePath: 'docs',
+					label: 'DevKit',
 					position: 'right',
 				},
 				{
-					to: '/blog',
-					activeBasePath: 'blog',
-					label: 'Blog',
+					to: 'forms/intro',
+					activeBasePath: 'forms',
+					label: 'Forms',
 					position: 'right',
 				},
 				{
@@ -45,6 +45,12 @@ module.exports = {
 					to: '/sass',
 					activeBasePath: 'sass',
 					label: 'SCSS',
+					position: 'right',
+				},
+				{
+					to: '/blog',
+					activeBasePath: 'blog',
+					label: 'Blog',
 					position: 'right',
 				},
 				{
@@ -140,6 +146,17 @@ module.exports = {
 					priority: 0.5,
 				},
 			},
+		],
+	],
+	plugins: [
+		[
+			'@docusaurus/plugin-content-docs',
+			{
+				id: 'forms',
+				path: 'forms',
+				routeBasePath: 'forms',
+				sidebarPath: require.resolve('./sidebars-forms.js'),
+			}, 
 		],
 	],
 	customFields: {
