@@ -1,6 +1,6 @@
 ---
 id: success-redirect
-title: Success redirect
+title: Success redirects
 ---
 
 *Coming soon*
