@@ -1,6 +1,6 @@
 ---
 id: debug
-title: Debug
+title: Debugging
 ---
 
 *Coming soon*
