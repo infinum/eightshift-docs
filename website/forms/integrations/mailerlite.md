@@ -1,6 +1,6 @@
 ---
 id: mailerlite
-title: Mailerlite
+title: MailerLite
 ---
 
 *Coming soon*
