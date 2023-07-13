@@ -1,6 +1,6 @@
 ---
 id: active-campaign
-title: Active Campaign
+title: ActiveCampaign
 ---
 
 *Coming soon*
