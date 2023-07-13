@@ -4,11 +4,139 @@ module.exports = {
 			'intro',
 		],
 		'PHP': [
-			'php/global-variables',
-			'php/filters',
+			{
+				'type': 'category',
+				'label': 'Global variables',
+				'items': [
+					'php/global-variables/intro',
+					'php/global-variables/active-campaign',
+					'php/global-variables/airtable',
+					'php/global-variables/clearbit',
+					'php/global-variables/goodbits',
+					'php/global-variables/greenhouse',
+					'php/global-variables/hubspot',
+					'php/global-variables/jira',
+					'php/global-variables/mailchimp',
+					'php/global-variables/mailerlite',
+					'php/global-variables/moments',
+					'php/global-variables/workable',
+				]
+			},
+			{
+				'type': 'category',
+				'label': 'Filters',
+				'items': [
+					'php/filters/intro',
+					{
+						'type': 'category',
+						'label': 'Block',
+						'items': [
+							'php/filters/block/checkboxes',
+							'php/filters/block/country',
+							'php/filters/block/custom-data',
+							'php/filters/block/date',
+							'php/filters/block/field',
+							'php/filters/block/file',
+							'php/filters/block/form-selector',
+							'php/filters/block/form',
+							'php/filters/block/forms',
+							'php/filters/block/input',
+							'php/filters/block/phone',
+							'php/filters/block/radios',
+							'php/filters/block/select',
+							'php/filters/block/step',
+							'php/filters/block/submit',
+							'php/filters/block/textarea',
+						],
+					},
+					{
+						'type': 'category',
+						'label': 'Blocks',
+						'items': [
+							'php/filters/blocks/additional-blocks',
+							'php/filters/blocks/media-breakpoints',
+						],
+					},
+					{
+						'type': 'category',
+						'label': 'Enrichment',
+						'items': [
+							'php/filters/enrichment/manual-map',
+						],
+					},
+					{
+						'type': 'category',
+						'label': 'General',
+						'items': [
+							'php/filters/general/http-request-timeout',
+							'php/filters/general/set-locale',
+						],
+					},
+					{
+						'type': 'category',
+						'label': 'Geolocation',
+						'items': [
+							'php/filters/geolocation/cookie-name',
+							'php/filters/geolocation/countries',
+							'php/filters/geolocation/db-location',
+							'php/filters/geolocation/disable',
+							'php/filters/geolocation/phar-location',
+							'php/filters/geolocation/wp-rocket-advanced-cache',
+						],
+					},
+					{
+						'type': 'category',
+						'label': 'Troubleshooting',
+						'items': [
+							'php/filters/troubleshooting/output-log',
+						],
+					},
+					{
+						'type': 'category',
+						'label': 'Validation',
+						'items': [
+							'php/filters/validation/fail-mimetype-validation-when-file-not-on-fs',
+						],
+					},
+					{
+						'type': 'category',
+						'label': 'Integrations',
+						'items': [
+							'php/filters/integrations/active-campaign',
+							'php/filters/integrations/airtable',
+							'php/filters/integrations/clearbit',
+							'php/filters/integrations/goodbits',
+							'php/filters/integrations/greenhouse',
+							'php/filters/integrations/hubspot',
+							'php/filters/integrations/jira',
+							'php/filters/integrations/mailchimp',
+							'php/filters/integrations/mailer',
+							'php/filters/integrations/mailerlite',
+							'php/filters/integrations/moments',
+							'php/filters/integrations/workable',
+						],
+					},
+				],
+			},
 		],
 		'JavaScript': [
-			'javascript/events',
+			'javascript/intro',
+			'javascript/examples',
+			'javascript/manual-initiation',
+			{
+				'type': 'category',
+				'label': 'Window object',
+				'items': [
+					'javascript/window/state',
+					'javascript/window/events',
+					'javascript/window/conditional-tags',
+					'javascript/window/enrichment',
+					'javascript/window/form',
+					'javascript/window/step',
+					'javascript/window/store',
+					'javascript/window/utils',
+				]
+			},
 		],
 		'Features': [
 			'features/cache',
