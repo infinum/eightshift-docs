@@ -1,6 +1,6 @@
 ---
 id: multistep-forms
-title: Multistep forms
+title: Multi-step forms
 ---
 
 *Coming soon*
