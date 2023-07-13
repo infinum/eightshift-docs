@@ -8,7 +8,6 @@ module.exports = {
 			'versions',
 			'theme',
 			'plugin',
-			'additional-libraries'
 		],
 		'Basics': [
 			'basics/basics-intro',
@@ -93,6 +92,17 @@ module.exports = {
 			'migrations/7-8',
 			'migrations/6-7',
 			'migrations/5-6',
+		],
+		'Additional Libraries': [
+			'additional-libraries/boilerplate',
+			'additional-libraries/boilerplate-plugin',
+			'additional-libraries/frontend-libs',
+			'additional-libraries/libs',
+			'additional-libraries/forms',
+			'additional-libraries/docs',
+			'additional-libraries/coding-standards',
+			'additional-libraries/storybook',
+			'additional-libraries/stubs',
 		],
 		'Legacy': [
 			{
