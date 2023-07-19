@@ -190,6 +190,12 @@ export default function ShowcaseGrid(props) {
 			desc: 'Pioneering tech and marketing to help brands stay ahead.',
 			link: 'https://www.deptagency.com/',
 		},
+		{
+			image: useBaseUrl('img/showcase/infobip.jpg'),
+			label: 'Infobip',
+			desc: 'Croatian IT and telecommunications company, offering omnichannel communications, contact center, chatbot, customer engagement, and customer data platforms as well as identity and security.',
+			link: 'https://www.infobip.com/',
+		},
 	];
 
 	const itemsData = privateType ? [...publicData, ...privateData] : publicData;
