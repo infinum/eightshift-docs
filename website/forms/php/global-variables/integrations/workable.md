@@ -5,7 +5,7 @@ title: Workable
 
 ### ES_API_KEY_WORKABLE
 
-This variable will set Workable integration api key.
+This variable will set Workable integration API key.
 
 ```php
 define('ES_API_KEY_WORKABLE', '<api-key>');

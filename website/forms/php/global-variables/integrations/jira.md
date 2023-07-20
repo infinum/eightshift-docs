@@ -5,7 +5,7 @@ title: Jira
 
 ### ES_API_KEY_JIRA
 
-This variable will set Jira integration api key.
+This variable will set Jira integration API key.
 
 ```php
 define('ES_API_KEY_JIRA', '<api-key>');

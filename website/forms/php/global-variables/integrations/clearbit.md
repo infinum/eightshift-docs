@@ -5,7 +5,7 @@ title: Clearbit
 
 ### ES_API_KEY_CLEARBIT
 
-This variable will set Clearbit integration api key.
+This variable will set Clearbit integration API key.
 
 ```php
 define('ES_API_KEY_CLEARBIT', '<api-key>');

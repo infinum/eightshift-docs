@@ -21,7 +21,7 @@ define('ES_GOOGLE_RECAPTCHA_SECRET_KEY', '<secret-key>');
 
 ### ES_GOOGLE_RECAPTCHA_API_KEY
 
-This variable will set Google ReCaptcha api key. Used with enterprise version of Google ReCaptcha.
+This variable will set Google ReCaptcha API key. Used with enterprise version of Google ReCaptcha.
 
 ```php
 define('ES_GOOGLE_RECAPTCHA_API_KEY', '<api-key>');
