@@ -3,10 +3,12 @@ id: media-breakpoints
 title: Media breakpoints
 ---
 
-We are using 4 breakpoints in our responsive design defined [here](https://github.com/infinum/eightshift-forms/blob/develop/src/Blocks/manifest.json) under the `breakpoints` key. If you project used different breakpoints you can change them with this filter.
+By default, we use 4 breakpoints in our responsive design system, defined [here](https://github.com/infinum/eightshift-forms/blob/develop/src/Blocks/manifest.json) within the `breakpoints` key.
+
+If you project uses different breakpoint values, you can change them with this filter.
 
 :::note
-You can't provide additional breakpoints, only change the existing ones.
+Additional breakpoints cannot be provided, only the current values can be modified!
 :::
 
 ```php
@@ -18,5 +20,4 @@ add_filter('es_forms_blocks_media_breakpoints', function() {
 		'large' => 1200
 	];
 })
-```
 

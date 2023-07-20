@@ -3,10 +3,10 @@ id: additional-blocks
 title: Additional blocks
 ---
 
-Adding additional custom or core blocks to the form builder page. For example you want to use heading block in your form with this filter you can provide it.
+Allows enabling the use of any custom, core, or 3rd-party block inside the Form builder, e.g. if you want to enable using a Heading block within the form.
 
 :::note
-Every block provided must ba fully qualified block name.
+Blocks should be added with their fully qualified block names, e.g. `eightshift-boilerplate/heading`.
 :::
 
 ```php
@@ -16,4 +16,3 @@ add_filter('es_forms_blocks_additional_blocks', function() {
 		'core/paragraph',
 	];
 })
-```
