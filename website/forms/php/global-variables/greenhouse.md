@@ -3,7 +3,6 @@ id: greenhouse
 title: Greenhouse
 ---
 
-
 ### ES_API_KEY_GREENHOUSE
 
 This variable will set Greenhouse integration api key.

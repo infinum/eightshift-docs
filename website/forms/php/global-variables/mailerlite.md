@@ -3,4 +3,10 @@ id: mailerlite
 title: MailerLite
 ---
 
-*Coming soon*
+### ES_API_KEY_MAILERLITE
+
+This variable will set MailerLite integration api key.
+
+```php
+define('ES_API_KEY_MAILERLITE', '<api-key>');
+```

@@ -3,4 +3,10 @@ id: hubspot
 title: Hubspot
 ---
 
-*Coming soon*
+### ES_API_KEY_HUBSPOT
+
+This variable will set Hubspot integration api key.
+
+```php
+define('ES_API_KEY_HUBSPOT', '<api-key>');
+```

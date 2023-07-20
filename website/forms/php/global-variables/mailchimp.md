@@ -3,4 +3,11 @@ id: mailchimp
 title: Mailchimp
 ---
 
-*Coming soon*
+### ES_API_KEY_MAILCHIMP
+
+This variable will set Mailchimp integration api key.
+
+```php
+define('ES_API_KEY_MAILCHIMP', '<api-key>');
+```
+

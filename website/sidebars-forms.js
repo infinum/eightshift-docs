@@ -20,6 +20,8 @@ module.exports = {
 					'php/global-variables/mailerlite',
 					'php/global-variables/moments',
 					'php/global-variables/workable',
+					'php/global-variables/geolocation',
+					'php/global-variables/google-recaptcha',
 				]
 			},
 			{
