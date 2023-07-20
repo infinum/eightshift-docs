@@ -21,8 +21,14 @@ Here's a glimpse of what Eightshift Forms brings to the table:
 
 - Extensibility: Take advantage of the plugin's extendable architecture, allowing you to integrate additional functionalities as per your project's needs. We develop for developers by providing a solid foundation for you to build upon.
 
-- Multi-Language Support: Create multilingual forms effortlessly, catering to a diverse audience and user base.
+- Multi-Language Support: Create multilingual forms effortlessly with our built-in support for WPML or any other multilingual plugin.
 
-- Third-Party Integrations: Seamlessly integrate with various third-party services, enhancing the functionality and power of your forms.
+- Third-Party Integrations: Seamlessly integrate with various third-party services, enhancing the functionality and power of your forms like Hubspot, Mailchimp, Greenhouse, and many others.
+
+- Multi-Step Forms: Create multi-step forms with ease, allowing you to break down complex forms into smaller, more manageable chunks.
+
+- Multi-flow Forms: Create multi-flow forms with ease, allowing you to create multiple forms with different fields and conditions.
+
+- Accessibility: Create accessible forms with ease, allowing you to create forms that are accessible to all users.
 
 Whether you're a seasoned developer seeking to optimize your form-building process or a beginner looking for a reliable and feature-rich solution, Eightshift Forms has something to offer for everyone.
