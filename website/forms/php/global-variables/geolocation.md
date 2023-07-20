@@ -5,7 +5,7 @@ title: Geolocation
 
 ### ES_GEOLOCATION_USE
 
-This variable will force geolocation to always be in use.
+This variable will force geolocation to always be in use, regardless of the value set in Settings.
 
 ```php
 define('ES_GEOLOCATION_USE', '<true|false>');
@@ -21,7 +21,7 @@ define('ES_GEOLOCATION_IP', '<xxx.xxx.xxx.xxx>');
 
 ### ES_GEOLOCATION_COOKIE_NAME
 
-This variable will change geolocation cookie name. In general you should never change this value.
+This variable will change geolocation cookie name. In most cases you won't need to change this value.
 
 ```php
 define('ES_GEOLOCATION_COOKIE_NAME', '<esForms-country>');
