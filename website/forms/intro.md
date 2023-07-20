@@ -15,8 +15,6 @@ Here's a glimpse of what Eightshift Forms brings to the table:
 
 - Customization: Tailor your forms to match your project's unique design and branding requirements using customizable templates and themes.
 
-- Validation & Security: Rest easy knowing that your data is protected with robust validation and security measures, preventing potential vulnerabilities.
-
 - Conditional Logic: Implement dynamic form behavior using conditional logic, making your forms more interactive and engaging.
 
 - Extensibility: Take advantage of the plugin's extendable architecture, allowing you to integrate additional functionalities as per your project's needs. We develop for developers by providing a solid foundation for you to build upon.
@@ -30,5 +28,7 @@ Here's a glimpse of what Eightshift Forms brings to the table:
 - Multi-flow Forms: Create multi-flow forms with ease, allowing you to create multiple forms with different fields and conditions.
 
 - Accessibility: Create accessible forms with ease, allowing you to create forms that are accessible to all users.
+
+- Security and performance: Uses nonce verification, sanitization and escaping to ensure your forms are secure. It also uses AJAX to submit forms without reloading the page, improving user experience and speed.
 
 Whether you're a seasoned developer seeking to optimize your form-building process or a beginner looking for a reliable and feature-rich solution, Eightshift Forms has something to offer for everyone.
