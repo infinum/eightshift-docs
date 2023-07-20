@@ -13,7 +13,7 @@ define('ES_GEOLOCATION_USE', '<true|false>');
 
 ### ES_GEOLOCATION_IP
 
-This variable will force geolocation to always return this IP address. This is useful for testing.
+Forces the geolocation system to use the provided IP address. Can be useful for testing.
 
 ```php
 define('ES_GEOLOCATION_IP', '<xxx.xxx.xxx.xxx>');
@@ -29,7 +29,7 @@ define('ES_GEOLOCATION_COOKIE_NAME', '<esForms-country>');
 
 ### ES_GEOLOCATION_PHAR_PATH
 
-This variable will define geolocation phar path on your server. This is useful if you want to use your own geolocation phar database file.
+Geolocation `.phar` file path on your server. Useful if you want to provide the geolocation service yourself.
 
 ```php
 define('ES_GEOLOCATION_PHAR_PATH', '</path/to/geoip.phar>');
@@ -37,7 +37,7 @@ define('ES_GEOLOCATION_PHAR_PATH', '</path/to/geoip.phar>');
 
 ### ES_GEOLOCATION_DB_PATH
 
-This variable will define geolocation mmdb path on your server. This is useful if you want to use your own geolocation mmdb database file.
+Geolocation database file (`.mmdb`) path on your server. Useful if you want to provide your own IP geolocation library.
 
 ```php
 define('ES_GEOLOCATION_DB_PATH', '</path/to/geoip.mmdb>');
