@@ -5,7 +5,7 @@ title: Google reCaptcha
 
 ### ES_GOOGLE_RECAPTCHA_SITE_KEY
 
-Google ReCaptcha site key. Can be used with both free and enterprise versions of ReCaptcha.
+Google ReCaptcha site key. Applies to the both free and enterprise versions of ReCaptcha.
 
 ```php
 define('ES_GOOGLE_RECAPTCHA_SITE_KEY', '<site-key>');
@@ -21,7 +21,7 @@ define('ES_GOOGLE_RECAPTCHA_SECRET_KEY', '<secret-key>');
 
 ### ES_GOOGLE_RECAPTCHA_API_KEY
 
-This variable will set Google ReCaptcha API key. Used with enterprise version of Google ReCaptcha.
+This variable will set Google ReCaptcha API key. Only applies to the enterprise version of Google ReCaptcha.
 
 ```php
 define('ES_GOOGLE_RECAPTCHA_API_KEY', '<api-key>');

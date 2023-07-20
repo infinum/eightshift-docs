@@ -53,7 +53,7 @@ define('ES_GEOLOCATION_COOKIE_EXPIRATION', '1296000');
 
 ### ES_GEOLOCATION_USE_WP_ROCKET_ADVANCED_CACHE
 
-Allows integrating the geolocation cookie with WP Rocket advanced caching "Never cache cookie" option.
+Allows integrating the geolocation cookie with WP Rocket caching plugin.
 
 Make sure to have `ES_GEOLOCATION_USE` set before enabling this option.
 
