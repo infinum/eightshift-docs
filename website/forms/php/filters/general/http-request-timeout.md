@@ -1,6 +1,6 @@
 ---
 id: http-request-timeout
-title: Http request timeout
+title: HTTP request timeout
 ---
 
 This filter can be used to change the cURL timeout for the file upload, useful if you have to upload large files.
