@@ -12,7 +12,7 @@ Additional breakpoints cannot be provided, only the current values can be modifi
 :::
 
 ```php
-add_filter('es_forms_blocks_media_breakpoints', function() {
+add_filter('es_forms_blocks_media_breakpoints', function(): array {
 	return [
 		'mobile' => 200,
 		'tablet' => 500,

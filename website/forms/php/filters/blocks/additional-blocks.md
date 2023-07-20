@@ -10,7 +10,7 @@ Blocks should be added with their fully qualified block names, e.g. `eightshift-
 :::
 
 ```php
-add_filter('es_forms_blocks_additional_blocks', function() {
+add_filter('es_forms_blocks_additional_blocks', function(): array {
 	return [
 		'core/heading',
 		'core/paragraph',
