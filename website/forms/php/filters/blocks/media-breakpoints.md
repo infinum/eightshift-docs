@@ -7,10 +7,6 @@ By default, we use 4 breakpoints in our responsive design system, defined [here]
 
 If you project uses different breakpoint values, you can change them with this filter.
 
-:::note
-Additional breakpoints cannot be provided, only the current values can be modified!
-:::
-
 ```php
 add_filter('es_forms_blocks_media_breakpoints', function(): array {
 	return [
@@ -20,4 +16,8 @@ add_filter('es_forms_blocks_media_breakpoints', function(): array {
 		'large' => 1200
 	];
 })
+```
 
+:::note
+Additional breakpoints cannot be provided, only the current values can be modified!
+:::

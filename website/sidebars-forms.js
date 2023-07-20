@@ -39,6 +39,13 @@ module.exports = {
 						'type': 'category',
 						'label': 'Block',
 						'items': [
+							{
+								'type': 'category',
+								'label': 'Textarea',
+								'items': [
+									'php/filters/block/textarea/additional-content',
+								],
+							},
 							'php/filters/block/checkboxes',
 							'php/filters/block/country',
 							'php/filters/block/custom-data',
@@ -54,7 +61,6 @@ module.exports = {
 							'php/filters/block/select',
 							'php/filters/block/step',
 							'php/filters/block/submit',
-							'php/filters/block/textarea',
 						],
 					},
 					{
