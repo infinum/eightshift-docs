@@ -3,10 +3,9 @@ id: greenhouse
 title: Greenhouse
 ---
 
-
 ### ES_API_KEY_GREENHOUSE
 
-This variable will set Greenhouse integration api key.
+This variable will set the Greenhouse integration API key.
 
 ```php
 define('ES_API_KEY_GREENHOUSE', '<api-key>');
