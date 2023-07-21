@@ -74,18 +74,30 @@ module.exports = {
 									'php/filters/block/country/alternative-data-set',
 								],
 							},
+							{
+								'type': 'category',
+								'label': 'Submit',
+								'items': [
+									'php/filters/block/submit/component',
+								],
+							},
+							{
+								'type': 'category',
+								'label': 'Step',
+								'items': [
+									'php/filters/block/step/component-prev',
+									'php/filters/block/step/component-next',
+								],
+							},
 							'php/filters/block/checkboxes',
 							'php/filters/block/custom-data',
 							'php/filters/block/date',
 							'php/filters/block/form-selector',
 							'php/filters/block/form',
-							'php/filters/block/forms',
 							'php/filters/block/input',
 							'php/filters/block/phone',
 							'php/filters/block/radios',
 							'php/filters/block/select',
-							'php/filters/block/step',
-							'php/filters/block/submit',
 						],
 					},
 					{
