@@ -48,6 +48,13 @@ module.exports = {
 							},
 							{
 								'type': 'category',
+								'label': 'Form',
+								'items': [
+									'php/filters/block/form/redirect-timeout',
+								],
+							},
+							{
+								'type': 'category',
 								'label': 'Field',
 								'items': [
 									'php/filters/block/field/style-options',
@@ -93,7 +100,6 @@ module.exports = {
 							'php/filters/block/custom-data',
 							'php/filters/block/date',
 							'php/filters/block/form-selector',
-							'php/filters/block/form',
 							'php/filters/block/input',
 							'php/filters/block/phone',
 							'php/filters/block/radios',
