@@ -1,9 +1,9 @@
 ---
 id: component-next
-title: Component next
+title: Multi-step form "Next" button
 ---
 
-This filter will remove the default forms multi step next button component and use your callback. For example you are using your own button and you don't want to style again a new button with this filter you can provide you custom html that we will use instead of the default button.
+This filter allows you to provide custom markup for the multi-step form "Next" button.
 
 ```php
 add_filter('es_forms_block_step_component_next', function(array $data): string {
@@ -12,5 +12,5 @@ add_filter('es_forms_block_step_component_next', function(array $data): string {
 ```
 
 :::note
-This filter will not apply to form settings pages.
+The custom button will not show in Form settings pages.
 :::

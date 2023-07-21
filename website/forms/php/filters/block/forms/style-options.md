@@ -1,11 +1,9 @@
 ---
 id: style-options
-title: Style options
+title: Custom form styles
 ---
 
-This filter will add new options to the style select dropdown in the forms block. Forms style option selector will not show unless a filter is provided. This option is shown in Block Editor when you click on the forms block.
-
-By providing style options you can change the style of the form with a simple CSS selector. This is useful if you want to have multiple forms with different styles.
+This filter allows you to add definitions for custom form styles. When defined, the style option will be shown in the form options. Make sure to provide a CSS style that targets the class with the name of the `value` provided.
 
 ```php
 add_filter('es_forms_block_forms_style_options', function(): array {

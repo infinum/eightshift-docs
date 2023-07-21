@@ -15,5 +15,5 @@ add_filter('es_forms_blocks_additional_blocks', function(): array {
 ```
 
 :::note
-Blocks should be added with their fully qualified block names, e.g. `eightshift-boilerplate/heading`.
+Blocks should be listed with their _fully qualified_ names, e.g. `eightshift-boilerplate/heading`.
 :::

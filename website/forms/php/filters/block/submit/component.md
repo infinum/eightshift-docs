@@ -1,9 +1,9 @@
 ---
 id: component
-title: Component
+title: Custom form submit button
 ---
 
-This filter will remove the default forms submit button component and use your callback. For example you are using your own button and you don't want to style again a new button with this filter you can provide you custom html that we will use instead of the default button.
+This filter allows you to provide custom markup for the form submit button.
 
 ```php
 add_filter('es_forms_block_submit_component', function(array $data): string {
@@ -12,5 +12,5 @@ add_filter('es_forms_block_submit_component', function(array $data): string {
 ```
 
 :::note
-This filter will not apply to form settings pages.
+The custom button will not show in Form settings pages.
 :::
