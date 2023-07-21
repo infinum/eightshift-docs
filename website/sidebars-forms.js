@@ -39,22 +39,73 @@ module.exports = {
 						'type': 'category',
 						'label': 'Block',
 						'items': [
+							{
+								'type': 'category',
+								'label': 'Forms',
+								'items': [
+									'php/filters/block/forms/style-options',
+								],
+							},
+							{
+								'type': 'category',
+								'label': 'Form',
+								'items': [
+									'php/filters/block/form/redirect-timeout',
+									'php/filters/block/form/hide-global-msg-timeout',
+									'php/filters/block/form/success-redirect-url',
+								],
+							},
+							{
+								'type': 'category',
+								'label': 'Field',
+								'items': [
+									'php/filters/block/field/style-options',
+								],
+							},
+							{
+								'type': 'category',
+								'label': 'Textarea',
+								'items': [
+									'php/filters/block/textarea/additional-content',
+								],
+							},
+							{
+								'type': 'category',
+								'label': 'File',
+								'items': [
+									'php/filters/block/file/preview-remove-label',
+								],
+							},
+							{
+								'type': 'category',
+								'label': 'Country',
+								'items': [
+									'php/filters/block/country/alternative-data-set',
+								],
+							},
+							{
+								'type': 'category',
+								'label': 'Submit',
+								'items': [
+									'php/filters/block/submit/component',
+								],
+							},
+							{
+								'type': 'category',
+								'label': 'Step',
+								'items': [
+									'php/filters/block/step/component-prev',
+									'php/filters/block/step/component-next',
+								],
+							},
 							'php/filters/block/checkboxes',
-							'php/filters/block/country',
 							'php/filters/block/custom-data',
 							'php/filters/block/date',
-							'php/filters/block/field',
-							'php/filters/block/file',
 							'php/filters/block/form-selector',
-							'php/filters/block/form',
-							'php/filters/block/forms',
 							'php/filters/block/input',
 							'php/filters/block/phone',
 							'php/filters/block/radios',
 							'php/filters/block/select',
-							'php/filters/block/step',
-							'php/filters/block/submit',
-							'php/filters/block/textarea',
 						],
 					},
 					{
@@ -84,11 +135,11 @@ module.exports = {
 						'type': 'category',
 						'label': 'Geolocation',
 						'items': [
-							'php/filters/geolocation/cookie-name',
-							'php/filters/geolocation/countries',
-							'php/filters/geolocation/db-location',
 							'php/filters/geolocation/disable',
+							'php/filters/geolocation/cookie-name',
+							'php/filters/geolocation/db-location',
 							'php/filters/geolocation/phar-location',
+							'php/filters/geolocation/countries',
 							'php/filters/geolocation/wp-rocket-advanced-cache',
 						],
 					},
