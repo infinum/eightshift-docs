@@ -48,9 +48,23 @@ module.exports = {
 							},
 							{
 								'type': 'category',
+								'label': 'Field',
+								'items': [
+									'php/filters/block/field/style-options',
+								],
+							},
+							{
+								'type': 'category',
 								'label': 'Textarea',
 								'items': [
 									'php/filters/block/textarea/additional-content',
+								],
+							},
+							{
+								'type': 'category',
+								'label': 'File',
+								'items': [
+									'php/filters/block/file/preview-remove-label',
 								],
 							},
 							'php/filters/block/checkboxes',
