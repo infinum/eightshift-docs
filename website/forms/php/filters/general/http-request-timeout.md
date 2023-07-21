@@ -7,7 +7,7 @@ This filter can be used to change the cURL timeout for the file upload, useful i
 
 ```php
 add_filter('es_forms_general_http_request_timeout', function(): int {
-	return 50;
+	return 50; // 50 seconds.
 })
 
 
