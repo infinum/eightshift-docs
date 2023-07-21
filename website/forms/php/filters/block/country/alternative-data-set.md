@@ -1,20 +1,20 @@
 ---
 id: alternative-data-set
-title: Alternative data set
+title: Alternative datasets
 ---
 
-We use DataHub list country list for providing the rest data that is used in the Block Editor. This list is used in the dropdown option for selecting the form country usage.
+We use the DataHub country list to provide a REST route with all the countries, as well as the data in the Geolocation and phone number fields.
 
-You can find our complete list [on this link](https://github.com/infinum/eightshift-forms/blob/develop/data/country/manifest.json).
+The complete list can be found [here](https://github.com/infinum/eightshift-forms/blob/develop/data/country/manifest.json).
 
-By default our country field will always show the full list of countries with this filter you can provide an alternative data set that will be used instead of the default one. You will not be able to change the default list, only provide an alternative one.
+By default the Country field will show the full list of countries. With this filter, an alternate dataset can be provided to use instead of the built-in one. Please note that the built-in dataset can't be edited, only a replacement can be provided.
 
-For example you only want to show 4 countries in you list, you can do that with this filter by adding a new list name and adding a `onlyUse` key with the list of countries you want to use.
+For example, if you only want to allow choosing between 4 countries, you can do that with this filter. Add a new entry, add the `label` and the `slug`, then provide the countries you want to be included in the `onlyUse` key.
 
 #### Available options:
-* **remove** - Remove countries from the list, useful if you want the full list but only want to remove a few countries.
-* **change** - Change the country name, useful if you want to change the name of the country you want to show to the users.
-* **onlyUse** - Use only the provided countries, useful if you want to show only a few countries and not the whole list.
+* **remove** - Allows you to remove certain countries from the default dataset.
+* **change** - Allows you to modify the names of countries in the default dataset.
+* **onlyUse** - Allows providing a custom list of countries, instead of using the full dataset.
 
 ```php
 add_filter('es_forms_block_country_alternative_data_set', function(): array {

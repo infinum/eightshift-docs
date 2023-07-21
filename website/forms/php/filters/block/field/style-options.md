@@ -1,11 +1,9 @@
 ---
 id: style-options
-title: Style options
+title: Custom field styles
 ---
 
-This filter will add new options to the style select dropdown in the filed block. Field style option selector will not show unless a filter is provided. This option is shown in Block Editor when you click on any field block.
-
-By providing style options you can change the style of the field with a simple CSS selector. This is useful if you want to have multiple fields with different styles.
+This filter allows you to add definitions for custom field styles. When defined, the style option will be shown in the field options. Make sure to provide a CSS style that targets the class with the name of the `value` provided.
 
 ```php
 add_filter('es_forms_block_field_style_options', function(): array {
