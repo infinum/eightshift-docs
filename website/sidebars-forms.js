@@ -51,6 +51,8 @@ module.exports = {
 								'label': 'Form',
 								'items': [
 									'php/filters/block/form/redirect-timeout',
+									'php/filters/block/form/hide-global-msg-timeout',
+									'php/filters/block/form/success-redirect-url',
 								],
 							},
 							{
