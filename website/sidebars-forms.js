@@ -41,6 +41,13 @@ module.exports = {
 						'items': [
 							{
 								'type': 'category',
+								'label': 'Forms',
+								'items': [
+									'php/filters/block/forms/style-options',
+								],
+							},
+							{
+								'type': 'category',
 								'label': 'Textarea',
 								'items': [
 									'php/filters/block/textarea/additional-content',
