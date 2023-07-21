@@ -1,6 +1,6 @@
 ---
 id: preview-remove-label
-title: Custom file uploader: uploaded item remove button label
+title: Uploaded item remove button label
 ---
 
 This filter allows you to change the label for the _Remove_ button in the preview section for the uploaded files. Within the provided string an SVG icon or similar can be included, or anything else that `Dropzone.js` supports.
