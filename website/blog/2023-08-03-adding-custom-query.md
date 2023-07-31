@@ -4,7 +4,7 @@ description: Explains the process of registering a new service class, adding a c
 slug: working-with-custom-queries
 authors: obradovic
 
-date: 2023-08-03
+date: 2023-08-01
 tags: [eightshift, boilerplate, service, class, query]
 hide_table_of_contents: false
 ---
@@ -103,6 +103,10 @@ if ($latestNews->have_posts()) {
 }
 wp_reset_postdata();
 ```
+
+:::caution Important
+Don't forget to add `wp_reset_postdata()` after looping through the custom query!
+:::
 
 ## Prepare only the data you need
 
