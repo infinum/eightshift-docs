@@ -53,6 +53,14 @@ module.exports = {
 									'php/filters/block/form/redirect-timeout',
 									'php/filters/block/form/hide-global-msg-timeout',
 									'php/filters/block/form/success-redirect-url',
+									'php/filters/block/form/additional-content',
+								],
+							},
+							{
+								'type': 'category',
+								'label': 'Form selector',
+								'items': [
+									'php/filters/block/form-selector/additional-content',
 								],
 							},
 							{
@@ -60,6 +68,14 @@ module.exports = {
 								'label': 'Field',
 								'items': [
 									'php/filters/block/field/style-options',
+									'php/filters/block/field/additional-content',
+								],
+							},
+							{
+								'type': 'category',
+								'label': 'Input',
+								'items': [
+									'php/filters/block/input/additional-content',
 								],
 							},
 							{
@@ -71,9 +87,17 @@ module.exports = {
 							},
 							{
 								'type': 'category',
+								'label': 'Select',
+								'items': [
+									'php/filters/block/select/additional-content',
+								],
+							},
+							{
+								'type': 'category',
 								'label': 'File',
 								'items': [
 									'php/filters/block/file/preview-remove-label',
+									'php/filters/block/file/additional-content',
 								],
 							},
 							{
@@ -81,6 +105,35 @@ module.exports = {
 								'label': 'Country',
 								'items': [
 									'php/filters/block/country/alternative-data-set',
+									'php/filters/block/country/additional-content',
+								],
+							},
+							{
+								'type': 'category',
+								'label': 'Phone',
+								'items': [
+									'php/filters/block/phone/additional-content',
+								],
+							},
+							{
+								'type': 'category',
+								'label': 'Date',
+								'items': [
+									'php/filters/block/date/additional-content',
+								],
+							},
+							{
+								'type': 'category',
+								'label': 'Checkboxes',
+								'items': [
+									'php/filters/block/checkboxes/additional-content',
+								],
+							},
+							{
+								'type': 'category',
+								'label': 'Radios',
+								'items': [
+									'php/filters/block/radios/additional-content',
 								],
 							},
 							{
@@ -88,6 +141,7 @@ module.exports = {
 								'label': 'Submit',
 								'items': [
 									'php/filters/block/submit/component',
+									'php/filters/block/submit/additional-content',
 								],
 							},
 							{
@@ -98,14 +152,6 @@ module.exports = {
 									'php/filters/block/step/component-next',
 								],
 							},
-							'php/filters/block/checkboxes',
-							'php/filters/block/custom-data',
-							'php/filters/block/date',
-							'php/filters/block/form-selector',
-							'php/filters/block/input',
-							'php/filters/block/phone',
-							'php/filters/block/radios',
-							'php/filters/block/select',
 						],
 					},
 					{
