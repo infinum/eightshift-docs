@@ -11,5 +11,3 @@ add_filter('es_forms_general_scripts_dependency', function(): array {
 		'infinum-block-frontend-scripts',
 	];
 })
-
-
