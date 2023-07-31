@@ -53,6 +53,12 @@ module.exports = {
 									'php/filters/block/form/redirect-timeout',
 									'php/filters/block/form/hide-global-msg-timeout',
 									'php/filters/block/form/success-redirect-url',
+									'php/filters/block/form/success-redirect-variation',
+									'php/filters/block/form/tracking-event-name',
+									'php/filters/block/form/tracking-additional-data',
+									'php/filters/block/form/data-type-selector',
+									'php/filters/block/form/phone-sync',
+									'php/filters/block/form/global-msg-headings',
 									'php/filters/block/form/additional-content',
 								],
 							},
@@ -102,10 +108,16 @@ module.exports = {
 							},
 							{
 								'type': 'category',
-								'label': 'Country',
+								'label': 'Checkboxes',
 								'items': [
-									'php/filters/block/country/alternative-data-set',
-									'php/filters/block/country/additional-content',
+									'php/filters/block/checkboxes/additional-content',
+								],
+							},
+							{
+								'type': 'category',
+								'label': 'Radios',
+								'items': [
+									'php/filters/block/radios/additional-content',
 								],
 							},
 							{
@@ -117,23 +129,17 @@ module.exports = {
 							},
 							{
 								'type': 'category',
+								'label': 'Country',
+								'items': [
+									'php/filters/block/country/alternative-data-set',
+									'php/filters/block/country/additional-content',
+								],
+							},
+							{
+								'type': 'category',
 								'label': 'Date',
 								'items': [
 									'php/filters/block/date/additional-content',
-								],
-							},
-							{
-								'type': 'category',
-								'label': 'Checkboxes',
-								'items': [
-									'php/filters/block/checkboxes/additional-content',
-								],
-							},
-							{
-								'type': 'category',
-								'label': 'Radios',
-								'items': [
-									'php/filters/block/radios/additional-content',
 								],
 							},
 							{
@@ -175,6 +181,7 @@ module.exports = {
 						'items': [
 							'php/filters/general/http-request-timeout',
 							'php/filters/general/set-locale',
+							'php/filters/general/scripts-dependency',
 						],
 					},
 					{
