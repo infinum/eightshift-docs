@@ -1,7 +1,7 @@
 ---
-title: Adding a custom query
+title: Working with custom queries
 description: Explains the process of registering a new service class, adding a custom query and using it in a block.
-slug: adding-custom-query
+slug: working-with-custom-queries
 authors: obradovic
 
 date: 2023-08-03
@@ -9,10 +9,10 @@ tags: [eightshift, boilerplate, service, class, query]
 hide_table_of_contents: false
 ---
 
-Eightshift Dev Kit offers some blocks with query logic out-of-the-box, but what is the best approach when you need to add a custom query to a block you’ve been working on?
+Eightshift DevKit offers some blocks with query logic out of the box, but what is the best approach when you need to add a custom query to a block you’ve been working on?
 <!--truncate-->
 
-## Already existing blocks
+## Usage in built-in blocks
 
 One of the Eightshift blocks that already uses `WP_Query` is the ***Featured Content*** block. In that block, you can see the query logic is inside the block. However, there is a much better way to do it. The reason it was done like this was to simplify this block and to have an already functioning block available with one WP-CLI command.
 
