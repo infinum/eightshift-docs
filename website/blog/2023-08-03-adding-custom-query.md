@@ -22,9 +22,9 @@ A much better approach would be to separate the query logic from the block. Othe
 
 *Put simply, a Service is any PHP object that performs some sort of "global" task. - Symfony docs*
 
-If you take a look at the `ServiceInterface` interface, you’ll notice it only  contains the `register()` method. This method holds action and filter hooks for that class. Other than hooking into existing actions and filters, this method can be used to register our own filters which can be used in blocks or other classes.
+If you take a look at the `ServiceInterface` interface, you’ll notice it only contains the `register()` method. This method holds action and filter hooks for that class. Other than hooking into existing actions and filters, this method can be used to register our own filters which can be used in blocks or other classes.
 
-Basically, whenever you need to hook into actions or filters, you use a Service class for that.
+Basically, whenever you need to hook into actions or filters, you should use a Service class for that.
 
 ## Creating a new service class
 
