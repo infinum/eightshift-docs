@@ -1,6 +1,6 @@
 ---
-id: intro
-title: Intro
+id: welcome
+title: Welcome
 ---
 
 Welcome to the Eightshift Forms documentation! This powerful and versatile WordPress project is designed to revolutionize the way you handle forms in your web development projects.
