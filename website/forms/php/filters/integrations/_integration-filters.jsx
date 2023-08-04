@@ -18,9 +18,9 @@ export default function IntegrationFilters(props) {
 			{onlyUse.includes('dataFilter') &&
 				<>
 					<h2>Data</h2>
-					<p>Change form fields data before output.</p>
-					<p>This filter is used if you want to change form fields data before output. By changing the name of the filter you will target different integrations.</p>
-					
+					<p>This filter is used if you want to change form fields data before output. This way you can change components map before it is parsed inside Block Editor.</p>
+					<p>For example if you want to set all fields to have 2 columns layout this will be the filter to use.</p>
+
 					<CodeBlock language="php">
 					{reformatCode(`
 					add_filter('es_forms_integrations_${filter}_data', function(array $data, string $formId): array {
@@ -34,7 +34,7 @@ export default function IntegrationFilters(props) {
 			{onlyUse.includes('prePostParamsFilter') &&
 				<>
 					<h2>Pre post params</h2>
-					<p>Change form fields data before we send it to the external integration.</p>
+					<p>Change form fields data before we send it to the external integration. This way you can manuipulate data and provide additional mapping to the data sent to the integration.</p>
 
 					<CodeBlock language="php">
 						{reformatCode(`
