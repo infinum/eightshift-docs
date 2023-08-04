@@ -8,12 +8,12 @@ This filter allows you to add custom css classes to the field element. You can u
 ```php
 add_filter('es_forms_block_field_style_classes', function(array $attributes): array {
 	return [
-			'input' => [
-				'custom-style'.
-			],
-			'select' => [
-				'default',
-			]
-		];
+		'input' => [
+			'custom-style'.
+		],
+		'select' => [
+			'default',
+		]
+	];
 })
 ```
