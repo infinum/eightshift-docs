@@ -9,7 +9,6 @@ export default function IntegrationFilters(props) {
 		onlyUse = [
 			'dataFilter',
 			'prePostParamsFilter',
-			'successRedirectUrlFilter',
 		],
 	} = props;
 
@@ -24,6 +23,35 @@ export default function IntegrationFilters(props) {
 					<CodeBlock language="php">
 					{reformatCode(`
 					add_filter('es_forms_integrations_${filter}_data', function(array $data, string $formId): array {
+						foreach ($data as $index => $field) {
+							$component = $field['component'] ?? '';
+
+							if (!$component) {
+								continue;
+							}
+
+							$name = $field["{$component}Name"] ?? '';
+
+							if (!$name) {
+								continue;
+							}
+
+							switch ($name) {
+								case 'firstname':
+								case 'lastname':
+									$data[$index]["{$component}FieldWidthMobile"] = 12;
+									$data[$index]["{$component}FieldWidthLarge"] = 6;
+									$data[$index]["{$component}DisabledOptions"] = \array_merge(
+										$data[$index]["{$component}DisabledOptions"],
+										[
+											"{$component}FieldWidthMobile",
+											"{$component}FieldWidthLarge",
+										]
+									);
+									break;
+							}
+						}
+
 						return $data;
 					}, 10, 2);
 					`)}
@@ -39,21 +67,17 @@ export default function IntegrationFilters(props) {
 					<CodeBlock language="php">
 						{reformatCode(`
 							add_filter('es_forms_integrations_${filter}_pre_post_params', function(array $params): array {
-								return $params;
-							});
-						`)}
-					</CodeBlock>
-				</>
-			}
+								$formSubmissionPageLt = $params['form_submission_page_lt']['value'] ?? '';
 
-			{onlyUse.includes('successRedirectUrlFilter') &&
-				<>
-					<h2>Success redirect url</h2>
-					<p>Change integrations success redirection url globally for all {name} forms.</p>
+								if ($formSubmissionPageLt) {
+									$params['ib-submission-source'] = [
+										'name' => 'ib-submission-source',
+										'value' => $formSubmissionPageLt,
+										'type' => 'text',
+										'internalType' => '',
+									];
+								}
 
-					<CodeBlock language="php">
-						{reformatCode(`
-							add_filter('es_forms_integrations_${filter}_success_redirect_url', function(array $params): array {
 								return $params;
 							});
 						`)}

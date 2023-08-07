@@ -1,6 +1,6 @@
 ---
-id: intro
-title: Intro
+id: how-to-use
+title: How to use?
 ---
 
 Eightshift Forms was made by developers, for developers, so we provide a comprehensive set of filters that allow you to modify and extend the behavior of Forms to suit your specific needs.

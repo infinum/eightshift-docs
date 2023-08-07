@@ -48,11 +48,12 @@ module.exports = {
 				'type': 'category',
 				'label': 'PHP',
 				'items': [
+					'php/intro',
 					{
 						'type': 'category',
 						'label': 'Global variables',
 						'items': [
-							'php/global-variables/intro',
+							'php/global-variables/how-to-use',
 							'php/global-variables/geolocation',
 							'php/global-variables/google-recaptcha',
 							{
@@ -78,7 +79,7 @@ module.exports = {
 						'type': 'category',
 						'label': 'Filters',
 						'items': [
-							'php/filters/intro',
+							'php/filters/how-to-use',
 							{
 								'type': 'category',
 								'label': 'Block',
@@ -283,20 +284,21 @@ module.exports = {
 				'label': 'JavaScript',
 				'items': [
 					'javascript/intro',
-					'javascript/examples',
+					'javascript/events',
+					'javascript/how-to-use',
 					'javascript/manual-initiation',
 					{
 						'type': 'category',
 						'label': 'Window object',
 						'items': [
-							'javascript/window/state',
-							'javascript/window/events',
+							'javascript/window/state',,
 							'javascript/window/conditional-tags',
 							'javascript/window/enrichment',
 							'javascript/window/form',
 							'javascript/window/step',
 							'javascript/window/store',
 							'javascript/window/utils',
+							'javascript/window/captcha',
 						]
 					},
 				],
