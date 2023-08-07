@@ -9,7 +9,7 @@ By default there are no headings on error or success messages but with this filt
 add_filter('es_forms_block_form_global_msg_headings', function(): array {
 	return [
 		'success' => \__('Good news!', 'eightshift-form'),
-		'error' => \__('Something is going wrong.', 'eightshift-form'),
+		'error' => \__('Something went wrong.', 'eightshift-form'),
 	];
 })
 ```

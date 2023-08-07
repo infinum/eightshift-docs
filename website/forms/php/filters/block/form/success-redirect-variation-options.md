@@ -3,7 +3,7 @@ id: success-redirect-variation-options
 title: Success redirect variation options
 ---
 
-While you can create variations list form the forms global setting with this filter you can provide additional variations what are fixed and can't be changed by the user.
+While you can create variations list from the forms global setting, by using this filter you can provide additional variations which are fixed and can't be changed by the user.
 
 Filter returns an array of arrays. The first value is the variation value and the second value is the variation label.
 

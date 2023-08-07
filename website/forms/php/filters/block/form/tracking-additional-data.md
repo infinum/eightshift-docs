@@ -3,14 +3,14 @@ id: tracking-additional-data
 title: Tracking additional data
 ---
 
-This filter allows you to set additional data that is going to be send in the dataLayer on certain events. This filter works great in combination with the [Tracking event name](/forms/php/filters/block/form/tracking-event-name) filter.
+This filter allows you to set additional data that is going to be sent in the dataLayer on certain events. This filter works great in combination with the [Tracking event name](/forms/php/filters/block/form/tracking-event-name) filter.
 
-You can add as many key/value pairs as you want. The data is send as an array of arrays. The first value is the key and the second value is the value.
+You can add as many key/value pairs as you want. The data is sent as an array of arrays. The first value is the key and the second value is the value.
 
 **We support three different keys:**
-* general - this data is send on all events.
-* success - this data is send only on success event.
-* error - this data is send only on error event.
+* general - this data is sent on all events.
+* success - this data is sent only on success event.
+* error - this data is sent only on error event.
 
 
 ```php
