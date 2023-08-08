@@ -13,7 +13,7 @@ To utilize the `esForms` object, call it directly from the window object:
 window.esForms
 ```
 
-or you can use our events that also contains all the state in the time of the event.
+or you can use built-in events which also contain all the state in the time of the event.
 
 :::caution
 It's important to be careful when using a state outside of the `esFormsJsFormLoaded` event, as it may not be ready at the time of use. To ensure that the state is available, calling your JavaScript after the `domReady` event and with the `esFormsJsFormLoaded` event is necessary.
@@ -21,7 +21,7 @@ It's important to be careful when using a state outside of the `esFormsJsFormLoa
 
 ## Example
 
-In this example we are using the `esFormsJsFormLoaded` event to initialize our form JavaScript. 
+In this example we are using the `esFormsJsFormLoaded` event to initialize our form in JavaScript. 
 
 ```js
 import domReady from '@wordpress/dom-ready';

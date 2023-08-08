@@ -37,7 +37,7 @@ window.addEventListener('esFormsAfterCaptchaInit', ({detail}) => {
 
 In this example the event is hooked to the window object and in event details you have:
 * `esForms` - object.
-* `formId` - form Id this event is apart of.
+* `formId` - form Id this event is a part of.
 * `additional` - not available because this is a not API response event.
 
 ```js
@@ -55,7 +55,7 @@ window.addEventListener('esFormsJsFormLoaded', ({detail}) => {
 
 In this example the event is hooked to the `form` element and in event details you have:
 * `esForms` - object.
-* `formId` - form Id this event is apart of.
+* `formId` - form Id this event is a part of.
 * `additional` - object from the API response.
 
 ```js
