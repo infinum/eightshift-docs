@@ -284,7 +284,6 @@ module.exports = {
 				'label': 'JavaScript',
 				'items': [
 					'javascript/intro',
-					'javascript/manual-initiation',
 					{
 						'type': 'category',
 						'label': 'Events',
@@ -295,18 +294,20 @@ module.exports = {
 					},
 					{
 						'type': 'category',
-						'label': 'Window object',
+						'label': 'State',
 						'items': [
-							'javascript/window/state',
-							'javascript/window/conditional-tags',
-							'javascript/window/enrichment',
-							'javascript/window/form',
-							'javascript/window/step',
-							'javascript/window/store',
-							'javascript/window/utils',
-							'javascript/window/captcha',
+							'javascript/state/how-to-use',
+							'javascript/state/state',
+							'javascript/state/conditional-tags',
+							'javascript/state/enrichment',
+							'javascript/state/form',
+							'javascript/state/step',
+							'javascript/state/store',
+							'javascript/state/utils',
+							'javascript/state/captcha',
 						]
 					},
+					'javascript/manual-initiation',
 				],
 			},
 		],
