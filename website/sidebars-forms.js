@@ -284,14 +284,20 @@ module.exports = {
 				'label': 'JavaScript',
 				'items': [
 					'javascript/intro',
-					'javascript/events',
-					'javascript/how-to-use',
 					'javascript/manual-initiation',
+					{
+						'type': 'category',
+						'label': 'Events',
+						'items': [
+							'javascript/events/available-events',
+							'javascript/events/how-to-use',
+						]
+					},
 					{
 						'type': 'category',
 						'label': 'Window object',
 						'items': [
-							'javascript/window/state',,
+							'javascript/window/state',
 							'javascript/window/conditional-tags',
 							'javascript/window/enrichment',
 							'javascript/window/form',
