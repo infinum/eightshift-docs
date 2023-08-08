@@ -62,7 +62,7 @@ export default function IntegrationFilters(props) {
 			{onlyUse.includes('prePostParamsFilter') &&
 				<>
 					<h2>Pre post params</h2>
-					<p>Change form fields data before we send it to the external integration. This way you can manuipulate data and provide additional mapping to the data sent to the integration.</p>
+					<p>Change form fields data before it is sent to the external integration. This way you can manuipulate data and provide additional mapping to the data sent to the integration.</p>
 
 					<CodeBlock language="php">
 						{reformatCode(`
