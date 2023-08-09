@@ -23,7 +23,7 @@ export default function WindowObject(props) {
 		</CodeBlock>
 
 		{url &&
-			<p>You can find all methods and its documentations on this <a href={internalUrl} target='_blank'>link</a>.</p>
+			<p>You can find all methods and their documentation on this <a href={internalUrl} target='_blank'>link</a>.</p>
 		}
 	</>
 	);
