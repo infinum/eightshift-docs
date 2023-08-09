@@ -5,4 +5,16 @@ title: Store
 
 import WindowObject from './../_js.jsx';
 
-<WindowObject name="Store" filter="store" />
+The `store` object contains all getters and setters for managing the application's state.
+
+We highly recommend using these helpers instead of directly accessing the state object to avoid unexpected behavior and prevent future breaking changes.
+
+<WindowObject name="Store" filter="store" url="state" />
+
+### Example
+
+This example will return DOM element of the form assigned to the `formId`.
+
+```js
+window?.esForms?.store?.getStateFormElement('<formId>');
+```

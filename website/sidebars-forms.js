@@ -298,12 +298,12 @@ module.exports = {
 						'items': [
 							'javascript/state/how-to-use',
 							'javascript/state/state',
+							'javascript/state/store',
+							'javascript/state/form',
+							'javascript/state/utils',
 							'javascript/state/conditional-tags',
 							'javascript/state/enrichment',
-							'javascript/state/form',
 							'javascript/state/step',
-							'javascript/state/store',
-							'javascript/state/utils',
 							'javascript/state/captcha',
 						]
 					},

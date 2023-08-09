@@ -5,4 +5,20 @@ title: Utils
 
 import WindowObject from './../_js.jsx';
 
-<WindowObject name="Utils" filter="utils" />
+The `utils` object contains helper methods for miscellaneous functionalities such as showing/hiding loaders and setting/unsetting errors.
+
+<WindowObject name="Utils" filter="utils" url="utilities" />
+
+### Example
+
+This example will reset all errors to its original state.
+
+```js
+window?.esForms?.utils?.resetErrors('<formId>');
+```
+
+This example will show loader element.
+
+```js
+window?.esForms?.utils?.showLoader('<formId>');
+```
