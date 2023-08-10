@@ -112,6 +112,7 @@ module.exports = {
 										'type': 'category',
 										'label': 'Form selector',
 										'items': [
+											'php/filters/block/form-selector/form-templates',
 											'php/filters/block/form-selector/additional-content',
 										],
 									},
