@@ -3,7 +3,7 @@ id: form-templates
 title: Form templates
 ---
 
-This filter allows to add custom form templates to the form selector. This way you can predefine form templates and inset them with a single click.
+This filter allows to add custom form templates to the form selector. This way you can predefine form templates and insert them with a single click.
 
 ```php
 add_filter('es_forms_block_form_selector_form_templates', function(): array {
