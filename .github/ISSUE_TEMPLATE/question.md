@@ -2,7 +2,7 @@
 name: Question
 about: Ask us a question
 title: "[QUESTION] - "
-labels: question
+labels: ''
 assignees: iruzevic
 
 ---
