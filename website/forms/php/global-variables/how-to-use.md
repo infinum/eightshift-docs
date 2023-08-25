@@ -1,7 +1,8 @@
 ---
-id: intro
-title: Intro
+id: how-to-use
+title: How to use?
 ---
+
 You can access all the global configurations from the WordPress admin interface. However, if you want to ensure that some of these configurations remain constant, you can make use of global variables. 
 
 :::note

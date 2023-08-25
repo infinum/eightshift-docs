@@ -30,7 +30,7 @@ module.exports = {
 					position: 'right',
 				},
 				{
-					to: 'forms/intro',
+					to: 'forms/welcome',
 					activeBasePath: 'forms',
 					label: 'Forms',
 					position: 'right',
@@ -139,7 +139,7 @@ module.exports = {
 					blogDescription: 'Tutorials and articles about Eightshift development kit',
 					blogSidebarTitle: 'Latest posts',
 					showReadingTime: true,
-					postsPerPage: 6,
+					postsPerPage: 9,
 				},
 				sitemap: {
 					changefreq: 'weekly',
