@@ -3,9 +3,9 @@ id: cache
 title: Cache
 ---
 
-Eightshift Forms utilizes WordPress's internal cache tools to store integration API response data, reducing API calls and improving site performance. Clear the cache via our global Settings page to retrieve fresh data from the API.
+Eightshift Forms utilizes WordPress's internal cache tools to store integration API response data, reducing API calls and improving site performance. Clear the cache via our global settings page to retrieve fresh data from the API.
 
-![Cache screen](/img/forms/cache.png)
+![Cache screen](/img/forms/cache.webp)
 
 ## Integration cache
 

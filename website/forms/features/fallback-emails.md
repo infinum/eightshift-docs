@@ -5,7 +5,7 @@ title: Fallback e-mails
 
 Fallback email options are used in multiple locations, and we encourage you to set them up. You can add multiple emails by separating them with commas.
 
-![Fallback screen](/img/forms/fallback.png)
+![Fallback screen](/img/forms/fallback.webp)
 
 ## Global settings fallback email
 

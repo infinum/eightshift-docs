@@ -38,7 +38,7 @@ wp boilerplate blocks use-component --name=quote
 
 When entering the `wp boilerplate blocks use-block --name='quote'` command, you'll notice the note about a block dependency on the Quote component. So you should run the second command as well.
 
-![Setup - instructions](/img/blog/wpcli-1.png)
+![Setup - instructions](/img/blog/wpcli-1.webp)
 
 After entering these commands, run `npm start` again to make sure everything works properly.
 

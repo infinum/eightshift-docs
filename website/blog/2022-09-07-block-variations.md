@@ -56,7 +56,7 @@ Inside your `manifest.json` file, add the attributes to define the new default a
 
 After adding this code, your new block variation should now be visible in the block list. It's that easy!
 
-![Variation of the Card block](/img/blog/card-resource.png)
+![Variation of the Card block](/img/blog/card-resource.webp)
 
 ## Providing inner block data
 Other than overriding default attributes with variations, you can do much more with Eightshift Development kit. If you have a block that uses inner blocks, you can even provide inner block data.
@@ -126,4 +126,4 @@ We will also add some placeholder images so you can immediately test the Carouse
 
 After adding this code, you should see the `Carousel Loop` variation in your block list. After adding it in the editor, the `Carousel` attributes will be already set to the ones you provided, as well as two images that are added as inner blocks.
 
-![Block list with variations](/img/blog/block-list-variations.png)
+![Block list with variations](/img/blog/block-list-variations.webp)

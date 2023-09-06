@@ -7,9 +7,9 @@ Validation is used to ensure that the form is populated in the correct way and t
 
 ## Integration validation rules
 
-If you are using an integration, validation rules set on the integration will be automatically set in your form in the sync process, and you will not be able to change them from the form builder. You can always add additional validation rules, but external rules cannot be changed.
+If you are using an integration, validation rules set on the integration will be automatically set in your form in the sync process, and you will not be able to change them from the form builder. You can always add additional validation rules, but external rules can't be changed.
 
-For example, on the HubSpot form, the field email is set as required, so you cannot change that from the form builder, but you can add additional validation rules like limiting the number of characters.
+For example, on the HubSpot form, the field email is set as required, so you can't change that from the form builder, but you can add additional validation rules like limiting the number of characters.
 
 ## Email validation
 
@@ -23,4 +23,4 @@ With all the native validations provided, you can also add your own custom valid
 
 For example, you want an email field not to allow emails with a `.org` domain. You can provide a custom validation pattern using a regular expression to check if the email has a `.org` domain. 
 
-![Validation screen](/img/forms/validation.png)
+![Validation screen](/img/forms/validation.webp)

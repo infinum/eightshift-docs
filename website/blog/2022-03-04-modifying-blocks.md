@@ -27,7 +27,7 @@ We want to style the block and add a new feature. An option to choose a color th
 - quote icon has a stronger shade of the selected color
 
 To better help you visualize, this is how the Quote block should look like after making these changes, showcasing all three color theme variations:
-![Color Theme Examples](/img/blog/color-theme-examples.png)
+![Color Theme Examples](/img/blog/color-theme-examples.webp)
 
 ## Adding background
 
@@ -256,7 +256,7 @@ return (
 
 The Color Theme option should now be visible and fully functional inside the Quote block.
 
-![Color Theme Options](/img/blog/color-theme-options.png)
+![Color Theme Options](/img/blog/color-theme-options.webp)
 
 ## Adding transitions in the editor
 

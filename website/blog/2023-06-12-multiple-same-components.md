@@ -269,7 +269,7 @@ When the new colors are added to the Lists component, we can set these new color
 
 The first list will now have green bullet points, and the second one will have red bullet points.
 
-![Comparison block](/img/blog/comparison-block.png)
+![Comparison block](/img/blog/comparison-block.webp)
 
 Notice again how the attribute name is structured - current block name (**comparison**), component name (**Lists** or **SecondaryLists**), attribute (**Color**).
 

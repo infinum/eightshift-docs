@@ -87,6 +87,9 @@ module.exports = {
 			},
 			'basics/tips-tricks',
 		],
+		'Tutorials': [
+			'tutorials/intro',
+		],
 		'Migrations': [
 			'migrations/8-9',
 			'migrations/7-8',
@@ -553,6 +556,9 @@ module.exports = {
 					},
 				]
 			},
+		],
+		'Crash Course': [
+			'crash-course/intro',
 		],
 	},
 };

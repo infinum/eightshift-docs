@@ -95,7 +95,7 @@ echo Components::render(
 
 Here are some examples of icons available out-of-the-box in our Icon component:
 
-![Icon component](/img/blog/icon-component.png)
+![Icon component](/img/blog/icon-component.webp)
 
 ## Using icons for editor and block options
 
@@ -113,7 +113,7 @@ return (
 
 This was the end result when we were adding a new option in our Quote block:
 
-![Color Theme Options](/img/blog/color-theme-options.png)
+![Color Theme Options](/img/blog/color-theme-options.webp)
 
 ## Conclusion
 

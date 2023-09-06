@@ -247,13 +247,6 @@ module.exports = {
 							},
 							{
 								'type': 'category',
-								'label': 'Troubleshooting',
-								'items': [
-									'php/filters/troubleshooting/output-log',
-								],
-							},
-							{
-								'type': 'category',
 								'label': 'Validation',
 								'items': [
 									'php/filters/validation/fail-mimetype-validation-when-file-not-on-fs',
@@ -314,6 +307,7 @@ module.exports = {
 			},
 		],
 		'Tutorials': [
+			'tutorials/intro',
 			'tutorials/setup',
 		],
 	}
