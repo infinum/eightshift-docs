@@ -13,14 +13,14 @@ As one of the most powerful features in the Eightshift DevKit, the Wrapper is a 
 <!--truncate-->
 
 :::note
-[The Wrapper](https://eightshift.com/docs/basics/blocks-wrapper/) is designed to be the ultimate top-level component that controls how your block behaves in the website layout. The Wrapper is a sort of a 'section' in traditional builders. By default, you can control a whole lot of stuff, but there is an ability to add your custom attributes and fine-tune the Wrapper to your project's needs.
+[The Wrapper](https://eightshift.com/docs/basics/blocks-wrapper/) is designed to be the ultimate top-level component that controls how your block behaves in the website layout. The Wrapper is a sort of a 'section' in traditional builders. By default, you can control a whole lot of stuff, but there is an option to add your custom attributes and fine-tune the Wrapper to your project's needs.
 :::
 
 ## What are WordPress templates?
 
 Before the days of [Full Site Editing](https://developer.wordpress.org/block-editor/getting-started/full-site-editing/) in WordPress, we used [template files](https://developer.wordpress.org/themes/basics/template-hierarchy/) to add custom layout to a blog page or post archives.
 
-Depending on your setup, you might still use those as they are still the core of the WordPress theme.
+Depending on your setup, you might still use those as they are still a core part of WordPress themes.
 
 ## Usage in templates
 
@@ -77,7 +77,7 @@ echo Components::render(
 );
 ```
 :::Note
-Setting the `$useComponentDefaults` to `true` will save you the trouble of setting a lot of additional properties, using default values defined in your manifest.
+Setting the `$useComponentDefaults` to `true` will save you the trouble of setting a lot of additional properties by using default values defined in your manifest.
 :::
 
 ### Wrapper output
