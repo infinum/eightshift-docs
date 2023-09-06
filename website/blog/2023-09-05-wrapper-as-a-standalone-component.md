@@ -1,6 +1,6 @@
 ---
 title: How to use the wrapper as a standalone component
-description: Explains the process of 
+description: Explains the process of using the wrapper component in WordPress templates.
 slug: wrapper-as-a-standalone-component
 authors: kancijan
 
