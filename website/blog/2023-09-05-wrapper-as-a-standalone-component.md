@@ -101,8 +101,8 @@ Let's use the Card component from the [libs](https://eightshift.com/docs/additio
 To make the Card component look even better, we'll use the powerful properties that the Wrapper component has to offer and add some spacing between each item.
 
 ```php
-'wrapperSpacingTopLarge' => 40,
-'wrapperSpacingBottomLarge' => 40,
+'wrapperSpacingTopLarge' => 50,
+'wrapperSpacingBottomLarge' => 50,
 ```
 
 :::Note
@@ -132,8 +132,8 @@ if (have_posts()) {
 			'wrapper.php',
 			[
 				'wrapperOnlyOutput' => true,
-				'wrapperSpacingTopLarge' => 40,
-				'wrapperSpacingBottomLarge' => 40,
+				'wrapperSpacingTopLarge' => 50,
+				'wrapperSpacingBottomLarge' => 50,
 				'wrapperManualContent' => Components::render('card', [
 					'introContent' => sprintf(__('On %1$s by %2$s', 'eightshift'), get_the_date(), get_the_author_meta('display_name')),
 					'headingContent' => get_the_title(),
