@@ -1,6 +1,6 @@
 ---
-title: How to use the wrapper as a standalone component
-description: Explains the process of using the wrapper component in WordPress templates.
+title: How to use the Wrapper as a standalone component
+description: Explains the process of using the Wrapper component in WordPress templates.
 slug: wrapper-as-a-standalone-component
 authors: kancijan
 
@@ -9,11 +9,11 @@ tags: [eightshift, boilerplate, wrapper, components]
 hide_table_of_contents: false
 ---
 
-As one of the most powerful features in the Eightshift DevKit, the wrapper is a component used for every block in the Gutenberg editor, but what about WordPress templates?
+As one of the most powerful features in the Eightshift DevKit, the Wrapper is a component used for every block in the Gutenberg editor, but what about WordPress templates?
 <!--truncate-->
 
 :::note
-[The wrapper](https://eightshift.com/docs/basics/blocks-wrapper/) is designed to be the ultimate top-level component that controls how your block behaves in the website layout. The wrapper is a sort of a 'section' in traditional builders. By default, you can control a whole lot of stuff, but there is an ability to add your custom attributes and fine-tune the wrapper to your project's needs.
+[The Wrapper](https://eightshift.com/docs/basics/blocks-wrapper/) is designed to be the ultimate top-level component that controls how your block behaves in the website layout. The Wrapper is a sort of a 'section' in traditional builders. By default, you can control a whole lot of stuff, but there is an ability to add your custom attributes and fine-tune the Wrapper to your project's needs.
 :::
 
 ## What are WordPress templates?
@@ -55,13 +55,13 @@ if (have_posts()) {
 
 get_footer();
 ```
-![No wrapper](/img/blog/no-wrapper.png)
+![No Wrapper](/img/blog/no-wrapper.png)
 
-And here it is, a bone stock blog page that you can stye only `the old way`... But not in our case!
+And here it is, a bone stock blog page that you can style only `the old way`... But not in our case!
 
 ## Using the Wrapper component
 
-First, let's import our `Components` helper class. Make sure you use namespace from your `composer.json`.
+First, let's import our `Components` helper class. Make sure to use the namespace from your `composer.json`.
 ```php
 use InfinumLibsVendor\EightshiftLibs\Helpers\Components;
 ```
@@ -106,7 +106,7 @@ To make the Card component look even better, we'll use the powerful properties t
 ```
 
 :::Note
-For the list of all available properties, look at the wrapper's `manifest.json`.
+For the list of all available properties, look at the Wrapper's `manifest.json`.
 :::
 
 ### Final result
@@ -154,4 +154,4 @@ get_footer();
 
 ## Conclusion
 
-Although the wrapper is not intended to be used as a standalone component, there is a nice benefit to having a time-saving out-of-the-box solution for displaying a component in a grid already defined in your project.
+Although the Wrapper is not intended to be used as a standalone component, there is a nice benefit to having a time-saving out-of-the-box solution for displaying a content in a grid already defined in your project.
