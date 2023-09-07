@@ -9,11 +9,11 @@ tags: [eightshift, boilerplate, wrapper, components]
 hide_table_of_contents: false
 ---
 
-As one of the most powerful features in the Eightshift DevKit, the Wrapper is a component used for every block in the Gutenberg editor, but what about WordPress templates?
+As one of the most powerful features in the Eightshift DevKit, the Wrapper is a part of every Eightshift block in the Gutenberg editor, but what about WordPress templates?
 <!--truncate-->
 
 :::note
-[The Wrapper](https://eightshift.com/docs/basics/blocks-wrapper/) is designed to be the ultimate top-level component that controls how your block behaves in the website layout. The Wrapper is a sort of a 'section' in traditional builders. By default, you can control a whole lot of stuff, but there is an option to add your custom attributes and fine-tune the Wrapper to your project's needs.
+[Wrapper](https://eightshift.com/docs/basics/blocks-wrapper/) is designed to be the ultimate top-level component that controls how your block behaves in the website layout. The Wrapper is a sort of a 'section' in traditional builders. By default, you can control a whole lot of stuff, but there is an option to add your custom attributes and tailor the Wrapper to the needs of your project.
 :::
 
 ## What are WordPress templates?
@@ -30,7 +30,7 @@ Thanks to the `Components` helper we can easily `render()` any component in our 
 Interested in how to use components in a block? Take a look at [our docs](https://eightshift.com/docs/basics/blocks-component-in-block#i-have-a-component-that-i-want-to-use-manually).
 :::
 
-For this example, we'll use `index.php` as you probably already have it in your theme. If not, use the code below.
+For this example, we'll use `index.php` as you probably already have it in your theme. If not, use the code below:
 
 ```php
 <?php
@@ -57,7 +57,7 @@ get_footer();
 ```
 ![No Wrapper](/img/blog/no-wrapper.png)
 
-And here it is, a bone stock blog page that you can style only `the old way`... But not in our case!
+And there it is, a bog-standard blog page that you can style only "the old way"... But not in our case!
 
 ## Using the Wrapper component
 
@@ -66,7 +66,7 @@ First, let's import our `Components` helper class. Make sure to use the namespac
 use InfinumLibsVendor\EightshiftLibs\Helpers\Components;
 ```
 
-If we take a deeper look into the `render` method, we'll see that for the `$component` parameter we can pass `component's name or the full path (ending with .php)`, and since the Wrapper is outside of the `components` or `custom` folder, we have to use `wrapper.php` combined with `Components::getProjectPaths('blocksDestinationWrapper')` for the `$parentPath` parameter.
+If we take a deeper look into the `render` method, we'll see that for the `$component` parameter we can pass the _component's name or the full path (ending with .php)_, and since the Wrapper is outside of the `components` or `custom` folder, we have to use `wrapper.php` combined with `Components::getProjectPaths('blocksDestinationWrapper')` for the `$parentPath` parameter.
 
 ```php
 echo Components::render(
@@ -154,4 +154,4 @@ get_footer();
 
 ## Conclusion
 
-Although the Wrapper is not intended to be used as a standalone component, there is a nice benefit to having a time-saving out-of-the-box solution for displaying a content in a grid already defined in your project.
+Although the Wrapper is (usually) not intended to be used as a standalone component, there is a nice benefit to having a time-saving out-of-the-box solution for displaying a content in a grid already defined in your project.
