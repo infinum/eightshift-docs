@@ -190,7 +190,7 @@ Now we have to add an actual control to the options panel which will allow us to
 
 The control for selecting a font should now be available under Paragraph options. Saving the choice now works, but the font stays the same both in the editor and on the frontend.
 
-![Font Picker](/img/blog/font-picker.png)
+![Font Picker](/img/blog/font-picker.webp)
 
 The final step we need to make this work is to add a CSS rule that consumes our variable to **_/src/Blocks/components/paragraph/paragraph-style.scss_**:
 ```scss

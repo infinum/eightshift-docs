@@ -41,7 +41,7 @@ These attributes give you the option to modify the look of the component, so thi
 - **photo of the day** - rectangular image on the right side which takes 75% width and photographer's name is written in medium blue text
 - **featured posts** - rectangular image on top, large heading in red color
 
-![Component with different attributes](/img/blog/components.png)
+![Component with different attributes](/img/blog/components.webp)
 
 You can even add conditional logic to your options, e.g. to have the option for `imageWidth` visible only when `imagePosition` is set to left or right. And when `imagePosition` is set to top or bottom, it defaults to 100% width.
 

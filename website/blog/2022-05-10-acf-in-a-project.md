@@ -23,7 +23,7 @@ The approach we use for registering ACF fields is by adding those fields first t
 
 When you define all the fields you need, save them and go to `Custom Fields -> Tools`. Here you will see an option to **_Export Field Groups_**. Simply select the field groups which you want to export and select **_Generate PHP_**.
 
-![ACF PHP code export](/img/blog/acf-generate-php.png)
+![ACF PHP code export](/img/blog/acf-generate-php.webp)
 
 This will generate a PHP code snippet that you can use in your theme. Now you may be wondering, where exactly should that code go?
 
@@ -118,7 +118,7 @@ wp boilerplate create_theme_options
 
 This command generates a class with two methods. The first one, `createThemeOptionsPage()` creates a Theme Options page and adds it to the WP Admin sidebar. The second one, `registerThemeOptions()`, is what registers the fields you will have in Theme Options. Here is an example how Theme Options look after being created using `wp boilerplate`:
 
-![ACF Theme Options](/img/blog/acf-theme-options.png)
+![ACF Theme Options](/img/blog/acf-theme-options.webp)
 
 To add fields to your Theme Options, follow the steps from the **_Exporting PHP code_** section of this post and add the fields inside the `'fields' => []` array.
 ## Tip - create a helper class

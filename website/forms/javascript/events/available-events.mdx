@@ -1,0 +1,121 @@
+---
+id: available-events
+title: Available events
+---
+
+You can listen to these events by using the `on` method on the `Event` facade.
+
+Every event contains the whole window object inside the details property.
+This way you can be sure that everything is set and ready to be used. Additionally if an event is a part of the `after` event you can use the `additional` property to get the API response details. 
+
+### esFormsBeforeFormSubmit
+
+Triggered before form is submitted to the API-Rest endpoint.
+
+:::tip
+This event is set on the form element.
+:::
+
+### esFormsAfterFormSubmit
+
+Triggered after form is submitted to the API-Rest endpoint but before the response is processed.
+
+:::tip
+This event is set on the form element.
+:::
+
+### esFormsAfterFormSubmitSuccess
+
+Triggered after form is submitted to the API-Rest endpoint and the response is processed with success.
+
+:::tip
+This event is set on the form element.
+:::
+
+### esFormsAfterFormSubmitError
+
+Triggered after form is submitted to the API-Rest endpoint and the response is processed with general error.
+
+:::tip
+This event is set on the form element.
+:::
+
+### esFormsAfterFormSubmitErrorValidation
+
+Triggered after form is submitted to the API-Rest endpoint and the response is processed with validation error.
+
+:::tip
+This event is set on the form element.
+:::
+
+### esFormsAfterFormSubmitEnd
+
+Triggered after form is submitted to the API-Rest endpoint and the response is fully processed and the form is ready for another submit.
+
+:::tip
+This event is set on the form element.
+:::
+
+### esFormsAfterGtmDataPush
+
+Triggered after GTM dataLAyer is pushed. This happens after form is submitted to the API-Rest endpoint and the response is processed with success.
+
+:::tip
+This event is set on the form element.
+:::
+
+### esFormsAfterFormSubmitReset
+
+Triggered after form is submitted to the API-Rest endpoint and the response is processed with success after which the form is reset to its original state.
+
+:::tip
+This event is set on the form element.
+:::
+
+### esFormsAfterFormSubmitSuccessBeforeRedirect
+
+Triggered after form is submitted to the API-Rest endpoint and the response is processed with success right before redirect action triggers.
+
+:::tip
+This event is set on the form element.
+:::
+
+### esFormsJsFormLoaded
+
+Triggered when all JavaScript on the form is loaded and form is ready to be used.
+
+:::tip
+This event is set on the window element.
+:::
+
+### esFormsManualInitLoaded
+
+Triggered when manual initialization option is used from the forms global settings and the form is ready to be maunually initialized.
+
+:::tip
+This event is set on the window element.
+:::
+
+### esFormsAfterCaptchaInit
+
+Triggered after captcha score is calculated and returned via REST-API. Only used if captcha is used on every page load.
+
+:::tip
+This event is set on the window element.
+:::
+
+### esFormsGoToNextStep
+
+Triggered after multi-step/multi-flow form is used and the next step is loaded.
+
+:::tip
+This event is set on the form element.
+:::
+
+### esFormsGoToPrevStep
+
+Triggered after multi-step/multi-flow form is used and the previous step is loaded.
+
+:::tip
+This event is set on the form element.
+:::

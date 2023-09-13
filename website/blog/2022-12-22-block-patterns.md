@@ -34,7 +34,7 @@ After generating the block pattern class, there are a few more adjustments you s
 
 Once these values are updated, you can make the layout you'll use as a Block Pattern. The easiest way to do it is to build your layout in the editor, switch to `Code Editor`, copy the code and paste in inside your `getContent()` method. Your pattern should now be available to use. For this example, we can create a simple pattern which consists of a Heading block and a Paragraph block.
 
-![Option to switch to Code Editor](/img/blog/code-editor.png)
+![Option to switch to Code Editor](/img/blog/code-editor.webp)
 
 ```php
 protected function getContent(): string
@@ -126,7 +126,7 @@ protected function getCategories(): array
 
 In editor, in the Pattern tab, you should now see your new pattern category and the Intro Pattern.
 
-![New pattern category and block pattern](/img/blog/block-pattern-example.png)
+![New pattern category and block pattern](/img/blog/block-pattern-example.webp)
 
 ## Things to keep in mind
 Block patterns add layout and content which you can then modify at will per instance. These instances are not synchronised with the codebase so it becomes an issue if you've already used a pattern on multiple places on the site and then notice you've missed something in the pattern configuration phase. Fixing the pattern in the codebase will apply the changes on all newly added instances, but you will have to fix the misconfigured instances manually.
