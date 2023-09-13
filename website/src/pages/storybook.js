@@ -15,7 +15,11 @@ export default function Storybook() {
 			metaImage={useBaseUrl(`img/${siteConfig.customFields.image}`)}
 			wrapperClassName='es-single-full-screen-child'
 		>
-			<iframe className='es-full-size' src='https://infinum.github.io/eightshift-frontend-libs/storybook/' />
+			<iframe
+				className='es-full-size'
+				src='https://infinum.github.io/eightshift-frontend-libs/storybook/'
+				allow='clipboard-read; clipboard-write'
+			/>
 		</Layout>
 	);
 };
