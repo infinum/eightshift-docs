@@ -10,4 +10,4 @@ Setting this variable will force the geolocation system to use the provided IP a
 
 ```php
 define('ES_GEOLOCATION_IP', '<xxx.xxx.xxx.xxx>');
-```bnn
+```
