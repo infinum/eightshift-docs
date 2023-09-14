@@ -237,12 +237,9 @@ module.exports = {
 								'type': 'category',
 								'label': 'Geolocation',
 								'items': [
-									'php/filters/geolocation/disable',
-									'php/filters/geolocation/cookie-name',
 									'php/filters/geolocation/db-location',
 									'php/filters/geolocation/phar-location',
 									'php/filters/geolocation/countries',
-									'php/filters/geolocation/wp-rocket-advanced-cache',
 								],
 							},
 							{
