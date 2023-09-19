@@ -23,7 +23,7 @@ We use DataHub to list countries for the dropdown menu to select the country of 
 
 With the default countries list, we have made a few groups:
 * Europe
-* Europian Union
+* European Union
 * Ex Yugoslavia
 
 but you can also provide your list by using our filters.
@@ -55,4 +55,4 @@ This toggle is here to help you preview what you have configured so far. It will
 
 ## Cloudflare
 
-If you have Cloudflare turned on you your project please make sure that you read the [Cloudflare documentation](cloudflare) to make sure that the geolocation feature works as expected.
+If you have Cloudflare turned on in your project please make sure that you read the [Cloudflare documentation](cloudflare) to make sure that the geolocation feature works as expected.
