@@ -16,6 +16,8 @@ module.exports = {
 						'features/success-redirect',
 						'features/tracking',
 						'features/security',
+						'features/labels',
+						'features/locations',
 						'features/cache',
 						'features/debug',
 						'features/fallback-emails',

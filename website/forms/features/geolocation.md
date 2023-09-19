@@ -55,4 +55,4 @@ This toggle is here to help you preview what you have configured so far. It will
 
 ## Cloudflare
 
-If you have Cloudflare turned on in your project please make sure that you read the [Cloudflare documentation](cloudflare) to make sure that the geolocation feature works as expected.
+If you have Cloudflare turned on for your project, please make sure that you read the [Cloudflare documentation](cloudflare) to make sure that the geolocation feature works as expected.
