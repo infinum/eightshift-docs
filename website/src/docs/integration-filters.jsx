@@ -1,6 +1,6 @@
 import React from 'react';
 import CodeBlock from '@theme/CodeBlock';
-import { reformatCode } from './../../../../utils/shared.jsx';
+import { reformatCode } from '../../utils/shared.jsx';
 
 export default function IntegrationFilters(props) {
 	const {

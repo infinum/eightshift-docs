@@ -2,6 +2,7 @@ module.exports = {
 	forms: {
 		'Getting Started': [
 			'welcome',
+			'basics',
 			{
 				'type': 'category',
 				'label': 'Features',
@@ -307,8 +308,7 @@ module.exports = {
 			},
 		],
 		'Tutorials': [
-			'tutorials/intro',
-			'tutorials/setup',
+			'tutorials/playlist',
 		],
 	}
 };
