@@ -2,7 +2,7 @@ import React from 'react';
 import CodeBlock from '@theme/CodeBlock';
 import { reformatCode } from '../../utils/shared.jsx';
 
-export default function IntegrationFilters(props) {
+export function IntegrationFilters(props) {
 	const {
 		name,
 		filter,

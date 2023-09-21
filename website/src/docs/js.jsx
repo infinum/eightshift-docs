@@ -2,7 +2,7 @@ import React from 'react';
 import CodeBlock from '@theme/CodeBlock';
 import { reformatCode } from '../../utils/shared.jsx';
 
-export default function WindowObject(props) {
+export function WindowObject(props) {
 	const {
 		name,
 		filter,
