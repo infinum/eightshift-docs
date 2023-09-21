@@ -3,11 +3,11 @@ id: multisteps-forms
 title: Multi-steps forms
 ---
 
-By utilizing the multi-step feature, you can craft a wide variety of custom forms. Each form can comprise numerous steps with fields, validation, and actions. Moreover, you can establish a flow between steps, bypassing certain steps based on the user's input.
+By utilizing the multi-step feature, you can craft a wide variety of custom forms. Each form can comprise of numerous steps with fields, validation, and actions. Moreover, you can establish a flow between steps, bypassing certain steps based on the user's input.
 
 We have two types of multi-step forms:
 * `Multi-steps form` - The user must pass through all steps to submit the form.
-* `Multi-flows form` - The user can skip some steps based on the user's input.
+* `Multi-flows form` - The user may skip some steps based on the conditionals created in form settings.
 
 ![Multi-steps screen](/img/forms/multisteps.webp)
 
@@ -33,7 +33,7 @@ If you don't add a first step, it will be automatically added with the label "In
 
 To access multi-step options, click on the 'Form' block and check the options in the sidebar. Note that these options are only available if there are steps in the form.
 
-Options available are:
+Available options are:
 * `Show progress bar` - This option will add a progress bar to the top of the form, displaying the current and completed steps.
 * `Hide progress bar labels` - This option works in combination with the previous one. If you select it, the progress bar will display only the step as a dot without showing the labels for each step.
 * `Progress bar initial steps number` - This option allows you to choose the number of steps shown in the progress bar for multi-flow forms.
