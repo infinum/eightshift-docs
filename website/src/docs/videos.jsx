@@ -36,7 +36,7 @@ export function Video(props) {
 			{subtitle &&
 				<h3>{subtitle}</h3>
 			}
-			<iframe width="560" height="315" src={url} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+			<iframe width="560" height="315" src={url} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
 		</>
 	);
 }
@@ -52,7 +52,7 @@ export function AllVideos(props) {
 			const prefix = `${String(index + 1).padStart(2, '0')} - `;
 
 			return (
-				<Video type={type} video={video} useTitle={index === 0} subtitlePrefix={prefix} />
+				<Video key={index} type={type} video={video} useTitle={index === 0} subtitlePrefix={prefix} />
 			);
 		})}
 		</>
