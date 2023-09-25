@@ -25,6 +25,7 @@ module.exports = {
 						'features/import-export',
 						'features/migrations',
 						'features/cloudflare',
+						'features/country-list',
 					],
 				],
 			},
@@ -80,6 +81,7 @@ module.exports = {
 							},
 						]
 					},
+					'php/helpers',
 					{
 						'type': 'category',
 						'label': 'Filters',
