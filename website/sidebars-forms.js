@@ -25,6 +25,7 @@ module.exports = {
 						'features/import-export',
 						'features/migrations',
 						'features/cloudflare',
+						'features/country-list',
 					],
 				],
 			},
@@ -78,6 +79,14 @@ module.exports = {
 									'php/global-variables/integrations/workable',
 								],
 							},
+						]
+					},
+					{
+						'type': 'category',
+						'label': 'Helpers',
+						'items': [
+							'php/helpers/how-to-use',
+							'php/helpers/helpers',
 						]
 					},
 					{
