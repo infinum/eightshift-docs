@@ -81,14 +81,7 @@ module.exports = {
 							},
 						]
 					},
-					{
-						'type': 'category',
-						'label': 'Helpers',
-						'items': [
-							'php/helpers/how-to-use',
-							'php/helpers/helpers',
-						]
-					},
+					'php/helpers',
 					{
 						'type': 'category',
 						'label': 'Filters',
