@@ -82,6 +82,7 @@ module.exports = {
 						]
 					},
 					'php/helpers',
+					'php/wp-cli',
 					{
 						'type': 'category',
 						'label': 'Filters',

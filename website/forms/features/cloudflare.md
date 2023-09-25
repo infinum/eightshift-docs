@@ -3,6 +3,26 @@ id: cloudflare
 title: Cloudflare
 ---
 
-*Coming soon*
+## What is Cloudflare?
+
+Cloudflare is a large network of servers that can improve the security, performance, and reliability of anything connected to the Internet. Cloudflare does this by serving as a reverse proxy Open external link for your web traffic.
 
 ![Cloudflare screen](/img/forms/cloudflare.webp)
+
+## How do we use Cloudflare?
+
+Eightshift Forms doesn't configure the Cloudflare app or any other third-party tools. However, enabling this feature adds necessary configurations in the backend for everything to function correctly.
+
+## Features affected by Cloudflare
+
+Cloudflare affects the following features:
+
+### Geolocation
+
+By default geolocation uses IP database to get users location. With Cloudflare enabled, geolocation will use Cloudflare headers to get the user location.
+
+Make sure you have enabled IP Geolocation in your Cloudflare dashboard. You can find more details on how to enable it [here](https://developers.cloudflare.com/support/network/configuring-ip-geolocation/).
+
+### Security
+
+When using Cloudflare, the user's IP address is masked and replaced with the IP address of the Cloudflare server. This ensures proper functionality.
