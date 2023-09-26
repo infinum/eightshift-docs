@@ -9,9 +9,9 @@ Cloudflare is a large network of servers that can improve the security, performa
 
 ![Cloudflare screen](/img/forms/cloudflare.webp)
 
-## How do we use Cloudflare?
+## How to use
 
-Eightshift Forms doesn't configure the Cloudflare app or any other third-party tools. However, enabling this feature adds necessary configurations in the backend for everything to function correctly.
+After setting up Cloudflare, head to the Global settings and enable Cloudflare. This will set up all the necessary options in the backend for everything to function properly.
 
 ## Features affected by Cloudflare
 
