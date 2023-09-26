@@ -2,26 +2,31 @@
 id: success-redirect
 title: Success redirects
 ---
-When you submit a form, it typically displays a success message on the same page. However, if you want to redirect the user to a different page, you can enable the success redirects feature. You can find this option in each integration's form settings or global settings.
+By default, when you submit a form, a success message is displayed on the same page. If you want to redirect the user to a different page, you can enable the _Success redirects_ feature. This option can be found in each integration's Form settings, or in Global settings.
 
-Enabling success redirects allows you to enhance the user experience with variation and template tags.
+Variation and template tags can enrich the "thank you" pages, and make them more personal.
 
 ## Template tags
 
-To transfer data entered by the user in each field to the success page, template tags are utilized. They are used as a `GET` parameter added to the success URL. To access these tags, go to the form's settings, where you will find a complete list of available template tags that can be used as a magic variable.
+The data entered by the user is sent to the "Thank you" page in the form of `GET` parameters. By default, no parameters are sent, to prevent sending any data that is not meant to be forwarded. In the Form settings the parameters that are passed through can be selected.
 
-All the tags are enclosed in curly brackets, and the value is the name of the field specified in your form, such as `{name}`, `{email}`, etc.
+Chosen parameters can be used as _magic variables_ on the destination side. They are wrapped inside curly brackets, with the field name inside, e.g. `{name}`, `{email}`, ...
 ![Success redirects settings screen](/img/forms/success-redirects-settings.webp)
 
 ## Variations
 
+Just like Template tags, variations are also passed to the "Thank you" page as a `GET` parameter. However, instead of using the entered data, they are pre-defined in the form settings, and can be used to add more granular control to the design and/or content of the "Thank you" page.
 Template tags and variations are features that allow passing data to the success page. However, variations are predetermined in the form settings and are used to differentiate between various versions of the success page.
 
-The variation name is added as a `GET` parameter to the success URL named `es-variation`, with the predefined variation set in the form settings or block editor to utilize variations. The variation value is encoded, and to access it, you must use the `esFormsDecryptor` [helper](/forms/php/helpers#esformsdecryptor) in your project.
+When enabled, a `es-variation` GET parameter is added to the "Thank you" page URL, with the value being the ID of the chosen variation.
+
+:::note
+The value must be encoded, which can be done with the `esFormsDecryptor` [helper](/forms/php/helpers#esformsdecryptor).
+:::
 
 ### How to use a variation
 
-To use variations, you must first provide a list in the global settings. Once this is done, you can utilize the variation in both form settings and the block editor.
+To use variations, a list of variations needs to be added in the Global settings. Then, the variations can be chosen both in Form settings and through the Block editor.
 
 ### Block editor options
 
