@@ -21,7 +21,7 @@ As one of the most powerful features in the Eightshift DevKit, the Wrapper is a 
 Before the days of [Full Site Editing](https://developer.wordpress.org/block-editor/getting-started/full-site-editing/) in WordPress, we used [template files](https://developer.wordpress.org/themes/basics/template-hierarchy/) to add custom layout to a blog page or post archives.
 
 :::Note
-Eightshift Boilerplate (v6.x.x) is not yet FSE ready.
+While Full-site editing (FSE) _is_ supported, a couple of modifications have to be done in your project to make it work.
 :::
 
 Depending on your setup, you might still use those as they are still a core part of WordPress themes.
