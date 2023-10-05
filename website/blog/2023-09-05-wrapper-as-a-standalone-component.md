@@ -12,13 +12,17 @@ hide_table_of_contents: false
 As one of the most powerful features in the Eightshift DevKit, the Wrapper is a part of every Eightshift block in the Gutenberg editor, but what about WordPress templates?
 <!--truncate-->
 
-:::note
+:::Note
 [Wrapper](https://eightshift.com/docs/basics/blocks-wrapper/) is designed to be the ultimate top-level component that controls how your block behaves in the website layout. The Wrapper is a sort of a 'section' in traditional builders. By default, you can control a whole lot of stuff, but there is an option to add your custom attributes and tailor the Wrapper to the needs of your project.
 :::
 
 ## What are WordPress templates?
 
 Before the days of [Full Site Editing](https://developer.wordpress.org/block-editor/getting-started/full-site-editing/) in WordPress, we used [template files](https://developer.wordpress.org/themes/basics/template-hierarchy/) to add custom layout to a blog page or post archives.
+
+:::Note
+Eightshift Boilerplate (v6.x.x) is not yet FSE ready.
+:::
 
 Depending on your setup, you might still use those as they are still a core part of WordPress themes.
 
