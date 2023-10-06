@@ -17,6 +17,7 @@ module.exports = {
 		}
 	],
 	themeConfig: {
+		
 		navbar: {
 			logo: {
 				alt: 'Eightshift DevKit Logo',
@@ -115,6 +116,11 @@ module.exports = {
 			disableSwitch: true,
 			respectPrefersColorScheme: false,
 		},
+		docs: {
+			sidebar: {
+				autoCollapseCategories: true,
+			}
+		},
 		trailingSlash: false
 	},
 	presets: [
@@ -123,6 +129,7 @@ module.exports = {
 			{
 				docs: {
 					sidebarPath: require.resolve('./sidebars.js'),
+					sidebarCollapsible: true,
 				},
 				gtag: {
 					trackingID: 'GTM-P5GG5DH',
