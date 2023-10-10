@@ -6,27 +6,27 @@
 		},
 		"videos": {
 			"intro": {
-				"video": "qZI90-1MppE",
+				"video": "3jPVuGjh488",
 				"label": "Introduction to Eightshift Forms"
 			},
 			"basics": {
-				"video": "QoHdNdtkbrs",
+				"video": "4BnTXHviZkI",
 				"label": "Getting familiar with Eightshift forms"
 			},
 			"firstForm": {
-				"video": "yK2okjwJyyc",
+				"video": "qcsr7QGFmV4",
 				"label": "Step-by-step guide to creating your first form"
 			},
 			"integrations": {
-				"video": "mikFdmobf-I",
+				"video": "r2KEVIkNt04",
 				"label": "Integrating third-party services"
 			},
 			"integrationsSync": {
-				"video": "88fay5F_1VA",
+				"video": "JyfO328bq08",
 				"label": "Syncing your forms with third-party integrations"
 			},
 			"cache": {
-				"video": "fVNkD-htbZI",
+				"video": "gX997f3fUcI",
 				"label": "Don't be afraid of caching"
 			}
 		}
