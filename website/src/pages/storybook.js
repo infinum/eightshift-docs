@@ -13,7 +13,7 @@ export default function Storybook() {
 			description={siteConfig.tagline}
 			keywords={siteConfig.customFields.keywords}
 			metaImage={useBaseUrl(`img/${siteConfig.customFields.image}`)}
-			wrapperClassName='es-single-full-screen-child'
+			wrapperClassName='es-single-full-screen-child es-has-t-border'
 		>
 			<iframe
 				className='es-full-size'
