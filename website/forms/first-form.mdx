@@ -1,41 +1,46 @@
 ---
 id: first-form
-title: Your First Form
+title: Your first form
 ---
 
 import { Video } from './../src/docs/videos';
 
-To add your first form and disply it to the frontend users you need to:
-1. Allow form type you want to use in the global setting dashboard.
-2. Create a form in the admin panel.
-3. Configure the forms settings.
-4. Add the form to the page/post/custom post type.
+Adding your first form and displaying it on the frontend is simple:
+1. Enable the form type you want to use in the Eightshift forms Dashboard
+2. Create a form in the WordPress admin
+3. Configure the form and add the fields needed
+4. Add the _Form picker_ block in the place you want to show the form, and select your newly created form
 
-## Allow form type
+## Integrations
+By default none of the integrations are enabled.
 
-By default no form type is allowed. You need to go to the global settings dashboard and allow the form type you want to use.
+To enable one, go to the _Dashboard_ page of the Eightshift Forms admin settings.
+
 More details can be found [here](features/dashboard).
 
 ![Dashboard screen](/img/forms/dashboard.webp)
 
 ## Create a form
 
-To create a form you need to go to the admin panel and click on the `Forms` menu item. Then click on the `Add New` button.
-On the edit page you need to select form type you would like to use. Depending on the form type you will see different fields and settings.
+To create a form, open the WordPress admin, find _Eightshift Forms_ in the sidebar, then click on _Add new form_.
+
+An editing screen will open, with a selector for the form type. If you don't see a form type in the selector, make sure it's enabled in the Dashboard.
+
+After clicking the form type, the Form block will be automatically added, the form initialized, and some fields may be added by default.
 
 ![Form Type Picker screen](/img/forms/form-type-picker.webp)
 
-To configure form settings you need to click on the `Settings` tab in the block sidebar.
+To change form settings, clicking on `Edit settings` in the options sidebar.
 
 ![Forms Sidebar screen](/img/forms/forms-sidebar.webp)
 
 ## Add the form to the page/post/custom post type
 
-To add the form to the frontend you need to add created form on your page/post/custom post types and use `forms block` to select the form you want to display.
+To display the form, add the _Form_ block and select a form to display.
 
 ![Form picker screen](/img/forms/form-picker.webp)
 
-To configure additional form setting you can use `forms block` sidebar.
+More settings can be found in options sidebar.
 
 ![Form Sidebar screen](/img/forms/form-sidebar.webp)
 

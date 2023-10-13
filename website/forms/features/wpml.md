@@ -3,13 +3,13 @@ id: wpml
 title: WPML
 ---
 
-WPML is a language plugin that allows you to translate your website into multiple languages. It is compatible with Eightshift Forms and can be used to translate your forms.
+WPML is plugin that allows multi-lingual functionality for the website, allowing features like post and media translations. Eightshift Forms is fully compatible with WPML, and allows adding language variants (_translations_) to forms.
 
 ![WPML screen](/img/forms/wpml.webp)
 
 ## How to use
 
-If you are using this plugin you should turn on this feature in the Eightshift Forms settings page. This will allow your forms to correctly display forms in the listing and form selection depending on the language you are using.
+If using WPML, enable the _WPML_ feature in form settings. This will ensure the forms is displayed correctly in the form listing page, and that all the multi-language features work.
 
 ## Features affected by WPML
 
@@ -17,16 +17,16 @@ WPML affects the following features:
 
 ### Forms listing
 
-By default, we use the `get_locale()` function to retrieve the default language of your project. Once the WPML plugin is activated, we assign a new language tag to each setting and display forms only in the specific language.
+By default, we use `get_locale()`to retrieve the default language of the project. Once WPML is activated, a new language tag is assigned to each setting, and the forms display only in the language they're assigned to.
 
 ### Forms selector
 
-When selecting forms in your forms picker, you will only see forms available in your language.
+When selecting forms in the Forms picker, only the forms in the current editing language are visible.
 
 ### Forms settings
 
-We will make each forms settings language specific.
+Forms settings are unique for each language variant of the form.
 
 ### Global settings
 
-Global settings will be language specific, except for API keys, tokens and etc.
+Global settings, similar to form settings, are unique for each language variation, with the exception of API keys, tokens, etc.

@@ -88,8 +88,8 @@ export function IntegrationFilters(props) {
 			{onlyUse.includes('order') &&
 				<>
 					<h2>Order fields</h2>
-					<p>Force specific form fields order. If you set the order of fields with this filter they will always fallback to this settings. All fields not defined by this filter will follow the default block editor insert order.</p>
-					<p>You don't need to define every field in the form. For example if you want to <code>firstname</code>, <code>lastname</code> and <code>email</code> to be first in order this filter will make this happen.</p>
+					<p>Forces a specific form fields order, regardless of one set in the editor. Fields that are not defined here will follow the natural in-editor order.</p>
+					<p>Not all fields need to have an order defined. For example, if you want to make sure <code>firstname</code>, <code>lastname</code> and <code>email</code> are displayed first, this filter can help.</p>
 
 					<CodeBlock language="php">
 						{reformatCode(`
