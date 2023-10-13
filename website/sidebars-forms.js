@@ -3,11 +3,13 @@ module.exports = {
 		'Getting Started': [
 			'welcome',
 			'basics',
+			'first-form',
 			{
 				'type': 'category',
 				'label': 'Features',
 				'items': [
 					[
+						'features/dashboard',
 						'features/conditional-tags',
 						'features/enrichment',
 						'features/geolocation',
@@ -26,6 +28,7 @@ module.exports = {
 						'features/migrations',
 						'features/cloudflare',
 						'features/country-list',
+						'features/wpml',
 					],
 				],
 			},

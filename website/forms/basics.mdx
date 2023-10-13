@@ -5,8 +5,117 @@ title: Basics
 
 import { Video } from './../src/docs/videos';
 
-*Content coming soon...*
+## How to use it?
 
-<Video type='forms' video='intro'/>
-<Video type='forms' video='basics' useTitle={false} />
-<Video type='forms' video='firstForm' useTitle={false} />
+Eighshift Forms is a WordPress plugin that allows you to create forms in a visual way. It is based on the [Gutenberg editor](https://wordpress.org/gutenberg/).
+At this point this plugin is still not a part of the WordPress repository, so you will need to install it manually.
+
+To install it you should:
+1. Open our GitHub repository [Eighshift Forms](https://github.com/infinum/eightshift-forms/releases) and find the latest release.
+2. Under the assets find the `release.zip` and download it to you project folder.
+3. Ufter you unzip it it will be available in you WordPress admin under the `plugins` section.
+4. Activeate the plugin and you are ready to go.
+
+![GitHub screen](/img/forms/releases.webp)
+
+## Terminogy
+
+We will use some terms in this documentation that you should be familiar with.
+* **Form** - A form is a collection of fields that are used to collect data from the user.
+* **Field** - A field is a single input element that is used to collect data from the user.
+* **Form listing**  - Admin listing page where you can see all the forms that are created.
+* **Locations** - Locations are used to define where the form will be displayed on the frontend.
+* **Edit form** - Edit form is a page where you can edit a single form.
+* **Trashed forms** - Trashed forms are forms that are deleted but not permanently deleted.
+* **Form settings** - Settings that are used to define one form behaviour.
+* **Global settings** - Settings that are used to define all forms behaviour.
+* **Admin top bar** - Admin top bar is a bar that is displayed on the top of the page when you are editing a form.
+* **Form quick menu bar** - Form quick menu bar is a bar that is displayed on the rigth of your form on the frontend when you are logged in.
+* **Form picker block** - Form picker block is a block that is used to select a form on the frontend.
+
+## Forms listing
+
+On form listing page you can see all the forms that are created and that you can use on your `pages`, `post` and etc.
+On listing page you can find multiple features that will help you to manage your forms.
+
+* Form type filter - you can filter your listing page by the form type.
+* Delete - you can delete a form or multiple forms.
+* Sync - You can sync your forms with the external integration and update the form fields.
+* Duplicate - You can duplcate one or multiple forms.
+* Trashed - You can see all the trashed forms.
+* Create - You can add a new form.
+* Locations - You can see all the locations where the form is displayed.
+* Setting - You can edit the form settings.
+* Edit form - You can edit the form.
+* Warnings - You can see all the warnings that are related to the form.
+* Multilanguage - You can see all the languages that are used on the form if you are using multiple language plugin.
+
+![Forms listing screen](/img/forms/listing.webp)
+
+### Locations
+
+Details about forms locations can be found [here](features/locations).
+
+![Listing screen](/img/forms/locations-listing.webp)
+
+### Edit form
+
+This is a page where you can edit a single form. You can find more details about it [here](first-form).
+
+![Edit screen](/img/forms/editor.webp)
+
+### Trashed forms
+
+Trashed forms are forms that are deleted but not permanently deleted. You can find them on the form listing page under the `Trashed` tab.
+When you permanently delete a form it will be removed from the trashed forms and you will not longer be able to restore it.
+
+All trashed forms will not show on the frontend and you will not be able to select it on forms picker.
+
+![Trashed screen](/img/forms/trashed.webp)
+
+## Form settings
+
+Every form has its individal setting page where you can define the form behaviour.
+This setting is only for the current form and it will not affect other forms.
+You can find them under `Settings` tab on the form listing page.
+
+![Settings screen](/img/forms/settings.webp)
+
+## Global settings
+
+Global settings are settings that are used to define all forms behaviour.
+You can find them under the `Global Settings` page.
+
+![Global settings screen](/img/forms/global-settings.webp)
+
+### Dashboard
+
+On the global settings you will find a dashboard that will help you to manage your forms features.
+More details can be found [here](features/dashboard).
+
+![Dashboard screen](/img/forms/dashboard.webp)
+
+## Admin top bar
+
+Admin top bar is a bar that is displayed on the top of the page when you are logged in to the WordPress admin.
+
+You can find all you forms, settings, global settings, some troubleshooting tools and etc. on this bar.
+
+![Admin top bar screen](/img/forms/admin-top-bar.webp)
+
+## Form quick menu bar
+
+Form quick menu bar is used to quickly edit the form, settings or global settings on the frontend when you are logged in to the WordPress admin.
+It will be displayed on the right side of the form.
+
+![Quick menu screen](/img/forms/quick-bar.webp)
+
+## Form picker block
+
+Form picker block is a block that is used to select a form on the frontend. It is available in the Gutenberg editor under the `Eighshift Forms` category.
+
+![Form picker screen](/img/forms/form-picker.webp)
+
+
+<Video type='forms' video='basics' />
+

@@ -1,0 +1,42 @@
+---
+id: first-form
+title: Your First Form
+---
+
+import { Video } from './../src/docs/videos';
+
+To add your first form and disply it to the frontend users you need to:
+1. Allow form type you want to use in the global setting dashboard.
+2. Create a form in the admin panel.
+3. Configure the forms settings.
+4. Add the form to the page/post/custom post type.
+
+## Allow form type
+
+By default no form type is allowed. You need to go to the global settings dashboard and allow the form type you want to use.
+More details can be found [here](features/dashboard).
+
+![Dashboard screen](/img/forms/dashboard.webp)
+
+## Create a form
+
+To create a form you need to go to the admin panel and click on the `Forms` menu item. Then click on the `Add New` button.
+On the edit page you need to select form type you would like to use. Depending on the form type you will see different fields and settings.
+
+![Form Type Picker screen](/img/forms/form-type-picker.webp)
+
+To configure form settings you need to click on the `Settings` tab in the block sidebar.
+
+![Forms Sidebar screen](/img/forms/forms-sidebar.webp)
+
+## Add the form to the page/post/custom post type
+
+To add the form to the frontend you need to add created form on your page/post/custom post types and use `forms block` to select the form you want to display.
+
+![Form picker screen](/img/forms/form-picker.webp)
+
+To configure additional form setting you can use `forms block` sidebar.
+
+![Form Sidebar screen](/img/forms/form-sidebar.webp)
+
+<Video type='forms' video='firstForm' useTitle={false} />

@@ -5,6 +5,8 @@ title: Helpers
 
 Eightshift Forms offers static helpers that can be implemented in your project. The key difference between these helpers and filters is that you can use the former in your theme or plugin code regardless of the load cycle.
 
+You can find all helpers on this [link](https://github.com/infinum/eightshift-forms/blob/develop/src/Helpers/esForms.php).
+
 ### esFormsGetFormIdByName
 
 This function retrieves the custom, unique name of a form, as set in the Form settings, from the provided form ID. It's useful when applying specific settings to one or more forms using filters in your project.
@@ -56,5 +58,15 @@ A list of all components can be found [here](https://github.com/infinum/eightshi
 ```php
 if (\function_exists('esFormsGetComponentsRender')) {
   $render = esFormsGetComponentsRender('<component>', '[<attributes>]');
+}
+```
+
+### esFormRenderForm
+
+If you want to output a form in a custom template or block, you can use this helper to do so. However, it is important to note that this helper has limitations and doesn't provide all the functionality that a block editor does.
+
+```php
+if (\function_exists('esFormRenderForm')) {
+  echo esFormRenderForm('<formId>', '[<attributes>]');
 }
 ```

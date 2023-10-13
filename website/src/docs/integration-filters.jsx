@@ -4,11 +4,11 @@ import { reformatCode } from '../../utils/shared.jsx';
 
 export function IntegrationFilters(props) {
 	const {
-		name,
 		filter,
 		onlyUse = [
 			'dataFilter',
 			'prePostParamsFilter',
+			'order',
 		],
 	} = props;
 
@@ -62,7 +62,7 @@ export function IntegrationFilters(props) {
 			{onlyUse.includes('prePostParamsFilter') &&
 				<>
 					<h2>Pre post params</h2>
-					<p>Change form fields data before it is sent to the external integration. This way you can manuipulate data and provide additional mapping to the data sent to the integration.</p>
+					<p>Change form fields data before it is sent to the external integration. This way you can manipulate data and provide additional mapping to the data sent to the integration.</p>
 
 					<CodeBlock language="php">
 						{reformatCode(`
@@ -79,6 +79,26 @@ export function IntegrationFilters(props) {
 								}
 
 								return $params;
+							});
+						`)}
+					</CodeBlock>
+				</>
+			}
+
+			{onlyUse.includes('order') &&
+				<>
+					<h2>Order fields</h2>
+					<p>Force specific form fields order. If you set the order of fields with this filter they will always fallback to this settings. All fields not defined by this filter will follow the default block editor insert order.</p>
+					<p>You don't need to define every field in the form. For example if you want to <code>firstname</code>, <code>lastname</code> and <code>email</code> to be first in order this filter will make this happen.</p>
+
+					<CodeBlock language="php">
+						{reformatCode(`
+							add_filter('es_forms_integrations_${filter}_order', function(): array {
+								return [
+									'firstname',
+									'lastname',
+									'email',
+								];
 							});
 						`)}
 					</CodeBlock>
