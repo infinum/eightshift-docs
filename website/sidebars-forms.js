@@ -49,6 +49,7 @@ module.exports = {
 					'integrations/mailerlite',
 					'integrations/moments',
 					'integrations/workable',
+					'integrations/pipedrive',
 				],
 			},
 		],
@@ -80,6 +81,7 @@ module.exports = {
 									'php/global-variables/integrations/mailerlite',
 									'php/global-variables/integrations/moments',
 									'php/global-variables/integrations/workable',
+									'php/global-variables/integrations/pipedrive',
 								],
 							},
 						]
