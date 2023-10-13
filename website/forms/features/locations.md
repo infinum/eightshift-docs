@@ -21,4 +21,4 @@ In form settings under the `locations` tab, you can see the same information as 
 
 You can also find the form location in the top bar of the WordPress admin.
 
-![Admin top bar screen](/img/forms/admin-top-bar.webp)
+![Admin bar screen](/img/forms/admin-top-bar.webp)

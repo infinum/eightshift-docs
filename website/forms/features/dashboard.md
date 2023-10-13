@@ -3,7 +3,8 @@ id: dashboard
 title: Dashboard
 ---
 
-On the global settings you will find a dashboard that will help you to manage your forms features.
-More details canm be found [here](features/dashboard).
+The dashboards gives you an overview of the currently active features and enables activating and deactivating of them.
+
+More details can be found [here](features/dashboard).
 
 ![Dashboard screen](/img/forms/dashboard.webp)
