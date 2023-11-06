@@ -10,7 +10,7 @@ sidebar_label: JavaScript
 
 Returns a camel-cased string.
 
-* @param {string} string Add string to convert.
+* @param string string Add string to convert.
 
 **Usage:**
 
@@ -30,11 +30,11 @@ newSuperTestTitle
 
 Checks whether the attributes exist in the attributes list. If the value is not set, it checks for the default value. If the default value is not set, it adds a fallback value depending on the type, or if `undefinedAllowed` is set to `true`, it sets it to `undefined`.
 
-* @param {string}  key Key to check.
-* @param {array}   attributes Array of attributes.
-* @param {array}   manifest Array of default attributes from manifest.json.
-* @param {string}  componentName The real component name.
-* @param {boolean} undefinedAllowed Allowed detection of undefined values.
+* @param string  key Key to check.
+* @param array   attributes Array of attributes.
+* @param array   manifest Array of default attributes from manifest.json.
+* @param string  componentName The real component name.
+* @param boolean undefinedAllowed Allowed detection of undefined values.
 
 **Usage:**
 
@@ -48,11 +48,11 @@ Checks whether the attributes exist in the attributes list. If the value is not 
 
 Map and check attributes for responsive object from `responsiveAttributes` property from manifest.
 
-* @param {string}  keyName Key name to find in responsiveAttributes object.
-* @param {array}   attributes Array of attributes.
-* @param {array}   manifest Array of default attributes from manifest.json.
-* @param {string}  componentName The real component name.
-* @param {boolean} undefinedAllowed Allowed detection of undefined values.
+* @param string  keyName Key name to find in responsiveAttributes object.
+* @param array   attributes Array of attributes.
+* @param array   manifest Array of default attributes from manifest.json.
+* @param string  componentName The real component name.
+* @param boolean undefinedAllowed Allowed detection of undefined values.
 * @throws \Exception If missing responsiveAttributes or keyName in responsiveAttributes.
 * @throws \Exception If missing keyName in responsiveAttributes.
 * @return mixed
@@ -132,7 +132,7 @@ Used to set and get cookie values.
 Debounces the provided function. For more information, check [this blog post](https://davidwalsh.name/javascript-debounce-function).
 
 * @param func Provided function to apply debounce.
-* @param {int} wait Wait time for debounce.
+* @param int wait Wait time for debounce.
 
 **Usage:**
 
@@ -160,7 +160,7 @@ Checks if your browser's navigator is a specific device.
 
 Used to get (require) all the files using the `require.context` method. It will find all files recursively in the folder using a regex. The following example will require all assets/index.js files inside the custom folder, so there is no need to manually add the files to the build.
 
- * @param {object} paths All require.context patch to iterate.
+ * @param object paths All require.context patch to iterate.
 
 **Usage:**
 
@@ -174,7 +174,7 @@ Used to get (require) all the files using the `require.context` method. It will 
 
 Returns the height of the element measured by the height of its children.
 
-* @param {object} element DOM element
+* @param object element DOM element
 
 **Usage:**
 
@@ -196,7 +196,7 @@ elementChildrenHeight('.js-item');
 
 Takes the provided string and removes special characters. Characters that will be removed: `([;&,.+*~':"!^#$%@[\]()=>|]`.
 
-* @param {string} $key Key to check.
+* @param string $key Key to check.
 
 **Usage:**
 
@@ -212,10 +212,10 @@ Create responsive selectors used for responsive attributes.
 
 Useful if you want to show how the responsive behavior looks in the editor.
 
-* @param {array}   items        Array of breakpoints.
-* @param {string}  selector     Selector for this breakpoint.
-* @param {string}  parent       Parent block selector.
-* @param {boolean} use_modifier If false, you can use this selector for visibility.
+* @param array   items        Array of breakpoints.
+* @param string  selector     Selector for this breakpoint.
+* @param string  parent       Parent block selector.
+* @param boolean use_modifier If false, you can use this selector for visibility.
 
 **Usage:**
 
@@ -235,11 +235,11 @@ Useful if you want to show how the responsive behavior looks in the editor.
 
 Returns BEM selector for HTML class and checks if the condition part is set.
 
-* @param {boolean} condition Check condition.
-* @param {string}  block BEM Block selector.
-* @param {string}  element BEM Element selector.
-* @param {string}  modifier BEM Modifier selector.
-* @return {string}
+* @param boolean condition Check condition.
+* @param string  block BEM Block selector.
+* @param string  element BEM Element selector.
+* @param string  modifier BEM Modifier selector.
+* @return string
 
 **Usage:**
 
@@ -268,7 +268,7 @@ Returns BEM selector for HTML class and checks if the condition part is set.
 
 Use this hook to filter the global colors out of the component or block manifest
 
-* @param {array} colors Array of colors to filter.
+* @param array colors Array of colors to filter.
 
 **Usage:**
 
@@ -293,10 +293,10 @@ import { getOptions } from '@eightshift/frontend-libs/scripts/editor';
 Provides the ability to override component options from the parent block/component.
 The components must have the same option names as attribute standard with `componentName` prefix.
 
-* @param {object} manifest Original manifest from the component.
-* @param {string} componentName Current componentName. This is changed depending on the passed componentName.
-* @param {string} attribute Attribute name to check without componentName prefix. Value is auto camelCased.
-* @param {object} options Options provided by the parent block/component.
+* @param object manifest Original manifest from the component.
+* @param string componentName Current componentName. This is changed depending on the passed componentName.
+* @param string attribute Attribute name to check without componentName prefix. Value is auto camelCased.
+* @param object options Options provided by the parent block/component.
 
 **Usage:**
 
@@ -488,11 +488,11 @@ Used to set attributes on all innerBlocks preset only for simple wrapper setup. 
 
 Output only attributes that are used in the component and remove everything else.
 
-* @param {object}  attributes Object of attributes from block/component.
-* @param {string}  realName Old key to use, generally this is the name of the block/component.
-* @param {string}  newName New key to use to rename attributes.
-* @param {boolean} isBlock Check if helper is used on block or component.
-* @param {string}  globalManifestData If global manifest is not provided use the default path.
+* @param object  attributes Object of attributes from block/component.
+* @param string  realName Old key to use, generally this is the name of the block/component.
+* @param string  newName New key to use to rename attributes.
+* @param boolean isBlock Check if helper is used on block or component.
+* @param string  globalManifestData If global manifest is not provided use the default path.
 
 **Data:**
 ```js
