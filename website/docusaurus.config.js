@@ -1,4 +1,6 @@
-const codeTheme = require('prism-react-renderer/themes/dracula');
+const {themes} = require('prism-react-renderer');
+
+const darkTheme = themes.dracula;
 
 module.exports = {
 	title: 'Eightshift Development kit',
@@ -17,7 +19,6 @@ module.exports = {
 		}
 	],
 	themeConfig: {
-		
 		navbar: {
 			logo: {
 				alt: 'Eightshift DevKit Logo',
@@ -108,7 +109,7 @@ module.exports = {
 			indexName: 'infinum_eightshift',
 		},
 		prism: {
-			theme: codeTheme,
+			theme: darkTheme,
 			additionalLanguages: ['php'],
 		},
 		colorMode: {

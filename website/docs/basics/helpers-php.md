@@ -42,7 +42,7 @@ Render component/block partial.
 - @param string $type Type of content block, component, variable, etc.
 - @param string $parent Parent block/component name.
 - @param string $name Name of the partial. It can be without extension so .php is used.
-- @param array<string, mixed> $attributes Attributes that will be passed to partial.
+- @param array $attributes Attributes that will be passed to partial.
 - @param string $partialFolderName Partial folder name.
 - @throws ComponentException When we're unable to find the partial.
 - @return string Partial html.

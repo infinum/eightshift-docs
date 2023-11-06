@@ -131,7 +131,7 @@ Used to set and get cookie values.
 
 Debounces the provided function. For more information, check [this blog post](https://davidwalsh.name/javascript-debounce-function).
 
-* @param {function} func Provided function to apply debounce.
+* @param func Provided function to apply debounce.
 * @param {int} wait Wait time for debounce.
 
 **Usage:**
