@@ -13,28 +13,28 @@ As one of the most powerful features in the Eightshift DevKit, the Wrapper is a 
 <!--truncate-->
 
 :::Note
-[Wrapper](https://eightshift.com/docs/basics/blocks-wrapper/) is designed to be the ultimate top-level component that controls how your block behaves in the website layout. The Wrapper is a sort of a 'section' in traditional builders. By default, you can control a whole lot of stuff, but there is an option to add your custom attributes and tailor the Wrapper to the needs of your project.
+[Wrapper](https://eightshift.com/docs/basics/blocks-wrapper/) is designed to be the ultimate top-level component that controls how your block behaves in the website layout. It is a sort of a 'section' in traditional builders. By default, you can control a whole lot of stuff, but there is an option to add your custom attributes and tailor the Wrapper to the needs of your project.
 :::
 
 ## What are WordPress templates?
 
-Before the days of [Full Site Editing](https://developer.wordpress.org/block-editor/getting-started/full-site-editing/) in WordPress, we used [template files](https://developer.wordpress.org/themes/basics/template-hierarchy/) to add custom layout to a blog page or post archives.
+Before the days of [Full Site Editing](https://developer.wordpress.org/block-editor/getting-started/full-site-editing/) in WordPress, we used [template files](https://developer.wordpress.org/themes/basics/template-hierarchy/) to add custom layouts to a blog page or post archives.
 
 :::Note
-While Full-site editing (FSE) _is_ supported, a couple of modifications have to be done in your project to make it work.
+While Full-site editing (FSE) _is_ supported in Eightshift Libs, a couple of modifications have to be done in your project to make it work.
 :::
 
 Depending on your setup, you might still use those as they are still a core part of WordPress themes.
 
 ## Usage in templates
 
-Thanks to the `Components` helper we can easily `render()` any component in our template. 
+Thanks to the `Components` helper, we can easily `render()` any component in our template. 
 
 :::Note
 Interested in how to use components in a block? Take a look at [our docs](https://eightshift.com/docs/basics/blocks-component-in-block#i-have-a-component-that-i-want-to-use-manually).
 :::
 
-For this example, we'll use `index.php` as you probably already have it in your theme. If not, use the code below:
+For this example, we'll use `index.php`, as you already have it in your theme. If not, use the code below:
 
 ```php
 <?php
@@ -70,24 +70,13 @@ First, let's import our `Components` helper class. Make sure to use the namespac
 use InfinumLibsVendor\EightshiftLibs\Helpers\Components;
 ```
 
-If we take a deeper look into the `render` method, we'll see that for the `$component` parameter we can pass the _component's name or the full path (ending with .php)_, and since the Wrapper is outside of the `components` or `custom` folder, we have to use `wrapper.php` combined with `Components::getProjectPaths('blocksDestinationWrapper')` for the `$parentPath` parameter.
+If we look deeper into the `render` method, we'll see that for the `$component` parameter, we can pass the _component's name or the full path (ending with .php)_. We made it simple, so use `wrapper`.
 
-```php
-echo Components::render(
-	'wrapper.php',
-	[],
-	Components::getProjectPaths('blocksDestinationWrapper'),
-	true
-);
-```
 :::Note
-Setting the `$useComponentDefaults` to `true` will save you the trouble of setting a lot of additional properties by using default values defined in your manifest.
+If you are upgrading from an older version (supported since [Libs v6.5.7] (https://github.com/infinum/eightshift-libs/releases/tag/6.5.7) and [Frontend Libs v8.6.2](https://github.com/infinum/eightshift-frontend-libs/releases/tag/8.6.2)) copy code from [wrapper.php](https://github.com/infinum/eightshift-frontend-libs/blob/develop/blocks/init/src/Blocks/wrapper/wrapper.php) into your project.
 :::
 
-### Wrapper output
-
-Now that we have a working Wrapper component in our template, it's time to display posts in the loop.
-We have two required properties; `wrapperOnlyOutput` and `wrapperManualContent`.
+We have two required properties to add to the Wrappers `manifest.json`: `wrapperOnlyOutput` and `wrapperManualContent`.
 
 ```json
 "wrapperOnlyOutput": {
@@ -100,9 +89,28 @@ We have two required properties; `wrapperOnlyOutput` and `wrapperManualContent`.
 }
 ```
 
-Let's use the Card component from the [libs](https://eightshift.com/docs/additional-libraries/libs) as it's the perfect component to display post details and pass it to the `wrapperManualContent`.
+```php
+echo Components::render(
+	'wrapper',
+	[
+		'wrapperOnlyOutput' => true,
+		'wrapperManualContent' => '',
+	],
+	'',
+	true
+);
+```
+:::Note
+Setting the `$useComponentDefaults` to `true` will save you the trouble of setting a lot of additional properties by using default values defined in your manifest.
+:::
 
-To make the Card component look even better, we'll use the powerful properties that the Wrapper component has to offer and add some spacing between each item.
+### Wrapper output
+
+Now that we have a working Wrapper component in our template, it's time to display posts in the loop.
+
+Let's use the [Card](https://infinum.github.io/eightshift-frontend-libs/storybook/?path=/story/components-card--editor) from the Frontend Libs as it's the perfect component to display post details and pass it to the `wrapperManualContent`.
+
+To make the Card component look even better, we'll use some of the powerful properties the Wrapper component has to offer and add spacing between each item.
 
 ```php
 'wrapperSpacingTopLarge' => 50,
@@ -136,8 +144,6 @@ if (have_posts()) {
 			'wrapper.php',
 			[
 				'wrapperOnlyOutput' => true,
-				'wrapperSpacingTopLarge' => 50,
-				'wrapperSpacingBottomLarge' => 50,
 				'wrapperManualContent' => Components::render('card', [
 					'introContent' => sprintf(__('On %1$s by %2$s', 'eightshift'), get_the_date(), get_the_author_meta('display_name')),
 					'headingContent' => get_the_title(),
@@ -145,8 +151,10 @@ if (have_posts()) {
 					'buttonContent' => __('View more', 'eightshift'),
 					'buttonUrl' => get_permalink(),
 				]),
+				'wrapperSpacingTopLarge' => 50,
+				'wrapperSpacingBottomLarge' => 50,
 			],
-			Components::getProjectPaths('blocksDestinationWrapper'),
+			'',
 			true
 		);
 	}
@@ -158,4 +166,4 @@ get_footer();
 
 ## Conclusion
 
-Although the Wrapper is (usually) not intended to be used as a standalone component, there is a nice benefit to having a time-saving out-of-the-box solution for displaying a content in a grid already defined in your project.
+Although the Wrapper is (usually) not intended to be used as a standalone component, there is a nice benefit to having a time-saving, out-of-the-box solution for displaying content in a grid already defined in your project.
