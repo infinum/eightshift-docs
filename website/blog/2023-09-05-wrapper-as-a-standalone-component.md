@@ -13,7 +13,7 @@ As one of the most powerful features in the Eightshift DevKit, the Wrapper is a 
 <!--truncate-->
 
 :::Note
-[Wrapper](https://eightshift.com/docs/basics/blocks-wrapper/) is designed to be the ultimate top-level component that controls how your block behaves in the website layout. It is a sort of a 'section' in traditional builders. By default, you can control a whole lot of stuff, but there is an option to add your custom attributes and tailor the Wrapper to the needs of your project.
+[Wrapper](https://eightshift.com/docs/basics/blocks-wrapper/) is designed to be the ultimate top-level component that controls how your block behaves in the website layout. It is a sort of a 'section' in traditional builders. By default, you can control a whole lot of stuff, but there is an option to add custom attributes and tailor the Wrapper to the needs of your project.
 :::
 
 ## What are WordPress templates?
