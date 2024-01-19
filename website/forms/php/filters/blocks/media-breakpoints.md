@@ -19,5 +19,5 @@ add_filter('es_forms_blocks_media_breakpoints', function(): array {
 ```
 
 :::note
-Additional breakpoints cannot be provided, only the current values can be modified!
+Additional breakpoints can't be provided, only the current values can be modified!
 :::

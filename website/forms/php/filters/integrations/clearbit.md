@@ -3,6 +3,8 @@ id: clearbit
 title: Clearbit
 ---
 
+## Map
+
 This filter provides you the ability to change how we map Clearbit fields so you can combine multiple fields in one and add some new ones.
 
 ```php

@@ -167,17 +167,27 @@ function PrePostIdFilter ({ filter }) {
 }
 
 function PrePostParamsFilter ({ filter }) {
+	let text = '';
+
+	switch (filter) {
+		case 'mailer':
+			text = 'mailer system';
+			break;
+		default:
+			text = 'external integration';
+			break;
+	}
 	return (
 		<>
 			<h2>Pre post params filter</h2>
-			<p>Change form fields data before it is sent to the external integration. This way you can manipulate data and provide additional mapping to the data sent to the integration.</p>
+			<p>Change form fields data before it is sent to the {text}. This way you can manipulate data and provide additional mapping to the data sent to the {text}.</p>
 
 			<CodeBlock language="php">
 				{reformatCode(`
 					add_filter('es_forms_integrations_${filter}_pre_post_params', 'getIntegrationPrePostParams', 10, 2);
 
 					/**
-					 * Change form fields data before we send it to the external integration.
+					 * Change form fields data before we send it to the ${text}.
 					 *
 					 * @param array<string, mixed> $params Array of params.
 					 * @param string $formId Form ID.

@@ -3,4 +3,4 @@ id: entries
 title: Entries
 ---
 
-Entries
+**Coming soon**

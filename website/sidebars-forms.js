@@ -356,5 +356,27 @@ module.exports = {
 		'Tutorials': [
 			'tutorials/playlist',
 		],
+		'Addon plugins': [
+			{
+				'type': 'category',
+				'label': 'Premium',
+				'items': [
+					{
+						'type': 'category',
+						'label': 'Computed fields',
+						'items': [
+							'addons/premium/computed-fields/intro',
+						],
+					},
+				],
+			},
+			{
+				'type': 'category',
+				'label': 'Create an addon',
+				'items': [
+					'addons/create/intro',
+				],
+			},
+		],
 	}
 };
