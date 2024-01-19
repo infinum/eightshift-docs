@@ -5,7 +5,7 @@ title: How to use?
 
 ### esFormsAfterCaptchaInit
 
-In this example the event is hooked to the `window`` object and in event details you have:
+In this example the event is hooked to the `window` object and in event details you have:
 * `esForms` - object.
 * `formId` - not available because this is a global event.
 * `additional` - object from the API response.
