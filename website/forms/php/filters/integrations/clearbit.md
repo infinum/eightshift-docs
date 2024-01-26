@@ -8,7 +8,7 @@ title: Clearbit
 Allows changing how Clearbit fields are mapped. Useful if you want to combine multiple fields, or add new ones.
 
 ```php
-add_filter('es_forms_integrations_clearbit_map', 'getClearbitMap');
+\add_filter('es_forms_integrations_clearbit_map', [$this, 'getClearbitMap']);
 
 /**
  * Change Clearbit integration fields map.
@@ -19,7 +19,7 @@ add_filter('es_forms_integrations_clearbit_map', 'getClearbitMap');
  *
  * @return array<mixed>
  */
-function getClearbitMap(array $params): array
+public function getClearbitMap(array $params): array
 {
 	$street = $params['company-street-number'] ?? '';
 	$city = $params['company-city'] ?? '';

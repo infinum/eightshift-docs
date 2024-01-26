@@ -8,7 +8,7 @@ Allows changing the current locale. By default, WordPress will use the locale th
 Filter should return an array with two keys: `default` and `current`. Both keys should contain a string value of the locale for your project.
 
 ```php
-add_filter('es_forms_general_locale', 'getFormsLocale');
+\add_filter('es_forms_general_locale', [$this, 'getFormsLocale']);
 
 /**
  * Change the current locale.

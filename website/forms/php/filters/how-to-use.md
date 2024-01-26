@@ -15,7 +15,17 @@ The list of all available filters can be found [here](https://github.com/infinum
 
 To use a filter, simply copy the code snippet from the example and paste it into your project, e.g.
 ```php
-add_filter('es_forms_block_forms_style_options', function () {
+\add_filter('es_forms_block_forms_style_options', [$this, 'getBlockFormsStyleOptions']);
+
+/**
+ * Add additional style options to forms block.
+ *
+ * This filter will add new options to the style select dropdown in the forms block. Forms style option selector will not show unless a filter is provided. This option is shown in Block Editor.
+ *
+ * @return array<int, array<string, string>>
+ */
+public function getBlockFormsStyleOptions(): array
+{
 	return [
 		[
 			'label' => 'Default',
@@ -26,7 +36,7 @@ add_filter('es_forms_block_forms_style_options', function () {
 			'value' => 'custom-style'
 		],
 	];
-});
+}
 ```
 
 ### Testing with provided examples
