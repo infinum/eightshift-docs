@@ -3,13 +3,13 @@ id: dependency-blocks-editor
 title: Dependency blocks editor
 ---
 
-This filter will allow you to change the order of scripts that are loaded in the blocks editor area. Generally used when writing a addon plugin and you want to load you scripts before the main plugin scripts in order to listen to the forms custom event listeners.
+Allows changing the order in which the Block Editor scripts are loaded. Useful when creating a Forms add-on plugin, and your script needs to be loaded before the Forms scripts (e.g. for adding custom event listeners).
 
 ```php
 \add_filter('es_forms_scripts_dependency_blocks_editor', 'getScriptsDependency');
 
 /**
- * Make addon scripts fired before main plugin scripts.
+ * Load add-on scripts before Forms scripts.
  *
  * @return array<int, string>
  */

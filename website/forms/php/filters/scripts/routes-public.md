@@ -3,13 +3,13 @@ id: routes-public
 title: Routes public
 ---
 
-This filter allows you to add additional routes to the public routes list passed to the JS via global variable.
+Allows adding custom routes to the public routes list, available from the Forms global window object.
 
 ```php
 \add_filter('es_forms_scripts_routes_public', 'getPublicRoutes');
 
 /**
- * Add custom route to the public routes list passed to the JS via global variable.
+ * Adds custom routes to the public routes list, available from the Forms global window object.
  *
  * @return array<string>
  */

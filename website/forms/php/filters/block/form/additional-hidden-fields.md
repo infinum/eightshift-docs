@@ -3,7 +3,7 @@ id: additional-hidden-fields
 title: Additional hidden fields
 ---
 
-This filter allows you to add additional hidden fields to the form block. However this fields will not be visible in the Block Editor.
+Allows adding custom hidden fields to the form block. These fields will **not** be visible in the Block Editor. Useful if external data needs to be passed through the form.
 
 ```php
 \add_filter('es_forms_block_form_additional_hidden_fields', [$this, 'getBlockFormAdditionalHiddenFields'], 10, 2);

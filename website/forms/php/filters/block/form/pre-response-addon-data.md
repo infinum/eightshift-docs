@@ -3,7 +3,7 @@ id: pre-response-addon-data
 title: Pre-Response Addon Data
 ---
 
-This filter allows you to add additional data to the API response when form is submitted.
+Allows adding custom data to the API response when the form is submitted.
 
 ```php
 \add_filter('es_forms_block_form_pre_response_addon_data', [$this, 'getPreResponseAddonData'], 10, 2);

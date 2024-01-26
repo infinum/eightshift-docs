@@ -5,7 +5,7 @@ title: Clearbit
 
 ## Map
 
-This filter provides you the ability to change how we map Clearbit fields so you can combine multiple fields in one and add some new ones.
+Allows changing how Clearbit fields are mapped. Useful if you want to combine multiple fields, or add new ones.
 
 ```php
 add_filter('es_forms_integrations_clearbit_map', 'getClearbitMap');
@@ -13,7 +13,7 @@ add_filter('es_forms_integrations_clearbit_map', 'getClearbitMap');
 /**
  * Change Clearbit integration fields map.
  *
- * This filter provides you the ability to change how we map Clearbit fields so you can combine multiple fields in one add some new one.
+ * Allows changing how Clearbit fields are mapped. Useful if you want to combine multiple fields, or add new ones.
  *
  * @param array $params Default params provided by the forms.
  *

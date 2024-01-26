@@ -3,7 +3,7 @@ id: pre-post-params
 title: Pre-Post Params
 ---
 
-Change form fields data before it is stored to the WordPress database. This way you can manipulate data and provide additional mapping to the data sent to the WordPress database.
+Allows modifying field data before storing it into the database. Useful if, for example, a field value needs to determine a custom output of a different field.
 
 ```php
 add_filter('es_forms_entries_pre_post_params', 'getIntegrationPrePostParams', 10, 3);

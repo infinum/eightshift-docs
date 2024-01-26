@@ -3,7 +3,7 @@ id: locale
 title: Locale
 ---
 
-This filter can be used to change the value of current locale. By default, WordPress sets the locale in the admin to `en_US`. With this filter it can be changed to any locale (e.g. when using a multilingual plugin).
+Allows changing the current locale. By default, WordPress will use the locale that is set as the Site Language in settings. A plugin like WPML can also set this value.
 
 Filter should return an array with two keys: `default` and `current`. Both keys should contain a string value of the locale for your project.
 

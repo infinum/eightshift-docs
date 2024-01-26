@@ -3,7 +3,8 @@ id: allowed-blocks
 title: Allowed blocks
 ---
 
-This filter allows you to set the allowed blocks for the form builder as it will override the projects settings. This way you can be sure that the custom addon block is always available for the form builder.
+Allows setting a custom list of the allowed blocks within the form editor. It will override the project settings.
+Useful if you want to ensure that a custom block (e.g. from an add-on) is visible in the form editor.
 
 ```php
 \add_filter('es_forms_blocks_allowed_blocks', 'getAllowedBlocks');

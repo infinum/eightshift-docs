@@ -35,7 +35,7 @@ export function IntegrationFilters({
 export function AdditionalContentFilter({ filter }) {
 	return (
 		<>
-			<p>This filter allows to add custom content before the closing tag of the field element. Can be useful for additional markup, styles, etc.</p>
+			<p>Allows adding custom content before the field element's closing tag. Useful for adding markup, styles, etc.</p>
 
 			<CodeBlock language="php">
 			{reformatCode(`
@@ -52,9 +52,9 @@ function DataFilter ({ filter }) {
 	return (
 		<>
 			<h2>Data filter</h2>
-			<p>This filter is used if you want to change form fields data before output. This way you can change components map before it is parsed inside Block Editor and on the frontend.</p>
-			<p>For example if you want to force set all fields to have 2 columns layout this will be the filter to use.</p>
-			<p>This field will override any Block Editor changes!</p>
+			<p>Allows modifying form field data before it's shown in the Block Editor or output on the frontend.</p>
+			<p>Useful if, for example, you want to ensure that all fields fit into a 2-column layout.</p>
+			<p>Overrides any Block Editor changes!</p>
 
 			<CodeBlock language="php">
 			{reformatCode(`
@@ -111,15 +111,15 @@ function OrderFilter ({ filter }) {
 	return (
 		<>
 			<h2>Order filter</h2>
-			<p>Forces a specific form fields order, regardless of one set in the editor. Fields that are not defined here will follow the natural in-editor order.</p>
-			<p>Not all fields need to have an order defined. For example, if you want to make sure <code>firstname</code>, <code>lastname</code> and <code>email</code> are displayed first, this filter can help.</p>
+			<p>Forces a form field order, regardless of how it's set in the Block editor. Fields not modified through the filter will use order in which they're set in the Block editor.</p>
+			<p>Not all fields need to have an order defined. For example, you may want to make sure <code>firstname</code>, <code>lastname</code> and <code>email</code> are displayed first, but other fields follow their Block editor order.</p>
 
 			<CodeBlock language="php">
 				{reformatCode(`
 					add_filter('es_forms_integrations_${filter}_order', 'getIntegrationOrder');
 
 					/**
-					 * Manipulate form fields order before it is sent to the Block Editor.
+					 * Forces form field order for the provided fields. For other fields, Block editor order is used.
 					 *
 					 * @return array<string>
 					 */
@@ -140,15 +140,15 @@ function OrderFilter ({ filter }) {
 function PrePostIdFilter ({ filter }) {
 	return (
 		<>
-			<h2>Pre post id filter</h2>
-			<p>This filter enables you to update the item ID for the external integration where your form data will be sent.</p>
+			<h2>Pre-post ID filter</h2>
+			<p>Allows updating item IDs sent to external integrations to which the form data is sent.</p>
 
 			<CodeBlock language="php">
 				{reformatCode(`
 					add_filter('es_forms_integrations_${filter}_pre_post_id', 'getIntegrationPrePostId', 10, 3);
 
 					/**
-					 * Manipulate form fields order before it is sent to the Block Editor.
+					 * Modifies integration item ID.
 					 * 
 					 * @param string $itemId Integration item ID.
 					 * @param array<mixed> $params Params to be sent to the integration.
@@ -179,15 +179,15 @@ function PrePostParamsFilter ({ filter }) {
 	}
 	return (
 		<>
-			<h2>Pre post params filter</h2>
-			<p>Change form fields data before it is sent to the {text}. This way you can manipulate data and provide additional mapping to the data sent to the {text}.</p>
+			<h2>Pre-post parameters filter</h2>
+			<p>Allows modifying form field data before it's sent to {text}. Useful if you want to make values derived from the sent data, or add new fields.</p>
 
 			<CodeBlock language="php">
 				{reformatCode(`
 					add_filter('es_forms_integrations_${filter}_pre_post_params', 'getIntegrationPrePostParams', 10, 2);
 
 					/**
-					 * Change form fields data before we send it to the ${text}.
+					 * Modifies form field data before it's sent to ${text}.
 					 *
 					 * @param array<string, mixed> $params Array of params.
 					 * @param string $formId Form ID.

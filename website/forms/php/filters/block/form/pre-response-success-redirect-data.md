@@ -3,7 +3,7 @@ id: pre-response-success-redirect-data
 title: Pre-Response Success Redirect Data
 ---
 
-This filter allows you to add additional data to the API response key that is used to pass data to the success redirect URL.
+Allows adding data to the API response key, which is used when passing data to the success redirect URL.
 
 ```php
 \add_filter('es_forms_block_form_pre_response_success_redirect_data', [$this, 'getPreResponseSuccessRedirectData'], 10, 2);

@@ -3,13 +3,13 @@ id: dependency-admin
 title: Dependency admin
 ---
 
-This filter will allow you to change the order of scripts that are loaded in the admin area. Generally used when writing a addon plugin and you want to load you scripts before the main plugin scripts in order to listen to the forms custom event listeners.
+Allows changing the order in which the admin area scripts are loaded. Useful when creating a Forms add-on plugin, and your script needs to be loaded before the Forms scripts (e.g. for adding custom event listeners).
 
 ```php
 \add_filter('es_forms_scripts_dependency_admin', 'getScriptsDependency');
 
 /**
- * Make addon scripts fired before main plugin scripts.
+ * Fire add-on scripts before the Forms scripts.
  *
  * @return array<int, string>
  */

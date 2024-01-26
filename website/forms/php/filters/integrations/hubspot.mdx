@@ -6,7 +6,7 @@ title: HubSpot
 import { IntegrationFilters } from './../../../../src/docs/filters';
 
 ## Files options filter
-This filter is used to change default file upload options set by forms and Hubspot. We use this [api](https://legacydocs.hubspot.com/docs/methods/files/v3/upload_new_file), and you can change any of these options.
+Allows changing default file upload options set by Forms and Hubspot. For available options check the [HubSpot API reference](https://legacydocs.hubspot.com/docs/methods/files/v3/upload_new_file).
 
 ```php
 add_filter('es_forms_integrations_hubspot_files_options', 'getFileUploadCustomOptions');
@@ -14,7 +14,7 @@ add_filter('es_forms_integrations_hubspot_files_options', 'getFileUploadCustomOp
 /**
  * Change Hubspot file upload options.
  *
- * This filter is used to change default file upload options set by forms and Hubspot. We use this [api](https://legacydocs.hubspot.com/docs/methods/files/v3/upload_new_file), and you can change any of these options.
+ * Allows changing default file upload options set by Forms and Hubspot. For available options check the [HubSpot API reference](https://legacydocs.hubspot.com/docs/methods/files/v3/upload_new_file).
  *
  * @return array<mixed>
  */
