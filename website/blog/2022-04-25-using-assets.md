@@ -78,7 +78,7 @@ The output of the icon on frontend is very simple. In the Quote component, it wa
 An excellent example, where you can see in even more detail how SVGs are being used, is our `icon` component. It isn't included in Eightshift theme by default, so you have to add it to your project with WP CLI. To include it in your project, use the following command:
 
 ```bash
-wp boilerplate use_component --name=icon
+wp boilerplate blocks use-component --name=icon
 ```
 
 If you include the Icon component inside a block, you will have the option to choose between multiple icons defined in the manifest. Another way to render SVGs from the Icon component is by using the `Components::render` helper method:
