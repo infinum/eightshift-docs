@@ -21,7 +21,7 @@ export default function ShowcaseGrid(props) {
 	const privateData = [
 		{
 			image: useBaseUrl('img/showcase/tarisio.webp'),
-			label: 'Tariso',
+			label: 'Tarisio',
 			desc: 'Tarisio is a web-based auction house specializing in stringed instruments and bows. Its online auctions provide a global marketplace for fine violin sales.',
 			link: 'https://tarisio.com/',
 		},
@@ -71,6 +71,12 @@ export default function ShowcaseGrid(props) {
 
 	const publicData = [
 		{
+			image: useBaseUrl('img/showcase/infinum-learn.webp'),
+			label: 'Infinum Learn',
+			desc: 'Courses that will make your onboarding and work at Infinum as easy as possible.',
+			link: 'https://learn.infinum.com/',
+		},
+		{
 			image: useBaseUrl('img/showcase/infinum.webp'),
 			label: 'Infinum Web',
 			desc: 'An independent design and development agency with offices in the US and Europe. We create beautiful apps people love to use.',
@@ -99,48 +105,6 @@ export default function ShowcaseGrid(props) {
 			label: 'D66',
 			desc: 'Democrats 66 is a social-liberal political party in the Netherlands. Its name originates from the year in which it was founded.',
 			link: 'https://d66.nl/',
-		},
-		{
-			image: useBaseUrl('img/showcase/a1-jobs.webp'),
-			label: 'A1 Jobs',
-			desc: 'At A1 Group we are driving digitalization in order to make life easier, more enjoyable and more productive. Are you in? Come and join us!',
-			link: 'https://jobs.a1.com/',
-		},
-		{
-			image: useBaseUrl('img/showcase/a1-brand-portal.webp'),
-			label: 'A1 Brand Portal',
-			desc: 'Welcome to A1. Understand, explore and create the world of A1. Play Video. Brand Strategy.',
-			link: 'https://brand.a1.group/',
-		},
-		{
-			image: useBaseUrl('img/showcase/a1-digitalcampus.webp'),
-			label: 'A1 Digital Campus',
-			desc: 'At the A1 digital.campus you will find free, innovative workshops on future digital topics such as "Coding" and "Robotics" for children and young people. In addition, we organize hackathons and even our own start-up school.',
-			link: 'https://a1digitalcampus.at/',
-		},
-		{
-			image: useBaseUrl('img/showcase/a1-wholesale.webp'),
-			label: 'A1 Wholesale',
-			desc: 'Success begins with the right partner. A1 Wholesale is known for its reliability and technical know-how. No wonder more than 24 million retail customers in CEE count on us: mobile phone providers, fixed network operators, internet providers, MVNO and broadcasting companies.',
-			link: 'https://wholesale.a1.at/',
-		},
-		{
-			image: useBaseUrl('img/showcase/a1-internationalbusiness.webp'),
-			label: 'A1 International business',
-			desc: 'Success begins with the right partner. A1 International Business is known for its reliability and technical know-how. No wonder more than 24 million retail customers in CEE count on us: mobile phone providers, fixed network operators, internet providers, MVNO and broadcasting companies.',
-			link: 'https://internationalbusiness.a1.group/',
-		},
-		{
-			image: useBaseUrl('img/showcase/a1-esg.webp'),
-			label: 'A1 ESG',
-			desc: 'ESG stands for Environment, Social and Governance and embodies the responsibility that companies bear internally and for their surrounding due to their actions.',
-			link: 'https://esg.a1.group/',
-		},
-		{
-			image: useBaseUrl('img/showcase/a1-towers.webp'),
-			label: 'A1 Towers',
-			desc: 'In line with global trends in the telecommunications industry, in November 2021, A1 Hrvatska de-merged its passive mobile network infrastructure operation from the rest of its business operations.',
-			link: 'https://a1towers.hr/',
 		},
 		{
 			image: useBaseUrl('img/showcase/tvornica-snova.webp'),
