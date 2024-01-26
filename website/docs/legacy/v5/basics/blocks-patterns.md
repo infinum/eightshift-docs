@@ -33,22 +33,18 @@ To remove all core patterns add this code to you `src/Blocks/Blocks.php` class.
 Filter goes in the register method:
 ```php
 // Remove block patterns.
-add_filter('block_editor_settings', [$this, 'removeCorePatterns']);
+add_action('after_setup_theme', [$this, 'removeCorePatterns']);
 ```
 
 Callback method:
 ```php
 /**
-	* Remove core block patterns
+	* Remove core block patterns.
 	*
-	* @param array $settings Array of block editor settings to filter out.
-	*
-	* @return array Filtered array.
+	* @return void
 	*/
-public function removeCorePatterns(array $settings): array
+public function removeCorePatterns(): void
 {
-	$settings['__experimentalBlockPatterns'] = [];
-
-	return $settings;
+	remove_theme_support('core-block-patterns');
 }
 ```
