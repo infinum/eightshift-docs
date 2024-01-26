@@ -8,6 +8,10 @@ You can listen to these events by using the `on` method on the `Event` facade.
 Every event contains the whole window object inside the details property.
 This way you can be sure that everything is set and ready to be used. Additionally if an event is a part of the `after` event you can use the `additional` property to get the API response details. 
 
+:::note
+List of all events can be found [here](https://github.com/infinum/eightshift-forms/blob/develop/src/Blocks/manifest.json).
+:::
+
 ### esFormsBeforeFormSubmit
 
 Triggered before form is submitted to the API-Rest endpoint.
@@ -115,6 +119,14 @@ This event is set on the form element.
 ### esFormsGoToPrevStep
 
 Triggered after multi-step/multi-flow form is used and the previous step is loaded.
+
+:::tip
+This event is set on the form element.
+:::
+
+### esFormsEnrichmentPrefill
+
+Triggered after enrichment data is pre-filled from `localStorage`.
 
 :::tip
 This event is set on the form element.

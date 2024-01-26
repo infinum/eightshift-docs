@@ -152,7 +152,7 @@ For WordPress versions > 5 and < 5.8 you would need to use the example below.
 
 ### How to allow only one pattern category?
 
-In the blog post about Block Patterns we covered how to [manage pattern categories](/blog/block-patterns/#managing-pattern-categories). That section should give you an idea how to remove core categories and how to register one or more custom pattern categories.
+In the blog post about Block Patterns we covered how to [manage pattern categories](/blog/block-patterns#managing-pattern-categories). That section should give you an idea how to remove core categories and how to register one or more custom pattern categories.
 
 ### Can I have blocks in multiple categories?
 

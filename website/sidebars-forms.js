@@ -29,6 +29,7 @@ module.exports = {
 						'features/cloudflare',
 						'features/country-list',
 						'features/wpml',
+						'features/entries',
 					],
 				],
 			},
@@ -119,6 +120,9 @@ module.exports = {
 											'php/filters/block/form/phone-sync',
 											'php/filters/block/form/global-msg-headings',
 											'php/filters/block/form/additional-content',
+											'php/filters/block/form/pre-response-addon-data',
+											'php/filters/block/form/pre-response-success-redirect-data',
+											'php/filters/block/form/additional-hidden-fields',
 										],
 									},
 									{
@@ -219,21 +223,22 @@ module.exports = {
 											'php/filters/block/step/component-next',
 										],
 									},
+									{
+										'type': 'category',
+										'label': 'Rating',
+										'items': [
+											'php/filters/block/rating/additional-content',
+										],
+									},
 								],
 							},
 							{
 								'type': 'category',
 								'label': 'Blocks',
 								'items': [
+									'php/filters/blocks/allowed-blocks',
 									'php/filters/blocks/additional-blocks',
 									'php/filters/blocks/media-breakpoints',
-								],
-							},
-							{
-								'type': 'category',
-								'label': 'Enrichment',
-								'items': [
-									'php/filters/enrichment/manual-map',
 								],
 							},
 							{
@@ -241,8 +246,19 @@ module.exports = {
 								'label': 'General',
 								'items': [
 									'php/filters/general/http-request-timeout',
-									'php/filters/general/set-locale',
-									'php/filters/general/scripts-dependency',
+									'php/filters/general/locale',
+								],
+							},
+							{
+								'type': 'category',
+								'label': 'Scripts',
+								'items': [
+									'php/filters/scripts/dependency-admin',
+									'php/filters/scripts/dependency-theme',
+									'php/filters/scripts/dependency-blocks-editor',
+									'php/filters/scripts/dependency-blocks-frontend',
+									'php/filters/scripts/routes-public',
+									'php/filters/scripts/routes-private',
 								],
 							},
 							{
@@ -252,13 +268,6 @@ module.exports = {
 									'php/filters/geolocation/db-location',
 									'php/filters/geolocation/phar-location',
 									'php/filters/geolocation/countries',
-								],
-							},
-							{
-								'type': 'category',
-								'label': 'Validation',
-								'items': [
-									'php/filters/validation/fail-mimetype-validation-when-file-not-on-fs',
 								],
 							},
 							{
@@ -277,6 +286,35 @@ module.exports = {
 									'php/filters/integrations/mailerlite',
 									'php/filters/integrations/moments',
 									'php/filters/integrations/workable',
+									'php/filters/integrations/pipedrive',
+								],
+							},
+							{
+								'type': 'category',
+								'label': 'Entries',
+								'items': [
+									'php/filters/entries/pre-post-params',
+								],
+							},
+							{
+								'type': 'category',
+								'label': 'Enrichment',
+								'items': [
+									'php/filters/enrichment/manual-map',
+								],
+							},
+							{
+								'type': 'category',
+								'label': 'Validation',
+								'items': [
+									'php/filters/validation/force-mimetype-from-fs',
+								],
+							},
+							{
+								'type': 'category',
+								'label': 'Admin',
+								'items': [
+									'php/filters/admin/settings-data',
 								],
 							},
 						],
@@ -317,6 +355,28 @@ module.exports = {
 		],
 		'Tutorials': [
 			'tutorials/playlist',
+		],
+		'Addon plugins': [
+			{
+				'type': 'category',
+				'label': 'Premium',
+				'items': [
+					{
+						'type': 'category',
+						'label': 'Computed fields',
+						'items': [
+							'addons/premium/computed-fields/intro',
+						],
+					},
+				],
+			},
+			{
+				'type': 'category',
+				'label': 'Create an addon',
+				'items': [
+					'addons/create/intro',
+				],
+			},
 		],
 	}
 };

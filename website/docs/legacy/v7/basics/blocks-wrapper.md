@@ -35,7 +35,7 @@ This attribute controls the usage of the wrapper component. It behaves the same 
 
 ### wrapperUseShowControl
 
-This attribute controls whether you will see the options for block use in the block editor. It behaves the same way as described in [this chapter](blocks-component-in-block#i-dont-want-my-editor-to-be-able-to-change-components-options-in-my-block).
+This attribute controls whether you will see the options for block use in the block editor. It behaves the same way as described in [this chapter](blocks-component-in-block#i-dont-want-my-editor-to-be-able-to-change-component-options-in-my-block).
 
 ### wrapperUseSimple
 
@@ -43,7 +43,7 @@ We wrapped some of the options in a specific condition and we call it `wrapperUs
 
 ### wrapperUseSimpleShowControl
 
-This attribute controls whether you are going to see options in the block editor to use the simple option. It behaves the same way as described in [this chapter](blocks-component-in-block#i-dont-want-my-editor-to-be-able-to-change-components-options-in-my-block).
+This attribute controls whether you are going to see options in the block editor to use the simple option. It behaves the same way as described in [this chapter](blocks-component-in-block#i-dont-want-my-editor-to-be-able-to-change-component-options-in-my-block).
 
 ### wrapperDisable
 

@@ -16,7 +16,9 @@ window.esForms
 or you can use built-in events which also contain all the state in the time of the event.
 
 :::caution
-It's important to be careful when using a state outside of the `esFormsJsFormLoaded` event, as it may not be ready at the time of use. To ensure that the state is available, calling your JavaScript after the `domReady` event and with the `esFormsJsFormLoaded` event is necessary.
+Take caution when using state data outside of the `esFormsJsFormLoaded` event, as it may not be available at the time of use. To be sure the data is available, run code after the DOM is ready (`DOMContentLoaded` event), together with the `esFormsJsFormLoaded` event.
+
+If your script is loaded before the main form script, you can use PHP hooks to make forms script dependent on you script to ensure that your script is loaded before the main form script and the events will fire.
 :::
 
 ## Example
@@ -27,7 +29,13 @@ In this example we are using the `esFormsJsFormLoaded` event to initialize our f
 import domReady from '@wordpress/dom-ready';
 
 domReady(() => {
-	window.addEventListener('esFormsJsFormLoaded', ({detail}) => {
+	const element = document.querySelector('.js-es-block-form');
+
+	if (!element) {
+		return;
+	}
+
+	element?.addEventListener('esFormsJsFormLoaded', ({detail}) => {
 		const {
 			formId,
 			esForms = {
@@ -35,9 +43,7 @@ domReady(() => {
 			},
 		} = detail;
 
-		if (store?.getStateFormElement(formId)) {
-			// Do some actions with the form.
-		}
+		// Do some actions with the form.
 	});
 });
 ```
