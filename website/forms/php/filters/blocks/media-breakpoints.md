@@ -13,7 +13,7 @@ If you project uses different breakpoint values, you can change them with this f
 /**
  * Changing the default media breakpoints.
  *
- * This filter will override our default media breakpoints used for responsive selectors like widths of the form fields. You must provide all 4 breakpoints in order for this to work properly and you must follow our breakpoint names.
+ * This filter will override our default media breakpoints used for responsive selectors like widths of the form fields. You must provide all 4 breakpoints in order for this to work properly and you must follow the pre-defined breakpoint names.
  *
  * @return array<string, int>
  */
