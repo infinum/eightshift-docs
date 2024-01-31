@@ -17,7 +17,17 @@ For example, if you only want to allow choosing between 4 countries, you can do 
 * **onlyUse** - Allows providing a custom list of countries, instead of using the full dataset.
 
 ```php
-add_filter('es_forms_block_country_alternative_data_set', function(): array {
+\add_filter('es_forms_block_country_alternative_data_set', [$this, 'getBlockCountryAlternativeDataSet']);
+
+/**
+ * Get country alternative changes for data set and provide filters.
+ *
+ * This filter will only provide alternative options and change the original list.
+ *
+ * @return array<mixed>
+ */
+public function getBlockCountryAlternativeDataSet(): array
+{
 	{
 		return [
 			[
@@ -49,5 +59,5 @@ add_filter('es_forms_block_country_alternative_data_set', function(): array {
 			],
 		];
 	}
-})
+}
 ```

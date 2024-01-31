@@ -29,10 +29,10 @@ This will generate a PHP code snippet that you can use in your theme. Now you ma
 
 ## CustomMeta class
 
-Those ACF goodies in Eightshift Development kit we talked about earlier? Let us introduce you to one of them. We have a WP CLI command which we can use to generate a CustomMeta class where we can add our field groups. The command is `wp boilerplate create_acf_meta`. This command has one required parameter, and that is `name`. To create a class that we will use for registering our custom fields, we'll use the following command:
+Those ACF goodies in Eightshift Development kit we talked about earlier? Let us introduce you to one of them. We have a WP CLI command which we can use to generate a CustomMeta class where we can add our field groups. The command is `wp boilerplate create acf-meta`. This command has one required parameter, and that is `name`. To create a class that we will use for registering our custom fields, we'll use the following command:
 
 ```bash
-wp boilerplate create_acf_meta --name=intro
+wp boilerplate create acf-meta --name=intro
 ```
 
 This command will generate a **_CustomMeta_** folder inside **_src_** folder and add a new file called **_IntroAcfMeta.php_**. Inside that file, you should see the following method:
@@ -113,7 +113,7 @@ It's better to use class constants because if you decide to change the field nam
 ACF's Options page has a wide array of uses and it's very likely that you'll need some sort of Theme Options in your project. To make the implementation of Theme Options a bit easier, we have a CLI command which generates the `ThemeOptions` class in your project. Just use the following command:
 
 ```bash
-wp boilerplate create_theme_options
+wp boilerplate create theme-options
 ```
 
 This command generates a class with two methods. The first one, `createThemeOptionsPage()` creates a Theme Options page and adds it to the WP Admin sidebar. The second one, `registerThemeOptions()`, is what registers the fields you will have in Theme Options. Here is an example how Theme Options look after being created using `wp boilerplate`:

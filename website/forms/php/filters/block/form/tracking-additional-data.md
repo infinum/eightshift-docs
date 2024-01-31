@@ -14,7 +14,20 @@ You can add as many key/value pairs as you want. The data is sent as an array of
 
 
 ```php
-add_filter('es_forms_block_form_tracking_additional_data', function(string $formType, string $formId): string {
+\add_filter('es_forms_block_form_tracking_additional_data', [$this, 'getBlockFormTrackingAdditionalData'], 10, 2);
+
+/**
+ * Set tracking additional data and that data will be send to the GTM along with all field values and event name.
+ *
+ * This filter will override settings for tracking additional data.
+ *
+ * @param string $formType Type of form used like greenhouse, hubspot, etc.
+ * @param string $formId Form ID.
+ *
+ * @return array<int, array<int, string>>
+ */
+public function getBlockFormTrackingAdditionalData(string $formType, string $formId): array
+{
 	return [
 		'general' => [
 			[
@@ -47,5 +60,5 @@ add_filter('es_forms_block_form_tracking_additional_data', function(string $form
 			],
 		],
 	];
-}, 10, 2);
+}
 ```

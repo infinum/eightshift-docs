@@ -6,7 +6,7 @@ title: Pre-Post Params
 Allows modifying field data before storing it into the database. Useful if, for example, a field value needs to determine a custom output of a different field.
 
 ```php
-add_filter('es_forms_entries_pre_post_params', 'getIntegrationPrePostParams', 10, 3);
+\add_filter('es_forms_entries_pre_post_params', [$this, 'getIntegrationPrePostParams'], 10, 3);
 
 /**
  * Change form fields data before it is stored to the WordPress database
@@ -17,7 +17,7 @@ add_filter('es_forms_entries_pre_post_params', 'getIntegrationPrePostParams', 10
  *
  * @return array<string, mixed>
  */
-function getIntegrationPrePostParams(array $params, string $formId, array $formDetails): array
+public function getIntegrationPrePostParams(array $params, string $formId, array $formDetails): array
 {
 	$formSubmissionPageLt = $params['form_submission_page_lt']['value'] ?? '';
 

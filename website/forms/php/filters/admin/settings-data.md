@@ -6,7 +6,7 @@ title: Settings data
 This filter allows adding a custom settings page in the WordPress admin area. Useful when creating custom option pages for Forms add-on plugins.
 
 ```php
-add_filter('es_forms_admin_settings_data', 'getSettingsConfig');
+\add_filter('es_forms_admin_settings_data', [$this, 'getSettingsConfig']);
 
 /**
  * Settings config data.
