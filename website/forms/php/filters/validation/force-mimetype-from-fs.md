@@ -8,7 +8,7 @@ Forces MIME type validation based on the filesystem values. This is the default 
 If `true` is returned from this filter, the Forms file upload will fail if the MIME type cannot be matched from the filesystem.
 
 ```php
-add_filter('es_forms_validation_force_mimetype_from_fs', [$this, 'forceMimetypeFs']);
+\add_filter('es_forms_validation_force_mimetype_from_fs', [$this, 'forceMimetypeFs']);
 
 /**
  * Force MIME type validation based on the filesystem values.
