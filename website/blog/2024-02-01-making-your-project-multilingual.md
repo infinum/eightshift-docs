@@ -70,7 +70,7 @@ In the _Sources keywords_ tab you can set additional functions for use in your p
 - `esc_html_e` for echoing a translated string which is escaped in a way it's safe to use within HTML
 - `esc_attr__` for returning a translated string which is escaped in a way it's safe to use within an attribute
 - `esc_html_x` for returning a translated string which is escaped in a way it's safe to use within HTML, with a _gettext_ context
-- _n
+- `_n` for returning a translated string in a singular or plural form, based on the supplied number
 
 > If you're missing a string in your `.po` file be sure to check which function is used for translation for that string, and that the function is added to _Sources keywords_.
 
