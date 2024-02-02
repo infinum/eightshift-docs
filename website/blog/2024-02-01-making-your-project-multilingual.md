@@ -43,7 +43,7 @@ Alternative functions you can use are:
 You can refer to the [block editor handbook](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/) for more information on these functions.
 
 ## The I18n class
-The easiest way to add I18n support to your project is by using the WP-CLI command:
+The easiest way to add I18n support to a project created with Eightshift boilerplate is by using the WP-CLI command:
 ```bash
 wp boilerplate create i18n
 ```
@@ -115,3 +115,4 @@ Internationalization (_I18n_) and Localization (_L10n_) are very broad topics, s
 If you wish to know about the core I18n functionalities, or a bit more about how it is used in the Eightshift DevKit, here are a few resources which you may find interesting:
 - [WordPress Codex - I18n for WordPress Developers](https://codex.wordpress.org/I18n_for_WordPress_Developers)
 - [Eightshift Development kit documentation - Tips & Tricks](https://eightshift.com/docs/basics/tips-tricks/#internationalization-i18n-and-localization-l10n)
+- [Infinum WordPress Handbook - Localization](https://infinum.com/handbook/wordpress/translations/localization)
