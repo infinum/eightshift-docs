@@ -2,11 +2,105 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://eightshift.com/blog</id>
     <title>Eightshift Development kit Blog</title>
-    <updated>2023-09-05T00:00:00.000Z</updated>
+    <updated>2024-02-01T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://eightshift.com/blog"/>
     <subtitle>Eightshift Development kit Blog</subtitle>
     <icon>https://eightshift.com/img/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Making your project multilingual]]></title>
+        <id>https://eightshift.com/blog/making-your-project-multilingual</id>
+        <link href="https://eightshift.com/blog/making-your-project-multilingual"/>
+        <updated>2024-02-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Examples of using I18n in a project]]></summary>
+        <content type="html"><![CDATA[<p>Tools like Google Translate can automatically translate websites with reasonable quality. However, users will have a much better experience if you add support for multiple languages in your project and manage the translations yourself.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="making-strings-translatable-in-php">Making strings translatable in PHP<a href="https://eightshift.com/blog/making-your-project-multilingual#making-strings-translatable-in-php" class="hash-link" aria-label="Direct link to Making strings translatable in PHP" title="Direct link to Making strings translatable in PHP">​</a></h2>
+<p>A good practice is to use one of the I18n (internationalization) functions for your hardcoded strings, even if your website starts with a single language. This way, you can add multilingual support more easily later.</p>
+<p>If you've worked on a multilanguage-capable project, you most likely came across <code>__()</code> and <code>_e()</code> functions. The main difference between the <code>__()</code> and <code>_e()</code> is that <code>__()</code> returns the value, while <code>_e()</code> echoes it. Both functions take two arguments: the first one is the string to be translated, and the second one is the textdomain that identifies the translation file.</p>
+<blockquote>
+<p>Textdomain is usually your project name written in kebab-case.</p>
+</blockquote>
+<p>While WordPress functions like <code>__()</code> and <code>_e()</code> will definitely do the job, it is much better to use the variants of these functions that also escape the output. These are <code>esc_html__()</code> and <code>esc_html_e()</code>. There are also a few more functions for I18n you can use, but to keep it simple, we'll just mention these two for now.</p>
+<p>Here is an example of using one of these functions:</p>
+<div class="language-php codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-php codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token delimiter important">&lt;?php</span><span class="token plain"> </span><span class="token keyword" style="color:rgb(189, 147, 249);font-style:italic">echo</span><span class="token plain"> </span><span class="token function" style="color:rgb(80, 250, 123)">esc_html__</span><span class="token punctuation" style="color:rgb(248, 248, 242)">(</span><span class="token string single-quoted-string" style="color:rgb(255, 121, 198)">'Contact'</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token string single-quoted-string" style="color:rgb(255, 121, 198)">'project-name'</span><span class="token punctuation" style="color:rgb(248, 248, 242)">)</span><span class="token punctuation" style="color:rgb(248, 248, 242)">;</span><span class="token plain"> </span><span class="token delimiter important">?&gt;</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="making-strings-translatable-in-js">Making strings translatable in JS<a href="https://eightshift.com/blog/making-your-project-multilingual#making-strings-translatable-in-js" class="hash-link" aria-label="Direct link to Making strings translatable in JS" title="Direct link to Making strings translatable in JS">​</a></h2>
+<p>To translate the strings in the Block editor or options, you will first have to import the function from the <code>@wordpress/i18n</code> library.</p>
+<div class="language-jsx codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-jsx codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token keyword module" style="color:rgb(189, 147, 249);font-style:italic">import</span><span class="token plain"> </span><span class="token imports punctuation" style="color:rgb(248, 248, 242)">{</span><span class="token imports"> __ </span><span class="token imports punctuation" style="color:rgb(248, 248, 242)">}</span><span class="token plain"> </span><span class="token keyword module" style="color:rgb(189, 147, 249);font-style:italic">from</span><span class="token plain"> </span><span class="token string" style="color:rgb(255, 121, 198)">'@wordpress/i18n'</span><span class="token punctuation" style="color:rgb(248, 248, 242)">;</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>To output your string, simply use it like this:</p>
+<div class="language-jsx codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-jsx codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token punctuation" style="color:rgb(248, 248, 242)">{</span><span class="token function" style="color:rgb(80, 250, 123)">__</span><span class="token punctuation" style="color:rgb(248, 248, 242)">(</span><span class="token string" style="color:rgb(255, 121, 198)">'Icon position'</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token string" style="color:rgb(255, 121, 198)">'project-name'</span><span class="token punctuation" style="color:rgb(248, 248, 242)">)</span><span class="token punctuation" style="color:rgb(248, 248, 242)">}</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>Alternative functions you can use are:</p>
+<ul>
+<li><code>_n</code> for singular/plural forms</li>
+<li><code>_nx</code> for singular/plural forms with <em>gettext</em> context</li>
+<li><code>_x</code> for a translated string with a <em>gettext</em> context</li>
+</ul>
+<p>You can refer to the <a href="https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/" target="_blank" rel="noopener noreferrer">block editor handbook</a> for more information on these functions.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="the-i18n-class">The I18n class<a href="https://eightshift.com/blog/making-your-project-multilingual#the-i18n-class" class="hash-link" aria-label="Direct link to The I18n class" title="Direct link to The I18n class">​</a></h2>
+<p>The easiest way to add I18n support to a project created with Eightshift boilerplate is by using the WP-CLI command:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">wp boilerplate create i18n</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>This command generated a new class inside the <code>src/I18n</code> folder. This class instructs WordPress to look for translations in <code>src/I18n/languages</code> with the textdomain defined as your project name. The next step is generating .po and .mo files that are used for translation.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="generating-pot-file">Generating .pot file<a href="https://eightshift.com/blog/making-your-project-multilingual#generating-pot-file" class="hash-link" aria-label="Direct link to Generating .pot file" title="Direct link to Generating .pot file">​</a></h2>
+<p>You can create a <code>.pot</code> (<em>Portable object template</em>) file by using WP-CLI. Run the following command in your project root:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">wp i18n make-pot</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>Alternatively, you can use tools like <a href="https://poedit.net/" target="_blank" rel="noopener noreferrer">Poedit</a> to generate a <code>.pot</code> file and generate translations from it later.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="translating-with-poedit">Translating with Poedit<a href="https://eightshift.com/blog/making-your-project-multilingual#translating-with-poedit" class="hash-link" aria-label="Direct link to Translating with Poedit" title="Direct link to Translating with Poedit">​</a></h2>
+<p>Once you have the <code>.pot</code> file, you can use Poedit to generate <code>.po</code> and <code>.mo</code> files that are used for translating hardcoded strings in your project. When generating the files, you can choose for which locale you're creating the translation for. For example, if you are creating a translation for the German language, your files should be named <code>de_DE.po</code> and <code>de_DE.mo</code>.</p>
+<p>After generating the files, go to <strong>Translation -&gt; Properties</strong> and navigate to the <strong>Sources Paths</strong> tab. Set the <em>Base path</em> to the theme folder path. In <em>Excluded paths</em> you can add folders like <code>node_modules</code>, <code>vendor</code>, and <code>public</code> to exclude external packages.</p>
+<p>In the <em>Sources keywords</em> tab you can set additional functions for use in your project for translations. Commonly used functions are:</p>
+<ul>
+<li><code>_e</code> for translating a string and echoing it</li>
+<li><code>__</code> for returning a translated string</li>
+<li><code>esc_html__</code> for returning a translated string which is escaped in a way it's safe to use within HTML</li>
+<li><code>esc_html_e</code> for echoing a translated string which is escaped in a way it's safe to use within HTML</li>
+<li><code>esc_attr__</code> for returning a translated string which is escaped in a way it's safe to use within an attribute</li>
+<li><code>esc_html_x</code> for returning a translated string which is escaped in a way it's safe to use within HTML, with a <em>gettext</em> context</li>
+<li><code>_n</code> for returning a translated string in a singular or plural form, based on the supplied number</li>
+</ul>
+<blockquote>
+<p>If you're missing a string in your <code>.po</code> file be sure to check which function is used for translation for that string, and that the function is added to <em>Sources keywords</em>.</p>
+</blockquote>
+<p>After updating the settings, click on <em>Update from source code</em> option to get the updated list of strings to translate.</p>
+<p>The translation process is simple. The left column represents the source text, and the right column the translation. When you have finished translating the strings, copy the <code>.po</code> and <code>.mo</code> files to the <code>src/I18n/languages</code> folder.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="js-translations">JS translations<a href="https://eightshift.com/blog/making-your-project-multilingual#js-translations" class="hash-link" aria-label="Direct link to JS translations" title="Direct link to JS translations">​</a></h2>
+<p>The process of translating strings in JS has a couple of extra steps.</p>
+<p>In order to translate strings in JS (e.g. Block editor strings), you will have to generate translation file. To do this, navigate to your <code>src/I18n/languages</code> folder and use the following WP-CLI command:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">wp i18n make-json &lt;po-file&gt; --no-purge</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>This will generate a <code>.json</code> file for each JS file present. The strings are extracted from <code>.po</code> files, so you'll already have the translations added. The <code>--no-purge</code> flag is used to keep the existing translations in the <code>.po</code> file.</p>
+<p>The method used for setting the script translations is <code>setScriptTranslations()</code> from the <code>I18n</code> class.</p>
+<p>The default way this works in Eightshift DevKit is that you need to have a single <code>.json</code> file with all the JS translations. If needed, you can either modify this method to read from multiple files, or just merge all the <code>.json</code> files into one.</p>
+<p>If using the default setup (everything in one file) follow this naming structure: <code>{textdomain}-{locale}-{handle}.json</code>.</p>
+<p>For example, if your <em>textdomain</em> is <code>project-name</code> and your locale is <code>de_DE</code>, your file should be named <code>project-name-de_DE-project-name-block-editor-scripts.json</code>.</p>
+<blockquote>
+<p>The block-related translations depend on the language the user has set in WP admin.</p>
+</blockquote>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="enabling-languages-and-content-translation">Enabling languages and content translation<a href="https://eightshift.com/blog/making-your-project-multilingual#enabling-languages-and-content-translation" class="hash-link" aria-label="Direct link to Enabling languages and content translation" title="Direct link to Enabling languages and content translation">​</a></h2>
+<p>If the website itself needs to support content in multiple languages, a plugin is a good option.</p>
+<p>The most common multi-language plugins are:</p>
+<ul>
+<li><strong>WPML</strong> - one of the most popular plugins on the market. It is a paid plugin, but offers a lot of advanced options.</li>
+<li><strong>Polylang</strong> - a free plugin (also has a paid <em>Pro</em> version).</li>
+</ul>
+<blockquote>
+<p>Explore other options as well, you might find a plugin that is a better fit for your project than WPML or Polylang.</p>
+</blockquote>
+<p>Most of the translation work will be done through the editor, since you'll need to translate the content on posts and pages.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="additional-resources">Additional resources<a href="https://eightshift.com/blog/making-your-project-multilingual#additional-resources" class="hash-link" aria-label="Direct link to Additional resources" title="Direct link to Additional resources">​</a></h2>
+<p>Internationalization (<em>I18n</em>) and Localization (<em>L10n</em>) are very broad topics, so it's impossible to cover everything in a single blog post.</p>
+<p>If you wish to know about the core I18n functionalities, or a bit more about how it is used in the Eightshift DevKit, here are a few resources which you may find interesting:</p>
+<ul>
+<li><a href="https://codex.wordpress.org/I18n_for_WordPress_Developers" target="_blank" rel="noopener noreferrer">WordPress Codex - I18n for WordPress Developers</a></li>
+<li><a href="https://eightshift.com/docs/basics/tips-tricks/#internationalization-i18n-and-localization-l10n" target="_blank" rel="noopener noreferrer">Eightshift Development kit documentation - Tips &amp; Tricks</a></li>
+<li><a href="https://infinum.com/handbook/wordpress/translations/localization" target="_blank" rel="noopener noreferrer">Infinum WordPress Handbook - Localization</a></li>
+</ul>]]></content>
+        <author>
+            <name>Igor Obradović</name>
+            <uri>https://github.com/iobrado</uri>
+        </author>
+        <category label="eightshift" term="eightshift"/>
+        <category label="boilerplate" term="boilerplate"/>
+        <category label="i18n" term="i18n"/>
+        <category label="multilingual" term="multilingual"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[How to use the Wrapper as a standalone component]]></title>
         <id>https://eightshift.com/blog/wrapper-as-a-standalone-component</id>
