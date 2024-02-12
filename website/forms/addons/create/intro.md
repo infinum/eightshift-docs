@@ -3,4 +3,4 @@ id: intro
 title: Intro
 ---
 
-**Coming soon**
+*Coming soon*
