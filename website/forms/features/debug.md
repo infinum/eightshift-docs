@@ -22,7 +22,7 @@ After the form is successfully submitted, all fields will be reset to their orig
 
 ## Developer mode
 
-Enabling the developer mode will provide various small yet helpful features to simplify the debugging process.
+Enabling the developer mode will provide various small yet helpful features to simplify the debugging process. List of all features is available on the plugin settings page.
 
 ## Stop form syncing
 
