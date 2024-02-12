@@ -357,6 +357,7 @@ module.exports = {
 			'tutorials/playlist',
 		],
 		'Addon plugins': [
+			'addons/intro',
 			{
 				'type': 'category',
 				'label': 'Premium',
@@ -366,6 +367,8 @@ module.exports = {
 						'label': 'Computed fields',
 						'items': [
 							'addons/premium/computed-fields/intro',
+							'addons/premium/computed-fields/how-to-use',
+							'addons/premium/computed-fields/data-flow',
 						],
 					},
 				],
