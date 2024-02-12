@@ -30,6 +30,7 @@ module.exports = {
 						'features/country-list',
 						'features/wpml',
 						'features/entries',
+						'features/show-as',
 					],
 				],
 			},
