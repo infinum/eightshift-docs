@@ -55,7 +55,7 @@ The field name will match the mapped fields on every form in your project.
 If a user doesn't finish submitting a form, the enrichment prefill feature remembers their inputs in localStorage. When they visit the form again, the prefill feature will automatically input the previous data. However, if the form is successfully submitted, this data will be erased.
 
 :::caution
-It is important to note that this feature needs to be disclosed in your privacy policy page.
+It is important to disclose this in your site's Privacy policy.
 :::
 
 ![Enrichment prefill storage map screen](/img/forms/enrichment-storage.webp)
@@ -65,7 +65,7 @@ It is important to note that this feature needs to be disclosed in your privacy 
 The same as prefill from storage, prefill from URL will prefill the form fields if the user has data in the URL. This way, your form can be shared with prefilled data.
 
 :::caution
-It is important to note that this feature needs to be disclosed in your privacy policy page.
+It is important to disclose this in your site's Privacy policy.
 :::
 
 ![Enrichment prefill url map screen](/img/forms/enrichment-url.webp)
