@@ -7,7 +7,7 @@ title: Blocks
 
 Once you create your valid program and populate output variables, you should provide a [thank you](/forms/features/success-redirect) page in the `General settings`.
 
-You can add a new `computed fields results` block on the `thank you` page and provide condition options.
+You can add a new `computed fields results` block on the _Thank you_ page and provide condition options.
 
 Under `variable name`, you can provide the name of any variable defined in the `output variables`.
 
@@ -18,6 +18,6 @@ When the results block is used, you can `show` any block or multiple blocks when
 ![Computed Fields screen](/img/forms/addon-computed-fields-results.webp)
 
 :::note
-Computed fields program result is passed to the thank you page using `GET` variable `es-data`.
-The value passed using the `GET` variable is encoded and can be decoded using the `esFormsDecryptor` function.
+Computed fields program result is passed to the thank you page using the `es-data` GET parameter.
+The passed value is encrypted and can be decrypted using the `esFormsDecryptor` function.
 :::

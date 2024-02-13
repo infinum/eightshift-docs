@@ -3,11 +3,11 @@ id: intro
 title: Intro
 ---
 
-Addon Computed Fields is a plugin add-on which provides computed fields functionality to the Eightshift Forms plugin. You can utilize advanced calculations using specialized PHP programming language syntax with forms data and display the result to the user.
+Computed Fields add-on provides the ability to do more advanced calculations and complex logic using a custom, PHP-based programming language. Multiple output variables can be set to further customize the output.
 
 ## What are Computed Fields?
 
-Forms computed language (FCL) is a subset of PHP designed to be safe to execute when the code is arbitrary user input, while allowing users to manipulate variables, use flow control features and run functions.
+_Forms computed language_ (FCL) is a subset of PHP designed to be safe to execute when the code entered is arbitrary user input, while allowing users to manipulate variables, use flow control features and run functions.
 
 It relies on `@nikic/php-parser` to produce an abstract syntax tree, and implements a `virtual machine` for evaluating a subset of PHP tokens in a safe manner in PHP.
 
@@ -32,4 +32,4 @@ It relies on `@nikic/php-parser` to produce an abstract syntax tree, and impleme
 * OOP and namespaces
 * References and unpacking
 * Superglobals (`$_GET` etc.)
-* Output to stdout, files etc. (you can not echo anything)
+* Output to `stdout`, files etc. (you can not echo anything)

@@ -8,4 +8,4 @@ title: Intro
 
 ## How to purchase?
 
-All premium plugins are not publicly available but can be purchased. If you're interested in any premium plugins, please get in touch with our [support email](mailto:support.eightshift-forms@infinum.com) for further instructions.
+Premium plugins are not included with Eightshift Forms and have to be purchased separately. For more info, [drop us an e-mail](mailto:support.eightshift-forms@infinum.com).

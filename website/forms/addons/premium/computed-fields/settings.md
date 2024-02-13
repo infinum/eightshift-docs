@@ -5,59 +5,51 @@ title: Settings
 
 ## Computed fields setting
 
-In this field, you write your program using a valid PHP language. Keep in mind that not all PHP features are available.
+Here you can input your FCL program. Check the _Computed fields intro_ chapter for the list of supported features.
 
-Under `Available field names, ` you can find a list of all fields defined inside your Block Editor and available as variables.
+_Available field names_ show all the form fields whose outputs are available as variables that can be used in an FCL program.
 
-For example, if you have the field named `email`, you can use that field name as a variable to get the field value as `$email`.
+For example, if you have a field named `email`, you can use `$email` to get that field's value.
 
 :::caution
-If your field name contains special characters or spaces, we will convert it to `camelCase` and remove any special characters.
+If a field name contains special characters or spaces, use the `camelCased` version of the name for the variable. For example, `my-field` becomes `$myField`.
 :::
 
 :::note
-This field supports a `code editor` experience, where you can use `tabs`, `undo`, and `syntax highlight`.
+The code editor supports syntax highlighting, undos and indenting with tabs.
 :::
 
 ![Computed Fields settings 1 screen](/img/forms/addon-computed-fields-settings1.webp)
 
 ## Output variables setting
 
-You must provide the variables you want to send as output data to prevent internal program variables from populating output data. The number of variables you can output is unlimited.
+The variables sent as output data of an FCL program need to be specified manually. There is no limit for number of variables that can be output.
 
 :::caution
-Every variable must be defined with a `$` sign and in a separate row.
+Specify one variable per line and prefix each with `$`.
 :::
 
 ![Computed Fields settings 2 screen](/img/forms/addon-computed-fields-settings2.webp)
 
 ## Fake fields setting
 
-Fake fields will never be used on any front-end forms. They are here only for testing purposes. You can test all possible combinations for your program by providing different field values.
-
-:::caution
-Fake fields support `JSON` format data.
-:::
+_Fake fields_ allow you to test an FCL program by providing test input data in JSON format. They will not be used on any user-facing forms.
 
 :::note
-This field supports a `code editor` experience, where you can use `tabs`, `undo`, and `syntax highlight`.
+The code editor supports syntax highlighting, undos and indenting with tabs.
 :::
 
 ![Computed Fields settings 3 screen](/img/forms/addon-computed-fields-settings3.webp)
 
 ## Test your program
 
-The Addon plugin allows you to test your program without frontend forms from the WordPress admin.
-To use it, you must:
+In order to test an FCL program without having to build a form follow these steps:
 
-* Populate the `Computed fields` program.
-* Populate `Output variables` fields.
-* Populate `Fake fields` in the settings.
-* Save settings
-* Click `Test Computed` and preview program output under the `Output log` field.
+* Add the FCL program in the _Computed fields_ field.
+* Populate _Output variables._
+* Add test data into _Fake fields._
+* Save the settings
+* Click the _Test Computed_ button and check the _Output log._
 
-:::caution
-To test the computed field program, save all the settings and click the test button.
-:::
 
 ![Computed Fields settings 4 screen](/img/forms/addon-computed-fields-settings4.webp)
