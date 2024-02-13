@@ -358,15 +358,28 @@ module.exports = {
 			'tutorials/playlist',
 		],
 		'Addon plugins': [
+			'addons/intro',
+			{
+				'type': 'category',
+				'label': 'Free',
+				'items': [
+					'addons/free/intro',
+				],
+			},
 			{
 				'type': 'category',
 				'label': 'Premium',
 				'items': [
+					'addons/premium/intro',
 					{
 						'type': 'category',
 						'label': 'Computed fields',
 						'items': [
 							'addons/premium/computed-fields/intro',
+							'addons/premium/computed-fields/how-to-use',
+							'addons/premium/computed-fields/settings',
+							'addons/premium/computed-fields/blocks',
+							'addons/premium/computed-fields/data-flow',
 						],
 					},
 				],
@@ -376,6 +389,9 @@ module.exports = {
 				'label': 'Create an addon',
 				'items': [
 					'addons/create/intro',
+					'addons/create/utils-library',
+					'addons/create/requirements',
+					'addons/create/addon-boilerplate',
 				],
 			},
 		],
