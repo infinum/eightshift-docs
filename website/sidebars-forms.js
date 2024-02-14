@@ -54,6 +54,7 @@ module.exports = {
 					'integrations/pipedrive',
 				],
 			},
+			'known-issues',
 		],
 		'Customization': [
 			{
@@ -318,6 +319,14 @@ module.exports = {
 									'php/filters/admin/settings-data',
 								],
 							},
+						],
+					},
+					{
+						'type': 'category',
+						'label': 'Actions',
+						'items': [
+							'php/actions/how-to-use',
+							'php/actions/migrations',
 						],
 					},
 				],

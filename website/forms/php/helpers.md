@@ -72,3 +72,13 @@ if (\function_exists('esFormRenderForm')) {
   echo esFormRenderForm('<formId>', '[<attributes>]');
 }
 ```
+
+### esFormGetEntry
+
+If you need to retrieve form entry data, you can use this helper by providing entry unique ID.
+
+```php
+if (\function_exists('esFormGetEntry')) {
+  $entry = esFormGetEntry('<entryId>');
+}
+```

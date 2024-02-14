@@ -39,3 +39,9 @@ If you encounter issues with PHP functions, you can debug them using the Query M
 ## Enable disabled fields admin overrides
 
 Administrators usually cannot modify global constants stored in `wp-config.php`. However, enabling this toggle will bypass this restriction, allowing easier debugging.
+
+## Debug Encrypt
+
+We have implemented a custom encryption/decryption debug tool for sensitive data. This toggle will allow you to see the encrypted data in the browser console. This is useful for debugging and testing purposes when using variations on the success redirect pages.
+
+![Debug encrypt screen](/img/forms/debug-encrypt.webp)
