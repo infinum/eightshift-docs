@@ -17,7 +17,7 @@ All helpers are located inside the `EightshiftFormsAddonComputedFieldsVendor\Eig
 
 ## Example usage
 
-In this example we will how to get settings names.
+In this example we will show how to get settings names.
 
 ```php
 use EightshiftFormsAddonComputedFieldsVendor\EightshiftFormsUtils\Helpers\UtilsSettingsHelper;
