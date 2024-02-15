@@ -44,12 +44,6 @@ module.exports = {
 					position: 'right',
 				},
 				{
-					to: '/sass',
-					activeBasePath: 'sass',
-					label: 'SCSS',
-					position: 'right',
-				},
-				{
 					to: '/blog',
 					activeBasePath: 'blog',
 					label: 'Blog',

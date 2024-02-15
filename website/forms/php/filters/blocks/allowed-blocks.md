@@ -10,7 +10,7 @@ Useful if you want to ensure that a custom block (e.g. from an add-on) is visibl
 \add_filter('es_forms_blocks_allowed_blocks', [$this, 'getAllowedBlocks']);
 
 /**
- * Override the allowed blocks list and provide addon block.
+ * Override the allowed blocks list and provide add-on block.
  *
  * @return array<int, string> List of blocks.
  */
