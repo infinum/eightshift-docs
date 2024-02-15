@@ -3,15 +3,15 @@ id: requirements
 title: Requirements
 ---
 
-## Addon naming convention
+## Add-on naming convention
 
-When creating a new addon, you should follow the naming convention. The name of the addon should be in the format `eightshift-forms-addon-<addon-name>`. For example, if you are creating an addon for computed fields, the name of the addon should be `eightshift-forms-addon-computed-fields`.
+When creating a new add-on, you should follow the naming convention. The name of the add-on should be in the format `eightshift-forms-addon-<addon-name>`. For example, if you are creating an add-on for computed fields, the name of the add-on should be `eightshift-forms-addon-computed-fields`.
 
-Based on the this example addon plugin folder name should be `eightshift-forms-addon-computed-fields` and the main file should be `eightshift-forms.php`.
+Based on the this example add-on plugin folder name should be `eightshift-forms-addon-computed-fields` and the main file should be `eightshift-forms.php`.
 
-## Addon trigger action
+## Add-on trigger action
 
-In order to be sure that your addon is loaded after the main plugin is loaded, you need to have trigger the addon plugin main plugin action on the custom action hook. This is done by adding the following code to the `main.php` file and the action name is `es_forms_loaded`.
+In order to be sure that your add-on is loaded after the main plugin is loaded, you need to have trigger the add-on plugin main plugin action on the custom action hook. This is done by adding the following code to the `main.php` file and the action name is `es_forms_loaded`.
 
 ```php
 /**
@@ -30,9 +30,9 @@ In order to be sure that your addon is loaded after the main plugin is loaded, y
 	}
 ```
 
-## Addon dependency
+## Add-on dependency
 
-In order to ensure that your addon is working properly, you need to have the main plugin installed. When you uninstall the main plugin, all addons should be uninstalled as well. Also you will not be able to activate the addon if the main plugin is not installed. 
+In order to ensure that your add-on is working properly, you need to have the main plugin installed. When you uninstall the main plugin, all add-ons should be uninstalled as well. Also you will not be able to activate the add-on if the main plugin is not installed. 
 
 To make sure that the user gets the notification that the main plugin is not active, you need to add the following code to the `main.php` file.
 
@@ -94,12 +94,12 @@ Another thing to consider is that, by default, the main form JavaScript is loade
 	 */
 	public function register(): void
 	{
-		// Make addon scripts fired before main plugin scripts.
+		// Make add-on scripts fired before main plugin scripts.
 		\add_filter(UtilsHooksHelper::getFilterName(['scripts', 'dependency', 'admin']), [$this, 'getScriptsDependency']);
 	}
 
 	/**
-	 * Make addon scripts fired before main plugin scripts.
+	 * Make add-on scripts fired before main plugin scripts.
 	 *
 	 * @return array<int, string>
 	 */
@@ -122,12 +122,12 @@ Another thing to consider is that, by default, the main form JavaScript is loade
 	 */
 	public function register(): void
 	{
-		// Make addon scripts fired before main plugin scripts.
+		// Make add-on scripts fired before main plugin scripts.
 		\add_filter(UtilsHooksHelper::getFilterName(['scripts', 'dependency', 'blocksEditor']), [$this, 'getScriptsDependency']);
 	}
 
 	/**
-	 * Make addon scripts fired before main plugin scripts.
+	 * Make add-on scripts fired before main plugin scripts.
 	 *
 	 * @return array<int, string>
 	 */
@@ -148,7 +148,7 @@ If you need to add custom CSS or JavaScript to your add-on, you should change we
 
 If you need to add custom blocks to your add-on, you should use the `Blocks` folder and the `Blocks/Blocks.php` file.
 
-With this function we are overriding the allowed blocks list and providing the addon block to be used in the block editor.
+With this function we are overriding the allowed blocks list and providing the add-on block to be used in the block editor.
 
 ```php
 	/**
@@ -161,12 +161,12 @@ With this function we are overriding the allowed blocks list and providing the a
 		// Register all utility hooks.
 		parent::register();
 
-		// Override the allowed blocks list and provide addon block.
+		// Override the allowed blocks list and provide add-on block.
 		\add_filter(UtilsHooksHelper::getFilterName(['blocks', 'allowedBlocks']), [$this, 'getAddonBlocks']);
 	}
 
 	/**
-	 * Override the allowed blocks list and provide addon block.
+	 * Override the allowed blocks list and provide add-on block.
 	 *
 	 * @return array<int, string> List of blocks.
 	 */

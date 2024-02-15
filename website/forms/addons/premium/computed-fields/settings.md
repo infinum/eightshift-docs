@@ -16,7 +16,7 @@ If a field name contains special characters or spaces, use the `camelCased` vers
 :::
 
 :::note
-The code editor supports syntax highlighting, undos and indenting with tabs.
+The code editor supports syntax highlighting, undo and indenting with tabs.
 :::
 
 ![Computed Fields settings 1 screen](/img/forms/addon-computed-fields-settings1.webp)
@@ -36,7 +36,7 @@ Specify one variable per line and prefix each with `$`.
 _Fake fields_ allow you to test an FCL program by providing test input data in JSON format. They will not be used on any user-facing forms.
 
 :::note
-The code editor supports syntax highlighting, undos and indenting with tabs.
+The code editor supports syntax highlighting, undo and indenting with tabs.
 :::
 
 ![Computed Fields settings 3 screen](/img/forms/addon-computed-fields-settings3.webp)

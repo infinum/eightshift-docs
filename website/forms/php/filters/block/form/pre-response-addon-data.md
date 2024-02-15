@@ -1,6 +1,6 @@
 ---
 id: pre-response-addon-data
-title: Pre-Response Addon Data
+title: Pre-Response add-on Data
 ---
 
 Allows adding custom data to the API response when the form is submitted.
