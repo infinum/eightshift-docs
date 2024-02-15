@@ -38,7 +38,7 @@ We use maps for a lot of stuff in our boilerplate. The reason is that:
 * you can have multiple values with the same name and just change the top-level map,
 * etc.
 
-We also have many helpers, which you can check in our [SASS docs](/sass).
+We also have many helpers, which you can check in our [SASS docs](/docs/basics/library).
 
 In the component map, you should only add things that you will reuse in your component.
 
