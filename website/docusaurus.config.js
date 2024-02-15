@@ -44,7 +44,7 @@ module.exports = {
 					position: 'right',
 				},
 				{
-					to: '/sass',
+					to: 'docs/basics/library',
 					activeBasePath: 'sass',
 					label: 'SCSS',
 					position: 'right',
@@ -112,7 +112,7 @@ module.exports = {
 		},
 		prism: {
 			theme: darkTheme,
-			additionalLanguages: ['php'],
+			additionalLanguages: ['php', 'scss', 'css'],
 		},
 		colorMode: {
 			defaultMode: 'light',
@@ -166,7 +166,7 @@ module.exports = {
 				path: 'forms',
 				routeBasePath: 'forms',
 				sidebarPath: require.resolve('./sidebars-forms.js'),
-			}, 
+			},
 		],
 	],
 	customFields: {
@@ -180,5 +180,5 @@ module.exports = {
 			'devkit'
 		],
 		image: 'img-why-boilerplate@2x.png',
-	}
+	},
 };
