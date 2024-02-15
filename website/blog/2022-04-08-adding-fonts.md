@@ -82,7 +82,7 @@ Next, you can create a new file called **__typography.scss_** inside your **_/as
 @include font-face(global-settings(secondaryFont), 'NotoSerif-Italic', 400, italic);
 @include font-face(global-settings(secondaryFont), 'NotoSerif-Regular', 400);
 ```
-If you would like to know more about the `font-face` mixin, you can take a look at our [Sass documentation](/sass).
+If you would like to know more about the `font-face` mixin, you can take a look at our [Sass documentation](/docs/basics/library).
 
 Because this is a new file, we have to include it. You can do that inside **_/assets/styles/parts/\_shared.scss_** file:
 ```scss

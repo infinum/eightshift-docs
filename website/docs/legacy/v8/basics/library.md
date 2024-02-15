@@ -11,7 +11,7 @@ For years, we have collected a list of them. At one point, we felt it was ineffe
 
 Check out our documentation and import what you need from Eightshift Frontend Libs.
 
-**Visit [SassDocs](/sass) for more details.**
+**Visit [SassDocs](/docs/basics/library) for more details.**
 
 ## How to use it
 
