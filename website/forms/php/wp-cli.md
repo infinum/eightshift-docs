@@ -20,8 +20,8 @@ After adding a custom stylesheet, make sure to deactivate built-in styles in Glo
 :::
 
 ``` bash
-wp eightshift-forms esf copy_stylesheet_set
+wp eightshift-forms copy_stylesheet_set
 ```
 
 **Available options**:
-* `--additional-path=<additional-path>` - Set additional path relative from the active theme. Example. `src/Block/components/`.
+* `--additional-path=<additional-path>` - Set additional path relative from the active theme. Example. `src/Blocks/components`.
