@@ -32,3 +32,10 @@ Airtable is an platform that makes it easy to build powerful, custom application
 * Single Select
 * Multiple Choices
 * Checkbox
+* Currency 
+* MultipleRecordLinks
+
+:::caution
+The Airtable MultipleRecordLinks field relies on the Airtable API to create records in a linked table.
+To optimize the performance of forms, you cannot change/preview these records in the backend. They are pulled and displayed only in the frontend.
+:::
