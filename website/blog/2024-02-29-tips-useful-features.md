@@ -13,7 +13,7 @@ Eightshift DevKit has lots of features that can make your development experience
 
 ## Using only Eightshift blocks
 
-If you want to remove the default Gutenberg blocks and use only Eightshift blocks, it’s as easy as adding the following code in your src/Blocks/Blocks.php file:
+If you want to remove the default Gutenberg blocks and use only Eightshift blocks, it’s as easy as adding the following code in your **_src/Blocks/Blocks.php_** file:
 
 ```php
 // Limits the usage of only custom project blocks.
@@ -22,7 +22,7 @@ If you want to remove the default Gutenberg blocks and use only Eightshift block
 
 ## ModifyAdminAppearance class
 
-When you have multiple environments, you may accidentally change something on the wrong environment. The `ModifyAdminAppearance` class changes your WP Admin color scheme depending on the environment type defined with the `WP_ENVIRONMENT_TYPE` constant. That way it’s much easier to differentiate on which environment are you.
+When you have multiple environments, you may accidentally change something on the wrong environment. The `ModifyAdminAppearance` class changes your WP Admin color scheme depending on the environment type defined with the `WP_ENVIRONMENT_TYPE` constant. That way it’s much easier to differentiate on which environment you are when you're in WP Admin.
 
 Now when you get a call from the client asking you why the blog post they published isn’t visible on the site, the first question you can ask is: “What color is the admin area?” 😄
 
@@ -41,13 +41,15 @@ The supported values are:
 - staging
 - production
 
+![Different color schemes in WP Admin depending on the environment](/img/blog/modify-admin-appearance.webp)
+
 If you want to change any of the colors, you can do so by modifying the values in `COLOR_SCHEMES` array inside `ModifyAdminAppearance` class.
 
 ## EscapedView class
 
-This class can be used to define which tags and attributes are escaped or allowed in your project. To add it the class your project, use the following WP-CLI command:
+This class can be used to define which tags and attributes are escaped or allowed in your project. To add the class into your project, use the following WP-CLI command:
 
-```php
+```bash
 wp boilerplate create escaped-view
 ```
 
@@ -55,7 +57,7 @@ Here’s an example how to define the allowed tags so `wp_kses` doesn’t remove
 
 ```php
 	/**
-	 * Add tags to Allowed HTML list.
+	 * Add tags to allowed HTML list.
 	 *
 	 * @param array<string, array<mixed>> $tags Allowed tags.
 	 *
@@ -89,7 +91,7 @@ Here’s an example how to define the allowed tags so `wp_kses` doesn’t remove
 Don’t forget to add this action to the `register` method:
 
 ```php
-**\add_filter('wp_kses_allowed_html', [$this, 'ksesAllowedHtml'], 20, 1);**
+\add_filter('wp_kses_allowed_html', [$this, 'ksesAllowedHtml'], 20, 1);
 ```
 
 ## Media class
@@ -126,11 +128,11 @@ And register the filter:
 \add_filter('upload_mimes', [$this, 'enableMimeTypes']);
 ```
 
-This class also supports converting your media into ***.webp*** format, but more on that below.
+This class also supports converting your media into **_WebP_** format, but more on that below.
 
-## Webp conversion
+## WebP conversion
 
-The .webp file format is becoming more and more popular, with it’s smaller file sizes and better compression, it is a preferred replacement to .jpg and .png formats. Eightshift DevKit supports converting your existing files to .webp format.
+The WebP file format is becoming more and more popular, with its smaller file sizes and better compression, it is a preferred replacement to .jpg and .png formats. Eightshift DevKit supports converting your existing files to WebP format.
 
 If you already have the Media class in your project, you need to run the next WP-CLI commands:
 
@@ -138,16 +140,18 @@ If you already have the Media class in your project, you need to run the next WP
 wp boilerplate create webp-media-column
 ```
 
-This command will add a new column in your ***List view*** in Media Library that shows if the media is converted to .webp or not.
+This command will add a new column in your ***List view*** in Media Library that shows if the media is converted to WebP or not.
 
-To enable webp and convert existing media to webp, run the following commands:
+![WebP column in Media Library](/img/blog/webp-column.webp)
+
+To enable and convert existing media to WebP, run the following commands:
 
 ```bash
 wp boilerplate run use-webp-media
 wp boilerplate run regenerate-media
 ```
 
-After running these commands, you’ll have your images converted to webp. Please note that the original files will not be deleted and you’ll have to add additional logic to your Image component for replacing the URLs. Here’s a simple example how to do it:
+After running these commands, you’ll have your images converted to WebP. Please note that the original files will not be deleted and you’ll have to add additional logic to your Image component for replacing the URLs. Here’s a simple example how to do it:
 
 ```php
 // Check if webP is used from admin.
@@ -165,7 +169,7 @@ if ($isWebPUsed) {
 
 ## Dynamic cookies for WP Rocket
 
-This is quite useful when you have a GDPR plugin and you have to take the cookie value into consideration when serving the cached version of the site depending on the cookie value.
+This is quite useful when you have a GDPR plugin and you have to take the cookie value into consideration when serving the cached version of the site.
 
 To add the GDPR cookie to the list of dynamic cookies, create a new class called Rocket with the following WP-CLI command:
 
@@ -173,7 +177,7 @@ To add the GDPR cookie to the list of dynamic cookies, create a new class called
 wp boilerplate create service-example --folder=Plugins/Rocket --file_name=Rocket
 ```
 
-Add the following method to the Rocket class
+Add the following method to the Rocket class:
 
 ```php
 	/**
@@ -199,7 +203,7 @@ Finally, add the following filter to the `register` method:
 
 ## Yoast SEO helper
 
-The content generated by Eightshift blocks may be difficult for Yoast SEO to interpret, but there is a Yoast SEO helper included in our DevKit that fixes the issue and makes the content readable to Yoast SEO. To enable this, you have to add the following in ….:
+The content generated by Eightshift blocks may be difficult for Yoast SEO to interpret, but there is a Yoast SEO helper included in our DevKit that fixes the issue and makes the content readable to Yoast SEO. To enable this, you have to add the following in **_src/Blocks/assets/scripts/application-blocks-editor.js_**:
 
 ```jsx
 import { yoastSeo } from '@eightshift/frontend-libs/scripts/plugins';
@@ -213,7 +217,7 @@ yoastSeo();
 
 Eightshift DevKit includes coding standards checks that will help you improve your code quality.
 
-The commands for running these checks have to be in the theme root folder. Here’s the list:
+To run these commands, you have to be in the theme root folder. Here’s the list:
 
 - `npm run lintStyle` - check your CSS files with StyleLint
 - `npm run lintJs` - check your JS files with ESLint
