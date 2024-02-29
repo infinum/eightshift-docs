@@ -88,7 +88,7 @@ Here’s an example how to define the allowed tags so `wp_kses` doesn’t remove
 	}
 ```
 
-Don’t forget to add this action to the `register` method:
+Don’t forget to add this to the `register` method:
 
 ```php
 \add_filter('wp_kses_allowed_html', [$this, 'ksesAllowedHtml'], 20, 1);
@@ -134,7 +134,7 @@ This class also supports converting your media into **_WebP_** format, but more 
 
 The WebP file format is becoming more and more popular, with its smaller file sizes and better compression, it is a preferred replacement to .jpg and .png formats. Eightshift DevKit supports converting your existing files to WebP format.
 
-If you already have the Media class in your project, you need to run the next WP-CLI commands:
+If you already have the Media class in your project, you need to run this WP-CLI command:
 
 ```bash
 wp boilerplate create webp-media-column
