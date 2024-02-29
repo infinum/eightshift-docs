@@ -22,7 +22,7 @@ If you want to remove the default Gutenberg blocks and use only Eightshift block
 
 ## ModifyAdminAppearance class
 
-When you have multiple environments, you may accidentally change something on the wrong environment. The `ModifyAdminAppearance` class changes your WP Admin color scheme depending on the environment type defined with the `WP_ENVIRONMENT_TYPE` constant. That way it’s much easier to differentiate on which environment you are when you're in WP Admin.
+When you have multiple environments (local, staging, production ...), you may accidentally change something on the wrong environment if you mix up your tabs. The `ModifyAdminAppearance` class changes your WP Admin color scheme depending on the environment type defined with the `WP_ENVIRONMENT_TYPE` constant. That way it’s much easier to differentiate on which environment you are when you're in WP Admin.
 
 Now when you get a call from the client asking you why the blog post they published isn’t visible on the site, the first question you can ask is: “What color is the admin area?” 😄
 
@@ -88,6 +88,9 @@ Here’s an example how to define the allowed tags so `wp_kses` doesn’t remove
 	}
 ```
 
+> ⚠️ **Note**
+> Please be vary of attributes you're allowing, as that could expose your website to cross-site-scripting (XSS) and similar attacks!
+
 Don’t forget to add this to the `register` method:
 
 ```php
@@ -130,9 +133,9 @@ And register the filter:
 
 This class also supports converting your media into **_WebP_** format, but more on that below.
 
-## WebP conversion
+## Automatic WebP conversion
 
-The WebP file format is becoming more and more popular, with its smaller file sizes and better compression, it is a preferred replacement to .jpg and .png formats. Eightshift DevKit supports converting your existing files to WebP format.
+The WebP file format is becoming more and more popular, with its smaller file sizes and better compression, it is a preferred replacement for .jpg and .png formats. Eightshift DevKit supports converting your existing files to WebP format.
 
 If you already have the Media class in your project, you need to run this WP-CLI command:
 
@@ -151,7 +154,11 @@ wp boilerplate run use-webp-media
 wp boilerplate run regenerate-media
 ```
 
-After running these commands, you’ll have your images converted to WebP. Please note that the original files will not be deleted and you’ll have to add additional logic to your Image component for replacing the URLs. Here’s a simple example how to do it:
+After running these commands, you’ll have your images converted to WebP. Some formats like `svg` will not be converted, this is intended.
+
+Please note that the original files will not be deleted and you’ll have to add additional logic to your Image component for replacing the URLs.
+
+Here’s a simple example how to do it:
 
 ```php
 // Check if webP is used from admin.
