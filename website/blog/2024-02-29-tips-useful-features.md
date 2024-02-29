@@ -103,7 +103,7 @@ Here’s an example how to define the allowed tags so `wp_kses` doesn’t remove
 ```
 
 :::caution
-Please be vary of attributes you're allowing, as that could expose your website to cross-site-scripting (XSS) and similar attacks!
+Please be wary of the attributes you allow, as this could expose your website to cross-site scripting (XSS) and similar attacks!
 :::
 
 Don’t forget to add this to the `register` method:
