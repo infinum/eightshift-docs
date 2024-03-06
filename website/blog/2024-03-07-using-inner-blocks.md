@@ -15,13 +15,13 @@ InnerBlocks in WordPress enable the creation of nested block structures within t
 
 Use of inner blocks allows for more flexibility when building content. Let’s say you’re building a simple two-column layout with image on one side and content on the other side. You can define the components that will be used (e.g. header, paragraph, list, button) and then just toggle the ones you don’t need.
 
-This approach works perfectly fine when you have a strict layout and don’t want larger content structure variations. Using inner blocks may introduce a bit more complexity - both for developers and content editors, but ultimately gives the editors much more freedom.
+This approach works perfectly fine when you have a strict layout and don’t need larger content structure variations. Using inner blocks may introduce a bit more complexity - both for developers and content editors, but ultimately gives the editors much more freedom.
 
-Another example where inner blocks are used is the Carousel block. Using inner blocks allows you to add as many slides as you like in your carousel. Let’s not forget about Columns and Group blocks. These also use inner blocks.
+Another example where inner blocks are used is the Carousel block. Using inner blocks allows you to add as many slides as you'd like in your carousel. Let’s not forget about Columns and Group blocks. These also use inner blocks.
 
 ## Adding inner block support
 
-The example used in this blog post is a two-column Card that was made for one project. First thing that needs to be updated is the ***manifest.json*** file. For the sake of simplicity and not having too much code, the parts that aren’t related to the inner blocks have been removed.
+The example used in this blog post is a two-column Card that was made for a project. First thing that needs to be updated is the ***manifest.json*** file. For the sake of simplicity and not having too much code, the parts that aren’t related to the inner blocks have been removed.
 
 ```json
 {
@@ -78,7 +78,7 @@ export const CardTwoColumnEditor = ({ attributes, setAttributes, clientId }) => 
 };
 ```
 
-The `InnerBlocks` component comes from Gutenberg. In order to limit the allowed blocks, we need to pass the the list of allowed inner blocks to the `allowedBlocks` attribute. If your inner blocks should be laid out horizontally in the editor, instead of vertically, you can pass `orientation='horizontal'`.
+The `InnerBlocks` component comes from Gutenberg. In order to limit the allowed blocks, we need to pass the list of allowed inner blocks to the `allowedBlocks` attribute. If your inner blocks should be laid out horizontally in the editor, instead of vertically, you can pass `orientation='horizontal'`.
 
 `renderAppender` prop allows passing a custom block insert button. Due to relatively frequent changes in Gutenberg, a custom `BlockInserter` element is available in Frontend libs as a replacement, and can be passed to `InnerBlocks`.
 
@@ -130,7 +130,7 @@ Keep in mind this helper allows you to set any attribute that the inner block su
 
 ### overrideInnerBlockSimpleWrapperAttributes
 
-The `overrideInnerBlockSimpleWrapperAttributes` sets up a simple wrapper to all inner blocks. This is similar to the helper method above, but already has predefined attributes for simple wrapper, so if you only want to set up simple wrapper, you don’t have to add the attributes manually.
+The `overrideInnerBlockSimpleWrapperAttributes` sets up a simple wrapper to all inner blocks. This is similar to the helper method above, but already has predefined attributes for simple wrapper, so if you only want to set up the simple wrapper, you don’t have to add the attributes manually.
 
 ```jsx
 
