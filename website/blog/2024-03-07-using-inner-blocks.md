@@ -49,9 +49,11 @@ The example used in this blog post is a two-column Card that was made for one pr
 
 The `hasInnerBlocks` key defines that this block supports inner blocks. The `innerBlocksDependency` is not mandatory, but it can be used to add inner blocks automatically. You can see an example of using it in the Columns block `editor.js` file.
 
-In case we need to limit the use of inner blocks, we can do so by defining the allowed blocks inside attributes. The attribute name should be in the format `{blockName}AllowedBlocks`. To define the allowed blocks, simply add the full block names in the `default` key array, as shown in the example.
+In case we need to limit which blocks can be added inside inner blocks, we can do so with an attribute. Usually, the attribute is named `{blockName}AllowedBlocks`. Set the default value as an array of strings that represent block names you want to allow.
 
-The next step is to add inner block support to the `{block-name}-editor.js` file. Here’s an example of the code related only to the inner blocks:
+Please note that the block names must include the block namespace! (`eightshift-boilerplate` by default, check in Global manifest)
+
+Now you need to pass the alllowed blocks attribute into the `InnerBlocks` component In the `{block-name}-editor.js` file. Here’s an example of the code related only to the inner blocks:
 
 ```jsx
 import { InnerBlocks } from '@wordpress/block-editor';
@@ -69,17 +71,16 @@ export const CardTwoColumnEditor = ({ attributes, setAttributes, clientId }) => 
 			<InnerBlocks
 				allowedBlocks={(typeof cardTwoColumnAllowedBlocks === 'undefined') || cardTwoColumnAllowedBlocks}
 				orientation='vertical'
-				renderAppender={() => <BlockInserter clientId={clientId} hasLabel additionalClasses='es-mb-6' />}
+				renderAppender={() => <BlockInserter clientId={clientId} />}
 			/>
 		</div>
-
 	);
 };
 ```
 
-The `InnerBlocks` element is the default one from the Gutenberg editor. In order to limit the allowed blocks, we need to pass the attribute that contains the list of allowed inner blocks. The `orientation` prop determines if the inner blocks will be displayed horizontally or vertically in the editor.
+The `InnerBlocks` component comes from Gutenberg. In order to limit the allowed blocks, we need to pass the the list of allowed inner blocks to the `allowedBlocks` attribute. If your inner blocks should be laid out horizontally in the editor, instead of vertically, you can pass `orientation='horizontal'`.
 
-For the `renderAppender` prop, a custom `BlockInserter` element is used. This is a replacement for the default Gutenberg inserter, whose styling can vary between WP versions.
+`renderAppender` prop allows passing a custom block insert button. Due to relatively frequent changes in Gutenberg, a custom `BlockInserter` element is available in Frontend libs as a replacement, and can be passed to `InnerBlocks`.
 
 Finally, to render the inner blocks in PHP, you need to add the following:
 
@@ -156,7 +157,9 @@ export const CardTwoColumn = (props) => {
 
 The best way to understand how inner blocks work is to try to build your own block that supports inner blocks and try out various options and see what kind of results you’ll get. If you ever get stuck, you can refer to official Eightshift DevKit documentation or check the blocks that already have inner blocks support. These blocks are:
 
-- accordion and accordion item
-- columns and column
+- accordion
+- accordion item
+- columns
+- column
 - carousel
 - group
