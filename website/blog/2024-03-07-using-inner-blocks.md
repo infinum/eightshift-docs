@@ -17,7 +17,7 @@ Use of inner blocks allows for more flexibility when building content. Let’s s
 
 This approach works perfectly fine when you have a strict layout and don’t want larger content structure variations. Using inner blocks may introduce a bit more complexity - both for developers and content editors, but ultimately gives the editors much more freedom.
 
-Another example where inner blocks are used is the Carousel block. Using inner blocks allows you to add as much slides as you like in your carousel. Let’s not forget about Columns and Group blocks. These also use inner blocks.
+Another example where inner blocks are used is the Carousel block. Using inner blocks allows you to add as many slides as you like in your carousel. Let’s not forget about Columns and Group blocks. These also use inner blocks.
 
 ## Adding inner block support
 
