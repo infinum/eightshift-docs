@@ -92,6 +92,10 @@ echo $innerBlockContent;
 
 And that’s it! Your block now supports inner blocks.
 
+:::note
+A block can have only one set of inner blocks.
+:::
+
 ## Overriding inner block attributes
 
 Inner blocks behave like regular blocks, which means they also have a wrapper by default. This may not always be desired and manually removing wrapper or adding custom wrapper settings on each inner block can be tedious. That’s why Eightshift DevKit offers few helpers that allow you to override inner block attributes.
