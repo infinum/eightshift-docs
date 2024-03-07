@@ -53,7 +53,7 @@ In case we need to limit which blocks can be added inside inner blocks, we can d
 
 Please note that the block names must include the block namespace! (`eightshift-boilerplate` by default, check in Global manifest)
 
-Now you need to pass the alllowed blocks attribute into the `InnerBlocks` component In the `{block-name}-editor.js` file. Here’s an example of the code related only to the inner blocks:
+Now you need to pass the allowed blocks attribute into the `InnerBlocks` component In the `{block-name}-editor.js` file. Here’s an example of the code related only to the inner blocks:
 
 ```jsx
 import { InnerBlocks } from '@wordpress/block-editor';
@@ -129,7 +129,11 @@ Keep in mind this helper allows you to set any attribute that the inner block su
 
 ### useBlockProps and useInnerBlocksProps
 
-There are also newer inline inner blocks included in WordPress core that allow more control over the InnerBlocks container. Below is the example how to use it.
+In case the default `InnerBlocks` limits your styling and/or layout options too much, you can opt into the newer block prop hooks to implement inner blocks as well!
+
+Import the `useBlockProps` and `useInnerBlocksProps` hooks, configure them just like regular InnerBlocks, and spread the params into an element of your choice (`div` is recommended).
+
+In code, it looks something like this:
 
 ```jsx
 import { useBlockProps, useInnerBlocksProps } from '@wordpress/block-editor';
