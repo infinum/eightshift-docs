@@ -47,7 +47,7 @@ The example used in this blog post is a two-column Card that was made for a proj
 }
 ```
 
-The `hasInnerBlocks` key defines that this block supports inner blocks. The `innerBlocksDependency` is not mandatory, but it can be used to add inner blocks automatically. You can see an example of using it in the Columns block `editor.js` file.
+The `hasInnerBlocks` key defines that this block supports inner blocks. The `innerBlocksDependency` is generally used to output block dependencies when adding a block via CLI, but it can also be used to add inner blocks automatically. You can see an example of using it in the Columns block `editor.js` file.
 
 In case we need to limit which blocks can be added inside inner blocks, we can do so with an attribute. Usually, the attribute is named `{blockName}AllowedBlocks`. Set the default value as an array of strings that represent block names you want to allow.
 
@@ -66,7 +66,6 @@ export const CardTwoColumnEditor = ({ attributes, setAttributes, clientId }) => 
 	} = attributes;
 
 	return (
-
 		<div className={contentClass}>
 			<InnerBlocks
 				allowedBlocks={(typeof cardTwoColumnAllowedBlocks === 'undefined') || cardTwoColumnAllowedBlocks}
@@ -128,27 +127,22 @@ export const Accordion = (props) => {
 
 Keep in mind this helper allows you to set any attribute that the inner block supports, so you can even set a larger paragraph size and a different color, for example.
 
-### overrideInnerBlockSimpleWrapperAttributes
+### useBlockProps and useInnerBlocksProps
 
-The `overrideInnerBlockSimpleWrapperAttributes` sets up a simple wrapper to all inner blocks. This is similar to the helper method above, but already has predefined attributes for simple wrapper, so if you only want to set up the simple wrapper, you don’t have to add the attributes manually.
+There are also newer inline inner blocks included in WordPress core that allow more control over the InnerBlocks container. Below is the example how to use it.
 
 ```jsx
+import { useBlockProps, useInnerBlocksProps } from '@wordpress/block-editor';
 
-import { useSelect } from '@wordpress/data';
-import { overrideInnerBlockSimpleWrapperAttributes } from '@eightshift/frontend-libs/scripts';
-
-export const CardTwoColumn = (props) => {
-	const {
-		clientId,
-	} = props;
-
-	// Set these attributes to all inner blocks once inserted in DOM.
-	useSelect((select) => {
-		overrideInnerBlockSimpleWrapperAttributes(select, clientId);
+export const DemoEditor = (props) => {
+	const blockProps = useBlockProps();
+	const innerBlocksProps = useInnerBlocksProps(blockProps, {
+		allowedBlocks: demoAllowedBlocks,
+		renderAppender: () => <BlockInserter clientId={clientId} />,
 	});
 
 	return (
-		// ...
+		<div {...innerBlocksProps} /> // Do whatever you want with this.
 	);
 };
 ```
