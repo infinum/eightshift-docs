@@ -149,7 +149,7 @@ export const DemoEditor = (props) => {
 
 ## Conclusion
 
-The best way to understand how inner blocks work is to try to build your own block that supports inner blocks and try out various options and see what kind of results you’ll get. If you ever get stuck, you can refer to official Eightshift DevKit documentation or check the blocks that already have inner blocks support. These blocks are:
+The best way to understand how inner blocks work is to try to build your own block that supports inner blocks and try out various options and see what kind of results you’ll get. If you ever get stuck, you can refer to the official [Eightshift DevKit documentation](https://eightshift.com/docs/welcome) or check the blocks that already have inner blocks support. These blocks are:
 
 - accordion
 - accordion item
