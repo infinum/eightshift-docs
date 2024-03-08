@@ -173,6 +173,9 @@ function PrePostParamsFilter ({ filter }) {
 		case 'mailer':
 			text = 'mailer system';
 			break;
+		case 'calculator':
+			text = 'calculator';
+			break;
 		default:
 			text = 'external integration';
 			break;

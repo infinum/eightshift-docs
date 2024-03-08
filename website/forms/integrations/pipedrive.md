@@ -22,5 +22,3 @@ Pipedrive is a web-based Sales CRM and pipeline management solution that enables
 * Form builder **not** provided by the service.
 * The form is created using our forms fields and connected to Pipedrive fields using form settings.
 
-### Supported fields:
-* All

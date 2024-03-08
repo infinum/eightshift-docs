@@ -27,6 +27,14 @@ Hubspot is an CRM platform that connects everything scaling companies need to de
 
 * Form builder provided by the service.
 
-### Not supported fields:
-* Heading
-* Paragraph
+### Supported fields:
+* text
+* date
+* number
+* phonenumber
+* file
+* select
+* booleancheckbox
+* checkbox
+* radio
+* consent

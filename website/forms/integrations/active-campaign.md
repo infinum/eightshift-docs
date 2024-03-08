@@ -22,14 +22,14 @@ ActiveCampaign is an integrated email marketing, automation, sales software, and
 * Form builder provided by the service.
 
 ### Supported fields:
-* Full name
-* First name
-* Last name
-* Hidden
-* Textarea
-* Email
-* Phone
-* Checkbox
-* Radio
-* Dropdown
+* firstname
+* lastname
+* fullname
+* hidden
+* textarea
+* email
+* phone
+* checkbox
+* radio
+* dropdown
 

@@ -22,8 +22,9 @@ MailerLite is an email service provider that makes it easier to plan email marke
 * Form builder provided by the service.
 
 ### Supported fields:
-* Text
-* Date
-* Number
-* Phone
-* Date
+* text
+	*	phone
+	* zip
+	* text
+* date
+* number

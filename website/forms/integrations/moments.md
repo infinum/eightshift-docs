@@ -21,4 +21,16 @@ Moments is an service that allows you to easily send relevant content derived fr
 * Form builder provided by the service.
 
 ### Supported fields:
-* All
+* text
+	* country
+* msisdn
+* date
+* datetime
+* email
+* number
+* textarea
+* dropdown
+	* country
+* radiobutton
+* checkbox
+* checkbox_group
