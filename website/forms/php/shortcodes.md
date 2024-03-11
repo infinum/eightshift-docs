@@ -5,11 +5,11 @@ title: Shortcodes
 
 ## What are shortcodes?
 
-Shortcodes are small pieces of code that you can use to add predefined forms to your website. They are used to simplify the process of adding forms to your website.
+Shortcodes are small pieces of code that allow adding forms to the site in places blocks can't be easily added.
 
 ## esFormsLink
 
-This shortcode is used to add a simple link to your form. For example you need to add a privacy policy link to your form checkbox label.
+This shortcode allows adding links within text labels, e.g. if you need to add a privacy policy link to a form checkbox label.
 
 ```php
 [esFormsLink url="https://eightshift.com" label="Eightshift" /]
@@ -17,7 +17,7 @@ This shortcode is used to add a simple link to your form. For example you need t
 
 ## esFormsROIP
 
-This shortcode is used to toggle content in the result output block based on the API response. If you API response returns a specific key it will use that value and replace the default content.
+The `esFormsROIP` (_Result output item part_) shortcode allows showing certain content inline, based on the user input. The content is shown if the provided `name` matches the fields defined within filters.
 
 ```php
 [esFormsROIP name="<key>"]Default content[/esFormsROIP]
