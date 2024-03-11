@@ -3,7 +3,7 @@ id: single-submit
 title: Single submit
 ---
 
-Single submit is a feature that allows you to submit a form when user makes any change on the form. This is useful for forms that require users to perform calculations, such as a mortgage calculator or a loan calculator.
+Single submit is a feature that allows dynamic processing of a form when user makes any change on the form. This is useful for forms that require users to perform calculations, such as a mortgage calculator or a loan calculator.
 
 ![Single submit](/img/forms/single-submit.webp)
 
