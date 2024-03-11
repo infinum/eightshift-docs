@@ -23,7 +23,7 @@ function getIntegrationResultOutputItems(array $output, array $formDetails, stri
 {
 	$output['testKeys'] = 'testValue';
 
-	return $params;
+	return $output;
 }
 ```
 
