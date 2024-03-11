@@ -7,7 +7,7 @@ Single submit is a feature that allows dynamic processing of a form when user ma
 
 ![Single submit](/img/forms/single-submit.webp)
 
-You can turn on single in the settings of the form.
+You can turn on single submit in the settings of the form.
 
 Single submit form can work with and without a submit button, but in general it is recommended not to use a submit button with single submit forms.
 
