@@ -22,18 +22,19 @@ Airtable is an platform that makes it easy to build powerful, custom application
 * Form builder provided by the service.
 
 ### Supported fields:
-* Input
-* Email
-* Url
-* Number
-* Date
-* Phone number
-* Textarea
-* Single Select
-* Multiple Choices
-* Checkbox
-* Currency 
-* MultipleRecordLinks
+* singleLineText
+* email
+* url
+* phoneNumber
+* dateTime
+* date
+* number
+* currency
+* multilineText
+* singleSelect
+* multipleSelects
+* checkbox
+* multipleRecordLinks
 
 :::caution
 The Airtable MultipleRecordLinks field relies on the Airtable API to create records in a linked table.

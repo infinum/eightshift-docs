@@ -22,6 +22,6 @@ Goodbits is an service that helps you and your business create stellar newslette
 * Form builder provided by the service.
 
 ### Supported fields:
-* Email
-* First name
-* Last name
+* email
+* first_name
+* last_name

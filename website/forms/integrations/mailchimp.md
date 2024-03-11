@@ -22,13 +22,15 @@ Mailchimp is an comprehensive email marketing platform that fulfills all your re
 * Form builder provided by the service.
 
 ### Supported fields:
-* Text
-* Url
-* Address - partially
-* Zip
-* Number
-* Birthday
-* Date
-* Phone
-* Radio
-* Dropdown
+* email_address
+* text
+* url
+* address (partially)
+* number
+* zip
+* phone
+* birthday
+* date
+* birthday
+* dropdown
+* tags

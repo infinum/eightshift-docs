@@ -31,6 +31,8 @@ module.exports = {
 						'features/wpml',
 						'features/entries',
 						'features/show-as',
+						'features/result-output',
+						'features/single-submit',
 					],
 				],
 			},
@@ -41,6 +43,7 @@ module.exports = {
 					'integrations/intro',
 					'integrations/active-campaign',
 					'integrations/airtable',
+					'integrations/calculator',
 					'integrations/clearbit',
 					'integrations/goodbits',
 					'integrations/greenhouse',
@@ -90,7 +93,6 @@ module.exports = {
 						]
 					},
 					'php/helpers',
-					'php/wp-cli',
 					{
 						'type': 'category',
 						'label': 'Filters',
@@ -125,6 +127,8 @@ module.exports = {
 											'php/filters/block/form/pre-response-addon-data',
 											'php/filters/block/form/pre-response-success-redirect-data',
 											'php/filters/block/form/additional-hidden-fields',
+											'php/filters/block/form/result-output-items',
+											'php/filters/block/form/result-output-parts',
 										],
 									},
 									{
@@ -278,6 +282,7 @@ module.exports = {
 								'items': [
 									'php/filters/integrations/active-campaign',
 									'php/filters/integrations/airtable',
+									'php/filters/integrations/calculator',
 									'php/filters/integrations/clearbit',
 									'php/filters/integrations/goodbits',
 									'php/filters/integrations/greenhouse',
@@ -329,6 +334,8 @@ module.exports = {
 							'php/actions/migrations',
 						],
 					},
+					'php/shortcodes',
+					'php/wp-cli',
 				],
 			},
 			{

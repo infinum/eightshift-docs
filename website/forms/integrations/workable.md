@@ -21,5 +21,14 @@ Workable is an sourcing automation tool to help hiring teams find, reach and eng
 * Form builder provided by the service.
 
 ### Supported fields:
-* All
-
+* firstname
+* lastname
+* email
+* short_text
+* string
+	* phone
+* file
+* dropdown
+* multiple_choice
+* free_text
+* boolean

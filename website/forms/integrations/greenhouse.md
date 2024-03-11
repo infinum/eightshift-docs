@@ -22,10 +22,15 @@ Greenhouse is an sourcing automation tool to help hiring teams find, reach and e
 * Form builder provided by the service.
 
 ### Supported fields:
-* Phone
-* Text
-* Email
-* File
-* Textarea
-* Select
-* Checkbox
+* input_text
+	* phone
+	* email
+	* text
+* input_file
+* textarea
+* multi_value_single_select
+	* checkboxes
+	* select
+* mapped_url_token
+* longitude
+* latitude
