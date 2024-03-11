@@ -25,7 +25,7 @@ Mailchimp is an comprehensive email marketing platform that fulfills all your re
 * email_address
 * text
 * url
-* address - partially
+* address (partially)
 * number
 * zip
 * phone

@@ -3,7 +3,9 @@ id: result-output-parts
 title: Result output parts
 ---
 
-Allows modifying form result output parts data using API to toggle the correct shortcode on the frontend based on the users input. Used in `esFormsROIP` shortcode.
+Allows modifying _Form result output parts_ using an API to change which shortcode is output on the frontend, based on the user input.
+
+Used by the `esFormsROIP` shortcode.
 
 ```php
 add_filter('es_forms_integrations_form_result_output_parts', 'getIntegrationResultOutputParts', 10, 3);

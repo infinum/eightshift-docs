@@ -3,4 +3,6 @@ id: calculator
 title: Calculator
 ---
 
-Calculator is not and integrations service but a internal service used to add a calculator to your form. This is useful for forms that require users to perform calculations, such as a mortgage calculator or a loan calculator.
+_Calculator_ is a service that allows turning a form into a calculator with custom programmable logic. For example, you can build a mortgage calculator.
+
+Please not that this is **not** an integration!
