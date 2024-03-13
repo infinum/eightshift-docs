@@ -8,7 +8,7 @@ Allows modifying _Form result output parts_ using an API to change which shortco
 Used by the `esFormsROIP` shortcode.
 
 ```php
-add_filter('es_forms_integrations_form_result_output_parts', 'getIntegrationResultOutputParts', 10, 3);
+add_filter('es_forms_block_form_result_output_parts', 'getFormResultOutputParts', 10, 3);
 
 /**
  * Populate result output parts in the API response data used in the 'esFormsROIP' shortcode.
@@ -19,7 +19,7 @@ add_filter('es_forms_integrations_form_result_output_parts', 'getIntegrationResu
  *
  * @return array<string, mixed>
  */
-function getIntegrationResultOutputParts(array $output, array $formDetails, string $formId): array
+function getFormResultOutputParts(array $output, array $formDetails, string $formId): array
 {
 	$output['testKeys'] = 'testValue';
 
