@@ -8,7 +8,7 @@ Allows modifying _Form result output parts_ using an API to change which block i
 Used by the `result-output-item` block.
 
 ```php
-add_filter('es_forms_integrations_form_result_output_items', 'getIntegrationResultOutputItems', 10, 3);
+add_filter('es_forms_block_form_result_output_items', 'getFormResultOutputItems', 10, 3);
 
 /**
  * Populate Result output items in the API response data used in 'result-output-item' block.
@@ -19,7 +19,7 @@ add_filter('es_forms_integrations_form_result_output_items', 'getIntegrationResu
  *
  * @return array<string, mixed>
  */
-function getIntegrationResultOutputItems(array $output, array $formDetails, string $formId): array
+function getFormResultOutputItems(array $output, array $formDetails, string $formId): array
 {
 	$output['testKeys'] = 'testValue';
 
