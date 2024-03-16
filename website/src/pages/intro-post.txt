@@ -1,0 +1,9 @@
+<!-- wp:eightshift-boilerplate/paragraph {"wrapperSpacingTopLarge":40,"paragraphParagraphContent":"This playground allows you to try all the default blocks that come with DevKit."} /-->
+
+<!-- wp:eightshift-boilerplate/paragraph {"paragraphParagraphContent":"The WordPress instance you're looking at is \u003cstrong\u003erunning in your browser \u003c/strong\u003eand will get reset after you navigate away from the Playground."} /-->
+
+<!-- wp:eightshift-boilerplate/paragraph {"paragraphParagraphContent":"Almost all of WordPress functionalities are available, including managing posts, installing plugins, changing settings, and previewing the site."} /-->
+
+<!-- wp:eightshift-boilerplate/group {"wrapperWidthLarge":6,"wrapperOffsetLarge":4,"wrapperSpacingBottomLarge":0} -->
+<!-- wp:eightshift-boilerplate/card {"wrapperUseShowControl":false,"wrapperSimpleShowControl":false,"wrapperSimple":true,"wrapperBgColorType":"gradient","wrapperBgColorGradient":"linear-gradient(135deg, rgb(255, 253, 241) 0.00%,rgb(249, 244, 215) 100.00%)","wrapperWidthLarge":6,"wrapperOffsetLarge":4,"wrapperSpacingBottomLarge":0,"wrapperSpacingLeftInLarge":20,"wrapperSpacingRightInLarge":20,"wrapperSpacingTopInLarge":20,"wrapperSpacingBottomInLarge":20,"wrapperRoundedCornersLarge":20,"cardCardImageUse":false,"cardCardIntroContent":"🚧\u003cbr\u003eWork in progress!","cardCardIntroSize":"h5:bold","cardCardHeadingContent":"","cardCardHeadingSize":"h4:medium","cardCardHeadingUse":false,"cardCardParagraphContent":"We are working on improving the DevKit playground start page.\u003cbr\u003eA different layout and more demo pages are coming soon!.","cardCardParagraphSize":"caption:regular","cardCardButtonUse":false,"cardCardAlign":"center"} /-->
+<!-- /wp:eightshift-boilerplate/group -->
