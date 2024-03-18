@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunk_eightshift_docs=self.webpackChunk_eightshift_docs||[]).push([[26752],{28952:(s,e,t)=>{t.d(e,{c:()=>i});t(11504);var c=t(50236),h=t(17624);function i(s){return(0,h.jsx)(c.Ok,{...s})}}}]);

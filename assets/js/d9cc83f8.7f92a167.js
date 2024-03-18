@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunk_eightshift_docs=self.webpackChunk_eightshift_docs||[]).push([[23240],{32416:l=>{l.exports=JSON.parse('{"label":"multilingual","permalink":"/blog/tags/multilingual","allTagsPath":"/blog/tags","count":1,"unlisted":false}')}}]);
