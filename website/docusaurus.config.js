@@ -38,9 +38,15 @@ module.exports = {
 					position: 'right',
 				},
 				{
-					to: '/storybook/',
-					activeBasePath: 'storybook',
+					to: '/devkit-components/',
+					activeBasePath: 'devkit-components',
 					label: 'Storybook',
+					position: 'right',
+				},
+				{
+					to: '/playground/',
+					activeBasePath: 'playground',
+					label: 'Playground',
 					position: 'right',
 				},
 				{
@@ -162,6 +168,7 @@ module.exports = {
 				sidebarPath: require.resolve('./sidebars-forms.js'),
 			},
 		],
+		'es-text-loader',
 	],
 	customFields: {
 		keywords: [
