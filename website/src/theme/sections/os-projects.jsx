@@ -40,7 +40,7 @@ export const EsOpenSource = (props) => {
 				},
 				{
 					icon: osProjectIcons.storybook,
-					text: 'Eightshift Storybook',
+					text: 'Eightshift Storybook (legacy)',
 					url: 'https://github.com/infinum/eightshift-storybook'
 				},
 				{
