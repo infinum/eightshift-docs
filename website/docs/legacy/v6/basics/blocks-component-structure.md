@@ -28,8 +28,6 @@ We suggest you always use the full name and never abbreviate for the component n
   * heading-style.scss
   * manifest.json
 
-For example, you can check the [storybook](/storybook).
-
 > All files in components are optional.
 
 ### assets

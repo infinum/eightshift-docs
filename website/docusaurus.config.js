@@ -40,7 +40,7 @@ module.exports = {
 				{
 					to: '/devkit-components/',
 					activeBasePath: 'devkit-components',
-					label: 'Storybook',
+					label: 'Components',
 					position: 'right',
 				},
 				{
