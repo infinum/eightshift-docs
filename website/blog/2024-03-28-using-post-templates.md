@@ -26,25 +26,32 @@ return [
 ];
 ```
 
-There are three ways of locking the template:
+There are a few ways of locking the template:
 
 - `all` - blocks can’t be inserted, removed, or moved around. Content can be edited for existing blocks
 - `insert` - you can’t insert or remove blocks, but you can move them around
-- `contentOnly` - locks everything, not even the content can be modified (?) - it may work differently on default Gutenberg blocks, but this is how it behaves with Eightshift blocks
 
 :::note
 It’s not mandatory to use `template_lock` if you’re using post templates. You can leave it out and have it fully unlocked to give the editors the freedom to modify the proposed template.
 :::
+
+Additionally, you can lock each block separately by adding the following attributes:
+```json
+"lock": {
+	"remove": true,
+	"move": true,
+}
+```
 
 ## Adding a template
 
 A recommended approach for adding a post template is to add a service class. For this example, the post type is **Review**, so the WP-CLI command for creating a new service class looks like this:
 
 ```bash
-wp boilerplate create service-example --folder=BlockTemplates --file_name=ReviewTemplate
+wp boilerplate create service-example --folder=Templates --file_name=ReviewTemplate
 ```
 
-You can call your namespace (folder) **BlockTemplates** or **PostTemplates**, whichever you prefer. If you’re adding a template for another post type, create a separate class, but include it in the same namespace. That way you’ll have a much better overview of the templates in the project.
+If you’re adding a template for another post type, create a separate class, but include it in the same namespace (folder). That way you’ll have a much better overview of the templates in the project.
 
 Here’s an example of how to add a single Quote block as a template:
 
@@ -83,7 +90,7 @@ Don’t forget to register your method with `add_action`:
 
 As you can see from the previous example, you can set any attribute you want, including wrapper-related options. The easiest way to add a complex post template is by building it in the Gutenberg editor first, then switching to Code Editor and copying the content. This will have to be rewritten in PHP to make it work, and here’s how to do it. Let’s say the code for the blocks looks like this:
 
-```json
+```
 <!-- wp:eightshift-boilerplate/paragraph {"paragraphParagraphContent":"Placeholder text"} /-->
 
 <!-- wp:eightshift-boilerplate/cta-modal {"ctaModalButtonContent":"Apply now!","ctaModalEndDateHide":true} -->
@@ -137,7 +144,7 @@ The comments were added above for an easier understanding of the structure. So, 
 
 ## Editor options for unlocking the templates
 
-Even though the templates can be locked, some blocks can still be unlocked. This can be done by selecting a block and clicking on a lock icon. When locking or unlocking a block in this way, you can toggle two options:
+Even though the templates can be locked, some blocks can still be unlocked. This can be done by selecting a block and clicking on a lock icon. When locking or unlocking a block in this way, you can toggle two options, the ones already mentioned at the end of the [Template locking options](#template-locking-options) section:
 
 - **Disable movement** - disable moving the block around
 - **Prevent removal** - prevents the block from being deleted
