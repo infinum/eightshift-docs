@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_eightshift_docs=self.webpackChunk_eightshift_docs||[]).push([[81903],{1912:t=>{t.exports=JSON.parse('{"blogBasePath":"/blog","blogTitle":"Tutorials and articles about Eightshift development kit"}')}}]);

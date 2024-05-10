@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunk_eightshift_docs=self.webpackChunk_eightshift_docs||[]).push([[66131],{27058:t=>{t.exports=JSON.parse('{"permalink":"/blog/tags/fonts","page":1,"postsPerPage":9,"totalPages":1,"totalCount":1,"blogDescription":"Tutorials and articles about Eightshift development kit","blogTitle":"Tutorials and articles about Eightshift development kit"}')}}]);
