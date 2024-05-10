@@ -1,64 +1,35 @@
 @import url('https://use.typekit.net/baz1roy.css');
 
-.sk-cube-grid {
-	width: 3rem;
-	height: 3rem;
-	margin: 0 auto;
+.esd-full-fixed {
+	position: fixed;
+	inset: 0;
 }
 
-.sk-cube-grid .sk-cube {
-	width: 33%;
-	height: 33%;
-	float: left;
-	animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
-	background-color: rgb(216 38 44);
+
+progress {
+	appearance: none;
 }
 
-.sk-cube-grid .sk-cube1 {
-	animation-delay: 0.2s;
+progress::-webkit-progress-bar {
+	background-color: white;
+	border-radius: 10rem;
+	border: 1px solid var(--ifm-color-gray-400);
+
+	height: 0.5rem;
 }
 
-.sk-cube-grid .sk-cube2 {
-	animation-delay: 0.3s;
+progress::-webkit-progress-value {
+	background-color: #D8262C;
+	border-radius: 10rem;
+
+	height: 0.5rem;
+
+	transition: 0.5s inline-size ease-out;
 }
 
-.sk-cube-grid .sk-cube3 {
-	animation-delay: 0.4s;
-}
+progress[value]::-moz-progress-bar {
+	background-color: #D8262C;
+	border-radius: 10rem;
 
-.sk-cube-grid .sk-cube4 {
-	animation-delay: 0.1s;
-}
-
-.sk-cube-grid .sk-cube5 {
-	animation-delay: 0.2s;
-}
-
-.sk-cube-grid .sk-cube6 {
-	animation-delay: 0.3s;
-}
-
-.sk-cube-grid .sk-cube7 {
-	animation-delay: 0s;
-}
-
-.sk-cube-grid .sk-cube8 {
-	animation-delay: 0.1s;
-}
-
-.sk-cube-grid .sk-cube9 {
-	animation-delay: 0.2s;
-}
-
-@keyframes sk-cubeGridScaleDelay {
-	0%,
-	70%,
-	100% {
-		transform: scale3D(1, 1, 1);
-	}
-
-	35% {
-		-webkit-transform: scale3D(0, 0, 1);
-		transform: scale3D(0, 0, 1);
-	}
+	height: 0.5rem;
 }
