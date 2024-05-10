@@ -1,6 +1,6 @@
 {
 	"name": "@eightshift/docs",
-	"version": "9.0.0",
+	"version": "9.1.0",
 	"description": "A documentation website for Eightshift open source projects.",
 	"author": {
 		"name": "Eightshift team",
