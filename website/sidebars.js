@@ -91,7 +91,6 @@ module.exports = {
 			'tutorials/intro',
 		],
 		'Migrations': [
-			'migrations/11-12',
 			'migrations/10-11',
 			'migrations/9-10',
 			'migrations/8-9',
