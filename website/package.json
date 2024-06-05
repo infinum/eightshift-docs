@@ -32,16 +32,17 @@
 		"clear": "docusaurus clear"
 	},
 	"dependencies": {
-		"@docusaurus/core": "^3.3.2",
-		"@docusaurus/preset-classic": "^3.3.2",
+		"@docusaurus/core": "^3.4.0",
+		"@docusaurus/preset-classic": "^3.4.0",
 		"@infinum/docusaurus-theme": "^0.5.0",
 		"@mdx-js/react": "^3.0.1",
-		"@wp-playground/client": "^0.7.19",
+		"@wp-playground/client": "^0.7.20",
 		"clsx": "^2.1.1",
 		"es-text-loader": "file:plugins/es-text-loader",
 		"prism-react-renderer": "^2.3.1",
 		"react": "^18.3.1",
-		"react-dom": "^18.3.1"
+		"react-dom": "^18.3.1",
+		"react-scripts": "^5.0.1"
 	},
 	"browserslist": {
 		"production": [
@@ -57,5 +58,8 @@
 	},
 	"devDependencies": {
 		"raw-loader": "^4.0.2"
+	},
+	"overrides": {
+		"jiti": "1.21.0"
 	}
 }
