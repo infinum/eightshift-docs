@@ -9,7 +9,7 @@ Let's create a new theme!
 Navigate to your WordPress theme folder and run the following command:
 
 ```bash
-npx npx eightshift-create theme
+npx eightshift-create theme
 ```
 
 The script will prompt you for a theme name and local development URL (used for BrowserSync). After that, your new theme will be installed:
