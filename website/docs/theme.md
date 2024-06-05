@@ -9,7 +9,7 @@ Let's create a new theme!
 Navigate to your WordPress theme folder and run the following command:
 
 ```bash
-npx create-wp-project
+npx npx eightshift-create theme
 ```
 
 The script will prompt you for a theme name and local development URL (used for BrowserSync). After that, your new theme will be installed:
@@ -22,27 +22,29 @@ After the script is finished, your new theme will be set up and activated.
 
 If you want to specify a version of Eightshift Libs or Frontend Libs to use, you can use add two additional attributes to this command to specify a branch or release to use:
 
-* `--eightshiftLibsBranch`
-* `--eightshiftFrontendLibsBranch`
+* `--setupRepoUrl`
+* `--setupRepoBranch`
+* `--libsRepoBranch`
+* `--frontendLibsRepoBranch`
 
 #### Example:
 
 If you want to pull the `develop` branch of the Eightshift Frontend Libs and a specific release of the Eightshift Libs:
 
 ```bash
-npx create-wp-project --eightshiftLibsBranch="release/3.1.0" --eightshiftFrontendLibsBranch="develop"
+npx eightshift-create theme --libsRepoBranch="release/3.1.0" --frontendLibsRepoBranch="develop"
 ```
 
-You can also specify the version of the `create-wp-project` script like this:
+You can also specify the version of the `eightshift-create` script like this:
 
 ```bash
-npx create-wp-project@2.0.12 --eightshiftLibsBranch="release/3.1.0" --eightshiftFrontendLibsBranch="develop"
+npx eightshift-create@2.0.12 theme --libsRepoBranch="release/3.1.0" --frontendLibsRepoBranch="develop"
 ```
 
 You can get a list of available script arguments by running:
 
 ```bash
-npx create-wp-project --help
+npx eightshift-create theme --help
 ```
 
 :::tip
