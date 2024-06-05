@@ -9,10 +9,11 @@ export default function DevKitComponents() {
 	const { siteConfig = {} } = context;
 
 	const [isLoading, setIsLoading] = useState(true);
+	const [loadingStep, setLoadingStep] = useState('Initializing');
+	const [loadingProgress, setLoadingProgress] = useState(null);
 
 	useEffect(() => {
 		const init = async () => {
-
 			const client = await startPlaygroundWeb({
 				iframe: iframeRef.current,
 				remoteUrl: `https://playground.wordpress.net/remote.html`,
@@ -40,6 +41,9 @@ export default function DevKitComponents() {
 			});
 
 			// Fetch theme.
+			setLoadingStep('Loading theme');
+			setLoadingProgress(25);
+
 			const themeZipFilename = 'devkit-components.zip';
 			const themeZipReq = await fetch(`/${themeZipFilename}`, {
 				headers: {
@@ -47,9 +51,15 @@ export default function DevKitComponents() {
 				},
 				credentials: 'include'
 			})
+
+			setLoadingProgress(33);
+			setLoadingStep('Unpacking theme');
+
 			const themeZipBlob = await themeZipReq.blob();
 			const themeFile = new File([themeZipBlob], themeZipFilename);
 
+			setLoadingProgress(50);
+			setLoadingStep('Installing theme');
 			await installTheme(client, {
 				themeZipFile: themeFile,
 				options: {
@@ -58,12 +68,18 @@ export default function DevKitComponents() {
 			});
 
 			// Install WP-CLI.
+			setLoadingProgress(60);
+			setLoadingStep('Setting up WP-CLI');
+
 			const wpCliPath = '/wordpress/wp-cli.phar';
 			const wpCliResponse = await fetch('https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar');
 			const wpCli = await wpCliResponse.arrayBuffer();
 			await client.writeFile(wpCliPath, new Uint8Array(wpCli));
 
 			// Add the demo posts.
+			setLoadingStep('Initializing block');
+			setLoadingProgress(80);
+
 			const { text: wpCliOutput } = await wpCLI(client, {
 				command: `wp post create --post_title='Welcome to Eightshift DevKit!' --post_content='<!-- wp:eightshift-boilerplate/devkit-components /-->' --post_status='publish'`,
 				wpCliPath,
@@ -72,8 +88,12 @@ export default function DevKitComponents() {
 			// WP playground currently has an issue that pollutes the WP-CLI output, so --porcelain isn't of much help here unfortunately.
 			const addedPostId = wpCliOutput.substring(wpCliOutput.indexOf('Created post ') + 13, wpCliOutput.lastIndexOf('.')).trim();
 
+			setLoadingStep('Finalizing');
+			setLoadingProgress(92);
+
 			await client.goTo(`/wp-admin/post.php?post=${addedPostId}&action=edit`);
 
+			setLoadingProgress(100);
 			await new Promise((resolve) => setTimeout(resolve, 1500));
 
 			setIsLoading(false);
@@ -102,24 +122,10 @@ export default function DevKitComponents() {
 			/>
 
 			{isLoading &&
-				<div
-					style={{ position: 'fixed', top: 0, left: 0, display: 'grid', placeItems: 'center', blockSize: '100%', inlineSize: '100%' }}
-				>
-					<div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-						<div class="sk-cube-grid">
-							<div class="sk-cube sk-cube1"></div>
-							<div class="sk-cube sk-cube2"></div>
-							<div class="sk-cube sk-cube3"></div>
-							<div class="sk-cube sk-cube4"></div>
-							<div class="sk-cube sk-cube5"></div>
-							<div class="sk-cube sk-cube6"></div>
-							<div class="sk-cube sk-cube7"></div>
-							<div class="sk-cube sk-cube8"></div>
-							<div class="sk-cube sk-cube9"></div>
-						</div>
-
-						<h3>Preparing docs, please wait</h3>
-					</div>
+				<div className='es-full-size flex flex-col items-center justify-center gap-1.5 esd-full-fixed'>
+					<progress value={loadingProgress} max={100}></progress>
+					<h3>Preparing component docs</h3>
+					<span className='text-12'>{loadingStep}</span>
 				</div>
 			}
 		</Layout>
