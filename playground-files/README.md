@@ -14,3 +14,11 @@ This folder includes WordPress Playground `.zip` files that contain the default 
 
 > [!NOTE]
 > Be mindful of the 50MB file size limit on GitHub 😄
+
+
+> [!WARNING]
+> When linking content in the example website, make sure to **exclude** the base URL (e.g. `https://playground.wordpress.net/scope:0.6296873574064017/`),
+> as it will change on every Playground initialization!
+> Use relative URLs instead.
+>
+> Things like Featured images are fine, as they're linked by attachment IDs.
