@@ -9,9 +9,8 @@ export default function Playground() {
 
 	const supportsServiceWorkers = 'serviceWorker' in navigator;
 
-	// Temporary URL - will be replaced with the real one once the repo is pushed. Needs to be a direct link to the zip file.
 	const themeZipUrl =
-		'https://raw.githubusercontent.com/goranalkovic-infinum/fe-libs-theme-playground-test/main/es-wp-playground.zip';
+		'https://raw.githubusercontent.com/infinum/eightshift-docs/main/playground-files/es-wp-playground.zip';
 
 	return (
 		<Layout
