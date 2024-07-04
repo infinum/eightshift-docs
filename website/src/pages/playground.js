@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Layout from '@theme/Layout';
@@ -7,7 +7,11 @@ export default function Playground() {
 	const context = useDocusaurusContext();
 	const { siteConfig = {} } = context;
 
-	const supportsServiceWorkers = 'serviceWorker' in navigator;
+	const [supportsServiceWorkers, setSupportsServiceWorkers] = useState(false);
+
+	useEffect(() => {
+		setSupportsServiceWorkers('serviceWorker' in navigator);
+	}, []);
 
 	const themeZipUrl =
 		'https://raw.githubusercontent.com/infinum/eightshift-docs/main/playground-files/es-wp-playground.zip';
