@@ -1,0 +1,90 @@
+# Link input
+
+import { ComponentShowcase } from '../components/component-showcase';
+import { LinkInput } from '@eightshift/ui-components';
+import { icons } from '@eightshift/ui-components/icons';
+import { getLinkData, getIconOverrides } from './link-input-helpers';
+
+<ComponentShowcase defaultValue=''>
+	{(data, setData) => (
+		<LinkInput
+			label='URL'
+			url={data}
+			onChange={({ url }) => setData(url)}
+			fetchSuggestions={getLinkData}
+		/>
+	)}
+</ComponentShowcase>
+
+```jsx
+const getSearchSuggestions = async (search) => {
+	// Do your thing, and return an array of suggestions.
+	// Each item should have a `label` and a `value`.
+	// Optionally, you can include a `subtype` within
+	// `metadata` to show a different icon in the suggestions.
+};
+
+<LinkInput
+	label='URL'
+	url={data}
+	onChange={({ url }) => setAttributes({ myUrl: url })}
+	fetchSuggestions={getSearchSuggestions}
+/>;
+```
+
+## Frontend libs integration
+
+If using Frontend libs (v13+) or Frontend libs Tailwind, for the `fetchSuggestions` callback you can import the included `wpSearchRoute` function.
+
+```jsx
+// highlight-next-line
+import { wpSearchRoute } from '@eightshift/frontend-libs-tailwind/scripts';
+
+...
+
+<LinkInput
+	label='URL'
+	url={data}
+	onChange={({ url }) => setAttributes({ myUrl: url })}
+	// highlight-next-line
+	fetchSuggestions={getSearchSuggestions}
+/>
+```
+
+## Providing custom metadata icons
+
+If you want to provide custom icons for the search suggestions, you can provide a mapping list with the `suggestionTypeIconOverride` prop to map the `subtype` to the icon.
+
+<ComponentShowcase defaultValue=''>
+	{(data, setData) => (
+		<LinkInput
+			label='URL'
+			url={data}
+			onChange={({ url }) => setData(url)}
+			fetchSuggestions={getLinkData}
+			suggestionTypeIconOverride={getIconOverrides}
+			help='Try searching for "demo"'
+		/>
+	)}
+</ComponentShowcase>
+
+```jsx
+const overrides = {
+	post: icons.newspaper,
+	page: icons.magicAltFillTransparent,
+	'help-article': icons.troubleshootAlt,
+};
+
+<LinkInput
+	label='URL'
+	url={data}
+	onChange={({ url }) => setAttributes({ myUrl: url })}
+	fetchSuggestions={getSearchSuggestions}
+	// highlight-next-line
+	suggestionTypeIconOverride={(type) => overrides[type]}
+/>;
+```
+
+```jsx
+
+```

@@ -1,0 +1,35 @@
+# Async multi-select
+
+import { ComponentShowcase } from '../components/component-showcase';
+import { AsyncMultiSelect } from '@eightshift/ui-components';
+import { icons } from '@eightshift/ui-components/icons';
+import { demoGetData } from './select-helpers';
+
+<ComponentShowcase defaultValue={[]}>
+	{(data, setData) => (
+		<AsyncMultiSelect
+			value={data}
+			onChange={setData}
+			loadOptions={demoGetData}
+		/>
+	)}
+</ComponentShowcase>
+
+```jsx
+const getOptions = async () => {
+	...
+};
+
+<AsyncMultiSelect
+	value={value}
+	onChange={(value) => setValue(value)}
+	loadOptions={getOptions}
+/>
+```
+
+:::note
+Props are mostly the same as for the [Single select](/components/es-ui-components/select),
+with the exceptions of `options` (which is replaced with `loadOptions`) and `simpleValue`, which is not supported.
+:::
+
+For the complete list of props, use your IDE's autocomplete functionality.

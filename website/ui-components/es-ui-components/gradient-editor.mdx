@@ -1,0 +1,24 @@
+# Gradient editor
+
+import { ComponentShowcase } from '../components/component-showcase';
+import { GradientEditor } from '@eightshift/ui-components';
+import { icons } from '@eightshift/ui-components/icons';
+
+<ComponentShowcase defaultValue='linear-gradient(30deg, #0D3636, #0D363600)'>
+	{(data, setData) => {
+		return (
+			<GradientEditor
+				value={data}
+				onChange={setData}
+				aria-label='Gradient editor'
+			/>
+		);
+	}}
+</ComponentShowcase>
+
+```jsx
+<GradientEditor
+	value={value}
+	onChange={(value) => setData(value)}
+/>
+```

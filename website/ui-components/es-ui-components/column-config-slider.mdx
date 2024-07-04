@@ -1,0 +1,141 @@
+# Column config slider
+
+import { ComponentShowcase } from '../components/component-showcase';
+import { ColumnConfigSlider } from '@eightshift/ui-components';
+import { icons } from '@eightshift/ui-components/icons';
+
+<ComponentShowcase defaultValue={[1, 12]}>
+	{(data, setData) => {
+		return (
+			<ColumnConfigSlider
+				icon={icons.columns}
+				label='Column configuration'
+				value={data}
+				onChange={setData}
+			/>
+		);
+	}}
+</ComponentShowcase>
+
+```jsx
+<ColumnConfigSlider
+	icon={icons.columns}
+	label='Column configuration'
+	value={value} // e.g. [1, 12]
+	onChange={(value) => setData(value)}
+/>
+```
+
+## Highlighted props
+
+For the complete list of props, use your IDE's autocomplete functionality.
+
+### Change number of columns
+
+<ComponentShowcase defaultValue={[2, 13]}>
+	{(data, setData) => {
+		return (
+			<ColumnConfigSlider
+				icon={icons.columns}
+				label='Column configuration'
+				value={data}
+				onChange={setData}
+				columns={14}
+			/>
+		);
+	}}
+</ComponentShowcase>
+
+```jsx
+<ColumnConfigSlider
+	icon={icons.columns}
+	label='Column configuration'
+	value={value}
+	onChange={(value) => setData(value)}
+	// highlight-next-line
+	columns={14}
+/>
+```
+
+### Mark outer columns as "gutter"
+
+<ComponentShowcase defaultValue={[2, 13]}>
+	{(data, setData) => {
+		return (
+			<ColumnConfigSlider
+				icon={icons.columns}
+				label='Column configuration'
+				value={data}
+				onChange={setData}
+				columns={14}
+				showOuterAsGutter
+			/>
+		);
+	}}
+</ComponentShowcase>
+
+```jsx
+<ColumnConfigSlider
+	icon={icons.columns}
+	label='Column configuration'
+	value={value}
+	onChange={(value) => setData(value)}
+	columns={14}
+	// highlight-next-line
+	showOuterAsGutter
+/>
+```
+
+### No offset thumb
+
+<ComponentShowcase defaultValue={[4, 9]}>
+	{(data, setData) => {
+		return (
+			<ColumnConfigSlider
+				icon={icons.columns}
+				label='Column configuration'
+				value={data}
+				onChange={setData}
+				disableOffset
+			/>
+		);
+	}}
+</ComponentShowcase>
+
+```jsx
+<ColumnConfigSlider
+	icon={icons.columns}
+	label='Column configuration'
+	value={value}
+	onChange={(value) => setData(value)}
+	// highlight-next-line
+	disableOffset
+/>
+```
+
+### No width thumb
+
+<ComponentShowcase defaultValue={[4, 9]}>
+	{(data, setData) => {
+		return (
+			<ColumnConfigSlider
+				icon={icons.columns}
+				label='Column configuration'
+				value={data}
+				onChange={setData}
+				disableWidth
+			/>
+		);
+	}}
+</ComponentShowcase>
+
+```jsx
+<ColumnConfigSlider
+	icon={icons.columns}
+	label='Column configuration'
+	value={value}
+	onChange={(value) => setData(value)}
+	// highlight-next-line
+	disableWidth
+/>
+```

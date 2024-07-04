@@ -1,0 +1,204 @@
+# Spacer
+
+import { ComponentShowcase } from '../components/component-showcase';
+import { Spacer } from '@eightshift/ui-components';
+import { icons } from '@eightshift/ui-components/icons';
+
+:::note
+The violet color <div className='es-uic-bg-violet-50 es-uic-transition es-uic-size-5.5 es-uic-rounded es-uic-inline-block' /> in the examples is used to highlight the space added by the component.
+Hover the element container to hide the spacing preview.
+:::
+
+<ComponentShowcase className='esd-hide-bg-on-hover'>
+	<Spacer className='es-uic-bg-violet-50 es-uic-transition' />
+</ComponentShowcase>
+
+```jsx
+<Spacer />
+```
+
+## Highlighted props
+
+For the complete list of props, use your IDE's autocomplete functionality.
+
+### Sizes
+
+```jsx
+<Spacer size='s' />
+```
+
+`px` (default)
+
+<ComponentShowcase className='esd-hide-bg-on-hover'>
+	<Spacer
+		size='px'
+		className='es-uic-bg-violet-50 es-uic-transition'
+	/>
+</ComponentShowcase>
+
+`xs`
+
+<ComponentShowcase className='esd-hide-bg-on-hover'>
+	<Spacer
+		size='xs'
+		className='es-uic-bg-violet-50 es-uic-transition'
+	/>
+</ComponentShowcase>
+
+`s`
+
+<ComponentShowcase className='esd-hide-bg-on-hover'>
+	<Spacer
+		size='s'
+		className='es-uic-bg-violet-50 es-uic-transition'
+	/>
+</ComponentShowcase>
+
+`m`
+
+<ComponentShowcase className='esd-hide-bg-on-hover'>
+	<Spacer
+		size='m'
+		className='es-uic-bg-violet-50 es-uic-transition'
+	/>
+</ComponentShowcase>
+
+### Border
+
+<ComponentShowcase className='esd-hide-bg-on-hover'>
+	<Spacer
+		border
+		size='m'
+		className='es-uic-bg-violet-50 es-uic-transition'
+	/>
+</ComponentShowcase>
+
+```jsx
+<Spacer
+	size='m'
+	// highlight-next-line
+	border
+/>
+```
+
+### Icon
+
+<ComponentShowcase className='esd-hide-bg-on-hover'>
+	<Spacer
+		className='es-uic-bg-violet-50 es-uic-transition'
+		icon={icons.emptyRect}
+	/>
+</ComponentShowcase>
+
+```jsx
+<Spacer
+	// highlight-next-line
+	icon={icons.emptyRect}
+/>
+```
+
+<ComponentShowcase className='esd-hide-bg-on-hover'>
+	<Spacer
+		border
+		className='es-uic-bg-violet-50 es-uic-transition'
+		icon={icons.emptyRect}
+	/>
+</ComponentShowcase>
+
+```jsx
+<Spacer
+	// highlight-next-line
+	icon={icons.emptyRect}
+	border
+/>
+```
+
+### Text
+
+<ComponentShowcase className='esd-hide-bg-on-hover'>
+	<Spacer
+		className='es-uic-bg-violet-50 es-uic-transition'
+		text='This is a label'
+	/>
+</ComponentShowcase>
+
+```jsx
+<Spacer
+	// highlight-next-line
+	text='This is a label'
+/>
+```
+
+<ComponentShowcase className='esd-hide-bg-on-hover'>
+	<Spacer
+		border
+		className='es-uic-bg-violet-50 es-uic-transition'
+		text='This is a label'
+	/>
+</ComponentShowcase>
+
+```jsx
+<Spacer
+	// highlight-next-line
+	text='This is a label'
+	border
+/>
+```
+
+#### With subtitle
+
+<ComponentShowcase className='esd-hide-bg-on-hover'>
+	<Spacer
+		className='es-uic-bg-violet-50 es-uic-transition'
+		text='This is a label'
+	/>
+</ComponentShowcase>
+
+```jsx
+<Spacer
+	// highlight-start
+	text='This is a label'
+	subtitle='Subtitle'
+	// highlight-end
+/>
+```
+
+<ComponentShowcase className='esd-hide-bg-on-hover'>
+	<Spacer
+		border
+		className='es-uic-bg-violet-50 es-uic-transition'
+		text='This is a label'
+		subtitle='Subtitle'
+	/>
+</ComponentShowcase>
+
+```jsx
+<Spacer
+	// highlight-start
+	text='This is a label'
+	subtitle='Subtitle'
+	// highlight-end
+	border
+/>
+```
+
+## Combined
+
+<ComponentShowcase className='esd-hide-bg-on-hover'>
+	<Spacer
+		border
+		className='es-uic-bg-violet-50 es-uic-transition'
+		text='This is a label'
+		subtitle='Subtitle'
+		icon={icons.emptyRect}
+	/>
+</ComponentShowcase>
+
+```jsx
+<Spacer
+	icon={icons.emptyRect}
+	text='This is a label'
+	subtitle='Subtitle'
+	border
+/>
+```

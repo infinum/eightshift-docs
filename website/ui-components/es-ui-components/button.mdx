@@ -1,0 +1,199 @@
+# Button
+
+import { ComponentShowcase } from '../components/component-showcase';
+import { Button, ButtonGroup, OptionSelect } from '@eightshift/ui-components';
+import { icons } from '@eightshift/ui-components/icons';
+
+:::note
+The click event is set by the `onPress` prop.
+:::
+
+<ComponentShowcase>
+	<Button>Hi, I'm a button!</Button>
+</ComponentShowcase>
+
+```jsx
+<Button>Hi, I'm a button!</Button>
+```
+
+<ComponentShowcase>
+	<Button icon={icons.emptyCircle} />
+</ComponentShowcase>
+
+```jsx
+<Button icon={icons.emptyCircle} />
+```
+
+<ComponentShowcase>
+	<Button icon={icons.emptyCircle}>Hi, I'm a button!</Button>
+</ComponentShowcase>
+
+```jsx
+<Button
+	icon={icons.emptyCircle
+>
+	Hi, I'm a button!
+</Button>
+```
+
+## Button groups
+
+If buttons are related, they can be grouped with a `ButtonGroup`.
+
+<ComponentShowcase>
+	<ButtonGroup>
+		<Button>First</Button>
+		<Button>Second</Button>
+		<Button>Third</Button>
+	</ButtonGroup>
+</ComponentShowcase>
+
+```jsx
+// highlight-next-line
+<ButtonGroup>
+	<Button>First</Button>
+	<Button>Second</Button>
+	<Button>Third</Button>
+// highlight-next-line
+</ButtonGroup>
+```
+
+Button groups improve focus behavior - instead of having to `Tab` through each button,
+the group is treated as a single focusable element that can be navigated with left/right arrows.
+
+### Vertical group
+
+<ComponentShowcase>
+	<ButtonGroup vertical>
+		<Button>First</Button>
+		<Button>Second</Button>
+		<Button>Third</Button>
+	</ButtonGroup>
+</ComponentShowcase>
+
+In this case, the focus navigation is handled with up/down arrows.
+
+```jsx
+<ButtonGroup
+	// highlight-next-line
+	vertical
+>
+	<Button>First</Button>
+	<Button>Second</Button>
+	<Button>Third</Button>
+</ButtonGroup>
+```
+
+:::note
+By default, vertical button groups take up the full width of their container.
+:::
+
+## Highlighted props
+
+For the complete list of props, use your IDE's autocomplete functionality.
+
+### Sizes
+
+<ComponentShowcase
+	defaultValue='default'
+	preContent={(data, setData) => (
+		<OptionSelect
+			label='Size'
+			value={data}
+			onChange={setData}
+			options={[
+				{ value: 'small', label: 'Small' },
+				{ value: 'default', label: 'Default' },
+				{ value: 'large', label: 'Large' },
+			]}
+			type='menu'
+		/>
+	)}
+>
+	{(data) => (
+		<>
+			<Button size={data}>Hi, I'm a button!</Button>
+			<Button
+				size={data}
+				icon={icons.emptyCircle}
+			/>
+			<Button
+				size={data}
+				icon={icons.emptyCircle}
+			>
+				Hi, I'm a button!
+			</Button>
+		</>
+	)}
+</ComponentShowcase>
+
+```jsx
+<Button
+	// highlight-next-line
+	size='small'
+>
+	Hi, I'm a button!
+</Button>
+```
+
+### Types
+
+<ComponentShowcase
+	defaultValue='default'
+	preContent={(data, setData) => (
+		<OptionSelect
+			label='Type'
+			value={data}
+			onChange={setData}
+			options={[
+				{ value: 'default', label: 'Default' },
+				{ value: 'danger', label: 'Danger' },
+				{ value: 'ghost', label: 'Ghost' },
+				{ value: 'selected', label: 'Selected' },
+			]}
+			type='menu'
+		/>
+	)}
+>
+	{(data) => (
+		<>
+			<Button type={data}>Hi, I'm a button!</Button>
+			<Button
+				type={data}
+				icon={icons.emptyCircle}
+			/>
+			<Button
+				type={data}
+				icon={icons.emptyCircle}
+			>
+				Hi, I'm a button!
+			</Button>
+		</>
+	)}
+</ComponentShowcase>
+
+```jsx
+<Button
+	// highlight-next-line
+	type='ghost'
+>
+	Hi, I'm a button!
+</Button>
+```
+
+### Tooltip
+
+<ComponentShowcase>
+	<Button
+		icon={icons.emptyCircle}
+		tooltip="Hi, I'm a tooltip!"
+	/>
+</ComponentShowcase>
+
+```jsx
+<Button
+	icon={icons.emptyCircle}
+	// highlight-next-line
+	tooltip="Hi, I'm a tooltip!"
+/>
+```

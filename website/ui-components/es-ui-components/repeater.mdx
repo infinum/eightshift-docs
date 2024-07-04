@@ -1,0 +1,179 @@
+# Repeater
+
+import { ComponentShowcase } from '../components/component-showcase';
+import { RepeaterDemo } from './repeater-helpers';
+
+<ComponentShowcase defaultValue={[]}>
+	{(data, setData) => (
+		<RepeaterDemo
+			data={data}
+			setData={setData}
+		/>
+	)}
+</ComponentShowcase>
+
+```jsx
+<Repeater
+	label='Items'
+	items={value}
+	onChange={(value) => setValue(value)}
+>
+	{(item) => {
+		const { title, toggledOption, updateData } = item;
+
+		return (
+			<RepeaterItem
+				label={title ?? 'New item'}
+				icon={icons.magicAlt}
+			>
+				<Toggle
+					icon={icons.emptyCircle}
+					label='Toggle me'
+					checked={toggledOption}
+					onChange={(value) => updateData({ toggledOption: value })}
+				/>
+
+				<InputField
+					label='Title'
+					type='text'
+					value={title}
+					onChange={(value) => updateData({ title: value })}
+				/>
+			</RepeaterItem>
+		);
+	}}
+</Repeater>
+```
+
+:::tip
+Besides the item attributes, every `item` in the render function will also include a function for updating the current item (`updateData`), the current item's index (`itemIndex`), and a function for deleting the current item (`deleteItem`).
+:::
+
+## Highlighted props
+
+For the complete list of props, use your IDE's autocomplete functionality.
+
+### Set default value for newly added items
+
+<ComponentShowcase defaultValue={[]}>
+	{(data, setData) => (
+		<RepeaterDemo
+			data={data}
+			setData={setData}
+			addDefaultItem={{
+				title: 'My new item',
+			}}
+		/>
+	)}
+</ComponentShowcase>
+
+```jsx
+<Repeater
+	label='Items'
+	items={value}
+	onChange={(value) => setValue(value)}
+	// highlight-start
+	addDefaultItem={{
+		title: 'My new item',
+	}}
+	// highlight-end
+>
+	{...}
+</Repeater>
+```
+
+### Prevent item deletion when below a certain count
+
+<ComponentShowcase defaultValue={[]}>
+	{(data, setData) => (
+		<RepeaterDemo
+			data={data}
+			setData={setData}
+			minItems={3}
+		/>
+	)}
+</ComponentShowcase>
+
+```jsx
+<Repeater
+	label='Items'
+	items={value}
+	onChange={(value) => setValue(value)}
+	// highlight-next-line
+	minItems={3}
+>
+	{...}
+</Repeater>
+```
+
+### Replace the default empty state
+
+<ComponentShowcase defaultValue={[]}>
+	{(data, setData) => (
+		<RepeaterDemo
+			data={data}
+			setData={setData}
+			emptyState={<span className='es-uic-font-mono'>Nothing to see here...</span>}
+		/>
+	)}
+</ComponentShowcase>
+
+```jsx
+<Repeater
+	label='Items'
+	items={value}
+	onChange={(value) => setValue(value)}
+	// highlight-next-line
+	emptyState={<span>Nothing to see here...</span>}
+>
+	{...}
+</Repeater>
+```
+
+### Don't show the empty state
+
+<ComponentShowcase defaultValue={[]}>
+	{(data, setData) => (
+		<RepeaterDemo
+			data={data}
+			setData={setData}
+			hideEmptyState
+		/>
+	)}
+</ComponentShowcase>
+
+```jsx
+<Repeater
+	label='Items'
+	items={value}
+	onChange={(value) => setValue(value)}
+	// highlight-next-line
+	hideEmptyState
+>
+	{...}
+</Repeater>
+```
+
+### Prevent adding items
+
+<ComponentShowcase defaultValue={[]}>
+	{(data, setData) => (
+		<RepeaterDemo
+			data={data}
+			setData={setData}
+			addDisabled
+		/>
+	)}
+</ComponentShowcase>
+
+```jsx
+<Repeater
+	label='Items'
+	items={value}
+	onChange={(value) => setValue(value)}
+	// highlight-next-line
+	addDisabled
+>
+	{...}
+</Repeater>
+```

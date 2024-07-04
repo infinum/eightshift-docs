@@ -1,0 +1,92 @@
+# Options panel
+
+import { ComponentShowcase } from '../components/component-showcase';
+import { OptionsPanel, OptionsPanelSection } from '@eightshift/ui-components';
+import { icons } from '@eightshift/ui-components/icons';
+
+An elegant way to display options in an options page, with a contained width and options for label and help text.
+
+<ComponentShowcase
+	className='es-uic-bg-gray-50 es-uic-w-full'
+	fitWidth
+>
+	<OptionsPanel>
+		<OptionsPanelSection>
+			<div className='es-uic-w-full es-uic-rounded-lg es-uic-bg-violet-50 es-uic-text-sm es-uic-p-4 es-uic-min-h-40'>
+				<span>This is demo content</span>
+			</div>
+		</OptionsPanelSection>
+	</OptionsPanel>
+</ComponentShowcase>
+
+```jsx
+<OptionsPanel>
+	<OptionsPanelSection>
+		<span>This is demo content</span>
+	</OptionsPanelSection>
+</OptionsPanel>
+```
+
+For the complete list of props, use your IDE's autocomplete functionality.
+
+## Multiple sections
+
+<ComponentShowcase
+	className='es-uic-bg-gray-50 es-uic-w-full'
+	fitWidth
+>
+	<OptionsPanel>
+		<OptionsPanelSection>
+			<div className='es-uic-w-full es-uic-rounded-lg es-uic-bg-violet-50 es-uic-text-sm es-uic-p-4 es-uic-min-h-40'>
+				<span>Section 1 content</span>
+			</div>
+		</OptionsPanelSection>
+		<OptionsPanelSection>
+			<div className='es-uic-w-full es-uic-rounded-lg es-uic-bg-violet-50 es-uic-text-sm es-uic-p-4 es-uic-min-h-40'>
+				<span>Section 2 content</span>
+			</div>
+		</OptionsPanelSection>
+	</OptionsPanel>
+</ComponentShowcase>
+
+```jsx
+<OptionsPanel>
+	<OptionsPanelSection>
+		<span>Section 1 content</span>
+	</OptionsPanelSection>
+	<OptionsPanelSection>
+		<span>Section 2 content</span>
+	</OptionsPanelSection>
+</OptionsPanel>
+```
+
+## Title and help text
+
+<ComponentShowcase
+	className='es-uic-bg-gray-50 es-uic-w-full'
+	fitWidth
+>
+	<OptionsPanel
+		title='Demo panel title'
+		help='Demo panel help'
+	>
+		<OptionsPanelSection>
+			<div className='es-uic-w-full es-uic-rounded-lg es-uic-bg-violet-50 es-uic-text-sm es-uic-p-4 es-uic-min-h-40'>
+				<span>Section content</span>
+			</div>
+		</OptionsPanelSection>
+	</OptionsPanel>
+</ComponentShowcase>
+
+```jsx
+<OptionsPanel
+	// highlight-start
+	title='Demo panel title'
+	help='Demo panel help'
+	// highlight-end
+>
+	<OptionsPanelSection>
+		<span>Section content</span>
+	</OptionsPanelSection>
+</OptionsPanel>
+```

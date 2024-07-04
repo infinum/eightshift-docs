@@ -1,0 +1,256 @@
+# Customization
+
+import { ComponentShowcase } from '../components/component-showcase';
+import { Select, AsyncSelect, MultiSelect, AsyncMultiSelect } from '@eightshift/ui-components';
+import { icons } from '@eightshift/ui-components/icons';
+import {
+	demoOptions,
+	demoGetData,
+	CustomDropdownIndicator,
+	CustomMenuOption,
+	CustomClearIndicator,
+	CustomValueDisplay,
+	CustomMultiValueRemoveButton,
+	CustomMultiValueDisplay,
+} from './select-helpers';
+
+Select components allow many customizations to adapt to various use cases.
+
+For the complete list of customizations, use your IDE's autocomplete functionality. Look for props starting with `custom`.
+
+Most common customizations are listed below.
+
+## Custom dropdown arrow
+
+_Applies to all select components_
+
+<ComponentShowcase>
+	{(data, setData) => (
+		<Select
+			value={data}
+			onChange={setData}
+			options={demoOptions}
+			customDropdownArrow={CustomDropdownIndicator}
+		/>
+	)}
+</ComponentShowcase>
+
+```jsx
+const CustomDropdownIndicator = (props) => {
+	return (
+		<RSDropdownIndicator {...props}>
+			<div className='[&>svg]:es-uic-text-red-500'>
+				{props.selectProps.menuIsOpen ? icons.arrowUpCircleAlt : icons.arrowDownCircleAlt}
+			</div>
+		</RSDropdownIndicator>
+	);
+};
+
+<Select
+	value={value}
+	onChange={(value) => setValue(value)}
+	options={[
+		{ value: 'option-1', label: 'Option 1' },
+		{ value: 'option-2', label: 'Option 2' },
+		{ value: 'option-3', label: 'Option 3' },
+	]}
+	// highlight-next-line
+	customDropdownArrow={CustomDropdownIndicator}
+/>;
+```
+
+## Custom menu option
+
+_Applies to all select components_
+
+<ComponentShowcase defaultValue='item-1'>
+	{(data, setData) => (
+		<Select
+			value={data}
+			onChange={setData}
+			options={demoOptions}
+			customMenuOption={CustomMenuOption}
+			simpleValue
+		/>
+	)}
+</ComponentShowcase>
+
+```jsx
+const CustomMenuOption = (props) => (
+	<RSOption {...props}>
+		<>
+			<span role='img'>{icons.emptyCircle}</span>
+			<span>{props.label}</span>
+		</>
+	</RSOption>
+);
+
+<Select
+	value={value}
+	onChange={(value) => setValue(value)}
+	options={[
+		{ value: 'option-1', label: 'Option 1' },
+		{ value: 'option-2', label: 'Option 2' },
+		{ value: 'option-3', label: 'Option 3' },
+	]}
+	// highlight-next-line
+	customMenuOption={CustomMenuOption}
+/>;
+```
+
+## Custom clear indicator
+
+_Applies to all select components_
+
+<ComponentShowcase defaultValue='item-1'>
+	{(data, setData) => (
+		<Select
+			value={data}
+			onChange={setData}
+			options={demoOptions}
+			customClearIndicator={CustomClearIndicator}
+			clearable
+			simpleValue
+		/>
+	)}
+</ComponentShowcase>
+
+```jsx
+const CustomClearIndicator = (props) => {
+	return <RSClearIndicator {...props}>{icons.errorCircleFill}</RSClearIndicator>;
+};
+
+<Select
+	value={value}
+	onChange={(value) => setValue(value)}
+	options={[
+		{ value: 'option-1', label: 'Option 1' },
+		{ value: 'option-2', label: 'Option 2' },
+		{ value: 'option-3', label: 'Option 3' },
+	]}
+	clearable
+	// highlight-next-line
+	customClearIndicator={CustomClearIndicator}
+/>;
+```
+
+## Custom value display (single select)
+
+_Applies to `Select` and `AsyncSelect`_
+
+<ComponentShowcase defaultValue='item-1'>
+	{(data, setData) => (
+		<Select
+			value={data}
+			onChange={setData}
+			options={demoOptions}
+			customValueDisplay={CustomValueDisplay}
+			simpleValue
+		/>
+	)}
+</ComponentShowcase>
+
+```jsx
+const CustomValueDisplay = (props) => {
+	return (
+		<RSSingleValue {...props}>
+			<span className='es-uic-text-red-500 es-uic-font-mono es-uic-font-semibold'>{props.children}</span>
+		</RSSingleValue>
+	);
+};
+
+<Select
+	value={value}
+	onChange={(value) => setValue(value)}
+	options={[
+		{ value: 'option-1', label: 'Option 1' },
+		{ value: 'option-2', label: 'Option 2' },
+		{ value: 'option-3', label: 'Option 3' },
+	]}
+	// highlight-next-line
+	customValueDisplay={CustomValueDisplay}
+/>;
+```
+
+## Custom value display (multi-select)
+
+_Applies to `MultiSelect` and `AsyncMultiSelect`_
+
+<ComponentShowcase defaultValue={[demoOptions[0]]}>
+	{(data, setData) => (
+		<MultiSelect
+			value={data}
+			onChange={setData}
+			options={demoOptions}
+			customValueDisplay={CustomMultiValueDisplay}
+		/>
+	)}
+</ComponentShowcase>
+
+```jsx
+const CustomMultiValueDisplay = (props) => {
+	const colors = [
+		'es-uic-bg-red-500',
+		'es-uic-bg-blue-500',
+		'es-uic-bg-green-500',
+		'es-uic-bg-yellow-500',
+		'es-uic-bg-slate-900',
+	];
+	const colorIndex = props.options.findIndex((option) => option.value === props.data.value) % colors.length;
+
+	return (
+		<RSMultiValue {...props}>
+			<span
+				className={`${colors[colorIndex]} es-uic-rounded es-uic-p-1 es-uic-font-medium es-uic-leading-none es-uic-text-white`}
+			>
+				{props.children}
+			</span>
+		</RSMultiValue>
+	);
+};
+
+<MultiSelect
+	value={value}
+	onChange={(value) => setValue(value)}
+	options={[
+		{ value: 'option-1', label: 'Option 1' },
+		{ value: 'option-2', label: 'Option 2' },
+		{ value: 'option-3', label: 'Option 3' },
+	]}
+	// highlight-next-line
+	customValueDisplay={CustomMultiValueDisplay}
+/>;
+```
+
+## Custom item remove
+
+_Applies to `MultiSelect` and `AsyncMultiSelect`_
+
+<ComponentShowcase defaultValue={[demoOptions[0]]}>
+	{(data, setData) => (
+		<MultiSelect
+			value={data}
+			onChange={setData}
+			options={demoOptions}
+			customValueRemove={CustomMultiValueRemoveButton}
+		/>
+	)}
+</ComponentShowcase>
+
+```jsx
+const CustomMultiValueRemoveButton = (props) => {
+	return <RSMultiValueRemove {...props}>{icons.remove}</RSMultiValueRemove>;
+};
+
+<MultiSelect
+	value={value}
+	onChange={(value) => setValue(value)}
+	options={[
+		{ value: 'option-1', label: 'Option 1' },
+		{ value: 'option-2', label: 'Option 2' },
+		{ value: 'option-3', label: 'Option 3' },
+	]}
+	// highlight-next-line
+	customValueRemove={CustomMultiValueRemoveButton}
+/>;
+```

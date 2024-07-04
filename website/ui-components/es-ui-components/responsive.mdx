@@ -1,0 +1,437 @@
+# Responsive
+
+import { ComponentShowcase } from '../components/component-showcase';
+import { Responsive, ResponsiveLegacy, Button, OptionSelect } from '@eightshift/ui-components';
+import { icons } from '@eightshift/ui-components/icons';
+import { globalManifest, responsiveOptions, breakpointNames, responsiveLegacyAttr } from './responsive-helpers';
+
+Easily manage values that can be set per-breakpoint.
+
+:::note
+If using Frontend libs (that has **one attribute per breakpoint**), use the [ResponsiveLegacy](#responsivelegacy) component.
+:::
+
+<ComponentShowcase
+	defaultValue={{
+		_default: 'sans',
+		_desktopFirst: false,
+	}}
+	preContent={(data) => (
+		<span className='es-uic-font-mono es-uic-text-xs esd-white-space-pre'>{JSON.stringify(data, null, 2)}</span>
+	)}
+>
+	{(data, setData) => (
+		<Responsive
+			icon={icons.fontFamily}
+			label='Font family'
+			value={data}
+			onChange={setData}
+			options={responsiveOptions}
+			breakpoints={breakpointNames}
+			breakpointData={globalManifest.globalVariables.breakpoints}
+		>
+			{({ currentValue, handleChange, options }) => (
+				<OptionSelect
+					options={options}
+					onChange={(value) => handleChange(value)}
+					value={currentValue}
+				/>
+			)}
+		</Responsive>
+	)}
+</ComponentShowcase>
+
+```jsx
+<Responsive
+	icon={icons.fontFamily}
+	label='Font family'
+	value={value}
+	onChange={(value) => setValue(value)}
+	options={[
+		{ value: 'sans', label: 'Sans-serif' },
+		{ value: 'serif', label: 'Serif' },
+		{ value: 'mono', label: 'Monospace' },
+	]}
+	breakpoints={['mobile', 'tablet', 'desktop', 'large']}
+	breakpointData={{
+		mobile: 480,
+		tablet: 960,
+		desktop: 1440,
+		large: 1920,
+	}}
+>
+	{({ currentValue, handleChange, options }) => (
+		<OptionSelect
+			options={options}
+			onChange={(value) => handleChange(value)}
+			value={currentValue}
+		/>
+	)}
+</Responsive>
+```
+
+:::tip
+In Frontend libs Tailwind you can use the `getResponsiveData` helper to fetch breakpoint data.
+:::
+
+## Highlighted props
+
+For the complete list of props, use your IDE's autocomplete functionality.
+
+### Inline
+
+<ComponentShowcase
+	defaultValue={{
+		_default: 'sans',
+		_desktopFirst: false,
+	}}
+	preContent={(data) => (
+		<span className='es-uic-font-mono es-uic-text-xs esd-white-space-pre'>{JSON.stringify(data, null, 2)}</span>
+	)}
+>
+	{(data, setData) => (
+		<Responsive
+			icon={icons.fontFamily}
+			label='Font family'
+			value={data}
+			onChange={setData}
+			options={responsiveOptions}
+			breakpoints={breakpointNames}
+			breakpointData={globalManifest.globalVariables.breakpoints}
+			inline
+		>
+			{({ currentValue, handleChange, options }) => (
+				<OptionSelect
+					options={options}
+					onChange={(value) => handleChange(value)}
+					value={currentValue}
+				/>
+			)}
+		</Responsive>
+	)}
+</ComponentShowcase>
+
+```jsx
+<Responsive
+	icon={icons.fontFamily}
+	label='Font family'
+	value={value}
+	onChange={(value) => setValue(value)}
+	options={[
+		{ value: 'sans', label: 'Sans-serif' },
+		{ value: 'serif', label: 'Serif' },
+		{ value: 'mono', label: 'Monospace' },
+	]}
+	breakpoints={['mobile', 'tablet', 'desktop', 'large']}
+	breakpointData={{
+		mobile: 480,
+		tablet: 960,
+		desktop: 1440,
+		large: 1920,
+	}}
+	// highlight-next-line
+	inline
+>
+	{({ currentValue, handleChange, options }) => (
+		<OptionSelect
+			options={options}
+			onChange={(value) => handleChange(value)}
+			value={currentValue}
+		/>
+	)}
+</Responsive>
+```
+
+### Different control when inline (collapsed view)
+
+:::note
+Only applies to the control for the default breakpoint.
+:::
+
+<ComponentShowcase
+	defaultValue={{
+		_default: 'sans',
+		_desktopFirst: false,
+	}}
+	preContent={(data) => (
+		<span className='es-uic-font-mono es-uic-text-xs esd-white-space-pre'>{JSON.stringify(data, null, 2)}</span>
+	)}
+>
+	{(data, setData) => (
+		<Responsive
+			icon={icons.fontFamily}
+			label='Font family'
+			value={data}
+			onChange={setData}
+			options={responsiveOptions}
+			breakpoints={breakpointNames}
+			breakpointData={globalManifest.globalVariables.breakpoints}
+			inline
+		>
+			{({ currentValue, handleChange, options, isInlineCollapsedView }) => (
+				<OptionSelect
+					options={options}
+					onChange={(value) => handleChange(value)}
+					value={currentValue}
+					type={isInlineCollapsedView ? 'menu' : 'toggleButtons'}
+				/>
+			)}
+		</Responsive>
+	)}
+</ComponentShowcase>
+
+```jsx
+<Responsive
+	icon={icons.fontFamily}
+	label='Font family'
+	value={value}
+	onChange={(value) => setValue(value)}
+	options={[
+		{ value: 'sans', label: 'Sans-serif' },
+		{ value: 'serif', label: 'Serif' },
+		{ value: 'mono', label: 'Monospace' },
+	]}
+	breakpoints={['mobile', 'tablet', 'desktop', 'large']}
+	breakpointData={{
+		mobile: 480,
+		tablet: 960,
+		desktop: 1440,
+		large: 1920,
+	}}
+	inline
+>
+	// highlight-next-line
+	{({ currentValue, handleChange, options, isInlineCollapsedView }) => (
+		<OptionSelect
+			options={options}
+			onChange={(value) => handleChange(value)}
+			value={currentValue}
+			// highlight-next-line
+			type={isInlineCollapsedView ? 'menu' : 'toggleButtons'}
+		/>
+	)}
+</Responsive>
+```
+
+### Different control when inline (expanded view)
+
+:::note
+Only applies to the control for the default breakpoint.
+:::
+
+<ComponentShowcase
+	defaultValue={{
+		_default: 'sans',
+		_desktopFirst: false,
+	}}
+	preContent={(data) => (
+		<span className='es-uic-font-mono es-uic-text-xs esd-white-space-pre'>{JSON.stringify(data, null, 2)}</span>
+	)}
+>
+	{(data, setData) => (
+		<Responsive
+			icon={icons.fontFamily}
+			label='Font family'
+			value={data}
+			onChange={setData}
+			options={responsiveOptions}
+			breakpoints={breakpointNames}
+			breakpointData={globalManifest.globalVariables.breakpoints}
+			inline
+		>
+			{({ currentValue, handleChange, options, isInlineExpandedView }) => (
+				<OptionSelect
+					options={options}
+					onChange={(value) => handleChange(value)}
+					value={currentValue}
+					type={isInlineExpandedView ? 'radiosSegmented' : 'toggleButtons'}
+				/>
+			)}
+		</Responsive>
+	)}
+</ComponentShowcase>
+
+```jsx
+<Responsive
+	icon={icons.fontFamily}
+	label='Font family'
+	value={value}
+	onChange={(value) => setValue(value)}
+	options={[
+		{ value: 'sans', label: 'Sans-serif' },
+		{ value: 'serif', label: 'Serif' },
+		{ value: 'mono', label: 'Monospace' },
+	]}
+	breakpoints={['mobile', 'tablet', 'desktop', 'large']}
+	breakpointData={{
+		mobile: 480,
+		tablet: 960,
+		desktop: 1440,
+		large: 1920,
+	}}
+	inline
+>
+	// highlight-next-line
+	{({ currentValue, handleChange, options, isInlineExpandedView }) => (
+		<OptionSelect
+			options={options}
+			onChange={(value) => handleChange(value)}
+			value={currentValue}
+			// highlight-next-line
+			type={isInlineExpandedView ? 'radiosSegmented' : 'toggleButtons'}
+		/>
+	)}
+</Responsive>
+```
+
+### Disable desktop-first/mobile-first picker
+
+<ComponentShowcase
+	defaultValue={{
+		_default: 'sans',
+		_desktopFirst: false,
+	}}
+	preContent={(data) => (
+		<span className='es-uic-font-mono es-uic-text-xs esd-white-space-pre'>{JSON.stringify(data, null, 2)}</span>
+	)}
+>
+	{(data, setData) => (
+		<Responsive
+			icon={icons.fontFamily}
+			label='Font family'
+			value={data}
+			onChange={setData}
+			options={responsiveOptions}
+			breakpoints={breakpointNames}
+			breakpointData={globalManifest.globalVariables.breakpoints}
+			noModeSelect
+		>
+			{({ currentValue, handleChange, options }) => (
+				<OptionSelect
+					options={options}
+					onChange={(value) => handleChange(value)}
+					value={currentValue}
+				/>
+			)}
+		</Responsive>
+	)}
+</ComponentShowcase>
+
+```jsx
+<Responsive
+	icon={icons.fontFamily}
+	label='Font family'
+	value={value}
+	onChange={(value) => setValue(value)}
+	options={[
+		{ value: 'sans', label: 'Sans-serif' },
+		{ value: 'serif', label: 'Serif' },
+		{ value: 'mono', label: 'Monospace' },
+	]}
+	breakpoints={['mobile', 'tablet', 'desktop', 'large']}
+	breakpointData={{
+		mobile: 480,
+		tablet: 960,
+		desktop: 1440,
+		large: 1920,
+	}}
+	// highlight-next-line
+	noModeSelect
+>
+	{({ currentValue, handleChange, options }) => (
+		<OptionSelect
+			options={options}
+			onChange={(value) => handleChange(value)}
+			value={currentValue}
+		/>
+	)}
+</Responsive>
+```
+
+## `ResponsiveLegacy`
+
+:::caution
+This component is meant to be used in projects that have **one attribute per breakpoint**, e.g. regular Frontend libs. If using Frontend libs **Tailwind**, use the [Responsive](/components/es-ui-components/responsive) component.
+:::
+
+Props are mostly the same as in the `Responsive` component.
+
+Main differences:
+
+- there is not desktop-first/mobile-first mode switcher
+- there is no _Responsive preview_
+
+<ComponentShowcase
+	defaultValue={{
+		myAttrLarge: 'serif',
+		myAttrDesktop: '',
+		myAttrTablet: '',
+		myAttrMobile: '',
+	}}
+	preContent={(data) => (
+		<span className='es-uic-font-mono es-uic-text-xs esd-white-space-pre'>{JSON.stringify(data, null, 2)}</span>
+	)}
+>
+	{(data, setData) => (
+		<ResponsiveLegacy
+			icon={icons.fontFamily}
+			label='Font family'
+			attribute={responsiveLegacyAttr}
+			value={data}
+			onChange={(attrName, newVal) => {
+				setData({
+					...data,
+					[attrName]: newVal,
+				});
+			}}
+			options={responsiveOptions}
+			breakpointData={globalManifest.globalVariables.breakpoints}
+
+    	>
+    		{({ currentValue, options, handleChange }) => (
+    			<OptionSelect
+    				options={options}
+    				onChange={(value) => handleChange(value)}
+    				value={currentValue}
+    			/>
+    		)}
+    	</ResponsiveLegacy>
+    )}
+
+</ComponentShowcase>
+
+```jsx
+<ResponsiveLegacy
+	icon={icons.fontFamily}
+	label='Font family'
+	attribute={manifest.responsiveAttributes.myAttr}
+	value={attributes}
+	onChange={(attributeName, newValue) => {
+		setAttributes({
+			...attributes,
+			[attributeName]: newValue,
+		});
+	}}
+	options={[
+		{ value: 'sans', label: 'Sans-serif' },
+		{ value: 'serif', label: 'Serif' },
+		{ value: 'mono', label: 'Monospace' },
+	]}
+	breakpointData={globalManifest.globalVariables.breakpoints}
+>
+	{({ currentValue, handleChange, options }) => (
+		<OptionSelect
+			options={options}
+			onChange={(value) => handleChange(value)}
+			value={currentValue}
+		/>
+	)}
+</ResponsiveLegacy>
+```
+
+### Inherited values
+
+The default value that marks an attribute as _inherited_ from the breakpoint above is an empty string.
+To set a custom one, use the `inheritValue` prop.
+
+If you need the inherited value to be `undefined`, set the `allowUndefined` prop instead.

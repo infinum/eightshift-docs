@@ -1,0 +1,138 @@
+# Single select
+
+import { ComponentShowcase } from '../components/component-showcase';
+import { Select } from '@eightshift/ui-components';
+import { icons } from '@eightshift/ui-components/icons';
+import { demoOptions } from './select-helpers';
+
+<ComponentShowcase>
+	{(data, setData) => (
+		<Select
+			value={data}
+			onChange={setData}
+			options={demoOptions}
+		/>
+	)}
+</ComponentShowcase>
+
+```jsx
+<Select
+	value={value}
+	onChange={(value) => setValue(value)}
+	options={[
+		{ value: 'option-1', label: 'Option 1' },
+		{ value: 'option-2', label: 'Option 2' },
+		{ value: 'option-3', label: 'Option 3' },
+	]}
+/>
+```
+
+## Highlighted props
+
+For the complete list of props, use your IDE's autocomplete functionality.
+
+### Allow clearing the selected option
+
+<ComponentShowcase defaultValue={null}>
+	{(data, setData) => (
+		<Select
+			value={data}
+			onChange={setData}
+			options={demoOptions}
+			clearable
+		/>
+	)}
+</ComponentShowcase>
+
+```jsx
+<Select
+	value={value}
+	onChange={(value) => setValue(value)}
+	options={[
+		{ value: 'option-1', label: 'Option 1' },
+		{ value: 'option-2', label: 'Option 2' },
+		{ value: 'option-3', label: 'Option 3' },
+	]}
+	// highlight-next-line
+	clearable
+/>
+```
+
+### Disable search
+
+<ComponentShowcase defaultValue={null}>
+	{(data, setData) => (
+		<Select
+			value={data}
+			onChange={setData}
+			options={demoOptions}
+			noSearch
+		/>
+	)}
+</ComponentShowcase>
+
+```jsx
+<Select
+	value={value}
+	onChange={(value) => setValue(value)}
+	options={[
+		{ value: 'option-1', label: 'Option 1' },
+		{ value: 'option-2', label: 'Option 2' },
+		{ value: 'option-3', label: 'Option 3' },
+	]}
+	// highlight-next-line
+	noSearch
+/>
+```
+
+### Simple value
+
+By default, values are objects with `value` and `label` properties (and optionally `metadata`).
+If you want to use a simple string value, use the `simpleValue` prop.
+
+<ComponentShowcase
+	defaultValue={null}
+	preContent={(data) => (
+		<span className='es-uic-font-mono es-uic-text-xs esd-white-space-pre'>{JSON.stringify(data, null, 2)}</span>
+	)}
+>
+	{(data, setData) => (
+		<Select
+			label='Default'
+			value={data}
+			onChange={setData}
+			options={demoOptions}
+		/>
+	)}
+</ComponentShowcase>
+
+<ComponentShowcase
+	defaultValue={null}
+	preContent={(data) => (
+		<span className='es-uic-font-mono es-uic-text-xs esd-white-space-pre'>{JSON.stringify(data, null, 2)}</span>
+	)}
+>
+	{(data, setData) => (
+		<Select
+			label='Simple value'
+			value={data}
+			onChange={setData}
+			options={demoOptions}
+			simpleValue
+		/>
+	)}
+</ComponentShowcase>
+
+```jsx
+<Select
+	value={value}
+	onChange={(value) => setValue(value)}
+	options={[
+		{ value: 'option-1', label: 'Option 1' },
+		{ value: 'option-2', label: 'Option 2' },
+		{ value: 'option-3', label: 'Option 3' },
+	]}
+	// highlight-next-line
+	simpleValue
+/>
+```

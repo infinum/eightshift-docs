@@ -1,35 +1,38 @@
 @import url('https://use.typekit.net/baz1roy.css');
 
+@import '~@eightshift/ui-components/dist/assets/fonts.css';
+@import '~@eightshift/ui-components/dist/assets/style.css';
+
 .esd-full-fixed {
 	position: fixed;
 	inset: 0;
 }
 
-
-progress {
-	appearance: none;
+.esd-hide-bg-on-hover.es-uic-bg-violet-50:hover,
+.esd-hide-bg-on-hover:hover .es-uic-bg-violet-50,
+.esd-hide-bg-on-hover.es-uic-bg-gray-50:hover,
+.esd-hide-bg-on-hover:hover .es-uic-bg-gray-50 {
+	--tw-bg-opacity: 0 !important;
 }
 
-progress::-webkit-progress-bar {
-	background-color: white;
-	border-radius: 10rem;
-	border: 1px solid var(--ifm-color-gray-400);
-
-	height: 0.5rem;
+.esd-white-space-pre {
+	white-space: break-spaces;
 }
 
-progress::-webkit-progress-value {
-	background-color: #D8262C;
-	border-radius: 10rem;
+.esd-icon-showcase-button {
+	inline-size: 3.25rem !important;
+	block-size: 3.25rem !important;
 
-	height: 0.5rem;
-
-	transition: 0.5s inline-size ease-out;
+	svg {
+		inline-size: 1.5rem !important;
+		block-size: 1.5rem !important;
+	}
 }
 
-progress[value]::-moz-progress-bar {
-	background-color: #D8262C;
-	border-radius: 10rem;
 
-	height: 0.5rem;
+.esd-legacy-docs-iframe {
+	min-inline-size: 64vw;
+
+	border: 1px solid #D1D5DB !important;
+	border-radius: 0.5rem !important;
 }

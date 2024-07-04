@@ -1,0 +1,323 @@
+# Slider
+
+import { ComponentShowcase } from '../components/component-showcase';
+import { Slider } from '@eightshift/ui-components';
+import { icons } from '@eightshift/ui-components/icons';
+
+<ComponentShowcase defaultValue={0}>
+	{(data, setData) => {
+		return (
+			<Slider
+				value={data}
+				onChange={setData}
+				aria-label='Slider'
+			/>
+		);
+	}}
+</ComponentShowcase>
+
+```jsx
+<Slider
+	value={value}
+	onChange={(value) => setData(value)}
+/>
+```
+
+## Range slider
+
+In order for the value display to be visible, a `label` must be set!
+
+<ComponentShowcase defaultValue={[20, 60]}>
+	{(data, setData) => {
+		return (
+			<Slider
+				label='My slider'
+				value={data}
+				onChange={setData}
+				aria-label='Slider'
+			/>
+		);
+	}}
+</ComponentShowcase>
+
+```jsx
+<Slider
+	label='My slider'
+	// highlight-next-line
+	value={value} // e.g. [20, 60]
+	onChange={(value) => setData(value)}
+/>
+```
+
+## Highlighted props
+
+For the complete list of props, use your IDE's autocomplete functionality.
+
+### Markers
+
+#### Auto-generated
+
+<ComponentShowcase defaultValue={0}>
+	{(data, setData) => {
+		return (
+			<Slider
+				value={data}
+				onChange={setData}
+				aria-label='Slider'
+				markers
+			/>
+		);
+	}}
+</ComponentShowcase>
+
+```jsx
+<Slider
+	value={value}
+	onChange={(value) => setData(value)}
+	// highlight-next-line
+	markers
+/>
+```
+
+#### Dots
+
+<ComponentShowcase defaultValue={0}>
+	{(data, setData) => {
+		return (
+			<Slider
+				value={data}
+				onChange={setData}
+				aria-label='Slider'
+				markers='dots'
+			/>
+		);
+	}}
+</ComponentShowcase>
+
+```jsx
+<Slider
+	value={value}
+	onChange={(value) => setData(value)}
+	// highlight-next-line
+	markers='dots'
+/>
+```
+
+#### Manual
+
+<ComponentShowcase defaultValue={0}>
+	{(data, setData) => {
+		return (
+			<Slider
+				value={data}
+				onChange={setData}
+				aria-label='Slider'
+				markers={{ 0: 'start', 25: '', 50: 'middle', 75: '', 100: 'end' }}
+			/>
+		);
+	}}
+</ComponentShowcase>
+
+```jsx
+<Slider
+	value={value}
+	onChange={(value) => setData(value)}
+	// highlight-next-line
+	markers={{ 0: 'start', 25: '', 50: 'middle', 75: '', 100: 'end' }}
+/>
+```
+
+### Custom start point
+
+<ComponentShowcase defaultValue={0}>
+	{(data, setData) => {
+		return (
+			<Slider
+				value={data}
+				onChange={setData}
+				aria-label='Slider'
+				startPoint={50}
+			/>
+		);
+	}}
+</ComponentShowcase>
+
+```jsx
+<Slider
+	value={value}
+	onChange={(value) => setData(value)}
+	// highlight-next-line
+	startPoint={50}
+/>
+```
+
+### Disable the active area highlight
+
+<ComponentShowcase defaultValue={0}>
+	{(data, setData) => {
+		return (
+			<Slider
+				value={data}
+				onChange={setData}
+				aria-label='Slider'
+				noActiveHighlight
+			/>
+		);
+	}}
+</ComponentShowcase>
+
+```jsx
+<Slider
+	value={value}
+	onChange={(value) => setData(value)}
+	// highlight-next-line
+	noActiveHighlight
+/>
+```
+
+### Custom track style
+
+<ComponentShowcase defaultValue={0}>
+	{(data, setData) => {
+		return (
+			<Slider
+				value={data}
+				onChange={setData}
+				aria-label='Slider'
+				markers={{
+					0: <span className='es-uic-text-red-500'>R</span>,
+					50: <span className='es-uic-text-green-500'>G</span>,
+					100: <span className='es-uic-text-blue-500'>B</span>,
+				}}
+				startPoint={50}
+				noActiveHighlight
+				trackStyle={{
+					backgroundImage: 'linear-gradient(to right in oklab, #ff000060, #00ff0060, #0000ff60)',
+				}}
+			/>
+		);
+	}}
+</ComponentShowcase>
+
+```jsx
+<Slider
+	value={value}
+	onChange={(value) => setData(value)}
+	markers={{
+		0: <span className='es-uic-text-red-500'>R</span>,
+		50: <span className='es-uic-text-green-500'>G</span>,
+		100: <span className='es-uic-text-blue-500'>B</span>,
+	}}
+	startPoint={50}
+	noActiveHighlight
+	// highlight-start
+	trackStyle={{
+		backgroundImage: 'linear-gradient(to right in oklab, #ff000060, #00ff0060, #0000ff60)',
+	}}
+	// highlight-end
+/>
+```
+
+### Before element
+
+<ComponentShowcase defaultValue={0}>
+	{(data, setData) => {
+		return (
+			<Slider
+				value={data}
+				onChange={setData}
+				aria-label='Slider'
+				before={icons.magicAltFillTransparent}
+			/>
+		);
+	}}
+</ComponentShowcase>
+
+```jsx
+<Slider
+	value={value}
+	onChange={(value) => setData(value)}
+	// highlight-next-line
+	before={icons.magicAltFillTransparent}
+/>
+```
+
+### After element
+
+<ComponentShowcase defaultValue={0}>
+	{(data, setData) => {
+		return (
+			<Slider
+				value={data}
+				onChange={setData}
+				aria-label='Slider'
+				after={icons.magicAltFillTransparent}
+			/>
+		);
+	}}
+</ComponentShowcase>
+
+```jsx
+<Slider
+	value={value}
+	onChange={(value) => setData(value)}
+	// highlight-next-line
+	after={icons.magicAltFillTransparent}
+/>
+```
+
+### Input field
+
+Requires `label`!
+
+:::note
+Use sparingly, the input methods are redundant.
+:::
+
+<ComponentShowcase defaultValue={0}>
+	{(data, setData) => {
+		return (
+			<Slider
+				label='My slider'
+				value={data}
+				onChange={setData}
+				aria-label='Slider'
+				inputField
+			/>
+		);
+	}}
+</ComponentShowcase>
+
+```jsx
+<Slider
+	label='My slider'
+	value={value}
+	onChange={(value) => setData(value)}
+	// highlight-next-line
+	inputField
+/>
+```
+
+### Vertical slider
+
+<ComponentShowcase defaultValue={0}>
+	{(data, setData) => {
+		return (
+			<Slider
+				value={data}
+				onChange={setData}
+				aria-label='Slider'
+				vertical
+			/>
+		);
+	}}
+</ComponentShowcase>
+
+```jsx
+<Slider
+	value={value}
+	onChange={(value) => setData(value)}
+	// highlight-next-line
+	vertical
+/>
+```

@@ -1,0 +1,119 @@
+# Triggered popover
+
+import { ComponentShowcase } from '../components/component-showcase';
+import { TriggeredPopover, Button } from '@eightshift/ui-components';
+import { icons } from '@eightshift/ui-components/icons';
+
+<ComponentShowcase>
+	<TriggeredPopover>
+		<div className='es-uic-w-full es-uic-rounded es-uic-bg-gray-100 es-uic-text-sm es-uic-p-4 es-uic-min-h-40'>
+			<span>This is demo content</span>
+		</div>
+	</TriggeredPopover>
+</ComponentShowcase>
+
+```jsx
+<TriggeredPopover>
+	<div>This is demo content</div>
+</TriggeredPopover>
+```
+
+## Highlighted props
+
+For the complete list of props, use your IDE's autocomplete functionality.
+
+### Trigger button customization
+
+<ComponentShowcase>
+	<TriggeredPopover
+		triggerButtonLabel='Click me'
+		triggerButtonIcon={icons.pointerHand}
+	>
+		<div className='es-uic-w-full es-uic-rounded es-uic-bg-gray-100 es-uic-text-sm es-uic-p-4 es-uic-min-h-40'>
+			<span>This is demo content</span>
+		</div>
+	</TriggeredPopover>
+</ComponentShowcase>
+
+```jsx
+<TriggeredPopover
+	// highlight-start
+	triggerButtonLabel='Click me'
+	triggerButtonIcon={icons.pointerHand}
+	// highlight-end
+>
+	<div>This is demo content</div>
+</TriggeredPopover>
+```
+
+#### More advanced customizations
+
+`triggerButtonProps` accepts all props a [`Button`](/components/es-ui-components/button) accepts.
+
+<ComponentShowcase>
+	<TriggeredPopover
+		triggerButtonIcon={icons.trash}
+		triggerButtonProps={{ type: 'danger' }}
+		className='es-uic-p-4'
+	>
+		<b>Are you sure you want to delete this?</b>
+		<br />
+		<span>There's no going back (whoa-oh)</span>
+
+		<div className='es-uic-flex es-uic-gap-2 es-uic-mt-3'>
+			<Button className='es-uic-ml-auto' type='ghost'>Yup!</Button>
+			<Button>Nope</Button>
+		</div>
+	</TriggeredPopover>
+
+</ComponentShowcase>
+
+```jsx
+<TriggeredPopover
+	triggerButtonIcon={icons.trash}
+	// highlight-next-line
+	triggerButtonProps={{ type: 'danger' }}
+>
+	<div>This is demo content</div>
+</TriggeredPopover>
+```
+
+## Offset from trigger
+
+`offset` controls the space between the trigger and the popover on the main opening axis.
+
+<ComponentShowcase>
+	<TriggeredPopover offset={20}>
+		<div className='es-uic-w-full es-uic-rounded es-uic-bg-gray-100 es-uic-text-sm es-uic-p-4 es-uic-min-h-40'>
+			<span>This is demo content</span>
+		</div>
+	</TriggeredPopover>
+</ComponentShowcase>
+
+```jsx
+<TriggeredPopover
+	// highlight-next-line
+	offset={20}
+>
+	<div>This is demo content</div>
+</TriggeredPopover>
+```
+
+`crossOffset` controls the space between the trigger and the popover on the axis perpendicular to the main opening axis.
+
+<ComponentShowcase>
+	<TriggeredPopover crossOffset={80}>
+		<div className='es-uic-w-full es-uic-rounded es-uic-bg-gray-100 es-uic-text-sm es-uic-p-4 es-uic-min-h-40'>
+			<span>This is demo content</span>
+		</div>
+	</TriggeredPopover>
+</ComponentShowcase>
+
+```jsx
+<TriggeredPopover
+	// highlight-next-line
+	crossOffset={80}
+>
+	<div>This is demo content</div>
+</TriggeredPopover>
+```

@@ -1,0 +1,148 @@
+# Breakpoint preview
+
+import { ComponentShowcase } from '../components/component-showcase';
+import { BreakpointPreview } from '@eightshift/ui-components';
+import { icons } from '@eightshift/ui-components/icons';
+
+<ComponentShowcase
+	className='es-uic-text-sm'
+	fitWidth
+>
+	<BreakpointPreview
+		blocks={[
+			{
+				breakpoint: 'Mobile',
+				widthEnd: '480px',
+				value: 'Regular',
+				dotsStart: true,
+				alignEnd: true,
+				active: true,
+			},
+			{
+				breakpoint: 'Default',
+				value: 'Small',
+				dotsEnd: true,
+			},
+		]}
+	/>
+</ComponentShowcase>
+
+```jsx
+<BreakpointPreview
+	blocks={[
+		{
+			breakpoint: 'Mobile',
+			widthEnd: '480px',
+			value: 'Regular',
+			dotsStart: true,
+			alignEnd: true,
+			active: true,
+		},
+		{
+			breakpoint: 'Default',
+			value: 'Small',
+			dotsEnd: true,
+		},
+	]}
+/>
+```
+
+## Highlighted props
+
+For the complete list of props, use your IDE's autocomplete functionality.
+
+### Start dots
+
+If you don't want to reduce the width of the blocks within.
+
+<ComponentShowcase
+	className='es-uic-text-sm'
+	fitWidth
+>
+	<BreakpointPreview
+		dotsStart
+		blocks={[
+			{
+				breakpoint: 'Mobile',
+				widthEnd: '480px',
+				value: 'Regular',
+				alignEnd: true,
+			},
+			{
+				breakpoint: 'Default',
+				value: 'Small',
+				dotsEnd: true,
+				active: true,
+			},
+		]}
+	/>
+</ComponentShowcase>
+
+```jsx
+<BreakpointPreview
+	// highlight-next-line
+	dotsStart
+	blocks={[
+		{
+			breakpoint: 'Mobile',
+			widthEnd: '480px',
+			value: 'Regular',
+			alignEnd: true,
+			active: true,
+		},
+		{
+			breakpoint: 'Default',
+			value: 'Small',
+			dotsEnd: true,
+		},
+	]}
+/>
+```
+
+### End dots
+
+If you don't want to reduce the width of the blocks within.
+
+<ComponentShowcase
+	className='es-uic-text-sm'
+	fitWidth
+>
+	<BreakpointPreview
+		dotsEnd
+		blocks={[
+			{
+				breakpoint: 'Mobile',
+				widthEnd: '480px',
+				value: 'Regular',
+				dotsStart: true,
+				alignEnd: true,
+				active: true,
+			},
+			{
+				breakpoint: 'Default',
+				value: 'Small',
+			},
+		]}
+	/>
+</ComponentShowcase>
+
+```jsx
+<BreakpointPreview
+	// highlight-next-line
+	dotsEnd
+	blocks={[
+		{
+			breakpoint: 'Mobile',
+			widthEnd: '480px',
+			value: 'Regular',
+			dotsStart: true,
+			alignEnd: true,
+			active: true,
+		},
+		{
+			breakpoint: 'Default',
+			value: 'Small',
+		},
+	]}
+/>
+```

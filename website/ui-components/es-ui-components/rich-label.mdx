@@ -1,0 +1,93 @@
+# Rich label
+
+import { ComponentShowcase } from '../components/component-showcase';
+import { RichLabel } from '@eightshift/ui-components';
+import { icons } from '@eightshift/ui-components/icons';
+import { globalManifest, responsiveOptions, breakpointNames } from './responsive-helpers';
+
+Upgrade your basic labels with an optional icon and subtitle.
+
+<ComponentShowcase fitWidth>
+	<RichLabel
+		label='Label ipsum dolor sit amet'
+		subtitle='Subtitle ipsum dolor sit amet'
+		icon={icons.emptyCircle}
+	/>
+</ComponentShowcase>
+
+```jsx
+<RichLabel
+	label='Label ipsum dolor sit amet'
+	subtitle='Subtitle ipsum dolor sit amet'
+	icon={icons.emptyCircle}
+/>
+```
+
+## Highlighted props
+
+For the complete list of props, use your IDE's autocomplete functionality.
+
+### Expand to full width
+
+<ComponentShowcase>
+	<RichLabel
+		label='Label ipsum dolor sit amet'
+		subtitle='Subtitle ipsum dolor sit amet'
+		icon={icons.emptyCircle}
+		fullWidth
+	/>
+</ComponentShowcase>
+
+```jsx
+<RichLabel
+	label='Label ipsum dolor sit amet'
+	subtitle='Subtitle ipsum dolor sit amet'
+	icon={icons.emptyCircle}
+	// highlight-next-line
+	fullWidth
+/>
+```
+
+### Monochrome
+
+If you have cases where the text might be a different color, or of dynamic color,
+use the `noColor` prop to use opacity to highlight hierarchy instead of multiple colors.
+
+<ComponentShowcase className='es-uic-text-red-500'>
+	<RichLabel
+		label='Label ipsum dolor sit amet'
+		subtitle='Subtitle ipsum dolor sit amet'
+		icon={icons.solidCircleFilled}
+	/>
+</ComponentShowcase>
+
+```jsx
+// The container has a red text color applied.
+<RichLabel
+	label='Label ipsum dolor sit amet'
+	subtitle='Subtitle ipsum dolor sit amet'
+	icon={icons.solidCircleFilled}
+/>
+```
+
+<ComponentShowcase className='es-uic-text-red-500'>
+	<RichLabel
+		label='Label ipsum dolor sit amet'
+		subtitle='Subtitle ipsum dolor sit amet'
+		icon={icons.solidCircleFilled}
+
+    	noColor
+    />
+
+</ComponentShowcase>
+
+```jsx
+// The container has a red text color applied.
+<RichLabel
+	label='Label ipsum dolor sit amet'
+	subtitle='Subtitle ipsum dolor sit amet'
+	icon={icons.solidCircleFilled}
+	// highlight-next-line
+	noColor
+/>
+```

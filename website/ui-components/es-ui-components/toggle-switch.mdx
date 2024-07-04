@@ -1,0 +1,138 @@
+# Toggle / Switch
+
+import { ComponentShowcase } from '../components/component-showcase';
+import { Toggle, Switch, Button } from '@eightshift/ui-components';
+import { icons } from '@eightshift/ui-components/icons';
+
+<ComponentShowcase defaultValue={false}>
+	{(data, setData) => {
+		return (
+			<Toggle
+				checked={data}
+				onChange={setData}
+				label='Demo'
+			/>
+		);
+	}}
+</ComponentShowcase>
+
+```jsx
+<Toggle
+	label='Demo'
+	checked={data}
+	onChange={(value) => setData(value)}
+/>
+```
+
+If you need the toggle switch standalone, you can use the `Switch` component.
+
+Other props are the same, with the exception of label and related props.
+
+<ComponentShowcase
+	defaultValue={false}
+	fitWidth
+>
+	{(data, setData) => {
+		return (
+			<Switch
+				checked={data}
+				onChange={setData}
+			/>
+		);
+	}}
+</ComponentShowcase>
+
+```jsx
+<Switch
+	checked={data}
+	onChange={(value) => setData(value)}
+/>
+```
+
+## Highlighted props
+
+For the complete list of props, use your IDE's autocomplete functionality.
+
+### Icon, subtitle
+Augment the label
+
+<ComponentShowcase defaultValue={false}>
+	{(data, setData) => {
+		return (
+			<Toggle
+				icon={icons.emptyRect}
+				subtitle='Subtitle'
+				checked={data}
+				onChange={setData}
+				label='Demo'
+			/>
+		);
+	}}
+</ComponentShowcase>
+
+```jsx
+<Toggle
+	// highlight-start
+	icon={icons.emptyRect}
+	subtitle='Subtitle'
+	// highlight-end
+	label='Demo'
+	checked={data}
+	onChange={setData}
+/>
+```
+
+### Disabled
+Prevent interactions with the toggle.
+
+<ComponentShowcase defaultValue={false}>
+	{(data, setData) => {
+		return (
+			<Toggle
+				label='Demo'
+				checked={data}
+				onChange={setData}
+				disabled
+			/>
+		);
+	}}
+</ComponentShowcase>
+
+```jsx
+<Toggle
+	label='Demo'
+	checked={data}
+	onChange={(value) => setData(value)}
+	// highlight-next-line
+	disabled
+/>
+```
+
+### Indeterminate state
+Whether the toggle should be rendered in an indeterminate state.
+
+<ComponentShowcase
+	defaultValue={null}
+	resettable
+>
+	{(data, setData) => {
+		return (
+			<Toggle
+				label='Demo'
+				checked={data}
+				onChange={setData}
+				isIndeterminate={data === null}
+			/>
+		);
+	}}
+</ComponentShowcase>
+
+```jsx
+<Toggle
+	label='Demo'
+	checked={data}
+	onChange={(value) => setData(value)}
+	// highlight-next-line
+	isIndeterminate={data === null}
+/>
+```

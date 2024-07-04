@@ -1,0 +1,105 @@
+# Solid color picker
+
+import { ComponentShowcase } from '../components/component-showcase';
+import { SolidColorPicker } from '@eightshift/ui-components';
+import { icons } from '@eightshift/ui-components/icons';
+
+<ComponentShowcase defaultValue='#0D3636'>
+	{(data, setData) => {
+		return (
+			<SolidColorPicker
+				value={data}
+				onChange={setData}
+				aria-label='Color picker'
+			/>
+		);
+	}}
+</ComponentShowcase>
+
+```jsx
+<SolidColorPicker
+	value={value}
+	onChange={(value) => setData(value)}
+/>
+```
+
+## Highlighted props
+
+For the complete list of props, use your IDE's autocomplete functionality.
+
+### Allow transparent colors
+
+<ComponentShowcase defaultValue='#0D3636'>
+	{(data, setData) => {
+		return (
+			<SolidColorPicker
+				value={data}
+				onChange={setData}
+				aria-label='Color picker'
+				allowTransparency
+			/>
+		);
+	}}
+</ComponentShowcase>
+
+```jsx
+<SolidColorPicker
+	value={value}
+	onChange={(value) => setData(value)}
+	// highlight-next-line
+	allowTransparency
+/>
+```
+
+### Change output color format
+
+<ComponentShowcase
+	defaultValue='rgb(13,54,54)'
+	preContent={(data) => <span className='es-uic-text-sm es-uic-font-mono'>{data}</span>}
+>
+	{(data, setData) => {
+		return (
+			<SolidColorPicker
+				value={data}
+				onChange={setData}
+				aria-label='Color picker'
+				outputFormat='rgb'
+			/>
+		);
+	}}
+</ComponentShowcase>
+
+```jsx
+<SolidColorPicker
+	value={value}
+	onChange={(value) => setData(value)}
+	// highlight-next-line
+	outputFormat='rgb'
+/>
+```
+
+### Hide advanced options
+
+<ComponentShowcase
+	defaultValue='#0D3636'
+>
+	{(data, setData) => {
+		return (
+			<SolidColorPicker
+				value={data}
+				onChange={setData}
+				aria-label='Color picker'
+				noAdvancedOptions
+			/>
+		);
+	}}
+</ComponentShowcase>
+
+```jsx
+<SolidColorPicker
+	value={value}
+	onChange={(value) => setData(value)}
+	// highlight-next-line
+	noAdvancedOptions
+/>
+```

@@ -1,0 +1,113 @@
+# Animated visibility
+
+import { ComponentShowcase } from '../components/component-showcase';
+import { AnimatedVisibility, Checkbox, OptionSelect } from '@eightshift/ui-components';
+import { icons } from '@eightshift/ui-components/icons';
+
+Allows showing/hiding content in an animated way. After hiding, the content is unmounted from the DOM.
+
+<ComponentShowcase
+	className='esd-hide-bg-on-hover'
+	defaultValue={false}
+	preContent={(data, setData) => (
+		<Checkbox
+			checked={data}
+			onChange={setData}
+			label='Visible'
+		/>
+	)}
+>
+	{(data) => (
+		<AnimatedVisibility
+			visible={data}
+			noInitial
+		>
+			<div className='es-uic-w-full es-uic-rounded-lg es-uic-bg-gray-100 es-uic-text-sm es-uic-p-4 es-uic-min-h-40'>
+				<span>This is demo content</span>
+			</div>
+		</AnimatedVisibility>
+	)}
+</ComponentShowcase>
+
+```jsx
+<AnimatedVisibility
+	visibility={myVariable}
+>
+	<span>Your content goes here</span>
+</AnimatedVisibility>
+```
+
+## Highlighted props
+
+For the complete list of props, use your IDE's autocomplete functionality.
+
+### Transitions
+
+<ComponentShowcase
+	className='esd-hide-bg-on-hover'
+	defaultValue={{
+		checked: false,
+		transition: 'slideFade',
+	}}
+	preContent={(data, setData) => (
+		<>
+			<OptionSelect
+				label='Transition'
+				value={data.transition}
+				onChange={(v) => setData({ ...data, transition: v })}
+				options={[
+					{ value: 'slideFade', label: 'Slide and fade', subtitle: 'Default' },
+					{ value: 'scaleFade', label: 'Scale and fade' },
+					{ value: 'scaleRotateFade', label: 'Scale, rotate, and fade' },
+				]}
+				type='menu'
+				wrapperProps={{
+					keepOpen: false,
+				}}
+			/>
+
+			<Checkbox
+				checked={data.checked}
+				onChange={(v) => setData({ ...data, checked: v })}
+				label='Visible'
+			/>
+		</>
+	)}
+>
+	{(data) => (
+		<AnimatedVisibility
+		visible={data.checked}
+		transition={data.transition}
+		noInitial
+	>
+		<div className='es-uic-w-full es-uic-rounded-lg es-uic-bg-gray-100 es-uic-text-sm es-uic-p-4 es-uic-min-h-40'>
+			<span>This is demo content</span>
+		</div>
+	</AnimatedVisibility>
+	)}
+</ComponentShowcase>
+
+```jsx
+<AnimatedVisibility
+	visibility={myVariable}
+	// highlight-next-line
+	transition='scaleFade'
+>
+	<span>This is demo content</span>
+</AnimatedVisibility>
+```
+
+### Skipping initial transition
+
+If you want to skip the initial transition (when the component mounts), and just want to transition
+when the visibility changes afterwards, you can use the `noInitial` prop.
+
+```jsx
+<AnimatedVisibility
+	visibility={myVariable}
+	// highlight-next-line
+	noInitial
+>
+	<span>Your content goes here</span>
+</AnimatedVisibility>
+```

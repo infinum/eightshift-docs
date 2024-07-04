@@ -1,0 +1,65 @@
+# Input field
+
+import { ComponentShowcase } from '../components/component-showcase';
+import { InputField, OptionSelect } from '@eightshift/ui-components';
+import { icons } from '@eightshift/ui-components/icons';
+
+<ComponentShowcase>
+	{(data, setData) => (
+		<InputField
+			value={data}
+			onChange={setData}
+			placeholder='Basic text input'
+			aria-label='Basic text input'
+			type='text'
+		/>
+	)}
+</ComponentShowcase>
+
+```jsx
+<InputField
+	value={value}
+	onChange={(value) => setValue(value)}
+	placeholder='Basic text input'
+/>
+```
+
+:::note
+If you're not setting a `label`, add an `aria-label` to help describe the field to users that use screen readers.
+:::
+
+## Highlighted props
+
+For the complete list of props, use your IDE's autocomplete functionality.
+
+### Field type
+
+<ComponentShowcase
+	defaultValue={{ type: 'text' }}
+	preContent={(data, setData) => (
+		<OptionSelect
+			label='Type'
+			value={data.type}
+			onChange={(value) => setData({ ...data, type: value })}
+			options={[
+				{ value: 'text', label: 'Text', subtitle: <span className='es-uic-font-mono'>text</span> },
+				{ value: 'search', label: 'Search field', subtitle: <span className='es-uic-font-mono'>search</span> },
+				{ value: 'url', label: 'URL', subtitle: <span className='es-uic-font-mono'>url</span> },
+				{ value: 'tel', label: 'Phone number', subtitle: <span className='es-uic-font-mono'>tel</span> },
+				{ value: 'email', label: 'E-mail', subtitle: <span className='es-uic-font-mono'>email</span> },
+				{ value: 'password', label: 'Password', subtitle: <span className='es-uic-font-mono'>password</span> },
+				{ value: 'multiline', label: 'Multi-line text', subtitle: <span className='es-uic-font-mono'>multiline</span> },
+			]}
+			type='menu'
+		/>
+	)}
+>
+	{(data, setData) => (
+		<InputField
+			value={data?.text}
+			onChange={(value) => setData({ ...data, text: value })}
+			type={data.type}
+			aria-label='Demo field'
+		/>
+	)}
+</ComponentShowcase>

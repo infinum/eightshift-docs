@@ -1,0 +1,44 @@
+# UI icons
+
+import { ComponentShowcase } from '../components/component-showcase';
+import { Button, InputField } from '@eightshift/ui-components';
+import { icons } from '@eightshift/ui-components/icons';
+
+<ComponentShowcase
+	className='es-uic-flex es-uic-flex-wrap es-uic-gap-2 !es-uic-space-y-0 es-uic-w-full'
+	fitWidth
+	preContent={(data, setData) => (
+		<InputField
+			placeholder='Search icons'
+			aria-label='Search icons'
+			value={data}
+			onChange={setData}
+			className='es-uic-min-w-24 es-uic-w-48'
+		/>
+	)}
+>
+	{(data) => {
+		const filteredIcons = Object.keys(icons).filter((k) =>
+			data?.length > 0 ? k.toLowerCase().includes(data?.toLowerCase()) : true
+		);
+
+		if (filteredIcons.length < 1)  {
+			return (
+				<span>Nothing found</span>
+			);
+		}
+
+		return filteredIcons.map((icon, index) => (
+			<Button
+				key={index}
+				className='esd-icon-showcase-button'
+				icon={icons[icon]}
+				tooltip={<span className='es-uic-font-mono'>{icon}</span>}
+				aria-label={icon}
+				onPress={() => {
+					navigator.clipboard.writeText(icon);
+				}}
+			/>
+		));
+	}}
+</ComponentShowcase>

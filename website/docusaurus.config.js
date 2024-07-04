@@ -1,10 +1,11 @@
-const {themes} = require('prism-react-renderer');
+const { themes } = require('prism-react-renderer');
 
 const darkTheme = themes.dracula;
 
 module.exports = {
 	title: 'Eightshift Development kit',
-	tagline: 'All the tools you need to start building a modern WordPress project, using all the latest front end development tools.',
+	tagline:
+		'All the tools you need to start building a modern WordPress project, using all the latest front end development tools.',
 	url: 'https://eightshift.com',
 	baseUrl: '/',
 	favicon: '/img/favicon.png',
@@ -16,7 +17,7 @@ module.exports = {
 			src: 'https://buttons.github.io/buttons.js',
 			async: true,
 			defer: true,
-		}
+		},
 	],
 	themeConfig: {
 		navbar: {
@@ -38,8 +39,8 @@ module.exports = {
 					position: 'right',
 				},
 				{
-					to: '/devkit-components/',
-					activeBasePath: 'devkit-components',
+					to: '/components/welcome',
+					activeBasePath: 'components',
 					label: 'Components',
 					position: 'right',
 				},
@@ -107,7 +108,11 @@ module.exports = {
 			appId: 'CWB1S6U3C4',
 			apiKey: 'cbae3fc769aee256328548eff1e91c1c',
 			indexName: 'infinum_eightshift',
-			startUrls: ['https://eightshift.com', 'https://eightshift.com/docs', 'https://eightshift.com/forms'],
+			startUrls: [
+				'https://eightshift.com',
+				'https://eightshift.com/docs',
+				'https://eightshift.com/forms',
+			],
 			contextualSearch: false,
 		},
 		prism: {
@@ -122,9 +127,9 @@ module.exports = {
 		docs: {
 			sidebar: {
 				autoCollapseCategories: true,
-			}
+			},
 		},
-		trailingSlash: false
+		trailingSlash: false,
 	},
 	presets: [
 		[
@@ -146,7 +151,8 @@ module.exports = {
 				},
 				blog: {
 					blogTitle: 'Tutorials and articles about Eightshift development kit',
-					blogDescription: 'Tutorials and articles about Eightshift development kit',
+					blogDescription:
+						'Tutorials and articles about Eightshift development kit',
 					blogSidebarTitle: 'Latest posts',
 					showReadingTime: true,
 					postsPerPage: 9,
@@ -168,6 +174,15 @@ module.exports = {
 				sidebarPath: require.resolve('./sidebars-forms.js'),
 			},
 		],
+		[
+			'@docusaurus/plugin-content-docs',
+			{
+				id: 'ui-components',
+				path: 'ui-components',
+				routeBasePath: 'components',
+				sidebarPath: require.resolve('./sidebars-components.js'),
+			},
+		],
 		'es-text-loader',
 	],
 	customFields: {
@@ -178,7 +193,7 @@ module.exports = {
 			'Gutenberg blocks',
 			'development kit',
 			'wordpress kit',
-			'devkit'
+			'devkit',
 		],
 		image: 'img-why-boilerplate@2x.png',
 	},

@@ -1,0 +1,132 @@
+# Control base
+
+import { ComponentShowcase } from '../components/component-showcase';
+import { BaseControl, Button } from '@eightshift/ui-components';
+import { icons } from '@eightshift/ui-components/icons';
+import { globalManifest, responsiveOptions, breakpointNames } from './responsive-helpers';
+
+The base for a lot of Eightshift UI components controls.
+
+Allows creating your controls that will fit in nicely with Eightshift UI components
+
+<ComponentShowcase>
+	<BaseControl
+		label='Label'
+		icon={icons.emptyCircle}
+	>
+		<div className='es-uic-w-full es-uic-rounded-lg es-uic-bg-gray-100 es-uic-text-sm es-uic-p-4 es-uic-min-h-40'>
+			<span>This is demo content</span>
+		</div>
+	</BaseControl>
+</ComponentShowcase>
+
+```jsx
+<BaseControl
+	label='Label'
+	icon={icons.emptyCircle}
+>
+	<span>This is demo content</span>
+</BaseControl>
+```
+
+## Highlighted props
+
+For the complete list of props, use your IDE's autocomplete functionality.
+
+### Help text
+
+<ComponentShowcase>
+	<BaseControl
+		label='Label'
+		icon={icons.emptyCircle}
+		help='This is help text'
+	>
+		<div className='es-uic-w-full es-uic-rounded-lg es-uic-bg-gray-100 es-uic-text-sm es-uic-p-4 es-uic-min-h-40'>
+			<span>This is demo content</span>
+		</div>
+	</BaseControl>
+</ComponentShowcase>
+
+```jsx
+<BaseControl
+	label='Label'
+	icon={icons.emptyCircle}
+	// highlight-next-line
+	help='This is help text'
+>
+	<span>This is demo content</span>
+</BaseControl>
+```
+
+### Actions
+
+<ComponentShowcase>
+	<BaseControl
+		label='Label'
+		icon={icons.emptyCircle}
+		actions={
+			<>
+				<Button
+					icon={icons.emptyCircle}
+					size='small'
+				/>
+				<Button
+					icon={icons.emptyRect}
+					size='small'
+				/>
+			</>
+		}
+	>
+		<div className='es-uic-w-full es-uic-rounded-lg es-uic-bg-gray-100 es-uic-text-sm es-uic-p-4 es-uic-min-h-40'>
+			<span>This is demo content</span>
+		</div>
+	</BaseControl>
+</ComponentShowcase>
+
+```jsx
+<BaseControl
+	label='Label'
+	icon={icons.emptyCircle}
+	// highlight-start
+	actions={
+		<>
+			<Button
+				icon={icons.emptyCircle}
+				size='small'
+			/>
+			<Button
+				icon={icons.emptyRect}
+				size='small'
+			/>
+		</>
+	}
+	// highlight-end
+>
+	<span>This is demo content</span>
+</BaseControl>
+```
+
+### Inline label
+
+<ComponentShowcase>
+	<BaseControl
+		label='Label'
+		icon={icons.emptyCircle}
+		inline
+	>
+		<div className='es-uic-w-full es-uic-rounded-lg es-uic-bg-gray-100 es-uic-text-sm es-uic-p-4'>
+			<span>This is demo content</span>
+		</div>
+	</BaseControl>
+</ComponentShowcase>
+
+```jsx
+<BaseControl
+	label='Label'
+	icon={icons.emptyCircle}
+	// highlight-next-line
+	inline
+>
+	<span>This is demo content</span>
+</BaseControl>
+```

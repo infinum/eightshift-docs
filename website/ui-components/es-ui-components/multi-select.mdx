@@ -1,0 +1,34 @@
+# Multi-select
+
+import { ComponentShowcase } from '../components/component-showcase';
+import { MultiSelect } from '@eightshift/ui-components';
+import { icons } from '@eightshift/ui-components/icons';
+import { demoOptions } from './select-helpers';
+
+<ComponentShowcase defaultValue={[]}>
+	{(data, setData) => (
+		<MultiSelect
+			value={data}
+			onChange={setData}
+			options={demoOptions}
+		/>
+	)}
+</ComponentShowcase>
+
+```jsx
+<MultiSelect
+	value={value}
+	onChange={(value) => setValue(value)}
+	options={[
+		{ value: 'option-1', label: 'Option 1' },
+		{ value: 'option-2', label: 'Option 2' },
+		{ value: 'option-3', label: 'Option 3' },
+	]}
+/>
+```
+
+:::note
+Props are the same as for the [Single select](/components/es-ui-components/select).
+:::
+
+For the complete list of props, use your IDE's autocomplete functionality.

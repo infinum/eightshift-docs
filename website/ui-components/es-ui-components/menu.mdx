@@ -1,0 +1,459 @@
+# Menu
+
+import { ComponentShowcase } from '../components/component-showcase';
+import { Menu, MenuItem, MenuSeparator, MenuSection, SubMenuItem } from '@eightshift/ui-components';
+import { icons } from '@eightshift/ui-components/icons';
+
+<ComponentShowcase>
+	<Menu>
+		<MenuItem>First item</MenuItem>
+		<MenuItem>Second item</MenuItem>
+		<MenuItem>Third item</MenuItem>
+	</Menu>
+</ComponentShowcase>
+
+```jsx
+<Menu>
+	<MenuItem>First item</MenuItem>
+	<MenuItem>Second item</MenuItem>
+	<MenuItem>Third item</MenuItem>
+</Menu>
+```
+
+## Menu separator
+
+<ComponentShowcase>
+	<Menu>
+		<MenuItem>Item 1</MenuItem>
+		<MenuItem>Item 2</MenuItem>
+		<MenuSeparator />
+		<MenuItem>Item 3</MenuItem>
+		<MenuItem>Item 4</MenuItem>
+	</Menu>
+</ComponentShowcase>
+
+```jsx
+<Menu>
+	<MenuItem>Item 1</MenuItem>
+	<MenuItem>Item 2</MenuItem>
+	// highlight-next-line
+	<MenuSeparator />
+	<MenuItem>Item 3</MenuItem>
+	<MenuItem>Item 4</MenuItem>
+</Menu>
+```
+
+## Menu with sections
+
+:::caution
+If using sections, you **do not** mix menu sections and regular menu items.
+:::
+
+<ComponentShowcase>
+	<Menu>
+		<MenuSection label='Section 1'>
+			<MenuItem>Item 1</MenuItem>
+			<MenuItem>Item 2</MenuItem>
+		</MenuSection>
+		<MenuSection label='Section 2'>
+			<MenuItem>Item 3</MenuItem>
+			<MenuItem>Item 4</MenuItem>
+		</MenuSection>
+	</Menu>
+</ComponentShowcase>
+
+```jsx
+<Menu>
+	// highlight-next-line
+	<MenuSection label='Section 1'>
+		<MenuItem>Item 1</MenuItem>
+		<MenuItem>Item 2</MenuItem>
+	</MenuSection>
+	// highlight-next-line
+	<MenuSection label='Section 2'>
+		<MenuItem>Item 3</MenuItem>
+		<MenuItem>Item 4</MenuItem>
+	</MenuSection>
+</Menu>
+```
+
+If you need to have a top-level menu item outside of any sections you can either add a section without a label, or use `MenuSeparator` elements with a disabled `MenuItem` to act as the section label.
+
+## Menu with a sub-menu
+
+<ComponentShowcase>
+	<Menu>
+		<MenuItem>Item 1</MenuItem>
+		<MenuItem>Item 2</MenuItem>
+		<SubMenuItem trigger={<MenuItem>Submenu</MenuItem>}>
+			<MenuItem>Subitem 1</MenuItem>
+			<MenuItem>Subitem 2</MenuItem>
+		</SubMenuItem>
+	</Menu>
+</ComponentShowcase>
+
+```jsx
+<Menu>
+	<MenuItem>Item 1</MenuItem>
+	<MenuItem>Item 2</MenuItem>
+	// highlight-start
+	<SubMenuItem trigger={<MenuItem>Submenu</MenuItem>}>
+		<MenuItem>Subitem 1</MenuItem>
+		<MenuItem>Subitem 2</MenuItem>
+	</SubMenuItem>
+	// highlight-end
+</Menu>
+```
+
+## Menu item customization
+
+<ComponentShowcase>
+	<Menu>
+		<MenuSection label='Icon'>
+			<MenuItem icon={icons.emptyCircle}>First item</MenuItem>
+		</MenuSection>
+		<MenuSection label='End icon'>
+			<MenuItem endIcon={icons.emptyRect}>First item</MenuItem>
+		</MenuSection>
+		<MenuSection label='Additional text'>
+			<MenuItem shortcut='Ctrl + Z'>Second item</MenuItem>
+		</MenuSection>
+		<MenuSection label='Disabled'>
+			<MenuItem disabled>First item</MenuItem>
+			<MenuItem>Second item</MenuItem>
+		</MenuSection>
+	</Menu>
+</ComponentShowcase>
+
+```jsx
+<Menu>
+	<MenuItem
+		// highlight-next-line
+		icon={icons.emptyCircle}
+	>
+		Item with icon
+	</MenuItem>
+	<MenuItem
+		// highlight-next-line
+		endIcon={icons.emptyRect}
+	>
+		Item with end icon
+	</MenuItem>
+	<MenuItem
+		// highlight-next-line
+		shortcut='Ctrl + Z'
+	>
+		Item with shortcut text
+	</MenuItem>
+	<MenuItem
+		// highlight-next-line
+		disabled
+	>
+		Disabled item
+	</MenuItem>
+</Menu>
+```
+
+:::note
+The `shortcut` prop is used to display additional text on the right side of the menu item.
+It will not handle keyboard shortcut management.
+:::
+
+## Single/multi-select menu items
+
+<ComponentShowcase defaultValue={{ checked: ['a'], selected: 'a' }}>
+	{(data, setData) => (
+		<Menu keepOpen>
+			<MenuSection label='Radio buttons (single-select)'>
+				<MenuItem
+					selected={data.selected === 'a'}
+					onClick={() => setData({ ...data, selected: 'a' })}
+				>
+					First item
+				</MenuItem>
+				<MenuItem
+					selected={data.selected === 'b'}
+					onClick={() => setData({ ...data, selected: 'b' })}
+				>
+					Second item
+				</MenuItem>
+			</MenuSection>
+			<MenuSection label='Checkboxes (multi-select)'>
+				<MenuItem
+					checked={data.checked.includes('a')}
+					onClick={() =>
+						setData({
+							...data,
+							checked: data.checked.includes('a') ? data.checked.filter((i) => i !== 'a') : [...data.checked, 'a'],
+						})
+					}
+				>
+					First item
+				</MenuItem>
+				<MenuItem
+					checked={data.checked.includes('b')}
+					onClick={() =>
+						setData({
+							...data,
+							checked: data.checked.includes('b') ? data.checked.filter((i) => i !== 'b') : [...data.checked, 'b'],
+						})
+					}
+				>
+					Second item
+				</MenuItem>
+			</MenuSection>
+		</Menu>
+	)}
+</ComponentShowcase>
+
+```jsx
+<Menu>
+	<MenuItem
+		// highlight-next-line
+		checked={myValue === 'a'}
+		onClick={() => setMyValue('a')}
+	>
+		Item A
+	</MenuItem>
+	<MenuItem
+		// highlight-next-line
+		checked={myValue === 'b'}
+		onClick={() => setMyValue('b')}
+	>
+		Item B
+	</MenuItem>
+	<MenuItem
+		// highlight-next-line
+		checked={myValue === 'c'}
+		onClick={() => setMyValue('c')}
+	>
+		Item C
+	</MenuItem>
+</Menu>
+```
+
+```jsx
+<Menu>
+	<MenuItem
+		// highlight-next-line
+		checked={myValue}
+		onClick={() => setMyValue(!myValue)}
+	>
+		Item
+	</MenuItem>
+</Menu>
+```
+
+## Highlighted props
+
+For the complete list of props, use your IDE's autocomplete functionality.
+
+### Trigger button customization
+
+<ComponentShowcase>
+	<Menu triggerLabel='Menu'>
+		<MenuItem>First item</MenuItem>
+		<MenuItem>Second item</MenuItem>
+		<MenuItem>Third item</MenuItem>
+	</Menu>
+</ComponentShowcase>
+
+```jsx
+<Menu
+	// highlight-next-line
+	triggerLabel='Menu'
+>
+	<MenuItem>First item</MenuItem>
+	<MenuItem>Second item</MenuItem>
+	<MenuItem>Third item</MenuItem>
+</Menu>
+```
+
+<ComponentShowcase>
+	<Menu
+		triggerLabel='Menu'
+		triggerIcon={icons.emptyCircle}
+	>
+		<MenuItem>First item</MenuItem>
+		<MenuItem>Second item</MenuItem>
+		<MenuItem>Third item</MenuItem>
+	</Menu>
+</ComponentShowcase>
+
+```jsx
+<Menu
+	// highlight-start
+	triggerLabel='Menu'
+	triggerIcon={icons.emptyCircle}
+	// highlight-end
+>
+	<MenuItem>First item</MenuItem>
+	<MenuItem>Second item</MenuItem>
+	<MenuItem>Third item</MenuItem>
+</Menu>
+```
+
+#### Advanced customizations
+
+`triggerProps` accepts all [`Button`](/components/es-ui-components/button) props.
+
+<ComponentShowcase>
+	<Menu triggerProps={{ size: 'small' }}>
+		<MenuItem>First item</MenuItem>
+		<MenuItem>Second item</MenuItem>
+		<MenuItem>Third item</MenuItem>
+	</Menu>
+</ComponentShowcase>
+
+```jsx
+<Menu
+	// highlight-next-line
+	triggerProps={{ size: 'small' }}
+>
+	<MenuItem>First item</MenuItem>
+	<MenuItem>Second item</MenuItem>
+	<MenuItem>Third item</MenuItem>
+</Menu>
+```
+
+### Keep open after item selection
+
+By default, the menu will close after an item is selected. If you want to keep it open, use the `keepOpen` prop.
+
+<ComponentShowcase>
+	{(data, setData) => (
+		<Menu keepOpen>
+			<MenuItem
+				selected={data === 'a'}
+				onClick={() => setData('a')}
+			>
+				First item
+			</MenuItem>
+			<MenuItem
+				selected={data === 'b'}
+				onClick={() => setData('b')}
+			>
+				Second item
+			</MenuItem>
+			<MenuItem
+				selected={data === 'c'}
+				onClick={() => setData('c')}
+			>
+				Third item
+			</MenuItem>
+		</Menu>
+	)}
+</ComponentShowcase>
+
+```jsx
+<Menu
+	// highlight-next-line
+	keepOpen
+>
+	<MenuItem>First item</MenuItem>
+	<MenuItem>Second item</MenuItem>
+	<MenuItem>Third item</MenuItem>
+</Menu>
+```
+
+### Open on long press
+
+If you want the menu to open on long press instead of click, use the `openOnLongPress` prop.
+
+<ComponentShowcase>
+	<Menu openOnLongPress>
+		<MenuItem>First item</MenuItem>
+		<MenuItem>Second item</MenuItem>
+		<MenuItem>Third item</MenuItem>
+	</Menu>
+</ComponentShowcase>
+
+```jsx
+<Menu
+	// highlight-next-line
+	openOnLongPress
+>
+	<MenuItem>First item</MenuItem>
+	<MenuItem>Second item</MenuItem>
+	<MenuItem>Third item</MenuItem>
+</Menu>
+```
+
+This allows implementing a button that can, for example, act as a toggle button by default, but open a menu on long press.
+
+**Be careful about UX and discoverability in those cases.**
+
+<ComponentShowcase
+	defaultValue='400'
+	preContent={(data) => (
+		<p className='es-uic-text-base'>
+			Font weight
+			<br />
+			<span className='es-uic-font-mono'>{data}</span>
+		</p>
+	)}
+>
+	{(data, setData) => (
+		<Menu
+			triggerIcon={icons.bold}
+			tooltip='Font weight'
+			triggerProps={{
+				type: data === '700' ? 'selected' : 'default',
+				onPress: () => setData(data === '700' ? '400' : '700'),
+			}}
+			openOnLongPress
+		>
+			<MenuItem
+				selected={data === '300'}
+				onClick={() => setData('300')}
+			>
+				Light
+			</MenuItem>
+			<MenuItem
+				selected={data === '400'}
+				onClick={() => setData('400')}
+			>
+				Regular
+			</MenuItem>
+			<MenuItem
+				selected={data === '500'}
+				onClick={() => setData('500')}
+			>
+				Medium
+			</MenuItem>
+			<MenuItem
+				selected={data === '700'}
+				onClick={() => setData('700')}
+			>
+				Bold
+			</MenuItem>
+		</Menu>
+	)}
+</ComponentShowcase>
+
+_Click to toggle 'bold', press and hold for more font weights._
+
+```jsx
+<Menu
+	triggerIcon={icons.bold}
+	tooltip='Font weight'
+	triggerProps={{
+		type: fontWeight === '700' ? 'selected' : 'default',
+		onPress: () => setData(fontWeight === '700' ? '400' : '700'),
+	}}
+	openOnLongPress
+>
+	<MenuItem selected={fontWeight === '300'} onClick={...}>
+		Light
+	</MenuItem>
+	<MenuItem selected={fontWeight === '400'} onClick={...}>
+		Regular
+	</MenuItem>
+	<MenuItem selected={fontWeight === '500'} onClick={...}>
+		Medium
+	</MenuItem>
+	<MenuItem selected={fontWeight === '700'} onClick={...}>
+		Bold
+	</MenuItem>
+</Menu>
+```

@@ -1,0 +1,47 @@
+# Getting started
+
+## Installation
+
+It's easy to get started!
+
+### Get the package
+Install the `@eightshift/ui-components` package with your package manager of choice.
+
+### Import the styles
+
+At the minimum you have to import
+```scss
+@import '~@eightshift/ui-components/dist/assets/style.css';
+```
+
+We strongly recommend importing the font as well. This will ensure consistency between platforms and improve the overall look and feel.
+```scss
+@import '~@eightshift/ui-components/dist/assets/fonts.css';
+```
+
+To expand the font coverage to the Block editor (even the Gutenberg components), import:
+```scss
+@import '~@eightshift/ui-components/dist/assets/wp-font-enhancements.css';
+```
+
+Optionally, import the WordPress UI enhancements, which correct some of the inconsistencies in the default components.
+
+```scss
+@import '~@eightshift/ui-components/dist/assets/wp-ui-enhancements.css';
+```
+
+:::caution
+If using Frontend libs version 12 or older, skip the WordPress UI enhancements, as they will conflict with the styles included there.
+:::
+
+#### Recommended setup
+```scss
+@import '~@eightshift/ui-components/dist/assets/fonts.css';
+@import '~@eightshift/ui-components/dist/assets/wp-font-enhancements.css';
+@import '~@eightshift/ui-components/dist/assets/wp-ui-enhancements.css';
+@import '~@eightshift/ui-components/dist/assets/style.css';
+```
+
+### Enjoy!
+
+That's all! You are ready to use Eightshift UI components in your project.

@@ -1,0 +1,118 @@
+# Expandable
+
+import { ComponentShowcase } from '../components/component-showcase';
+import { Expandable, Button } from '@eightshift/ui-components';
+import { icons } from '@eightshift/ui-components/icons';
+
+<ComponentShowcase defaultValue={false}>
+	<Expandable
+		icon={icons.emptyRect}
+		label='Expandable'
+		subtitle='Subtitle'
+	>
+		<div className='es-uic-w-full es-uic-rounded-lg es-uic-bg-gray-100 es-uic-text-sm es-uic-p-4 es-uic-min-h-40'>
+			<span>This is demo content</span>
+		</div>
+	</Expandable>
+</ComponentShowcase>
+
+```jsx
+<Expandable
+	icon={icons.emptyRect}
+	label='Expandable'
+	subtitle='Subtitle'
+>
+	<span>This is demo content</span>
+</Expandable>
+```
+
+## Highlighted props
+
+For the complete list of props, use your IDE's autocomplete functionality.
+
+### Actions
+
+Add extra controls to the right of the label.
+
+<ComponentShowcase defaultValue={false}>
+	<Expandable
+		icon={icons.emptyRect}
+		label='Expandable'
+		subtitle='Subtitle'
+		actions={<Button icon={icons.emptyCircle} />}
+	>
+		<div className='es-uic-w-full es-uic-rounded-lg es-uic-bg-gray-100 es-uic-text-sm es-uic-p-4 es-uic-min-h-40'>
+			<span>This is demo content</span>
+		</div>
+	</Expandable>
+</ComponentShowcase>
+
+```jsx
+<Expandable
+	icon={icons.emptyRect}
+	label='Expandable'
+	subtitle='Subtitle'
+	// highlight-start
+	actions={
+		<Button
+			icon={icons.emptyCircle}
+			onPress={...}
+		/>
+	}
+	// highlight-end
+>
+	<span>This is demo content</span>
+</Expandable>
+```
+
+### Keep actions on expand
+
+If you want to keep the actions visible even when the content is expanded, you can use the `keepActionsOnExpand` prop.
+
+<ComponentShowcase defaultValue={false}>
+	<Expandable
+		icon={icons.emptyRect}
+		label='Expandable'
+		subtitle='Subtitle'
+		actions={<Button icon={icons.emptyCircle} />}
+		keepActionsOnExpand
+	>
+		<div className='es-uic-w-full es-uic-rounded-lg es-uic-bg-gray-100 es-uic-text-sm es-uic-p-4 es-uic-min-h-40'>
+			<span>This is demo content</span>
+		</div>
+	</Expandable>
+</ComponentShowcase>
+
+```jsx
+<Expandable
+	icon={icons.emptyRect}
+	label='Expandable'
+	subtitle='Subtitle'
+	actions={
+		<Button
+			icon={icons.emptyCircle}
+			onPress={...}
+		/>
+	}
+	// highlight-next-line
+	keepActionsOnExpand
+>
+	<span>This is demo content</span>
+</Expandable>
+```
+
+### Disable focus trapping
+
+By default, the component will trap focus when expanded.
+If you want to disable this behavior, you can use the `noFocusHandling` prop.
+
+```jsx
+<Expandable
+	icon={icons.emptyRect}
+	label='Expandable'
+	// highlight-next-line
+	noFocusHandling
+>
+	<span>This is demo content</span>
+</Expandable>
+```

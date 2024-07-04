@@ -1,0 +1,114 @@
+# Horizontal and vertical stacks
+
+import { ComponentShowcase } from '../components/component-showcase';
+import { HStack, VStack, Button, Checkbox } from '@eightshift/ui-components';
+import { icons } from '@eightshift/ui-components/icons';
+
+Simple one-dimensional layouts made easy.
+
+<ComponentShowcase>
+	<HStack>
+		<Button icon={icons.experiment} />
+		<Button icon={icons.magicAlt} />
+		<Button icon={icons.wrench} />
+		<Button icon={icons.bot} />
+	</HStack>
+</ComponentShowcase>
+
+```jsx
+<HStack>
+	<Button icon={icons.experiment} />
+	<Button icon={icons.magicAlt} />
+	<Button icon={icons.wrench} />
+	<Button icon={icons.bot} />
+</HStack>
+```
+
+<ComponentShowcase>
+	<VStack>
+		<Button icon={icons.experiment} />
+		<Button icon={icons.magicAlt} />
+		<Button icon={icons.wrench} />
+		<Button icon={icons.bot} />
+	</VStack>
+</ComponentShowcase>
+
+```jsx
+<VStack>
+	<Button icon={icons.experiment} />
+	<Button icon={icons.magicAlt} />
+	<Button icon={icons.wrench} />
+	<Button icon={icons.bot} />
+</VStack>
+```
+
+<ComponentShowcase>
+	<HStack>
+		<Button icon={icons.experiment} />
+		<Button icon={icons.magicAlt} />
+		<VStack>
+			<Button icon={icons.num1Circle} />
+			<Button icon={icons.num2Circle} />
+			<Button icon={icons.num3Circle} />
+			<Button icon={icons.num4Circle} />
+		</VStack>
+		<Button icon={icons.wrench} />
+		<Button icon={icons.bot} />
+	</HStack>
+</ComponentShowcase>
+
+```jsx
+<HStack>
+	<Button icon={icons.experiment} />
+	<Button icon={icons.magicAlt} />
+	<VStack>
+		<Button icon={icons.num1Circle} />
+		<Button icon={icons.num2Circle} />
+		<Button icon={icons.num3Circle} />
+		<Button icon={icons.num4Circle} />
+	</VStack>
+	<Button icon={icons.wrench} />
+	<Button icon={icons.bot} />
+</HStack>
+```
+
+## Highlighted props
+
+For the complete list of props, use your IDE's autocomplete functionality.
+
+### Disable wrapping
+
+<ComponentShowcase
+	defaultValue={true}
+	preContent={(data, setData) => (
+		<Checkbox
+			label='Wrap items'
+			checked={data}
+			onChange={setData}
+		/>
+	)}
+>
+	{(data) => (
+		<HStack noWrap={!data}>
+		<Button icon={icons.experiment} />
+		<Button icon={icons.magicAlt} />
+		<Button icon={icons.wrench} />
+		<Button icon={icons.bot} />
+		<Button icon={icons.edit} />
+		<Button icon={icons.componentGeneric} />
+		<Button icon={icons.group} />
+		<Button icon={icons.design} />
+		<Button icon={icons.cookieAlt} />
+		<Button icon={icons.gridAlt} />
+	</HStack>
+	)}
+</ComponentShowcase>
+
+```jsx
+<HStack
+	// highlight-next-line
+	noWrap
+>
+	{...}
+</HStack>
+```

@@ -99,7 +99,7 @@ Here are some examples of icons available out-of-the-box in our Icon component:
 
 ## Using icons for editor and block options
 
-When developing your blocks and adding new options, you may need to add icons to improve the user experience. We have many icons already available for use. You can see the full list in our [Storybook](/devkit-components) under `UI icons` and `Block icons` section. We already added the icon when adding a new Color Theme option for the Quote block. Here is the simplified version:
+When developing your blocks and adding new options, you may need to add icons to improve the user experience. We have many icons already available for use. You can see the full list in our [Storybook](/components/legacy-component-docs) under `UI icons` and `Block icons` section. We already added the icon when adding a new Color Theme option for the Quote block. Here is the simplified version:
 ```jsx
 import { ColorPaletteCustom, IconLabel, icons } from '@eightshift/frontend-libs/scripts';
 
