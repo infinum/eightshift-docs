@@ -1,0 +1,35 @@
+# Responsive preview
+
+import { ComponentShowcase } from '../components/component-showcase';
+import { ResponsivePreview } from '@eightshift/ui-components';
+import { icons } from '@eightshift/ui-components/icons';
+import { globalManifest, responsiveOptions, breakpointNames } from './responsive-helpers';
+
+<ComponentShowcase
+	className='es-uic-text-sm'
+	fitWidth
+>
+	<ResponsivePreview
+		value={{
+			_default: 'sans',
+			_desktopFirst: false,
+			desktop: 'serif',
+		}}
+		options={responsiveOptions}
+		breakpoints={breakpointNames}
+		breakpointData={globalManifest.globalVariables.breakpoints}
+	/>
+</ComponentShowcase>
+
+```jsx
+<ToggleButton
+	selected={data}
+	onChange={setData}
+>
+	Toggle me
+</ToggleButton>
+```
+
+## Highlighted props
+
+For the complete list of props, use your IDE's autocomplete functionality.

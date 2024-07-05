@@ -1,0 +1,214 @@
+# Number picker
+
+import { ComponentShowcase } from '../components/component-showcase';
+import { NumberPicker, Button } from '@eightshift/ui-components';
+import { icons } from '@eightshift/ui-components/icons';
+
+<ComponentShowcase defaultValue={0}>
+	{(data, setData) => (
+		<NumberPicker
+			value={data}
+			onChange={setData}
+		/>
+	)}
+</ComponentShowcase>
+
+```jsx
+<NumberPicker
+	value={data}
+	onChange={(value) => setValue(value)}
+/>
+```
+
+:::tip
+When focused inside the input field, use the up/down arrows to change the value.
+:::
+
+## Highlighted props
+
+For the complete list of props, use your IDE's autocomplete functionality.
+
+### Min, max, step
+
+<ComponentShowcase defaultValue={0}>
+	{(data, setData) => (
+		<NumberPicker
+			value={data}
+			onChange={setData}
+			min={-40}
+			max={40}
+			step={2}
+		/>
+	)}
+</ComponentShowcase>
+
+```jsx
+<NumberPicker
+	value={value}
+	onChange={(value) => setValue(value)}
+	// highlight-start
+	min={-40}
+	max={40}
+	step={2}
+	// highlight-end
+/>
+```
+
+### Fixed width
+
+By default, the picker will try to calculate maximum width based on the `max` value.
+If it's not set, the width defaults to 4 characters.
+
+In cases where `min` is less than `0`, the width is slightly increased to account for the `-` sign.
+
+If you set the width to a certain number of characters, you can use the `fixedWidth` prop.
+Decimal numbers are allowed.
+
+<ComponentShowcase defaultValue={0}>
+	{(data, setData) => (
+		<NumberPicker
+			value={data}
+			onChange={setData}
+			fixedWidth={12}
+			max={999}
+		/>
+	)}
+</ComponentShowcase>
+
+```jsx
+<NumberPicker
+	value={value}
+	onChange={(value) => setValue(value)}
+	max={999}
+	// highlight-next-line
+	fixedWidth={12}
+/>
+```
+
+### Prefix and suffix
+
+<ComponentShowcase defaultValue={0}>
+	{(data, setData) => (
+		<NumberPicker
+			value={data}
+			onChange={setData}
+			prefix='€'
+		/>
+	)}
+</ComponentShowcase>
+
+```jsx
+<NumberPicker
+	value={value}
+	onChange={(value) => setValue(value)}
+	// highlight-next-line
+	prefix='€'
+/>
+```
+
+<ComponentShowcase defaultValue={0}>
+	{(data, setData) => (
+		<NumberPicker
+			value={data}
+			onChange={setData}
+			suffix='item(s)'
+		/>
+	)}
+</ComponentShowcase>
+
+```jsx
+<NumberPicker
+	value={value}
+	onChange={(value) => setValue(value)}
+	// highlight-next-line
+	suffix='item(s)'
+/>
+```
+
+### Additional controls
+
+<ComponentShowcase defaultValue={0}>
+	{(data, setData) => (
+		<NumberPicker
+			value={data}
+			onChange={setData}
+		>
+			<Button
+				icon={icons.resetToZero}
+				tooltip='Reset'
+				onPress={() => setData(0)}
+				disabled={data === 0}
+				type='ghost'
+			/>
+		</NumberPicker>
+	)}
+</ComponentShowcase>
+
+```jsx
+<NumberPicker
+	value={value}
+	onChange={(value) => setValue(value)}
+>
+	// highlight-start
+	<Button
+		icon={icons.resetToZero}
+		tooltip='Reset'
+		onPress={() => setValue(0)}
+		disabled={value === 0}
+		type='ghost'
+	/>
+	// highlight-end
+</NumberPicker>
+```
+
+### Label, icon, subtitle, help, inline
+
+<ComponentShowcase defaultValue={0}>
+	{(data, setData) => (
+		<NumberPicker
+			value={data}
+			onChange={setData}
+			label='Pick a number'
+			icon={icons.emptyCircle}
+			help='Help text'
+		/>
+	)}
+</ComponentShowcase>
+
+```jsx
+<NumberPicker
+	value={value}
+	onChange={(value) => setValue(value)}
+	// highlight-start
+	label='Pick a number'
+	icon={icons.emptyCircle}
+	help='Help text'
+	// highlight-end
+/>
+```
+
+<ComponentShowcase defaultValue={0}>
+	{(data, setData) => (
+		<NumberPicker
+			value={data}
+			onChange={setData}
+			label='Pick a number'
+			icon={icons.emptyCircle}
+			subtitle='Subtitle text'
+			inline
+		/>
+	)}
+</ComponentShowcase>
+
+```jsx
+<NumberPicker
+	value={value}
+	onChange={(value) => setValue(value)}
+	// highlight-start
+	label='Pick a number'
+	icon={icons.emptyCircle}
+	subtitle='Subtitle text'
+	inline
+	// highlight-end
+/>
+```

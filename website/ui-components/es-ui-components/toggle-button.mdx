@@ -1,0 +1,31 @@
+# Toggle button
+
+import { ComponentShowcase } from '../components/component-showcase';
+import { ToggleButton } from '@eightshift/ui-components';
+import { icons } from '@eightshift/ui-components/icons';
+
+<ComponentShowcase defaultValue={false}>
+	{(data, setData) => {
+		return (
+			<ToggleButton
+				selected={data}
+				onChange={setData}
+			>
+				Toggle me
+			</ToggleButton>
+		);
+	}}
+</ComponentShowcase>
+
+```jsx
+<ToggleButton
+	selected={data}
+	onChange={setData}
+>
+	Toggle me
+</ToggleButton>
+```
+
+Rest of the props are the same as on the [Button](/components/es-ui-components/button) component.
+
+For the complete list of props, use your IDE's autocomplete functionality.

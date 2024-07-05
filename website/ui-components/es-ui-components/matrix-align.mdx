@@ -1,0 +1,70 @@
+# Matrix align
+
+import { ComponentShowcase } from '../components/component-showcase';
+import { MatrixAlign } from '@eightshift/ui-components';
+import { icons } from '@eightshift/ui-components/icons';
+
+<ComponentShowcase defaultValue='center center'>
+	{(data, setData) => (
+		<MatrixAlign
+			onChange={setData}
+			value={data}
+		/>
+	)}
+</ComponentShowcase>
+
+```jsx
+<MatrixAlign
+	onChange={(value) => setData(value)}
+	value={data}
+/>
+```
+
+## Highlighted props
+
+For the complete list of props, use your IDE's autocomplete functionality.
+
+### Matrix size
+
+`3x3` is the default size. If needed, `2x2` can be set with the `size` prop.
+
+<ComponentShowcase defaultValue='top left'>
+	{(data, setData) => (
+		<MatrixAlign
+			onChange={setData}
+			value={data}
+			size='2x2'
+		/>
+	)}
+</ComponentShowcase>
+
+```jsx
+<MatrixAlign
+	onChange={(value) => setData(value)}
+	value={data}
+/>
+```
+
+### Label
+
+<ComponentShowcase defaultValue='center center'>
+	{(data, setData) => (
+		<MatrixAlign
+			onChange={setData}
+			value={data}
+			label='Alignment'
+			icon={icons.emptyRect}
+		/>
+	)}
+</ComponentShowcase>
+
+```jsx
+<MatrixAlign
+	onChange={(value) => setData(value)}
+	value={data}
+	// highlight-start
+	label='Alignment'
+	icon={icons.emptyRect}
+	// highlight-end
+/>
+```

@@ -1,0 +1,125 @@
+# Notice
+
+import { ComponentShowcase } from '../components/component-showcase';
+import { Notice, OptionSelect, Checkbox } from '@eightshift/ui-components';
+import { icons } from '@eightshift/ui-components/icons';
+
+<ComponentShowcase>
+	<Notice
+		label='Hello there'
+		subtitle='This is a notification subtitle'
+	/>
+</ComponentShowcase>
+
+```jsx
+<Notice
+	label='Hello there'
+	subtitle='This is a notification subtitle'
+/>
+```
+
+<ComponentShowcase>
+	<Notice label='Hello there!' />
+</ComponentShowcase>
+
+```jsx
+<Notice label='Hello there!' />
+```
+
+## Highlighted props
+
+For the complete list of props, use your IDE's autocomplete functionality.
+
+### Type
+
+<ComponentShowcase
+	defaultValue='default'
+	preContent={(data, setData) => (
+		<OptionSelect
+			label='Type'
+			value={data}
+			onChange={setData}
+			options={[
+				{ value: 'default', label: 'Default', subtitle: <span className='es-uic-font-mono'>default</span> },
+				{ value: 'error', label: 'Error', subtitle: <span className='es-uic-font-mono'>error</span> },
+				{ value: 'info', label: 'Info', subtitle: <span className='es-uic-font-mono'>info</span> },
+				{ value: 'placeholder', label: 'Placeholder', subtitle: <span className='es-uic-font-mono'>placeholder</span> },
+				{ value: 'success', label: 'Success', subtitle: <span className='es-uic-font-mono'>success</span> },
+				{ value: 'warning', label: 'Warning', subtitle: <span className='es-uic-font-mono'>warning</span> },
+			]}
+			type='menu'
+		/>
+	)}
+>
+	{(data) => (
+		<Notice
+			label='Hello there'
+			subtitle='This is a notification subtitle'
+			type={data}
+		/>
+	)}
+</ComponentShowcase>
+
+```jsx
+<Notice
+	label='Hello there'
+	subtitle='This is a notification subtitle'
+	// highlight-next-line
+	type='error'
+/>
+```
+
+### Icon override
+
+<ComponentShowcase>
+	<Notice
+		label='Warning'
+		subtitle='Potential magic ahead'
+		type='warning'
+		icon={icons.magicAltFillTransparent}
+	/>
+</ComponentShowcase>
+
+```jsx
+<Notice
+	label='Warning'
+	subtitle='Potential magic ahead'
+	type='warning'
+	// highlight-next-line
+	icon={icons.magicAltFillTransparent}
+/>
+```
+
+### Align icon to title
+
+Aligns the icon vertically to the title, instead of the whole notice. Useful if the content of the notice is longer.
+
+<ComponentShowcase
+	defaultValue={false}
+	preContent={(data, setData) => (
+		<Checkbox
+			checked={data}
+			onChange={setData}
+			label='Align icon to title'
+		/>
+	)}
+>
+	{(data) => (
+		<Notice
+			label='Lorem ipsum...'
+			subtitle='dolor sit amet, consectetur adipiscing elit. Vivamus ultrices tincidunt nibh, in lacinia tellus lobortis eu. Curabitur dignissim tellus eget felis tincidunt, a maximus odio tristique.'
+			type='info'
+			alignIconToTitle={data}
+		/>
+	)}
+</ComponentShowcase>
+
+```jsx
+<Notice
+	label='Lorem ipsum...'
+	subtitle='...'
+	type='info'
+	// highlight-next-line
+	alignIconToTitle
+/>
+```

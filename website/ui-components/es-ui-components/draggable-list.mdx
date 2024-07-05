@@ -1,0 +1,40 @@
+# Draggable list
+
+import { ComponentShowcase } from '../components/component-showcase';
+import { icons } from '@eightshift/ui-components/icons';
+import { DraggableListDemo, draggableListDefaultItems } from './draggable-list-helpers';
+
+<ComponentShowcase defaultValue={draggableListDefaultItems}>
+	{(data, setData) => (
+		<DraggableListDemo
+			data={data}
+			setData={setData}
+		/>
+	)}
+</ComponentShowcase>
+
+```jsx
+<DraggableList
+	items={value}
+	onChange={(value) => setValue(value)}
+>
+	{(item) => {
+		const { toggle, title, icon, updateData } = item;
+
+		return (
+			<DraggableListItem
+				label={title ?? 'New item'}
+				icon={icon ?? icons.emptyCircle}
+			>
+				<Switch
+					aria-label='Title'
+					checked={toggle}
+					onChange={(value) => updateData({ toggle: value })}
+				/>
+			</DraggableListItem>
+		);
+	}}
+</DraggableList>
+```
+
+For the complete list of props, use your IDE's autocomplete functionality.

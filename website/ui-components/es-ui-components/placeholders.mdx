@@ -1,0 +1,233 @@
+# Placeholders
+
+import { ComponentShowcase } from '../components/component-showcase';
+import {
+	ImagePlaceholder,
+	FilePlaceholder,
+	MediaPlaceholder,
+	Checkbox,
+	OptionSelect,
+	RichLabel,
+} from '@eightshift/ui-components';
+import { icons } from '@eightshift/ui-components/icons';
+
+For the complete list of props, use your IDE's autocomplete functionality.
+
+## Image placeholder
+
+<ComponentShowcase
+	defaultValue={false}
+	preContent={(data, setData) => (
+		<Checkbox
+			label='Show image'
+			checked={data}
+			onChange={setData}
+		/>
+	)}
+>
+	{(data) => <ImagePlaceholder url={data === true ? 'https://picsum.photos/200' : null} />}
+</ComponentShowcase>
+
+```jsx
+<ImagePlaceholder url='https://picsum.photos/200' />
+```
+
+### Image display mode
+
+<ComponentShowcase
+	defaultValue='cover'
+	preContent={(data, setData) => (
+		<OptionSelect
+			label='Image display mode'
+			value={data}
+			onChange={setData}
+			options={[
+				{ value: 'contain', label: 'Contain', subtitle: <span className='es-uic-font-mono'>contain</span> },
+				{ value: 'cover', label: 'Cover', subtitle: <span className='es-uic-font-mono'>cover</span> },
+				{ value: 'fill', label: 'Fill', subtitle: <span className='es-uic-font-mono'>fill</span> },
+			]}
+			type='menu'
+		/>
+	)}
+>
+	{(data) => (
+		<ImagePlaceholder
+			url='https://picsum.photos/900/380'
+			imageMode={data}
+		/>
+	)}
+</ComponentShowcase>
+
+```jsx
+<ImagePlaceholder
+	url='https://picsum.photos/900/380'
+	// highlight-next-line
+	imageMode='contain'
+/>
+```
+
+### Sizes
+
+<ComponentShowcase
+	defaultValue='default'
+	preContent={(data, setData) => (
+		<OptionSelect
+			label='Size'
+			value={data}
+			onChange={setData}
+			options={[
+				{ value: 'default', label: 'Default', subtitle: <span className='es-uic-font-mono'>default</span> },
+				{ value: 'auto', label: 'Auto', subtitle: <span className='es-uic-font-mono'>auto</span> },
+				{ value: 'large', label: 'Large', subtitle: <span className='es-uic-font-mono'>large</span> },
+				{ value: 'fullWidth', label: 'Full width', subtitle: <span className='es-uic-font-mono'>fullWidth</span> },
+				{ value: 'fullHeight', label: 'Full height', subtitle: <span className='es-uic-font-mono'>fullHeight</span> },
+				{ value: 'full', label: 'Full width and height', subtitle: <span className='es-uic-font-mono'>full</span> },
+				{ value: 'video', label: 'Video (16:9)', subtitle: <span className='es-uic-font-mono'>video</span> },
+			]}
+			type='menu'
+			help='Preview in docs may not be fully accurate for all sizes'
+		/>
+	)}
+>
+	{(data) => (
+		<ImagePlaceholder
+			url='https://picsum.photos/900/380'
+			size={data}
+		/>
+	)}
+</ComponentShowcase>
+
+```jsx
+<ImagePlaceholder
+	url='https://picsum.photos/900/380'
+	// highlight-next-line
+	size='full'
+/>
+```
+
+### Styles
+
+<ComponentShowcase
+	defaultValue='default'
+	preContent={(data, setData) => (
+		<OptionSelect
+			label='Style'
+			value={data}
+			onChange={setData}
+			options={[
+				{ value: 'default', label: 'Default', subtitle: <span className='es-uic-font-mono'>default</span> },
+				{ value: 'simple', label: 'Simple', subtitle: <span className='es-uic-font-mono'>simple</span> },
+			]}
+			type='menu'
+		/>
+	)}
+>
+	{(data) => (
+		<ImagePlaceholder
+			noImage
+			style={data}
+		/>
+	)}
+</ComponentShowcase>
+
+```jsx
+<ImagePlaceholder
+	// highlight-next-line
+	style='simple'
+/>
+```
+
+### No image (placeholder only)
+
+This can also be achieved by not providing an `url`, but this should be
+a bit more performant as you don't have an `<img>` without a source.
+
+<ComponentShowcase>
+	<ImagePlaceholder noImage />
+</ComponentShowcase>
+
+```jsx
+<ImagePlaceholder
+	// highlight-next-line
+	noImage
+/>
+```
+
+## File placeholder
+
+<ComponentShowcase>
+	<FilePlaceholder
+		fileName='demo.json'
+		icon={icons.file}
+	/>
+</ComponentShowcase>
+
+```jsx
+<FilePlaceholder
+	fileName='demo.json'
+	icon={icons.file}
+/>
+```
+
+## Media placeholder
+
+`style` and `size` works the same as in the `ImagePlaceholder`, so they won't be covered again.
+
+<ComponentShowcase>
+	<MediaPlaceholder icon={icons.magicAlt} />
+</ComponentShowcase>
+
+```jsx
+<MediaPlaceholder icon={icons.magicAlt} />
+```
+
+### Help text
+
+<ComponentShowcase>
+	<MediaPlaceholder
+		icon={icons.experiment}
+		style='simple'
+		size='large'
+		helpText='Lorem ipsum dolor.'
+	/>
+</ComponentShowcase>
+
+```jsx
+<MediaPlaceholder
+	icon={icons.experiment}
+	style='simple'
+	size='large'
+	// highlight-next-line
+	helpText='Lorem ipsum dolor.'
+/>
+```
+
+<ComponentShowcase>
+	<MediaPlaceholder
+		icon={icons.experiment}
+		style='simple'
+		size='large'
+		helpText={
+			<RichLabel
+				icon={icons.a11yWarning}
+				label='Lorem ipsum dolor.'
+			/>
+		}
+	/>
+</ComponentShowcase>
+
+```jsx
+<MediaPlaceholder
+	icon={icons.experiment}
+	style='simple'
+	size='large'
+	// highlight-start
+	helpText={
+		<RichLabel
+			icon={icons.a11yWarning}
+			label='Lorem ipsum dolor.'
+		/>
+	}
+	// highlight-end
+/>
+```

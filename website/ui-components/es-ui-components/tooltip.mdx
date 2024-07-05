@@ -1,0 +1,141 @@
+# Tooltip
+
+import { ComponentShowcase } from '../components/component-showcase';
+import { Button, Tooltip, DecorativeTooltip, HStack } from '@eightshift/ui-components';
+import { icons } from '@eightshift/ui-components/icons';
+
+Tooltips don't usually need to be used directly, as they are used internally by other components.
+By default, they only work with components that properly handle pointer events.
+
+There is an initial delay before showing a tooltip, so they don't show accidentally when the user is just moving the pointer around.
+This can be modified with props.
+
+After a tooltip has been shown, the surrounding tooltips will **not** have any delay before showing the tooltip.
+
+Likewise, there's a slight delay when the pointer exits the element with a tooltip, so it doesn't disappear immediately.
+
+The tooltip will also be shown when the element is focused. In that case, there is no delay when the tooltip is shown/hidden.
+
+If you need a tooltip on an element which doesn't handle pointer events, you can use the `DecorativeTooltip` component.
+Decorative tooltips **do not** have special delayed enter/exit behavior as regular tooltips.
+They will also wrap your element in a container that handles hover events.
+
+:::caution Important
+Never include any crucial info within tooltips as they cannot be triggered on devices without a pointer, e.g. phones.
+:::
+
+<ComponentShowcase>
+	<Tooltip text='This is a tooltip'>
+		<Button>Hover me</Button>
+	</Tooltip>
+</ComponentShowcase>
+
+<ComponentShowcase>
+	<HStack>
+		<Tooltip text='Bet you did not...'>
+			<Button>Hello</Button>
+		</Tooltip>
+		<Tooltip text='expect an Adele song...'>
+			<Button>from the</Button>
+		</Tooltip>
+		<Tooltip text='in the examples?'>
+			<Button>other side</Button>
+		</Tooltip>
+	</HStack>
+</ComponentShowcase>
+
+```jsx
+<Tooltip text='This is a tooltip'>
+	<Button>Hello</Button>
+</Tooltip>
+```
+
+<ComponentShowcase fitWidth>
+	<DecorativeTooltip text='This is a tooltip'>
+		<p>This is a paragraph with a tooltip</p>
+	</DecorativeTooltip>
+</ComponentShowcase>
+
+## Highlighted props
+
+For the complete list of props, use your IDE's autocomplete functionality.
+
+### Themes
+
+<ComponentShowcase>
+	<HStack>
+		<Tooltip
+			text='This is a tooltip'
+			theme='dark'
+		>
+			<Button>Dark theme (default)</Button>
+		</Tooltip>
+		<Tooltip
+			text='This is a tooltip'
+			theme='light'
+		>
+			<Button>Light theme</Button>
+		</Tooltip>
+	</HStack>
+</ComponentShowcase>
+
+```jsx
+<Tooltip
+	text='This is a tooltip'
+	// highlight-next-line
+	theme='light'
+>
+	<Button>Light theme</Button>
+</Tooltip>
+```
+
+### Arrow
+
+Helps connect the tooltip to the element it's describing.
+
+<ComponentShowcase>
+	<HStack>
+		<Tooltip text='This is a tooltip'>
+			<Button>No arrow (default)</Button>
+		</Tooltip>
+		<Tooltip
+			text='This is a tooltip'
+			arrow
+		>
+			<Button>Arrow</Button>
+		</Tooltip>
+	</HStack>
+</ComponentShowcase>
+
+```jsx
+<Tooltip
+	text='This is a tooltip'
+	// highlight-next-line
+	arrow
+>
+	<Button>Arrow</Button>
+</Tooltip>
+```
+
+### Placement
+
+<ComponentShowcase>
+	<HStack>
+		<Tooltip
+			text='This is a tooltip'
+			placement='right'
+		>
+			<Button>Tooltip on the right</Button>
+		</Tooltip>
+	</HStack>
+</ComponentShowcase>
+
+```jsx
+<Tooltip
+	text='This is a tooltip'
+	// highlight-next-line
+	placement='right'
+>
+	<Button>Tooltip on the right</Button>
+</Tooltip>
+```

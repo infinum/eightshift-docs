@@ -1,0 +1,190 @@
+# Container panel
+
+import { ComponentShowcase } from '../components/component-showcase';
+import { ContainerPanel, Checkbox, Button } from '@eightshift/ui-components';
+import { icons } from '@eightshift/ui-components/icons';
+
+A perfect shell for options within the Block editor sidebar. Replaces the default WordPress `<PanelBody>` component.
+
+<ComponentShowcase className='es-uic-bg-gray-50 esd-hide-bg-on-hover es-uic-transition'>
+	<ContainerPanel
+		title='My block'
+		className='es-uic-bg-white'
+	>
+		<div className='es-uic-w-full es-uic-rounded-lg es-uic-bg-gray-100 es-uic-text-sm es-uic-p-4 es-uic-min-h-40'>
+			<span>This is demo content</span>
+		</div>
+	</ContainerPanel>
+</ComponentShowcase>
+
+```jsx
+<ContainerPanel title='My block'>
+	<span>This is demo content</span>
+</ContainerPanel>
+```
+
+## Highlighted props
+
+For the complete list of props, use your IDE's autocomplete functionality.
+
+### Closable
+
+<ComponentShowcase className='es-uic-bg-gray-50 esd-hide-bg-on-hover es-uic-transition'>
+	<ContainerPanel
+		title='My block'
+		className='es-uic-bg-white'
+		closable
+	>
+		<div className='es-uic-w-full es-uic-rounded-lg es-uic-bg-gray-100 es-uic-text-sm es-uic-p-4 es-uic-min-h-40'>
+			<span>This is demo content</span>
+		</div>
+	</ContainerPanel>
+</ComponentShowcase>
+
+```jsx
+<ContainerPanel
+	title='My block'
+	// highlight-next-line
+	closable
+>
+	<span>This is demo content</span>
+</ContainerPanel>
+```
+
+### Use toggle
+
+<ComponentShowcase className='es-uic-bg-gray-50 esd-hide-bg-on-hover es-uic-transition'>
+	{(data, setData) => (
+		<ContainerPanel
+			title='My block'
+			className='es-uic-bg-white'
+			use={data}
+			onUseChange={setData}
+		>
+			<div className='es-uic-w-full es-uic-rounded-lg es-uic-bg-gray-100 es-uic-text-sm es-uic-p-4 es-uic-min-h-40'>
+				<span>This is demo content</span>
+			</div>
+		</ContainerPanel>
+	)}
+</ComponentShowcase>
+
+```jsx
+<ContainerPanel
+	title='My block'
+	// highlight-start
+	use={value}
+	onUseChange={(value) => setValue(value)}
+	// highlight-end
+>
+	<span>This is demo content</span>
+</ContainerPanel>
+```
+
+### Use toggle and closable
+
+<ComponentShowcase className='es-uic-bg-gray-50 esd-hide-bg-on-hover es-uic-transition'>
+	{(data, setData) => (
+		<ContainerPanel
+			title='My block'
+			className='es-uic-bg-white'
+			use={data}
+			onUseChange={setData}
+			closable
+		>
+			<div className='es-uic-w-full es-uic-rounded-lg es-uic-bg-gray-100 es-uic-text-sm es-uic-p-4 es-uic-min-h-40'>
+				<span>This is demo content</span>
+			</div>
+		</ContainerPanel>
+	)}
+</ComponentShowcase>
+
+```jsx
+<ContainerPanel
+	title='My block'
+	// highlight-start
+	use={value}
+	onUseChange={(value) => setValue(value)}
+	closable
+	// highlight-end
+>
+	<span>This is demo content</span>
+</ContainerPanel>
+```
+
+### Externally toggle use
+
+<ComponentShowcase
+	className='es-uic-bg-gray-50 esd-hide-bg-on-hover es-uic-transition'
+	preContent={(data, setData) => (
+		<Checkbox
+			checked={data}
+			onChange={setData}
+			label='Enabled'
+		/>
+	)}
+	defaultValue={false}
+>
+	{(data) => (
+		<ContainerPanel
+			title='My block'
+			className='es-uic-bg-white'
+			use={data}
+			closable
+		>
+			<div className='es-uic-w-full es-uic-rounded-lg es-uic-bg-gray-100 es-uic-text-sm es-uic-p-4 es-uic-min-h-40'>
+				<span>This is demo content</span>
+			</div>
+		</ContainerPanel>
+	)}
+</ComponentShowcase>
+
+```jsx
+<ContainerPanel
+	title='My block'
+	// highlight-start
+	use={myUseValue}
+	closable
+	// highlight-end
+>
+	<span>This is demo content</span>
+</ContainerPanel>
+```
+
+### Actions
+
+<ComponentShowcase className='es-uic-bg-gray-50 esd-hide-bg-on-hover es-uic-transition'>
+	{(data, setData) => (
+		<ContainerPanel
+			title='My block'
+			className='es-uic-bg-white'
+			actions={
+				<>
+					<Button size='small'>Demo 1</Button>
+					<Button size='small'>Demo 2</Button>
+				</>
+			}
+			closable
+		>
+			<div className='es-uic-w-full es-uic-rounded-lg es-uic-bg-gray-100 es-uic-text-sm es-uic-p-4 es-uic-min-h-40'>
+				<span>This is demo content</span>
+			</div>
+		</ContainerPanel>
+	)}
+</ComponentShowcase>
+
+```jsx
+<ContainerPanel
+	title='My block'
+	closable
+	// highlight-start
+	actions={
+		<>
+			<Button size='small'>Demo 1</Button>
+			<Button size='small'>Demo 2</Button>
+		</>
+	}
+	// highlight-end
+>
+	<span>This is demo content</span>
+</ContainerPanel>
+```

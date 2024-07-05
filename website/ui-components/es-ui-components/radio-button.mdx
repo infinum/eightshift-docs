@@ -1,0 +1,186 @@
+# Radio button
+
+import { ComponentShowcase } from '../components/component-showcase';
+import { RadioButton, RadioButtonGroup } from '@eightshift/ui-components';
+import { icons } from '@eightshift/ui-components/icons';
+
+<ComponentShowcase defaultValue='first'>
+	{(data, setData) => {
+		return (
+			<RadioButtonGroup
+				label='My radio buttons'
+				value={data}
+				onChange={setData}
+			>
+				<RadioButton
+					value='first'
+					label='First option'
+				/>
+				<RadioButton
+					value='second'
+					label='Second option'
+				/>
+			</RadioButtonGroup>
+		);
+	}}
+</ComponentShowcase>
+
+```jsx
+<RadioButtonGroup
+	label='My radio buttons'
+	value={value}
+	onChange={(value) => setData(value)}
+>
+	<RadioButton
+		value='first'
+		label='First option'
+	/>
+	<RadioButton
+		value='second'
+		label='Second option'
+	/>
+</RadioButtonGroup>
+```
+
+## Highlighted props
+
+For the complete list of props, use your IDE's autocomplete functionality.
+
+### Horizontal layout
+
+<ComponentShowcase defaultValue='first'>
+	{(data, setData) => {
+		return (
+			<RadioButtonGroup
+				label='My radio buttons'
+				value={data}
+				onChange={setData}
+				orientation='horizontal'
+			>
+				<RadioButton
+					value='first'
+					label='First option'
+				/>
+				<RadioButton
+					value='second'
+					label='Second option'
+				/>
+			</RadioButtonGroup>
+		);
+	}}
+</ComponentShowcase>
+
+```jsx
+<RadioButtonGroup
+	label='My radio buttons'
+	value={value}
+	onChange={(value) => setData(value)}
+	// highlight-next-line
+	orientation='horizontal'
+>
+	<RadioButton
+		value='first'
+		label='First option'
+	/>
+	<RadioButton
+		value='second'
+		label='Second option'
+	/>
+</RadioButtonGroup>
+```
+
+### Segmented design
+
+<ComponentShowcase defaultValue='first'>
+	{(data, setData) => {
+		return (
+			<RadioButtonGroup
+				label='My radio buttons'
+				value={data}
+				onChange={setData}
+				design='segmented'
+			>
+				<RadioButton
+					value='first'
+					label='First option'
+				/>
+				<RadioButton
+					value='second'
+					label='Second option'
+				/>
+			</RadioButtonGroup>
+		);
+	}}
+</ComponentShowcase>
+
+```jsx
+<RadioButtonGroup
+	label='My radio buttons'
+	value={value}
+	onChange={(value) => setData(value)}
+	// highlight-next-line
+	design='segmented'
+>
+	<RadioButton
+		value='first'
+		label='First option'
+	/>
+	<RadioButton
+		value='second'
+		label='Second option'
+	/>
+</RadioButtonGroup>
+```
+
+### Disable certain items
+
+<ComponentShowcase defaultValue='first'>
+	{(data, setData) => {
+		return (
+			<RadioButtonGroup
+				label='My radio buttons'
+				value={data}
+				onChange={setData}
+			>
+				<RadioButton
+					value='first'
+					label='First option'
+				/>
+				<RadioButton
+					value='second'
+					label='Second option'
+					subtitle='Disabled because of reasons'
+					disabled
+				/>
+				<RadioButton
+					value='third'
+					label='Third option'
+				/>
+			</RadioButtonGroup>
+		);
+	}}
+</ComponentShowcase>
+
+```jsx
+<RadioButtonGroup
+	label='My radio buttons'
+	value={value}
+	onChange={(value) => setData(value)}
+>
+	<RadioButton
+		value='first'
+		label='First option'
+	/>
+	<RadioButton
+		value='second'
+		label='Second option'
+		subtitle='Disabled because of reasons'
+		// highlight-next-line
+		disabled
+	/>
+	<RadioButton
+		value='third'
+		label='Third option'
+	/>
+</RadioButtonGroup>
+```

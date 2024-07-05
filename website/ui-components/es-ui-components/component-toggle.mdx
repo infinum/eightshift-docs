@@ -1,0 +1,144 @@
+# Component toggle
+
+import { ComponentShowcase } from '../components/component-showcase';
+import { ComponentToggle, OptionSelect } from '@eightshift/ui-components';
+import { icons } from '@eightshift/ui-components/icons';
+
+<ComponentShowcase>
+	{(data, setData) => (
+		<ComponentToggle
+			icon={icons.paragraph}
+			label='Paragraph'
+			useComponent={data}
+			onChange={setData}
+		>
+			<div className='es-uic-w-full es-uic-rounded-lg es-uic-bg-gray-100 es-uic-text-sm es-uic-p-4 es-uic-min-h-40'>
+				<span>Component options go here</span>
+			</div>
+		</ComponentToggle>
+	)}
+</ComponentShowcase>
+
+```jsx
+<ComponentToggle
+	icon={icons.paragraph}
+	label='Paragraph'
+	useComponent={value}
+	onChange={(value) => setValue(value)}
+>
+	<span>Component options go here</span>
+</ComponentToggle>
+```
+
+## Highlighted props
+
+For the complete list of props, use your IDE's autocomplete functionality.
+
+### Hide the use toggle
+
+<ComponentShowcase defaultValue={true}>
+	{(data, setData) => (
+		<ComponentToggle
+			icon={icons.paragraph}
+			label='Paragraph'
+			useComponent={data}
+			onChange={setData}
+			noUseToggle
+		>
+			<div className='es-uic-w-full es-uic-rounded-lg es-uic-bg-gray-100 es-uic-text-sm es-uic-p-4 es-uic-min-h-40'>
+				<span>Component options go here</span>
+			</div>
+		</ComponentToggle>
+	)}
+</ComponentShowcase>
+
+```jsx
+<ComponentToggle
+	icon={icons.paragraph}
+	label='Paragraph'
+	useComponent={value}
+	onChange={(value) => setValue(value)}
+	// highlight-next-line
+	noUseToggle
+>
+	<span>Component options go here</span>
+</ComponentToggle>
+```
+
+### Disable expand button
+
+<ComponentShowcase>
+	{(data, setData) => (
+		<ComponentToggle
+			icon={icons.paragraph}
+			label='Paragraph'
+			useComponent={data}
+			onChange={setData}
+			expandButtonDisabled
+		>
+			<div className='es-uic-w-full es-uic-rounded-lg es-uic-bg-gray-100 es-uic-text-sm es-uic-p-4 es-uic-min-h-40'>
+				<span>Component options go here</span>
+			</div>
+		</ComponentToggle>
+	)}
+</ComponentShowcase>
+
+```jsx
+<ComponentToggle
+	icon={icons.paragraph}
+	label='Paragraph'
+	useComponent={value}
+	onChange={(value) => setValue(value)}
+	// highlight-next-line
+	expandButtonDisabled
+>
+	<span>Component options go here</span>
+</ComponentToggle>
+```
+
+### Styles
+
+<ComponentShowcase
+	defaultValue={{ use: false, design: 'default' }}
+	preContent={(data, setData) => (
+		<OptionSelect
+			label='Type'
+			value={data.design}
+			onChange={(value) => setData({ ...data, design: value })}
+			options={[
+				{ value: 'default', label: 'Default', subtitle: <span className='es-uic-font-mono'>default</span> },
+				{ value: 'compact', label: 'Compact', subtitle: <span className='es-uic-font-mono'>compact</span> },
+				{ value: 'compactIcon', label: 'Compact (icon only)', subtitle: <span className='es-uic-font-mono'>compactIcon</span> },
+				{ value: 'compactLabel', label: 'Compact (label only)', subtitle: <span className='es-uic-font-mono'>compactLabel</span> },
+			]}
+			type='menu'
+		/>
+	)}
+>
+	{(data, setData) => (
+		<ComponentToggle
+			icon={icons.paragraph}
+			label='Paragraph'
+			useComponent={data.use}
+			onChange={(value) => setData({ ...data, use: value })}
+			design={data.design}
+		>
+			<div className='es-uic-w-full es-uic-rounded-lg es-uic-bg-gray-100 es-uic-text-sm es-uic-p-4 es-uic-min-h-40'>
+				<span>Component options go here</span>
+			</div>
+		</ComponentToggle>
+	)}
+</ComponentShowcase>
+
+```jsx
+<ComponentToggle
+	icon={icons.paragraph}
+	label='Paragraph'
+	useComponent={value}
+	onChange={(value) => setValue(value)}
+	// highlight-next-line
+	design='compact'
+>
+	<span>Component options go here</span>
+</ComponentToggle>
+```

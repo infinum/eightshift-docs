@@ -1,0 +1,185 @@
+# Color picker
+
+import { ComponentShowcase } from '../components/component-showcase';
+import { ColorPicker, OptionSelect } from '@eightshift/ui-components';
+import { icons } from '@eightshift/ui-components/icons';
+import { defaultColors, groupedColors } from './color-picker-helpers';
+
+<ComponentShowcase defaultValue='blue'>
+	{(data, setData) => {
+		return (
+			<ColorPicker
+				value={data}
+				onChange={setData}
+				aria-label='Color picker'
+				colors={defaultColors}
+			/>
+		);
+	}}
+</ComponentShowcase>
+
+```jsx
+const defaultColors = [
+	{
+		name: 'Red',
+		slug: 'red',
+		color: '#FF0000',
+	},
+	{
+		name: 'Green',
+		slug: 'green',
+		color: '#00FF00',
+	},
+	{
+		name: 'Blue',
+		slug: 'blue',
+		color: '#0000FF',
+	},
+	...
+];
+
+<ColorPicker
+	value={value}
+	onChange={(value) => setData(value)}
+	colors={myColors}
+/>
+```
+
+:::tip
+In Frontend libs and Frontend libs Tailwind you can use the `getOption` helper to fetch the color data based on the list in the manifes.
+:::
+
+## Highlighted props
+
+For the complete list of props, use your IDE's autocomplete functionality.
+
+### Allow deselecting a color
+
+<ComponentShowcase defaultValue='blue500'>
+	{(data, setData) => {
+		return (
+			<ColorPicker
+				value={data}
+				onChange={setData}
+				aria-label='Color picker'
+				colors={groupedColors}
+				clearable
+			/>
+		);
+	}}
+</ComponentShowcase>
+
+```jsx
+<ColorPicker
+	value={value}
+	onChange={(value) => setData(value)}
+	colors={myColors}
+	// highlight-next-line
+	clearable
+/>
+```
+
+### Disable color grouping
+
+By default, colors are grouped by their names, e.g. `red-100`, `red-200`, `red-300`...
+
+<ComponentShowcase defaultValue='blue500'>
+	{(data, setData) => {
+		return (
+			<ColorPicker
+				value={data}
+				onChange={setData}
+				aria-label='Color picker'
+				colors={groupedColors}
+				noColorGroups
+			/>
+		);
+	}}
+</ComponentShowcase>
+
+```jsx
+<ColorPicker
+	value={value}
+	onChange={(value) => setData(value)}
+	colors={myColors}
+	// highlight-next-line
+	noColorGroups
+/>
+```
+
+### Show color hex code in the dropdown
+
+<ComponentShowcase defaultValue='blue500'>
+	{(data, setData) => {
+		return (
+			<ColorPicker
+				value={data}
+				onChange={setData}
+				aria-label='Color picker'
+				colors={groupedColors}
+				showColorCode
+			/>
+		);
+	}}
+</ComponentShowcase>
+
+```jsx
+<ColorPicker
+	value={value}
+	onChange={(value) => setData(value)}
+	colors={myColors}
+	// highlight-next-line
+	showColorCode
+/>
+```
+
+### Picker type
+
+<ComponentShowcase
+	defaultValue={{ color: 'blue500', type: 'default' }}
+	preContent={(data, setData) => (
+		<OptionSelect
+			label='Type'
+			value={data.type}
+			onChange={(value) => setData({ ...data, type: value })}
+			options={[
+				{ value: 'default', label: 'Default', subtitle: <span className='es-uic-font-mono'>default</span> },
+				{ value: 'fillColor', label: 'Fill color', subtitle: <span className='es-uic-font-mono'>fillColor</span> },
+				{ value: 'textColor', label: 'Text color', subtitle: <span className='es-uic-font-mono'>textColor</span> },
+				{
+					value: 'textHighlightColor',
+					label: 'Text highlight color',
+					subtitle: <span className='es-uic-font-mono'>textHighlightColor</span>,
+				},
+				{
+					value: 'listMarkerColor',
+					label: 'List marker color',
+					subtitle: <span className='es-uic-font-mono'>listMarkerColor</span>,
+				},
+			]}
+			type='menu'
+		/>
+	)}
+>
+	{(data, setData) => {
+		return (
+			<ColorPicker
+				value={data.color}
+				onChange={(value) => setData({ ...data, color: value })}
+				aria-label='Color picker'
+				colors={groupedColors}
+				type={data.type}
+			/>
+		);
+	}}
+</ComponentShowcase>
+
+```jsx
+<ColorPicker
+	value={value}
+	onChange={(value) => setData(value)}
+	colors={myColors}
+	// highlight-next-line
+	type='textColor'
+/>
+```

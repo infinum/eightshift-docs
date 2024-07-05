@@ -1,13 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import useBaseUrl from '@docusaurus/useBaseUrl';
-import Layout from '@theme/Layout';
 import { startPlaygroundWeb, installTheme, wpCLI } from '@wp-playground/client';
 
-export default function DevKitComponents() {
-	const context = useDocusaurusContext();
-	const { siteConfig = {} } = context;
-
+export const LegacyComponentShowcase = () => {
 	const [isLoading, setIsLoading] = useState(true);
 	const [loadingStep, setLoadingStep] = useState('Initializing');
 	const [loadingProgress, setLoadingProgress] = useState(null);
@@ -22,9 +16,7 @@ export default function DevKitComponents() {
 						php: '8.3',
 						wp: '6.4',
 					},
-					phpExtensionBundles: [
-						'kitchen-sink'
-					],
+					phpExtensionBundles: ['kitchen-sink'],
 					features: {
 						networking: true,
 					},
@@ -33,9 +25,9 @@ export default function DevKitComponents() {
 						{
 							step: 'login',
 							username: 'admin',
-							password: 'password'
+							password: 'password',
 						},
-					]
+					],
 				},
 				sapiName: 'cli',
 			});
@@ -49,8 +41,8 @@ export default function DevKitComponents() {
 				headers: {
 					'Content-Type': 'application/octet-stream',
 				},
-				credentials: 'include'
-			})
+				credentials: 'include',
+			});
 
 			setLoadingProgress(33);
 			setLoadingStep('Unpacking theme');
@@ -86,7 +78,9 @@ export default function DevKitComponents() {
 			});
 
 			// WP playground currently has an issue that pollutes the WP-CLI output, so --porcelain isn't of much help here unfortunately.
-			const addedPostId = wpCliOutput.substring(wpCliOutput.indexOf('Created post ') + 13, wpCliOutput.lastIndexOf('.')).trim();
+			const addedPostId = wpCliOutput
+				.substring(wpCliOutput.indexOf('Created post ') + 13, wpCliOutput.lastIndexOf('.'))
+				.trim();
 
 			setLoadingStep('Finalizing');
 			setLoadingProgress(92);
@@ -105,29 +99,26 @@ export default function DevKitComponents() {
 	const iframeRef = useRef(null);
 
 	return (
-		<Layout
-			title='Playground'
-			description={siteConfig.tagline}
-			keywords={siteConfig.customFields.keywords}
-			metaImage={useBaseUrl(`img/${siteConfig.customFields.image}`)}
-			wrapperClassName='es-single-full-screen-child es-has-t-border'
-		>
+		<div className='es-uic-size-full'>
 			<iframe
-				className='es-full-size'
+				className='es-uic-size-full es-uic-aspect-video esd-legacy-docs-iframe'
 				allow='clipboard-read; clipboard-write'
 				ref={iframeRef}
 				style={{
-					visibility: isLoading ? 'hidden' : 'visible'
+					visibility: isLoading ? 'hidden' : 'visible',
 				}}
 			/>
 
-			{isLoading &&
-				<div className='es-full-size flex flex-col items-center justify-center gap-1.5 esd-full-fixed'>
-					<progress value={loadingProgress} max={100}></progress>
+			{isLoading && (
+				<div className='es-full-size flex flex-col items-center justify-center gap-1.5'>
+					<progress
+						value={loadingProgress}
+						max={100}
+					></progress>
 					<h3>Preparing component docs</h3>
 					<span className='text-12'>{loadingStep}</span>
 				</div>
-			}
-		</Layout>
+			)}
+		</div>
 	);
 };

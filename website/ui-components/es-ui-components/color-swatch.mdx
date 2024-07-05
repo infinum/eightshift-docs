@@ -1,0 +1,90 @@
+# Color swatch
+
+import { ComponentShowcase } from '../components/component-showcase';
+import { ColorSwatch } from '@eightshift/ui-components';
+import { icons } from '@eightshift/ui-components/icons';
+
+<ComponentShowcase fitWidth>
+	<ColorSwatch color='#0D3636' />
+</ComponentShowcase>
+
+```jsx
+<ColorSwatch color='#0D3636' />
+```
+
+:::caution
+This components only accepts a valid CSS color value or gradient, **with the exception of named colors**, of which only `transparent` is supported.
+:::
+
+## Empty state
+
+<ComponentShowcase fitWidth>
+	<ColorSwatch />
+</ComponentShowcase>
+
+```jsx
+<ColorSwatch />
+```
+
+## Transparent color
+
+<ComponentShowcase fitWidth>
+	<ColorSwatch color='#4433EE80' />
+</ComponentShowcase>
+
+```jsx
+<ColorSwatch color='#4433EE80' />
+```
+
+## Gradients
+
+<ComponentShowcase fitWidth>
+	<ColorSwatch
+		gradient='linear-gradient(#0D3636, rgb(249 250 251))'
+		colorName='Linear gradient'
+	/>
+	<ColorSwatch
+		gradient='radial-gradient(#0D3636, rgb(249 250 251))'
+		colorName='Radial gradient'
+	/>
+	<ColorSwatch
+		gradient='conic-gradient(#0D3636, rgb(249 250 251))'
+		colorName='Conic gradient'
+	/>
+</ComponentShowcase>
+
+```jsx
+<ColorSwatch
+	gradient='linear-gradient(#0D3636, rgb(249 250 251))'
+	colorName='Linear gradient'
+/>
+<ColorSwatch
+	gradient='radial-gradient(#0D3636, rgb(249 250 251))'
+	colorName='Radial gradient'
+/>
+<ColorSwatch
+	gradient='conic-gradient(#0D3636, rgb(249 250 251))'
+	colorName='Conic gradient'
+/>
+```
+
+## Providing a custom color name
+
+For colors, the color name will be automatically generated based on the color value.
+If you want to provide a custom color name, you can do so by passing the `colorName` prop.
+
+You **should** provide this for gradients.
+
+<ComponentShowcase fitWidth>
+	<ColorSwatch
+		color='#0D3636'
+		colorName='Eightshift dark green'
+	/>
+</ComponentShowcase>
+
+```jsx
+<ColorSwatch
+	color='#0D3636'
+	colorName='Eightshift dark green'
+/>
+```
