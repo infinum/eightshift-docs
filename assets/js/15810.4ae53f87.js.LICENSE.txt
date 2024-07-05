@@ -1,0 +1,42 @@
+/**
+ * A group of radio buttons.
+ * This component is required to control radio buttons.
+ *
+ * Each radio button should have a `value` set!
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {JSX.Element} [props.icon] - Icon to show before the label.
+ * @param {string} [props.label] - Label to show above the control.
+ * @param {string} [props.help] - Help text displayed below the control.
+ * @param {JSX.Element|JSX.Element[]} [props.actions] - Actions to show to the right of the label.
+ * @param {string} [props.subtitle] - Subtitle to show below the label.
+ * @param {RadioButtonGroupOrientation} [props.orientation='vertical'] - Orientation of the radio buttons.
+ * @param {RadioButtonGroupDesign} [props.design='default'] - Design of the radio buttons.
+ * @param {boolean} [props.disabled] - Whether the radio button group is disabled.
+ * @param {boolean} [props.readOnly] - Whether the radio button group is read-only.
+ * @param {string} [props.value] - Value of the currently selected radio button.
+ * @param {Function} [props.onChange] - Function to call when the value of the selected radio button changes.
+ * @param {string} [props.className] - Additional classes to add to the group container.
+ * @param {string} [props.labelClassName] - Additional classes to add to the label container.
+ * @param {boolean} [props.hidden] - If `true`, the component is not rendered.
+ *
+ * @returns {JSX.Element} The RadioButtonGroup component.
+ *
+ * @typedef {'horizontal' | 'vertical'} RadioButtonGroupOrientation
+ * @typedef {'default' | 'segmented'} RadioButtonGroupDesign
+ *
+ * @example
+ * const [value, setValue] = useState('first'); // Or "null" if you don't want anything selected by default.
+ *
+ * <RadioButtonGroup
+ * 	label='My radio buttons'
+ * 	value={value}
+ * 	onChange={setValue}
+ * >
+ * 	<RadioButton value='first' label='First option' />
+ * 	<RadioButton value='second' label='Second option' />
+ * </RadioButtonGroup>
+ *
+ * @preserve
+ */

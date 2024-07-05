@@ -1,0 +1,156 @@
+/**
+ * A simple checkbox.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {JSX.Element} [props.icon] - The checkbox icon.
+ * @param {string} [props.label] - The checkbox label.
+ * @param {string} [props.subtitle] - The checkbox subtitle.
+ * @param {boolean} props.checked - Whether the checkbox is checked.
+ * @param {boolean} [props.disabled] - Whether the checkbox is disabled.
+ * @param {boolean} [props.readOnly] - Whether the checkbox is read-only.
+ * @param {boolean} [props.indeterminate] - Whether the checkbox is in an indeterminate state.
+ * @param {Function} props.onChange - The function to call when the checkbox is changed.
+ * @param {string} [props.className] - Additional classes to add to the checkbox container.
+ * @param {string} [props.labelClassName] - Additional classes to add to the label container.
+ * @param {boolean} [props.alignEnd] - Whether the label should be aligned to the end.
+ * @param {boolean} [props.hidden] - If `true`, the component is not rendered.
+ *
+ * @returns {JSX.Element} The Checkbox component.
+ *
+ * @example
+ * <Checkbox
+ *  label='My label'
+ *  checked={myValue}
+ *  onChange={(value) => setMyValue(value)}
+ * />
+ *
+ * @preserve
+ */
+
+/**
+ * A toggle switch.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {boolean} props.checked - Whether the switch is checked.
+ * @param {Function} props.onChange - Function to call when the switch is toggled.
+ * @param {boolean} [props.disabled] - Whether the switch is disabled.
+ * @param {string} [props.id] - The ID of the switch.
+ * @param {string} [props.className] - Classes to pass to the switch.
+ * @param {boolean} [props.isIndeterminate] - If `true`, the switch will render in an indeterminate state.
+ * @param {boolean} [props.hidden] - If `true`, the component is not rendered.
+ *
+ * @returns {JSX.Element} The Switch component.
+ *
+ * @example
+ * const [checked, setChecked] = useState(false);
+ *
+ * <Switch
+ * 	checked={checked}
+ * 	onChange={() => setChecked(!checked)}
+ * />
+ *
+ * @preserve
+ */
+
+/**
+ * Allows for stacking elements horizontally, with a gap between them.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {boolean} [props.noWrap] - If `true`, the children will not wrap if their size exceeds the container size.
+ * @param {string} [props.className] - Classes to pass to the component.
+ * @param {boolean} [props.hidden] - If `true`, the component is not rendered.
+ *
+ * @returns {JSX.Element} The HStack component.
+ *
+ * @example
+ * <HStack>
+ * 	...
+ * </HStack>
+ *
+ * @preserve
+ */
+
+/**
+ * Component that allows wrapping components with a common layout that includes a label and optional icon, subtitle, actions, and help text.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {JSX.Element} [props.icon] - Icon to display in the label.
+ * @param {string} props.label - Label to display.
+ * @param {string} props.subtitle - Subtitle to display below the label.
+ * @param {JSX.Element|JSX.Element[]} [props.actions] - Actions to show to the right of the label.
+ * @param {string} [props.help] - Help text to show below the component.
+ * @param {boolean} [props.inline] - If `true`, the component is displayed inline - icon/label/subtitle are on the left, the passed content is on the right. **Note:** not compatible with `actions`.
+ * @param {string} [props.className] - Classes to pass to the main element wrapper.
+ * @param {string} [props.controlContainerClassName] - Classes to pass to the control container.
+ * @param {string} [props.labelContainerClassName] - Classes to pass to the label container.
+ * @param {string} [props.labelClassName] - Classes to pass to the label.
+ * @param {boolean} [props.fullWidthLabel] - If `true`, the label expands to fill up the whole width, instead of taking up only the space it needs.
+ * @param {JSX.Element} [props.labelAs] - If provided, the label (includes icon and subtitle) will be rendered as this element.
+ * @param {boolean} [props.hidden] - If `true`, the component is not rendered.
+ *
+ * @returns {JSX.Element} The BaseControl component.
+ *
+ * @example
+ * <BaseControl label='My component' icon={icons.myIcon}>
+ * 	<div>Content</div>
+ * </BaseControl>
+ *
+ * @preserve
+ */
+
+/**
+ * Component that displays a label, with an optional icon and subtitle.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {JSX.Element} [props.icon] - Icon to display.
+ * @param {string} [props.label] - Label to display.
+ * @param {string} [props.subtitle] - Subtitle to display.
+ * @param {JSX.Element} [props.as] - Element to render the label as. Not compatible with `contentsOnly`.
+ * @param {string} [props.className] - Classes to pass to the label.
+ * @param {boolean} [props.fullWidth=false] - If `true`, the component will take up as much space as it can.
+ * @param {boolean} [props.contentsOnly] - If `true`, only the label (/icon/subtitle) will be rendered, without any wrapping elements. Useful if you want to provide your own layout.
+ * @param {boolean} [props.hidden] - If `true`, the component is not rendered.
+ * @param {boolean} [props.noColor] - If `true`, colors on text won't be set, opacity will be used instead.
+ *
+ * @returns {JSX.Element} The RichLabel component.
+ *
+ * @example
+ * <RichLabel
+ * 	icon={icons.myIcon}
+ * 	label='My label'
+ * />
+ *
+ * @preserve
+ */
+
+/**
+ * Component that provides a container panel for options, with an optional title.
+ * Best used within the Gutenberg sidebar, instead of the default `PanelBody` component.
+ * Ensures that the content is spaced nicely.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {string} [props.className] - Classes to pass to the container.
+ * @param {string} [props.title] - Title to display on the top of the panel.
+ * @param {JSX.Element} [props.icon] - Icon to display on the top of the panel.
+ * @param {string} [props.subtitle] - Subtitle to display on the top of the panel.
+ * @param {boolean} [props.use] - Controls the panel use toggle.
+ * @param {Function} [props.onUseChange] - Function to call when the use toggle is toggled. `(value: boolean) => void`.
+ * @param {boolean} [props.closable] - If `true`, the panel can be closed. Will not show if `title` is not set.
+ * @param {boolean} [props.startOpen=false] - Controls whether the panel is open by default.
+ * @param {JSX.Element} [props.actions] - Actions to show at the end
+ *
+ * @returns {JSX.Element} The ContainerPanel component.
+ *
+ * @example
+ * <ContainerPanel title='Paragraph'>
+ * 	...
+ * </ContainerPanel>
+ *
+ * @preserve
+ */

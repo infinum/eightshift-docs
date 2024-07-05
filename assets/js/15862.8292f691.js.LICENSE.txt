@@ -1,0 +1,113 @@
+/**
+ * A number picker component.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {number} props.value - The current value of the number picker.
+ * @param {Function} props.onChange - Function to run when the value changes.
+ * @param {number} [props.min=0] - The minimum value of the number picker.
+ * @param {number} [props.max] - The maximum value of the number picker.
+ * @param {number} [props.step=1] - The step value of the number picker.
+ * @param {string} [props.label] - The label of the number picker.
+ * @param {JSX.Element} [props.icon] - Icon to display within the number picker.
+ * @param {string} [props.subtitle] - The subtitle of the number picker.
+ * @param {string} [props.help] - The help text shown below the number picker.
+ * @param {boolean} [props.readOnly] - If `true`, the number picker is read-only.
+ * @param {boolean} [props.disabled] - If `true`, the number picker is disabled.
+ * @param {string} [props.placeholder] - Placeholder text to display in the number picker.
+ * @param {JSX.Element} [props.prefix] - Element to display to the left of the number picker.
+ * @param {JSX.Element} [props.suffix] - Element to display to the right of the number picker.
+ * @param {number} [props.fixedWidth] - If passed, sets the width of the input field to the provided number of characters. Useful if you have e.g. value from 1 to 1000, but you don't want the input field to change size when on lower values.
+ * @param {boolean} [props.inline] - If `true`, the number picker is displayed inline.
+ * @param {boolean} [props.noScrollToChange=false] - If `true`, the number picker does not change value when scrolling.
+ * @param {NumberPickerSize} [props.size='default'] - Determines the input field size.
+ * @param {boolean} [props.hidden] - If `true`, the component is not rendered.
+ *
+ * @returns {JSX.Element} The NumberPicker component.
+ *
+ * @typedef {'compact' | 'small' | 'default'} NumberPickerSize
+ *
+ * @example
+ * <NumberPicker
+ * 	value={value}
+ * 	onChange={setValue}
+ * />
+ *
+ * @preserve
+ */
+
+/**
+ * A single/multi-thumb slider component.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {JSX.Element} [props.icon] - Icon to display within the slider.
+ * @param {string} [props.label] - The label of the slider.
+ * @param {string} [props.subtitle] - The subtitle of the slider.
+ * @param {string} [props.help] - The help text shown below the slider.
+ * @param {JSX.Element|JSX.Element[]} [props.actions] - Actions to display next to the label.
+ * @param {Number} [props.min=0] - The minimum value of the slider.
+ * @param {Number} [props.max=100] - The maximum value of the slider.
+ * @param {Number} [props.step=1] - The step value of the slider.
+ * @param {Number} [props.startPoint] - The starting point of the slider.
+ * @param {SliderMarkerType} [props.markers] - The markers to display on the slider. If `true`, markers are auto-generated, with labels. If set to `dots`, markers are auto-generated, but do not show labels next to dots. If an object is provided, the keys are the values of the markers, and the values are the labels.
+ * @param {boolean} [props.noActiveHighlight=false] - If `true`, the highlight of the active value will not be displayed.
+ * @param {Number | Number[]} props.value - The current value of the slider.
+ * @param {Function} props.onChange - Function to run when the value changes.
+ * @param {Function} props.onChangeEnd - Function to run when the value change ends.
+ * @param {boolean} [props.disabled] - If `true`, the slider is disabled.
+ * @param {boolean} [props.inputField=false] - If `true`, the slider will display an input field for the value. For multi-thumb sliders, the input field will be displayed for the focused thumb.
+ * @param {boolean} [props.vertical=false] - If `true`, the slider will be displayed vertically.
+ * @param {JSX.Element} [props.before] - Element to display before the slider.
+ * @param {JSX.Element} [props.after] - Element to display after the slider.
+ * @param {string[]} [props.thumbLabels] - ARIA labels for the thumbs.
+ * @param {Function} [props.thumbContent] - If provided, the function will be called with the current value of the thumb, and the return value will be displayed within the thumb. `(currentIndex: number) => JSX.Element`.
+ * @param {string} [props.labelClassName] - Additional classes to pass to the label.
+ * @param {Object<string, any>} [props.trackStyle] - Additional style for the track.
+ * @param {boolean} [props.hidden] - If `true`, the component is not rendered.
+ *
+ * @returns {JSX.Element} The Slider component.
+ *
+ * @typedef {'dots' | 'lines' | 'true' | Object<Number, string>} SliderMarkerType
+ *
+ * @example
+ * <Slider
+ * 	label='My slider'
+ * 	value={sliderValue}
+ * 	onChange={setSliderValue}
+ * />
+ *
+ * @preserve
+ */
+
+/**
+ * Generates an array of markers based on the provided minimum and maximum values and step.
+ * If the step is less than 10, only markers divisible by 5 and 10 are included.
+ *
+ * @param {number} min - The minimum value for the markers.
+ * @param {number} max - The maximum value for the markers.
+ * @param {number} [step=10] - The step between each marker. Default is 10.
+ *
+ * @returns {Object} An object where the keys are the marker values and the values are either the marker value (if divisible by 10) or an empty string.
+ *
+ * @example
+ * generateMarkers(-20, 50, 10); // { '-20': '-20', '-10': '-10', '0': '0', '10': '10', '20': '20', '30': '30', '40': '40', '50': '50' }
+ *
+ * @preserve
+ */
+
+/**
+ * Returns a human-readable string representing the column configuration.
+ *
+ * @param {Number} columns - Number of columns.
+ * @param {Number} offset - Offset of the column.
+ * @param {Number} width - Width of the column.
+ * @param {boolean} [showOuterAsGutter=false] - If `true`, the outer columns are skipped when counting.
+ *
+ * @returns {string} Configuration info in a human-readable format.
+ *
+ * @example
+ * const output = getColumnConfigOutputText(12, 1, 6); // => '6 cols from 1'
+ *
+ * @preserve
+ */

@@ -1,0 +1,138 @@
+/**
+ * Component that allows wrapping components with a common layout that includes a label and optional icon, subtitle, actions, and help text.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {JSX.Element} [props.icon] - Icon to display in the label.
+ * @param {string} props.label - Label to display.
+ * @param {string} props.subtitle - Subtitle to display below the label.
+ * @param {JSX.Element|JSX.Element[]} [props.actions] - Actions to show to the right of the label.
+ * @param {string} [props.help] - Help text to show below the component.
+ * @param {boolean} [props.inline] - If `true`, the component is displayed inline - icon/label/subtitle are on the left, the passed content is on the right. **Note:** not compatible with `actions`.
+ * @param {string} [props.className] - Classes to pass to the main element wrapper.
+ * @param {string} [props.controlContainerClassName] - Classes to pass to the control container.
+ * @param {string} [props.labelContainerClassName] - Classes to pass to the label container.
+ * @param {string} [props.labelClassName] - Classes to pass to the label.
+ * @param {boolean} [props.fullWidthLabel] - If `true`, the label expands to fill up the whole width, instead of taking up only the space it needs.
+ * @param {JSX.Element} [props.labelAs] - If provided, the label (includes icon and subtitle) will be rendered as this element.
+ * @param {boolean} [props.hidden] - If `true`, the component is not rendered.
+ *
+ * @returns {JSX.Element} The BaseControl component.
+ *
+ * @example
+ * <BaseControl label='My component' icon={icons.myIcon}>
+ * 	<div>Content</div>
+ * </BaseControl>
+ *
+ * @preserve
+ */
+
+/**
+ * Component that displays a label, with an optional icon and subtitle.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {JSX.Element} [props.icon] - Icon to display.
+ * @param {string} [props.label] - Label to display.
+ * @param {string} [props.subtitle] - Subtitle to display.
+ * @param {JSX.Element} [props.as] - Element to render the label as. Not compatible with `contentsOnly`.
+ * @param {string} [props.className] - Classes to pass to the label.
+ * @param {boolean} [props.fullWidth=false] - If `true`, the component will take up as much space as it can.
+ * @param {boolean} [props.contentsOnly] - If `true`, only the label (/icon/subtitle) will be rendered, without any wrapping elements. Useful if you want to provide your own layout.
+ * @param {boolean} [props.hidden] - If `true`, the component is not rendered.
+ * @param {boolean} [props.noColor] - If `true`, colors on text won't be set, opacity will be used instead.
+ *
+ * @returns {JSX.Element} The RichLabel component.
+ *
+ * @example
+ * <RichLabel
+ * 	icon={icons.myIcon}
+ * 	label='My label'
+ * />
+ *
+ * @preserve
+ */
+
+/**
+ * Custom dropdown indicator for CustomSelect.
+ *
+ * (a wrapper for `components.DropdownIndicator` from `react-select`)
+ *
+ * @param {import('react-select').DropdownIndicatorProps} props - components.DropdownIndicator props.
+ *
+ * @preserve
+ */
+
+/**
+ * Custom multiple value display container for CustomSelect.
+ *
+ * (a wrapper for `components.MultiValueContainer` from `react-select`)
+ *
+ * @param {import('react-select').MultiValueGenericProps} props - components.MultiValueContainer props.
+ *
+ * @preserve
+ */
+
+/**
+ * Custom multiple value remove button for CustomSelect.
+ *
+ * (a wrapper for `components.MultiValueRemove` from `react-select`)
+ *
+ * @param {import('react-select').MultiValueRemoveProps} props - components.MultiValueRemove props.
+ *
+ * @preserve
+ */
+
+/**
+ * Custom option for CustomSelect.
+ *
+ * (a wrapper for `components.Option` from `react-select`)
+ *
+ * @param {import('react-select').OptionProps} props - components.Option props.
+ *
+ * @preserve
+ */
+
+/**
+ * Custom value display for CustomSelect.
+ *
+ * (a wrapper for `components.SingleValue` from `react-select`)
+ *
+ * @param {import('react-select').SingleValueProps} props - components.SingleValue props.
+ *
+ * @preserve
+ */
+
+/**
+ * Custom value display for multi item select.
+ *
+ * (a wrapper for `components.MultiValue` from `react-select`)
+ *
+ * @param {import('react-select').MultiValueProps} props - components.SingleValue props.
+ *
+ * @preserve
+ */
+
+/**
+ * Default clear indicator for CustomSelect.
+ *
+ * @param {import('react-select').ClearIndicatorProps} props - components.DropdownIndicator props.
+ *
+ * @preserve
+ */
+
+/**
+ * Default dropdown indicator for CustomSelect.
+ *
+ * @param {import('react-select').DropdownIndicatorProps} props - components.DropdownIndicator props.
+ *
+ * @preserve
+ */
+
+/**
+ * Default multiple value remove element for CustomSelect.
+ *
+ * @param {import('react-select').MultiValueRemoveProps} props - components.MultiValueRemove props.
+ *
+ * @preserve
+ */

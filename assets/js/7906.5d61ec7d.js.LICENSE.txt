@@ -1,0 +1,106 @@
+/**
+ * A component that displays a preview of the responsive settings.
+ *
+ * **Note**: Only intended for horizontal groups of buttons that don't wrap.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {Object} props.value - The value object.
+ * @param {boolean} props.isDesktopFirst - Whether the desktop-first mode is enabled.
+ * @param {string[]} props.breakpoints - Breakpoints to use.
+ * @param {string[]} [props.desktopFirstBreakpoints] - Breakpoints to use in desktop-first mode. If not provided, the breakpoints will be used in reverse order.
+ * @param {{label: string, value: string}[]} props.options - Options of the attribute the component is linked to. `{ value: string, label: string }[]`.
+ * @param {Object} props.breakpointData - Breakpoints to use. `{ [breakpoint: string]: number }`.
+ * @param {Object<string, number>} [props.breakpointUiData] - Allows overriding breakpoint names and icons. `{ [breakpoint: string]: { label: string, icon: JSX.Element|string } }`.
+ *
+ * @returns {JSX.Element} The ResponsivePreview component.
+ *
+ * @example
+ * <ResponsivePreview
+ * 	value={value}
+ * 	isDesktopFirst={isDesktopFirst}
+ * 	breakpoints={breakpoints}
+ * 	options={options}
+ * 	breakpointData={breakpointData} // e.g. from global manifest
+ * />
+ *
+ * @preserve
+ */
+
+/**
+ * Component that renders a preview of the breakpoints to help users visualize the options they set.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {Object[]} [props.blocks] - Blocks to display.
+ * @param {string} [props.blocks[].width] - Current breakpoint width. Left-aligned with the block.
+ * @param {string} [props.blocks[].widthEnd] - Current breakpoint width. Right-aligned with the block.
+ * @param {string} [props.blocks[].breakpoint] - Breakpoint name.
+ * @param {string} [props.blocks[].value] - Current value at the breakpoint.
+ * @param {boolean} [props.blocks[].dotsStart=false] - If `true`, dots are displayed at the start of the block.
+ * @param {boolean} [props.blocks[].dotsEnd=false] - If `true`, dots are displayed at the end of the block.
+ * @param {boolean} [props.blocks[].active=false] - If `true`, the block is active.
+ * @param {boolean} [props.blocks[].alignEnd=false] - If `true`, the block is aligned to the end.
+ * @param {BreakpointColor} [props.blocks[].color] - Color of the block.
+ * @param {boolean} [props.dotsStart=false] - If `true`, dots are displayed at the start of the preview.
+ * @param {boolean} [props.dotsEnd=false] - If `true`, dots are displayed at the end of the preview.
+ *  *
+ * @returns {JSX.Element} The BreakpointPreview component.
+ *
+ * @typedef {'blue' | 'green' | 'yellow' | 'red' | 'indigo' | 'orange' | 'cyan' | 'teal' | 'fuchsia' | 'black' | 'default'} BreakpointColor
+ *
+ * @example
+ * <BreakpointPreview
+ * 		blocks={[
+ * 			{
+ * 				breakpoint: 'Mobile',
+ * 				widthEnd: '480px',
+ * 				value: 'Regular',
+ * 				dotsStart: true,
+ * 				alignEnd: true,
+ * 				active: true,
+ * 			},
+ * 			{
+ * 				breakpoint: 'Default',
+ * 				value: 'Small',
+ * 				dotsEnd: true,
+ * 			},
+ * 		]}
+ * />
+ *
+ * @preserve
+ */
+
+/**
+ * Returns a PascalCase-formatted string.
+ *
+ * @param {string} input - String to convert.
+ *
+ * @access public
+ *
+ * @return {string} *PascalCase*-formatted string.
+ *
+ * Usage:
+ * ```js
+ * pascalCase('New super Test-title') // => 'NewSuperTestTitle'
+ * pascalCase(null) // => ''
+ * ```
+ *
+ * @preserve
+ */
+
+/**
+ * Returns a camelCase-formatted string.
+ *
+ * @param {string} input - String to convert.
+ *
+ * @access public
+ *
+ * @return {string} *camelCase*-formatted string.
+ *
+ * @example
+ * camelCase('New super Test-title') // => 'newSuperTestTitle'
+ * camelCase(null) // => ''
+ *
+ * @preserve
+ */

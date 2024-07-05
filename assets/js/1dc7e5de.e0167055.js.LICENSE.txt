@@ -1,0 +1,64 @@
+/**
+ * A simple color/gradient swatch.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {string} [props.color] - The color to display.
+ * @param {string} [props.gradient] - The gradient to display.
+ * @param {string} [props.className] - Additional clsx to apply.
+ * @param {string} [props.colorName] - The name of the color. Should be auto-generated for colors.
+ *
+ * @returns {JSX.Element} The ColorSwatch component.
+ *
+ * @example
+ * <ColorSwatch color="#FF0000" />
+ *
+ * @example
+ * <ColorSwatch gradient="linear-gradient(45deg, #FF0000, #00FF00)" />
+ *
+ * @preserve
+ */
+
+/**
+ * Color picker.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {string} [props.icon] - Icon to display.
+ * @param {string} [props.label] - Label to display.
+ * @param {string} [props.subtitle] - Subtitle to display.
+ * @param {string} [props.labelClassName] - Additional clsx passed to the label.
+ * @param {string} props.value - Selected value.
+ * @param {Function} props.onChange - Function to run when the value changes.
+ * @param {Object[]} props.colors - Colors to display.
+ * @param {string} props.colors[].name - Color name.
+ * @param {string} props.colors[].slug - Color slug.
+ * @param {string} props.colors[].color - Color value (HEX, RGB, HSL, HSB).
+ * @param {boolean} [props.showColorCode] - If `true`, the HEX color code is shown below the color name.
+ * @param {boolean} [props.noColorGroups] - If `true`, colors won't be grouped by shades.
+ * @param {ColorPickerType} props.type - Type of the color picker. Affects the icon and tooltip.
+ * @param {boolean} [props.clearable] - If `true`, the color can be deselected.
+ * @param {boolean} [props.stacked] - If `true`, the control is not rendered inline.
+ * @param {boolean} [props.hidden] - If `true`, the component is not rendered.
+ * @param {string} [props.tooltip] - If provided, overrides the default tooltip text. If there is no label, the value will still be shown within the tooltip.
+ *
+ * @returns {JSX.Element} The ColorPicker component.
+ *
+ * @typedef {'default' | 'fillColor' | 'textColor' | 'textHighlightColor' | 'listMarkerColor'} ColorPickerType
+ *
+ * @example
+ * <ColorPicker
+ * 	icon={icons.fillColor}
+ * 	label={__('Fill color', 'eightshift-ui-components')}
+ * 	subtitle={__('Select fill color', 'eightshift-ui-components')}
+ * 	value={fillColor}
+ * 	onChange={(value) => setAttributes({ fillColor: value })}
+ * 	colors={[
+ * 		{ name: 'Red', slug: 'red', color: '#ff0000' },
+ * 		{ name: 'Green', slug: 'green', color: '#00ff00' },
+ * 		{ name: 'Blue', slug: 'blue', color: '#0000ff' },
+ * 	]}
+ * />
+ *
+ * @preserve
+ */

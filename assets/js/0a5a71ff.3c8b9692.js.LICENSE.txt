@@ -1,0 +1,93 @@
+/**
+ * A simple checkbox.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {JSX.Element} [props.icon] - The checkbox icon.
+ * @param {string} [props.label] - The checkbox label.
+ * @param {string} [props.subtitle] - The checkbox subtitle.
+ * @param {boolean} props.checked - Whether the checkbox is checked.
+ * @param {boolean} [props.disabled] - Whether the checkbox is disabled.
+ * @param {boolean} [props.readOnly] - Whether the checkbox is read-only.
+ * @param {boolean} [props.indeterminate] - Whether the checkbox is in an indeterminate state.
+ * @param {Function} props.onChange - The function to call when the checkbox is changed.
+ * @param {string} [props.className] - Additional classes to add to the checkbox container.
+ * @param {string} [props.labelClassName] - Additional classes to add to the label container.
+ * @param {boolean} [props.alignEnd] - Whether the label should be aligned to the end.
+ * @param {boolean} [props.hidden] - If `true`, the component is not rendered.
+ *
+ * @returns {JSX.Element} The Checkbox component.
+ *
+ * @example
+ * <Checkbox
+ *  label='My label'
+ *  checked={myValue}
+ *  onChange={(value) => setMyValue(value)}
+ * />
+ *
+ * @preserve
+ */
+
+/**
+ * Allows for stacking elements horizontally, with a gap between them.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {boolean} [props.noWrap] - If `true`, the children will not wrap if their size exceeds the container size.
+ * @param {string} [props.className] - Classes to pass to the component.
+ * @param {boolean} [props.hidden] - If `true`, the component is not rendered.
+ *
+ * @returns {JSX.Element} The HStack component.
+ *
+ * @example
+ * <HStack>
+ * 	...
+ * </HStack>
+ *
+ * @preserve
+ */
+
+/**
+ * Allows for stacking elements vertically, with a gap between them.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {boolean} [props.noWrap] - If `true`, the children will not wrap if their size exceeds the container size.
+ * @param {string} [props.className] - Classes to pass to the component.
+ * @param {boolean} [props.hidden] - If `true`, the component is not rendered.
+ *
+ * @returns {JSX.Element} The VStack component.
+ *
+ * @example
+ * <VStack>
+ * 	...
+ * </VStack>
+ *
+ * @preserve
+ */
+
+/**
+ * Component that displays a label, with an optional icon and subtitle.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {JSX.Element} [props.icon] - Icon to display.
+ * @param {string} [props.label] - Label to display.
+ * @param {string} [props.subtitle] - Subtitle to display.
+ * @param {JSX.Element} [props.as] - Element to render the label as. Not compatible with `contentsOnly`.
+ * @param {string} [props.className] - Classes to pass to the label.
+ * @param {boolean} [props.fullWidth=false] - If `true`, the component will take up as much space as it can.
+ * @param {boolean} [props.contentsOnly] - If `true`, only the label (/icon/subtitle) will be rendered, without any wrapping elements. Useful if you want to provide your own layout.
+ * @param {boolean} [props.hidden] - If `true`, the component is not rendered.
+ * @param {boolean} [props.noColor] - If `true`, colors on text won't be set, opacity will be used instead.
+ *
+ * @returns {JSX.Element} The RichLabel component.
+ *
+ * @example
+ * <RichLabel
+ * 	icon={icons.myIcon}
+ * 	label='My label'
+ * />
+ *
+ * @preserve
+ */

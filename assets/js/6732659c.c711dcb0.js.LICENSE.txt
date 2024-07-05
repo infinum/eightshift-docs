@@ -1,0 +1,118 @@
+/**
+ * A simple notice component.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {JSX.Element} [props.icon] - Icon to display within the notice.
+ * @param {string} [props.label] - The label of the notice.
+ * @param {string} [props.subtitle] - The subtitle of the notice.
+ * @param {string} [props.className] - Classes to pass to the notice.
+ * @param {NoticeType} [props.type='default'] - The type of the notice.
+ * @param {boolean} [props.alignIconToTitle=false] - If `true`, the icon will be aligned to the first row of title, instead of vertically centered.
+ * @param {boolean} [props.hidden] - If `true`, the component is not rendered.
+ *
+ * @returns {JSX.Element} The Notice component.
+ *
+ * @typedef {'info' | 'success' | 'warning' | 'error' | 'placeholder' | 'default'} NoticeType
+ *
+ * @example
+ * <Notice label='This is a notice' />
+ *
+ * @preserve
+ */
+
+/**
+ * A tab within the TabList component, in the Tabs component.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {boolean} [props.disabled] - Whether the tab is disabled.
+ * @param {string} [props.className] - Classes to pass to the tab.
+ * @param {JSX.Element} [props.icon] - Icon to show on the tab.
+ * @param {string} [props.label] - Tab label. **Note**: overrides inner items!
+ * @param {string} [props.subtitle] - Tab subtitle. **Note**: overrides inner items!
+ *
+ * @returns {JSX.Element} The Tab component.
+ *
+ * @see {@link Tabs} for usage example.
+ *
+ * @preserve
+ */
+
+/**
+ * Component that displays a label, with an optional icon and subtitle.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {JSX.Element} [props.icon] - Icon to display.
+ * @param {string} [props.label] - Label to display.
+ * @param {string} [props.subtitle] - Subtitle to display.
+ * @param {JSX.Element} [props.as] - Element to render the label as. Not compatible with `contentsOnly`.
+ * @param {string} [props.className] - Classes to pass to the label.
+ * @param {boolean} [props.fullWidth=false] - If `true`, the component will take up as much space as it can.
+ * @param {boolean} [props.contentsOnly] - If `true`, only the label (/icon/subtitle) will be rendered, without any wrapping elements. Useful if you want to provide your own layout.
+ * @param {boolean} [props.hidden] - If `true`, the component is not rendered.
+ * @param {boolean} [props.noColor] - If `true`, colors on text won't be set, opacity will be used instead.
+ *
+ * @returns {JSX.Element} The RichLabel component.
+ *
+ * @example
+ * <RichLabel
+ * 	icon={icons.myIcon}
+ * 	label='My label'
+ * />
+ *
+ * @preserve
+ */
+
+/**
+ * Container for tab content within the Tabs component.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {string} [props.className] - Classes to pass to the tab content container.
+ *
+ * @returns {JSX.Element} The TabPanel component.
+ *
+ * @see {@link Tabs} for usage example.
+ *
+ * @preserve
+ */
+
+/**
+ * Container for tabs within the Tabs component.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {string} [props.className] - Classes to pass to the tab list.
+ *
+ * @returns {JSX.Element} The TabList component.
+ *
+ * @see {@link Tabs} for usage example.
+ *
+ * @preserve
+ */
+
+/**
+ * Main tab container.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {boolean} [props.vertical=false] - Whether the tabs are vertical.
+ * @param {string} [props.className] - Classes to pass to the tabs container.
+ * @param {boolean} [props.hidden] - If `true`, the component is not rendered.
+ *
+ * @returns {JSX.Element} The Tabs component.
+ *
+ * @example
+ * <Tabs>
+ * 	<TabList>
+ * 		<Tab>Tab 1</Tab>
+ * 		<Tab>Tab 2</Tab>
+ * 	</TabList>
+ * 	<TabPanel>Content 1</TabPanel>
+ * 	<TabPanel>Content 2</TabPanel>
+ * </Tabs>
+ *
+ * @preserve
+ */

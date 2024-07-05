@@ -1,0 +1,54 @@
+/**
+ * A simple spacer/divider component, with optional text or icon.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {SpacerSize} [props.size='m'] - The size of the spacer. Can be 's' or 'm'.
+ * @param {boolean} [props.border=false] - Whether to show a border in the middle.
+ * @param {string} [props.className] - Additional classes to add.
+ * @param {string} [props.text] - Text to display.
+ * @param {string} [props.subtitle] - Subtitle to display.
+ * @param {JSX.Element} [props.icon] - Icon to display.
+ * @param {boolean} [props.vertical=false] - Whether the spacer is vertical.
+ * @param {boolean} [props.hidden] - If `true`, the component is not rendered.
+ *
+ * @returns {JSX.Element} The Spacer component.
+ *
+ * @typedef {'px' | 'xs' | 's' | 'm'} SpacerSize
+ *
+ * @example
+ * <Spacer />
+ *
+ * <Spacer border />
+ *
+ * <Spacer vertical />
+ * <Spacer vertical border />
+ *
+ * <Spacer text='My divider' icon={icons.myIcon} />
+ *
+ * @preserve
+ */
+
+/**
+ * A solid color picker.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {import('react-aria-components').Color} props.value - The color value. Hex format is preferred, but HSL, HSB, and RGB are also supported.
+ * @param {Function} props.onChange - The change handler.
+ * @param {boolean} [props.disabled] - Whether the color picker is disabled.
+ * @param {Function} [props.onChangeEnd] - The change end handler.
+ * @param {boolean} [props.allowTransparency=false] - Whether the color picker allows transparency.
+ * @param {OutputColorFormat} [props.outputFormat] - The output format. Default is 'hex' (or 'hexa' if `allowTransparency` is true).
+ * @param {boolean} [props.noAdvancedOptions] - If `true`, the advanced options are hidden.
+ * @param {boolean} [props.hidden] - If `true`, the component is not rendered.
+ *
+ * @typedef {'hex' | 'hexa' | 'rgb' | 'rgba' | 'hsl' | 'hsla' | 'hsb' | 'hsba'} OutputColorFormat
+ *
+ * @returns {JSX.Element} The ButtonGroup component.
+ *
+ * @example
+ * <ButtonGroup
+ *
+ * @preserve
+ */

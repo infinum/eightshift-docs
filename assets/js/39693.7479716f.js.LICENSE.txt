@@ -1,0 +1,125 @@
+/**
+ * A component that allows the user to set different values for different breakpoints.
+ *
+ * Inner items should be passed as a render function.
+ * The following props are passed to the render function:
+ * - `breakpoint: string` - Name of the current breakpoint.
+ * - `currentValue: any` - Current value.
+ * - `handleChange: Function<(attributeName: string, value: any) => void>` - A function to change the value for the breakpoint..
+ * - `options: Object<string, any>` - (Optional) Options list passed to the `ResponsiveLegacy` component. (optional)
+ * - `isInlineCollapsedView: boolean` - (Optional) `true` if in `inline` mode, and the details are collapsed.
+ * - `isInlineExpandedView: boolean` - (Optional) `true` if in `inline` mode, and the details are shown.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {Object} props.value - The current value of the component.
+ * @param {Function} props.onChange - Function to run when the value changes. `(newValue: Object) => void`.
+ * @param {JSX.Element} props.icon - The icon of the component.
+ * @param {string} props.help - The help text of the component.
+ * @param {string} props.label - The label of the component.
+ * @param {string} props.subtitle - The subtitle of the component.
+ * @param {{label: string, value: string}[]} props.options - Options of the attribute the component is linked to. `{ value: string, label: string }[]`.
+ * @param {string[]} props.breakpoints - Breakpoints to use.
+ * @param {string[]} [props.desktopFirstBreakpoints] - Breakpoints to use in desktop-first mode. If not provided, the breakpoints will be used in reverse order.
+ * @param {Object<string, number>} [props.breakpointData] - Currently used breakpoint data. `{ [breakpoint: string]: number }`.
+ * @param {Object<string, number>} [props.breakpointUiData] - Allows overriding breakpoint names and icons. `{ [breakpoint: string]: { label: string, icon: JSX.Element|string } }`.
+ * @param {boolean} [props.noModeSelect] - If `true`, the mode selection (desktop-first/mobile-first) is hidden.
+ * @param {boolean} [props.inline] - If `true`, the default breakpoint is shown inline with the label. In the expanded state, all breakpoints are shown below the label.
+ * @param {boolean} [props.hidden] - If `true`, the component is not rendered.
+ * @param {'start' | 'center' | 'end' | 'stretch'} [props.innerContentAlign='start'] - Determines inner content alignment
+ *
+ * @returns {JSX.Element} The Responsive component.
+ *
+ * @example
+ * <Responsive
+ * 	value={value}
+ * 	onChange={onChange}
+ * 	icon={icons.myIcon}
+ * 	label={__('Label', 'eightshift-ui-components')}
+ * 	options={[
+ * 		{ value: 'value1', label: 'Value 1' },
+ * 		{ value: 'value2', label: 'Value 2' },
+ * 		{ value: 'value3', label: 'Value 3' },
+ * 	]}
+ * 	breakpoints={['mobile', 'tablet', 'desktop', 'large']}
+ * 	breakpointData={breakpointData}
+ * >
+ * 	{({ breakpoint, currentValue, options, handleChange }) => (
+ * 		<Select
+ * 			label={breakpoint}
+ * 			value={currentValue}
+ * 			options={options}
+ * 			onChange={handleChange}
+ * 		/>
+ * 	)}
+ * </Responsive>
+ *
+ * @preserve
+ */
+
+/**
+ * A component that allows the user to set different values for different breakpoints.
+ *
+ * Replacement for the `Responsive` component from Eightshift Frontend libs v12 (and older).
+ *
+ * Meant to be used with a more complex attribute setup, with one attribute per breakpoint,
+ * and a single value object that contains all the values.
+ *
+ * Inner items should be passed as a render function.
+ * The following props are passed to the render function:
+ * - `breakpoint: string` - Name of the current breakpoint.
+ * - `currentValue: any` - Current value.
+ * - `handleChange: Function<(attributeName: string, value: any) => void>` - A function to change the value for the breakpoint..
+ * - `options: Object<string, any>` - (Optional) Options list passed to the `ResponsiveLegacy` component. (optional)
+ * - `isInlineCollapsedView: boolean` - (Optional) `true` if in `inline` mode, and the details are collapsed.
+ * - `isInlineExpandedView: boolean` - (Optional) `true` if in `inline` mode, and the details are shown.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {Object} props.value - The current value of the component.
+ * @param {Function} props.onChange - Function to run when the value changes. `(newValue: Object) => void`.
+ * @param {Object} props.attribute - The attribute the component is linked to. `{ [breakpoint: string]: string }`.
+ * @param {JSX.Element} [props.icon] - The icon of the component.
+ * @param {string} [props.help] - The help text of the component.
+ * @param {string} [props.label] - The label of the component.
+ * @param {string} [props.subtitle] - The subtitle of the component.
+ * @param {{label: string, value: string}[]} props.options - Options of the attribute the component is linked to. `{ value: string, label: string }[]`.
+ * @param {any} [props.inheritValue=''] - Value that will be used as a default for breakpoints that don't have a value set. If `undefined`, needs to be used, use `allowUndefined` instead.
+ * @param {boolean?} [props.allowUndefined] - If `true`, `undefined` is used as a default value for breakpoints that don't have a value set. Overrides `inheritValue`.
+ * @param {Object} props.globalManifest - The global manifest.
+ * @param {boolean} [props.inline] - If `true`, the default breakpoint is shown inline with the label. In the expanded state, all breakpoints are shown below the label.
+ * @param {Object<string, number>} [props.breakpointData] - Breakpoints to use. `{ [breakpoint: string]: number }`.
+ * @param {string[]} [props.breakpoints] - Breakpoints to use. `{ [breakpoint: string]: number }`.
+ * @param {boolean} [props.hidden] - If `true`, the component is not rendered.
+ * @param {'start' | 'center' | 'end' | 'stretch'} [props.innerContentAlign='start'] - Determines inner content alignment
+ *
+ * @returns {JSX.Element} The ResponsiveLegacy component.
+ *
+ * @example
+ * // Basic example
+ * <ResponsiveLegacy
+ * 	attribute={myResponsiveAttribute} // from 'responsiveAttributes' in manifest
+ * 	value={value} // attributes
+ * 	onChange={(attributeName, value) => setAttributes({
+ * 		[attributeName]: value,
+ * 	})}
+ * 	icon={icons.myIcon}
+ * 	label={__('Label', 'eightshift-ui-components')}
+ * 	options={[
+ * 		{ value: 'value1', label: 'Value 1' },
+ * 		{ value: 'value2', label: 'Value 2' },
+ * 		{ value: 'value3', label: 'Value 3' },
+ * 	]}
+ * 	breakpointData={breakpoints} // From global manifest
+ * >
+ * 	{({ currentValue, options, handleChange }) => (
+ * 		<Select
+ * 			value={currentValue}
+ * 			options={options}
+ * 			onChange={handleChange}
+ * 		/>
+ * 	)}
+ * </ResponsiveLegacy>
+ *
+ * @preserve
+ */

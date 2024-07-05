@@ -1,0 +1,75 @@
+/**
+ * A simple checkbox.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {JSX.Element} [props.icon] - The checkbox icon.
+ * @param {string} [props.label] - The checkbox label.
+ * @param {string} [props.subtitle] - The checkbox subtitle.
+ * @param {boolean} props.checked - Whether the checkbox is checked.
+ * @param {boolean} [props.disabled] - Whether the checkbox is disabled.
+ * @param {boolean} [props.readOnly] - Whether the checkbox is read-only.
+ * @param {boolean} [props.indeterminate] - Whether the checkbox is in an indeterminate state.
+ * @param {Function} props.onChange - The function to call when the checkbox is changed.
+ * @param {string} [props.className] - Additional classes to add to the checkbox container.
+ * @param {string} [props.labelClassName] - Additional classes to add to the label container.
+ * @param {boolean} [props.alignEnd] - Whether the label should be aligned to the end.
+ * @param {boolean} [props.hidden] - If `true`, the component is not rendered.
+ *
+ * @returns {JSX.Element} The Checkbox component.
+ *
+ * @example
+ * <Checkbox
+ *  label='My label'
+ *  checked={myValue}
+ *  onChange={(value) => setMyValue(value)}
+ * />
+ *
+ * @preserve
+ */
+
+/**
+ * A simple file placeholder.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {JSX.Element} [props.icon] - File type icon override.
+ * @param {string} [props.fileName] - Current file name.
+ * @param {string} [props.className] - Classes to pass to the component.
+ *
+ * @returns {JSX.Element} The FilePlaceholder component.
+ *
+ * @example
+ * <FilePlaceholder />
+ *
+ * @example
+ * <FilePlaceholder fileName='demo.json' />
+ *
+ * @preserve
+ */
+
+/**
+ * A simple image placeholder, with an empty state.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {string} [props.url] - The image URL.
+ * @param {string} [props.alt] - The image alt text.
+ * @param {ImagePlaceholderStyle} [props.style='default'] - Style of the image placeholder.
+ * @param {ImagePlaceholderSize} [props.size='default'] - Size of the image placeholder.
+ * @param {boolean} [props.noImage] - If `true`, the image within the placeholder will not be displayed, even if `url` is provided.
+ * @param {string} [props.className] - Classes to pass to the component.
+ * @param {boolean} [props.hidden] - If `true`, the component is not rendered.
+ * @param {ImagePlaceholderImageMode} [props.imageMode='cover'] - Determines inner image display mode.
+ *
+ * @returns {JSX.Element} The ImagePlaceholder component.
+ *
+ * @typedef {'default' | 'simple'} ImagePlaceholderStyle
+ * @typedef {'cover'|'contain' | 'fill'} ImagePlaceholderImageMode
+ * @typedef @typedef {'auto' | 'default' | 'large' | 'fullWidth' | 'fullHeight' | 'full' | 'video'} ImagePlaceholderSize
+ *
+ * @example
+ * <ImagePlaceholder url="https://example.com/image.jpg" alt="Image alt text" />
+ *
+ * @preserve
+ */

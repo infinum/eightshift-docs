@@ -1,0 +1,118 @@
+/**
+ * A component that allows hiding content in an expandable panel, to declutter the UI.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {JSX.Element} [props.icon] - Icon to display in the label.
+ * @param {string} props.label - Label to display.
+ * @param {string} [props.subtitle] - Subtitle to display.
+ * @param {string} [props.className] - Classes to pass to the container.
+ * @param {string} [props.contentClassName] - Classes to pass to the inner content wrapper.
+ * @param {string} [props.labelClassName] - Classes to pass to the label.
+ * @param {JSX.Element|JSX.Element[]} [props.actions] - Actions to display in the panel header, left of the expand button.
+ * @param {boolean} [props.keepActionsOnExpand=false] - If `true`, the actions are not hidden when the panel is expanded.
+ * @param {boolean} [props.disabled] - If `true`, the expand button is disabled.
+ * @param {boolean} [props.noFocusHandling] - If `true`, the focus trapping when the item is expanded is disabled. Useful when part of another component that manages focus itself.
+ * @param {boolean} [props.open] - Whether the expandable is open.
+ * @param {Function} [props.onOpenChange] - Function is called when the panel is opened or closed.
+ * @param {boolean} [props.hidden] - If `true`, the component is not rendered.
+ *
+ * @returns {JSX.Element} The Expandable component.
+ *
+ * @example
+ * <Expandable label='My component'>
+ * 	...
+ * </Expandable>
+ *
+ * @preserve
+ */
+
+/**
+ * A component that provides a nice way to toggle a component on and off, and display its content in an expandable panel.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {JSX.Element} [props.icon] - Icon to display in the label.
+ * @param {string} props.label - Label to display.
+ * @param {string} [props.subtitle] - Subtitle to display.
+ * @param {boolean} props.useComponent - Whether the component is used. If `false`, the content is hidden.
+ * @param {Function} props.onChange - Function to run when the toggle state changes.
+ * @param {boolean} [props.noUseToggle] - If `true`, the toggle is not displayed.
+ * @param {boolean} [props.expandButtonDisabled] - If `true`, the expand button is disabled.
+ * @param {boolean} [props.controlOnly] - If `true`, only the control is displayed.
+ * @param {string} [props.contentClassName] - Classes to pass to the content container.
+ * @param {ComponentToggleDesign} [props.design='default'] - Design of the component.
+ * @param {boolean} [props.hidden] - If `true`, the component is not rendered.
+ *
+ * @returns {JSX.Element} The ComponentToggle component.
+ *
+ * @typedef {'default' | 'compact' | 'compactLabel' | 'compactIcon'} ComponentToggleDesign
+ *
+ * @example
+ * <ComponentToggle
+ * 	label='My component'
+ * 	useComponent={useComponent}
+ * 	onChange={setUseComponent}
+ * >
+ * 	...
+ * </ComponentToggle>
+ *
+ * @preserve
+ */
+
+/**
+ * A simple spacer/divider component, with optional text or icon.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {SpacerSize} [props.size='m'] - The size of the spacer. Can be 's' or 'm'.
+ * @param {boolean} [props.border=false] - Whether to show a border in the middle.
+ * @param {string} [props.className] - Additional classes to add.
+ * @param {string} [props.text] - Text to display.
+ * @param {string} [props.subtitle] - Subtitle to display.
+ * @param {JSX.Element} [props.icon] - Icon to display.
+ * @param {boolean} [props.vertical=false] - Whether the spacer is vertical.
+ * @param {boolean} [props.hidden] - If `true`, the component is not rendered.
+ *
+ * @returns {JSX.Element} The Spacer component.
+ *
+ * @typedef {'px' | 'xs' | 's' | 'm'} SpacerSize
+ *
+ * @example
+ * <Spacer />
+ *
+ * <Spacer border />
+ *
+ * <Spacer vertical />
+ * <Spacer vertical border />
+ *
+ * <Spacer text='My divider' icon={icons.myIcon} />
+ *
+ * @preserve
+ */
+
+/**
+ * A toggle switch.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {boolean} props.checked - Whether the switch is checked.
+ * @param {Function} props.onChange - Function to call when the switch is toggled.
+ * @param {boolean} [props.disabled] - Whether the switch is disabled.
+ * @param {string} [props.id] - The ID of the switch.
+ * @param {string} [props.className] - Classes to pass to the switch.
+ * @param {boolean} [props.isIndeterminate] - If `true`, the switch will render in an indeterminate state.
+ * @param {boolean} [props.hidden] - If `true`, the component is not rendered.
+ *
+ * @returns {JSX.Element} The Switch component.
+ *
+ * @example
+ * const [checked, setChecked] = useState(false);
+ *
+ * <Switch
+ * 	checked={checked}
+ * 	onChange={() => setChecked(!checked)}
+ * />
+ *
+ * @preserve
+ */

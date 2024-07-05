@@ -1,0 +1,37 @@
+/**
+ * A number picker component.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {number} props.value - The current value of the number picker.
+ * @param {Function} props.onChange - Function to run when the value changes.
+ * @param {number} [props.min=0] - The minimum value of the number picker.
+ * @param {number} [props.max] - The maximum value of the number picker.
+ * @param {number} [props.step=1] - The step value of the number picker.
+ * @param {string} [props.label] - The label of the number picker.
+ * @param {JSX.Element} [props.icon] - Icon to display within the number picker.
+ * @param {string} [props.subtitle] - The subtitle of the number picker.
+ * @param {string} [props.help] - The help text shown below the number picker.
+ * @param {boolean} [props.readOnly] - If `true`, the number picker is read-only.
+ * @param {boolean} [props.disabled] - If `true`, the number picker is disabled.
+ * @param {string} [props.placeholder] - Placeholder text to display in the number picker.
+ * @param {JSX.Element} [props.prefix] - Element to display to the left of the number picker.
+ * @param {JSX.Element} [props.suffix] - Element to display to the right of the number picker.
+ * @param {number} [props.fixedWidth] - If passed, sets the width of the input field to the provided number of characters. Useful if you have e.g. value from 1 to 1000, but you don't want the input field to change size when on lower values.
+ * @param {boolean} [props.inline] - If `true`, the number picker is displayed inline.
+ * @param {boolean} [props.noScrollToChange=false] - If `true`, the number picker does not change value when scrolling.
+ * @param {NumberPickerSize} [props.size='default'] - Determines the input field size.
+ * @param {boolean} [props.hidden] - If `true`, the component is not rendered.
+ *
+ * @returns {JSX.Element} The NumberPicker component.
+ *
+ * @typedef {'compact' | 'small' | 'default'} NumberPickerSize
+ *
+ * @example
+ * <NumberPicker
+ * 	value={value}
+ * 	onChange={setValue}
+ * />
+ *
+ * @preserve
+ */

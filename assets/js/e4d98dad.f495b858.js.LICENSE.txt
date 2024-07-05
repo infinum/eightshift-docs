@@ -1,0 +1,29 @@
+/**
+ * A simple checkbox.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {JSX.Element} [props.icon] - The checkbox icon.
+ * @param {string} [props.label] - The checkbox label.
+ * @param {string} [props.subtitle] - The checkbox subtitle.
+ * @param {boolean} props.checked - Whether the checkbox is checked.
+ * @param {boolean} [props.disabled] - Whether the checkbox is disabled.
+ * @param {boolean} [props.readOnly] - Whether the checkbox is read-only.
+ * @param {boolean} [props.indeterminate] - Whether the checkbox is in an indeterminate state.
+ * @param {Function} props.onChange - The function to call when the checkbox is changed.
+ * @param {string} [props.className] - Additional classes to add to the checkbox container.
+ * @param {string} [props.labelClassName] - Additional classes to add to the label container.
+ * @param {boolean} [props.alignEnd] - Whether the label should be aligned to the end.
+ * @param {boolean} [props.hidden] - If `true`, the component is not rendered.
+ *
+ * @returns {JSX.Element} The Checkbox component.
+ *
+ * @example
+ * <Checkbox
+ *  label='My label'
+ *  checked={myValue}
+ *  onChange={(value) => setMyValue(value)}
+ * />
+ *
+ * @preserve
+ */
