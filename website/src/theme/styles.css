@@ -20,18 +20,18 @@
 }
 
 .esd-icon-showcase-button {
-	inline-size: 3.25rem !important;
-	block-size: 3.25rem !important;
+	width: 3.25rem !important;
+	height: 3.25rem !important;
 
 	svg {
-		inline-size: 1.5rem !important;
-		block-size: 1.5rem !important;
+		width: 1.5rem !important;
+		height: 1.5rem !important;
 	}
 }
 
 
 .esd-legacy-docs-iframe {
-	min-inline-size: 64vw;
+	min-width: 64vw;
 
 	border: 1px solid #D1D5DB !important;
 	border-radius: 0.5rem !important;
