@@ -23,12 +23,12 @@
 	width: 3.25rem !important;
 	height: 3.25rem !important;
 
-	svg {
-		width: 1.5rem !important;
-		height: 1.5rem !important;
-	}
 }
 
+.esd-icon-showcase-button svg {
+	width: 1.5rem !important;
+	height: 1.5rem !important;
+}
 
 .esd-legacy-docs-iframe {
 	min-width: 64vw;
