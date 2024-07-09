@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { startPlaygroundWeb, installTheme, wpCLI } from '@wp-playground/client';
+import { icons } from '@eightshift/ui-components/icons';
 
 export const LegacyComponentShowcase = () => {
 	const [isLoading, setIsLoading] = useState(true);
 	const [loadingStep, setLoadingStep] = useState('Initializing');
-	const [loadingProgress, setLoadingProgress] = useState(null);
 
 	useEffect(() => {
 		const init = async () => {
@@ -34,7 +34,6 @@ export const LegacyComponentShowcase = () => {
 
 			// Fetch theme.
 			setLoadingStep('Loading theme');
-			setLoadingProgress(25);
 
 			const themeZipFilename = 'devkit-components.zip';
 			const themeZipReq = await fetch(`/${themeZipFilename}`, {
@@ -44,13 +43,11 @@ export const LegacyComponentShowcase = () => {
 				credentials: 'include',
 			});
 
-			setLoadingProgress(33);
 			setLoadingStep('Unpacking theme');
 
 			const themeZipBlob = await themeZipReq.blob();
 			const themeFile = new File([themeZipBlob], themeZipFilename);
 
-			setLoadingProgress(50);
 			setLoadingStep('Installing theme');
 			await installTheme(client, {
 				themeZipFile: themeFile,
@@ -60,7 +57,6 @@ export const LegacyComponentShowcase = () => {
 			});
 
 			// Install WP-CLI.
-			setLoadingProgress(60);
 			setLoadingStep('Setting up WP-CLI');
 
 			const wpCliPath = '/wordpress/wp-cli.phar';
@@ -70,7 +66,6 @@ export const LegacyComponentShowcase = () => {
 
 			// Add the demo posts.
 			setLoadingStep('Initializing block');
-			setLoadingProgress(80);
 
 			const { text: wpCliOutput } = await wpCLI(client, {
 				command: `wp post create --post_title='Welcome to Eightshift DevKit!' --post_content='<!-- wp:eightshift-boilerplate/devkit-components /-->' --post_status='publish'`,
@@ -83,11 +78,9 @@ export const LegacyComponentShowcase = () => {
 				.trim();
 
 			setLoadingStep('Finalizing');
-			setLoadingProgress(92);
 
 			await client.goTo(`/wp-admin/post.php?post=${addedPostId}&action=edit`);
 
-			setLoadingProgress(100);
 			await new Promise((resolve) => setTimeout(resolve, 1500));
 
 			setIsLoading(false);
@@ -100,6 +93,16 @@ export const LegacyComponentShowcase = () => {
 
 	return (
 		<div className='es-uic-size-full'>
+			{isLoading && (
+				<div className='es-uic-flex es-uic-gap-4'>
+					<div className='es-uic-mt-2 es-uic-py-1 [&>svg]:es-uic-size-6 text-infinum'>{icons.componentGeneric}</div>
+					<div className='es-uic-flow-root'>
+						<h3 className='!es-uic-mt-2'>Preparing component docs</h3>
+						<span className='text-12'>{loadingStep}</span>
+					</div>
+				</div>
+			)}
+
 			<iframe
 				className='es-uic-size-full es-uic-aspect-video esd-legacy-docs-iframe'
 				allow='clipboard-read; clipboard-write'
@@ -108,17 +111,6 @@ export const LegacyComponentShowcase = () => {
 					visibility: isLoading ? 'hidden' : 'visible',
 				}}
 			/>
-
-			{isLoading && (
-				<div className='es-full-size flex flex-col items-center justify-center gap-1.5'>
-					<progress
-						value={loadingProgress}
-						max={100}
-					></progress>
-					<h3>Preparing component docs</h3>
-					<span className='text-12'>{loadingStep}</span>
-				</div>
-			)}
 		</div>
 	);
 };
