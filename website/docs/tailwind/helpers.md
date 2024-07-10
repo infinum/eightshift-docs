@@ -33,7 +33,7 @@ export const DemoOptions = (attributes) => {
 	return (
 		<>
 			<Toggle
-				label={__('my option', 'fe-libs-tailwind')}
+				label={__('My option', 'fe-libs-tailwind')}
 				checked={myOption}
 				onChange={(value) => setAttributes({ [getAttrKey('myOption', attributes, manifest)]: value })}
 				// highlight-next-line
