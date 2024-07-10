@@ -45,6 +45,6 @@ Now you should get auto-completions and see advanced highlighting within your ma
 
 ### Other editors
 
-While there's no official extensions for other editors, here are some resources that might be useful:
+While there are no official extensions for other editors, here are some resources that might be useful:
 - [NeoVim](https://elijahmanor.com/blog/neovim-tailwindcss)
 - [JetBrains (PHPStorm / WebStorm)](https://www.jetbrains.com/help/phpstorm/tailwind-css.html#ws_css_tailwind_preview_resulting_css)
