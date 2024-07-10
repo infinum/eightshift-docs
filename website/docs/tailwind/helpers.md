@@ -112,7 +112,7 @@ A pre-configured fetch function that simplifies adding an URL picker with WP sea
 
 If you're using a `Responsive` component with an attribute that doesn't have any obvious options, you can use this helper to generate options that you can pass to Responsive to ensure user-friendly per-breakpoint value preview.
 
-You can provide a function to the second argument if you want the customize the value output.
+You can provide a function to the second argument if you want to customize the value output.
 
 ```jsx
 <Responsive
