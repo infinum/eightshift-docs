@@ -51,8 +51,8 @@ export default function Playground() {
 			{supportsServiceWorkers && (
 				<iframe
 					className='es-full-size border-t border-t-grey-200'
-					sandbox='allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-presentation allow-same-origin allow-scripts allow-top-navigation allow-top-navigation-by-user-activation'
-					src={`https://playground.wordpress.net?php=8.3&wp=6.5&networking=yes&mode=browser-full-screen&login=true&import-site=${themeZipUrl}`}
+					sandbox='allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-presentation allow-same-origin allow-scripts allow-top-navigation allow-top-navigation-by-user-activation allow-downloads'
+					src={`https://playground.wordpress.net?php=8.3&wp=6.5&networking=yes&mode=browser-full-screen&import-site=${themeZipUrl}`}
 				/>
 			)}
 		</Layout>
