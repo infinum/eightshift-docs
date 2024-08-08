@@ -23,30 +23,6 @@ However, if you used our `wp boilerplate init theme` command, you are all set. E
 
 ## Functions
 
-### `calc-dynamic-size`
-Calculates dynamic sizes using linear function for calculations.
-
-| Name         | Description                              | Type   |
-|--------------|------------------------------------------|--------|
-| `$min-size`  | Smallest allowed size.                   | `Size` |
-| `$max-size`  | Largest allowed size.                    | `Size` |
-| `$min-width` | From which width to start interpolating. | `Size` |
-| `$max-width` | Width on which to stop interpolating.    | `Size` |
-
-**Example**
-```scss
-.test {
-	font-size: calc-dynamic-size(10px, 100px, mobile, desktop);
-}
-```
-
-Output
-```css
-.test {
-	font-size: calc(0.1374 * 100vw + -64.74809px);
-}
-```
-
 ### `global-config`
 Function returns global config variable from Eightshift-frontend-libs setup. It expects `$global-config` key to be available. If the key is not available there is no warning nor error, just `null` returned.
 
@@ -95,46 +71,6 @@ Output
 ```css
 .test {
 	width: 1330px;
-}
-```
-
-### `line-height`
-Transforms the line-height to relative value.
-
-If context is not provided, it will be pulled from the `$base-font-size`. Line height will be specified without any unit.
-
-| Name       | Description                                             | Type     |
-|------------|---------------------------------------------------------|----------|
-| `$pixels`  | Pixel value that should be converted to relative value. | `Number` |
-| `$context` | Relative context. Defaults to `$base-font-size`.        | `Number` |
-
-**Example**
-```scss
-.test {
-	font-size: 20px;
-
-	&__subelement {
-		font-size: line-height(20);
-	}
-
-	&__second-subelement {
-		font-size: line-height(38, 32);
-	}
-}
-```
-
-Output
-```scss
-// $base-font-size = 20.
-
-.test {
-	&__subelement {
-		line-height: 1;
-	}
-
-	&__second-subelement {
-		line-height: 1.19;
-	}
 }
 ```
 
