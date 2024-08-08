@@ -1,0 +1,233 @@
+/**
+ * A Repeater item.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {JSX.Element} [props.icon] - Icon to display in the label.
+ * @param {string} [props.label] - Label to display.
+ * @param {string} [props.subtitle] - Subtitle to display.
+ * @param {JSX.Element|JSX.Element[]} [props.actions] - Actions to display to the right of the label.
+ * @param {string} [props.textValue] - The text value of the item.
+ * @param {string} [props.className] - Classes to pass to the item.
+ * @param {bool} [props.expandDisabled] - If `true`, the item cannot be expanded.
+ *
+ * @returns {JSX.Element} The RepeaterItem component.
+ *
+ * @see {@link Repeater} for usage example.
+ *
+ * @preserve
+ */
+
+/**
+ * A component that allows hiding content in an expandable panel, to declutter the UI.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {JSX.Element} [props.icon] - Icon to display in the label.
+ * @param {string} props.label - Label to display.
+ * @param {string} [props.subtitle] - Subtitle to display.
+ * @param {string} [props.className] - Classes to pass to the container.
+ * @param {string} [props.contentClassName] - Classes to pass to the inner content wrapper.
+ * @param {string} [props.labelClassName] - Classes to pass to the label.
+ * @param {JSX.Element|JSX.Element[]} [props.actions] - Actions to display in the panel header, left of the expand button.
+ * @param {boolean} [props.keepActionsOnExpand=false] - If `true`, the actions are not hidden when the panel is expanded.
+ * @param {boolean} [props.disabled] - If `true`, the expand button is disabled.
+ * @param {boolean} [props.noFocusHandling] - If `true`, the focus trapping when the item is expanded is disabled. Useful when part of another component that manages focus itself.
+ * @param {boolean} [props.open] - Whether the expandable is open.
+ * @param {Function} [props.onOpenChange] - Function is called when the panel is opened or closed.
+ * @param {boolean} [props.hidden] - If `true`, the component is not rendered.
+ *
+ * @returns {JSX.Element} The Expandable component.
+ *
+ * @example
+ * <Expandable label='My component'>
+ * 	...
+ * </Expandable>
+ *
+ * @preserve
+ */
+
+/**
+ * A component that allows re-ordering a list of items with additional sub-options.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {JSX.Element} [props.icon] - Icon to display in the label.
+ * @param {string} [props.label] - Label to display.
+ * @param {string} [props.subtitle] - Subtitle to display.
+ * @param {string} [props.help] - Help text to display below the input.
+ * @param {JSX.Element|JSX.Element[]} [props.actions] - Actions to display to the right of the label.
+ * @param {Object<string, any>[]} props.items - Data to display in the repeater.
+ * @param {boolean} [props.hideEmptyState] - If `true`, the empty state will not be displayed when there are no items.
+ * @param {Object<string, any>} [props.addDefaultItem] - Additional properties to add to a new item.
+ * @param {boolean} [props.addDisabled] - If `true`, the add button is disabled.
+ * @param {Function} props.onChange - Function to run when the items change.
+ * @param {Function} [props.onAfterItemAdd] - Function to run after an item is added.
+ * @param {Function} [props.onAfterItemRemove] - Function to run after an item is removed.
+ * @param {Number} [props.minItems] - The minimum number of items that must be present. If there are less items than this, deleting items will be disabled.
+ * @param {boolean} [props.hidden] - If `true`, the component is not rendered.
+ * @param {JSX.Element} [props.addButton] - If provided, overrides the default add button. `(props: { addItem: (additional: Object<string, any>?) => void, disabled: Boolean }) => JSX.Element`.
+ * @param {string} [props.className] - Classes to pass to the item wrapper.
+ * @param {JSX.Element} [props.emptyState] - Allows overriding the default empty state.
+ *
+ * @returns {JSX.Element} The Repeater component.
+ *
+ * @example
+ * <Repeater
+ * 	label='My repeater'
+ * 	items={items}
+ * 	onChange={setItems}
+ * >
+ * 	{(item) => {
+ * 		const { title, updateData } = item;
+ *
+ * 		return (
+ * 			<RepeaterItem
+ * 				label={title ?? 'New item'}
+ * 				icon={icons.myIcon}
+ * 			>
+ * 				<InputField
+ * 					label='Title'
+ * 					type='text'
+ * 					value={title}
+ * 					onChange={(value) => updateData({ title: value })}
+ * 				/>
+ * 			</RepeaterItem>
+ * 		);
+ * 	}}
+ * </Repeater>
+ *
+ * @preserve
+ */
+
+/**
+ * A simple toggle button component.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {JSX.Element} [props.icon] - Icon to display within the button.
+ * @param {ButtonSize} [props.size='default'] - The size of the button.
+ * @param {ButtonType} [props.type='default'] - The type of the button.
+ * @param {boolean} [props.disabled] - If `true`, the button is disabled.
+ * @param {string} [props.className] - Classes to pass to the button.
+ * @param {string} [props.tooltip] - Tooltip text to display on hover.
+ * @param {boolean} props.selected - Whether the button is selected.
+ * @param {Function} [props.onChange] - Function to run when the toggle state changes.
+ * @param {string} [props.wrapperClassName] - Classes to pass to the tooltip wrapper.
+ * @param {Object} [props.tooltipProps] - Props to pass to the tooltip.
+ * @param {boolean} [props.hidden] - If `true`, the component is not rendered.
+ *
+ * @returns {JSX.Element} The Button component.
+ *
+ * @typedef {'small' | 'default' | 'large'} ButtonSize
+ * @typedef {'default' | 'selected' | 'ghost' | 'danger'} ButtonType
+ *
+ * @example
+ * const [selected, setSelected] = useState(false);
+ *
+ * <ToggleButton
+ * 	selected={selected}
+ * 	onChange={setSelected}
+ * 	icon={icons.myIcon}
+ * 	/>
+ *
+ * <ToggleButton
+ * 		selected={selected}
+ * 		onChange={setSelected}
+ * 		icon={icons.myIcon}
+ * >
+ * 		My button
+ * </ToggleButton>
+ *
+ * @preserve
+ */
+
+/**
+ * A toggle switch with a label and optional icon and subtitle.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {boolean} props.checked - Whether the switch is checked.
+ * @param {Function} props.onChange - Function to call when the switch is toggled.
+ * @param {boolean} [props.disabled] - Whether the switch is disabled.
+ * @param {JSX.Element} [props.icon] - Icon to display.
+ * @param {string} props.label - Label to display.
+ * @param {string} [props.subtitle] - Subtitle to display.
+ * @param {string} [props.className] - Classes to pass to the toggle switch.
+ * @param {string} [props.labelClassName] - Classes to pass to the label.
+ * @param {boolean} [props.isIndeterminate] - If `true`, the switch will render in an indeterminate state.
+ * @param {boolean} [props.hidden] - If `true`, the component is not rendered.
+ *
+ * @returns {JSX.Element} The Toggle component.
+ *
+ * @example
+ * const [checked, setChecked] = useState(false);
+ *
+ * <Toggle
+ * 	icon={icons.myIcon}
+ * 	label='My toggle'
+ * 	checked={checked}
+ * 	onChange={() => setChecked(!checked)}
+ * />
+ *
+ * @preserve
+ */
+
+/**
+ * A toggle switch.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {boolean} props.checked - Whether the switch is checked.
+ * @param {Function} props.onChange - Function to call when the switch is toggled.
+ * @param {boolean} [props.disabled] - Whether the switch is disabled.
+ * @param {string} [props.id] - The ID of the switch.
+ * @param {string} [props.className] - Classes to pass to the switch.
+ * @param {boolean} [props.isIndeterminate] - If `true`, the switch will render in an indeterminate state.
+ * @param {boolean} [props.hidden] - If `true`, the component is not rendered.
+ *
+ * @returns {JSX.Element} The Switch component.
+ *
+ * @example
+ * const [checked, setChecked] = useState(false);
+ *
+ * <Switch
+ * 	checked={checked}
+ * 	onChange={() => setChecked(!checked)}
+ * />
+ *
+ * @preserve
+ */
+
+/**
+ * An input field.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {JSX.Element} [props.icon] - Icon to display in the label.
+ * @param {string} [props.label] - Label to display.
+ * @param {string} [props.subtitle] - Subtitle to display.
+ * @param {string} [props.help] - Help text to display below the input.
+ * @param {JSX.Element|JSX.Element[]} [props.actions] - Actions to display to the right of the label.
+ * @param {string} [props.value] - The current value of the input.
+ * @param {Function} [props.onChange] - Function to run when the input value changes.
+ * @param {InputType} [props.type='text'] - The input type. Renders a `<textarea>` instead of `<input>` if set to 'multiline'.
+ * @param {boolean} [props.disabled] - If `true`, the input is disabled.
+ * @param {boolean} [props.readOnly] - If `true`, the input is read-only.
+ * @param {string} [props.className] - Classes to pass to the input field.
+ * @param {string} [props.wrapperClassName] - Classes to pass to the input field wrapping element.
+ * @param {boolean} [props.hidden] - If `true`, the component is not rendered.
+ *
+ * @returns {JSX.Element} The InputField component.
+ *
+ * @typedef {'text' | 'search' | 'url' | 'tel' | 'email' | 'password' | 'multiline'} InputType
+ *
+ * @example
+ * <InputField
+ * 	label='My input'
+ * 	value={inputValue}
+ * 	onChange={setInputValue}
+ * />
+ *
+ * @preserve
+ */

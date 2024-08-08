@@ -1,0 +1,106 @@
+/**
+ * A "decorative" tooltip than can be used with element that usually don't support tooltips.
+ * Usually the only elements that support tooltips are interactive elements like buttons or links.
+ *
+ * This component will wrap the element and add the tooltip functionality to it.
+ * The tooltip will be shown when the element is hovered or anything within is focused.
+ *
+ * **Note**: This is not officially supported by the ARIA spec, so use with caution.
+ *
+ * @see {@link Tooltip} before using this component.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {string|JSX.Element} props.text - The text to display in the tooltip.
+ * @param {TooltipTheme} [props.theme='dark'] - The theme of the tooltip.
+ * @param {number} [props.offset=0] - Additional offset between the tooltip and the element on the main axis (same axis as element).
+ * @param {number} [props.crossOffset=0] - Additional offset between the tooltip and the element on the cross axis (opposite axis as element).
+ * @param {number} [props.containerPadding=12] - Space that should be left between the tooltip and the main containing element (usually browser window).
+ * @param {number} [props.openDelay=1500] - Duration before the tooltip is shown, in milliseconds.
+ * @param {number} [props.closeDelay=500] - Duration before the tooltip is hidden, in milliseconds.
+ * @param {boolean} [props.shouldFlip=true] - If `false`, the tooltip will not flip to the opposite side if there is not enough space.
+ * @param {TooltipPlacement} [props.placement] - The side of the trigger element where the tooltip will be displayed.
+ * @param {string} [props.className] - Classes to pass to the tooltip.
+ * @param {string} [props.wrapperClassName] - Classes to pass to the tooltip wrapper (if `doNotReplaceChild` is `false`).
+ * @param {boolean} [props.arrow] - If `true`, an arrow is shown on the tooltip.
+ *
+ * @returns {JSX.Element} The DecorativeTooltip component.
+ *
+ * @typedef {'light' | 'dark'} TooltipTheme
+ * @typedef {'bottom' | 'bottom left' | 'bottom right' | 'bottom start' | 'bottom end' | 'top' | 'top left' | 'top right' | 'top start' | 'top end' | 'left' | 'left top' | 'left bottom' | 'start' | 'start top' | 'start bottom' | 'right' | 'right top' | 'right bottom' | 'end' | 'end top' | 'end bottom'} TooltipPlacement
+ *
+ * @example
+ * <DecorativeTooltip text='My tooltip'>
+ * 	<span>Hover me</span>
+ * </DecorativeTooltip>
+ *
+ * @preserve
+ */
+
+/**
+ * A simple button component.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {JSX.Element} [props.icon] - Icon to display within the button.
+ * @param {ButtonSize} [props.size='default'] - The size of the button.
+ * @param {ButtonType} [props.type='default'] - The type of the button.
+ * @param {boolean} [props.disabled] - If `true`, the button is disabled.
+ * @param {string} [props.className] - Classes to pass to the button.
+ * @param {string|boolean} [props.tooltip] - Tooltip text to display on hover. If set to `true` and an `aria-label` is not provided, the tooltip text will be used as the `aria-label`.
+ * @param {Function} [props.onPress] - Function to run when the button is pressed.
+ * @param {React.Ref} [props.forwardedRef] - Ref to forward to the button. Use the same as the `ref` prop.
+ * @param {string} [props.wrapperClassName] - Classes to pass to the tooltip wrapper.
+ * @param {Object} [props.tooltipProps] - Props to pass to the tooltip.
+ * @param {boolean} [props.hidden] - If `true`, the component is not rendered.
+ *
+ * @returns {JSX.Element} The Button component.
+ *
+ * @typedef {'small' | 'default' | 'large'} ButtonSize
+ * @typedef {'default' | 'selected' | 'ghost' | 'danger'} ButtonType
+ *
+ * @example
+ * <Button onPress={() => console.log('Hi!')} icon={icons.myIcon} />
+ *
+ * <Button onPress={() => console.log('Hi!')} icon={icons.myIcon}>My button</Button>
+ *
+ * @preserve
+ */
+
+/**
+ * A simple tooltip component.
+ *
+ * It can be used in two modes:
+ * - **Controlled mode**: You can control the tooltip with the `open` prop.
+ * - **Uncontrolled mode**: The tooltip will be open by default with the `defaultOpen` prop.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {string|JSX.Element} props.text - The text to display in the tooltip.
+ * @param {TooltipTheme} [props.theme='dark'] - The theme of the tooltip.
+ * @param {number} [props.offset=0] - Additional offset between the tooltip and the element on the main axis (same axis as element).
+ * @param {number} [props.crossOffset=0] - Additional offset between the tooltip and the element on the cross axis (opposite axis as element).
+ * @param {number} [props.containerPadding=12] - Space that should be left between the tooltip and the main containing element (usually browser window).
+ * @param {number} [props.openDelay=1500] - Duration before the tooltip is shown, in milliseconds.
+ * @param {number} [props.closeDelay=500] - Duration before the tooltip is hidden, in milliseconds.
+ * @param {boolean} [props.shouldFlip=true] - If `false`, the tooltip will not flip to the opposite side if there is not enough space.
+ * @param {boolean} [props.defaultOpen] - (**Uncontrolled mode**) Whether the tooltip is initially open.
+ * @param {boolean} [props.open] - (**Controlled mode**) Whether the tooltip is open.
+ * @param {Function} [props.onOpenChange] - (**Controlled mode**) Function to run when the tooltip is opened or closed.
+ * @param {TooltipPlacement} [props.placement] - The side of the trigger element where the tooltip will be displayed.
+ * @param {string} [props.className] - Classes to pass to the tooltip.
+ * @param {RefObject<Element>} [props.triggerRef] - Ref to anchor the tooltip to. If not provided, the tooltip will be anchored to the trigger element.
+ * @param {boolean} [props.arrow] - If `true`, an arrow is shown on the tooltip.
+ *
+ * @returns {JSX.Element} The Tooltip component.
+ *
+ * @typedef {'light' | 'dark'} TooltipTheme
+ * @typedef {'bottom' | 'bottom left' | 'bottom right' | 'bottom start' | 'bottom end' | 'top' | 'top left' | 'top right' | 'top start' | 'top end' | 'left' | 'left top' | 'left bottom' | 'start' | 'start top' | 'start bottom' | 'right' | 'right top' | 'right bottom' | 'end' | 'end top' | 'end bottom'} TooltipPlacement
+ *
+ * @example
+ * <Tooltip text='My tooltip'>
+ * 	<Button>Hover me</Button>
+ * </Tooltip>
+ *
+ * @preserve
+ */

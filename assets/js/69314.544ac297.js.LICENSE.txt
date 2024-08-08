@@ -1,0 +1,88 @@
+/**
+ * A component that allows the user to select an option from a list of options.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {JSX.Element} [props.icon] - Icon to display in the label.
+ * @param {string} props.label - Label to display.
+ * @param {string} [props.subtitle] - Subtitle to display below the label.
+ * @param {JSX.Element|JSX.Element[]} [props.actions] - Actions to show to the right of the label.
+ * @param {string} [props.help] - Help text to show below the component.
+ * @param {boolean} [props.inline] - If `true`, the component is displayed inline - icon/label/subtitle are on the left, the passed content is on the right. **Note:** not compatible with `actions`.
+ * @param {string} props.value - The currently selected value.
+ * @param {Function} props.onChange - Function to run when the selected value changes.
+ * @param {{label: string, value: any, tooltip: string|JSX.Element, icon: JSX.Element|string, ariaLabel: string, subtitle:string|JSX.Element }[]} props.options - The list of options to choose from.
+ * @param {string} [props.disabled] - If `true`, the option select component is disabled.
+ * @param {boolean} [props.vertical] - If `true`, the options are displayed vertically. Not applicable to the `menu` type.
+ * @param {OptionSelectType} [props.type='toggleButton'] - The type of the option select component.
+ * @param {string} [props.className] - Classes to pass to the main element wrapper.
+ * @param {string} [props.itemClassName] - Classes to pass to each item.
+ * @param {Object} [props.wrapperProps] - Props to pass to the wrapper.
+ * @param {Object} [props.itemProps] - Props to pass to each item.
+ * @param {boolean} [props.noTriggerLabel] - Whether the trigger label should be hidden. Applies only to the `menu` type.
+ * @param {boolean} [props.noTriggerIcon] - Whether the trigger icon should be hidden. Applies only to the `menu` type.
+ * @param {string|boolean} [props.tooltip] - If provided, overrides the default tooltip text. If there is no label, the value will still be shown within the tooltip. Applies only to the `menu` type. If `true` is set and an `aria-label` is provided, the tooltip will show the same text as the `aria-label`.
+ * @param {boolean} [props.noItemLabel] - Whether the option label should be hidden.
+ * @param {boolean} [props.noItemIcon] - Whether the option icon should be hidden.
+ * @param {boolean} [props.hidden] - If `true`, the component is not rendered.
+ *
+ * @returns {JSX.Element} The OptionSelect component.
+ *
+ * @typedef {'toggleButtons' | 'radios' | 'radiosSegmented' | 'menu'} OptionSelectType
+ *
+ * @example
+ * <OptionSelect
+ * 	label='My component'
+ * 	icon={icons.myIcon}
+ * 	value={value}
+ * 	onChange={setValue}
+ * 	options={[
+ * 		{ label: 'Option 1', value: 'option1' },
+ * 		{ label: 'Option 2', value: 'option2' },
+ * 	]}
+ * />
+ *
+ * @preserve
+ */
+
+/**
+ * A simple toggle button component.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {JSX.Element} [props.icon] - Icon to display within the button.
+ * @param {ButtonSize} [props.size='default'] - The size of the button.
+ * @param {ButtonType} [props.type='default'] - The type of the button.
+ * @param {boolean} [props.disabled] - If `true`, the button is disabled.
+ * @param {string} [props.className] - Classes to pass to the button.
+ * @param {string} [props.tooltip] - Tooltip text to display on hover.
+ * @param {boolean} props.selected - Whether the button is selected.
+ * @param {Function} [props.onChange] - Function to run when the toggle state changes.
+ * @param {string} [props.wrapperClassName] - Classes to pass to the tooltip wrapper.
+ * @param {Object} [props.tooltipProps] - Props to pass to the tooltip.
+ * @param {boolean} [props.hidden] - If `true`, the component is not rendered.
+ *
+ * @returns {JSX.Element} The Button component.
+ *
+ * @typedef {'small' | 'default' | 'large'} ButtonSize
+ * @typedef {'default' | 'selected' | 'ghost' | 'danger'} ButtonType
+ *
+ * @example
+ * const [selected, setSelected] = useState(false);
+ *
+ * <ToggleButton
+ * 	selected={selected}
+ * 	onChange={setSelected}
+ * 	icon={icons.myIcon}
+ * 	/>
+ *
+ * <ToggleButton
+ * 		selected={selected}
+ * 		onChange={setSelected}
+ * 		icon={icons.myIcon}
+ * >
+ * 		My button
+ * </ToggleButton>
+ *
+ * @preserve
+ */

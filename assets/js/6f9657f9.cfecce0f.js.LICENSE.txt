@@ -1,0 +1,60 @@
+/**
+ * A component that displays a block icon.
+ *
+ * Usage:
+ *
+ * ```jsx
+ * import { BlockIcon } from '@eightshift/frontend-libs/scripts';
+ *
+ * <BlockIcon iconName='es-button' />
+ * ```
+ *
+ * Output:
+ *
+ * Selected block icon displayed inline.
+ * ```html
+ * <i><svg ...> ... </svg></i>
+ * ```
+ *
+ * @param {object} props          - BlockIcon options.
+ * @param {string} props.iconName - Name of the block icon to display.
+ *
+ * @access public
+ *
+ * @returns {JSX.Element} The BlockIcon component.
+ *
+ * @preserve
+ */
+
+/**
+ * An input field.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {JSX.Element} [props.icon] - Icon to display in the label.
+ * @param {string} [props.label] - Label to display.
+ * @param {string} [props.subtitle] - Subtitle to display.
+ * @param {string} [props.help] - Help text to display below the input.
+ * @param {JSX.Element|JSX.Element[]} [props.actions] - Actions to display to the right of the label.
+ * @param {string} [props.value] - The current value of the input.
+ * @param {Function} [props.onChange] - Function to run when the input value changes.
+ * @param {InputType} [props.type='text'] - The input type. Renders a `<textarea>` instead of `<input>` if set to 'multiline'.
+ * @param {boolean} [props.disabled] - If `true`, the input is disabled.
+ * @param {boolean} [props.readOnly] - If `true`, the input is read-only.
+ * @param {string} [props.className] - Classes to pass to the input field.
+ * @param {string} [props.wrapperClassName] - Classes to pass to the input field wrapping element.
+ * @param {boolean} [props.hidden] - If `true`, the component is not rendered.
+ *
+ * @returns {JSX.Element} The InputField component.
+ *
+ * @typedef {'text' | 'search' | 'url' | 'tel' | 'email' | 'password' | 'multiline'} InputType
+ *
+ * @example
+ * <InputField
+ * 	label='My input'
+ * 	value={inputValue}
+ * 	onChange={setInputValue}
+ * />
+ *
+ * @preserve
+ */
