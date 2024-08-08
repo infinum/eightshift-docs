@@ -1,0 +1,91 @@
+/**
+ * A DraggableList item.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {JSX.Element} [props.icon] - Icon to display in the label.
+ * @param {string} [props.label] - Label to display.
+ * @param {string} [props.subtitle] - Subtitle to display.
+ * @param {JSX.Element|JSX.Element[]} [props.actions] - Actions to display to the right of the label.
+ * @param {string} [props.textValue] - The text value of the item.
+ * @param {string} [props.className] - Classes to pass to the item.
+ *
+ * @returns {JSX.Element} The DraggableList component.
+ *
+ * @see {@link DraggableList} for usage example.
+ *
+ * @preserve
+ */
+
+/**
+ * A component that allows re-ordering a list of items.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {JSX.Element} [props.icon] - Icon to display in the label.
+ * @param {string} [props.label] - Label to display.
+ * @param {string} [props.subtitle] - Subtitle to display.
+ * @param {string} [props.help] - Help text to display below the input.
+ * @param {JSX.Element|JSX.Element[]} [props.actions] - Actions to display to the right of the label.
+ * @param {Object<string, any>[]} props.items - Data to display in the list.
+ * @param {boolean} [props.hideEmptyState] - If `true`, the empty state will not be displayed when there are no items.
+ * @param {Function} props.onChange - Function to run when the items change.
+ * @param {boolean} [props.hidden] - If `true`, the component is not rendered.
+ * @param {boolean} [props.disabled] - If `true`, item reordering is disabled.
+ * @param {string} [props.className] - Classes to pass to the item wrapper.
+ *
+ * @returns {JSX.Element} The DraggableList component.
+ *
+ * @example
+ * <DraggableList
+ * 	label='My draggable list'
+ * 	items={items}
+ * 	onChange={setItems}
+ * >
+ * 	{(item) => {
+ * 		const { title, updateData } = item;
+ *
+ * 		return (
+ * 			<DraggableListItem
+ * 				label={title ?? 'New item'}
+ * 				icon={icons.myIcon}
+ * 			>
+ * 				<InputField
+ * 					label='Title'
+ * 					type='text'
+ * 					value={title}
+ * 					onChange={(value) => updateData({ title: value })}
+ * 				/>
+ * 			</DraggableListItem>
+ * 		);
+ * 	}}
+ * </DraggableList>
+ *
+ * @preserve
+ */
+
+/**
+ * A toggle switch.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {boolean} props.checked - Whether the switch is checked.
+ * @param {Function} props.onChange - Function to call when the switch is toggled.
+ * @param {boolean} [props.disabled] - Whether the switch is disabled.
+ * @param {string} [props.id] - The ID of the switch.
+ * @param {string} [props.className] - Classes to pass to the switch.
+ * @param {boolean} [props.isIndeterminate] - If `true`, the switch will render in an indeterminate state.
+ * @param {boolean} [props.hidden] - If `true`, the component is not rendered.
+ *
+ * @returns {JSX.Element} The Switch component.
+ *
+ * @example
+ * const [checked, setChecked] = useState(false);
+ *
+ * <Switch
+ * 	checked={checked}
+ * 	onChange={() => setChecked(!checked)}
+ * />
+ *
+ * @preserve
+ */

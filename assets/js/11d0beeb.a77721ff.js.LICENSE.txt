@@ -1,0 +1,95 @@
+/**
+ * A component that can provide a 3x3 or a 2x2 grid of positions to pick from.
+ * Replaces the default Gutenberg `AlignmentMatrixControl`/`BlockAlignmentMatrixControl`/`BlockAlignmentMatrixToolbar`.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {MatrixSize} [props.size='3x3'] - The size of the matrix. Can be either '3x3' or '2x2'.
+ * @param {string} props.value - The currently selected value.
+ * @param {Function} props.onChange - Function to run when the selection changes.
+ * @param {string} [props.tooltip='Position'] - Tooltip text to display on the trigger button.
+ * @param {string} [props.label] - Label to display.
+ * @param {JSX.Element} [props.icon] - Icon to display within the button.
+ * @param {string} [props.subtitle] - Subtitle to display.
+ * @param {string} [props.popoverPosition='bottom'] - The position of the popover.
+ * @param {boolean} [props.hidden] - If `true`, the component is not rendered.
+ *
+ * @returns {JSX.Element} The MatrixAlign component.
+ *
+ * @typedef {'3x3' | '2x2'} MatrixSize
+ * @typedef {'bottom' | 'bottom left' | 'bottom right' | 'bottom start' | 'bottom end' | 'top' | 'top left' | 'top right' | 'top start' | 'top end' | 'left' | 'left top' | 'left bottom' | 'start' | 'start top' | 'start bottom' | 'right' | 'right top' | 'right bottom' | 'end' | 'end top' | 'end bottom'} PopoverPosition
+ *
+ * @example
+ * <MatrixAlign
+ * 		size='3x3'
+ * 		value='top left'
+ * 		onChange={setAlignment}
+ * />
+ *
+ * @preserve
+ */
+
+/**
+ * A toggle switch with a label and optional icon and subtitle.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {boolean} props.checked - Whether the switch is checked.
+ * @param {Function} props.onChange - Function to call when the switch is toggled.
+ * @param {boolean} [props.disabled] - Whether the switch is disabled.
+ * @param {JSX.Element} [props.icon] - Icon to display.
+ * @param {string} props.label - Label to display.
+ * @param {string} [props.subtitle] - Subtitle to display.
+ * @param {string} [props.className] - Classes to pass to the toggle switch.
+ * @param {string} [props.labelClassName] - Classes to pass to the label.
+ * @param {boolean} [props.isIndeterminate] - If `true`, the switch will render in an indeterminate state.
+ * @param {boolean} [props.hidden] - If `true`, the component is not rendered.
+ *
+ * @returns {JSX.Element} The Toggle component.
+ *
+ * @example
+ * const [checked, setChecked] = useState(false);
+ *
+ * <Toggle
+ * 	icon={icons.myIcon}
+ * 	label='My toggle'
+ * 	checked={checked}
+ * 	onChange={() => setChecked(!checked)}
+ * />
+ *
+ * @preserve
+ */
+
+/**
+ * Returns a PascalCase-formatted string.
+ *
+ * @param {string} input - String to convert.
+ *
+ * @access public
+ *
+ * @return {string} *PascalCase*-formatted string.
+ *
+ * Usage:
+ * ```js
+ * pascalCase('New super Test-title') // => 'NewSuperTestTitle'
+ * pascalCase(null) // => ''
+ * ```
+ *
+ * @preserve
+ */
+
+/**
+ * Returns a camelCase-formatted string.
+ *
+ * @param {string} input - String to convert.
+ *
+ * @access public
+ *
+ * @return {string} *camelCase*-formatted string.
+ *
+ * @example
+ * camelCase('New super Test-title') // => 'newSuperTestTitle'
+ * camelCase(null) // => ''
+ *
+ * @preserve
+ */
