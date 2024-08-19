@@ -8,26 +8,28 @@ tags: [eightshift, tailwind]
 hide_table_of_contents: false
 ---
 
-It’s been quite a lot of changes with Eightshift DevKit over the last few months, but switching to Tailwind for our Frontend Libs is by far the most significant one.
+There have been quite a lot of changes to Eightshift DevKit over the last couple of months, but switching to Tailwind for our Frontend Libs is by far the most significant one.
 <!--truncate-->
 
 ## Why Tailwind?
 
-We wanted to speed up the development time and make the projects easier to maintain. Another reason is to make the projects lighter and faster. Our previous setup was quite powerful, but there were a few projects where we almost reached the limit of the system.
+The main ideas driving the change were ease and speed of development, better maintainability, and easier onboarding. Speed and how _heavy_ the output was were also important things. The setup we used was pretty powerful and flexible, but reached its limits above a certain threshold.
 
-We decided to create a version of Frontend Libs that uses Tailwind instead of SCSS and to try it out on a few of our new projects and then decide whether to continue using it or to go back to standard Frontend Libs for our default setup. What were the benefits and our initial impressions?
+We decided to give Tailwind a try! After a quick proof of concept, a more elaborate setup was created. Legacy parts like SCSS were taken out, and a couple of new functions and helpers were added. After the setup was mostly done, a whole new set of blocks was created to be used as the default.
+
+It was time to test everything on a real project, to collect some insights and feedback in order to polish and improve the setup even more. What were the benefits that we found and our initial impressions? Read on!
 
 ## Benefits of the new setup
 
 Here are the stats after testing the setup:
 
-- sites are **5x** times faster on the frontend and **3x** times faster on the backend.
+- sites are **~5x** faster on the frontend and **~3x** faster on the backend.
 - load time is absolutely **minimal**
-- **50%** fewer DOM elements
-- build time is **10x+** times faster.
-- final bundle sizes for JS and CSS are **3x** smaller.
+- there are **~50%** fewer DOM elements in the default set of blocks
+- build time is more than **10x** faster.
+- final bundle sizes for JS and CSS are **~3x** smaller.
 
-Additional benefit is that there are a lot of Tailwind community sites with ready-made components, which allow you to copy the component and modify it.
+Also, since Tailwind is so popular, there are many sites with ready-made components that developers and designers can use as a base.
 
 ## Initial impressions from the team
 
@@ -39,29 +41,30 @@ _Using Tailwind classes speeded up development process quite significantly and I
 
 ## Requirements and how to install it
 
-FE Libs Tailwind requires at least **PHP 8.3**. To install it, run the following command in your project folder:
+The setup requires at least **PHP 8.3**. To install it, run the following command in your project folder:
 
 ```json
 npx eightshift-create theme
 ```
 
-The project setup script is now also upgraded and it offers a choice between standard FE Libs and FE Libs Tailwind. If you choose *simple setup*, it installs FE Libs Tailwind.
+The project setup script was also upgraded, and it now offers a choice between standard and the Tailwind setup. If you choose the *simple* setup, it installs FE Libs Tailwind.
 
 ## Project structure
 
 The project structure is quite similar to the standard Eightshift setup, but there are a few things to take note of.
 
-`tailwind.config.mjs` is the main config file for Tailwind where you define the colors, breakpoints, font sizes and all custom CSS classes you need to use in your project.
+`tailwind.config.mjs` is the main config file for Tailwind. There you define things like (project-specific) colors, font sizes, spacings, and any other Tailwind configuration options, or custom utilities you might need in your project. Breakpoints are still defined in the global manifest.
 
-When looking at the component or block structure, you may notice that most of them no longer have CSS files. As Tailwind offers lots of utility classes, in most cases you won’t need a CSS file for your component or a block. In case you need it, simply add `styles.css` or `styles-editor.css`. Notice how it’s no longer required to prefix the block/component name before the name of the CSS file.
+When looking at the component or block structure, you may notice that most of them no longer have stylesheets assigned. As Tailwind is utility class-based, in most cases you won’t need a CSS file for your component or a block. 
+Note that you can also provide one-time arbitrary values in Tailwind (check the docs for details) if needed. In case you need it, simply add `styles.css`, `styles-editor.css`, or `styles-frontend.css`. Notice how it’s no longer required to prefix the block/component name before the name of the CSS file.
 
-Tailwind classes are added in the `manifest.json` file of your block, but more on that in the next section.
+Tailwind classes can be shared between the frontend and the backend if added in the `manifest.json` file of your block or component, but more on that in the next section. You can always just write classes in the markup if needed.
 
-You will also notice that this setup uses **Eightshift UI Components** for rendering the options in the editor. We decided to decouple Eightshift UI Components from our setup to make maintenance easier. If you would like to know more, please check the [Eightshift UI Components documentation](https://eightshift.com/components/es-ui-components/getting-started).
+You will also notice that this setup uses **Eightshift UI components** for rendering the options in the editor. We decided to decouple UI components from the setup to make maintenance easier. If you would like to know more, please check the [Eightshift UI components documentation](https://eightshift.com/components/es-ui-components/getting-started).
 
 ## How to use Tailwind classes
 
-In `manifest.json` file, you’ll notice there’s a new key called `“Tailwind”`.  This supports the following keys:
+In `manifest.json` file, you’ll notice there’s a new `“Tailwind”` configuration object.  This supports the following entries:
 
 - **base** - the base list of classes added to the primary part of the block, e.g. the one that is the most affected by the options
 - **options** - defines additional classes to be added to the **base** (or **parts**) classes if a condition is met
@@ -158,4 +161,4 @@ These are fairly simple examples, but if you would like to know how it works in 
 
 ## What happens to standard Frontend Libs?
 
-Good question, I’ll let Goc answer that one 😂
+It won't be actively developed anymore, but it will stay supported for all the projects using it.
