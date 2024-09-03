@@ -7,9 +7,9 @@ title: Patterns
 
 Block Patterns are predefined block layouts, ready to insert and tweak.
 
-You can check the [WordPress documentation](https://developer.wordpress.org/block-editor/developers/block-api/block-patterns/) on this subject.
+You can check the [WordPress documentation](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-patterns/) on this subject.
 
-Patterns are (as we understand them) the same thing as block variations. The main difference is that you can provide full layouts with patterns, as described in [this chapter](blocks-variations#limitations). You can also provide the full page layouts with our variations.
+Patterns are (as we understand them) the same thing as block variations. The main difference is that you can provide full layouts with patterns, as described in [this chapter](/docs/basics/blocks-variations/#limitations). You can also provide the full page layouts with our variations.
 
 This means that the only differences between our variations and block patterns are:
 
@@ -37,8 +37,13 @@ Filter goes in the register method:
 
 Callback method:
 ```php
+/**
+ * Remove core patterns.
+ *
+ * @return void
+ */
 public function removeCorePatterns(): void
 {
-	remove_theme_support('core-block-patterns');
+	\remove_theme_support('core-block-patterns');
 }
 ```
