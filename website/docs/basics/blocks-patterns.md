@@ -32,7 +32,7 @@ To remove all core patterns add this code to you `src/Blocks/Blocks.php` class.
 Filter goes in the register method:
 ```php
 // Remove block patterns.
-\add_filter('init', [$this, 'removeCorePatterns'], 9);
+\add_action('init', [$this, 'removeCorePatterns'], 9);
 ```
 
 Callback method:
