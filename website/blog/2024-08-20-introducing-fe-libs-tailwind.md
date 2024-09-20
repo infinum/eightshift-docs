@@ -55,7 +55,7 @@ The project structure is quite similar to the standard Eightshift setup, but the
 
 `tailwind.config.mjs` is the main config file for Tailwind. There you define things like (project-specific) colors, font sizes, spacings, and any other Tailwind configuration options, or custom utilities you might need in your project. Breakpoints are still defined in the global manifest.
 
-When looking at the component or block structure, you may notice that most of them no longer have stylesheets assigned. As Tailwind is utility class-based, in most cases you won’t need a CSS file for your component or a block. 
+When looking at the component or block structure, you may notice that most of them no longer have stylesheets assigned. As Tailwind is utility class-based, in most cases you won’t need a CSS file for your component or a block.
 Note that you can also provide one-time arbitrary values in Tailwind (check the docs for details) if needed. In case you need it, simply add `styles.css`, `styles-editor.css`, or `styles-frontend.css`. Notice how it’s no longer required to prefix the block/component name before the name of the CSS file.
 
 Tailwind classes can be shared between the frontend and the backend if added in the `manifest.json` file of your block or component, but more on that in the next section. You can always just write classes in the markup if needed.
@@ -158,6 +158,29 @@ Helpers::getTwDynamicPart('icon', $attributes, $manifest);
 ```
 
 These are fairly simple examples, but if you would like to know how it works in more detail, please check the [FE Libs Tailwind documentation](https://eightshift.com/docs/tailwind/intro).
+
+## Making classes more readable in the manifest
+
+When looking at these examples, you may think that a list of Tailwind classes can get really long and hard to read. And you're right. That's why we've added an option to also define classes as an array of strings. Here's an example:
+
+```json
+"base": {
+	"twClasses": [
+		"flex items-center justify-between md:justify-start gap-8",
+		"max-w-screen-lg h-full",
+		"mx-auto px-4 md:px-8 lg:px-12",
+		"relative",
+	],
+},
+```
+This approach not only makes the classes more readable, but also allows you to group them. In the example above, the first group of classes is related to the layout, the second group is related to the width and height, the third group is related to margins and padding, and the last group is related to the positioning.
+
+## New Theme Options page and post meta
+Previous versions of Eightshift DevKit relied on ACF for adding a Theme Options page. The new FE Libs Tailwind comes with a custom Theme Options page, that is built using the Eightshift UI Components.
+
+By default, the Theme Options allow you to set header, footer and a 404 page. These are all built as patterns and then assigned via the Theme Options. If you would like to see how it works in more detail, check the `src/ThemeOptions` folder and the `src/Blocks/components/admin-theme-options` folder.
+
+With this new approach, it's also possible to add custom fields on various post types, but that will be covered in a separate blog post.
 
 ## What happens to standard Frontend Libs?
 
