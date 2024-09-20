@@ -103,18 +103,16 @@ If you need an attribute that is allowed to be changed per-breakpoint, do this:
 
 	```json
 	...
-	"tailwind": {
-		"attributes": {
-			// highlight-start
-			"demoSpacing": {
-				"type": "object",
-				"default": {
-					"_default": "base",
-					"_desktopFirst": false
-				},
+	"attributes": {
+		// highlight-start
+		"demoSpacing": {
+			"type": "object",
+			"default": {
+				"_default": "base",
+				"_desktopFirst": false
 			},
-			// highlight-end
-		}
+		},
+		// highlight-end
 	},
 	...
 	```
