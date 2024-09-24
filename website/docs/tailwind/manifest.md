@@ -217,7 +217,7 @@ If needed, you can also separately specify classes that will be applied in the e
 		{
 			"attributes": {
 				"buttonVariant": "primary",
-				"buttonFixedPosition": true
+				"buttonFixedPosition": "true"
 			},
 			"twClasses": "absolute top-0 left-0 m-2",
 			// highlight-next-line
