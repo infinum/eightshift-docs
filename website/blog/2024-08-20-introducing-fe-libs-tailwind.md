@@ -3,7 +3,7 @@ title: Introducing - Frontend Libs Tailwind
 description: Explaining the idea behind switching to Tailwind, our first impressions and some examples.
 slug: introducing-fe-libs-tailwind
 authors: obradovic
-date: 2024-08-20
+date: 2024-11-13
 tags: [eightshift, tailwind]
 hide_table_of_contents: false
 ---
@@ -49,6 +49,8 @@ npx eightshift-create theme
 
 The project setup script was also upgraded, and it now offers a choice between standard and the Tailwind setup. If you choose the *simple* setup, it installs FE Libs Tailwind.
 
+To make development easier, please refer to our [Editor setup](https://eightshift.com/docs/tailwind/getting-started#editor-setup) documentation. It will guide you through the process of setting up the editor for the project.
+
 ## Project structure
 
 The project structure is quite similar to the standard Eightshift setup, but there are a few things to take note of.
@@ -62,37 +64,42 @@ Tailwind classes can be shared between the frontend and the backend if added in 
 
 You will also notice that this setup uses **Eightshift UI components** for rendering the options in the editor. We decided to decouple UI components from the setup to make maintenance easier. If you would like to know more, please check the [Eightshift UI components documentation](https://eightshift.com/components/es-ui-components/getting-started).
 
-## How to use Tailwind classes
+## How to define Tailwind classes
 
 In `manifest.json` file, you’ll notice there’s a new `“Tailwind”` configuration object.  This supports the following entries:
 
-- **base** - the base list of classes added to the primary part of the block, e.g. the one that is the most affected by the options
-- **options** - defines additional classes to be added to the **base** (or **parts**) classes if a condition is met
-- **parts** - classes for parts of the block that may or may not be affected by the options
-- **combinations** - the most complex cases where combinations of multiple attributes are taken into consideration, e.g. *secondary* button variant and *red* color. These are added to the **base** class only.
+- **parts** - contains basic classes and classes for parts of the block that may or may not be affected by the options and/or combinations. It is recommended to have a **base** part defined.
+- **options** - defines additional classes to be added to any of the **parts** classes if a condition is met.
+- **combinations** - the most complex cases where combinations of multiple attributes are taken into consideration, e.g. *secondary* button variant and *red* color. These can be added to any of the **parts** classes.
 
 Here is an example of the Tailwind classes defined for a paragraph:
 
 ```json
 "tailwind": {
+	"parts": {
 		"base": {
 			"twClasses": "font-sans [&>a]:underline font-synthesis-none"
-		},
-		"options": {
-			"paragraphSize": {
-				"twClasses": {
-					"xs": "text-xs lg:text-sm leading-tight",
-					"sm": "text-tiny lg:text-md leading-tight",
-					"base": "text-base leading-normal",
-					"md": "text-xl md:text-2xl leading-normal",
-					"lg": "text-3xl md:text-4xl lg:text-5xl leading-normal"
-				}
+		}
+	},
+	"options": {
+		"paragraphSize": {
+			"twClasses": {
+				"xs": "text-xs lg:text-sm leading-tight",
+				"sm": "text-tiny lg:text-md leading-tight",
+				"base": "text-base leading-normal",
+				"md": "text-xl md:text-2xl leading-normal",
+				"lg": "text-3xl md:text-4xl lg:text-5xl leading-normal"
 			}
 		}
 	}
+}
 ```
 
-Depending on the selected paragraph size, the classes from the **options** are added to the **base** class. If the *sm* size is selected, the output of the classes will be `font-sans [&>a]:underline font-synthesis-none text-tiny lg:text-md leading-tight`
+Depending on the selected paragraph size, the classes from the **options** are added to the **base** class from **parts**. If the *sm* size is selected, the output of the classes will be `font-sans [&>a]:underline font-synthesis-none text-tiny lg:text-md leading-tight`.
+
+:::note
+**base** is a default part class, so if no part is defined, the additional classes from **options** will be added to the base class.
+:::
 
 Here’s how the combinations are defined:
 
@@ -117,7 +124,7 @@ Here’s how the combinations are defined:
 ]
 ```
 
-The example above shows two cases. If a button variant is *primary* or *secondary*, the classes will be added to the **base** class. The second group of classes will be added only to a *primary* button variant that has a *red-700* color defined.
+The example above shows two cases. If a button variant is *primary* or *secondary*, the classes will be added to the **base** part class. The second group of classes will be added only to a *primary* button variant that has a *red-700* color defined.
 
 Lastly, to apply the options to a specific part, instead of base classes, you can define it like this:
 
@@ -133,29 +140,42 @@ Lastly, to apply the options to a specific part, instead of base classes, you ca
 }
 ```
 
-Notice the additional “part” key after the classes that defines to which Tailwind **parts** classes this applies to.
+Notice the additional “part” key after the classes that defines to which Tailwind **parts** classes this applies to. Similar approach can be used for **combinations**.
 
-If you want to define classes specific to editor, you can also add `“twClassesEditor”` key. Please note that these completely override the `“twClasses”` in the editor.
+If you want to define classes specific to editor, you can also add `“twClassesEditor”` or `“twClassesEditorOnly”` keys. `“twClassesEditor”` will only append classes to the existing `“twClasses”`, while the latter will completely override them.
 
-To output these classes, you can use the following helper methods:
+```json
+"parts": {
+	"icon": {
+		"twClasses": "text-white hover:text-blue-200 focus:outline-none focus-visible:text-blue-500 [&>svg]:size-5 transition",
+		"twClassesEditorOnly": "text-white size-5"
+	}
+}
+```
 
-- `getTwClasses` - adds all classes from **base**, **options** and **combinations** (if the conditions for **options** and **combinations** are matched)
-- `getTwPart` - gets classes from the **parts** group
-- `getTwDynamicPart` - gets classes from the **parts** group and also checks if any of the options is defined to be used for a specific part.
+## Outputting Tailwind classes
 
-These methods are supported in both PHP and JS.
+To output these classes, you can use the following helper method:
 
-Each of these methods also support additional classes after the `$manifest` parameter, meaning you can add more classes along the ones passed from the manifest. This can be useful if you need a class that is specific to the frontend view or the editor view.
+- `tailwindClasses` - the only helper method you need to output the classes. All the magic happens behind the scenes, depending on the definitions in the manifest and the conditions that are met.
 
-Here are a few examples of using these methods in PHP:
+This method is supported in both PHP and JS.
+
+:::note
+In versions prior to FE Libs Tailwind **1.4.0**, different helper methods were used, depending if you needed base class, part class, or a part class affected by the options (dynamic part). We decided to simplify this and merge all of these methods into one.
+:::
+
+Here are a few examples of using the method in PHP:
 
 ```php
-Helpers::getTwClasses($attributes, $manifest, $additionalClass);
+Helpers::tailwindClasses('base', $attributes, $manifest);
 
-Helpers::getTwPart('button', $manifest);
-
-Helpers::getTwDynamicPart('icon', $attributes, $manifest);
+Helpers::tailwindClasses('icon', $attributes, $manifest, $additionalClass);
 ```
+
+The first parameter is the part name for which you want to output the classes. The second parameter is the attributes array that you want to check against the options and combinations. The third parameter is the manifest array that contains the Tailwind classes.
+
+This method also supports additional classes after the `$manifest` parameter, meaning you can add more classes along the ones passed from the manifest. This can be useful if you need a class that is specific to the frontend view or the editor view.
 
 These are fairly simple examples, but if you would like to know how it works in more detail, please check the [FE Libs Tailwind documentation](https://eightshift.com/docs/tailwind/intro).
 
@@ -164,14 +184,16 @@ These are fairly simple examples, but if you would like to know how it works in 
 When looking at these examples, you may think that a list of Tailwind classes can get really long and hard to read. And you're right. That's why we've added an option to also define classes as an array of strings. Here's an example:
 
 ```json
-"base": {
-	"twClasses": [
-		"flex items-center justify-between md:justify-start gap-8",
-		"max-w-screen-lg h-full",
-		"mx-auto px-4 md:px-8 lg:px-12",
-		"relative",
-	],
-},
+"parts": {
+	"base": {
+		"twClasses": [
+			"flex items-center justify-between md:justify-start gap-8",
+			"max-w-screen-lg h-full",
+			"mx-auto px-4 md:px-8 lg:px-12",
+			"relative",
+		],
+	}
+}
 ```
 This approach not only makes the classes more readable, but also allows you to group them. In the example above, the first group of classes is related to the layout, the second group is related to the width and height, the third group is related to margins and padding, and the last group is related to the positioning.
 
