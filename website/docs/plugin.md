@@ -9,7 +9,7 @@ Let's create a new plugin!
 Navigate to your WordPress plugins folder and run the following command:
 
 ```bash
-npx create-wp-project plugin
+npx eightshift-create plugin
 ```
 
 The script will prompt you for a plugin name and local development URL (used for BrowserSync). After that, your new plugin will be installed:
