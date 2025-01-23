@@ -14,6 +14,7 @@ module.exports = {
 						'features/enrichment',
 						'features/geolocation',
 						'features/validation',
+						'features/variations',
 						'features/multisteps-forms',
 						'features/spam-prevention',
 						'features/success-redirect',
@@ -79,6 +80,7 @@ module.exports = {
 									'php/global-variables/integrations/active-campaign',
 									'php/global-variables/integrations/airtable',
 									'php/global-variables/integrations/clearbit',
+									'php/global-variables/integrations/corvus',
 									'php/global-variables/integrations/goodbits',
 									'php/global-variables/integrations/greenhouse',
 									'php/global-variables/integrations/hubspot',
@@ -86,8 +88,10 @@ module.exports = {
 									'php/global-variables/integrations/mailchimp',
 									'php/global-variables/integrations/mailerlite',
 									'php/global-variables/integrations/moments',
+									'php/global-variables/integrations/paycek',
 									'php/global-variables/integrations/workable',
 									'php/global-variables/integrations/pipedrive',
+									'php/global-variables/integrations/talentlyft',
 								],
 							},
 						]
@@ -107,6 +111,7 @@ module.exports = {
 										'label': 'Forms',
 										'items': [
 											'php/filters/block/forms/style-options',
+											'php/filters/block/forms/use-custom-result-output-feature',
 										],
 									},
 									{
@@ -116,19 +121,15 @@ module.exports = {
 											'php/filters/block/form/redirect-timeout',
 											'php/filters/block/form/hide-global-msg-timeout',
 											'php/filters/block/form/success-redirect-url',
-											'php/filters/block/form/success-redirect-variation',
-											'php/filters/block/form/success-redirect-variation-options',
+											'php/filters/block/form/variation',
 											'php/filters/block/form/tracking-event-name',
 											'php/filters/block/form/tracking-additional-data',
 											'php/filters/block/form/data-type-selector',
-											'php/filters/block/form/phone-sync',
 											'php/filters/block/form/global-msg-headings',
 											'php/filters/block/form/additional-content',
-											'php/filters/block/form/pre-response-addon-data',
-											'php/filters/block/form/pre-response-success-redirect-data',
 											'php/filters/block/form/additional-hidden-fields',
-											'php/filters/block/form/result-output-items',
-											'php/filters/block/form/result-output-parts',
+											'php/filters/block/form/custom-class-selector',
+											'php/filters/block/form/component-show-form',
 										],
 									},
 									{
@@ -173,8 +174,9 @@ module.exports = {
 										'type': 'category',
 										'label': 'File',
 										'items': [
-											'php/filters/block/file/preview-remove-label',
 											'php/filters/block/file/additional-content',
+											'php/filters/block/file/info-additional-content',
+											'php/filters/block/file/preview-remove-label',
 										],
 									},
 									{
@@ -202,8 +204,9 @@ module.exports = {
 										'type': 'category',
 										'label': 'Country',
 										'items': [
-											'php/filters/block/country/alternative-data-set',
 											'php/filters/block/country/additional-content',
+											'php/filters/block/country/alternative-data-set',
+											'php/filters/block/country/custom-order',
 										],
 									},
 									{
@@ -234,6 +237,15 @@ module.exports = {
 										'label': 'Rating',
 										'items': [
 											'php/filters/block/rating/additional-content',
+											'php/filters/block/rating/star-icon',
+										],
+									},
+									{
+										'type': 'category',
+										'label': 'Dynamic',
+										'items': [
+											'php/filters/block/dynamic/additional-content',
+											'php/filters/block/dynamic/data-output',
 										],
 									},
 								],
@@ -245,6 +257,7 @@ module.exports = {
 									'php/filters/blocks/allowed-blocks',
 									'php/filters/blocks/additional-blocks',
 									'php/filters/blocks/media-breakpoints',
+									'php/filters/blocks/tailwind-selectors',
 								],
 							},
 							{
@@ -260,7 +273,7 @@ module.exports = {
 								'label': 'Scripts',
 								'items': [
 									'php/filters/scripts/dependency-admin',
-									'php/filters/scripts/dependency-theme',
+									'php/filters/scripts/dependency-captcha',
 									'php/filters/scripts/dependency-blocks-editor',
 									'php/filters/scripts/dependency-blocks-frontend',
 									'php/filters/scripts/routes-public',
@@ -271,9 +284,9 @@ module.exports = {
 								'type': 'category',
 								'label': 'Geolocation',
 								'items': [
+									'php/filters/geolocation/countries',
 									'php/filters/geolocation/db-location',
 									'php/filters/geolocation/phar-location',
-									'php/filters/geolocation/countries',
 								],
 							},
 							{
@@ -284,6 +297,7 @@ module.exports = {
 									'php/filters/integrations/airtable',
 									'php/filters/integrations/calculator',
 									'php/filters/integrations/clearbit',
+									'php/filters/integrations/corvus',
 									'php/filters/integrations/goodbits',
 									'php/filters/integrations/greenhouse',
 									'php/filters/integrations/hubspot',
@@ -292,8 +306,10 @@ module.exports = {
 									'php/filters/integrations/mailer',
 									'php/filters/integrations/mailerlite',
 									'php/filters/integrations/moments',
-									'php/filters/integrations/workable',
+									'php/filters/integrations/paycek',
 									'php/filters/integrations/pipedrive',
+									'php/filters/integrations/talentlyft',
+									'php/filters/integrations/workable',
 								],
 							},
 							{
@@ -319,8 +335,17 @@ module.exports = {
 							},
 							{
 								'type': 'category',
+								'label': 'Encryption',
+								'items': [
+									'php/filters/encryption/secret-key',
+									'php/filters/encryption/secret-iv-key',
+								],
+							},
+							{
+								'type': 'category',
 								'label': 'Admin',
 								'items': [
+									'php/filters/admin/top-bar-menu',
 									'php/filters/admin/settings-data',
 								],
 							},
