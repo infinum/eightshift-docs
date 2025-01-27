@@ -1,6 +1,6 @@
 ---
 id: variations
-title: variations
+title: Variations
 ---
 
-// TODO
+*Details coming soon*

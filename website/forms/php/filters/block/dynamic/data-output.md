@@ -1,6 +1,6 @@
 ---
 id: data-output
-title: data-output
+title: Data output
 ---
 
-// TODO
+*Details coming soon*

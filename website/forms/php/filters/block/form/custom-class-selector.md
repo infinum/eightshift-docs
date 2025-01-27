@@ -1,6 +1,6 @@
 ---
 id: custom-class-selector
-title: custom-class-selector
+title: Custom class selector
 ---
 
-// TODO
+*Details coming soon*
