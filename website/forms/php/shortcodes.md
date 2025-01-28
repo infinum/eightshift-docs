@@ -38,6 +38,21 @@ The `esFormsROIP` (_Result output item part_) shortcode allows showing certain c
 [esFormsROIP name="<key>"]Default content[/esFormsROIP]
 ```
 
+## esFormsROISF
+
+The `esFormsROISF` shortcode will output button that can be used to restore/show form after the form is submitted and the result is shown. This works only if the form is set to be hidden after submission.
+
+**Available usage:**
+* Result output custom post type
+
+**Available attributes:**
+* none
+
+**Example usage:**
+```php
+[esFormsROISF]Show form[/esFormsROISF]
+```
+
 ## esFormsRangeCurrent
 
 The `esFormsRangeCurrent` shortcode allows showing the current value of the range input.
