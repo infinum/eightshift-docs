@@ -110,8 +110,8 @@ module.exports = {
 			indexName: 'infinum_eightshift',
 			startUrls: [
 				'https://eightshift.com',
-				'https://eightshift.com/docs',
-				'https://eightshift.com/forms',
+				'https://eightshift.com/docs/welcome',
+				'https://eightshift.com/forms/welcome',
 			],
 			contextualSearch: false,
 		},

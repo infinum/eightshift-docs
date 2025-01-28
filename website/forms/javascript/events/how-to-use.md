@@ -49,7 +49,7 @@ In this example the event is hooked to the `window` element and in event details
 import domReady from '@wordpress/dom-ready';
 
 domReady(() => {
-	window?.addEventListener('esFormsJsFormLoaded', ({ detail }) => {
+	window.addEventListener('esFormsJsFormLoaded', ({ detail }) => {
 		const { formId, esForms } = detail;
 
 		// Do some actions with the form.
