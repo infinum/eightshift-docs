@@ -53,7 +53,7 @@ export const demoGetData = (inputValue) => {
 export const CustomDropdownIndicator = (props) => {
 	return (
 		<RSDropdownIndicator {...props}>
-			<div className='[&>svg]:es-uic-text-red-500'>
+			<div className='[&>svg]:es:text-red-500'>
 				{props.selectProps.menuIsOpen ? icons.arrowUpCircleAlt : icons.arrowDownCircleAlt}
 			</div>
 		</RSDropdownIndicator>
@@ -76,7 +76,7 @@ export const CustomClearIndicator = (props) => {
 export const CustomValueDisplay = (props) => {
 	return (
 		<RSSingleValue {...props}>
-			<span className='es-uic-text-red-500 es-uic-font-mono es-uic-font-semibold'>
+			<span className='es:text-red-500 es:font-mono es:font-semibold'>
 				{props.children}
 			</span>
 		</RSSingleValue>
@@ -88,12 +88,12 @@ export const CustomMultiValueRemoveButton = (props) => {
 };
 
 export const CustomMultiValueDisplay = (props) => {
-	const colors = ['es-uic-bg-red-500', 'es-uic-bg-blue-500', 'es-uic-bg-green-500', 'es-uic-bg-yellow-500', 'es-uic-bg-slate-900'];
+	const colors = ['es:bg-red-500', 'es:bg-blue-500', 'es:bg-green-500', 'es:bg-yellow-500', 'es:bg-slate-900'];
 	const colorIndex = props.options.findIndex((option) => option.value === props.data.value) % colors.length;
 
 	return (
 		<RSMultiValue {...props}>
-			<span className={`${colors[colorIndex]} es-uic-font-semibold es-uic-p-1 es-uic-text-white`}>{props.children}</span>
+			<span className={`${colors[colorIndex]} es:font-semibold es:p-1 es:text-white`}>{props.children}</span>
 		</RSMultiValue>
 	);
 };

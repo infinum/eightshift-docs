@@ -12,7 +12,7 @@ import { icons } from '@eightshift/ui-components/icons';
 			useComponent={data}
 			onChange={setData}
 		>
-			<div className='es-uic-w-full es-uic-rounded-lg es-uic-bg-gray-100 es-uic-text-sm es-uic-p-4 es-uic-min-h-40'>
+			<div className='es:w-full es:rounded-lg es:bg-gray-100 es:text-sm es:p-4 es:min-h-40'>
 				<span>Component options go here</span>
 			</div>
 		</ComponentToggle>
@@ -45,7 +45,7 @@ For the complete list of props, use your IDE's autocomplete functionality.
 			onChange={setData}
 			noUseToggle
 		>
-			<div className='es-uic-w-full es-uic-rounded-lg es-uic-bg-gray-100 es-uic-text-sm es-uic-p-4 es-uic-min-h-40'>
+			<div className='es:w-full es:rounded-lg es:bg-gray-100 es:text-sm es:p-4 es:min-h-40'>
 				<span>Component options go here</span>
 			</div>
 		</ComponentToggle>
@@ -76,7 +76,7 @@ For the complete list of props, use your IDE's autocomplete functionality.
 			onChange={setData}
 			expandButtonDisabled
 		>
-			<div className='es-uic-w-full es-uic-rounded-lg es-uic-bg-gray-100 es-uic-text-sm es-uic-p-4 es-uic-min-h-40'>
+			<div className='es:w-full es:rounded-lg es:bg-gray-100 es:text-sm es:p-4 es:min-h-40'>
 				<span>Component options go here</span>
 			</div>
 		</ComponentToggle>
@@ -106,10 +106,10 @@ For the complete list of props, use your IDE's autocomplete functionality.
 			value={data.design}
 			onChange={(value) => setData({ ...data, design: value })}
 			options={[
-				{ value: 'default', label: 'Default', subtitle: <span className='es-uic-font-mono'>default</span> },
-				{ value: 'compact', label: 'Compact', subtitle: <span className='es-uic-font-mono'>compact</span> },
-				{ value: 'compactIcon', label: 'Compact (icon only)', subtitle: <span className='es-uic-font-mono'>compactIcon</span> },
-				{ value: 'compactLabel', label: 'Compact (label only)', subtitle: <span className='es-uic-font-mono'>compactLabel</span> },
+				{ value: 'default', label: 'Default', subtitle: <span className='es:font-mono'>default</span> },
+				{ value: 'compact', label: 'Compact', subtitle: <span className='es:font-mono'>compact</span> },
+				{ value: 'compactIcon', label: 'Compact (icon only)', subtitle: <span className='es:font-mono'>compactIcon</span> },
+				{ value: 'compactLabel', label: 'Compact (label only)', subtitle: <span className='es:font-mono'>compactLabel</span> },
 			]}
 			type='menu'
 		/>
@@ -123,7 +123,7 @@ For the complete list of props, use your IDE's autocomplete functionality.
 			onChange={(value) => setData({ ...data, use: value })}
 			design={data.design}
 		>
-			<div className='es-uic-w-full es-uic-rounded-lg es-uic-bg-gray-100 es-uic-text-sm es-uic-p-4 es-uic-min-h-40'>
+			<div className='es:w-full es:rounded-lg es:bg-gray-100 es:text-sm es:p-4 es:min-h-40'>
 				<span>Component options go here</span>
 			</div>
 		</ComponentToggle>

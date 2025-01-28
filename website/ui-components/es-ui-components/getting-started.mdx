@@ -9,16 +9,27 @@ Install the `@eightshift/ui-components` package with your package manager of cho
 
 ### Import the styles
 
-At the minimum you have to import
+At the minimum you have to import the main styles, which come in 3 flavors:
+
+1. *For generic usage*
 ```scss
 @import '~@eightshift/ui-components/dist/assets/style.css';
 ```
+Uses cascade layers to separate styles, includes the default CSS reset.
 
-We strongly recommend importing the font as well. This will ensure consistency between platforms and improve the overall look and feel.
-```scss
-@import '~@eightshift/ui-components/dist/assets/fonts.css';
+2. *For the WP Gutenberg editor*
+ ```scss
+@import '~@eightshift/ui-components/dist/assets/style-editor.css';
 ```
+Cascade layers are not used, CSS reset is included.
 
+3. *For the WP admin area*
+```scss
+@import '~@eightshift/ui-components/dist/assets/style-admin.css';
+```
+Cascade layers are not used, CSS reset is opt-in using the `es:css-reset` class.
+
+#### Extras
 To expand the font coverage to the Block editor (even the Gutenberg components), import:
 ```scss
 @import '~@eightshift/ui-components/dist/assets/wp-font-enhancements.css';
@@ -34,12 +45,17 @@ Optionally, import the WordPress UI enhancements, which correct some of the inco
 If using Frontend libs version 12 or older, skip the WordPress UI enhancements, as they will conflict with the styles included there.
 :::
 
-#### Recommended setup
+#### Recommended WordPress setup
+`application-blocks-editor.css`
 ```scss
-@import '~@eightshift/ui-components/dist/assets/fonts.css';
 @import '~@eightshift/ui-components/dist/assets/wp-font-enhancements.css';
 @import '~@eightshift/ui-components/dist/assets/wp-ui-enhancements.css';
-@import '~@eightshift/ui-components/dist/assets/style.css';
+@import '~@eightshift/ui-components/dist/assets/style-editor.css';
+```
+
+`application-admin.css`
+```scss
+@import '~@eightshift/ui-components/dist/assets/style-admin.css';
 ```
 
 ### Enjoy!

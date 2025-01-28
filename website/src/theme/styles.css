@@ -1,17 +1,16 @@
 @import url('https://use.typekit.net/baz1roy.css');
 
-@import '~@eightshift/ui-components/dist/assets/fonts.css';
-@import '~@eightshift/ui-components/dist/assets/style.css';
+@import '~@eightshift/ui-components/dist/assets/style-editor.css';
 
 .esd-full-fixed {
 	position: fixed;
 	inset: 0;
 }
 
-.esd-hide-bg-on-hover.es-uic-bg-violet-50:hover,
-.esd-hide-bg-on-hover:hover .es-uic-bg-violet-50,
-.esd-hide-bg-on-hover.es-uic-bg-gray-50:hover,
-.esd-hide-bg-on-hover:hover .es-uic-bg-gray-50 {
+.esd-hide-bg-on-hover.es:bg-violet-50:hover,
+.esd-hide-bg-on-hover:hover .es:bg-violet-50,
+.esd-hide-bg-on-hover.es:bg-gray-50:hover,
+.esd-hide-bg-on-hover:hover .es:bg-gray-50 {
 	--tw-bg-opacity: 0 !important;
 }
 
