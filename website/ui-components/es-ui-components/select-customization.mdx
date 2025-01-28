@@ -39,7 +39,7 @@ _Applies to all select components_
 const CustomDropdownIndicator = (props) => {
 	return (
 		<RSDropdownIndicator {...props}>
-			<div className='[&>svg]:es-uic-text-red-500'>
+			<div className='[&>svg]:es:text-red-500'>
 				{props.selectProps.menuIsOpen ? icons.arrowUpCircleAlt : icons.arrowDownCircleAlt}
 			</div>
 		</RSDropdownIndicator>
@@ -154,7 +154,7 @@ _Applies to `Select` and `AsyncSelect`_
 const CustomValueDisplay = (props) => {
 	return (
 		<RSSingleValue {...props}>
-			<span className='es-uic-text-red-500 es-uic-font-mono es-uic-font-semibold'>{props.children}</span>
+			<span className='es:text-red-500 es:font-mono es:font-semibold'>{props.children}</span>
 		</RSSingleValue>
 	);
 };
@@ -190,18 +190,18 @@ _Applies to `MultiSelect` and `AsyncMultiSelect`_
 ```jsx
 const CustomMultiValueDisplay = (props) => {
 	const colors = [
-		'es-uic-bg-red-500',
-		'es-uic-bg-blue-500',
-		'es-uic-bg-green-500',
-		'es-uic-bg-yellow-500',
-		'es-uic-bg-slate-900',
+		'es:bg-red-500',
+		'es:bg-blue-500',
+		'es:bg-green-500',
+		'es:bg-yellow-500',
+		'es:bg-slate-900',
 	];
 	const colorIndex = props.options.findIndex((option) => option.value === props.data.value) % colors.length;
 
 	return (
 		<RSMultiValue {...props}>
 			<span
-				className={`${colors[colorIndex]} es-uic-rounded es-uic-p-1 es-uic-font-medium es-uic-leading-none es-uic-text-white`}
+				className={`${colors[colorIndex]} es:rounded es:p-1 es:font-medium es:leading-none es:text-white`}
 			>
 				{props.children}
 			</span>

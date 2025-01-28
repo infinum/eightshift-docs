@@ -103,6 +103,7 @@ module.exports = {
 					label: 'Panels',
 					items: ['es-ui-components/container-panel', 'es-ui-components/options-panel'],
 				},
+				'es-ui-components/migrations',
 			],
 		},
 		{
