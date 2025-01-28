@@ -156,6 +156,16 @@ window.addEventListener('esFormsGoToPrevStep', (event) => {
 });
 ```
 
+### esFormsResetSteps
+
+Triggered after multi-step/multi-flow form reset to the first step.
+
+```js
+window.addEventListener('esFormsResetSteps', (event) => {
+	console.log(event.detail);
+});
+```
+
 ### esFormsBeforeEnrichmentUrlPrefill
 
 Triggered before URL enrichment prefill is used to prefill the form fields.
