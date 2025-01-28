@@ -12,138 +12,206 @@ This way you can be sure that everything is set and ready to be used. Additional
 List of all events can be found [here](https://github.com/infinum/eightshift-forms/blob/develop/src/Blocks/manifest.json).
 :::
 
+:::tip
+All events are set on the window element.
+:::
+
 ### esFormsBeforeFormSubmit
 
 Triggered before form is submitted to the API-Rest endpoint.
 
-:::tip
-This event is set on the form element.
-:::
+```js
+window.addEventListener('esFormsBeforeFormSubmit', (event) => {
+	console.log(event.detail);
+});
+```
 
 ### esFormsAfterFormSubmit
 
 Triggered after form is submitted to the API-Rest endpoint but before the response is processed.
 
-:::tip
-This event is set on the form element.
-:::
+```js
+window.addEventListener('esFormsAfterFormSubmit', (event) => {
+	console.log(event.detail);
+});
+```
 
 ### esFormsAfterFormSubmitSuccess
 
 Triggered after form is submitted to the API-Rest endpoint and the response is processed with success.
 
-:::tip
-This event is set on the form element.
-:::
+```js
+window.addEventListener('esFormsAfterFormSubmitSuccess', (event) => {
+	console.log(event.detail);
+});
+```
 
 ### esFormsAfterFormSubmitError
 
 Triggered after form is submitted to the API-Rest endpoint and the response is processed with general error.
 
-:::tip
-This event is set on the form element.
-:::
+```js
+window.addEventListener('esFormsAfterFormSubmitError', (event) => {
+	console.log(event.detail);
+});
+```
 
 ### esFormsAfterFormSubmitErrorValidation
 
 Triggered after form is submitted to the API-Rest endpoint and the response is processed with validation error.
 
-:::tip
-This event is set on the form element.
-:::
+```js
+window.addEventListener('esFormsAfterFormSubmitErrorValidation', (event) => {
+	console.log(event.detail);
+});
+```
 
 ### esFormsAfterFormSubmitEnd
 
 Triggered after form is submitted to the API-Rest endpoint and the response is fully processed and the form is ready for another submit.
 
-:::tip
-This event is set on the form element.
-:::
+```js
+window.addEventListener('esFormsAfterFormSubmitEnd', (event) => {
+	console.log(event.detail);
+});
+```
 
 ### esFormsAfterGtmDataPush
 
 Triggered after GTM dataLAyer is pushed. This happens after form is submitted to the API-Rest endpoint and the response is processed with success.
 
-:::tip
-This event is set on the form element.
-:::
+```js
+window.addEventListener('esFormsAfterGtmDataPush', (event) => {
+	console.log(event.detail);
+});
+```
 
 ### esFormsAfterFormSubmitReset
 
 Triggered after form is submitted to the API-Rest endpoint and the response is processed with success after which the form is reset to its original state.
 
-:::tip
-This event is set on the form element.
-:::
+```js
+window.addEventListener('esFormsAfterFormSubmitReset', (event) => {
+	console.log(event.detail);
+});
+```
 
 ### esFormsAfterFormSubmitSuccessBeforeRedirect
 
 Triggered after form is submitted to the API-Rest endpoint and the response is processed with success right before redirect action triggers.
 
-:::tip
-This event is set on the form element.
-:::
+```js
+window.addEventListener('esFormsAfterFormSubmitSuccessBeforeRedirect', (event) => {
+	console.log(event.detail);
+});
+```
 
 ### esFormsJsFormLoaded
 
 Triggered when all JavaScript on the form is loaded and form is ready to be used.
 
-:::tip
-This event is set on the window element.
-:::
+```js
+window.addEventListener('esFormsJsFormLoaded', (event) => {
+	console.log(event.detail);
+});
+```
 
 ### esFormsManualInitLoaded
 
-Triggered when manual initialization option is used from the forms global settings and the form is ready to be maunually initialized.
+Triggered when manual initialization option is used from the forms global settings and the form is ready to be manually initialized.
 
-:::tip
-This event is set on the window element.
-:::
+```js
+window.addEventListener('esFormsManualInitLoaded', (event) => {
+	console.log(event.detail);
+});
+```
 
 ### esFormsAfterCaptchaInit
 
 Triggered after captcha score is calculated and returned via REST-API. Only used if captcha is used on every page load.
 
-:::tip
-This event is set on the window element.
-:::
+```js
+window.addEventListener('esFormsAfterCaptchaInit', (event) => {
+	console.log(event.detail);
+});
+```
 
 ### esFormsGoToNextStep
 
 Triggered after multi-step/multi-flow form is used and the next step is loaded.
 
-:::tip
-This event is set on the form element.
-:::
+```js
+window.addEventListener('esFormsGoToNextStep', (event) => {
+	console.log(event.detail);
+});
+```
 
 ### esFormsGoToPrevStep
 
 Triggered after multi-step/multi-flow form is used and the previous step is loaded.
 
-:::tip
-This event is set on the form element.
-:::
+```js
+window.addEventListener('esFormsGoToPrevStep', (event) => {
+	console.log(event.detail);
+});
+```
 
 ### esFormsBeforeEnrichmentUrlPrefill
 
-*Details coming soon*
+Triggered before URL enrichment prefill is used to prefill the form fields.
+
+```js
+window.addEventListener('esFormsBeforeEnrichmentUrlPrefill', (event) => {
+	console.log(event.detail);
+});
+```
 
 ### esFormsAfterEnrichmentUrlPrefill
 
-*Details coming soon*
+Triggered after URL enrichment prefill is used to prefill the form fields.
+
+```js
+window.addEventListener('esFormsAfterEnrichmentUrlPrefill', (event) => {
+	console.log(event.detail);
+});
+```
 
 ### esFormsBeforeEnrichmentLocalstoragePrefill
 
-*Details coming soon*
+Triggered before LocalStorage enrichment prefill is used to prefill the form fields.
+
+```js
+window.addEventListener('esFormsBeforeEnrichmentLocalstoragePrefill', (event) => {
+	console.log(event.detail);
+});
+```
 
 ### esFormsAfterEnrichmentLocalstoragePrefill
 
-*Details coming soon*
+Triggered after LocalStorage enrichment prefill is used to prefill the form fields.
+
+```js
+window.addEventListener('esFormsAfterEnrichmentLocalstoragePrefill', (event) => {
+	console.log(event.detail);
+});
+```
 
 ### esFormsOnFieldChange
 
-*Details coming soon*
+Triggered every time any field value is changed.
+
+```js
+window.addEventListener('esFormsOnFieldChange', (event) => {
+	console.log(event.detail);
+});
+```
 
 ### esFormsAfterResultsOutput
 
-*Details coming soon*
+Triggered after the results are outputted to the screen.
+
+```js
+window.addEventListener('esFormsAfterResultsOutput', (event) => {
+	console.log(event.detail);
+});
+```
