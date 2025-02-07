@@ -15,7 +15,7 @@ Here's how to upgrade between various versions of ES UI components.
 
 `application-blocks-editor.css`
 ```diff
-@import '~@eightshift/ui-components/dist/assets/wp-font-enhancements.css';
+- @import '~@eightshift/ui-components/dist/assets/wp-font-enhancements.css';
 - @import '~@eightshift/ui-components/dist/assets/style.css';
 + @import '~@eightshift/ui-components/dist/assets/style-editor.css';
 ```
@@ -29,7 +29,7 @@ Here's how to upgrade between various versions of ES UI components.
 3. Replace CSS reset classes
 
 ```diff
-- es:has-css-reset
+- es-uic-has-css-reset
 + es:css-reset
 ```
 
