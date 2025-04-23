@@ -20,16 +20,16 @@ export const ComponentShowcase = ({
 				<div className='es:flex es:font-sans'>
 					<div
 						className={clsx(
-							'es:border es:border-dashed es:border-gray-200 es:p-4 es:rounded-lg es:space-y-2.5 es:shrink-0',
+							'es:border es:border-dashed es:border-gray-200 es:p-4 es:rounded-lg esd-space-v es:shrink-0 esd-showcase',
+							fitWidth ? 'es:w-fit' : 'esd-showcase-w',
 							className
 						)}
-						style={{ width: fitWidth ? 'fit-content' : '24rem'}}
 					>
 						{typeof children === 'function' && children(data, setData)}
 						{typeof children !== 'function' && children}
 					</div>
 
-					<div className='es:space-y-2.5 es:ml-3 es:grow'>
+					<div className='esd-space-v es:ml-3 es:grow'>
 						{preContent && preContent(data, setData, ref)}
 						{resettable && (
 							<Button

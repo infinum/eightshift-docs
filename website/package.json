@@ -34,10 +34,10 @@
 	"dependencies": {
 		"@docusaurus/core": "^3.7.0",
 		"@docusaurus/preset-classic": "^3.7.0",
-		"@eightshift/ui-components": "^2.0.1",
+		"@eightshift/ui-components": "^3.0.1",
 		"@infinum/docusaurus-theme": "^0.5.0",
 		"@mdx-js/react": "^3.1.0",
-		"@wp-playground/client": "^1.0.23",
+		"@wp-playground/client": "^1.0.28",
 		"clsx": "^2.1.1",
 		"es-text-loader": "file:plugins/es-text-loader",
 		"prism-react-renderer": "^2.4.1",
@@ -59,8 +59,5 @@
 	},
 	"devDependencies": {
 		"raw-loader": "^4.0.2"
-	},
-	"overrides": {
-		"jiti": "1.21.0"
 	}
 }
