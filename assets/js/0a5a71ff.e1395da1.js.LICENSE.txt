@@ -1,0 +1,92 @@
+/**
+ * Allows for stacking elements horizontally, with a gap between them.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {boolean} [props.noWrap] - If `true`, the children will not wrap if their size exceeds the container size.
+ * @param {string} [props.className] - Classes to pass to the component.
+ * @param {boolean} [props.hidden] - If `true`, the component is not rendered.
+ *
+ * @returns {JSX.Element} The HStack component.
+ *
+ * @example
+ * <HStack>
+ * 	...
+ * </HStack>
+ *
+ * @preserve
+ */
+
+/**
+ * Allows for stacking elements vertically, with a gap between them.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {boolean} [props.noWrap] - If `true`, the children will not wrap if their size exceeds the container size.
+ * @param {string} [props.className] - Classes to pass to the component.
+ * @param {boolean} [props.hidden] - If `true`, the component is not rendered.
+ *
+ * @returns {JSX.Element} The VStack component.
+ *
+ * @example
+ * <VStack>
+ * 	...
+ * </VStack>
+ *
+ * @preserve
+ */
+
+/**
+ * Component that allows animating the visibility of its children.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {boolean} props.visible - Whether the content should be visible
+ * @param {string} props.className - Classes to pass to the element wrapper.
+ * @param {boolean} [props.noInitial=false] - If `true`, the animation when the component is first mounted is disabled.
+ * @param {boolean} [props.noExitAnimation=false] - If `true`, the exit animation is not played.
+ * @param {boolean} [props.noEnterAnimation=false] - If `true`, the entrance animation is not played.
+ * @param {ElementTransition} [props.transition='slideFade'] - The transition to use when showing/hiding the content.
+ *
+ * @returns {JSX.Element} The AnimatedVisibility component.
+ *
+ * @typedef {'fade' | 'slideFade' |'scaleFade' | 'scaleRotateFade' | 'slideFadeUpSlight' | 'slideFadeDownSlight' | 'slideInFadeOut' | 'scaleSlideFade'} ElementTransition
+ *
+ * @example
+ * const [visible, setVisible] = useState(false);
+ *
+ * <AnimatedVisibility visible={visible}>
+ * 	<div>Content</div>
+ * </AnimatedVisibility>
+ *
+ * @preserve
+ */
+
+/**
+ * Component that displays a label, with an optional icon and subtitle.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {JSX.Element} [props.icon] - Icon to display.
+ * @param {string} [props.label] - Label to display.
+ * @param {string} [props.subtitle] - Subtitle to display.
+ * @param {JSX.Element} [props.as] - Element to render the label as. Not compatible with `contentsOnly`.
+ * @param {string} [props.className] - Classes to pass to the label.
+ * @param {string} [props.iconClassName] - Classes to pass to the icon.
+ * @param {boolean} [props.fullWidth=false] - If `true`, the component will take up as much space as it can.
+ * @param {boolean} [props.contentsOnly] - If `true`, only the label (/icon/subtitle) will be rendered, without any wrapping elements. Useful if you want to provide your own layout.
+ * @param {boolean} [props.hidden] - If `true`, the component is not rendered.
+ * @param {boolean} [props.noColor] - If `true`, colors on text won't be set, opacity will be used instead.
+ * @param {boolean} [props.fullSizeSubtitle] - If `true`, the subtitle is the same size as the label.
+ * @param {boolean} [props.inlineSubtitle] - If `true`, the subtitle is shown after the label instead of below it.
+ *
+ * @returns {JSX.Element} The RichLabel component.
+ *
+ * @example
+ * <RichLabel
+ * 	icon={icons.myIcon}
+ * 	label='My label'
+ * />
+ *
+ * @preserve
+ */
