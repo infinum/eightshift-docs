@@ -1,0 +1,39 @@
+name: documentation
+
+on:
+  push:
+    paths-ignore:
+      - '**.md'
+    branches:
+      - develop
+  # Allow manually triggering the workflow.
+  workflow_dispatch:
+
+defaults:
+  run:
+    working-directory: ./website
+
+# Cancels all previous workflow runs for the same branch that have not yet completed.
+concurrency:
+  # The concurrency group contains the workflow name and the branch name.
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  checks:
+    name: Test build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 'latest'
+          cache-dependency-path: ./bun.lock
+      - name: Install Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+      - name: Test Build
+        run: |
+          bun install
+          bun run build

@@ -28,7 +28,10 @@ To expand this into JSON files (for use in manifests), add this to your *User se
 	"ngClass",
 	".*Class",
 	".*ClassName",
-	"additionalClass"
+	"additionalClass",
+	"twClasses",
+	"twClassesEditor",
+	"twClassesEditorOnly"
 ],
 "tailwindCSS.experimental.classRegex": [
 	"\"twClasses\\w*\":\\s\"(.*)\"",

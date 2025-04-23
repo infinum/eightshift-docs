@@ -1,0 +1,36 @@
+# Migrations
+Here's how to upgrade between various versions of ES UI components.
+
+## v1.x.x to v2.0.1
+
+1. Update the package to the latest version.
+
+2. Remove all font imports.
+
+```diff
+- @import '~@eightshift/ui-components/dist/assets/fonts.css';
+```
+
+2. Replace editor imports
+
+`application-blocks-editor.css`
+```diff
+@import '~@eightshift/ui-components/dist/assets/wp-font-enhancements.css';
+- @import '~@eightshift/ui-components/dist/assets/style.css';
++ @import '~@eightshift/ui-components/dist/assets/style-editor.css';
+```
+
+`application-admin.css`
+```diff
+- @import '~@eightshift/ui-components/dist/assets/style.css';
++ @import '~@eightshift/ui-components/dist/assets/style-admin.css';
+```
+
+3. Replace CSS reset classes
+
+```diff
+- es-uic-has-css-reset
++ es:css-reset
+```
+
+4. Replace all `es-uic-` classes with `es:` classes (be careful with the order of operators!)
