@@ -22,12 +22,19 @@ concurrency:
 
 jobs:
   checks:
+    name: Test build
+    if: ${{ github.ref == 'refs/heads/develop' }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: '19.x'
+          node-version: 'latest'
+          cache-dependency-path: ./bun.lock
+      - name: Install Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
       - name: Test Build
         run: |
           bun install
@@ -38,10 +45,15 @@ jobs:
     if: ${{ github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: '19.x'
+          node-version: 'latest'
+          cache-dependency-path: ./bun.lock
+      - name: Install Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
       - uses: webfactory/ssh-agent@v0.5.0
         with:
           ssh-private-key: ${{ secrets.GH_PAGES_DEPLOY }}
@@ -54,4 +66,4 @@ jobs:
           git config --global user.name "gh-actions"
           bun install
           bun run build
-          DEPLOYMENT_BRANCH=gh-pages bun run deploy
+          DEPLOYMENT_BRANCH=gh-pages yarn run deploy
