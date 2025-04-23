@@ -30,14 +30,8 @@ jobs:
           node-version: '19.x'
       - name: Test Build
         run: |
-          if [ -e yarn.lock ]; then
-            yarn install --frozen-lockfile
-          elif [ -e package-lock.json ]; then
-            npm ci
-          else
-            npm i
-          fi
-            yarn run build
+          bun install
+          bun run build
 
   gh-release:
     name: Release docs
@@ -58,11 +52,6 @@ jobs:
         run: |
           git config --global user.email "actions@github.com"
           git config --global user.name "gh-actions"
-          if [ -e yarn.lock ]; then
-            yarn install --frozen-lockfile
-          elif [ -e package-lock.json ]; then
-            npm ci
-          else
-            npm i
-          fi
-            DEPLOYMENT_BRANCH=gh-pages yarn run deploy
+          bun install
+          bun run build
+          DEPLOYMENT_BRANCH=gh-pages bun run deploy
