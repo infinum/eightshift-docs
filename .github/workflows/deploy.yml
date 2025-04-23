@@ -6,7 +6,6 @@ on:
       - '**.md'
     branches:
       - main
-      - develop
   # Allow manually triggering the workflow.
   workflow_dispatch:
 
@@ -21,28 +20,8 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  checks:
-    name: Test build
-    if: ${{ github.ref == 'refs/heads/develop' }}
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 'latest'
-          cache-dependency-path: ./bun.lock
-      - name: Install Bun
-        uses: oven-sh/setup-bun@v2
-        with:
-          bun-version: latest
-      - name: Test Build
-        run: |
-          bun install
-          bun run build
-
   gh-release:
     name: Release docs
-    if: ${{ github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -66,4 +45,4 @@ jobs:
           git config --global user.name "gh-actions"
           bun install
           bun run build
-          DEPLOYMENT_BRANCH=gh-pages yarn run deploy
+          DEPLOYMENT_BRANCH=gh-pages bun run deploy
