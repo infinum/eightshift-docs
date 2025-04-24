@@ -11,7 +11,7 @@ As is often the case when trying out something new, you might encounter some hic
 <!--truncate-->
 
 :::info Last update
-August 23, 2022
+December 05, 2024
 :::
 
 If you haven't already, be sure to read our official [Eightshift Docs](/docs/welcome).
@@ -21,7 +21,7 @@ If you haven't already, be sure to read our official [Eightshift Docs](/docs/wel
 To create Eightshift theme, navigate to `wp-content/themes` in your project and type the following in the terminal:
 
 ```bash
-npx create-wp-project
+npx eightshift-create
 ```
 
 Just follow the instructions and wait for the theme to download.

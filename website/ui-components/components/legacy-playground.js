@@ -92,19 +92,19 @@ export const LegacyComponentShowcase = () => {
 	const iframeRef = useRef(null);
 
 	return (
-		<div className='es-uic-size-full'>
+		<div className='es:size-full'>
 			{isLoading && (
-				<div className='es-uic-flex es-uic-gap-4'>
-					<div className='es-uic-mt-2 es-uic-py-1 [&>svg]:es-uic-size-6 text-infinum'>{icons.componentGeneric}</div>
-					<div className='es-uic-flow-root'>
-						<h3 className='!es-uic-mt-2'>Preparing component docs</h3>
+				<div className='es:flex es:gap-4'>
+					<div className='es:mt-2 es:py-1 [&>svg]:es:size-6 text-infinum'>{icons.componentGeneric}</div>
+					<div className='es:flow-root'>
+						<h3 className='!es:mt-2'>Preparing component docs</h3>
 						<span className='text-12'>{loadingStep}</span>
 					</div>
 				</div>
 			)}
 
 			<iframe
-				className='es-uic-size-full es-uic-aspect-video esd-legacy-docs-iframe'
+				className='es:size-full es:aspect-video esd-legacy-docs-iframe'
 				allow='clipboard-read; clipboard-write'
 				ref={iframeRef}
 				style={{

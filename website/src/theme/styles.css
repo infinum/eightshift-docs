@@ -1,18 +1,34 @@
 @import url('https://use.typekit.net/baz1roy.css');
 
-@import '~@eightshift/ui-components/dist/assets/fonts.css';
-@import '~@eightshift/ui-components/dist/assets/style.css';
+@import '~@eightshift/ui-components/dist/assets/style-editor.css';
 
 .esd-full-fixed {
 	position: fixed;
 	inset: 0;
 }
 
-.esd-hide-bg-on-hover.es-uic-bg-violet-50:hover,
-.esd-hide-bg-on-hover:hover .es-uic-bg-violet-50,
-.esd-hide-bg-on-hover.es-uic-bg-gray-50:hover,
-.esd-hide-bg-on-hover:hover .es-uic-bg-gray-50 {
-	--tw-bg-opacity: 0 !important;
+:root {
+	--color-violet-50: oklch(.969 .016 293.756);
+	--color-gray-50: oklch(.985 .002 247.839);
+	--es-spacing: 0.25rem;
+}
+
+.es\:bg-violet-50 {
+	background-color: var(--color-violet-50);
+}
+
+.es\:bg-gray-50 {
+	background-color: var(--color-gray-50);
+}
+
+.esd-hide-bg-on-hover.es\:bg-violet-50:hover,
+.esd-hide-bg-on-hover:hover .es\:bg-violet-50 {
+	background-color: color-mix(in oklab,var(--color-violet-50) 20%,transparent) !important;
+}
+
+.esd-hide-bg-on-hover.es\:bg-gray-50:hover,
+.esd-hide-bg-on-hover:hover .es\:bg-gray-50 {
+	background-color: color-mix(in oklab,var(--color-gray-50) 20%,transparent) !important;
 }
 
 .esd-white-space-pre {
@@ -35,4 +51,31 @@
 
 	border: 1px solid #D1D5DB !important;
 	border-radius: 0.5rem !important;
+}
+
+.markdown .esd-showcase {
+	--ifm-list-left-padding: 0;
+	--ifm-list-margin: 0;
+	--ifm-list-paragraph-margin: 0;
+
+	ul, li {
+		margin: 0;
+		padding: 0;
+	}
+}
+
+.es:\w-full {
+	width: 100%;
+}
+
+.es:\w-fit {
+	width: fit-content;
+}
+
+.esd-showcase-w {
+	width: 26rem;
+}
+
+.esd-space-v > :not(:last-child) {
+	margin-bottom: 0.625rem !important;
 }

@@ -5,7 +5,7 @@ import { Button, InputField } from '@eightshift/ui-components';
 import { icons } from '@eightshift/ui-components/icons';
 
 <ComponentShowcase
-	className='es-uic-flex es-uic-flex-wrap es-uic-gap-2 !es-uic-space-y-0 es-uic-w-full'
+	className='es:flex es:flex-wrap es:gap-2 !es:space-y-0 es:w-full'
 	fitWidth
 	preContent={(data, setData) => (
 		<InputField
@@ -13,7 +13,7 @@ import { icons } from '@eightshift/ui-components/icons';
 			aria-label='Search icons'
 			value={data}
 			onChange={setData}
-			className='es-uic-min-w-24 es-uic-w-48'
+			style={{ width: '10rem' }}
 		/>
 	)}
 >
@@ -33,7 +33,7 @@ import { icons } from '@eightshift/ui-components/icons';
 				key={index}
 				className='esd-icon-showcase-button'
 				icon={icons[icon]}
-				tooltip={<span className='es-uic-font-mono'>{icon}</span>}
+				tooltip={<span className='es:font-mono'>{icon}</span>}
 				aria-label={icon}
 				onPress={() => {
 					navigator.clipboard.writeText(icon);

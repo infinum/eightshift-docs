@@ -16,8 +16,8 @@ To run docs locally:
 
 1. Clone this repo
 2. Navigate to `website` folder inside the repo
-3. Run `npm install`
-4. Run `npm start`
+3. Run `bun install`
+4. Run `bun start`
 
 Deployment is done through GitHub Actions by pushing the code to the main branch.
 

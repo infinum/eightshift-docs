@@ -17,11 +17,11 @@ export const ComponentShowcase = ({
 	return (
 		<BrowserOnly>
 			{() => (
-				<div className='es-uic-flex es-uic-font-sans'>
+				<div className='es:flex es:font-sans'>
 					<div
 						className={clsx(
-							'es-uic-border es-uic-border-dashed es-uic-border-gray-200 es-uic-p-4 es-uic-rounded-lg es-uic-space-y-2.5 es-uic-shrink-0',
-							fitWidth ? 'es-uic-w-fit' : 'es-uic-w-96',
+							'es:border es:border-dashed es:border-gray-200 es:p-4 es:rounded-lg esd-space-v es:shrink-0 esd-showcase',
+							fitWidth ? 'es:w-fit' : 'esd-showcase-w',
 							className
 						)}
 					>
@@ -29,7 +29,7 @@ export const ComponentShowcase = ({
 						{typeof children !== 'function' && children}
 					</div>
 
-					<div className='es-uic-space-y-2.5 es-uic-ml-3 es-uic-grow'>
+					<div className='esd-space-v es:ml-3 es:grow'>
 						{preContent && preContent(data, setData, ref)}
 						{resettable && (
 							<Button
