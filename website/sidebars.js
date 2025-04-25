@@ -85,6 +85,7 @@ module.exports = {
 		],
 		Tutorials: ['tutorials/intro'],
 		Migrations: [
+			'migrations/13-14',
 			'migrations/12-13',
 			'migrations/11-12',
 			'migrations/10-11',
