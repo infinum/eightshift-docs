@@ -39,9 +39,17 @@ export function AdditionalContentFilter({ filter }) {
 
 			<CodeBlock language="php">
 			{reformatCode(`
-			add_filter('es_forms_block_${filter}_additional_content', function(): string {
+			\add_filter('es_forms_block_${filter}_additional_content', 'getAdditionalContent');
+
+			/**
+			 * Adds custom content before the field element's closing tag.
+			 *
+			 * @return string
+			 */
+			function getAdditionalContent(): string
+			{
 				return '<custom-string>';
-			})
+			}
 			`)}
 			</CodeBlock>
 		</>
@@ -58,7 +66,7 @@ function DataFilter ({ filter }) {
 
 			<CodeBlock language="php">
 			{reformatCode(`
-			add_filter('es_forms_integrations_${filter}_data', 'getIntegrationFilterData', 10, 2);
+			\add_filter('es_forms_integrations_${filter}_data', 'getIntegrationFilterData', 10, 2);
 
 			/**
 			 * Manipulate form fields data before it is sent to the Block Editor.
@@ -116,7 +124,7 @@ function OrderFilter ({ filter }) {
 
 			<CodeBlock language="php">
 				{reformatCode(`
-					add_filter('es_forms_integrations_${filter}_order', 'getIntegrationOrder');
+					\add_filter('es_forms_integrations_${filter}_order', 'getIntegrationOrder');
 
 					/**
 					 * Forces form field order for the provided fields. For other fields, Block editor order is used.
@@ -145,7 +153,7 @@ function PrePostIdFilter ({ filter }) {
 
 			<CodeBlock language="php">
 				{reformatCode(`
-					add_filter('es_forms_integrations_${filter}_pre_post_id', 'getIntegrationPrePostId', 10, 3);
+					\add_filter('es_forms_integrations_${filter}_pre_post_id', 'getIntegrationPrePostId', 10, 3);
 
 					/**
 					 * Modifies integration item ID.
@@ -187,7 +195,7 @@ function PrePostParamsFilter ({ filter }) {
 
 			<CodeBlock language="php">
 				{reformatCode(`
-					add_filter('es_forms_integrations_${filter}_pre_post_params', 'getIntegrationPrePostParams', 10, 2);
+					\add_filter('es_forms_integrations_${filter}_pre_post_params', 'getIntegrationPrePostParams', 10, 2);
 
 					/**
 					 * Modifies form field data before it's sent to ${text}.
