@@ -1,7 +1,7 @@
 # Button
 
 import { ComponentShowcase } from '../components/component-showcase';
-import { Button, ButtonGroup, OptionSelect } from '@eightshift/ui-components';
+import { Button, ButtonGroup, OptionSelect, Checkbox } from '@eightshift/ui-components';
 import { icons } from '@eightshift/ui-components/icons';
 
 :::note
@@ -147,9 +147,11 @@ For the complete list of props, use your IDE's autocomplete functionality.
 			onChange={setData}
 			options={[
 				{ value: 'default', label: 'Default' },
-				{ value: 'danger', label: 'Danger' },
 				{ value: 'ghost', label: 'Ghost' },
 				{ value: 'selected', label: 'Selected' },
+				{ value: 'selectedGhost', label: 'Selected (ghost)' },
+				{ value: 'danger', label: 'Danger' },
+				{ value: 'dangerGhost', label: 'Danger (ghost)' },
 			]}
 			type='menu'
 		/>
@@ -197,3 +199,37 @@ For the complete list of props, use your IDE's autocomplete functionality.
 	tooltip="Hi, I'm a tooltip!"
 />
 ```
+
+:::note
+If text label is not set, please set the `aria-label` prop to ensure accessibility.
+<br />
+When `aria-label` is set, `tooltip` can be just passed without value. In that case it will take the value from `aria-label`.
+:::
+
+### Pending
+
+If you want to show a pending state, you can use the `pending` prop.
+It will replace the button content with a loading indicator, announce an action, and disable the button.
+
+<ComponentShowcase
+	className='esd-hide-bg-on-hover es:min-h-56'
+	defaultValue={{
+		checked: false,
+		transition: 'slideFade',
+	}}
+	preContent={(data, setData) => (
+		<>
+			<Checkbox
+				checked={data.checked}
+				onChange={(v) => setData({ ...data, checked: v })}
+				label='Pending'
+			/>
+		</>
+	)}
+>
+	{(data) => (
+		<Button pending={data.checked} onPress={() => alert('Button pressed!')}>
+			Hi, I'm a button!
+		</Button>
+	)}
+</ComponentShowcase>
