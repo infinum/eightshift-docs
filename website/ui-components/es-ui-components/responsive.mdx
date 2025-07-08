@@ -1,7 +1,7 @@
 # Responsive
 
 import { ComponentShowcase } from '../components/component-showcase';
-import { Responsive, ResponsiveLegacy, Button, OptionSelect } from '@eightshift/ui-components';
+import { Responsive, ResponsiveLegacy, Button, OptionSelect, MiniResponsive } from '@eightshift/ui-components';
 import { icons } from '@eightshift/ui-components/icons';
 import { globalManifest, responsiveOptions, breakpointNames, responsiveLegacyAttr } from './responsive-helpers';
 
@@ -346,6 +346,64 @@ Only applies to the control for the default breakpoint.
 		/>
 	)}
 </Responsive>
+```
+
+## `MiniResponsive`
+
+If you need an ultra compact version of the `Responsive` component, use the `MiniResponsive` component. Props are all the same.
+
+Using single button pickers is recommended, though. (`isInlineCollapsedView` is your friend here)
+
+<ComponentShowcase
+	defaultValue={{
+		_default: 'sans',
+		_desktopFirst: false,
+	}}
+	preContent={(data) => (
+		<span className='es:font-mono es:text-xs esd-white-space-pre'>{JSON.stringify(data, null, 2)}</span>
+	)}
+>
+	{(data, setData) => (
+		<MiniResponsive
+			icon={icons.fontFamily}
+			label='Font family'
+			value={data}
+			onChange={setData}
+			options={responsiveOptions}
+			breakpoints={breakpointNames}
+			breakpointData={globalManifest.globalVariables.breakpoints}
+		>
+			{({ currentValue, handleChange, options, isInlineCollapsedView }) => (
+				<OptionSelect
+					options={options}
+					onChange={(value) => handleChange(value)}
+					value={currentValue}
+					type={isInlineCollapsedView ? 'menu' : 'toggleButtons'}
+				/>
+			)}
+		</MiniResponsive>
+	)}
+</ComponentShowcase>
+
+```jsx
+<MiniResponsive
+	icon={icons.fontFamily}
+	label='Font family'
+	value={data}
+	onChange={setData}
+	options={responsiveOptions}
+	breakpoints={breakpointNames}
+	breakpointData={globalManifest.globalVariables.breakpoints}
+>
+	{({ currentValue, handleChange, options, isInlineCollapsedView }) => (
+		<OptionSelect
+			options={options}
+			onChange={(value) => handleChange(value)}
+			value={currentValue}
+			type={isInlineCollapsedView ? 'menu' : 'toggleButtons'}
+		/>
+	)}
+</MiniResponsive>
 ```
 
 ## `ResponsiveLegacy`

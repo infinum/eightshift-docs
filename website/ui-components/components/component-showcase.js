@@ -17,7 +17,7 @@ export const ComponentShowcase = ({
 	return (
 		<BrowserOnly>
 			{() => (
-				<div className='es:flex es:font-sans'>
+				<div className='es:flex es:font-sans es:css-reset'>
 					<div
 						className={clsx(
 							'es:border es:border-dashed es:border-gray-200 es:p-4 es:rounded-lg esd-space-v es:shrink-0 esd-showcase',

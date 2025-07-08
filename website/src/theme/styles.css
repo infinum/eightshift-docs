@@ -79,3 +79,8 @@
 .esd-space-v > :not(:last-child) {
 	margin-bottom: 0.625rem !important;
 }
+
+.esd-btn-custom {
+	height: auto !important;
+	padding: 0.5rem 1rem !important;
+}
