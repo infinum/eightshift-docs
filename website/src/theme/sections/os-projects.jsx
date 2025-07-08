@@ -49,11 +49,6 @@ export const EsOpenSource = (props) => {
 					url: 'https://github.com/infinum/eightshift-docs'
 				},
 				{
-					icon: osProjectIcons.storybook,
-					text: 'Eightshift Storybook (legacy)',
-					url: 'https://github.com/infinum/eightshift-storybook'
-				},
-				{
 					icon: osProjectIcons.eightshiftCodingStandard,
 					text: 'Eightshift Coding Standards for WordPress',
 					url: 'https://github.com/infinum/eightshift-coding-standards'
