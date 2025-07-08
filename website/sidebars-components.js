@@ -116,6 +116,5 @@ module.exports = {
 				'fe-libs-components/introduction'
 			],
 		},
-		'legacy-component-docs',
 	],
 };
