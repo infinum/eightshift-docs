@@ -13,8 +13,7 @@ export default function Playground() {
 		setSupportsServiceWorkers('serviceWorker' in navigator);
 	}, []);
 
-	const themeZipUrl =
-		'https://raw.githubusercontent.com/infinum/eightshift-docs/main/playground-files/es-wp-playground.zip';
+	const blueprintUrl = 'https://raw.githubusercontent.com/infinum/eightshift-docs/main/blueprint.json';
 
 	return (
 		<Layout
@@ -52,7 +51,7 @@ export default function Playground() {
 				<iframe
 					className='es-full-size border-t border-t-grey-200'
 					sandbox='allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-presentation allow-same-origin allow-scripts allow-top-navigation allow-top-navigation-by-user-activation allow-downloads'
-					src={`https://playground.wordpress.net?php=8.3&wp=6.8&networking=yes&mode=browser-full-screen&import-site=${themeZipUrl}`}
+					src={`https://playground.wordpress.net/?blueprint-url=${blueprintUrl}`}
 				/>
 			)}
 		</Layout>
