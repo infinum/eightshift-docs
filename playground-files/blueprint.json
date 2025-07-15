@@ -1,0 +1,20 @@
+{
+  "plugins": [],
+  "steps": [
+    {
+      "step": "installTheme",
+      "themeData": {
+        "resource": "url",
+        "url": "https://raw.githubusercontent.com/infinum/eightshift-docs/update/wp-playground/playground-files/eightshift-ui-kit-theme-full-build.zip"
+      }
+    }
+  ],
+  "preferredVersions": {
+    "php": "8.3",
+    "wp": "6.8"
+  },
+  "features": {
+    "networking": true
+  },
+  "login": true
+}
