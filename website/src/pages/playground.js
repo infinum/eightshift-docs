@@ -13,7 +13,7 @@ export default function Playground() {
 		setSupportsServiceWorkers('serviceWorker' in navigator);
 	}, []);
 
-	const blueprintUrl = 'https://raw.githubusercontent.com/infinum/eightshift-docs/main/playground-files/blueprint.json';
+	const blueprintUrl = 'https://raw.githubusercontent.com/infinum/eightshift-docs/update/wp-playground/playground-files/blueprint.json';
 
 	return (
 		<Layout

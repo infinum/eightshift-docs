@@ -1,30 +1,45 @@
 {
-  "plugins": [],
-  "steps": [
-    {
-      "step": "installTheme",
-      "themeData": {
-        "resource": "url",
-        "url": "https://raw.githubusercontent.com/infinum/eightshift-docs/main/playground-files/eightshift-ui-kit.zip"
-      }
-    },
-    {
-      "step": "installPlugin",
-      "pluginData": {
-        "resource": "url",
-        "url": "https://github.com/infinum/eightshift-forms/releases/download/6.8.1/release.zip"
-      },
-      "options": {
-        "activate": true
-      }
-    }
-  ],
-  "preferredVersions": {
-    "php": "8.3",
-    "wp": "6.8"
-  },
-  "features": {
-    "networking": true
-  },
-  "login": true
+	"$schema": "https://playground.wordpress.net/blueprint-schema.json",
+	"plugins": [],
+	"steps": [
+		{
+			"step": "defineWpConfigConsts",
+			"consts": {
+				"DISALLOW_FILE_EDIT": true,
+				"DISALLOW_FILE_MODS": true
+			}
+		},
+		{
+			"step": "installTheme",
+			"themeData": {
+				"resource": "url",
+				"url": "https://raw.githubusercontent.com/infinum/eightshift-docs/main/playground-files/eightshift-ui-kit.zip"
+			}
+		},
+		{
+			"step": "installPlugin",
+			"pluginData": {
+				"resource": "url",
+				"url": "https://github.com/infinum/eightshift-forms/releases/download/6.8.1/release.zip"
+			},
+			"options": {
+				"activate": true
+			}
+		},
+		{
+			"step": "importWxr",
+			"file": {
+				"resource": "url",
+				"url": "https://raw.githubusercontent.com/infinum/eightshift-docs/update/wp-playground/playground-files/content.xml"
+			}
+		}
+	],
+	"preferredVersions": {
+		"php": "8.3",
+		"wp": "6.8"
+	},
+	"features": {
+		"networking": true
+	},
+	"login": true
 }
