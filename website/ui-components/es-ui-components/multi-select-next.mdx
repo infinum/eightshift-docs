@@ -1,0 +1,45 @@
+# Multi-select V2
+
+import { ComponentShowcase } from '../components/component-showcase';
+import { __MultiSelectNext } from '@eightshift/ui-components';
+import { icons } from '@eightshift/ui-components/icons';
+import { demoOptions } from './select-helpers';
+
+:::info
+This component is currently experimental. List of props is mostly stable, with no major changes expected.
+However, there might be bugs, inconsistencies, or occasional layout issues.
+<br />
+Once fully stable, the component will be renamed to `MultiSelectNext`.
+<br />
+There are slight differences in behavior, compare to the previous `MultiSelect`:
+- there are no remove buttons on each item, instead the items are removed by unselecting them in the dropdown
+- `clearable` adds the *Clear* button below the list of options, instead of inline with the options
+:::
+
+<ComponentShowcase defaultValue={[]}>
+	{(data, setData) => (
+		<__MultiSelectNext
+			value={data}
+			onChange={setData}
+			options={demoOptions}
+		/>
+	)}
+</ComponentShowcase>
+
+```jsx
+<__MultiSelectNext
+	value={value}
+	onChange={(value) => setValue(value)}
+	options={[
+		{ value: 'option-1', label: 'Option 1' },
+		{ value: 'option-2', label: 'Option 2' },
+		{ value: 'option-3', label: 'Option 3' },
+	]}
+/>
+```
+
+:::note
+Props are the same as for the [Single select](/components/es-ui-components/select-next).
+:::
+
+For the complete list of props, use your IDE's autocomplete functionality.
