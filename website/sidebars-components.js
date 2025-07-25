@@ -88,6 +88,16 @@ module.exports = {
 								'es-ui-components/select-customization',
 							],
 						},
+						{
+							type: 'category',
+							label: 'Select Next',
+							items: [
+								'es-ui-components/select-next',
+								'es-ui-components/multi-select-next',
+								'es-ui-components/async-select-next',
+								'es-ui-components/async-multi-select-next',
+							],
+						},
 					],
 				},
 
