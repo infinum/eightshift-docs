@@ -32,8 +32,8 @@
 		"clear": "docusaurus clear"
 	},
 	"dependencies": {
-		"@docusaurus/core": "^3.7.0",
-		"@docusaurus/preset-classic": "^3.7.0",
+		"@docusaurus/core": "^3.8.1",
+		"@docusaurus/preset-classic": "^3.8.1",
 		"@eightshift/ui-components": "^3.0.1",
 		"@infinum/docusaurus-theme": "^0.5.0",
 		"@mdx-js/react": "^3.1.0",
