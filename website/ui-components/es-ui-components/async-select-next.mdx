@@ -1,0 +1,60 @@
+# Async single select V2
+
+import { ComponentShowcase } from '../components/component-showcase';
+import { AsyncSelect, AsyncSelectNext } from '@eightshift/ui-components';
+import { icons } from '@eightshift/ui-components/icons';
+import { demoGetData, slugify } from './select-helpers';
+
+<ComponentShowcase defaultValue={[]}>
+	{(data, setData) => (
+		<AsyncSelectNext
+			value={data}
+			onChange={setData}
+			fetchUrl={(searchText) =>
+				searchText?.length >= 3
+					? `http://universities.hipolabs.com/search?limit=5&name=${searchText}`
+					: 'http://universities.hipolabs.com/search?limit=5&country=croatia'
+			}
+			getLabel={(item) => item?.name}
+			getValue={(item) => item?.value}
+			getSubtitle={(item) => item?.country}
+			getIcon={() => icons.emptyCircle}
+			processLoadedOptions={(items) => items.map((item) => ({ ...item, value: slugify(item?.name) }))}
+		/>
+	)}
+</ComponentShowcase>
+
+```jsx
+<AsyncSelectNext
+	value={value}
+	onChange={(value) => setValue(value)}
+	fetchUrl={(searchText) =>
+		searchText?.length >= 3 ? `http://example-api.com?limit=5&search=${searchText}` : 'http://example-api.com?limit=5'
+	}
+	getLabel={(item) => item?.name}
+	getValue={(item) => item?.id}
+/>
+```
+
+:::note
+Props are mostly the same as for the [Single select](/components/es-ui-components/select-next),
+with the exceptions of `options` and `simpleValue`.
+:::
+
+For the complete list of props, use your IDE's autocomplete functionality.
+
+## Migration from `AsyncSelect`
+
+1. **Replace `loadOptions`**
+
+	Custom loading functions are currently not supported.
+
+	You can provide the URL to fetch the data from using the `fetchUrl` prop.
+	It provides the search text as an argument.
+
+	If you need to process data after fetching, use the `processLoadedOptions` prop.
+
+2. **Define data points**
+
+	To define how label, value, subtitle (optional), and icon (optional) are defined in the options,
+	use `getLabel`, `getValue`, `getSubtitle`, `getIcon`.

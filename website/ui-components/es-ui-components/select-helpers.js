@@ -97,3 +97,15 @@ export const CustomMultiValueDisplay = (props) => {
 		</RSMultiValue>
 	);
 };
+
+export const slugify = (input) => {
+	return input
+		.toString()
+		.toLowerCase()
+		.trim()
+		.replace(/\s+/g, '-')
+		.replace(/[^\w\-]+/g, '')
+		.replace(/\-\-+/g, '-')
+		.replace(/^-+/, '')
+		.replace(/-+$/, '');
+};
