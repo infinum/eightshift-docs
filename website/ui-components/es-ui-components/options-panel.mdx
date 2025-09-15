@@ -1,7 +1,7 @@
 # Options panel
 
 import { ComponentShowcase } from '../components/component-showcase';
-import { OptionsPanel, OptionsPanelSection } from '@eightshift/ui-components';
+import { OptionsPanel, OptionsPanelSection, OptionsPanelHeader, Button } from '@eightshift/ui-components';
 import { icons } from '@eightshift/ui-components/icons';
 
 An elegant way to display options in an options page, with a contained width and options for label and help text.
@@ -60,7 +60,7 @@ For the complete list of props, use your IDE's autocomplete functionality.
 </OptionsPanel>
 ```
 
-## Title and help text
+## Title, subtitle, and help text
 
 <ComponentShowcase
 	className='es:bg-gray-50 es:w-full'
@@ -68,6 +68,7 @@ For the complete list of props, use your IDE's autocomplete functionality.
 >
 	<OptionsPanel
 		title='Demo panel title'
+		subtitle='Demo panel subtitle'
 		help='Demo panel help'
 	>
 		<OptionsPanelSection>
@@ -82,6 +83,7 @@ For the complete list of props, use your IDE's autocomplete functionality.
 <OptionsPanel
 	// highlight-start
 	title='Demo panel title'
+	subtitle='Demo panel subtitle'
 	help='Demo panel help'
 	// highlight-end
 >
@@ -90,3 +92,70 @@ For the complete list of props, use your IDE's autocomplete functionality.
 	</OptionsPanelSection>
 </OptionsPanel>
 ```
+
+## Header
+
+To augment the `OptionsPanel`s, you can add an `OptionsPanelHeader` to nicely divide the sections of your options pages.
+
+<ComponentShowcase
+	className='es:bg-gray-50 es:w-full'
+	fitWidth
+>
+	<OptionsPanelHeader title='Global settings' />
+</ComponentShowcase>
+
+```jsx
+<OptionsPanelHeader
+	title='Global settings'
+/>
+```
+
+You can also add `actions` to the right.
+
+<ComponentShowcase
+	className='es:bg-gray-50 es:w-full'
+	fitWidth
+>
+	<OptionsPanelHeader
+		title='Global settings'
+		actions={<Button icon={icons.save}>Save</Button>}
+	/>
+</ComponentShowcase>
+
+```jsx
+<OptionsPanelHeader
+	title='Global settings'
+	// highlight-start
+	actions={
+		<Button icon={icons.save}>Save</Button>
+	}
+	// highlight-end
+/>
+```
+
+Additional content can be added below the title by passing it as children.
+
+<ComponentShowcase
+	className='es:bg-gray-50 es:w-full'
+	fitWidth
+>
+	<OptionsPanelHeader
+		title='Global settings'
+	>
+		Lorem ipsum dolor sit amet.
+	</OptionsPanelHeader>
+</ComponentShowcase>
+
+```jsx
+<OptionsPanelHeader
+	title='Global settings'
+>
+	// highlight-start
+	Lorem ipsum dolor sit amet.
+	// highlight-end
+</OptionsPanelHeader>
+```
+
+You can also limit the width of the header using the `limitWidth` prop,
+change the heading level of the title with the `level` prop,
+or make it sticky with the `sticky` prop.

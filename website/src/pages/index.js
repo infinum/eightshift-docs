@@ -92,8 +92,8 @@ export default function Home() {
 						subtitle: 'Eightshift Development kit comes with Webpack pre-configured, so you can start building your JavaScript and CSS assets from the start. Vendor prefixes? Polyfills? SCSS compilation? Asset minification? All taken care of!'
 					},
 					{
-						title: 'First-class CSS variables',
-						subtitle: 'Forget about conditional classnames: build out CSS variables from attribute values and scope them to a particular block with almost no code.'
+						title: 'First-class Tailwind support',
+						subtitle: 'Speed up your development with Tailwind helpers that make it easy to build out classnames based on block attributes.'
 					},
 					{
 						title: 'Cache busting',
@@ -104,7 +104,7 @@ export default function Home() {
 						subtitle: 'Object-oriented programming is at the core of Eightshift Development kit, making your projects cleaner and allowing you to extend and replace functionality.'
 					},
 					{
-						title: 'Eightshift Frontend Libs',
+						title: 'Eightshift Frontend Libs Tailwind',
 						subtitle: 'A collection of useful front-end utility modules and all the tools you need to start building modern Block Editor dynamic blocks.'
 					}
 				]}

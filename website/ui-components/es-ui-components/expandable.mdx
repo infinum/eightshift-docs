@@ -39,7 +39,12 @@ Add extra controls to the right of the label.
 		icon={icons.emptyRect}
 		label='Expandable'
 		subtitle='Subtitle'
-		actions={<Button icon={icons.emptyCircle} />}
+		actions={
+			<Button
+				size='small'
+				icon={icons.emptyCircle}
+			/>
+		}
 	>
 		<div className='es:w-full es:rounded-lg es:bg-gray-100 es:text-sm es:p-4 es:min-h-40'>
 			<span>This is demo content</span>
@@ -56,6 +61,7 @@ Add extra controls to the right of the label.
 	actions={
 		<Button
 			icon={icons.emptyCircle}
+			size='small'
 			onPress={...}
 		/>
 	}
@@ -74,7 +80,12 @@ If you want to keep the actions visible even when the content is expanded, you c
 		icon={icons.emptyRect}
 		label='Expandable'
 		subtitle='Subtitle'
-		actions={<Button icon={icons.emptyCircle} />}
+		actions={
+			<Button
+				size='small'
+				icon={icons.emptyCircle}
+			/>
+		}
 		keepActionsOnExpand
 	>
 		<div className='es:w-full es:rounded-lg es:bg-gray-100 es:text-sm es:p-4 es:min-h-40'>
@@ -112,6 +123,62 @@ If you want to disable this behavior, you can use the `noFocusHandling` prop.
 	label='Expandable'
 	// highlight-next-line
 	noFocusHandling
+>
+	<span>This is demo content</span>
+</Expandable>
+```
+
+### Replace expand button
+
+In case you want to replace the expand button with your own, use the `customOpenButton` prop.
+
+The following props are provided:
+
+- `open` - whether the content is expanded or not
+- `toggleOpen` - function to toggle the expanded state
+- `tooltip` - tooltip text for the button (can be replaced with your own)
+- `disabled` - whether the control is disabled
+
+<ComponentShowcase defaultValue={false}>
+	<Expandable
+		icon={icons.emptyRect}
+		label='Expandable'
+		customOpenButton={({ open, toggleOpen, tooltip, disabled }) => (
+		<Button
+			size='small'
+			icon={open ? icons.arrowUp : icons.arrowDown}
+			type='ghost'
+			onPress={toggleOpen}
+			disabled={disabled}
+			aria-label={tooltip}
+			tooltip
+		/>
+	)
+	}
+	>
+		<div className='es:w-full es:rounded-lg es:bg-gray-100 es:text-sm es:p-4 es:min-h-40'>
+			<span>This is demo content</span>
+		</div>
+	</Expandable>
+</ComponentShowcase>
+
+```jsx
+<Expandable
+	icon={icons.emptyRect}
+	label='Expandable'
+	// highlight-start
+	customOpenButton={({ open, toggleOpen, tooltip, disabled }) => (
+		<Button
+			icon={open ? icons.arrowUp : icons.arrowDown}
+			onPress={toggleOpen}
+			type='ghost'
+			disabled={disabled}
+			aria-label={tooltip}
+			tooltip
+		/>
+	)
+	}
+	// highlight-end
 >
 	<span>This is demo content</span>
 </Expandable>

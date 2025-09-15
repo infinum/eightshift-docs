@@ -48,6 +48,7 @@ module.exports = {
 						'es-ui-components/tabs',
 						'es-ui-components/repeater',
 						'es-ui-components/draggable-list',
+						'es-ui-components/draggable',
 					],
 				},
 				{
@@ -57,6 +58,7 @@ module.exports = {
 						'es-ui-components/triggered-popover',
 						'es-ui-components/animated-visibility',
 						'es-ui-components/expandable',
+						'es-ui-components/modal',
 					],
 				},
 				{
@@ -72,6 +74,7 @@ module.exports = {
 					type: 'category',
 					label: 'Selection',
 					items: [
+						'es-ui-components/option-select',
 						'es-ui-components/column-config-slider',
 						'es-ui-components/matrix-align',
 						{
@@ -113,6 +116,5 @@ module.exports = {
 				'fe-libs-components/introduction'
 			],
 		},
-		'legacy-component-docs',
 	],
 };
