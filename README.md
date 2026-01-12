@@ -16,8 +16,8 @@ To run docs locally:
 
 1. Clone this repo
 2. Navigate to `website` folder inside the repo
-3. Run `npm install`
-4. Run `npm start`
+3. Run `bun install`
+4. Run `bun start`
 
 Deployment is done through GitHub Actions by pushing the code to the main branch.
 
@@ -26,8 +26,10 @@ Deployment is done through GitHub Actions by pushing the code to the main branch
 If you have any questions or problems, please [open an issue](https://github.com/infinum/eightshift-docs/issues) on github and we will do our best to give you a timely answer.
 
 ## Maintainers
+
 Eightshift Docs is maintained and sponsored by
 [Eightshift](https://eightshift.com) and [Infinum](https://infinum.com).
 
 ## License
-Eightshift Docs &copy;2021 [Eightshift](https://eightshift.com) and [Infinum](https://infinum.com). It is free software, and may be redistributed under the terms specified in the LICENSE file.
+
+Eightshift Docs [Eightshift](https://eightshift.com) and [Infinum](https://infinum.com). It is free software, and may be redistributed under the terms specified in the LICENSE file.

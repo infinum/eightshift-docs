@@ -63,3 +63,29 @@ For the complete list of props, use your IDE's autocomplete functionality.
 		/>
 	)}
 </ComponentShowcase>
+
+### Monospace font
+
+Makes it harder to confuse certain characters in IDs, passwords, or similar types of data.
+
+<ComponentShowcase>
+	{(data, setData) => (
+		<InputField
+			value={data}
+			onChange={setData}
+			placeholder='Basic text input'
+			aria-label='Basic text input'
+			type='text'
+			monospaceFont
+		/>
+	)}
+</ComponentShowcase>
+
+```jsx
+<InputField
+	value={value}
+	onChange={(value) => setValue(value)}
+	// highlight-next-line
+	monospaceFont
+/>
+```

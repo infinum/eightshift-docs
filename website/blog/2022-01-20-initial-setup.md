@@ -6,12 +6,17 @@ authors: obradovic
 tags: [eightshift, boilerplate, setup]
 hide_table_of_contents: false
 ---
+
 As is often the case when trying out something new, you might encounter some hiccups. You're trying out our Eightshift Boilerplate, but can't get it to work? Worry not, we'll go through the setup and the most common issues that may occur.
 
 <!--truncate-->
 
 :::info Last update
 December 05, 2024
+:::
+
+:::caution Note
+This post is no longer valid. We have discontinued the support for automatic project setup and initial block/components and all other scaffolding.
 :::
 
 If you haven't already, be sure to read our official [Eightshift Docs](/docs/welcome).
@@ -57,6 +62,7 @@ Have you tried `composer dump-autoload` and re-running `npm start`?
 ## What's next in store?
 
 That's all for this post. In future posts we'll go through some more how-to examples like:
+
 - the difference between components and blocks
 - downloading components and blocks from our Storybook with WP-CLI
 - adding new features to components and blocks

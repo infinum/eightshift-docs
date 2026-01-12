@@ -30,7 +30,3 @@ This is a collection of components more closely related to WordPress, mostly bui
 :::caution Warning
 Frontend libs v13+ does not include icons and most of the helpers, import them from Eightshift UI components instead.
 :::
-
-:::tip Looking for legacy component docs?
-Find them [here](/components/legacy-component-docs)
-:::

@@ -9,6 +9,7 @@ It contains all the tools you need to start building a modern WordPress theme or
 ### Features
 
 The Eightshift Development Kit provides you with a lot of useful features, so let's take a quick look at some of the core ones:
+
 - **Custom Block Editor blocks** - Using automatic block registration and attribute handling features, building dynamic Gutenberg blocks with the Eightshift Development Kit is a joy. We also provide an extensive library of blocks and components that you can use and customize in your projects.
   - **Dynamic blocks** - The Eightshift Development Kit is focused on supporting dynamic blocks, a type of WordPress blocks that are rendered from attributes instead of being serialized as HTML. Dynamic blocks allow you more flexibility when developing and avoid issues with Gutenberg's validation, ensuring you can ship new features and update existing blocks in record time.
   - **Components** - Extract commonly used parts into _components_. Manage attributes on the component level. Use powerful composition features to build blocks from multiple components, or even multiple instances of them without worrying about attribute registration. It's a game-changer.
@@ -27,6 +28,7 @@ The Eightshift Development Kit provides you with a lot of useful features, so le
 ### Parts of the Development Kit
 
 Eightshift Development Kit consists of a few separate projects. It's useful to know what they are, especially if you're contributing to the Development Kit.
+
 #### Eightshift Libs - [docs](eightshift-libs) | [github](https://github.com/infinum/eightshift-libs)
 
 Eightshift Libs handles backend functionality and provides backend support for your projects. This includes abstract classes and interfaces for our core features, dependency injection, asset enqueuing, filter & actions and more.
@@ -34,6 +36,10 @@ Eightshift Libs handles backend functionality and provides backend support for y
 #### Eightshift Frontend Libs - [docs](eightshift-frontend-libs) | [github](https://github.com/infinum/eightshift-frontend-libs)
 
 Eightshift Frontend Libs houses our frontend code, including various helpers, JavaScript functionality, SCSS styles, and block and component defaults.
+
+#### Eightshift Frontend Tailwind Libs - [docs](tailwind/intro) | [github](https://github.com/infinum/eightshift-frontend-libs-tailwind)
+
+Eightshift Frontend Tailwind Libs houses our frontend code, including various helpers, JavaScript functionality, SCSS styles, and block and component defaults.
 
 #### Boilerplate
 

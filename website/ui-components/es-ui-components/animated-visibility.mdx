@@ -44,7 +44,7 @@ For the complete list of props, use your IDE's autocomplete functionality.
 ### Transitions
 
 <ComponentShowcase
-	className='esd-hide-bg-on-hover'
+	className='esd-hide-bg-on-hover es:min-h-56'
 	defaultValue={{
 		checked: false,
 		transition: 'slideFade',
@@ -56,8 +56,13 @@ For the complete list of props, use your IDE's autocomplete functionality.
 				value={data.transition}
 				onChange={(v) => setData({ ...data, transition: v })}
 				options={[
+					{ value: 'fade', label: 'Fade' },
 					{ value: 'slideFade', label: 'Slide and fade', subtitle: 'Default' },
+					{ value: 'slideInFadeOut', label: 'Slide in and fade out' },
+					{ value: 'slideFadeUpSlight', label: 'Slight slide up and fade' },
+					{ value: 'slideFadeDownSlight', label: 'Slight slide down and fade' },
 					{ value: 'scaleFade', label: 'Scale and fade' },
+					{ value: 'scaleSlideFade', label: 'Scale, slide, and fade' },
 					{ value: 'scaleRotateFade', label: 'Scale, rotate, and fade' },
 				]}
 				type='menu'

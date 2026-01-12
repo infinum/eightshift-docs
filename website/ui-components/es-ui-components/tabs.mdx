@@ -1,7 +1,7 @@
 # Tabs
 
 import { ComponentShowcase } from '../components/component-showcase';
-import { Tabs, Tab, TabList, TabPanel } from '@eightshift/ui-components';
+import { Tabs, Tab, TabList, TabPanel, OptionSelect, Checkbox } from '@eightshift/ui-components';
 import { icons } from '@eightshift/ui-components/icons';
 
 <ComponentShowcase>
@@ -126,6 +126,106 @@ For the complete list of props, use your IDE's autocomplete functionality.
 <Tabs
 	// highlight-next-line
 	vertical
+>
+	<TabList>
+		<Tab>Tab 1</Tab>
+		<Tab>Tab 2</Tab>
+	</TabList>
+	<TabPanel>Tab 1 content</TabPanel>
+	<TabPanel>Tab 2 content</TabPanel>
+</Tabs>
+```
+
+### Tab styles
+
+<ComponentShowcase
+	defaultValue={{
+		vertical: false,
+		tabStyle: 'underline',
+	}}
+	preContent={(data, setData) => (
+		<>
+			<OptionSelect
+				label='Style'
+				value={data.tabStyle}
+				onChange={(v) => setData({ ...data, tabStyle: v })}
+				options={[
+					{ value: 'underline', label: 'Underlined', subtitle: <span className='es:font-mono'>underline</span> },
+					{ value: 'pill', label: 'Pill', subtitle: <span className='es:font-mono'>pill</span> },
+					{ value: 'pillInverse', label: 'Pill (inverse)', subtitle: <span className='es:font-mono'>pillInverse</span> },
+					{ value: 'pillCompact', label: 'Compact pill', subtitle: <span className='es:font-mono'>pillCompact</span> },
+					{ value: 'pillCompactInverse', label: 'Compact pill (inverse)', subtitle: <span className='es:font-mono'>pillCompactInverse</span> },
+				]}
+				type='menu'
+				wrapperProps={{
+					keepOpen: false,
+				}}
+			/>
+
+			<Checkbox
+				checked={data.vertical}
+				onChange={(v) => setData({ ...data, vertical: v })}
+				label='Vertical'
+			/>
+		</>
+	)}
+	fitWidth
+>
+	{(data) => (
+		<Tabs vertical={data.vertical} type={data.tabStyle}>
+			<TabList>
+				<Tab>Tab 1</Tab>
+				<Tab>Tab 2</Tab>
+			</TabList>
+			<TabPanel>
+				<span>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi porta turpis laoreet elit eleifend, eu malesuada
+					enim rhoncus. Ut non sollicitudin lectus. Aliquam luctus a mi et vulputate. Maecenas non euismod erat, sed
+					scelerisque nisl. Ut eu malesuada velit, quis convallis metus. Pellentesque vel enim vel arcu tempor congue.
+					Morbi tristique ante at leo pretium, eget mollis nulla lobortis.
+				</span>
+				<br />
+				<span>
+					In pharetra blandit cursus. Aliquam luctus augue non enim finibus, suscipit consequat nunc auctor. Mauris
+					sagittis placerat augue, ac pretium orci vestibulum sit amet. Vivamus tincidunt malesuada volutpat. Proin non
+					luctus ante, non sodales urna. Maecenas volutpat massa in neque tincidunt, sit amet dictum elit faucibus. Cras
+					vitae sapien ac risus auctor tincidunt a ut nunc. Vestibulum lacinia auctor sapien nec ultricies. Mauris in
+					tortor leo. Nam aliquam turpis in hendrerit pulvinar. Integer eleifend auctor egestas. Proin vitae massa felis.
+					Pellentesque vel mollis mauris. Integer vehicula massa egestas, molestie odio vel, blandit purus. Duis tincidunt
+					et massa at consequat.
+				</span>
+			</TabPanel>
+			<TabPanel>
+				<span>
+					Aliquam velit tortor, mollis a ligula sed, efficitur porta nisl. Fusce sollicitudin mi vel felis fringilla
+					laoreet. Fusce id elementum nulla, ac commodo diam. Aliquam est elit, scelerisque id ex sed, semper luctus erat.
+					Sed urna neque, blandit vel arcu nec, ultrices laoreet orci. Etiam a ex ante. Vivamus convallis facilisis nibh,
+					eget venenatis sapien volutpat non. Aliquam tincidunt lacinia neque quis cursus. Fusce sit amet purus eget metus
+					volutpat vulputate. Aliquam id metus dignissim, commodo leo sed, tincidunt ante. Proin felis mauris, vulputate
+					quis justo sed, placerat bibendum nulla. Phasellus rhoncus sem ac sapien blandit vulputate faucibus eu dolor. In
+					pellentesque fringilla purus et sodales. Nam blandit dolor urna, nec feugiat odio hendrerit nec. Integer
+					bibendum magna id orci dapibus, et sollicitudin velit porttitor.
+				</span>
+				<br />
+				<span>
+					Phasellus egestas tellus ut nunc sagittis, a viverra mi lobortis. Maecenas leo diam, semper a erat a, pharetra
+					volutpat turpis. Pellentesque fringilla neque eget venenatis tempor. Vestibulum ac laoreet arcu. Nullam nibh
+					justo, efficitur vel arcu ut, tincidunt ultricies ex. Nunc vel vehicula quam. Nullam dictum, massa sit amet
+					ultricies sagittis, nisi augue cursus metus, et venenatis purus purus vulputate risus. Vivamus malesuada
+					accumsan mauris sit amet ornare. Integer nec lorem ut mi mattis dapibus nec nec odio. Ut a ultrices est. Donec
+					vehicula, tortor vel faucibus pulvinar, orci nisl facilisis augue, ut mattis sapien sapien et tellus. Etiam
+					luctus lorem tincidunt, commodo ipsum sed, suscipit tellus. Phasellus congue nibh quam, eget sagittis enim
+					fringilla vitae. Donec volutpat feugiat turpis, laoreet eleifend odio auctor quis.
+				</span>
+			</TabPanel>
+		</Tabs>
+	)}
+</ComponentShowcase>
+
+```jsx
+<Tabs
+	// highlight-next-line
+	type='pill'
 >
 	<TabList>
 		<Tab>Tab 1</Tab>

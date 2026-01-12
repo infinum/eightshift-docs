@@ -1,0 +1,55 @@
+# Draggable
+
+import { ComponentShowcase } from '../components/component-showcase';
+import { icons } from '@eightshift/ui-components/icons';
+import { DraggableDemo, draggableListDefaultItems } from './draggable-list-helpers';
+
+<ComponentShowcase defaultValue={draggableListDefaultItems}>
+	{(data, setData) => (
+		<DraggableDemo
+			data={data}
+			setData={setData}
+		/>
+	)}
+</ComponentShowcase>
+
+```jsx
+<Draggable
+	items={value}
+	onChange={(value) => setValue(value)}
+>
+	{(item) => {
+		const { toggle, title, icon, updateData } = item;
+
+		return (
+			<div className='...'>
+				<DraggableHandle />
+
+				// This can be any content,
+				// only DraggableHandle is required
+
+				<RichLabel
+					label={title ?? 'New item'}
+					icon={icon ?? icons.emptyCircle}
+				/>
+
+				<Switch
+					aria-label='Title'
+					checked={toggle}
+					onChange={(value) => updateData({ toggle: value })}
+				/>
+			</div>
+		);
+	}}
+</Draggable>
+```
+
+## Highlighted props
+
+For the complete list of props, use your IDE's autocomplete functionality.
+
+### Axis
+
+If you want to limit the dragging to a specific axis, you can use the `axis` prop.
+
+It accepts either `horizontal`, `vertical`, or `both` (default).

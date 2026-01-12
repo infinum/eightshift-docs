@@ -1,0 +1,653 @@
+# Option selector
+
+import { ComponentShowcase } from '../components/component-showcase';
+import { OptionSelect, Checkbox, Button, Menu, MenuItem, MenuSeparator } from '@eightshift/ui-components';
+import { icons } from '@eightshift/ui-components/icons';
+
+This is a versatile component that can allow selecting from a set of options in various ways.
+
+<ComponentShowcase defaultValue='option1'>
+	{(data, setData) => {
+		return (
+			<OptionSelect
+				label='Option'
+				value={data}
+				onChange={setData}
+				options={[
+					{ value: 'option1', label: 'Option 1' },
+					{ value: 'option2', label: 'Option 2' },
+					{ value: 'option3', label: 'Option 3' },
+				]}
+			/>
+		);
+	}}
+</ComponentShowcase>
+
+```jsx
+<OptionSelect
+	icon={icons.columns}
+	label='Option'
+	value={value} // e.g. 'option1'
+	onChange={(value) => setData(value)}
+	options={[
+		{ value: 'option1', label: 'Option 1' },
+		{ value: 'option2', label: 'Option 2' },
+		{ value: 'option3', label: 'Option 3' },
+	]}
+/>
+```
+
+## Highlighted props
+
+For the complete list of props, use your IDE's autocomplete functionality.
+
+### Control type
+
+#### Toggle buttons
+
+`type='toggleButtons'`
+
+<ComponentShowcase defaultValue='option1'>
+	{(data, setData) => {
+		return (
+			<OptionSelect
+				label='Option'
+				value={data}
+				onChange={setData}
+				options={[
+					{ value: 'option1', label: 'Option 1', icon: icons.design },
+					{ value: 'option2', label: 'Option 2', icon: icons.wrench },
+					{ value: 'option3', label: 'Option 3', icon: icons.magicAlt },
+				]}
+				type='toggleButtons'
+			/>
+		);
+	}}
+</ComponentShowcase>
+
+#### Split toggle buttons
+
+`type='toggleButtonsSplit'`
+
+<ComponentShowcase defaultValue='option1'>
+	{(data, setData) => {
+		return (
+			<OptionSelect
+				label='Option'
+				value={data}
+				onChange={setData}
+				options={[
+					{ value: 'option1', label: 'Option 1', icon: icons.design },
+					{ value: 'option2', label: 'Option 2', icon: icons.wrench },
+					{ value: 'option3', label: 'Option 3', icon: icons.magicAlt },
+				]}
+				type='toggleButtonsSplit'
+			/>
+		);
+	}}
+</ComponentShowcase>
+
+#### Radio buttons
+
+`type='radios'`
+
+`icon`s on items are not supported.
+
+<ComponentShowcase defaultValue='option1'>
+	{(data, setData) => {
+		return (
+			<OptionSelect
+				label='Option'
+				value={data}
+				onChange={setData}
+				options={[
+					{ value: 'option1', label: 'Option 1' },
+					{ value: 'option2', label: 'Option 2' },
+					{ value: 'option3', label: 'Option 3' },
+				]}
+				type='radios'
+			/>
+		);
+	}}
+</ComponentShowcase>
+
+#### Segmented radio buttons
+
+`type='radiosSegmented'`
+
+`icon`s on items are not supported.
+
+<ComponentShowcase defaultValue='option1'>
+	{(data, setData) => {
+		return (
+			<OptionSelect
+				label='Option'
+				value={data}
+				onChange={setData}
+				options={[
+					{ value: 'option1', label: 'Option 1' },
+					{ value: 'option2', label: 'Option 2' },
+					{ value: 'option3', label: 'Option 3' },
+				]}
+				type='radiosSegmented'
+			/>
+		);
+	}}
+</ComponentShowcase>
+
+#### Dropdown menu
+
+`type='menu'`
+
+<ComponentShowcase defaultValue='option1'>
+	{(data, setData) => {
+		return (
+			<OptionSelect
+				label='Option'
+				value={data}
+				onChange={setData}
+				options={[
+					{ value: 'option1', label: 'Option 1', icon: icons.design },
+					{ value: 'option2', label: 'Option 2', icon: icons.wrench },
+					{ value: 'option3', label: 'Option 3', icon: icons.magicAlt },
+				]}
+				type='menu'
+			/>
+		);
+	}}
+</ComponentShowcase>
+
+##### Additional features for items
+
+`endIcon`s
+
+<ComponentShowcase defaultValue='option1'>
+	{(data, setData) => {
+		return (
+			<OptionSelect
+				label='Option'
+				value={data}
+				onChange={setData}
+				options={[
+					{ value: 'option1', label: 'Option 1', endIcon: icons.design },
+					{ value: 'option2', label: 'Option 2', endIcon: icons.wrench },
+					{ value: 'option3', label: 'Option 3', endIcon: icons.magicAlt },
+				]}
+				type='menu'
+			/>
+		);
+	}}
+</ComponentShowcase>
+
+`disabled` items
+
+<ComponentShowcase defaultValue='option1'>
+	{(data, setData) => {
+		return (
+			<OptionSelect
+				label='Option'
+				value={data}
+				onChange={setData}
+				options={[
+					{ value: '-', label: 'Try and click me', disabled: true },
+					{ value: 'option1', label: 'Option 1', endIcon: icons.design },
+					{ value: 'option2', label: 'Option 2', endIcon: icons.wrench },
+					{ value: 'option3', label: 'Option 3', endIcon: icons.magicAlt },
+				]}
+				type='menu'
+			/>
+		);
+	}}
+</ComponentShowcase>
+
+Separator lines <br /> (`separator: 'below'` or `separator: 'above'`)
+
+<ComponentShowcase defaultValue='option1'>
+	{(data, setData) => {
+		return (
+			<OptionSelect
+				label='Option'
+				value={data}
+				onChange={setData}
+				options={[
+					{ value: 'option1', label: 'Option 1', endIcon: icons.design, separator: 'below' },
+					{ value: 'option2', label: 'Option 2', endIcon: icons.wrench },
+					{ value: 'option3', label: 'Option 3', endIcon: icons.magicAlt, separator: 'above' },
+				]}
+				type='menu'
+			/>
+		);
+	}}
+</ComponentShowcase>
+
+`subtitle`s
+
+<ComponentShowcase defaultValue='option1'>
+	{(data, setData) => {
+		return (
+			<OptionSelect
+				label='Option'
+				value={data}
+				onChange={setData}
+				options={[
+					{ value: 'option1', label: 'Cut', subtitle: 'Cuts' },
+					{ value: 'option2', label: 'Copy', subtitle: 'Copies' },
+					{ value: 'option3', label: 'Paste', subtitle: 'Pastes' },
+				]}
+				type='menu'
+			/>
+		);
+	}}
+</ComponentShowcase>
+
+Section titles (`sectionTitle`)
+
+<ComponentShowcase defaultValue='option1'>
+	{(data, setData) => {
+		return (
+			<OptionSelect
+				label='Option'
+				value={data}
+				onChange={setData}
+				options={[
+					{ value: 'option1', label: 'Cut', sectionTitle: 'Commands' },
+					{ value: 'option2', label: 'Copy' },
+					{ value: 'option3', label: 'Paste' },
+				]}
+				type='menu'
+			/>
+		);
+	}}
+</ComponentShowcase>
+
+`shortcut`/supplementary labels
+
+<ComponentShowcase defaultValue='option1'>
+	{(data, setData) => {
+		return (
+			<OptionSelect
+				label='Option'
+				value={data}
+				onChange={setData}
+				options={[
+					{ value: 'option1', label: 'Cut', shortcut: 'Ctrl + X' },
+					{ value: 'option2', label: 'Copy', shortcut: 'Ctrl + C' },
+					{ value: 'option3', label: 'Paste', shortcut: 'Ctrl + V' },
+				]}
+				type='menu'
+			/>
+		);
+	}}
+</ComponentShowcase>
+
+#### Submenu
+
+Meant to be used as a part of a `Menu`.
+
+`type='submenu'`
+
+Most item features from `'menu'` are supported.
+
+<ComponentShowcase defaultValue='option1'>
+	{(data, setData) => {
+		return (
+			<Menu>
+				<MenuItem>Lorem</MenuItem>
+				<MenuItem>Ipsum</MenuItem>
+				<MenuSeparator />
+				<OptionSelect
+					label='Option'
+					value={data}
+					onChange={setData}
+					options={[
+						{ value: 'option1', label: 'Option 1', icon: icons.design },
+						{ value: 'option2', label: 'Option 2', icon: icons.wrench },
+						{ value: 'option3', label: 'Option 3', icon: icons.magicAlt },
+					]}
+					type='submenu'
+				/>
+			</Menu>
+		);
+	}}
+</ComponentShowcase>
+
+```jsx
+<Menu>
+	<MenuItem>Lorem</MenuItem>
+	<MenuItem>Ipsum</MenuItem>
+	<MenuSeparator />
+	<OptionSelect
+		label='Option'
+		value={data}
+		onChange={setData}
+		options={[
+			{ value: 'option1', label: 'Option 1', icon: icons.design },
+			{ value: 'option2', label: 'Option 2', icon: icons.wrench },
+			{ value: 'option3', label: 'Option 3', icon: icons.magicAlt },
+		]}
+		type='submenu'
+	/>
+</Menu>
+```
+
+##### Additional features
+
+If no `label` is provided, the current value will be used as a label.
+
+<ComponentShowcase defaultValue='option1'>
+	{(data, setData) => {
+		return (
+			<Menu>
+				<MenuItem>Lorem</MenuItem>
+				<MenuItem>Ipsum</MenuItem>
+				<MenuSeparator />
+				<OptionSelect
+					icon={icons.multiple}
+					value={data}
+					onChange={setData}
+					options={[
+						{ value: 'option1', label: 'Option 1', icon: icons.design },
+						{ value: 'option2', label: 'Option 2', icon: icons.wrench },
+						{ value: 'option3', label: 'Option 3', icon: icons.magicAlt },
+					]}
+					type='submenu'
+				/>
+			</Menu>
+		);
+	}}
+</ComponentShowcase>
+
+If `subtitle` is set (to `true`), the current value will be used as a subtitle.
+
+<ComponentShowcase defaultValue='option1'>
+	{(data, setData) => {
+		return (
+			<Menu>
+				<MenuItem>Lorem</MenuItem>
+				<MenuItem>Ipsum</MenuItem>
+				<MenuSeparator />
+				<OptionSelect
+					icon={icons.multiple}
+					label='Option'
+					subtitle
+					value={data}
+					onChange={setData}
+					options={[
+						{ value: 'option1', label: 'Option 1', icon: icons.design },
+						{ value: 'option2', label: 'Option 2', icon: icons.wrench },
+						{ value: 'option3', label: 'Option 3', icon: icons.magicAlt },
+					]}
+					type='submenu'
+				/>
+			</Menu>
+		);
+	}}
+</ComponentShowcase>
+
+#### Menu radio buttons
+
+Meant to be used as a part of a `Menu`.
+
+`type='standaloneMenuItems'`
+
+Most item features from `'menu'` are supported.
+
+<ComponentShowcase defaultValue='option1'>
+	{(data, setData) => {
+		return (
+			<Menu>
+				<MenuItem>Lorem</MenuItem>
+				<MenuItem>Ipsum</MenuItem>
+				<MenuSeparator />
+				<OptionSelect
+					label='Option'
+					value={data}
+					onChange={setData}
+					options={[
+						{ value: 'option1', label: 'Option 1', icon: icons.design },
+						{ value: 'option2', label: 'Option 2', icon: icons.wrench },
+						{ value: 'option3', label: 'Option 3', icon: icons.magicAlt },
+					]}
+					type='standaloneMenuItems'
+				/>
+			</Menu>
+		);
+	}}
+</ComponentShowcase>
+
+```jsx
+<Menu>
+	<MenuItem>Lorem</MenuItem>
+	<MenuItem>Ipsum</MenuItem>
+	<MenuSeparator />
+	<OptionSelect
+		label='Option'
+		value={data}
+		onChange={setData}
+		options={[
+			{ value: 'option1', label: 'Option 1', icon: icons.design },
+			{ value: 'option2', label: 'Option 2', icon: icons.wrench },
+			{ value: 'option3', label: 'Option 3', icon: icons.magicAlt },
+		]}
+		type='standaloneMenuItems'
+	/>
+</Menu>
+```
+
+### Vertical alignment
+
+_(not applicable to all types)_
+
+<ComponentShowcase defaultValue='option1'>
+	{(data, setData) => {
+		return (
+			<OptionSelect
+				label='Option'
+				value={data}
+				onChange={setData}
+				options={[
+					{ value: 'option1', label: 'Small', icon: icons.small },
+					{ value: 'option2', label: 'Medium', icon: icons.medium },
+					{ value: 'option3', label: 'Large', icon: icons.large },
+				]}
+				type='radios'
+				vertical
+			/>
+		);
+	}}
+</ComponentShowcase>
+
+```jsx
+<OptionSelect
+	icon={icons.columns}
+	label='Option'
+	value={value} // e.g. 'option1'
+	onChange={(value) => setData(value)}
+	options={[
+		{ value: 'option1', label: 'Option 1' },
+		{ value: 'option2', label: 'Option 2' },
+		{ value: 'option3', label: 'Option 3' },
+	]}
+	// highlight-next-line
+	vertical
+/>
+```
+
+### Trigger customization
+
+_(might not apply to all types)_
+
+Hide the trigger icon with `noTriggerIcon`.
+
+<ComponentShowcase defaultValue='option1'>
+	{(data, setData) => {
+		return (
+			<OptionSelect
+				aria-label='Demo component'
+				value={data}
+				onChange={setData}
+				options={[
+					{ value: 'option1', label: 'Small', icon: icons.small },
+					{ value: 'option2', label: 'Medium', icon: icons.medium },
+					{ value: 'option3', label: 'Large', icon: icons.large },
+				]}
+				type='menu'
+				noTriggerIcon
+			/>
+		);
+	}}
+</ComponentShowcase>
+
+Hide the trigger label with `noTriggerLabel`.
+
+<ComponentShowcase defaultValue='option1'>
+	{(data, setData) => {
+		return (
+			<OptionSelect
+				aria-label='Demo component'
+				value={data}
+				onChange={setData}
+				options={[
+					{ value: 'option1', label: 'Small', icon: icons.small },
+					{ value: 'option2', label: 'Medium', icon: icons.medium },
+					{ value: 'option3', label: 'Large', icon: icons.large },
+				]}
+				type='menu'
+				noTriggerLabel
+			/>
+		);
+	}}
+</ComponentShowcase>
+
+Modify the "outside" component props with `wrapperProps`.
+
+<ComponentShowcase defaultValue='option1'>
+	{(data, setData) => {
+		return (
+			<>
+				<OptionSelect
+					aria-label='Demo component'
+					value={data}
+					onChange={setData}
+					options={[
+						{ value: 'option1', label: 'Option 1', icon: icons.emptyCircle },
+						{ value: 'option2', label: 'Option 2', icon: icons.emptyRect },
+						{ value: 'option3', label: 'Option 3', icon: icons.emptyCircle },
+					]}
+					wrapperProps={{ className: 'es:bg-secondary-100 es:p-2' }}
+				/>
+
+    			<OptionSelect
+    				aria-label='Demo component'
+    				value={data}
+    				onChange={setData}
+    				options={[
+    					{ value: 'option1', label: 'Option 1', icon: icons.emptyCircle },
+    					{ value: 'option2', label: 'Option 2', icon: icons.emptyRect },
+    					{ value: 'option3', label: 'Option 3', icon: icons.emptyCircle },
+    				]}
+    				type='radios'
+    				wrapperProps={{ className: 'es:bg-secondary-100 es:p-2' }}
+    			/>
+
+    			<OptionSelect
+    				aria-label='Demo component'
+    				value={data}
+    				onChange={setData}
+    				options={[
+    					{ value: 'option1', label: 'Option 1', icon: icons.emptyCircle },
+    					{ value: 'option2', label: 'Option 2', icon: icons.emptyRect },
+    					{ value: 'option3', label: 'Option 3', icon: icons.emptyCircle },
+    				]}
+    				type='menu'
+    				wrapperProps={{ className: 'es:bg-accent-50 es:p-2' }}
+    			/>
+    		</>
+    	);
+    }}
+
+</ComponentShowcase>
+
+```jsx
+<OptionSelect
+	...
+	// highlight-next-line
+	wrapperProps={{ className: 'bg-gray-100 p-4' }}
+/>
+```
+
+### Item customization
+
+_(might not apply to all types)_
+
+Hide the item icon with `noItemIcon`.
+
+<ComponentShowcase defaultValue='option1'>
+	{(data, setData) => {
+		return (
+			<OptionSelect
+				aria-label='Demo component'
+				value={data}
+				onChange={setData}
+				options={[
+					{ value: 'option1', label: 'Small', icon: icons.small },
+					{ value: 'option2', label: 'Medium', icon: icons.medium },
+					{ value: 'option3', label: 'Large', icon: icons.large },
+				]}
+				type='menu'
+				noItemIcon
+			/>
+		);
+	}}
+</ComponentShowcase>
+
+Hide the item label with `noItemLabel`.
+
+<ComponentShowcase defaultValue='option1'>
+	{(data, setData) => {
+		return (
+			<OptionSelect
+				aria-label='Demo component'
+				value={data}
+				onChange={setData}
+				options={[
+					{ value: 'option1', label: 'Small', icon: icons.small },
+					{ value: 'option2', label: 'Medium', icon: icons.medium },
+					{ value: 'option3', label: 'Large', icon: icons.large },
+				]}
+				noItemLabel
+			/>
+		);
+	}}
+</ComponentShowcase>
+
+Modify the item props with `itemProps` or just pass a class name with `itemClassName`.
+
+<ComponentShowcase defaultValue='option1'>
+	{(data, setData) => {
+		return (
+			<OptionSelect
+				aria-label='Demo component'
+				value={data}
+				onChange={setData}
+				options={[
+					{ value: 'option1', label: 'Small', icon: icons.small },
+					{ value: 'option2', label: 'Medium', icon: icons.medium },
+					{ value: 'option3', label: 'Large', icon: icons.large },
+				]}
+				itemProps={{ size: 'large' }}
+				itemClassName='es:flex-col esd-btn-custom'
+			/>
+		);
+	}}
+</ComponentShowcase>
+
+```jsx
+<OptionSelect
+	...
+	// highlight-start
+	itemProps={{ size: 'large' }}
+	itemClassName='flex-col h-auto px-16 py-8'
+	// highlight-end
+/>
+```

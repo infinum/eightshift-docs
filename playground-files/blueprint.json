@@ -1,0 +1,30 @@
+{
+  "plugins": [],
+  "steps": [
+    {
+      "step": "installTheme",
+      "themeData": {
+        "resource": "url",
+        "url": "https://raw.githubusercontent.com/infinum/eightshift-docs/main/playground-files/eightshift-ui-kit.zip"
+      }
+    },
+    {
+      "step": "installPlugin",
+      "pluginData": {
+        "resource": "url",
+        "url": "https://github.com/infinum/eightshift-forms/releases/download/6.8.1/release.zip"
+      },
+      "options": {
+        "activate": true
+      }
+    }
+  ],
+  "preferredVersions": {
+    "php": "8.3",
+    "wp": "6.8"
+  },
+  "features": {
+    "networking": true
+  },
+  "login": true
+}

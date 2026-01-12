@@ -1,0 +1,311 @@
+# Modal
+
+import { ComponentShowcase } from '../components/component-showcase';
+import { Modal, Button } from '@eightshift/ui-components';
+import { icons } from '@eightshift/ui-components/icons';
+
+<ComponentShowcase>
+	<Modal>
+		<div className='es:w-full es:rounded-xl es:bg-gray-100 es:text-sm es:p-4 es:min-h-40'>
+			<span>This is demo content</span>
+		</div>
+	</Modal>
+</ComponentShowcase>
+
+```jsx
+<Modal>
+	<div>This is demo content</div>
+</Modal>
+```
+
+## Highlighted props
+
+For the complete list of props, use your IDE's autocomplete functionality.
+
+### Trigger button customization
+
+<ComponentShowcase>
+	<Modal
+		triggerLabel='Click me'
+		triggerIcon={icons.pointerHand}
+	>
+		<div className='es:w-full es:rounded-xl es:bg-gray-100 es:text-sm es:p-4 es:min-h-40'>
+			<span>This is demo content</span>
+		</div>
+	</Modal>
+</ComponentShowcase>
+
+```jsx
+<Modal
+	// highlight-start
+	triggerLabel='Click me'
+	triggerIcon={icons.pointerHand}
+	// highlight-end
+>
+	<div>This is demo content</div>
+</Modal>
+```
+
+#### More advanced customizations
+
+`triggerProps` accepts all props a [`Button`](/components/es-ui-components/button) accepts.
+
+<ComponentShowcase>
+	<Modal
+		triggerIcon={icons.trash}
+		triggerProps={{ type: 'danger' }}
+		contentClassName='es:p-4'
+		noCloseButton
+	>
+		<b>Are you sure you want to delete this?</b>
+		<br />
+		<span>There's no going back (whoa-oh)</span>
+
+		<div className='es:flex es:gap-2 es:mt-3'>
+			<Button className='es:ml-auto' type='ghost'>Yup!</Button>
+			<Button slot='close'>Nope</Button>
+		</div>
+	</Modal>
+
+</ComponentShowcase>
+
+```jsx
+<Modal
+	triggerIcon={icons.trash}
+	// highlight-next-line
+	triggerProps={{ type: 'danger' }}
+>
+	<div>This is demo content</div>
+</Modal>
+```
+
+## Customization
+
+### Title
+
+Add the title to the modal by passing a `title` prop.
+
+<ComponentShowcase>
+	<Modal title='This is a title'>
+		<div className='es:w-full es:rounded-xl es:bg-gray-100 es:text-sm es:p-4 es:min-h-40'>
+			<span>This is demo content</span>
+		</div>
+	</Modal>
+</ComponentShowcase>
+
+```jsx
+<Modal
+	// highlight-next-line
+	title='This is a title'
+>
+	<div>This is demo content</div>
+</Modal>
+```
+
+### Actions
+
+Add actions to the bottom of the modal with the `actions` prop.
+
+<ComponentShowcase>
+	<Modal
+		title='Message'
+		actions={
+			<>
+				<Button type='ghost' slot='close'>Cancel</Button>
+				<Button type='selected' onPress={() => alert('OK clicked')} slot='close'>OK</Button>
+			</>
+		}
+	>
+		<div className='es:w-full es:rounded-xl es:bg-gray-100 es:text-sm es:p-4 es:min-h-40'>
+			<span>This is demo content</span>
+		</div>
+	</Modal>
+</ComponentShowcase>
+
+```jsx
+<Modal
+	title='Message'
+	// highlight-start
+	actions={
+		<Button
+			type='ghost'
+			slot='close'
+		>
+			Cancel
+		</Button>
+		<Button
+			type='selected'
+			slot='close'
+			onPress={() => alert('OK clicked')}
+		>
+			OK
+		</Button>
+	}
+	// highlight-end
+>
+	<div>This is demo content</div>
+</Modal>
+```
+
+#### Closing the modal
+
+You can add `slot='close'` to any button inside the modal to close it when clicked.
+This works both with the fully manual control, and the automatic trigger button.
+
+If using buttons from Eightshift UI components (or anything *React Aria*-based), *and* have `onPress` passed to the button,
+`slot='close'` will automatically close the modal after the `onPress` function is executed.
+
+### Header actions
+
+You can add actions to the header of the modal with the `headerActions` prop.
+
+<ComponentShowcase>
+	<Modal
+		title='Message'
+		headerActions={
+			<Button
+				type='selectedGhost'
+				size='small'
+				icon={icons.experiment}
+				aria-label='Demo button'
+				onPress={() => alert('Demo button clicked')}
+			/>
+		}
+	>
+		<div className='es:w-full es:rounded-xl es:bg-gray-100 es:text-sm es:p-4 es:min-h-40'>
+			<span>This is demo content</span>
+		</div>
+	</Modal>
+</ComponentShowcase>
+
+```jsx
+<Modal
+	title='Message'
+	// highlight-start
+	headerActions={
+		<Button
+			type='ghost'
+			size='small'
+			icon={icons.experiment}
+			aria-label='Demo button'
+			onPress={() => alert('Demo button clicked')}
+		/>
+	}
+	// highlight-end
+>
+	<div>This is demo content</div>
+</Modal>
+```
+
+### Disabling the close button
+
+If you want to disable the close button in the header, you can pass `noCloseButton` prop.
+
+Modal will still be closable by clicking outside of it, or pressing the `Esc` key (if `noClickToDismiss` is not set).
+You should, however, provide a way to close the modal in your content, such as a button with `slot='close'`.
+
+<ComponentShowcase>
+	<Modal
+		title='Message'
+		actions={
+			<Button type='ghost' slot='close'>Close</Button>
+		}
+		noCloseButton
+	>
+		<div className='es:w-full es:rounded-xl es:bg-gray-100 es:text-sm es:p-4 es:min-h-40'>
+			<span>This is demo content</span>
+		</div>
+	</Modal>
+</ComponentShowcase>
+
+```jsx
+<Modal
+	title='Message'
+	actions={
+		<Button type='ghost' slot='close'>Close</Button>
+	}
+	// highlight-next-line
+	noCloseButton
+>
+	<div>This is demo content</div>
+</Modal>
+```
+
+## Trigger button replacement
+
+If you want to render your own trigger button, you can either:
+- replace the default trigger with a `customTrigger`
+- manually control the modal with `open` and `onOpenChange`
+
+### Replacing the default trigger
+
+The passed component needs to be compatible with React Aria's pressable system,
+so it can automatically wire up the modal's open/close functionality.
+
+<ComponentShowcase>
+	<Modal
+		customTrigger={
+			<Button type='ghost' icon={icons.pointerHand}>Click me</Button>
+		}
+	>
+		<div className='es:w-full es:rounded-xl es:bg-gray-100 es:text-sm es:p-4 es:min-h-40'>
+			<span>This is demo content</span>
+		</div>
+	</Modal>
+</ComponentShowcase>
+
+```jsx
+<Modal
+	// highlight-start
+	customTrigger={
+		<Button
+			type='ghost'
+			icon={icons.pointerHand}
+		>
+			Click me
+		</Button>
+	}
+	// highlight-end
+>
+	<div>This is demo content</div>
+</Modal>
+```
+
+### Full manual control
+
+<ComponentShowcase defaultValue={{ open: false }}>
+	{(data, setData) => (
+		<>
+			<button className='es:bg-secondary-100 es:px-4 es:py-2' onClick={() => setData({open: true})}>Click to open</button>
+
+			<Modal
+				open={data.open}
+				onOpenChange={(isOpen) => setData({ open: isOpen })}
+				triggerLabel='Click me'
+			>
+				<div className='es:w-full es:rounded-xl es:bg-gray-100 es:text-sm es:p-4 es:min-h-40'>
+					<span>This is demo content</span>
+				</div>
+			</Modal>
+		</>
+	)}
+</ComponentShowcase>
+
+```jsx
+const [open, setOpen] = useState(false);
+
+return (
+	<>
+		<button onClick={() => setOpen(true)}>Click me</button>
+
+		<Modal
+			// highlight-start
+			open={open}
+			onOpenChange={(isOpen) => setOpen(isOpen)}
+			// highlight-end
+		>
+			<div>This is demo content</div>
+		</Modal>
+	</>
+);
+```
