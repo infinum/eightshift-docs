@@ -71,7 +71,7 @@ For example, if `paragraphSize` is `md` `~sm/md:~text-lg/2xl` will be added to t
 Likewise, if `paragraphFontWeight` is `700`, `font-bold` will be added to the `base` part's class output.
 
 ### Assigning to part(s)
-Adding classes to the `base` part might not always be enough. With the `parts` attribute on the entry you can specify which part the class gets applied to.
+Adding classes to the `base` part might not always be enough. With the `part` attribute on the entry you can specify which part the class gets applied to.
 
 ```json
 ...
@@ -79,7 +79,7 @@ Adding classes to the `base` part might not always be enough. With the `parts` a
 	"options": {
 		"cardTextAlign": {
 			// highlight-next-line
-			"parts": "heading",
+			"part": "heading",
 			"twClasses": {
 				"start": "text-start",
 				"center": "text-center",
@@ -101,7 +101,7 @@ You can also specify multiple parts by separating them with a comma `,`.
 	"options": {
 		"cardTextAlign": {
 			// highlight-next-line
-			"parts": "heading,text",
+			"part": "heading,text",
 			"twClasses": {
 				"start": "text-start",
 				"center": "text-center",
@@ -248,7 +248,7 @@ As with `options`, you can apply the classes to a specific part (or multiple par
 			},
 			"twClasses": "text-red-100 hover:text-red-950",
 			// highlight-next-line
-			"parts": "label"
+			"part": "label"
 		}
 	],
 },
