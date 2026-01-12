@@ -105,7 +105,6 @@ module.exports = {
 			'additional-libraries/forms',
 			'additional-libraries/docs',
 			'additional-libraries/coding-standards',
-			'additional-libraries/stubs',
 		],
 	},
 };
