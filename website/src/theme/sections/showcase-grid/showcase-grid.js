@@ -20,30 +20,6 @@ export default function ShowcaseGrid(props) {
 
 	const privateData = [
 		{
-			image: useBaseUrl('img/showcase/tarisio.webp'),
-			label: 'Tarisio',
-			desc: 'Tarisio is a web-based auction house specializing in stringed instruments and bows. Its online auctions provide a global marketplace for fine violin sales.',
-			link: 'https://tarisio.com/',
-		},
-		{
-			image: useBaseUrl('img/showcase/t2.webp'),
-			label: 'T2 auctions',
-			desc: 'Auctions for the Violin Trade.',
-			link: 'https://t2-auctions.com/',
-		},
-		{
-			image: useBaseUrl('img/showcase/rasco.webp'),
-			label: 'Rasco',
-			desc: 'One of the leading manufacturers of municipal equipment in Europe: we produce snow ploughs (snowplow), spreaders, crane mowers and vehicle upgrades.',
-			link: 'https://rasco.hr/',
-		},
-		{
-			image: useBaseUrl('img/showcase/lynx.webp'),
-			label: 'Lynx',
-			desc: 'LYNX is a 2m³ vacuum road sweeper exceeding expectations. Modern design, functionality, power and ease of use for clean streets.',
-			link: 'https://lynx.rasco.hr/',
-		},
-		{
 			image: useBaseUrl('img/showcase/hak.webp'),
 			label: 'HAK Revija',
 			desc: 'HAK news portal.',
@@ -54,18 +30,6 @@ export default function ShowcaseGrid(props) {
 			label: 'Crveni nosovi',
 			desc: 'Our mission is to restore the feeling of joy, happiness and optimism in difficult life circumstances.',
 			link: 'https://www.crveninosovi.hr/',
-		},
-		{
-			image: useBaseUrl('img/showcase/vcfa.webp'),
-			label: 'VCFA',
-			desc: 'Learn with accomplished teachers and artistic colleagues from around the world. You’ll create new work, refine your vision, and enhance your critical and creative skills.',
-			link: 'https://vcfa.edu/',
-		},
-		{
-			image: useBaseUrl('img/showcase/go.webp'),
-			label: 'Malta Go',
-			desc: 'GO is Malta’s leading communications services company. As the first quad play provider in Malta we provide mobile, fixed line, internet and TV services to more than 500,000 customers.',
-			link: 'https://www.go.com.mt/',
 		},
 	];
 
@@ -95,12 +59,6 @@ export default function ShowcaseGrid(props) {
 			link: 'https://academy.infinum.com/',
 		},
 		{
-			image: useBaseUrl('img/showcase/raise-the-bar.webp'),
-			label: 'Raise The Bar',
-			desc: 'Coca-Cola HBC is helps to align the skills and knowledge in tourism and hospitality through Raise the Bar education program.',
-			link: 'https://raisethebar.hr/',
-		},
-		{
 			image: useBaseUrl('img/showcase/d66.webp'),
 			label: 'D66',
 			desc: 'Democrats 66 is a social-liberal political party in the Netherlands. Its name originates from the year in which it was founded.',
@@ -108,7 +66,7 @@ export default function ShowcaseGrid(props) {
 		},
 		{
 			image: useBaseUrl('img/showcase/tvornica-snova.webp'),
-			label: 'Tvornica Snova',
+			label: 'Tvornica snova',
 			desc: 'Personalized books will allow each child to become the protagonist of their own story.',
 			link: 'https://tvornicasnova.hr/',
 		},
@@ -135,18 +93,6 @@ export default function ShowcaseGrid(props) {
 			label: 'UK Safer Internet Centre',
 			desc: 'Welcome to the UK Safer Internet Centre, where you can find online safety tips, advice and resources to help children and young people stay safe online.',
 			link: 'https://saferinternet.org.uk/',
-		},
-		{
-			image: useBaseUrl('img/showcase/greenwichvillage.webp'),
-			label: 'Greenwich Village',
-			desc: 'The Village Alliance has been a leading advocate for the Greenwich Village community for nearly thirty years.',
-			link: 'https://greenwichvillage.nyc/',
-		},
-		{
-			image: useBaseUrl('img/showcase/biller.webp'),
-			label: 'Biller',
-			desc: 'Let\'s make buying easier, by empowering your business buyers to use Buy Now, Pay Later. Add Biller to your checkout and watch your conversion increase.',
-			link: 'https://biller.ai/',
 		},
 		{
 			image: useBaseUrl('img/showcase/dept.webp'),

@@ -15,7 +15,7 @@ export default function Showcase() {
 			keywords={siteConfig.customFields.keywords}
 			metaImage={useBaseUrl(`img/${siteConfig.customFields.image}`)}
 		>
-			<ShowcaseGrid privateType={true}/>
+			<ShowcaseGrid privateType />
 		</Layout>
 	);
 };

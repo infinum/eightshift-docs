@@ -1,11 +1,11 @@
 ---
 id: eightshift-frontend-libs
-title: Eightshift Frontend Libs
+title: Eightshift Frontend Libs (Legacy)
 ---
 
-[![docs-source](https://img.shields.io/badge/source-eightshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs/tree/develop/blocks/init/src/blocks/)
+[![docs-source](https://img.shields.io/badge/source-eightshift--frontend--libs-yellow?style=for-the-badge&logo=javascript&labelColor=2a2a2a)](https://github.com/infinum/eightshift-frontend-libs)
 
-This library is meant to bring modern front-end development tools to the [Eightshift Boilerplate](https://github.com/infinum/eightshift-boilerplate) or [Eightshift Boilerplate Plugin](https://github.com/infinum/eightshift-boilerplate-plugin), but you can use it on any WordPress project.
+This a legacy library meant to bring modern front-end development tools to the [Eightshift Boilerplate](https://github.com/infinum/eightshift-boilerplate) or [Eightshift Boilerplate Plugin](https://github.com/infinum/eightshift-boilerplate-plugin), but you can use it on any WordPress project.
 
 ## Prerequisites
 
@@ -20,9 +20,6 @@ The library can be used for pure Webpack/JS/SCSS functionality, but if you want 
 - Stylelint ruleset
 - Babel ruleset
 - A collection of useful front-end utility modules
-- The complete storybook of over 30+ useful blocks and components
-- Block editor block examples
-- A growing collection of blocks and components
 - The complete Webpack build for [Eightshift Boilerplate](https://github.com/infinum/eightshift-boilerplate)
 - Helpers for creating dynamic block editor blocks
 - ...
