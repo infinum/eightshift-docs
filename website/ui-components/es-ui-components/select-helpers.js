@@ -1,14 +1,3 @@
-import {
-	RSOption,
-	RSSingleValue,
-	RSMultiValue,
-	RSDropdownIndicator,
-	RSMultiValueRemove,
-	RSClearIndicator,
-	RSMultiValueContainer,
-} from '@eightshift/ui-components';
-import { icons } from '@eightshift/ui-components/icons';
-
 export const demoOptions = [
 	{
 		label: 'Item 1',
@@ -21,6 +10,7 @@ export const demoOptions = [
 	{
 		label: 'Item 3',
 		value: 'item-3',
+		icon: 'loader',
 	},
 	{
 		label: 'Item 4 with veeeery very long label',
@@ -29,6 +19,7 @@ export const demoOptions = [
 	{
 		label: 'Item 5',
 		value: 'item-5',
+		subtitle: 'The fifth item.'
 	},
 	{
 		label: 'Item 6',
@@ -46,54 +37,6 @@ export const demoGetData = (inputValue) => {
 			}
 
 			resolve(demoOptions.filter(filterData));
-		}, 1500);
+		}, 500);
 	});
-};
-
-export const CustomDropdownIndicator = (props) => {
-	return (
-		<RSDropdownIndicator {...props}>
-			<div className='[&>svg]:es:text-red-500'>
-				{props.selectProps.menuIsOpen ? icons.arrowUpCircleAlt : icons.arrowDownCircleAlt}
-			</div>
-		</RSDropdownIndicator>
-	);
-};
-
-export const CustomMenuOption = (props) => (
-	<RSOption {...props}>
-		<>
-			<span role='img'>{icons.emptyCircle}</span>
-			<span>{props.label}</span>
-		</>
-	</RSOption>
-);
-
-export const CustomClearIndicator = (props) => {
-	return <RSClearIndicator {...props}>{icons.errorCircleFill}</RSClearIndicator>;
-};
-
-export const CustomValueDisplay = (props) => {
-	return (
-		<RSSingleValue {...props}>
-			<span className='es:text-red-500 es:font-mono es:font-semibold'>
-				{props.children}
-			</span>
-		</RSSingleValue>
-	);
-};
-
-export const CustomMultiValueRemoveButton = (props) => {
-	return <RSMultiValueRemove {...props}>{icons.remove}</RSMultiValueRemove>;
-};
-
-export const CustomMultiValueDisplay = (props) => {
-	const colors = ['es:bg-red-500', 'es:bg-blue-500', 'es:bg-green-500', 'es:bg-yellow-500', 'es:bg-slate-900'];
-	const colorIndex = props.options.findIndex((option) => option.value === props.data.value) % colors.length;
-
-	return (
-		<RSMultiValue {...props}>
-			<span className={`${colors[colorIndex]} es:font-semibold es:p-1 es:text-white`}>{props.children}</span>
-		</RSMultiValue>
-	);
 };

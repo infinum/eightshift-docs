@@ -10,7 +10,7 @@ import { demoGetData } from './select-helpers';
 		<AsyncSelect
 			value={data}
 			onChange={setData}
-			loadOptions={demoGetData}
+			fetchFunction={demoGetData}
 		/>
 	)}
 </ComponentShowcase>
@@ -23,13 +23,13 @@ const getOptions = async () => {
 <AsyncSelect
 	value={value}
 	onChange={(value) => setValue(value)}
-	loadOptions={getOptions}
+	fetchFunction={getOptions}
 />
 ```
 
 :::note
 Props are mostly the same as for the [Single select](/components/es-ui-components/select),
-with the exceptions of `options` (which is replaced with `loadOptions`) and `simpleValue`, which is not supported.
+with the exceptions of `options` (which is replaced with `fetchFunction`) and `simpleValue`, which is not supported.
 :::
 
 For the complete list of props, use your IDE's autocomplete functionality.
