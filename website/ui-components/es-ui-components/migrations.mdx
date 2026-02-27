@@ -1,5 +1,50 @@
 # Migrations
+
 Here's how to upgrade between various versions of ES UI components.
+
+## v5.x.x to v6.x.x
+
+1. Update the package to the latest version.
+
+2. Update CSS imports for UI components styles.
+
+Font enhancements:
+
+```diff
+- @eightshift/ui-components/dist/assets/wp-font-enhancements.css
++ @eightshift/ui-components/dist/assets/wp-overrides/replace-fonts.css
+```
+
+General style tweaks/overrides (now modular, pick&choose enhancements you want):
+
+```diff
+- @eightshift/ui-components/dist/assets/wp-ui-enhancements.css
++ @eightshift/ui-components/dist/assets/wp-overrides/fix-label-text-case.css
++ @eightshift/ui-components/dist/assets/wp-overrides/increase-sidebar-width.css
++ @eightshift/ui-components/dist/assets/wp-overrides/make-block-messages-nicer.css
++ @eightshift/ui-components/dist/assets/wp-overrides/restyle-tooltips.css
++ @eightshift/ui-components/dist/assets/wp-overrides/round-corners.css
++ @eightshift/ui-components/dist/assets/wp-overrides/unify-button-sizes.css
++ @eightshift/ui-components/dist/assets/wp-overrides/allow-full-width-blocks.css
+```
+
+3. Selects
+
+Check all `Select`, `AsyncSelect`, `MultiSelect`, `AsyncMultiSelect` components, remove any references to legacy `react-select` components (name starting with `RS`)
+
+`AsyncSelect`/`AsyncMultiSelect`: change `loadOptions` prop for `fetchFunction`.
+
+4. `ComponentToggle`
+
+If used, try to replace with a `Toggle` and conditional rendering. The component _is_ marked as deprecated, but won't be removed until v7.
+
+5. Misc. minor updates:
+
+- `ContainerPanel` <br/> Re-add `topBorder` if desired
+- `Tabs` <br/> Replace `pillInverse`, `pillCompactInverse`, `pillOutline`, and `pillCompactOutline` styles if used
+- `OptionsPanelIntro` <br/> Remove `border` prop if set
+- `NumberPicker` <br/> Update values for the `size` prop if set; `'compact' | 'small' | 'default'` &rarr; `'small' | 'medium' | 'default' | 'large'`
+- `NumberPicker` <br/> If using `<Button>` as a custom control within, add `slot={null}`
 
 ## v1.x.x to v2.0.1
 
@@ -14,6 +59,7 @@ Here's how to upgrade between various versions of ES UI components.
 2. Replace editor imports
 
 `application-blocks-editor.css`
+
 ```diff
 @import '~@eightshift/ui-components/dist/assets/wp-font-enhancements.css';
 - @import '~@eightshift/ui-components/dist/assets/style.css';
@@ -21,6 +67,7 @@ Here's how to upgrade between various versions of ES UI components.
 ```
 
 `application-admin.css`
+
 ```diff
 - @import '~@eightshift/ui-components/dist/assets/style.css';
 + @import '~@eightshift/ui-components/dist/assets/style-admin.css';

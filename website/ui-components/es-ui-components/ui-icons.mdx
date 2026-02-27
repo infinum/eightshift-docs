@@ -4,8 +4,10 @@ import { ComponentShowcase } from '../components/component-showcase';
 import { Button, InputField } from '@eightshift/ui-components';
 import { icons } from '@eightshift/ui-components/icons';
 
+Regular React components, use within components, option pages, sidebar, ...
+
 <ComponentShowcase
-	className='es:flex es:flex-wrap es:gap-2 !es:space-y-0 es:w-full'
+	className='es:flex es:flex-wrap es:gap-2 es:space-y-0! es:w-full'
 	fitWidth
 	preContent={(data, setData) => (
 		<InputField
@@ -38,6 +40,7 @@ import { icons } from '@eightshift/ui-components/icons';
 				onPress={() => {
 					navigator.clipboard.writeText(icon);
 				}}
+				type='simple'
 			/>
 		));
 	}}

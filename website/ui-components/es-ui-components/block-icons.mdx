@@ -4,6 +4,8 @@ import { ComponentShowcase } from '../components/component-showcase';
 import { Button, InputField } from '@eightshift/ui-components';
 import { icons, blockIcons, BlockIcon } from '@eightshift/ui-components/icons';
 
+Use within block manifests, or in your UI with the `<BlockIcon />` component.
+
 <ComponentShowcase
 	className='es:flex es:flex-wrap es:gap-2 !es:space-y-0 es:w-full'
 	fitWidth
@@ -22,24 +24,25 @@ import { icons, blockIcons, BlockIcon } from '@eightshift/ui-components/icons';
 			data?.length > 0 ? k.toLowerCase().includes(data?.toLowerCase()) : true
 		);
 
-    	if (filteredIcons.length < 1)  {
-    		return (
-    			<span>Nothing found</span>
-    		);
-    	}
+		if (filteredIcons.length < 1)  {
+			return (
+				<span>Nothing found</span>
+			);
+		}
 
-    	return filteredIcons.map((icon, index) => (
-    		<Button
-    			key={index}
-    			className='esd-icon-showcase-button'
-    			icon={<BlockIcon iconName={icon} />}
-    			tooltip={<span className='es:font-mono'>{icon}</span>}
-    			aria-label={icon}
-    			onPress={() => {
-    				navigator.clipboard.writeText(icon);
-    			}}
-    		/>
-    	));
-    }}
+		return filteredIcons.map((icon, index) => (
+			<Button
+				key={index}
+				className='esd-icon-showcase-button'
+				icon={<BlockIcon iconName={icon} />}
+				tooltip={<span className='es:font-mono'>{icon}</span>}
+				aria-label={icon}
+				onPress={() => {
+					navigator.clipboard.writeText(icon);
+				}}
+				type='simple'
+			/>
+		));
+	}}
 
 </ComponentShowcase>

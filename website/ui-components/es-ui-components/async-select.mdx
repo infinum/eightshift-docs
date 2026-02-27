@@ -10,10 +10,30 @@ import { demoGetData } from './select-helpers';
 		<AsyncSelect
 			value={data}
 			onChange={setData}
-			loadOptions={demoGetData}
+			fetchFunction={demoGetData}
 		/>
 	)}
 </ComponentShowcase>
+
+## Default data fetching
+
+To define how label, value, subtitle (optional), and icon (optional) are defined in the options, use `getLabel`, `getValue`, `getSubtitle`, `getIcon`.
+
+```jsx
+<AsyncSelect
+	value={value}
+	onChange={(value) => setValue(value)}
+	fetchUrl={(searchText) =>
+		searchText?.length >= 3 ? `http://example-api.com?limit=5&search=${searchText}` : 'http://example-api.com?limit=5'
+	}
+	getLabel={(item) => item?.name}
+	getValue={(item) => item?.id}
+/>
+```
+
+## Alternate data fetching
+
+Provide a function that fetches data asynchronously and returns it in the format of an array of objects with `label` and `value` properties.
 
 ```jsx
 const getOptions = async () => {
@@ -23,13 +43,13 @@ const getOptions = async () => {
 <AsyncSelect
 	value={value}
 	onChange={(value) => setValue(value)}
-	loadOptions={getOptions}
+	fetchFunction={getOptions}
 />
 ```
 
 :::note
 Props are mostly the same as for the [Single select](/components/es-ui-components/select),
-with the exceptions of `options` (which is replaced with `loadOptions`) and `simpleValue`, which is not supported.
+with the exceptions of `options` (which is replaced with `fetchFunction`) and `simpleValue`, which is not supported.
 :::
 
 For the complete list of props, use your IDE's autocomplete functionality.
