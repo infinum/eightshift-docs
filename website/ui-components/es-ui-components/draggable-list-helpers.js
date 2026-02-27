@@ -59,7 +59,7 @@ export const DraggableDemo = ({ data, setData, ...rest }) => {
 		<Draggable
 			items={data}
 			onChange={setData}
-			className='es:grid es:grid-cols-2'
+			className='es:grid es:grid-cols-2 es:gap-2'
 			{...rest}
 		>
 			{(item) => {
