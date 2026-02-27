@@ -1,0 +1,59 @@
+/**
+ * A simple loading indicator.
+ *
+ * @component
+ * @param {ImageProps} props - Spinner props.
+ * @param {string} [props.className] - Additional classes to pass to the spinner.
+ *
+ * @returns {JSX.Element} The Spinner component.
+ *
+ * @example
+ * <Spinner />
+ *
+ * @preserve
+ */
+
+/**
+ * Slices the string in the middle and inputs the provided separator so that the string is maxLength characters long.
+ *
+ * @param {string} input             - String to slice.
+ * @param {number} maxLength         - Maximum allowed string length.
+ * @param {string} [separator='...'] - Separator to insert.
+ *
+ * @access public
+ *
+ * @returns {string|Error} Truncated string or error if separator length exceeds maxLength.
+ *
+ * Usage:
+ * ```js
+ * truncateMiddle('https://eightshift.com/contact/', 22);
+ * ```
+ *
+ * Output:
+ * ```js
+ * "https://ei.../contact/"
+ *
+ * @preserve
+ */
+
+/**
+ * Un-escapes HTML entities.
+ *
+ * @param {string} input - Input string.
+ *
+ * @access public
+ *
+ * @returns {string} String with HTML entities unescaped.
+ *
+ * Usage:
+ * ```js
+ * unescapeHTML('Test&#38;Up');
+ * ```
+ *
+ * Output:
+ * ```js
+ * Test&Up
+ * ```
+ *
+ * @preserve
+ */

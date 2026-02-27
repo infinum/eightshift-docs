@@ -1,0 +1,169 @@
+/**
+ * @typedef {Object} PopoverProps
+ * @property {React.Ref} props.triggerRef - Ref of the trigger button. In uncontrolled mode, this element will be used to open the popover. In controlled mode, the popover will be anchored to this element.
+ * @property {boolean} [props.openByDefault=false] - (**Controlled mode**) If `true`, the popover is open by default.
+ * @property {boolean} props.isOpen - (**Uncontrolled mode**) If `true`, the popover is open.
+ * @property {Function} props.onOpenChange - (**Uncontrolled mode**) Function to run when the popover is opened or closed. `(isOpen: boolean) => void`.
+ * @property {PopoverPlacement} props.placement - The placement of the popover.
+ * @property {string} [props.className] - Classes to pass to the popover contents.
+ * @property {string} [props.wrapperClassName] - Classes to pass to the popover wrapper.
+ * @property {Object} props.style - Styles to pass to the popover.
+ * @property {number} props.offset - Offset from the trigger element, on the same axis as the placement of the popover (e.g. if `placement` is `left`, this controls the horizontal spacing from the element).
+ * @property {number} props.crossOffset - Offset from the trigger element, on the opposite axis as the placement of the popover (e.g. if `placement` is `left`, this controls the vertical spacing from the element).
+ * @property {number} props.containerPadding - Space that should be left between the popover and the edge of the container (the default container is browser window).
+ * @property {boolean} props.shouldFlip - If `true`, the popover should flip when there is not enough space.
+ * @property {Function} [props.shouldCloseOnInteractOutside=() => true] - Allows ignoring close events for certain elements. `(element: HTMLElement) => boolean`.
+ * @property {boolean} [props.hidden] - If `true`, the component is not rendered.
+ *
+ * @typedef {'bottom' | 'bottom left' | 'bottom right' | 'bottom start' | 'bottom end' | 'top' | 'top left' | 'top right' | 'top start' | 'top end' | 'left' | 'left top' | 'left bottom' | 'start' | 'start top' | 'start bottom' | 'right' | 'right top' | 'right bottom' | 'end' | 'end top' | 'end bottom'} PopoverPlacement
+ *
+ * @preserve
+ */
+
+/**
+ * @typedef {import('../button/button').ButtonProps} ButtonProps
+ *
+ * @preserve
+ * */
+
+/**
+ * A component that can provide a 3x3 or a 2x2 grid of positions to pick from.
+ * Replaces the default Gutenberg `AlignmentMatrixControl`/`BlockAlignmentMatrixControl`/`BlockAlignmentMatrixToolbar`.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {MatrixSize} [props.size='3x3'] - The size of the matrix. Can be either '3x3' or '2x2'.
+ * @param {string} props.value - The currently selected value.
+ * @param {Function} props.onChange - Function to run when the selection changes.
+ * @param {string} [props.tooltip='Position'] - Tooltip text to display on the trigger button.
+ * @param {string} [props.label] - Label to display.
+ * @param {JSX.Element} [props.icon] - Icon to display within the button.
+ * @param {string} [props.subtitle] - Subtitle to display.
+ * @param {string} [props.popoverPosition='bottom'] - The position of the popover.
+ * @param {boolean} [props.hidden] - If `true`, the component is not rendered.
+ *
+ * @returns {JSX.Element} The MatrixAlign component.
+ *
+ * @typedef {'3x3' | '2x2'} MatrixSize
+ * @typedef {'bottom' | 'bottom left' | 'bottom right' | 'bottom start' | 'bottom end' | 'top' | 'top left' | 'top right' | 'top start' | 'top end' | 'left' | 'left top' | 'left bottom' | 'start' | 'start top' | 'start bottom' | 'right' | 'right top' | 'right bottom' | 'end' | 'end top' | 'end bottom'} PopoverPosition
+ *
+ * @example
+ * <MatrixAlign
+ * 		size='3x3'
+ * 		value='top left'
+ * 		onChange={setAlignment}
+ * />
+ *
+ * @preserve
+ */
+
+/**
+ * A popover component.
+ *
+ * Two modes of operation are supported:
+ * - **controlled mode**: pass `isOpen` and `onOpenChange` to control when the popover is open.
+ * - **uncontrolled mode**: pass `openByDefault` to set the initial popover state. The show/hide state will be managed internally, based on the interaction with the trigger button.
+ *
+ * @component
+ * @param {PopoverProps} props - Component props.
+ *
+ * @returns {JSX.Element} The Popover component.
+ *
+ * @example
+ * // Uncontrolled mode.
+ * const ref = useRef(null);
+ *
+ * <Button forwardedRef={ref}>Open popover</Button>
+ *
+ * <Popover
+ * 	triggerRef={triggerRef}
+ * 	openByDefault={true}
+ * >
+ * 	...
+ * </Popover>
+ *
+ * @example
+ * // Controlled mode.
+ * const [open, setOpen] = useState(false);
+ *
+ * <Button onPress={() => setOpen(true)}>Open popover</Button>
+ *
+ * <Popover
+ * 	onOpenChange={setOpen}
+ * 	isOpen={open}
+ * 	triggerRef={triggerRef}
+ * >
+ * 	...
+ * 	<Button onPress={() => setOpen(false)}>Close popover</Button>
+ * </Popover>
+ *
+ * @preserve
+ */
+
+/**
+ * A simple version of the Popover component that includes a trigger button.
+ * The control of the popover is handled internally. A custom trigger can be provided.
+ *
+ * If you need more control over the trigger, use the Popover component directly.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {JSX.Element} props.trigger - Allows using a custom trigger element.
+ * @param {JSX.Element} [props.triggerButtonIcon] - The icon for the built-in trigger button.
+ * @param {string} props.triggerButtonLabel - The label for the built-in trigger button.
+ * @param {ButtonProps} props.triggerButtonProps - Props to pass to the built-in trigger button.
+ * @param {Function} props.onOpenChange - Function to run when the popover is opened or closed. `(isOpen: boolean) => void`.
+ * @param {boolean} props.openByDefault - If `true`, the popover is open by default.
+ * @param {PopoverPlacement} props.placement - The placement of the popover.
+ * @param {string} props.className - Classes to pass to the popover.
+ * @param {Object} props.style - Styles to pass to the popover.
+ * @param {number} props.offset - Offset from the trigger element, on the same axis as the placement of the popover (e.g. if `placement` is `left`, this controls the horizontal spacing from the element).
+ * @param {number} props.crossOffset - Offset from the trigger element, on the opposite axis as the placement of the popover (e.g. if `placement` is `left`, this controls the vertical spacing from the element).
+ * @param {number} props.containerPadding - Space that should be left between the popover and the edge of the container (the default container is browser window).
+ * @param {boolean} [props.hidden] - If `true`, the component is not rendered.
+ *
+ * @returns {JSX.Element} The TriggeredPopover component.
+ *
+ * @typedef {'bottom' | 'bottom left' | 'bottom right' | 'bottom start' | 'bottom end' | 'top' | 'top left' | 'top right' | 'top start' | 'top end' | 'left' | 'left top' | 'left bottom' | 'start' | 'start top' | 'start bottom' | 'right' | 'right top' | 'right bottom' | 'end' | 'end top' | 'end bottom'} PopoverPlacement
+ *
+ * @example
+ * <TriggeredPopover>
+ * 		...
+ * </TriggeredPopover>
+ *
+ * @preserve
+ */
+
+/**
+ * Returns a PascalCase-formatted string.
+ *
+ * @param {string} input - String to convert.
+ *
+ * @access public
+ *
+ * @return {string} *PascalCase*-formatted string.
+ *
+ * Usage:
+ * ```js
+ * pascalCase('New super Test-title') // => 'NewSuperTestTitle'
+ * pascalCase(null) // => ''
+ * ```
+ *
+ * @preserve
+ */
+
+/**
+ * Returns a camelCase-formatted string.
+ *
+ * @param {string} input - String to convert.
+ *
+ * @access public
+ *
+ * @return {string} *camelCase*-formatted string.
+ *
+ * @example
+ * camelCase('New super Test-title') // => 'newSuperTestTitle'
+ * camelCase(null) // => ''
+ *
+ * @preserve
+ */

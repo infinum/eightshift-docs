@@ -1,0 +1,327 @@
+/**
+ * @typedef {Object} ContainerGroupProps
+ * @property {string} [className] - Classes to pass to the container group.
+ * @property {string} [wrapClassName] - Classes to pass to the control wrapper - only if label is set.
+ * @property {string|JSX.Element} [label] - Label to show above the container group.
+ * @property {boolean} [hidden] - If `true`, the component is not rendered.
+ * @property {boolean} [horizontal] - If `true`, the component uses a horizontal orientation.
+ * @property {string|JSX.Element} [as] - The HTML element or React component to render as the container group.
+ *
+ * @preserve
+ */
+
+/**
+ * @typedef {Object} ContainerProps
+ * @property {string} [props.className] - Classes to pass to the container.
+ * @property {boolean} [props.hidden] - If `true`, the component is not rendered.
+ * @property {boolean} [props.accent] - If `true`, applies accent styling to the container.
+ * @property {boolean} [props.elevated] - If `true`, applies elevated styling (shadow) to the container.
+ * @property {boolean} [props.primary] - If `true`, applies primary styling (rounded full) to the container.
+ * @property {boolean} [props.isChild] - If `true`, applies child-specific styling for nested containers.
+ * @property {boolean} [props.compact] - If `true`, the vertical padding is reduced for a more compact appearance.
+ * @property {boolean} [props.standalone] - If `true`, the border radius is not adjusted automatically, based on neightboring containers.
+ * @property {boolean} [props.centered] - If `true`, the content is centered vertically.
+ * @property {boolean} [props.lessSpaceStart] - If `true`, space on the start (left) is reduced. Useful for symmetric components.
+ * @property {boolean} [props.lessSpaceEnd] - If `true`, space on the end (right) is reduced. For example, use with text fields, or taller items.
+ * @property {string|JSX.Element} [props.as] - The HTML element or React component to render as the container.
+ *
+ * @preserve
+ */
+
+/**
+ * @typedef {Object} PopoverProps
+ * @property {React.Ref} props.triggerRef - Ref of the trigger button. In uncontrolled mode, this element will be used to open the popover. In controlled mode, the popover will be anchored to this element.
+ * @property {boolean} [props.openByDefault=false] - (**Controlled mode**) If `true`, the popover is open by default.
+ * @property {boolean} props.isOpen - (**Uncontrolled mode**) If `true`, the popover is open.
+ * @property {Function} props.onOpenChange - (**Uncontrolled mode**) Function to run when the popover is opened or closed. `(isOpen: boolean) => void`.
+ * @property {PopoverPlacement} props.placement - The placement of the popover.
+ * @property {string} [props.className] - Classes to pass to the popover contents.
+ * @property {string} [props.wrapperClassName] - Classes to pass to the popover wrapper.
+ * @property {Object} props.style - Styles to pass to the popover.
+ * @property {number} props.offset - Offset from the trigger element, on the same axis as the placement of the popover (e.g. if `placement` is `left`, this controls the horizontal spacing from the element).
+ * @property {number} props.crossOffset - Offset from the trigger element, on the opposite axis as the placement of the popover (e.g. if `placement` is `left`, this controls the vertical spacing from the element).
+ * @property {number} props.containerPadding - Space that should be left between the popover and the edge of the container (the default container is browser window).
+ * @property {boolean} props.shouldFlip - If `true`, the popover should flip when there is not enough space.
+ * @property {Function} [props.shouldCloseOnInteractOutside=() => true] - Allows ignoring close events for certain elements. `(element: HTMLElement) => boolean`.
+ * @property {boolean} [props.hidden] - If `true`, the component is not rendered.
+ *
+ * @typedef {'bottom' | 'bottom left' | 'bottom right' | 'bottom start' | 'bottom end' | 'top' | 'top left' | 'top right' | 'top start' | 'top end' | 'left' | 'left top' | 'left bottom' | 'start' | 'start top' | 'start bottom' | 'right' | 'right top' | 'right bottom' | 'end' | 'end top' | 'end bottom'} PopoverPlacement
+ *
+ * @preserve
+ */
+
+/**
+ * @typedef {import('../button/button').ButtonProps} ButtonProps
+ *
+ * @preserve
+ * */
+
+/**
+ * A Draggable item handle.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {string} [props.className] - Classes to pass to the handle.
+ *
+ * @returns {JSX.Element} The DraggableListItemHandle component.
+ *
+ * @example
+ * <DraggableListItemHandle />
+ *
+ * @preserve
+ */
+
+/**
+ * A DraggableList item.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {JSX.Element} [props.icon] - Icon to display in the label.
+ * @param {string} [props.label] - Label to display.
+ * @param {string} [props.subtitle] - Subtitle to display.
+ * @param {string} [props.textValue] - The text value of the item.
+ * @param {string} [props.className] - Classes to pass to the label.
+ *
+ * @returns {JSX.Element} The DraggableList component.
+ *
+ * @see {@link DraggableList} for usage example.
+ *
+ * @preserve
+ */
+
+/**
+ * A component that allows re-ordering a list of items.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {JSX.Element} [props.icon] - Icon to display in the label.
+ * @param {string} [props.label] - Label to display.
+ * @param {string} [props.subtitle] - Subtitle to display.
+ * @param {string} [props.help] - Help text to display below the input.
+ * @param {JSX.Element|JSX.Element[]} [props.actions] - Actions to display to the right of the label.
+ * @param {Object<string, any>[]} props.items - Data to display in the list.
+ * @param {Function} props.onChange - Function to run when the items change.
+ * @param {boolean} [props.hidden] - If `true`, the component is not rendered.
+ * @param {boolean} [props.disabled] - If `true`, item reordering is disabled.
+ * @param {Function} [props.onAfterItemRemove] - Function to run after an item is removed.
+ * @param {string} [props.className] - Classes to pass to the item wrapper.
+ *
+ * @returns {JSX.Element} The DraggableList component.
+ *
+ * @example
+ * <DraggableList
+ * 	label='My draggable list'
+ * 	items={items}
+ * 	onChange={setItems}
+ * >
+ * 	{(item) => {
+ * 		const { title, updateData } = item;
+ *
+ * 		return (
+ * 			<DraggableListItem
+ * 				label={title ?? 'New item'}
+ * 				icon={icons.myIcon}
+ * 			>
+ * 				<InputField
+ * 					label='Title'
+ * 					type='text'
+ * 					value={title}
+ * 					onChange={(value) => updateData({ title: value })}
+ * 				/>
+ * 			</DraggableListItem>
+ * 		);
+ * 	}}
+ * </DraggableList>
+ *
+ * @preserve
+ */
+
+/**
+ * A container component to wrap other components, providing consistent styling and spacing.
+ *
+ * @component
+ * @param {ContainerProps} props
+ * @param {React.Ref<HTMLDivElement>} ref
+ *
+ * @type React.ForwardRefRenderFunction<HTMLDivElement, ContainerProps>
+ *
+ * @returns {JSX.Element} The Container component.
+ *
+ * @example
+ * <Container accent elevated>
+ *   <p>This is a container with accent and elevated styles.</p>
+ * </Container>
+ *
+ * @preserve
+ */
+
+/**
+ * A container group component to wrap multiple Container components, providing consistent spacing between them.
+ *
+ * @component
+ * @param {ContainerGroupProps} props
+ * @param {React.Ref<HTMLDivElement>} ref
+ *
+ * @type React.ForwardRefRenderFunction<HTMLDivElement, ContainerGroupProps>
+ *
+ * @returns {JSX.Element} The ContainerGroup component.
+ *
+ * @example
+ * <ContainerGroup>
+ *   <Container>First container</Container>
+ *   <Container>Second container</Container>
+ * </ContainerGroup>
+ *
+ * @preserve
+ */
+
+/**
+ * A popover component.
+ *
+ * Two modes of operation are supported:
+ * - **controlled mode**: pass `isOpen` and `onOpenChange` to control when the popover is open.
+ * - **uncontrolled mode**: pass `openByDefault` to set the initial popover state. The show/hide state will be managed internally, based on the interaction with the trigger button.
+ *
+ * @component
+ * @param {PopoverProps} props - Component props.
+ *
+ * @returns {JSX.Element} The Popover component.
+ *
+ * @example
+ * // Uncontrolled mode.
+ * const ref = useRef(null);
+ *
+ * <Button forwardedRef={ref}>Open popover</Button>
+ *
+ * <Popover
+ * 	triggerRef={triggerRef}
+ * 	openByDefault={true}
+ * >
+ * 	...
+ * </Popover>
+ *
+ * @example
+ * // Controlled mode.
+ * const [open, setOpen] = useState(false);
+ *
+ * <Button onPress={() => setOpen(true)}>Open popover</Button>
+ *
+ * <Popover
+ * 	onOpenChange={setOpen}
+ * 	isOpen={open}
+ * 	triggerRef={triggerRef}
+ * >
+ * 	...
+ * 	<Button onPress={() => setOpen(false)}>Close popover</Button>
+ * </Popover>
+ *
+ * @preserve
+ */
+
+/**
+ * A simple version of the Popover component that includes a trigger button.
+ * The control of the popover is handled internally. A custom trigger can be provided.
+ *
+ * If you need more control over the trigger, use the Popover component directly.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {JSX.Element} props.trigger - Allows using a custom trigger element.
+ * @param {JSX.Element} [props.triggerButtonIcon] - The icon for the built-in trigger button.
+ * @param {string} props.triggerButtonLabel - The label for the built-in trigger button.
+ * @param {ButtonProps} props.triggerButtonProps - Props to pass to the built-in trigger button.
+ * @param {Function} props.onOpenChange - Function to run when the popover is opened or closed. `(isOpen: boolean) => void`.
+ * @param {boolean} props.openByDefault - If `true`, the popover is open by default.
+ * @param {PopoverPlacement} props.placement - The placement of the popover.
+ * @param {string} props.className - Classes to pass to the popover.
+ * @param {Object} props.style - Styles to pass to the popover.
+ * @param {number} props.offset - Offset from the trigger element, on the same axis as the placement of the popover (e.g. if `placement` is `left`, this controls the horizontal spacing from the element).
+ * @param {number} props.crossOffset - Offset from the trigger element, on the opposite axis as the placement of the popover (e.g. if `placement` is `left`, this controls the vertical spacing from the element).
+ * @param {number} props.containerPadding - Space that should be left between the popover and the edge of the container (the default container is browser window).
+ * @param {boolean} [props.hidden] - If `true`, the component is not rendered.
+ *
+ * @returns {JSX.Element} The TriggeredPopover component.
+ *
+ * @typedef {'bottom' | 'bottom left' | 'bottom right' | 'bottom start' | 'bottom end' | 'top' | 'top left' | 'top right' | 'top start' | 'top end' | 'left' | 'left top' | 'left bottom' | 'start' | 'start top' | 'start bottom' | 'right' | 'right top' | 'right bottom' | 'end' | 'end top' | 'end bottom'} PopoverPlacement
+ *
+ * @example
+ * <TriggeredPopover>
+ * 		...
+ * </TriggeredPopover>
+ *
+ * @preserve
+ */
+
+/**
+ * Allows for stacking elements horizontally, with a gap between them.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {JSX.Element} [props.as] - Element to render the component as. Defaults to `div`.
+ * @param {boolean} [props.noWrap] - If `true`, the children will not wrap if their size exceeds the container size.
+ * @param {string} [props.className] - Classes to pass to the component.
+ * @param {boolean} [props.hidden] - If `true`, the component is not rendered.
+ *
+ * @returns {JSX.Element} The HStack component.
+ *
+ * @example
+ * <HStack>
+ * 	...
+ * </HStack>
+ *
+ * @preserve
+ */
+
+/**
+ * Multi-select menu.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {string} [props.icon] - Icon of the component.
+ * @param {string} [props.help] - Help text of the component.
+ * @param {string} [props.label] - Label of the component.
+ * @param {boolean} [props.inline] - Whether the Select menu is displayed inline with the label, to the right.
+ * @param {JSX.Element|JSX.Element[]} [props.actions] - Actions to show to the right of the label.
+ * @param {string} [props.subtitle] - Subtitle of the component.
+ * @param {{label: string, value: string, metadata: Object<string, any>?}[]} props.options - Options to display in the select. `[{ label: string, value: string }]`.
+ * @param {string|{label: string, value: string, metadata: Object<string, any>?}} props.value - Current value of the select.
+ * @param {Function} props.onChange - Function to call when the value changes.
+ * @param {boolean} [props.simpleValue=false] - If `true`, instead of using a `{label: '', value: ''}` value type, a string is used (just the value).
+ * @param {string} [props.groupKey] - If provided, the options will be grouped by this key.
+ * @param {Object} [props.groupValueMapping] - If provided, the group headers will be mapped to these labels/icons.
+ * @param {boolean} [props.clearable] - Whether the select is clearable.
+ * @param {boolean} [props.disabled] - Whether the select is disabled.
+ * @param {string} [props.placeholder] - Placeholder text to show when no value is selected.
+ * @param {JSX.Element} [props.customMenuOption] - If provided, replaces the default item in the dropdown menu (react-select's `components.Option`).
+ * @param {JSX.Element} [props.customValueDisplay] - If provided, replaces the default current value display of each selected item (react-select's `components.MultiValue`).
+ * @param {JSX.Element} [props.customDropdownArrow] - If provided, replaces the default dropdown arrow indicator.
+ * @param {string} [props.className] - Classes to pass to the select menu.
+ * @param {boolean} [props.noMinWidth=false] - If `true`, the select menu will not have a minimum width.
+ * @param {boolean} [props.searchable] - If `true`, the menu will allow searching through the options.
+ * @param {boolean} [props.flat] - If `true`, component will look more flat. Useful for nested layer of controls.
+ * @param {boolean} [props.noReorder] - If `true`, the option for reordering selected items is disabled.
+ * @param {SelectSize} [props.size='default'] - Sets the size of the input field.
+ * @param {boolean} [props.hidden] - If `true`, the component is not rendered.
+ *
+ * @typedef {'small' | 'medium' | 'default' | 'large'} SelectSize
+ *
+ * @returns {JSX.Element} The MultiSelect component.
+ *
+ * @example
+ * const [value, setValue] = useState(null);
+ *
+ * const options = [
+ * 	{ label: 'Option 1', value: 'option-1' },
+ * 	{ label: 'Option 2', value: 'option-2' },
+ * 	{ label: 'Option 3', value: 'option-3' },
+ * ];
+ *
+ * <MultiSelect
+ * 	label='Select items'
+ * 	options={loadOptions}
+ * 	value={value}
+ * 	onChange={setValue}
+ * />
+ *
+ * @preserve
+ */

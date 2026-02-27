@@ -1,0 +1,301 @@
+/**
+ * @typedef {Object} ContainerGroupProps
+ * @property {string} [className] - Classes to pass to the container group.
+ * @property {string} [wrapClassName] - Classes to pass to the control wrapper - only if label is set.
+ * @property {string|JSX.Element} [label] - Label to show above the container group.
+ * @property {boolean} [hidden] - If `true`, the component is not rendered.
+ * @property {boolean} [horizontal] - If `true`, the component uses a horizontal orientation.
+ * @property {string|JSX.Element} [as] - The HTML element or React component to render as the container group.
+ *
+ * @preserve
+ */
+
+/**
+ * @typedef {Object} ContainerProps
+ * @property {string} [props.className] - Classes to pass to the container.
+ * @property {boolean} [props.hidden] - If `true`, the component is not rendered.
+ * @property {boolean} [props.accent] - If `true`, applies accent styling to the container.
+ * @property {boolean} [props.elevated] - If `true`, applies elevated styling (shadow) to the container.
+ * @property {boolean} [props.primary] - If `true`, applies primary styling (rounded full) to the container.
+ * @property {boolean} [props.isChild] - If `true`, applies child-specific styling for nested containers.
+ * @property {boolean} [props.compact] - If `true`, the vertical padding is reduced for a more compact appearance.
+ * @property {boolean} [props.standalone] - If `true`, the border radius is not adjusted automatically, based on neightboring containers.
+ * @property {boolean} [props.centered] - If `true`, the content is centered vertically.
+ * @property {boolean} [props.lessSpaceStart] - If `true`, space on the start (left) is reduced. Useful for symmetric components.
+ * @property {boolean} [props.lessSpaceEnd] - If `true`, space on the end (right) is reduced. For example, use with text fields, or taller items.
+ * @property {string|JSX.Element} [props.as] - The HTML element or React component to render as the container.
+ *
+ * @preserve
+ */
+
+/**
+ * A Draggable item handle.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {string} [props.className] - Classes to pass to the handle.
+ *
+ * @returns {JSX.Element} The DraggableHandle component.
+ *
+ * @example
+ * <DraggableHandle />
+ *
+ * @preserve
+ */
+
+/**
+ * A Draggable item handle.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {string} [props.className] - Classes to pass to the handle.
+ *
+ * @returns {JSX.Element} The DraggableListItemHandle component.
+ *
+ * @example
+ * <DraggableListItemHandle />
+ *
+ * @preserve
+ */
+
+/**
+ * A DraggableList item.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {JSX.Element} [props.icon] - Icon to display in the label.
+ * @param {string} [props.label] - Label to display.
+ * @param {string} [props.subtitle] - Subtitle to display.
+ * @param {string} [props.textValue] - The text value of the item.
+ * @param {string} [props.className] - Classes to pass to the label.
+ *
+ * @returns {JSX.Element} The DraggableList component.
+ *
+ * @see {@link DraggableList} for usage example.
+ *
+ * @preserve
+ */
+
+/**
+ * A component that allows re-ordering a list of items.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {JSX.Element} [props.icon] - Icon to display in the label.
+ * @param {string} [props.label] - Label to display.
+ * @param {string} [props.subtitle] - Subtitle to display.
+ * @param {string} [props.help] - Help text to display below the input.
+ * @param {JSX.Element|JSX.Element[]} [props.actions] - Actions to display to the right of the label.
+ * @param {Object<string, any>[]} props.items - Data to display in the list.
+ * @param {Function} props.onChange - Function to run when the items change.
+ * @param {boolean} [props.hidden] - If `true`, the component is not rendered.
+ * @param {boolean} [props.disabled] - If `true`, item reordering is disabled.
+ * @param {Function} [props.onAfterItemRemove] - Function to run after an item is removed.
+ * @param {string} [props.className] - Classes to pass to the item wrapper.
+ *
+ * @returns {JSX.Element} The DraggableList component.
+ *
+ * @example
+ * <DraggableList
+ * 	label='My draggable list'
+ * 	items={items}
+ * 	onChange={setItems}
+ * >
+ * 	{(item) => {
+ * 		const { title, updateData } = item;
+ *
+ * 		return (
+ * 			<DraggableListItem
+ * 				label={title ?? 'New item'}
+ * 				icon={icons.myIcon}
+ * 			>
+ * 				<InputField
+ * 					label='Title'
+ * 					type='text'
+ * 					value={title}
+ * 					onChange={(value) => updateData({ title: value })}
+ * 				/>
+ * 			</DraggableListItem>
+ * 		);
+ * 	}}
+ * </DraggableList>
+ *
+ * @preserve
+ */
+
+/**
+ * A component that allows re-ordering items freely.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {Object<string, any>[]} props.items - Data to display in the list.
+ * @param {Function} props.onChange - Function to run when the items change.
+ * @param {boolean} [props.hidden] - If `true`, the component is not rendered.
+ * @param {boolean} [props.noReorder] - If `true`, item reordering is disabled.
+ * @param {Function} [props.onAfterItemRemove] - Function to run after an item is removed.
+ * @param {'both' | 'horizontal' | 'vertical'} [props.axis='both'] - Which axis to allow dragging on.
+ * @param {string} [props.className] - Classes to pass to the component.
+ *
+ * @returns {JSX.Element} The Draggable component.
+ *
+ * @example
+ * <Draggable
+ * 	items={items}
+ * 	onChange={setItems}
+ * >
+ * 	{(item) => {
+ * 		const { title, updateData } = item;
+ *
+ * 		return (
+ * 			<div>
+ * 				<DraggableHandle />
+ *
+ * 				<span>{title}</span>
+ * 			</div>
+ * 		);
+ * 	}}
+ * </Draggable>
+ *
+ * @preserve
+ */
+
+/**
+ * A container component to wrap other components, providing consistent styling and spacing.
+ *
+ * @component
+ * @param {ContainerProps} props
+ * @param {React.Ref<HTMLDivElement>} ref
+ *
+ * @type React.ForwardRefRenderFunction<HTMLDivElement, ContainerProps>
+ *
+ * @returns {JSX.Element} The Container component.
+ *
+ * @example
+ * <Container accent elevated>
+ *   <p>This is a container with accent and elevated styles.</p>
+ * </Container>
+ *
+ * @preserve
+ */
+
+/**
+ * A container group component to wrap multiple Container components, providing consistent spacing between them.
+ *
+ * @component
+ * @param {ContainerGroupProps} props
+ * @param {React.Ref<HTMLDivElement>} ref
+ *
+ * @type React.ForwardRefRenderFunction<HTMLDivElement, ContainerGroupProps>
+ *
+ * @returns {JSX.Element} The ContainerGroup component.
+ *
+ * @example
+ * <ContainerGroup>
+ *   <Container>First container</Container>
+ *   <Container>Second container</Container>
+ * </ContainerGroup>
+ *
+ * @preserve
+ */
+
+/**
+ * Allows for stacking elements horizontally, with a gap between them.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {JSX.Element} [props.as] - Element to render the component as. Defaults to `div`.
+ * @param {boolean} [props.noWrap] - If `true`, the children will not wrap if their size exceeds the container size.
+ * @param {string} [props.className] - Classes to pass to the component.
+ * @param {boolean} [props.hidden] - If `true`, the component is not rendered.
+ *
+ * @returns {JSX.Element} The HStack component.
+ *
+ * @example
+ * <HStack>
+ * 	...
+ * </HStack>
+ *
+ * @preserve
+ */
+
+/**
+ * Allows for stacking elements vertically, with a gap between them.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {JSX.Element} [props.as] - Element to render the component as. Defaults to `div`.
+ * @param {boolean} [props.noWrap] - If `true`, the children will not wrap if their size exceeds the container size.
+ * @param {string} [props.className] - Classes to pass to the component.
+ * @param {boolean} [props.hidden] - If `true`, the component is not rendered.
+ *
+ * @returns {JSX.Element} The VStack component.
+ *
+ * @example
+ * <VStack>
+ * 	...
+ * </VStack>
+ *
+ * @preserve
+ */
+
+/**
+ * Component that allows wrapping components with a common layout that includes a label and optional icon, subtitle, actions, and help text.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {JSX.Element} [props.icon] - Icon to display in the label.
+ * @param {string} props.label - Label to display.
+ * @param {string} props.subtitle - Subtitle to display below the label.
+ * @param {JSX.Element|JSX.Element[]} [props.actions] - Actions to show to the right of the label.
+ * @param {string} [props.help] - Help text to show below the component.
+ * @param {boolean} [props.inline] - If `true`, the component is displayed inline - icon/label/subtitle are on the left, the passed content is on the right. **Note:** not compatible with `actions`.
+ * @param {string} [props.className] - Classes to pass to the main element wrapper.
+ * @param {string} [props.controlContainerClassName] - Classes to pass to the control container.
+ * @param {string} [props.labelContainerClassName] - Classes to pass to the label container.
+ * @param {string} [props.labelClassName] - Classes to pass to the label.
+ * @param {boolean} [props.fullWidthLabel] - If `true`, the label expands to fill up the whole width, instead of taking up only the space it needs.
+ * @param {boolean} [props.noHelpInset] - If `true`, the help text is not inset.
+ * @param {JSX.Element} [props.labelAs] - If provided, the label (includes icon and subtitle) will be rendered as this element.
+ * @param {boolean} [props.hidden] - If `true`, the component is not rendered.
+ *
+ * @returns {JSX.Element} The BaseControl component.
+ *
+ * @example
+ * <BaseControl label='My component' icon={icons.myIcon}>
+ * 	<div>Content</div>
+ * </BaseControl>
+ *
+ * @preserve
+ */
+
+/**
+ * Component that displays a label, with an optional icon and subtitle.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {JSX.Element} [props.icon] - Icon to display.
+ * @param {JSX.Element} [props.endIcon] - Icon to display at the end of the label.
+ * @param {string} [props.label] - Label to display.
+ * @param {string} [props.subtitle] - Subtitle to display.
+ * @param {JSX.Element} [props.as] - Element to render the label as. Not compatible with `contentsOnly`.
+ * @param {string} [props.className] - Classes to pass to the label.
+ * @param {string} [props.iconClassName] - Classes to pass to the icon.
+ * @param {string} [props.labelClassName] - Classes to pass to the label.
+ * @param {string} [props.subtitleClassName] - Classes to pass to the subtitle.
+ * @param {string} [props.labelSubtitleWrapClassName] - Classes to pass to the label/subtitle wrapper (not applicable when `contentsOnly` is set).
+ * @param {boolean} [props.fullWidth=false] - If `true`, the component will take up as much space as it can.
+ * @param {boolean} [props.contentsOnly] - If `true`, only the label (/icon/subtitle) will be rendered, without any wrapping elements. Useful if you want to provide your own layout.
+ * @param {boolean} [props.hidden] - If `true`, the component is not rendered.
+ * @param {boolean} [props.fullSizeSubtitle] - If `true`, the subtitle is the same size as the label.
+ * @param {boolean} [props.inlineSubtitle] - If `true`, the subtitle is shown after the label instead of below it.
+ *
+ * @returns {JSX.Element} The RichLabel component.
+ *
+ * @example
+ * <RichLabel
+ * 	icon={icons.myIcon}
+ * 	label='My label'
+ * />
+ *
+ * @preserve
+ */

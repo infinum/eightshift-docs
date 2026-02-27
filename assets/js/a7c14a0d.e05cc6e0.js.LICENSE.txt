@@ -1,0 +1,57 @@
+/**
+ * Select menu with async loading.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {string} [props.label] - Label of the component.
+ * @param {string} [props.help] - Help text of the component.
+ * @param {string} [props.icon] - Icon of the component.
+ * @param {string} [props.subtitle] - Subtitle of the component.
+ * @param {JSX.Element|JSX.Element[]} [props.actions] - Actions to show to the right of the label.
+ * @param {boolean} [props.inline] - Whether the Select menu is displayed inline with the label, to the right.
+ * @param {{label: string, value: string, metadata: Object<string, any>?}} props.value - Current value of the select.
+ * @param {Function} props.onChange - Function to call when the value changes.
+ * @param {boolean} [props.clearable=false] - Whether the select is clearable.
+ * @param {boolean} [props.disabled=false] - Whether the select is disabled.
+ * @param {string} [props.placeholder] - Placeholder text to show when no value is selected.
+ * @param {Function} [props.getLabel] - Function to get the label for the item from the fetched data. `(item: Object<string, any>) => string`
+ * @param {Function} [props.getValue] - Function to get the value for the item from the fetched data. `(item: Object<string, any>) => string`
+ * @param {Function} [props.getMeta] - Function to get the metadata for the item from the fetched data. `(item: Object<string, any>) => Object<string, any>` (optional)
+ * @param {Function} [props.getIcon] - Function to get the icon for the item from the fetched data. `(item: Object<string, any>) => JSX.Element | string`
+ * @param {Function} [props.getSubtitle] - Function to get the subtitle for the item from the fetched data. `(item: Object<string, any>) => string`
+ * @param {Function} [props.getGroup] - Function to get the group name for the item from the fetched data. `(item: Object<string, any>) => string`
+ * @param {Function} [props.getData] - Function to pre-process the fetched data before it is used in the select. `(data: Object<string, any>[]) => Object<string, any>[]`
+ * @param {Function} [props.fetchUrl] - Function to get the URL for fetching data. Provides typed search text if entered. `(searchText: string) => string`
+ * @param {Object} [props.fetchConfig] - Configuration object for the fetch request, passed to the `fetch` function.
+ * @param {Function} [props.fetchFunction] - Allows overriding the default fetch function. `fetchFunction: (url: string, fetchOptions: Object<string, any>, searchText?: string) => Promise<Object<string, any>>`
+ * @param {Function} [props.processLoadedOptions] - Allows processing the options fetched from the source. `(options: Object<string, any>[]) => Object<string, any>[]`
+ * @param {JSX.Element} [props.customMenuOption] - If provided, replaces the default item in the dropdown menu. `({ value: string, label: string, subtitle: string, metadata: any }) => JSX.Element`
+ * @param {JSX.Element} [props.customValueDisplay] - If provided, replaces the default current value display of each selected item. `({ value: string, label: string, subtitle: string, metadata: any }) => JSX.Element`
+ * @param {JSX.Element} [props.customDropdownArrow] - If provided, replaces the default dropdown arrow indicator.
+ * @param {string} [props.className] - Classes to pass to the select menu.
+ * @param {string} [props.groupKey] - If provided, the options will be grouped by this key.
+ * @param {Object} [props.groupValueMapping] - If provided, the group headers will be mapped to these labels/icons.
+ * @param {boolean} [props.flat] - If `true`, component will look more flat. Useful for nested layer of controls.
+ * @param {SelectSize} [props.size='default'] - Sets the size of the input field.
+ * @param {boolean} [props.noMinWidth=false] - If `true`, the select menu will not have a minimum width.
+ * @param {string[]} [props.extraItemProps] - List of props to include to the option items.
+ * @param {boolean} [props.hidden] - If `true`, the component is not rendered.
+ *
+ * @typedef {'small' | 'medium' | 'default' | 'large'} SelectSize
+ *
+ * @returns {JSX.Element} The AsyncSelectNext component.
+ *
+ * @example
+ * const [value, setValue] = useState(null);
+ *
+ * <AsyncSelectNext
+ * 	label='Select items'
+ * 	fetchUrl={(searchText) => `https://api.example.com/items?q=${searchText}`}
+ * 	value={value}
+ * 	onChange={setValue}
+ * 	getLabel={(item) => item?.name}
+ * 	getValue={(item) => item?.id}
+ * />
+ *
+ * @preserve
+ */

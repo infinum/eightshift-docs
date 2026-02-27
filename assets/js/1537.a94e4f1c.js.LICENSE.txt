@@ -1,0 +1,52 @@
+/**
+ * Select menu.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {string} [props.icon] - Icon of the component.
+ * @param {string} [props.help] - Help text of the component.
+ * @param {string} [props.label] - Label of the component.
+ * @param {boolean} [props.inline] - Whether the Select menu is displayed inline with the label, to the right.
+ * @param {JSX.Element|JSX.Element[]} [props.actions] - Actions to show to the right of the label.
+ * @param {string} [props.subtitle] - Subtitle of the component.
+ * @param {{label: string, value: string, metadata: Object<string, any>?}[]} props.options - Options to display in the select. `[{ label: string, value: string }]`.
+ * @param {string|{label: string, value: string, metadata: Object<string, any>?}} props.value - Current value of the select.
+ * @param {Function} props.onChange - Function to call when the value changes.
+ * @param {boolean} [props.simpleValue=false] - If `true`, instead of using a `{label: '', value: ''}` value type, a string is used (just the value).
+ * @param {string} [props.groupKey] - If provided, the options will be grouped by this key.
+ * @param {Object} [props.groupValueMapping] - If provided, the group headers will be mapped to these labels/icons.
+ * @param {boolean} [props.clearable] - Whether the select is clearable.
+ * @param {boolean} [props.disabled] - Whether the select is disabled.
+ * @param {string} [props.placeholder] - Placeholder text to show when no value is selected.
+ * @param {JSX.Element} [props.customMenuOption] - If provided, replaces the default item in the dropdown menu (react-select's `components.Option`).
+ * @param {JSX.Element} [props.customValueDisplay] - If provided, replaces the default current value display of each selected item (react-select's `components.MultiValue`).
+ * @param {JSX.Element} [props.customDropdownArrow] - If provided, replaces the default dropdown arrow indicator.
+ * @param {string} [props.className] - Classes to pass to the select menu.
+ * @param {boolean} [props.noMinWidth=false] - If `true`, the select menu will not have a minimum width.
+ * @param {boolean} [props.searchable] - If `true`, the menu will allow searching through the options.
+ * @param {boolean} [props.flat] - If `true`, component will look more flat. Useful for nested layer of controls.
+ * @param {SelectSize} [props.size='default'] - Sets the size of the input field.
+ * @param {boolean} [props.hidden] - If `true`, the component is not rendered.
+ *
+ * @returns {JSX.Element} The Select component.
+ *
+ * @typedef {'small' | 'medium' | 'default' | 'large'} SelectSize
+ *
+ * @example
+ * const [value, setValue] = useState(null);
+ *
+ * const options = [
+ * 	{ label: 'Option 1', value: 'option-1' },
+ * 	{ label: 'Option 2', value: 'option-2' },
+ * 	{ label: 'Option 3', value: 'option-3' },
+ * ];
+ *
+ * <Select
+ * 	label='Select items'
+ * 	options={loadOptions}
+ * 	value={value}
+ * 	onChange={setValue}
+ * />
+ *
+ * @preserve
+ */
