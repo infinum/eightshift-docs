@@ -5,4 +5,4 @@ title: Calculator
 
 import { IntegrationFilters } from './../../../../src/docs/filters';
 
-<IntegrationFilters name="Calculator" filter="calculator" onlyUse={['prePostParamsFilter']} />
+<IntegrationFilters name="Calculator" filter="calculator" onlyUse={['overridePostRequestFilter', 'prePostParamsFilter', 'beforeSuccessResponseFilter', 'afterCustomResultOutputProcessFilter']} />

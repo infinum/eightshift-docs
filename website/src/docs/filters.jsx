@@ -8,7 +8,10 @@ export function IntegrationFilters({
 		'dataFilter',
 		'orderFilter',
 		'prePostIdFilter',
+		'overridePostRequestFilter',
 		'prePostParamsFilter',
+		'beforeSuccessResponseFilter',
+		'afterCustomResultOutputProcessFilter',
 	],
 }) {
 	return (
@@ -25,8 +28,20 @@ export function IntegrationFilters({
 				<PrePostIdFilter filter={filter} />
 			}
 
+			{onlyUse.includes('overridePostRequestFilter') &&
+				<OverridePostRequestFilter filter={filter} />
+			}
+
 			{onlyUse.includes('prePostParamsFilter') &&
 				<PrePostParamsFilter filter={filter} />
+			}
+
+			{onlyUse.includes('beforeSuccessResponseFilter') &&
+				<BeforeSuccessResponseFilter filter={filter} />
+			}
+
+			{onlyUse.includes('afterCustomResultOutputProcessFilter') &&
+				<AfterCustomResultOutputProcessFilter filter={filter} />
 			}
 		</>
 	);
@@ -149,16 +164,52 @@ function PrePostIdFilter ({ filter }) {
 
 					/**
 					 * Modifies integration item ID.
-					 * 
+					 *
 					 * @param string $itemId Integration item ID.
 					 * @param array<mixed> $params Params to be sent to the integration.
 					 * @param string $formId Form ID.
-					 * 
-					 * @return array<mixed>
+					 *
+					 * @return string
 					 */
-					function getIntegrationPrePostId(string $itemId, array $params, string $formId): array
+					function getIntegrationPrePostId(string $itemId, array $params, string $formId): string
 					{
 						return $itemId;
+					}
+				`)}
+			</CodeBlock>
+		</>
+	);
+}
+
+function OverridePostRequestFilter ({ filter }) {
+	return (
+		<>
+			<h2>Override post request filter</h2>
+			<p>Allows completely bypassing the integration's API request and returning a custom response instead. If the filter returns a non-empty array, it is used as the response and the API call is skipped.</p>
+			<p>Useful for testing, mocking responses, or conditionally short-circuiting submissions.</p>
+
+			<CodeBlock language="php">
+				{reformatCode(`
+					add_filter('es_forms_integrations_${filter}_override_post_request', 'getIntegrationOverridePostRequest', 10, 5);
+
+					/**
+					 * Override the integration API request with a custom response.
+					 *
+					 * @param array<mixed> $response Default response (empty array).
+					 * @param string $itemId Integration item/list ID.
+					 * @param array<string, mixed> $params Form submission parameters.
+					 * @param array<mixed> $files Uploaded files.
+					 * @param string $formId Form ID.
+					 *
+					 * @return array<mixed>
+					 */
+					function getIntegrationOverridePostRequest(array $response, string $itemId, array $params, array $files, string $formId): array
+					{
+						// Return a mock success response to bypass the API call.
+						return [
+							'status' => 'success',
+							'code' => 200,
+						];
 					}
 				`)}
 			</CodeBlock>
@@ -211,6 +262,68 @@ function PrePostParamsFilter ({ filter }) {
 						}
 
 						return $params;
+					}
+				`)}
+			</CodeBlock>
+		</>
+	);
+}
+
+function BeforeSuccessResponseFilter ({ filter }) {
+	return (
+		<>
+			<h2>Before success response filter</h2>
+			<p>Allows modifying the response data before it is sent back to the client after a successful form submission. Runs after all internal processing (entries, variations, redirects) is complete.</p>
+
+			<CodeBlock language="php">
+				{reformatCode(`
+					add_filter('es_forms_integrations_${filter}_before_success_response', 'getIntegrationBeforeSuccessResponse', 10, 3);
+
+					/**
+					 * Modify the response before it is sent to the client.
+					 *
+					 * @param array<string, mixed> $response Response data with 'private', 'public', and 'additional' keys.
+					 * @param array<string, mixed> $formDetails Full form submission details.
+					 * @param string $formId Form ID.
+					 *
+					 * @return array<string, mixed>
+					 */
+					function getIntegrationBeforeSuccessResponse(array $response, array $formDetails, string $formId): array
+					{
+						$response['additional']['myCustomKey'] = 'myCustomValue';
+
+						return $response;
+					}
+				`)}
+			</CodeBlock>
+		</>
+	);
+}
+
+function AfterCustomResultOutputProcessFilter ({ filter }) {
+	return (
+		<>
+			<h2>After custom result output process filter</h2>
+			<p>Allows modifying the processed custom result output data after it has been prepared. Useful when using the custom result output feature to adjust the final output structure.</p>
+
+			<CodeBlock language="php">
+				{reformatCode(`
+					add_filter('es_forms_integrations_${filter}_after_custom_result_output_process', 'getIntegrationAfterCustomResultOutputProcess', 10, 3);
+
+					/**
+					 * Modify the custom result output data after processing.
+					 *
+					 * @param array<string, mixed> $output Processed output with 't' (title), 'st' (subtitle), and 'd' (data) keys.
+					 * @param array<string, mixed> $formDetails Full form submission details.
+					 * @param string $formId Form ID.
+					 *
+					 * @return array<string, mixed>
+					 */
+					function getIntegrationAfterCustomResultOutputProcess(array $output, array $formDetails, string $formId): array
+					{
+						$output['t'] = \__('Custom title', 'text-domain');
+
+						return $output;
 					}
 				`)}
 			</CodeBlock>

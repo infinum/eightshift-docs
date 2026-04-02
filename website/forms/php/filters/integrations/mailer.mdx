@@ -5,4 +5,27 @@ title: Mailer
 
 import { IntegrationFilters } from './../../../../src/docs/filters';
 
-<IntegrationFilters name="Mailer" filter="mailer" onlyUse={['prePostParamsFilter']} />
+<IntegrationFilters name="Mailer" filter="mailer" onlyUse={['prePostParamsFilter', 'beforeSuccessResponseFilter', 'afterCustomResultOutputProcessFilter']} />
+
+## Body template
+
+Allows modifying the full HTML email body before it is sent via `wp_mail`. Useful for wrapping content in a custom email template or adding a header/footer.
+
+```php
+\add_filter('es_forms_integrations_mailer_body_template', [$this, 'getMailerBodyTemplate'], 10, 4);
+
+/**
+ * Modify the email body template before sending.
+ *
+ * @param string $body Full HTML email body (wrapped in <html><body> tags).
+ * @param string $formId Form post ID.
+ * @param string $template Email template content.
+ * @param array<string, mixed> $params Prepared field name/value pairs.
+ *
+ * @return string
+ */
+public function getMailerBodyTemplate(string $body, string $formId, string $template, array $params): string
+{
+	return '<!DOCTYPE html><html><body style="font-family: sans-serif;">' . $template . '</body></html>';
+}
+```
