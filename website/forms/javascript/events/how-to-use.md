@@ -13,13 +13,11 @@ In this example the event is hooked to the `window` object and in event details 
 ```js
 window.addEventListener('esFormsAfterCaptchaInit', ({detail}) => {
 	const {
-		additional: {
-			status,
-		},
+		additional,
 	} = detail;
 
-	if (status === 'success') {
-		const score = data?.response?.score?.toString();
+	if (additional?.status === 'success') {
+		const score = additional?.response?.score?.toString();
 
 		if (score) {
 			// Do some actions with the score.
@@ -35,7 +33,7 @@ window.addEventListener('esFormsAfterCaptchaInit', ({detail}) => {
 
 ### esFormsJsFormLoaded
 
-In this example the event is hooked to the `form` element and in event details you have:
+In this example the event is hooked to the `window` element and in event details you have:
 * `esForms` - object.
 * `formId` - form Id this event is a part of.
 
@@ -43,13 +41,7 @@ In this example the event is hooked to the `form` element and in event details y
 import domReady from '@wordpress/dom-ready';
 
 domReady(() => {
-	const element = document.querySelector('.js-es-block-form');
-
-	if (!element) {
-		return;
-	}
-
-	element?.addEventListener('esFormsJsFormLoaded', ({detail}) => {
+	window.addEventListener('esFormsJsFormLoaded', ({detail}) => {
 		const {
 			formId,
 			esForms,

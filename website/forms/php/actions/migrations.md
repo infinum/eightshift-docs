@@ -9,6 +9,7 @@ Based on the migration version you can run custom actions before migration is tr
 * es_forms_migration_two_to_three_general
 * es_forms_migration_two_to_three_forms
 * es_forms_migration_two_to_three_locale
+* es_forms_migration_clearbit
 
 ## How to use
 
@@ -21,6 +22,20 @@ Based on the migration version you can run custom actions before migration is tr
  * @return void
  */
 public function runMigration2To3Locale(): void
+{
+	\update_option('<option-name>', '<option-value>');
+}
+```
+
+```php
+\add_action('es_forms_migration_clearbit', [$this, 'runMigrationClearbit']);
+
+/**
+ * Run custom action after the Clearbit migration is triggered.
+ *
+ * @return void
+ */
+public function runMigrationClearbit(): void
 {
 	\update_option('<option-name>', '<option-value>');
 }
