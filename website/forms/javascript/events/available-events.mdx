@@ -6,7 +6,7 @@ title: Available events
 You can listen to these events by using the `on` method on the `Event` facade.
 
 Every event contains the whole window object inside the details property.
-This way you can be sure that everything is set and ready to be used. Additionally if an event is a part of the `after` event you can use the `additional` property to get the API response details. 
+This way you can be sure that everything is set and ready to be used. Additionally if an event is a part of the `after` event you can use the `additional` property to get the API response details.
 
 :::note
 List of all events can be found [here](https://github.com/infinum/eightshift-forms/blob/develop/src/Blocks/manifest.json).
@@ -17,7 +17,7 @@ List of all events can be found [here](https://github.com/infinum/eightshift-for
 Triggered before form is submitted to the API-Rest endpoint.
 
 :::tip
-This event is set on the form element.
+This event is set on the window element.
 :::
 
 ### esFormsAfterFormSubmit
@@ -25,7 +25,7 @@ This event is set on the form element.
 Triggered after form is submitted to the API-Rest endpoint but before the response is processed.
 
 :::tip
-This event is set on the form element.
+This event is set on the window element.
 :::
 
 ### esFormsAfterFormSubmitSuccess
@@ -33,7 +33,7 @@ This event is set on the form element.
 Triggered after form is submitted to the API-Rest endpoint and the response is processed with success.
 
 :::tip
-This event is set on the form element.
+This event is set on the window element.
 :::
 
 ### esFormsAfterFormSubmitError
@@ -41,7 +41,7 @@ This event is set on the form element.
 Triggered after form is submitted to the API-Rest endpoint and the response is processed with general error.
 
 :::tip
-This event is set on the form element.
+This event is set on the window element.
 :::
 
 ### esFormsAfterFormSubmitErrorValidation
@@ -49,7 +49,7 @@ This event is set on the form element.
 Triggered after form is submitted to the API-Rest endpoint and the response is processed with validation error.
 
 :::tip
-This event is set on the form element.
+This event is set on the window element.
 :::
 
 ### esFormsAfterFormSubmitEnd
@@ -57,7 +57,7 @@ This event is set on the form element.
 Triggered after form is submitted to the API-Rest endpoint and the response is fully processed and the form is ready for another submit.
 
 :::tip
-This event is set on the form element.
+This event is set on the window element.
 :::
 
 ### esFormsAfterGtmDataPush
@@ -65,7 +65,7 @@ This event is set on the form element.
 Triggered after GTM dataLAyer is pushed. This happens after form is submitted to the API-Rest endpoint and the response is processed with success.
 
 :::tip
-This event is set on the form element.
+This event is set on the window element.
 :::
 
 ### esFormsAfterFormSubmitReset
@@ -73,7 +73,7 @@ This event is set on the form element.
 Triggered after form is submitted to the API-Rest endpoint and the response is processed with success after which the form is reset to its original state.
 
 :::tip
-This event is set on the form element.
+This event is set on the window element.
 :::
 
 ### esFormsAfterFormSubmitSuccessBeforeRedirect
@@ -81,7 +81,7 @@ This event is set on the form element.
 Triggered after form is submitted to the API-Rest endpoint and the response is processed with success right before redirect action triggers.
 
 :::tip
-This event is set on the form element.
+This event is set on the window element.
 :::
 
 ### esFormsJsFormLoaded
@@ -113,7 +113,7 @@ This event is set on the window element.
 Triggered after multi-step/multi-flow form is used and the next step is loaded.
 
 :::tip
-This event is set on the form element.
+This event is set on the window element.
 :::
 
 ### esFormsGoToPrevStep
@@ -121,13 +121,61 @@ This event is set on the form element.
 Triggered after multi-step/multi-flow form is used and the previous step is loaded.
 
 :::tip
-This event is set on the form element.
+This event is set on the window element.
 :::
 
-### esFormsEnrichmentPrefill
+### esFormsResetSteps
 
-Triggered after enrichment data is pre-filled from `localStorage`.
+Triggered after multi-step/multi-flow form steps are reset to the initial step.
 
 :::tip
-This event is set on the form element.
+This event is set on the window element.
+:::
+
+### esFormsBeforeEnrichmentUrlPrefill
+
+Triggered before enrichment data from URL parameters is pre-filled into the form fields.
+
+:::tip
+This event is set on the window element.
+:::
+
+### esFormsAfterEnrichmentUrlPrefill
+
+Triggered after enrichment data from URL parameters has been pre-filled into the form fields.
+
+:::tip
+This event is set on the window element.
+:::
+
+### esFormsBeforeEnrichmentLocalstoragePrefill
+
+Triggered before enrichment data from `localStorage` is pre-filled into the form fields.
+
+:::tip
+This event is set on the window element.
+:::
+
+### esFormsAfterEnrichmentLocalstoragePrefill
+
+Triggered after enrichment data from `localStorage` has been pre-filled into the form fields.
+
+:::tip
+This event is set on the window element.
+:::
+
+### esFormsOnFieldChange
+
+Triggered when a form field value changes.
+
+:::tip
+This event is set on the window element.
+:::
+
+### esFormsAfterResultsOutput
+
+Triggered after the result output data has been rendered.
+
+:::tip
+This event is set on the window element.
 :::

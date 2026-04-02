@@ -5,7 +5,7 @@ title: Helpers
 
 Eightshift Forms offers static helpers that can be implemented in your project. The key difference between these helpers and filters is that you can use the former in your theme or plugin code regardless of the load cycle.
 
-All helpers can be found [here](https://github.com/infinum/eightshift-forms/blob/develop/src/Helpers/esForms.php).
+All helpers can be found [here](https://github.com/infinum/eightshift-forms/blob/develop/src/Helpers/publicHelper.php).
 
 ### esFormsGetFormIdByName
 
@@ -36,6 +36,16 @@ This method generates a list of countries available in the geolocation API and c
 ```php
 if (\function_exists('esFormsGeolocationCountriesList')) {
   $countriesList = esFormsGeolocationCountriesList();
+}
+```
+
+### esFormsGetUsersGeolocation
+
+This helper returns the current user's detected geolocation country code.
+
+```php
+if (\function_exists('esFormsGetUsersGeolocation')) {
+  $country = esFormsGetUsersGeolocation();
 }
 ```
 
@@ -80,5 +90,55 @@ If you need to retrieve form entry data, you can use this helper by providing en
 ```php
 if (\function_exists('esFormGetEntry')) {
   $entry = esFormGetEntry('<entryId>');
+}
+```
+
+### esFormUpdateEntry
+
+If you need to update form entry data, you can use this helper by providing the data array and the entry unique ID.
+
+```php
+if (\function_exists('esFormUpdateEntry')) {
+  $updated = esFormUpdateEntry(['<key>' => '<value>'], '<entryId>');
+}
+```
+
+### getFormsGetCountryList
+
+This helper returns the countries data set, taking into account any active filters and the default set configured in the settings.
+
+```php
+if (\function_exists('getFormsGetCountryList')) {
+  $countries = getFormsGetCountryList();
+}
+```
+
+### getFormUsageLocation
+
+This helper returns a list of locations (posts/pages) where a given form is used.
+
+```php
+if (\function_exists('getFormUsageLocation')) {
+  $locations = getFormUsageLocation('<formId>');
+}
+```
+
+### getParamValue
+
+This helper retrieves the value of a specific parameter by key from a params array.
+
+```php
+if (\function_exists('getParamValue')) {
+  $value = getParamValue('<key>', $params);
+}
+```
+
+### getFormDetails
+
+This helper returns the full details array for a given form by its ID.
+
+```php
+if (\function_exists('getFormDetails')) {
+  $details = getFormDetails('<formId>');
 }
 ```
