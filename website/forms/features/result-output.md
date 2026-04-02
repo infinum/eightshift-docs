@@ -28,7 +28,7 @@ Alongside the _Result output_ block you will find the _Result output item_ block
 ![Result output item block](/img/forms/result-output-3.webp)
 
 :::caution
-The block will not show anything by default. Some configuration by developers is required. For more details, check the chapter on [custom filters](/forms/php/filters/block/form/result-output-items).
+The block will not show anything by default. Some configuration by developers is required. For more details, check the chapter on [custom filters](/forms/php/filters/block/forms/use-custom-result-output-feature).
 :::
 
 To configure the block, add it inside a _Result output_ block, and provide a name and a value that will match the data provided by the filter. Once the form is submitted and the condition matches, the selected block will be shown.
@@ -44,7 +44,7 @@ Similar to the _Result output item_ block, the shortcode version allows smaller,
 ![Result output part shortcode](/img/forms/result-output-4.webp)
 
 :::caution
-The shortcode will not show anything by default. Some configuration by developers is required. For more details, check the chapter on [custom filters](/forms/php/filters/block/form/result-output-items).
+The shortcode will not show anything by default. Some configuration by developers is required. For more details, check the chapter on [custom filters](/forms/php/filters/block/forms/use-custom-result-output-feature).
 :::
 
 To configure the shortocde, add it somewhere inside the _Result output_ block. Provide a `name` and set the `default text`. The _default text_ will be shown after form submission if the _name_ matches the one in the configuration.
