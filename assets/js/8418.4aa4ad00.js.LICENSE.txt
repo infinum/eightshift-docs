@@ -1,0 +1,275 @@
+/**
+ * @typedef {Object} ContainerGroupProps
+ * @property {string} [className] - Classes to pass to the container group.
+ * @property {string} [wrapClassName] - Classes to pass to the control wrapper - only if label is set.
+ * @property {string|JSX.Element} [label] - Label to show above the container group.
+ * @property {boolean} [hidden] - If `true`, the component is not rendered.
+ * @property {boolean} [horizontal] - If `true`, the component uses a horizontal orientation.
+ * @property {string|JSX.Element} [as] - The HTML element or React component to render as the container group.
+ *
+ * @preserve
+ */
+
+/**
+ * @typedef {Object} ContainerProps
+ * @property {string} [props.className] - Classes to pass to the container.
+ * @property {boolean} [props.hidden] - If `true`, the component is not rendered.
+ * @property {boolean} [props.accent] - If `true`, applies accent styling to the container.
+ * @property {boolean} [props.elevated] - If `true`, applies elevated styling (shadow) to the container.
+ * @property {boolean} [props.primary] - If `true`, applies primary styling (rounded full) to the container.
+ * @property {boolean} [props.isChild] - If `true`, applies child-specific styling for nested containers.
+ * @property {boolean} [props.compact] - If `true`, the vertical padding is reduced for a more compact appearance.
+ * @property {boolean} [props.standalone] - If `true`, the border radius is not adjusted automatically, based on neightboring containers.
+ * @property {boolean} [props.centered] - If `true`, the content is centered vertically.
+ * @property {boolean} [props.lessSpaceStart] - If `true`, space on the start (left) is reduced. Useful for symmetric components.
+ * @property {boolean} [props.lessSpaceEnd] - If `true`, space on the end (right) is reduced. For example, use with text fields, or taller items.
+ * @property {string|JSX.Element} [props.as] - The HTML element or React component to render as the container.
+ *
+ * @preserve
+ */
+
+/**
+ * A compact, inline version of `Responsive`. Allows the user to set different values for different breakpoints.
+ *
+ * Inner items should be passed as a render function.
+ * The following props are passed to the render function:
+ * - `breakpoint: string` - Name of the current breakpoint.
+ * - `currentValue: any` - Current value.
+ * - `handleChange: Function<(attributeName: string, value: any) => void>` - A function to change the value for the breakpoint..
+ * - `options: Object<string, any>` - (Optional) Options list passed to the `ResponsiveLegacy` component. (optional)
+ * - `isInlineCollapsedView: boolean` - (Optional) `true` if in the main view, with the detail popover closed.
+ * - `isInlineExpandedView: boolean` - (Optional) `true` if the detail popover is open.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {Object} props.value - The current value of the component.
+ * @param {Function} props.onChange - Function to run when the value changes. `(newValue: Object) => void`.
+ * @param {JSX.Element} props.icon - The icon of the component.
+ * @param {string} props.help - The help text of the component.
+ * @param {string} props.label - The label of the component.
+ * @param {string} props.subtitle - The subtitle of the component.
+ * @param {{label: string, value: string}[]} props.options - Options of the attribute the component is linked to. `{ value: string, label: string }[]`.
+ * @param {string[]} props.breakpoints - Breakpoints to use.
+ * @param {string[]} [props.desktopFirstBreakpoints] - Breakpoints to use in desktop-first mode. If not provided, the breakpoints will be used in reverse order.
+ * @param {Object<string, number>} [props.breakpointData] - Currently used breakpoint data. `{ [breakpoint: string]: number }`.
+ * @param {Object<string, number>} [props.breakpointUiData] - Allows overriding breakpoint names and icons. `{ [breakpoint: string]: { label: string, icon: JSX.Element|string } }`.
+ * @param {boolean} [props.noModeSelect] - If `true`, the mode selection (desktop-first/mobile-first) is hidden.
+ * @param {boolean} [props.hidden] - If `true`, the component is not rendered.
+ * @param {boolean} [props.useLegacyDesktopFirst] - If `true`, the legacy desktop-first mode is used. This is only for backwards compatibility.
+ * @param {'start' | 'center' | 'end' | 'stretch'} [props.innerContentAlign='start'] - Determines inner content alignment
+ *
+ * @returns {JSX.Element} The MiniResponsive component.
+ *
+ * @example
+ * <MiniResponsive
+ * 	value={value}
+ * 	onChange={onChange}
+ * 	icon={icons.myIcon}
+ * 	label={__('Label', 'eightshift-ui-components')}
+ * 	options={[
+ * 		{ value: 'value1', label: 'Value 1' },
+ * 		{ value: 'value2', label: 'Value 2' },
+ * 		{ value: 'value3', label: 'Value 3' },
+ * 	]}
+ * 	breakpoints={['mobile', 'tablet', 'desktop', 'large']}
+ * 	breakpointData={breakpointData}
+ * >
+ * 	{({ breakpoint, currentValue, options, handleChange }) => (
+ * 		<Select
+ * 			label={breakpoint}
+ * 			value={currentValue}
+ * 			options={options}
+ * 			onChange={handleChange}
+ * 		/>
+ * 	)}
+ * </MiniResponsive>
+ *
+ * @preserve
+ */
+
+/**
+ * A component that allows the user to set different values for different breakpoints.
+ *
+ * Inner items should be passed as a render function.
+ * The following props are passed to the render function:
+ * - `breakpoint: string` - Name of the current breakpoint.
+ * - `currentValue: any` - Current value.
+ * - `handleChange: Function<(attributeName: string, value: any) => void>` - A function to change the value for the breakpoint..
+ * - `options: Object<string, any>` - (Optional) Options list passed to the `ResponsiveLegacy` component. (optional)
+ * - `isInlineCollapsedView: boolean` - (Optional) `true` if in `inline` mode, and the details are collapsed.
+ * - `isInlineExpandedView: boolean` - (Optional) `true` if in `inline` mode, and the details are shown.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {Object} props.value - The current value of the component.
+ * @param {Function} props.onChange - Function to run when the value changes. `(newValue: Object) => void`.
+ * @param {JSX.Element} props.icon - The icon of the component.
+ * @param {string} props.help - The help text of the component.
+ * @param {string} props.label - The label of the component.
+ * @param {string} props.subtitle - The subtitle of the component.
+ * @param {{label: string, value: string}[]} props.options - Options of the attribute the component is linked to. `{ value: string, label: string }[]`.
+ * @param {string[]} props.breakpoints - Breakpoints to use.
+ * @param {string[]} [props.desktopFirstBreakpoints] - Breakpoints to use in desktop-first mode. If not provided, the breakpoints will be used in reverse order.
+ * @param {Object<string, number>} [props.breakpointData] - Currently used breakpoint data. `{ [breakpoint: string]: number }`.
+ * @param {Object<string, number>} [props.breakpointUiData] - Allows overriding breakpoint names and icons. `{ [breakpoint: string]: { label: string, icon: JSX.Element|string } }`.
+ * @param {boolean} [props.noModeSelect] - If `true`, the mode selection (desktop-first/mobile-first) is hidden.
+ * @param {boolean} [props.inline] - If `true`, the default breakpoint is shown inline with the label. In the expanded state, all breakpoints are shown below the label.
+ * @param {boolean} [props.hidden] - If `true`, the component is not rendered.
+ * @param {boolean} [props.useLegacyDesktopFirst] - If `true`, the legacy desktop-first mode is used. This is only for backwards compatibility.
+ * @param {string} [props.className] - Classes to pass to the control base.
+ * @param {'start' | 'center' | 'end' | 'stretch'} [props.innerContentAlign='start'] - Determines inner content alignment
+ *
+ * @returns {JSX.Element} The Responsive component.
+ *
+ * @example
+ * <Responsive
+ * 	value={value}
+ * 	onChange={onChange}
+ * 	icon={icons.myIcon}
+ * 	label={__('Label', 'eightshift-ui-components')}
+ * 	options={[
+ * 		{ value: 'value1', label: 'Value 1' },
+ * 		{ value: 'value2', label: 'Value 2' },
+ * 		{ value: 'value3', label: 'Value 3' },
+ * 	]}
+ * 	breakpoints={['mobile', 'tablet', 'desktop', 'large']}
+ * 	breakpointData={breakpointData}
+ * >
+ * 	{({ breakpoint, currentValue, options, handleChange }) => (
+ * 		<Select
+ * 			label={breakpoint}
+ * 			value={currentValue}
+ * 			options={options}
+ * 			onChange={handleChange}
+ * 		/>
+ * 	)}
+ * </Responsive>
+ *
+ * @preserve
+ */
+
+/**
+ * A component that allows the user to set different values for different breakpoints.
+ *
+ * Replacement for the `Responsive` component from Eightshift Frontend libs v12 (and older).
+ *
+ * Meant to be used with a more complex attribute setup, with one attribute per breakpoint,
+ * and a single value object that contains all the values.
+ *
+ * Inner items should be passed as a render function.
+ * The following props are passed to the render function:
+ * - `breakpoint: string` - Name of the current breakpoint.
+ * - `currentValue: any` - Current value.
+ * - `handleChange: Function<(attributeName: string, value: any) => void>` - A function to change the value for the breakpoint..
+ * - `options: Object<string, any>` - (Optional) Options list passed to the `ResponsiveLegacy` component. (optional)
+ * - `isInlineCollapsedView: boolean` - (Optional) `true` if in `inline` mode, and the details are collapsed.
+ * - `isInlineExpandedView: boolean` - (Optional) `true` if in `inline` mode, and the details are shown.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {Object} props.value - The current value of the component.
+ * @param {Function} props.onChange - Function to run when the value changes. `(newValue: Object) => void`.
+ * @param {Object} props.attribute - The attribute the component is linked to. `{ [breakpoint: string]: string }`.
+ * @param {JSX.Element} [props.icon] - The icon of the component.
+ * @param {string} [props.help] - The help text of the component.
+ * @param {string} [props.label] - The label of the component.
+ * @param {string} [props.subtitle] - The subtitle of the component.
+ * @param {{label: string, value: string}[]} props.options - Options of the attribute the component is linked to. `{ value: string, label: string }[]`.
+ * @param {any} [props.inheritValue=''] - Value that will be used as a default for breakpoints that don't have a value set. If `undefined`, needs to be used, use `allowUndefined` instead.
+ * @param {boolean?} [props.allowUndefined] - If `true`, `undefined` is used as a default value for breakpoints that don't have a value set. Overrides `inheritValue`.
+ * @param {Object} props.globalManifest - The global manifest.
+ * @param {boolean} [props.inline] - If `true`, the default breakpoint is shown inline with the label. In the expanded state, all breakpoints are shown below the label.
+ * @param {Object<string, number>} [props.breakpointData] - Breakpoints to use. `{ [breakpoint: string]: number }`.
+ * @param {string[]} [props.breakpoints] - Breakpoints to use. `{ [breakpoint: string]: number }`.
+ * @param {boolean} [props.hidden] - If `true`, the component is not rendered.
+ * @param {'start' | 'center' | 'end' | 'stretch'} [props.innerContentAlign='start'] - Determines inner content alignment
+ *
+ * @returns {JSX.Element} The ResponsiveLegacy component.
+ *
+ * @example
+ * // Basic example
+ * <ResponsiveLegacy
+ * 	attribute={myResponsiveAttribute} // from 'responsiveAttributes' in manifest
+ * 	value={value} // attributes
+ * 	onChange={(attributeName, value) => setAttributes({
+ * 		[attributeName]: value,
+ * 	})}
+ * 	icon={icons.myIcon}
+ * 	label={__('Label', 'eightshift-ui-components')}
+ * 	options={[
+ * 		{ value: 'value1', label: 'Value 1' },
+ * 		{ value: 'value2', label: 'Value 2' },
+ * 		{ value: 'value3', label: 'Value 3' },
+ * 	]}
+ * 	breakpointData={breakpoints} // From global manifest
+ * >
+ * 	{({ currentValue, options, handleChange }) => (
+ * 		<Select
+ * 			value={currentValue}
+ * 			options={options}
+ * 			onChange={handleChange}
+ * 		/>
+ * 	)}
+ * </ResponsiveLegacy>
+ *
+ * @preserve
+ */
+
+/**
+ * A container component to wrap other components, providing consistent styling and spacing.
+ *
+ * @component
+ * @param {ContainerProps} props
+ * @param {React.Ref<HTMLDivElement>} ref
+ *
+ * @type React.ForwardRefRenderFunction<HTMLDivElement, ContainerProps>
+ *
+ * @returns {JSX.Element} The Container component.
+ *
+ * @example
+ * <Container accent elevated>
+ *   <p>This is a container with accent and elevated styles.</p>
+ * </Container>
+ *
+ * @preserve
+ */
+
+/**
+ * A container group component to wrap multiple Container components, providing consistent spacing between them.
+ *
+ * @component
+ * @param {ContainerGroupProps} props
+ * @param {React.Ref<HTMLDivElement>} ref
+ *
+ * @type React.ForwardRefRenderFunction<HTMLDivElement, ContainerGroupProps>
+ *
+ * @returns {JSX.Element} The ContainerGroup component.
+ *
+ * @example
+ * <ContainerGroup>
+ *   <Container>First container</Container>
+ *   <Container>Second container</Container>
+ * </ContainerGroup>
+ *
+ * @preserve
+ */
+
+/**
+ * Allows for stacking elements horizontally, with a gap between them.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {JSX.Element} [props.as] - Element to render the component as. Defaults to `div`.
+ * @param {boolean} [props.noWrap] - If `true`, the children will not wrap if their size exceeds the container size.
+ * @param {string} [props.className] - Classes to pass to the component.
+ * @param {boolean} [props.hidden] - If `true`, the component is not rendered.
+ *
+ * @returns {JSX.Element} The HStack component.
+ *
+ * @example
+ * <HStack>
+ * 	...
+ * </HStack>
+ *
+ * @preserve
+ */
