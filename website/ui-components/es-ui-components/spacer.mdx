@@ -1,8 +1,12 @@
 # Spacer
 
+:::tip
+[View source on GitHub →](https://github.com/infinum/eightshift-ui-components/tree/main/lib/components/spacer)
+:::
+
 import { ComponentShowcase } from '../components/component-showcase';
 import { Spacer } from '@eightshift/ui-components';
-import { icons } from '@eightshift/ui-components/icons';
+import { emptyRect } from '@eightshift/ui-components/icons';
 
 :::note
 The violet color <div className='es:bg-violet-50 es:transition es:size-5.5 es:rounded es:inline-block' /> in the examples is used to highlight the space added by the component.
@@ -86,14 +90,14 @@ For the complete list of props, use your IDE's autocomplete functionality.
 <ComponentShowcase className='esd-hide-bg-on-hover'>
 	<Spacer
 		className='es:bg-violet-50 es:transition'
-		icon={icons.emptyRect}
+		icon={emptyRect}
 	/>
 </ComponentShowcase>
 
 ```jsx
 <Spacer
 	// highlight-next-line
-	icon={icons.emptyRect}
+	icon={emptyRect}
 />
 ```
 
@@ -101,14 +105,14 @@ For the complete list of props, use your IDE's autocomplete functionality.
 	<Spacer
 		border
 		className='es:bg-violet-50 es:transition'
-		icon={icons.emptyRect}
+		icon={emptyRect}
 	/>
 </ComponentShowcase>
 
 ```jsx
 <Spacer
 	// highlight-next-line
-	icon={icons.emptyRect}
+	icon={emptyRect}
 	border
 />
 ```
@@ -190,13 +194,13 @@ For the complete list of props, use your IDE's autocomplete functionality.
 		className='es:bg-violet-50 es:transition'
 		text='This is a label'
 		subtitle='Subtitle'
-		icon={icons.emptyRect}
+		icon={emptyRect}
 	/>
 </ComponentShowcase>
 
 ```jsx
 <Spacer
-	icon={icons.emptyRect}
+	icon={emptyRect}
 	text='This is a label'
 	subtitle='Subtitle'
 	border

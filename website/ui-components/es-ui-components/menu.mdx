@@ -1,8 +1,12 @@
 # Menu
 
+:::tip
+[View source on GitHub →](https://github.com/infinum/eightshift-ui-components/tree/main/lib/components/menu)
+:::
+
 import { ComponentShowcase } from '../components/component-showcase';
 import { Menu, MenuItem, MenuSeparator, MenuSection, SubMenuItem } from '@eightshift/ui-components';
-import { icons } from '@eightshift/ui-components/icons';
+import { bold, emptyCircle, emptyRect } from '@eightshift/ui-components/icons';
 
 <ComponentShowcase>
 	<Menu>
@@ -110,10 +114,10 @@ If you need to have a top-level menu item outside of any sections you can either
 <ComponentShowcase>
 	<Menu>
 		<MenuSection label='Icon'>
-			<MenuItem icon={icons.emptyCircle}>First item</MenuItem>
+			<MenuItem icon={emptyCircle}>First item</MenuItem>
 		</MenuSection>
 		<MenuSection label='End icon'>
-			<MenuItem endIcon={icons.emptyRect}>First item</MenuItem>
+			<MenuItem endIcon={emptyRect}>First item</MenuItem>
 		</MenuSection>
 		<MenuSection label='Additional text'>
 			<MenuItem shortcut='Ctrl + Z'>Second item</MenuItem>
@@ -129,13 +133,13 @@ If you need to have a top-level menu item outside of any sections you can either
 <Menu>
 	<MenuItem
 		// highlight-next-line
-		icon={icons.emptyCircle}
+		icon={emptyCircle}
 	>
 		Item with icon
 	</MenuItem>
 	<MenuItem
 		// highlight-next-line
-		endIcon={icons.emptyRect}
+		endIcon={emptyRect}
 	>
 		Item with end icon
 	</MenuItem>
@@ -272,7 +276,7 @@ For the complete list of props, use your IDE's autocomplete functionality.
 <ComponentShowcase>
 	<Menu
 		triggerLabel='Menu'
-		triggerIcon={icons.emptyCircle}
+		triggerIcon={emptyCircle}
 	>
 		<MenuItem>First item</MenuItem>
 		<MenuItem>Second item</MenuItem>
@@ -284,7 +288,7 @@ For the complete list of props, use your IDE's autocomplete functionality.
 <Menu
 	// highlight-start
 	triggerLabel='Menu'
-	triggerIcon={icons.emptyCircle}
+	triggerIcon={emptyCircle}
 	// highlight-end
 >
 	<MenuItem>First item</MenuItem>
@@ -395,7 +399,7 @@ This allows implementing a button that can, for example, act as a toggle button 
 >
 	{(data, setData) => (
 		<Menu
-			triggerIcon={icons.bold}
+			triggerIcon={bold}
 			tooltip='Font weight'
 			triggerProps={{
 				type: data === '700' ? 'selected' : 'default',
@@ -435,7 +439,7 @@ _Click to toggle 'bold', press and hold for more font weights._
 
 ```jsx
 <Menu
-	triggerIcon={icons.bold}
+	triggerIcon={bold}
 	tooltip='Font weight'
 	triggerProps={{
 		type: fontWeight === '700' ? 'selected' : 'default',

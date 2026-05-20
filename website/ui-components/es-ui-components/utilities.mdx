@@ -1,0 +1,129 @@
+# Utilities
+
+:::tip
+[View source on GitHub →](https://github.com/infinum/eightshift-ui-components/tree/main/lib/utilities)
+:::
+
+A collection of helper functions that ship with `@eightshift/ui-components`. They are exported from a dedicated subpath, so importing them does not pull in any React code:
+
+```jsx
+import { camelCase, debounce, isEqual } from '@eightshift/ui-components/utilities';
+```
+
+The exception is `getColumnConfigOutputText`, which is exported from the main package entry alongside the components.
+
+## String helpers
+
+Case conversion and basic string utilities, backed by the [`just-*`](https://github.com/angus-c/just) family of dependency-free helpers.
+
+| Function                     | Description                                                                                               |
+| ---------------------------- | --------------------------------------------------------------------------------------------------------- |
+| `camelCase(input)`           | Converts to `camelCase`. `null`/`undefined` becomes `''`.                                                 |
+| `pascalCase(input)`          | Converts to `PascalCase`.                                                                                 |
+| `snakeCase(input)`           | Converts to `snake_case`.                                                                                 |
+| `kebabCase(input)`           | Converts to `kebab-case`.                                                                                 |
+| `upperFirst(input)`          | Uppercases the first character. Handles non-string inputs (numbers, booleans).                            |
+| `lowerFirst(input)`          | Lowercases the first character.                                                                           |
+| `truncate(input, max)`       | Truncates the end of a string to fit `max` characters and appends `...` (or a custom separator).          |
+| `truncateEnd(input, max)`    | Alias of `truncate`.                                                                                      |
+| `truncateMiddle(input, max)` | Truncates the middle of a string (great for URLs), inserting the separator between the head and the tail. |
+| `unescapeHTML(input)`        | Decodes HTML entities to their character equivalents (uses `DOMParser`, so DOM-only).                     |
+
+```jsx
+camelCase('New super Test-title'); // 'newSuperTestTitle'
+truncateMiddle('https://eightshift.com/contact/', 22); // 'https://ei.../contact/'
+```
+
+## Object & value helpers
+
+Dependency-free type guards and structural comparisons.
+
+| Function               | Description                                                                                                     |
+| ---------------------- | --------------------------------------------------------------------------------------------------------------- |
+| `isEmpty(value)`       | `true` for `{}`, `[]`, `''`, `null`, `undefined`.                                                               |
+| `isObject(value)`      | `true` for any object-like value, including arrays and functions.                                               |
+| `isPlainObject(value)` | `true` only for objects produced by the `Object` constructor or with a `null` prototype.                        |
+| `isString(value)`      | `true` for primitive strings and `String` objects.                                                              |
+| `isEqual(a, b)`        | Deep-equal check for primitives, arrays, and plain objects. Not a full lodash replacement — keep inputs simple. |
+| `has(obj, 'a.b')`      | `true` if the dotted path exists on the object.                                                                 |
+
+```jsx
+isEqual({ a: 1 }, { a: 1 }); // true
+has({ a: { b: 2 } }, 'a.b'); // true
+```
+
+## Array helpers
+
+| Function                                                | Description                                                                                                                |
+| ------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| `arrayMoveMultiple(array, fromIndices, to, direction?)` | Returns a new array with the items at `fromIndices` moved to index `to`. `direction` is `'before'` (default) or `'after'`. |
+| `fixIds(items, onChange, idKey?)`                       | Detects missing or duplicate IDs and calls `onChange` with a renumbered array. Defaults to the `id` key.                   |
+
+```jsx
+const next = arrayMoveMultiple(['a', 'b', 'c', 'd'], [0, 2], 3, 'after');
+// ['b', 'd', 'a', 'c']
+```
+
+## Timing helpers
+
+Thin wrappers around `just-debounce-it` and `just-throttle`, typed for convenience.
+
+| Function                                  | Description                                                                               |
+| ----------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `debounce(fn, wait = 250)`                | Returns a debounced version of `fn`.                                                      |
+| `throttle(fn, wait = 250, after = false)` | Returns a throttled version of `fn`. Pass `after = true` to trigger on the trailing edge. |
+
+```jsx
+const onSearch = debounce((value) => fetchResults(value), 300);
+```
+
+## General helpers
+
+| Function                                | Description                                                                               |
+| --------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `getFileExtension(url)`                 | Extracts the file extension from a URL string. Returns `null` if no extension is present. |
+| `isColorDark(r, g, b, threshold = 0.5)` | Returns `true` if the given RGB color is below the lightness threshold (`0`–`1`).         |
+
+```jsx
+getFileExtension('https://example.com/image.png'); // 'png'
+isColorDark(20, 20, 20); // true
+```
+
+## Hashing & IDs
+
+Small, non-cryptographic hashes suitable for things like memoization keys or React `key` props. Do **not** use them for anything security-sensitive.
+
+| Function                 | Description                                                                                            |
+| ------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `simpleHash(str)`        | 32-bit base-36 hash, always 7 characters. Fast, low collision resistance.                              |
+| `cyrb64Hash(str, seed?)` | 64-bit base-36 hash, always 14 characters. Better collision resistance, still not cryptographic.       |
+| `randomId(length)`       | Random alphanumeric string of the requested length. Uses `Math.random` — not cryptographically secure. |
+
+## Class name helpers
+
+`clsx` is re-exported from `clsx/lite` (smaller, supports strings and conditional strings only). `clsxFull` is the full `clsx` import, which also accepts objects and arrays.
+
+```jsx
+import { clsx, clsxFull } from '@eightshift/ui-components/utilities';
+
+clsx('a', condition && 'b'); // lite variant
+clsxFull('a', { b: condition }, ['c', 'd']); // full variant
+```
+
+## Column configuration text
+
+`getColumnConfigOutputText` returns a translated, human-readable description of a column range (used by `ColumnConfigSlider`). It is exported from the **main** package entry, not from `/utilities`.
+
+```jsx
+import { getColumnConfigOutputText } from '@eightshift/ui-components';
+
+getColumnConfigOutputText(12, 1, 12); // 'Full-width'
+getColumnConfigOutputText(12, 3, 4); // '4 cols from 3'
+```
+
+| Argument            | Description                                                                               |
+| ------------------- | ----------------------------------------------------------------------------------------- |
+| `columns`           | Total number of columns in the layout.                                                    |
+| `offset`            | 1-based starting column.                                                                  |
+| `width`             | Number of columns covered.                                                                |
+| `showOuterAsGutter` | When `true`, treats column `1` and column `columns` as gutter columns and labels them so. |

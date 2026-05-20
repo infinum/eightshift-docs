@@ -8,22 +8,22 @@ import {
 	VStack,
 	HStack,
 } from '@eightshift/ui-components';
-import { icons } from '@eightshift/ui-components/icons';
+import { emptyCircle, num1Circle, num2Circle, num3Circle } from '@eightshift/ui-components/icons';
 
 export const draggableListDefaultItems = [
 	{
 		toggle: false,
 		title: 'Item 1',
-		icon: icons.num1Circle,
+		icon: num1Circle,
 	},
 	{
 		toggle: true,
 		title: 'Item 2',
-		icon: icons.num2Circle,
+		icon: num2Circle,
 	},
 	{
 		toggle: true,
-		icon: icons.num3Circle,
+		icon: num3Circle,
 	},
 ];
 
@@ -40,7 +40,7 @@ export const DraggableListDemo = ({ data, setData, ...rest }) => {
 				return (
 					<DraggableListItem
 						label={title ?? 'New item'}
-						icon={icon ?? icons.emptyCircle}
+						icon={icon ?? emptyCircle}
 					>
 						<Switch
 							aria-label='Title'
@@ -71,7 +71,7 @@ export const DraggableDemo = ({ data, setData, ...rest }) => {
 							<DraggableHandle />
 
 							<RichLabel
-								icon={icon ?? icons.emptyCircle}
+								icon={icon ?? emptyCircle}
 								label={title ?? 'New item'}
 							/>
 						</HStack>

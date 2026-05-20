@@ -1,8 +1,12 @@
 # Matrix align
 
+:::tip
+[View source on GitHub →](https://github.com/infinum/eightshift-ui-components/tree/main/lib/components/matrix-align)
+:::
+
 import { ComponentShowcase } from '../components/component-showcase';
 import { MatrixAlign } from '@eightshift/ui-components';
-import { icons } from '@eightshift/ui-components/icons';
+import { emptyRect } from '@eightshift/ui-components/icons';
 
 <ComponentShowcase defaultValue='center center'>
 	{(data, setData) => (
@@ -53,7 +57,7 @@ For the complete list of props, use your IDE's autocomplete functionality.
 			onChange={setData}
 			value={data}
 			label='Alignment'
-			icon={icons.emptyRect}
+			icon={emptyRect}
 		/>
 	)}
 </ComponentShowcase>
@@ -64,7 +68,7 @@ For the complete list of props, use your IDE's autocomplete functionality.
 	value={data}
 	// highlight-start
 	label='Alignment'
-	icon={icons.emptyRect}
+	icon={emptyRect}
 	// highlight-end
 />
 ```

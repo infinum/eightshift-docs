@@ -1,5 +1,9 @@
 # Placeholders
 
+:::tip
+[View source on GitHub →](https://github.com/infinum/eightshift-ui-components/tree/main/lib/components/placeholders)
+:::
+
 import { ComponentShowcase } from '../components/component-showcase';
 import {
 	ImagePlaceholder,
@@ -9,7 +13,7 @@ import {
 	OptionSelect,
 	RichLabel,
 } from '@eightshift/ui-components';
-import { icons } from '@eightshift/ui-components/icons';
+import { a11yWarning, experiment, file, magicAlt } from '@eightshift/ui-components/icons';
 
 For the complete list of props, use your IDE's autocomplete functionality.
 
@@ -158,14 +162,14 @@ a bit more performant as you don't have an `<img>` without a source.
 <ComponentShowcase>
 	<FilePlaceholder
 		fileName='demo.json'
-		icon={icons.file}
+		icon={file}
 	/>
 </ComponentShowcase>
 
 ```jsx
 <FilePlaceholder
 	fileName='demo.json'
-	icon={icons.file}
+	icon={file}
 />
 ```
 
@@ -174,18 +178,18 @@ a bit more performant as you don't have an `<img>` without a source.
 `style` and `size` works the same as in the `ImagePlaceholder`, so they won't be covered again.
 
 <ComponentShowcase>
-	<MediaPlaceholder icon={icons.magicAlt} />
+	<MediaPlaceholder icon={magicAlt} />
 </ComponentShowcase>
 
 ```jsx
-<MediaPlaceholder icon={icons.magicAlt} />
+<MediaPlaceholder icon={magicAlt} />
 ```
 
 ### Help text
 
 <ComponentShowcase>
 	<MediaPlaceholder
-		icon={icons.experiment}
+		icon={experiment}
 		style='simple'
 		size='large'
 		helpText='Lorem ipsum dolor.'
@@ -194,7 +198,7 @@ a bit more performant as you don't have an `<img>` without a source.
 
 ```jsx
 <MediaPlaceholder
-	icon={icons.experiment}
+	icon={experiment}
 	style='simple'
 	size='large'
 	// highlight-next-line
@@ -204,12 +208,12 @@ a bit more performant as you don't have an `<img>` without a source.
 
 <ComponentShowcase>
 	<MediaPlaceholder
-		icon={icons.experiment}
+		icon={experiment}
 		style='simple'
 		size='large'
 		helpText={
 			<RichLabel
-				icon={icons.a11yWarning}
+				icon={a11yWarning}
 				label='Lorem ipsum dolor.'
 			/>
 		}
@@ -218,13 +222,13 @@ a bit more performant as you don't have an `<img>` without a source.
 
 ```jsx
 <MediaPlaceholder
-	icon={icons.experiment}
+	icon={experiment}
 	style='simple'
 	size='large'
 	// highlight-start
 	helpText={
 		<RichLabel
-			icon={icons.a11yWarning}
+			icon={a11yWarning}
 			label='Lorem ipsum dolor.'
 		/>
 	}

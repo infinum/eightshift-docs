@@ -1,0 +1,38 @@
+# Spinner
+
+:::tip
+[View source on GitHub →](https://github.com/infinum/eightshift-ui-components/tree/main/lib/icons)
+:::
+
+import { ComponentShowcase } from '../components/component-showcase';
+import { Spinner } from '@eightshift/ui-components/icons';
+
+A small loading indicator used inside buttons, async controls, and placeholders. Exported from `@eightshift/ui-components/icons`.
+
+<ComponentShowcase>
+	<Spinner />
+</ComponentShowcase>
+
+```jsx
+import { Spinner } from '@eightshift/ui-components/icons';
+
+<Spinner />;
+```
+
+## Sizing and color
+
+`Spinner` accepts a `className` and renders as a `<div>`. The default size is `size-8` and the default color is the accent color. Override both by passing Tailwind utility classes:
+
+<ComponentShowcase>
+	<Spinner className='es:size-4 es:text-surface-600' />
+</ComponentShowcase>
+
+```jsx
+<Spinner className='es:size-4 es:text-surface-600' />
+```
+
+## Highlighted props
+
+| Prop        | Description                                                                                 |
+| ----------- | ------------------------------------------------------------------------------------------- |
+| `className` | Appended to the spinner's class list. Use for size, color, and additional motion utilities. |

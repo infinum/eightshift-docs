@@ -1,8 +1,12 @@
 # UI icons
 
+:::tip
+[View source on GitHub →](https://github.com/infinum/eightshift-ui-components/tree/main/lib/icons/ui-icons)
+:::
+
 import { ComponentShowcase } from '../components/component-showcase';
 import { Button, InputField } from '@eightshift/ui-components';
-import { icons } from '@eightshift/ui-components/icons';
+import * as icons from '@eightshift/ui-components/icons';
 
 Regular React components, use within components, option pages, sidebar, ...
 
@@ -20,28 +24,32 @@ Regular React components, use within components, option pages, sidebar, ...
 	)}
 >
 	{(data) => {
-		const filteredIcons = Object.keys(icons).filter((k) =>
-			data?.length > 0 ? k.toLowerCase().includes(data?.toLowerCase()) : true
-		);
-
-		if (filteredIcons.length < 1)  {
-			return (
-				<span>Nothing found</span>
+		const filteredIcons = Object.keys(icons)
+			.filter((k) => /^[a-z]/.test(k))
+			.filter((k) => icons[k]?.$$typeof !== undefined)
+			.filter((k) =>
+				data?.length > 0 ? k.toLowerCase().includes(data?.toLowerCase()) : true
 			);
-		}
 
-		return filteredIcons.map((icon, index) => (
-			<Button
-				key={index}
-				className='esd-icon-showcase-button'
-				icon={icons[icon]}
-				tooltip={<span className='es:font-mono'>{icon}</span>}
-				aria-label={icon}
-				onPress={() => {
-					navigator.clipboard.writeText(icon);
-				}}
-				type='simple'
-			/>
-		));
-	}}
+    	if (filteredIcons.length < 1)  {
+    		return (
+    			<span>Nothing found</span>
+    		);
+    	}
+
+    	return filteredIcons.map((icon, index) => (
+    		<Button
+    			key={index}
+    			className='esd-icon-showcase-button'
+    			icon={icons[icon]}
+    			tooltip={<span className='es:font-mono'>{icon}</span>}
+    			aria-label={icon}
+    			onPress={() => {
+    				navigator.clipboard.writeText(icon);
+    			}}
+    			type='simple'
+    		/>
+    	));
+    }}
+
 </ComponentShowcase>

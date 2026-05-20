@@ -1,8 +1,23 @@
 # Option selector
 
+:::tip
+[View source on GitHub →](https://github.com/infinum/eightshift-ui-components/tree/main/lib/components/option-select)
+:::
+
 import { ComponentShowcase } from '../components/component-showcase';
 import { OptionSelect, Checkbox, Button, Menu, MenuItem, MenuSeparator } from '@eightshift/ui-components';
-import { icons } from '@eightshift/ui-components/icons';
+import {
+	columns,
+	design,
+	emptyCircle,
+	emptyRect,
+	large,
+	magicAlt,
+	medium,
+	multiple,
+	small,
+	wrench,
+} from '@eightshift/ui-components/icons';
 
 This is a versatile component that can allow selecting from a set of options in various ways.
 
@@ -25,7 +40,7 @@ This is a versatile component that can allow selecting from a set of options in 
 
 ```jsx
 <OptionSelect
-	icon={icons.columns}
+	icon={columns}
 	label='Option'
 	value={value} // e.g. 'option1'
 	onChange={(value) => setData(value)}
@@ -55,9 +70,9 @@ For the complete list of props, use your IDE's autocomplete functionality.
 				value={data}
 				onChange={setData}
 				options={[
-					{ value: 'option1', label: 'Option 1', icon: icons.design },
-					{ value: 'option2', label: 'Option 2', icon: icons.wrench },
-					{ value: 'option3', label: 'Option 3', icon: icons.magicAlt },
+					{ value: 'option1', label: 'Option 1', icon: design },
+					{ value: 'option2', label: 'Option 2', icon: wrench },
+					{ value: 'option3', label: 'Option 3', icon: magicAlt },
 				]}
 				type='toggleButtons'
 			/>
@@ -77,9 +92,9 @@ For the complete list of props, use your IDE's autocomplete functionality.
 				value={data}
 				onChange={setData}
 				options={[
-					{ value: 'option1', label: 'Option 1', icon: icons.design },
-					{ value: 'option2', label: 'Option 2', icon: icons.wrench },
-					{ value: 'option3', label: 'Option 3', icon: icons.magicAlt },
+					{ value: 'option1', label: 'Option 1', icon: design },
+					{ value: 'option2', label: 'Option 2', icon: wrench },
+					{ value: 'option3', label: 'Option 3', icon: magicAlt },
 				]}
 				type='toggleButtonsSplit'
 			/>
@@ -147,9 +162,9 @@ For the complete list of props, use your IDE's autocomplete functionality.
 				value={data}
 				onChange={setData}
 				options={[
-					{ value: 'option1', label: 'Option 1', icon: icons.design },
-					{ value: 'option2', label: 'Option 2', icon: icons.wrench },
-					{ value: 'option3', label: 'Option 3', icon: icons.magicAlt },
+					{ value: 'option1', label: 'Option 1', icon: design },
+					{ value: 'option2', label: 'Option 2', icon: wrench },
+					{ value: 'option3', label: 'Option 3', icon: magicAlt },
 				]}
 				type='menu'
 			/>
@@ -169,9 +184,9 @@ For the complete list of props, use your IDE's autocomplete functionality.
 				value={data}
 				onChange={setData}
 				options={[
-					{ value: 'option1', label: 'Option 1', endIcon: icons.design },
-					{ value: 'option2', label: 'Option 2', endIcon: icons.wrench },
-					{ value: 'option3', label: 'Option 3', endIcon: icons.magicAlt },
+					{ value: 'option1', label: 'Option 1', endIcon: design },
+					{ value: 'option2', label: 'Option 2', endIcon: wrench },
+					{ value: 'option3', label: 'Option 3', endIcon: magicAlt },
 				]}
 				type='menu'
 			/>
@@ -190,9 +205,9 @@ For the complete list of props, use your IDE's autocomplete functionality.
 				onChange={setData}
 				options={[
 					{ value: '-', label: 'Try and click me', disabled: true },
-					{ value: 'option1', label: 'Option 1', endIcon: icons.design },
-					{ value: 'option2', label: 'Option 2', endIcon: icons.wrench },
-					{ value: 'option3', label: 'Option 3', endIcon: icons.magicAlt },
+					{ value: 'option1', label: 'Option 1', endIcon: design },
+					{ value: 'option2', label: 'Option 2', endIcon: wrench },
+					{ value: 'option3', label: 'Option 3', endIcon: magicAlt },
 				]}
 				type='menu'
 			/>
@@ -210,9 +225,9 @@ Separator lines <br /> (`separator: 'below'` or `separator: 'above'`)
 				value={data}
 				onChange={setData}
 				options={[
-					{ value: 'option1', label: 'Option 1', endIcon: icons.design, separator: 'below' },
-					{ value: 'option2', label: 'Option 2', endIcon: icons.wrench },
-					{ value: 'option3', label: 'Option 3', endIcon: icons.magicAlt, separator: 'above' },
+					{ value: 'option1', label: 'Option 1', endIcon: design, separator: 'below' },
+					{ value: 'option2', label: 'Option 2', endIcon: wrench },
+					{ value: 'option3', label: 'Option 3', endIcon: magicAlt, separator: 'above' },
 				]}
 				type='menu'
 			/>
@@ -300,9 +315,9 @@ Most item features from `'menu'` are supported.
 					value={data}
 					onChange={setData}
 					options={[
-						{ value: 'option1', label: 'Option 1', icon: icons.design },
-						{ value: 'option2', label: 'Option 2', icon: icons.wrench },
-						{ value: 'option3', label: 'Option 3', icon: icons.magicAlt },
+						{ value: 'option1', label: 'Option 1', icon: design },
+						{ value: 'option2', label: 'Option 2', icon: wrench },
+						{ value: 'option3', label: 'Option 3', icon: magicAlt },
 					]}
 					type='submenu'
 				/>
@@ -321,9 +336,9 @@ Most item features from `'menu'` are supported.
 		value={data}
 		onChange={setData}
 		options={[
-			{ value: 'option1', label: 'Option 1', icon: icons.design },
-			{ value: 'option2', label: 'Option 2', icon: icons.wrench },
-			{ value: 'option3', label: 'Option 3', icon: icons.magicAlt },
+			{ value: 'option1', label: 'Option 1', icon: design },
+			{ value: 'option2', label: 'Option 2', icon: wrench },
+			{ value: 'option3', label: 'Option 3', icon: magicAlt },
 		]}
 		type='submenu'
 	/>
@@ -342,13 +357,13 @@ If no `label` is provided, the current value will be used as a label.
 				<MenuItem>Ipsum</MenuItem>
 				<MenuSeparator />
 				<OptionSelect
-					icon={icons.multiple}
+					icon={multiple}
 					value={data}
 					onChange={setData}
 					options={[
-						{ value: 'option1', label: 'Option 1', icon: icons.design },
-						{ value: 'option2', label: 'Option 2', icon: icons.wrench },
-						{ value: 'option3', label: 'Option 3', icon: icons.magicAlt },
+						{ value: 'option1', label: 'Option 1', icon: design },
+						{ value: 'option2', label: 'Option 2', icon: wrench },
+						{ value: 'option3', label: 'Option 3', icon: magicAlt },
 					]}
 					type='submenu'
 				/>
@@ -367,15 +382,15 @@ If `subtitle` is set (to `true`), the current value will be used as a subtitle.
 				<MenuItem>Ipsum</MenuItem>
 				<MenuSeparator />
 				<OptionSelect
-					icon={icons.multiple}
+					icon={multiple}
 					label='Option'
 					subtitle
 					value={data}
 					onChange={setData}
 					options={[
-						{ value: 'option1', label: 'Option 1', icon: icons.design },
-						{ value: 'option2', label: 'Option 2', icon: icons.wrench },
-						{ value: 'option3', label: 'Option 3', icon: icons.magicAlt },
+						{ value: 'option1', label: 'Option 1', icon: design },
+						{ value: 'option2', label: 'Option 2', icon: wrench },
+						{ value: 'option3', label: 'Option 3', icon: magicAlt },
 					]}
 					type='submenu'
 				/>
@@ -404,9 +419,9 @@ Most item features from `'menu'` are supported.
 					value={data}
 					onChange={setData}
 					options={[
-						{ value: 'option1', label: 'Option 1', icon: icons.design },
-						{ value: 'option2', label: 'Option 2', icon: icons.wrench },
-						{ value: 'option3', label: 'Option 3', icon: icons.magicAlt },
+						{ value: 'option1', label: 'Option 1', icon: design },
+						{ value: 'option2', label: 'Option 2', icon: wrench },
+						{ value: 'option3', label: 'Option 3', icon: magicAlt },
 					]}
 					type='standaloneMenuItems'
 				/>
@@ -425,9 +440,9 @@ Most item features from `'menu'` are supported.
 		value={data}
 		onChange={setData}
 		options={[
-			{ value: 'option1', label: 'Option 1', icon: icons.design },
-			{ value: 'option2', label: 'Option 2', icon: icons.wrench },
-			{ value: 'option3', label: 'Option 3', icon: icons.magicAlt },
+			{ value: 'option1', label: 'Option 1', icon: design },
+			{ value: 'option2', label: 'Option 2', icon: wrench },
+			{ value: 'option3', label: 'Option 3', icon: magicAlt },
 		]}
 		type='standaloneMenuItems'
 	/>
@@ -446,9 +461,9 @@ _(not applicable to all types)_
 				value={data}
 				onChange={setData}
 				options={[
-					{ value: 'option1', label: 'Small', icon: icons.small },
-					{ value: 'option2', label: 'Medium', icon: icons.medium },
-					{ value: 'option3', label: 'Large', icon: icons.large },
+					{ value: 'option1', label: 'Small', icon: small },
+					{ value: 'option2', label: 'Medium', icon: medium },
+					{ value: 'option3', label: 'Large', icon: large },
 				]}
 				type='radios'
 				vertical
@@ -459,7 +474,7 @@ _(not applicable to all types)_
 
 ```jsx
 <OptionSelect
-	icon={icons.columns}
+	icon={columns}
 	label='Option'
 	value={value} // e.g. 'option1'
 	onChange={(value) => setData(value)}
@@ -487,9 +502,9 @@ Hide the trigger icon with `noTriggerIcon`.
 				value={data}
 				onChange={setData}
 				options={[
-					{ value: 'option1', label: 'Small', icon: icons.small },
-					{ value: 'option2', label: 'Medium', icon: icons.medium },
-					{ value: 'option3', label: 'Large', icon: icons.large },
+					{ value: 'option1', label: 'Small', icon: small },
+					{ value: 'option2', label: 'Medium', icon: medium },
+					{ value: 'option3', label: 'Large', icon: large },
 				]}
 				type='menu'
 				noTriggerIcon
@@ -508,9 +523,9 @@ Hide the trigger label with `noTriggerLabel`.
 				value={data}
 				onChange={setData}
 				options={[
-					{ value: 'option1', label: 'Small', icon: icons.small },
-					{ value: 'option2', label: 'Medium', icon: icons.medium },
-					{ value: 'option3', label: 'Large', icon: icons.large },
+					{ value: 'option1', label: 'Small', icon: small },
+					{ value: 'option2', label: 'Medium', icon: medium },
+					{ value: 'option3', label: 'Large', icon: large },
 				]}
 				type='menu'
 				noTriggerLabel
@@ -530,9 +545,9 @@ Modify the "outside" component props with `wrapperProps`.
 					value={data}
 					onChange={setData}
 					options={[
-						{ value: 'option1', label: 'Option 1', icon: icons.emptyCircle },
-						{ value: 'option2', label: 'Option 2', icon: icons.emptyRect },
-						{ value: 'option3', label: 'Option 3', icon: icons.emptyCircle },
+						{ value: 'option1', label: 'Option 1', icon: emptyCircle },
+						{ value: 'option2', label: 'Option 2', icon: emptyRect },
+						{ value: 'option3', label: 'Option 3', icon: emptyCircle },
 					]}
 					wrapperProps={{ className: 'es:bg-secondary-100 es:p-2' }}
 				/>
@@ -542,9 +557,9 @@ Modify the "outside" component props with `wrapperProps`.
     				value={data}
     				onChange={setData}
     				options={[
-    					{ value: 'option1', label: 'Option 1', icon: icons.emptyCircle },
-    					{ value: 'option2', label: 'Option 2', icon: icons.emptyRect },
-    					{ value: 'option3', label: 'Option 3', icon: icons.emptyCircle },
+    					{ value: 'option1', label: 'Option 1', icon: emptyCircle },
+    					{ value: 'option2', label: 'Option 2', icon: emptyRect },
+    					{ value: 'option3', label: 'Option 3', icon: emptyCircle },
     				]}
     				type='radios'
     				wrapperProps={{ className: 'es:bg-secondary-100 es:p-2' }}
@@ -555,9 +570,9 @@ Modify the "outside" component props with `wrapperProps`.
     				value={data}
     				onChange={setData}
     				options={[
-    					{ value: 'option1', label: 'Option 1', icon: icons.emptyCircle },
-    					{ value: 'option2', label: 'Option 2', icon: icons.emptyRect },
-    					{ value: 'option3', label: 'Option 3', icon: icons.emptyCircle },
+    					{ value: 'option1', label: 'Option 1', icon: emptyCircle },
+    					{ value: 'option2', label: 'Option 2', icon: emptyRect },
+    					{ value: 'option3', label: 'Option 3', icon: emptyCircle },
     				]}
     				type='menu'
     				wrapperProps={{ className: 'es:bg-accent-50 es:p-2' }}
@@ -590,9 +605,9 @@ Hide the item icon with `noItemIcon`.
 				value={data}
 				onChange={setData}
 				options={[
-					{ value: 'option1', label: 'Small', icon: icons.small },
-					{ value: 'option2', label: 'Medium', icon: icons.medium },
-					{ value: 'option3', label: 'Large', icon: icons.large },
+					{ value: 'option1', label: 'Small', icon: small },
+					{ value: 'option2', label: 'Medium', icon: medium },
+					{ value: 'option3', label: 'Large', icon: large },
 				]}
 				type='menu'
 				noItemIcon
@@ -611,9 +626,9 @@ Hide the item label with `noItemLabel`.
 				value={data}
 				onChange={setData}
 				options={[
-					{ value: 'option1', label: 'Small', icon: icons.small },
-					{ value: 'option2', label: 'Medium', icon: icons.medium },
-					{ value: 'option3', label: 'Large', icon: icons.large },
+					{ value: 'option1', label: 'Small', icon: small },
+					{ value: 'option2', label: 'Medium', icon: medium },
+					{ value: 'option3', label: 'Large', icon: large },
 				]}
 				noItemLabel
 			/>
@@ -631,9 +646,9 @@ Modify the item props with `itemProps` or just pass a class name with `itemClass
 				value={data}
 				onChange={setData}
 				options={[
-					{ value: 'option1', label: 'Small', icon: icons.small },
-					{ value: 'option2', label: 'Medium', icon: icons.medium },
-					{ value: 'option3', label: 'Large', icon: icons.large },
+					{ value: 'option1', label: 'Small', icon: small },
+					{ value: 'option2', label: 'Medium', icon: medium },
+					{ value: 'option3', label: 'Large', icon: large },
 				]}
 				itemProps={{ size: 'large' }}
 				itemClassName='es:flex-col esd-btn-custom'

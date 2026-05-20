@@ -1,8 +1,13 @@
 # Link input
 
+:::tip
+[View source on GitHub →](https://github.com/infinum/eightshift-ui-components/tree/main/lib/components/link-input)
+:::
+
 import { ComponentShowcase } from '../components/component-showcase';
 import { LinkInput } from '@eightshift/ui-components';
-import { icons } from '@eightshift/ui-components/icons';
+import { magicAltFillTransparent, newspaper, troubleshootAlt } from '@eightshift/ui-components/icons';
+
 import { getLinkData, getIconOverrides } from './link-input-helpers';
 
 <ComponentShowcase defaultValue=''>
@@ -70,9 +75,9 @@ If you want to provide custom icons for the search suggestions, you can provide 
 
 ```jsx
 const overrides = {
-	post: icons.newspaper,
-	page: icons.magicAltFillTransparent,
-	'help-article': icons.troubleshootAlt,
+	post: newspaper,
+	page: magicAltFillTransparent,
+	'help-article': troubleshootAlt,
 };
 
 <LinkInput

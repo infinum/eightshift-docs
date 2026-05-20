@@ -1,12 +1,16 @@
 # Expandable
 
+:::tip
+[View source on GitHub →](https://github.com/infinum/eightshift-ui-components/tree/main/lib/components/expandable)
+:::
+
 import { ComponentShowcase } from '../components/component-showcase';
 import { Expandable, Button } from '@eightshift/ui-components';
-import { icons } from '@eightshift/ui-components/icons';
+import { arrowDown, arrowUp, emptyCircle, emptyRect } from '@eightshift/ui-components/icons';
 
 <ComponentShowcase defaultValue={false}>
 	<Expandable
-		icon={icons.emptyRect}
+		icon={emptyRect}
 		label='Expandable'
 		subtitle='Subtitle'
 	>
@@ -18,7 +22,7 @@ import { icons } from '@eightshift/ui-components/icons';
 
 ```jsx
 <Expandable
-	icon={icons.emptyRect}
+	icon={emptyRect}
 	label='Expandable'
 	subtitle='Subtitle'
 >
@@ -36,13 +40,13 @@ Add extra controls to the right of the label.
 
 <ComponentShowcase defaultValue={false}>
 	<Expandable
-		icon={icons.emptyRect}
+		icon={emptyRect}
 		label='Expandable'
 		subtitle='Subtitle'
 		actions={
 			<Button
 				size='small'
-				icon={icons.emptyCircle}
+				icon={emptyCircle}
 			/>
 		}
 	>
@@ -54,13 +58,13 @@ Add extra controls to the right of the label.
 
 ```jsx
 <Expandable
-	icon={icons.emptyRect}
+	icon={emptyRect}
 	label='Expandable'
 	subtitle='Subtitle'
 	// highlight-start
 	actions={
 		<Button
-			icon={icons.emptyCircle}
+			icon={emptyCircle}
 			size='small'
 			onPress={...}
 		/>
@@ -77,13 +81,13 @@ If you want to keep the actions visible even when the content is expanded, you c
 
 <ComponentShowcase defaultValue={false}>
 	<Expandable
-		icon={icons.emptyRect}
+		icon={emptyRect}
 		label='Expandable'
 		subtitle='Subtitle'
 		actions={
 			<Button
 				size='small'
-				icon={icons.emptyCircle}
+				icon={emptyCircle}
 			/>
 		}
 		keepActionsOnExpand
@@ -96,12 +100,12 @@ If you want to keep the actions visible even when the content is expanded, you c
 
 ```jsx
 <Expandable
-	icon={icons.emptyRect}
+	icon={emptyRect}
 	label='Expandable'
 	subtitle='Subtitle'
 	actions={
 		<Button
-			icon={icons.emptyCircle}
+			icon={emptyCircle}
 			onPress={...}
 		/>
 	}
@@ -119,7 +123,7 @@ If you want to disable this behavior, you can use the `noFocusHandling` prop.
 
 ```jsx
 <Expandable
-	icon={icons.emptyRect}
+	icon={emptyRect}
 	label='Expandable'
 	// highlight-next-line
 	noFocusHandling
@@ -141,12 +145,12 @@ The following props are provided:
 
 <ComponentShowcase defaultValue={false}>
 	<Expandable
-		icon={icons.emptyRect}
+		icon={emptyRect}
 		label='Expandable'
 		customOpenButton={({ open, toggleOpen, tooltip, disabled }) => (
 		<Button
 			size='small'
-			icon={open ? icons.arrowUp : icons.arrowDown}
+			icon={open ? arrowUp : arrowDown}
 			type='ghost'
 			onPress={toggleOpen}
 			disabled={disabled}
@@ -164,12 +168,12 @@ The following props are provided:
 
 ```jsx
 <Expandable
-	icon={icons.emptyRect}
+	icon={emptyRect}
 	label='Expandable'
 	// highlight-start
 	customOpenButton={({ open, toggleOpen, tooltip, disabled }) => (
 		<Button
-			icon={open ? icons.arrowUp : icons.arrowDown}
+			icon={open ? arrowUp : arrowDown}
 			onPress={toggleOpen}
 			type='ghost'
 			disabled={disabled}

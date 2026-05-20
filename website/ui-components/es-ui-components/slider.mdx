@@ -1,8 +1,12 @@
 # Slider
 
+:::tip
+[View source on GitHub →](https://github.com/infinum/eightshift-ui-components/tree/main/lib/components/slider)
+:::
+
 import { ComponentShowcase } from '../components/component-showcase';
 import { Slider } from '@eightshift/ui-components';
-import { icons } from '@eightshift/ui-components/icons';
+import { magicAltFillTransparent } from '@eightshift/ui-components/icons';
 
 <ComponentShowcase defaultValue={0}>
 	{(data, setData) => {
@@ -227,7 +231,7 @@ For the complete list of props, use your IDE's autocomplete functionality.
 				value={data}
 				onChange={setData}
 				aria-label='Slider'
-				before={icons.magicAltFillTransparent}
+				before={magicAltFillTransparent}
 			/>
 		);
 	}}
@@ -238,7 +242,7 @@ For the complete list of props, use your IDE's autocomplete functionality.
 	value={value}
 	onChange={(value) => setData(value)}
 	// highlight-next-line
-	before={icons.magicAltFillTransparent}
+	before={magicAltFillTransparent}
 />
 ```
 
@@ -251,7 +255,7 @@ For the complete list of props, use your IDE's autocomplete functionality.
 				value={data}
 				onChange={setData}
 				aria-label='Slider'
-				after={icons.magicAltFillTransparent}
+				after={magicAltFillTransparent}
 			/>
 		);
 	}}
@@ -262,7 +266,7 @@ For the complete list of props, use your IDE's autocomplete functionality.
 	value={value}
 	onChange={(value) => setData(value)}
 	// highlight-next-line
-	after={icons.magicAltFillTransparent}
+	after={magicAltFillTransparent}
 />
 ```
 

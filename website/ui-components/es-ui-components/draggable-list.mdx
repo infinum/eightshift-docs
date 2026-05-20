@@ -1,7 +1,12 @@
 # Draggable list
 
+:::tip
+[View source on GitHub →](https://github.com/infinum/eightshift-ui-components/tree/main/lib/components/draggable-list)
+:::
+
 import { ComponentShowcase } from '../components/component-showcase';
-import { icons } from '@eightshift/ui-components/icons';
+import { emptyCircle } from '@eightshift/ui-components/icons';
+
 import { DraggableListDemo, draggableListDefaultItems } from './draggable-list-helpers';
 
 <ComponentShowcase defaultValue={draggableListDefaultItems}>
@@ -24,7 +29,7 @@ import { DraggableListDemo, draggableListDefaultItems } from './draggable-list-h
 		return (
 			<DraggableListItem
 				label={title ?? 'New item'}
-				icon={icon ?? icons.emptyCircle}
+				icon={icon ?? emptyCircle}
 			>
 				<Switch
 					aria-label='Title'

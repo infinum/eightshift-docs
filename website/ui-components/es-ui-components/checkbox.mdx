@@ -1,8 +1,12 @@
 # Checkbox
 
+:::tip
+[View source on GitHub →](https://github.com/infinum/eightshift-ui-components/tree/main/lib/components/checkbox)
+:::
+
 import { ComponentShowcase } from '../components/component-showcase';
 import { Checkbox } from '@eightshift/ui-components';
-import { icons } from '@eightshift/ui-components/icons';
+import { emptyRect } from '@eightshift/ui-components/icons';
 
 <ComponentShowcase defaultValue={false}>
 	{(data, setData) => {
@@ -34,7 +38,7 @@ For the complete list of props, use your IDE's autocomplete functionality.
 	{(data, setData) => {
 		return (
 			<Checkbox
-				icon={icons.emptyRect}
+				icon={emptyRect}
 				label='Demo'
 				checked={data}
 				onChange={setData}
@@ -46,7 +50,7 @@ For the complete list of props, use your IDE's autocomplete functionality.
 
 ```jsx
 <Checkbox
-	icon={icons.emptyRect}
+	icon={emptyRect}
 	label='Demo'
 	checked={data}
 	onChange={setData}
