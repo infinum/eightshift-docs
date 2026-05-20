@@ -2,7 +2,7 @@
 
 import { ComponentShowcase } from '../components/component-showcase';
 import { Toggle, Switch, Button } from '@eightshift/ui-components';
-import { icons } from '@eightshift/ui-components/icons';
+import { emptyRect } from '@eightshift/ui-components/icons';
 
 <ComponentShowcase defaultValue={false}>
 	{(data, setData) => {
@@ -54,13 +54,14 @@ Other props are the same, with the exception of label and related props.
 For the complete list of props, use your IDE's autocomplete functionality.
 
 ### Icon, subtitle
+
 Augment the label
 
 <ComponentShowcase defaultValue={false}>
 	{(data, setData) => {
 		return (
 			<Toggle
-				icon={icons.emptyRect}
+				icon={emptyRect}
 				subtitle='Subtitle'
 				checked={data}
 				onChange={setData}
@@ -73,7 +74,7 @@ Augment the label
 ```jsx
 <Toggle
 	// highlight-start
-	icon={icons.emptyRect}
+	icon={emptyRect}
 	subtitle='Subtitle'
 	// highlight-end
 	label='Demo'
@@ -83,6 +84,7 @@ Augment the label
 ```
 
 ### Disabled
+
 Prevent interactions with the toggle.
 
 <ComponentShowcase defaultValue={false}>
@@ -109,6 +111,7 @@ Prevent interactions with the toggle.
 ```
 
 ### Indeterminate state
+
 Whether the toggle should be rendered in an indeterminate state.
 
 <ComponentShowcase

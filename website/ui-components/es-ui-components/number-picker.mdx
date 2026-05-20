@@ -2,7 +2,7 @@
 
 import { ComponentShowcase } from '../components/component-showcase';
 import { NumberPicker, Button } from '@eightshift/ui-components';
-import { icons } from '@eightshift/ui-components/icons';
+import { emptyCircle, resetToZero } from '@eightshift/ui-components/icons';
 
 <ComponentShowcase defaultValue={0}>
 	{(data, setData) => (
@@ -134,7 +134,7 @@ Decimal numbers are allowed.
 			onChange={setData}
 		>
 			<Button
-				icon={icons.resetToZero}
+				icon={resetToZero}
 				tooltip='Reset'
 				onPress={() => setData(0)}
 				disabled={data === 0}
@@ -152,7 +152,7 @@ Decimal numbers are allowed.
 >
 	// highlight-start
 	<Button
-		icon={icons.resetToZero}
+		icon={resetToZero}
 		tooltip='Reset'
 		onPress={() => setValue(0)}
 		disabled={value === 0}
@@ -170,7 +170,7 @@ Decimal numbers are allowed.
 			value={data}
 			onChange={setData}
 			label='Pick a number'
-			icon={icons.emptyCircle}
+			icon={emptyCircle}
 			help='Help text'
 		/>
 	)}
@@ -182,7 +182,7 @@ Decimal numbers are allowed.
 	onChange={(value) => setValue(value)}
 	// highlight-start
 	label='Pick a number'
-	icon={icons.emptyCircle}
+	icon={emptyCircle}
 	help='Help text'
 	// highlight-end
 />
@@ -194,7 +194,7 @@ Decimal numbers are allowed.
 			value={data}
 			onChange={setData}
 			label='Pick a number'
-			icon={icons.emptyCircle}
+			icon={emptyCircle}
 			subtitle='Subtitle text'
 			inline
 		/>
@@ -207,7 +207,7 @@ Decimal numbers are allowed.
 	onChange={(value) => setValue(value)}
 	// highlight-start
 	label='Pick a number'
-	icon={icons.emptyCircle}
+	icon={emptyCircle}
 	subtitle='Subtitle text'
 	inline
 	// highlight-end

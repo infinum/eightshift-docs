@@ -2,7 +2,7 @@
 
 import { ComponentShowcase } from '../components/component-showcase';
 import { Modal, Button } from '@eightshift/ui-components';
-import { icons } from '@eightshift/ui-components/icons';
+import { experiment, pointerHand, trash } from '@eightshift/ui-components/icons';
 
 <ComponentShowcase>
 	<Modal>
@@ -27,7 +27,7 @@ For the complete list of props, use your IDE's autocomplete functionality.
 <ComponentShowcase>
 	<Modal
 		triggerLabel='Click me'
-		triggerIcon={icons.pointerHand}
+		triggerIcon={pointerHand}
 	>
 		<div className='es:w-full es:rounded-xl es:bg-gray-100 es:text-sm es:p-4 es:min-h-40'>
 			<span>This is demo content</span>
@@ -39,7 +39,7 @@ For the complete list of props, use your IDE's autocomplete functionality.
 <Modal
 	// highlight-start
 	triggerLabel='Click me'
-	triggerIcon={icons.pointerHand}
+	triggerIcon={pointerHand}
 	// highlight-end
 >
 	<div>This is demo content</div>
@@ -52,7 +52,7 @@ For the complete list of props, use your IDE's autocomplete functionality.
 
 <ComponentShowcase>
 	<Modal
-		triggerIcon={icons.trash}
+		triggerIcon={trash}
 		triggerProps={{ type: 'danger' }}
 		contentClassName='es:p-4'
 		noCloseButton
@@ -71,7 +71,7 @@ For the complete list of props, use your IDE's autocomplete functionality.
 
 ```jsx
 <Modal
-	triggerIcon={icons.trash}
+	triggerIcon={trash}
 	// highlight-next-line
 	triggerProps={{ type: 'danger' }}
 >
@@ -166,7 +166,7 @@ You can add actions to the header of the modal with the `headerActions` prop.
 			<Button
 				type='selectedGhost'
 				size='small'
-				icon={icons.experiment}
+				icon={experiment}
 				aria-label='Demo button'
 				onPress={() => alert('Demo button clicked')}
 			/>
@@ -186,7 +186,7 @@ You can add actions to the header of the modal with the `headerActions` prop.
 		<Button
 			type='ghost'
 			size='small'
-			icon={icons.experiment}
+			icon={experiment}
 			aria-label='Demo button'
 			onPress={() => alert('Demo button clicked')}
 		/>
@@ -245,7 +245,7 @@ so it can automatically wire up the modal's open/close functionality.
 <ComponentShowcase>
 	<Modal
 		customTrigger={
-			<Button type='ghost' icon={icons.pointerHand}>Click me</Button>
+			<Button type='ghost' icon={pointerHand}>Click me</Button>
 		}
 	>
 		<div className='es:w-full es:rounded-xl es:bg-gray-100 es:text-sm es:p-4 es:min-h-40'>
@@ -260,7 +260,7 @@ so it can automatically wire up the modal's open/close functionality.
 	customTrigger={
 		<Button
 			type='ghost'
-			icon={icons.pointerHand}
+			icon={pointerHand}
 		>
 			Click me
 		</Button>

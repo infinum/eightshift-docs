@@ -2,12 +2,12 @@
 
 import { ComponentShowcase } from '../components/component-showcase';
 import { ComponentToggle, OptionSelect } from '@eightshift/ui-components';
-import { icons } from '@eightshift/ui-components/icons';
+import { paragraph } from '@eightshift/ui-components/icons';
 
 <ComponentShowcase>
 	{(data, setData) => (
 		<ComponentToggle
-			icon={icons.paragraph}
+			icon={paragraph}
 			label='Paragraph'
 			useComponent={data}
 			onChange={setData}
@@ -21,7 +21,7 @@ import { icons } from '@eightshift/ui-components/icons';
 
 ```jsx
 <ComponentToggle
-	icon={icons.paragraph}
+	icon={paragraph}
 	label='Paragraph'
 	useComponent={value}
 	onChange={(value) => setValue(value)}
@@ -39,7 +39,7 @@ For the complete list of props, use your IDE's autocomplete functionality.
 <ComponentShowcase defaultValue={true}>
 	{(data, setData) => (
 		<ComponentToggle
-			icon={icons.paragraph}
+			icon={paragraph}
 			label='Paragraph'
 			useComponent={data}
 			onChange={setData}
@@ -54,7 +54,7 @@ For the complete list of props, use your IDE's autocomplete functionality.
 
 ```jsx
 <ComponentToggle
-	icon={icons.paragraph}
+	icon={paragraph}
 	label='Paragraph'
 	useComponent={value}
 	onChange={(value) => setValue(value)}
@@ -70,7 +70,7 @@ For the complete list of props, use your IDE's autocomplete functionality.
 <ComponentShowcase>
 	{(data, setData) => (
 		<ComponentToggle
-			icon={icons.paragraph}
+			icon={paragraph}
 			label='Paragraph'
 			useComponent={data}
 			onChange={setData}
@@ -85,7 +85,7 @@ For the complete list of props, use your IDE's autocomplete functionality.
 
 ```jsx
 <ComponentToggle
-	icon={icons.paragraph}
+	icon={paragraph}
 	label='Paragraph'
 	useComponent={value}
 	onChange={(value) => setValue(value)}
@@ -117,7 +117,7 @@ For the complete list of props, use your IDE's autocomplete functionality.
 >
 	{(data, setData) => (
 		<ComponentToggle
-			icon={icons.paragraph}
+			icon={paragraph}
 			label='Paragraph'
 			useComponent={data.use}
 			onChange={(value) => setData({ ...data, use: value })}
@@ -132,7 +132,7 @@ For the complete list of props, use your IDE's autocomplete functionality.
 
 ```jsx
 <ComponentToggle
-	icon={icons.paragraph}
+	icon={paragraph}
 	label='Paragraph'
 	useComponent={value}
 	onChange={(value) => setValue(value)}

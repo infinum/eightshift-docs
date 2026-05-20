@@ -2,7 +2,8 @@
 
 import { ComponentShowcase } from '../components/component-showcase';
 import { RichLabel } from '@eightshift/ui-components';
-import { icons } from '@eightshift/ui-components/icons';
+import { emptyCircle, solidCircleFilled } from '@eightshift/ui-components/icons';
+
 import { globalManifest, responsiveOptions, breakpointNames } from './responsive-helpers';
 
 Upgrade your basic labels with an optional icon and subtitle.
@@ -11,7 +12,7 @@ Upgrade your basic labels with an optional icon and subtitle.
 	<RichLabel
 		label='Label ipsum dolor sit amet'
 		subtitle='Subtitle ipsum dolor sit amet'
-		icon={icons.emptyCircle}
+		icon={emptyCircle}
 	/>
 </ComponentShowcase>
 
@@ -19,7 +20,7 @@ Upgrade your basic labels with an optional icon and subtitle.
 <RichLabel
 	label='Label ipsum dolor sit amet'
 	subtitle='Subtitle ipsum dolor sit amet'
-	icon={icons.emptyCircle}
+	icon={emptyCircle}
 />
 ```
 
@@ -33,7 +34,7 @@ For the complete list of props, use your IDE's autocomplete functionality.
 	<RichLabel
 		label='Label ipsum dolor sit amet'
 		subtitle='Subtitle ipsum dolor sit amet'
-		icon={icons.emptyCircle}
+		icon={emptyCircle}
 		fullWidth
 	/>
 </ComponentShowcase>
@@ -42,7 +43,7 @@ For the complete list of props, use your IDE's autocomplete functionality.
 <RichLabel
 	label='Label ipsum dolor sit amet'
 	subtitle='Subtitle ipsum dolor sit amet'
-	icon={icons.emptyCircle}
+	icon={emptyCircle}
 	// highlight-next-line
 	fullWidth
 />
@@ -57,7 +58,7 @@ use the `noColor` prop to use opacity to highlight hierarchy instead of multiple
 	<RichLabel
 		label='Label ipsum dolor sit amet'
 		subtitle='Subtitle ipsum dolor sit amet'
-		icon={icons.solidCircleFilled}
+		icon={solidCircleFilled}
 	/>
 </ComponentShowcase>
 
@@ -66,7 +67,7 @@ use the `noColor` prop to use opacity to highlight hierarchy instead of multiple
 <RichLabel
 	label='Label ipsum dolor sit amet'
 	subtitle='Subtitle ipsum dolor sit amet'
-	icon={icons.solidCircleFilled}
+	icon={solidCircleFilled}
 />
 ```
 
@@ -74,7 +75,7 @@ use the `noColor` prop to use opacity to highlight hierarchy instead of multiple
 	<RichLabel
 		label='Label ipsum dolor sit amet'
 		subtitle='Subtitle ipsum dolor sit amet'
-		icon={icons.solidCircleFilled}
+		icon={solidCircleFilled}
 
     	noColor
     />
@@ -86,7 +87,7 @@ use the `noColor` prop to use opacity to highlight hierarchy instead of multiple
 <RichLabel
 	label='Label ipsum dolor sit amet'
 	subtitle='Subtitle ipsum dolor sit amet'
-	icon={icons.solidCircleFilled}
+	icon={solidCircleFilled}
 	// highlight-next-line
 	noColor
 />

@@ -2,7 +2,7 @@
 
 import { ComponentShowcase } from '../components/component-showcase';
 import { Button, ButtonGroup, OptionSelect, Checkbox } from '@eightshift/ui-components';
-import { icons } from '@eightshift/ui-components/icons';
+import { emptyCircle } from '@eightshift/ui-components/icons';
 
 :::note
 The click event is set by the `onPress` prop.
@@ -17,20 +17,20 @@ The click event is set by the `onPress` prop.
 ```
 
 <ComponentShowcase>
-	<Button icon={icons.emptyCircle} />
+	<Button icon={emptyCircle} />
 </ComponentShowcase>
 
 ```jsx
-<Button icon={icons.emptyCircle} />
+<Button icon={emptyCircle} />
 ```
 
 <ComponentShowcase>
-	<Button icon={icons.emptyCircle}>Hi, I'm a button!</Button>
+	<Button icon={emptyCircle}>Hi, I'm a button!</Button>
 </ComponentShowcase>
 
 ```jsx
 <Button
-	icon={icons.emptyCircle
+	icon={emptyCircle
 >
 	Hi, I'm a button!
 </Button>
@@ -54,7 +54,7 @@ If buttons are related, they can be grouped with a `ButtonGroup`.
 	<Button>First</Button>
 	<Button>Second</Button>
 	<Button>Third</Button>
-// highlight-next-line
+	// highlight-next-line
 </ButtonGroup>
 ```
 
@@ -115,11 +115,11 @@ For the complete list of props, use your IDE's autocomplete functionality.
 			<Button size={data}>Hi, I'm a button!</Button>
 			<Button
 				size={data}
-				icon={icons.emptyCircle}
+				icon={emptyCircle}
 			/>
 			<Button
 				size={data}
-				icon={icons.emptyCircle}
+				icon={emptyCircle}
 			>
 				Hi, I'm a button!
 			</Button>
@@ -162,11 +162,11 @@ For the complete list of props, use your IDE's autocomplete functionality.
 			<Button type={data}>Hi, I'm a button!</Button>
 			<Button
 				type={data}
-				icon={icons.emptyCircle}
+				icon={emptyCircle}
 			/>
 			<Button
 				type={data}
-				icon={icons.emptyCircle}
+				icon={emptyCircle}
 			>
 				Hi, I'm a button!
 			</Button>
@@ -187,14 +187,14 @@ For the complete list of props, use your IDE's autocomplete functionality.
 
 <ComponentShowcase>
 	<Button
-		icon={icons.emptyCircle}
+		icon={emptyCircle}
 		tooltip="Hi, I'm a tooltip!"
 	/>
 </ComponentShowcase>
 
 ```jsx
 <Button
-	icon={icons.emptyCircle}
+	icon={emptyCircle}
 	// highlight-next-line
 	tooltip="Hi, I'm a tooltip!"
 />
@@ -202,9 +202,10 @@ For the complete list of props, use your IDE's autocomplete functionality.
 
 :::note
 If text label is not set, please set the `aria-label` prop to ensure accessibility.
+
 <br />
-When `aria-label` is set, `tooltip` can be just passed without value. In that case it will take the value from `aria-label`.
-:::
+When `aria-label` is set, `tooltip` can be just passed without value. In that case it will take the value from
+`aria-label`. :::
 
 ### Pending
 
@@ -228,7 +229,10 @@ It will replace the button content with a loading indicator, announce an action,
 	)}
 >
 	{(data) => (
-		<Button pending={data.checked} onPress={() => alert('Button pressed!')}>
+		<Button
+			pending={data.checked}
+			onPress={() => alert('Button pressed!')}
+		>
 			Hi, I'm a button!
 		</Button>
 	)}

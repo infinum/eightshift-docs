@@ -2,7 +2,7 @@
 
 import { ComponentShowcase } from '../components/component-showcase';
 import { OptionsPanel, OptionsPanelSection, OptionsPanelHeader, Button } from '@eightshift/ui-components';
-import { icons } from '@eightshift/ui-components/icons';
+import { save } from '@eightshift/ui-components/icons';
 
 An elegant way to display options in an options page, with a contained width and options for label and help text.
 
@@ -105,9 +105,7 @@ To augment the `OptionsPanel`s, you can add an `OptionsPanelHeader` to nicely di
 </ComponentShowcase>
 
 ```jsx
-<OptionsPanelHeader
-	title='Global settings'
-/>
+<OptionsPanelHeader title='Global settings' />
 ```
 
 You can also add `actions` to the right.
@@ -118,7 +116,7 @@ You can also add `actions` to the right.
 >
 	<OptionsPanelHeader
 		title='Global settings'
-		actions={<Button icon={icons.save}>Save</Button>}
+		actions={<Button icon={save}>Save</Button>}
 	/>
 </ComponentShowcase>
 
@@ -126,9 +124,7 @@ You can also add `actions` to the right.
 <OptionsPanelHeader
 	title='Global settings'
 	// highlight-start
-	actions={
-		<Button icon={icons.save}>Save</Button>
-	}
+	actions={<Button icon={save}>Save</Button>}
 	// highlight-end
 />
 ```
@@ -139,20 +135,12 @@ Additional content can be added below the title by passing it as children.
 	className='es:bg-gray-50 es:w-full'
 	fitWidth
 >
-	<OptionsPanelHeader
-		title='Global settings'
-	>
-		Lorem ipsum dolor sit amet.
-	</OptionsPanelHeader>
+	<OptionsPanelHeader title='Global settings'>Lorem ipsum dolor sit amet.</OptionsPanelHeader>
 </ComponentShowcase>
 
 ```jsx
-<OptionsPanelHeader
-	title='Global settings'
->
-	// highlight-start
-	Lorem ipsum dolor sit amet.
-	// highlight-end
+<OptionsPanelHeader title='Global settings'>
+	// highlight-start Lorem ipsum dolor sit amet. // highlight-end
 </OptionsPanelHeader>
 ```
 

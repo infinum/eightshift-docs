@@ -1,4 +1,4 @@
-import { icons } from '@eightshift/ui-components/icons';
+import { magicAltFillTransparent, newspaper, troubleshootAlt } from '@eightshift/ui-components/icons';
 
 const linkData = [
 	{ label: 'Eightshift', value: 'https://eightshift.com', metadata: { subtype: 'url' } },
@@ -57,15 +57,15 @@ export const getLinkData = async (searchTerm) => {
 
 export const getIconOverrides = (type) => {
 	if (type === 'page') {
-		return icons.magicAltFillTransparent;
+		return magicAltFillTransparent;
 	}
 
 	if (type === 'post') {
-		return icons.newspaper;
+		return newspaper;
 	}
 
 	if (type === 'help-article') {
-		return icons.troubleshootAlt;
+		return troubleshootAlt;
 	}
 
 	return null;

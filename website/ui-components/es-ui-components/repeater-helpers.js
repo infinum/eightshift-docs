@@ -1,5 +1,5 @@
 import { Repeater, RepeaterItem, InputField, Toggle } from '@eightshift/ui-components';
-import { icons } from '@eightshift/ui-components/icons';
+import { emptyCircle, magicAlt } from '@eightshift/ui-components/icons';
 
 export const RepeaterDemo = ({ data, setData, ...rest }) => {
 	return (
@@ -18,10 +18,10 @@ export const RepeaterDemo = ({ data, setData, ...rest }) => {
 				return (
 					<RepeaterItem
 						label={title ?? `New item ${itemIndex + 1}`}
-						icon={icons.magicAlt}
+						icon={magicAlt}
 					>
 						<Toggle
-							icon={icons.emptyCircle}
+							icon={emptyCircle}
 							label='Toggle me'
 							checked={toggledOption}
 							onChange={(value) => updateData({ toggledOption: value })}
