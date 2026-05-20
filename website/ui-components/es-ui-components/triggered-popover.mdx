@@ -1,8 +1,17 @@
-# Triggered popover
+# Popover
 
 import { ComponentShowcase } from '../components/component-showcase';
-import { TriggeredPopover, Button } from '@eightshift/ui-components';
+import { Popover, TriggeredPopover, Button } from '@eightshift/ui-components';
 import { pointerHand, trash } from '@eightshift/ui-components/icons';
+
+Two popover components are exported:
+
+- `TriggeredPopover` — the easy path. Renders a trigger (a `Button` by default) and manages the open/close state internally.
+- `Popover` — the lower-level primitive. You bring your own trigger via a `triggerRef` and either let it manage its own state with `openByDefault` or drive it from the outside with `isOpen` / `onOpenChange`.
+
+Both share placement, offset and styling props.
+
+## Triggered popover
 
 <ComponentShowcase>
 	<TriggeredPopover>
@@ -18,11 +27,11 @@ import { pointerHand, trash } from '@eightshift/ui-components/icons';
 </TriggeredPopover>
 ```
 
-## Highlighted props
+### Highlighted props
 
 For the complete list of props, use your IDE's autocomplete functionality.
 
-### Trigger button customization
+#### Trigger button customization
 
 <ComponentShowcase>
 	<TriggeredPopover
@@ -46,7 +55,7 @@ For the complete list of props, use your IDE's autocomplete functionality.
 </TriggeredPopover>
 ```
 
-#### More advanced customizations
+##### More advanced customizations
 
 `triggerButtonProps` accepts all props a [`Button`](/components/es-ui-components/button) accepts.
 
@@ -78,7 +87,7 @@ For the complete list of props, use your IDE's autocomplete functionality.
 </TriggeredPopover>
 ```
 
-## Offset from trigger
+### Offset from trigger
 
 `offset` controls the space between the trigger and the popover on the main opening axis.
 
@@ -117,3 +126,70 @@ For the complete list of props, use your IDE's autocomplete functionality.
 	<div>This is demo content</div>
 </TriggeredPopover>
 ```
+
+## Standalone Popover
+
+Use the standalone `Popover` when you need full control of the trigger — for example, when the trigger isn't a `Button`, when the open state is driven by external logic, or when several elements should be able to open the same popover.
+
+`Popover` requires a `triggerRef` that points to the element the popover should anchor to.
+
+### Uncontrolled (managed internally)
+
+Pass `openByDefault` and let `Popover` manage its own state. It will open and close based on user interaction with the referenced trigger.
+
+```jsx
+import { useRef } from 'react';
+import { Popover, Button } from '@eightshift/ui-components';
+
+const triggerRef = useRef(null);
+
+<Button forwardedRef={triggerRef}>Open popover</Button>
+
+<Popover
+	triggerRef={triggerRef}
+	openByDefault
+>
+	<div>This is demo content</div>
+</Popover>
+```
+
+### Controlled
+
+Drive the open state from outside using `isOpen` and `onOpenChange`.
+
+```jsx
+import { useRef, useState } from 'react';
+import { Popover, Button } from '@eightshift/ui-components';
+
+const triggerRef = useRef(null);
+const [isOpen, setIsOpen] = useState(false);
+
+<Button
+	forwardedRef={triggerRef}
+	onPress={() => setIsOpen(true)}
+>
+	Open popover
+</Button>
+
+<Popover
+	triggerRef={triggerRef}
+	isOpen={isOpen}
+	onOpenChange={setIsOpen}
+>
+	<div>This is demo content</div>
+</Popover>
+```
+
+### Highlighted props
+
+| Prop                           | Description                                                                                          |
+| ------------------------------ | ---------------------------------------------------------------------------------------------------- |
+| `triggerRef`                   | `RefObject` to the element the popover should anchor to. Required.                                   |
+| `isOpen` / `onOpenChange`      | Controlled open state.                                                                               |
+| `openByDefault`                | Uncontrolled initial state.                                                                          |
+| `placement`                    | `top`, `bottom`, `left`, `right` (with `start`/`end` variants).                                      |
+| `offset` / `crossOffset`       | Distance from the trigger on the main and cross axes.                                                |
+| `containerPadding`             | Minimum padding kept between the popover and the viewport edge.                                      |
+| `shouldFlip`                   | Whether the popover may flip to the opposite side when there isn't enough space. Defaults to `true`. |
+| `shouldCloseOnInteractOutside` | Function receiving the interacted element; return `false` to keep the popover open.                  |
+| `aria-label`                   | Accessible label for the dialog. Pass `false` to opt out when the popover already contains a label.  |

@@ -22,7 +22,7 @@ export const ComponentShowcase = ({
 						className={clsx(
 							'es:border es:border-dashed es:border-secondary-200 es:p-4 es:rounded-lg esd-space-v es:shrink-0 esd-showcase',
 							fitWidth ? 'es:w-fit' : 'esd-showcase-w',
-							className
+							className,
 						)}
 					>
 						{typeof children === 'function' && children(data, setData)}

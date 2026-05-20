@@ -9,7 +9,12 @@ module.exports = {
 				{
 					type: 'category',
 					label: 'Icons',
-					items: ['es-ui-components/ui-icons', 'es-ui-components/block-icons'],
+					items: [
+						'es-ui-components/ui-icons',
+						'es-ui-components/block-icons',
+						'es-ui-components/jsx-svg',
+						'es-ui-components/spinner',
+					],
 				},
 				'es-ui-components/base-control',
 				{
@@ -106,15 +111,15 @@ module.exports = {
 					label: 'Panels',
 					items: ['es-ui-components/container-panel', 'es-ui-components/options-panel'],
 				},
+				'es-ui-components/utilities',
+				'es-ui-components/wp-overrides',
 				'es-ui-components/migrations',
 			],
 		},
 		{
 			type: 'category',
 			label: 'Frontend libs components',
-			items: [
-				'fe-libs-components/introduction'
-			],
+			items: ['fe-libs-components/introduction'],
 		},
 	],
 };
