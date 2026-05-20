@@ -1,0 +1,99 @@
+# File picker
+
+:::tip
+[View source on GitHub →](https://github.com/infinum/eightshift-frontend-libs-tailwind/blob/main/scripts/components/file-picker.js)
+:::
+
+Two components for working with the WordPress Media library:
+
+- `ManageFileButton` — a single button that opens the media modal in `browse`, `upload`, or `replace` mode.
+- `FileSelector` — a complete file-picker UI (preview + replace + remove) built around `FilePickerShell` from Eightshift UI components.
+
+Both support different `kind`s (`file`, `image`, `video`, `subtitle`, `geoJson`, `lottie`, `rive`, `custom`) which control labels and icons in the modal and on the buttons.
+
+## ManageFileButton
+
+A customizable button that opens the media modal. Use it directly when you only need a single action (e.g., a standalone "Upload" or "Replace" button) and don't want the surrounding `FilePickerShell`.
+
+```jsx
+import { ManageFileButton } from '@eightshift/frontend-libs-tailwind/scripts';
+
+<ManageFileButton
+	onChange={(media) => setAttributes({ fileId: media.id, fileUrl: media.url })}
+	allowedTypes={['application/pdf']}
+/>;
+```
+
+### Highlighted props
+
+| Prop           | Type                                                                                        | Description                                                                                               |
+| -------------- | ------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| `onChange`     | `(media) => void`                                                                           | **Required.** Called with the selected media item (`{ id, url, ... }`).                                   |
+| `type`         | `'browse' \| 'upload' \| 'replace'`                                                         | Mode for the underlying media modal. Defaults to `browse`.                                                |
+| `kind`         | `'file' \| 'image' \| 'video' \| 'subtitle' \| 'geoJson' \| 'lottie' \| 'rive' \| 'custom'` | Controls labels and icons. Defaults to `file`.                                                            |
+| `currentId`    | `string`                                                                                    | ID of the currently selected item. Used with `type='replace'` to mark the current selection in the modal. |
+| `allowedTypes` | `string[]`                                                                                  | **Required.** Allowed MIME types.                                                                         |
+| `compact`      | `boolean`                                                                                   | Renders the button as icon-only.                                                                          |
+| `labels`       | `{ buttonLabel?, modalTitle?, buttonIcon?, removeIcon? }`                                   | Only applies when `kind='custom'`. Overrides labels and icons.                                            |
+| `buttonProps`  | `object`                                                                                    | Forwarded to the trigger `Button`.                                                                        |
+| `hidden`       | `boolean`                                                                                   | If `true`, nothing is rendered.                                                                           |
+
+### Replace mode
+
+```jsx
+<ManageFileButton
+	type='replace'
+	kind='image'
+	currentId={imageId}
+	allowedTypes={['image']}
+	onChange={onChange}
+/>
+```
+
+### Custom labels and icons
+
+```jsx
+<ManageFileButton
+	kind='custom'
+	labels={{
+		buttonLabel: { browse: __('Pick a thing', 'my-theme') },
+		modalTitle: { browse: __('Choose your thing', 'my-theme') },
+		buttonIcon: { browse: myIcon },
+	}}
+	allowedTypes={['application/pdf']}
+	onChange={onChange}
+/>
+```
+
+## FileSelector
+
+A higher-level picker that wraps `FilePickerShell`: it shows the empty state (browse + upload) when no file is selected, and a replace/remove pair when one is. Pass any [FilePickerShell](https://github.com/infinum/eightshift-ui-components) prop through and it will be forwarded.
+
+```jsx
+import { FileSelector } from '@eightshift/frontend-libs-tailwind/scripts';
+
+<FileSelector
+	onChange={onChange}
+	fileId={fileId}
+	fileName={fileName}
+	allowedTypes={['video']}
+	kind='video'
+/>;
+```
+
+### Highlighted props
+
+| Prop           | Type                                                                                        | Description                                                                                                       |
+| -------------- | ------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| `onChange`     | `(media) => void`                                                                           | **Required.** Called with `{ id, url, ... }` on select, or `{ id: undefined, url: undefined }` on remove.         |
+| `fileId`       | `string`                                                                                    | **Required.** ID of the current file.                                                                             |
+| `fileName`     | `string`                                                                                    | **Required.** Name/URL of the current file, used both for the preview and as the URL passed to `FilePickerShell`. |
+| `allowedTypes` | `string[]`                                                                                  | **Required.** Allowed MIME types.                                                                                 |
+| `kind`         | `'file' \| 'image' \| 'video' \| 'subtitle' \| 'geoJson' \| 'lottie' \| 'rive' \| 'custom'` | Controls labels and icons. Defaults to `file`.                                                                    |
+| `noDelete`     | `boolean`                                                                                   | Hide the "Remove" button.                                                                                         |
+| `noUpload`     | `boolean`                                                                                   | Hide the "Upload" button in the empty state.                                                                      |
+| `labels`       | `object`                                                                                    | Same shape as `ManageFileButton.labels`. Applies when `kind='custom'`.                                            |
+
+:::note
+`FileSelector` forwards any unrecognized prop to the underlying `FilePickerShell`, so you can also pass `icon`, `noUrlContent` overrides, custom class names, etc.
+:::

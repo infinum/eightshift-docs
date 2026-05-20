@@ -1,0 +1,88 @@
+# Breakpoints
+
+:::tip
+[View source on GitHub →](https://github.com/infinum/eightshift-frontend-libs-tailwind/blob/main/scripts/helpers/breakpoints.js)
+:::
+
+Helpers for reading the project's breakpoint configuration from the Eightshift block-editor store. These are thin wrappers around `select(STORE_NAME).getSettings()` — useful when feeding the [Responsive](../es-ui-components/responsive) component or building responsive UI in the editor.
+
+## getGlobalManifest
+
+Returns the full global manifest stored in the Eightshift store.
+
+```js
+import { getGlobalManifest } from '@eightshift/frontend-libs-tailwind/scripts';
+
+const manifest = getGlobalManifest();
+// → { globalVariables: { breakpoints: { ... }, ... }, ... }
+```
+
+## getBreakpointNames
+
+Returns the breakpoint names **sorted ascending by their pixel value**.
+
+```js
+import { getBreakpointNames } from '@eightshift/frontend-libs-tailwind/scripts';
+
+getBreakpointNames();
+// → ['mobile', 'tablet', 'desktop', 'large']
+```
+
+## getBreakpointData
+
+Returns the raw `breakpoints` map from the global manifest. Pass `true` to multiply each value by `16` (useful if your manifest stores rem-style numbers but you need pixel values).
+
+```js
+import { getBreakpointData } from '@eightshift/frontend-libs-tailwind/scripts';
+
+getBreakpointData();
+// → { mobile: 480, tablet: 960, desktop: 1440, large: 1920 }
+
+getBreakpointData(true);
+// → { mobile: 7680, tablet: 15360, ... }   // ← multiplied by 16
+```
+
+| Argument      | Type      | Description                                                  |
+| ------------- | --------- | ------------------------------------------------------------ |
+| `convertToPx` | `boolean` | Multiply each breakpoint value by `16`. Defaults to `false`. |
+
+## getBreakpointUiData
+
+Returns the UI-only metadata for breakpoints (icons, labels, …) if your manifest defines one under `globalVariables.breakpointData`.
+
+```js
+import { getBreakpointUiData } from '@eightshift/frontend-libs-tailwind/scripts';
+
+const uiData = getBreakpointUiData();
+// → { mobile: { label: 'Mobile', icon: <…> }, ... }
+```
+
+## getResponsiveData
+
+The one-stop helper for the [Responsive](../es-ui-components/responsive) component. Returns `breakpoints`, `breakpointData`, and — if defined — `breakpointUiData` in one object, ready to spread into `<Responsive>`.
+
+```jsx
+import { Responsive } from '@eightshift/ui-components';
+import { getResponsiveData } from '@eightshift/frontend-libs-tailwind/scripts';
+
+<Responsive
+	value={value}
+	onChange={setValue}
+	options={fontFamilyOptions}
+	{...getResponsiveData()}
+/>;
+```
+
+| Argument      | Type      | Description                                            |
+| ------------- | --------- | ------------------------------------------------------ |
+| `convertToPx` | `boolean` | Forwarded to `getBreakpointData`. Defaults to `false`. |
+
+Return value:
+
+```js
+{
+	breakpoints: ['mobile', 'tablet', 'desktop', 'large'],
+	breakpointData: { mobile: 480, tablet: 960, desktop: 1440, large: 1920 },
+	breakpointUiData: { ... },   // only if defined in the manifest
+}
+```

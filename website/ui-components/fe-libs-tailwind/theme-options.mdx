@@ -1,0 +1,87 @@
+# Theme options
+
+:::tip
+[View source on GitHub →](https://github.com/infinum/eightshift-frontend-libs-tailwind/blob/main/scripts/components/settings)
+:::
+
+A small kit for building **custom theme options pages** that read and write from `wp/v2/settings`. Three pieces work together:
+
+- `ThemeOptionsPage` — the page shell with a header, save button, and a `Toaster` for success/error feedback.
+- `useThemeOptions` — hook that loads, holds, and saves the settings via `apiFetch`.
+- `EsThemeOptionsContext` — React context that exposes the hook's return value to any child component.
+
+Based on the WordPress developer blog post [_How to use WordPress React components for plugin pages_](https://developer.wordpress.org/news/2024/03/26/how-to-use-wordpress-react-components-for-plugin-pages/).
+
+## ThemeOptionsPage
+
+The page shell. Renders the header (title + save button), exposes the settings via context, and mounts a [Sonner](https://sonner.emilkowal.ski/) `Toaster` for the save feedback toasts.
+
+```jsx
+import { ThemeOptionsPage, EsThemeOptionsContext } from '@eightshift/frontend-libs-tailwind/scripts';
+import { useContext } from '@wordpress/element';
+import { InputField } from '@eightshift/ui-components';
+
+const ContactFields = () => {
+	const { settings, updateSettings } = useContext(EsThemeOptionsContext);
+
+	return (
+		<>
+			<InputField
+				label='Contact email'
+				value={settings?.contactEmail ?? ''}
+				onChange={(v) => updateSettings({ contactEmail: v })}
+			/>
+		</>
+	);
+};
+
+const App = () => (
+	<ThemeOptionsPage
+		title={__('Site options', 'my-theme')}
+		settingName='my-theme-options'
+	>
+		<ContactFields />
+	</ThemeOptionsPage>
+);
+```
+
+### Highlighted props
+
+| Prop          | Type          | Description                                                                                                                          |
+| ------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| `title`       | `string`      | Page heading. Defaults to _"Theme options"_.                                                                                         |
+| `settingName` | `string`      | WordPress option key to read/write. Defaults to `eightshift-theme-options`. The value must be a JSON-encoded string in the database. |
+| `children`    | `JSX.Element` | The page body — typically a tree of `OptionsPanel` / `ContainerPanel` components that read from `EsThemeOptionsContext`.             |
+
+:::note
+The option referenced by `settingName` must be registered on the PHP side with `show_in_rest: true` so it's exposed via `/wp/v2/settings`. The value is stored as a JSON-encoded string — `useThemeOptions` handles the encoding and decoding for you.
+:::
+
+## useThemeOptions
+
+The hook that powers `ThemeOptionsPage`. Use it directly if you want to build a custom shell.
+
+```js
+import { useThemeOptions } from '@eightshift/frontend-libs-tailwind/scripts';
+
+const { settings, setSettings, updateSettings, saveSettings, isLoading } = useThemeOptions('my-theme-options');
+```
+
+| Returned         | Type                  | Description                                                                            |
+| ---------------- | --------------------- | -------------------------------------------------------------------------------------- |
+| `settings`       | `object \| undefined` | The decoded option value. `undefined` while loading.                                   |
+| `setSettings`    | `(next) => void`      | Replaces the whole settings object.                                                    |
+| `updateSettings` | `(partial) => void`   | Shallow-merges `partial` into the current settings. The usual way to update one field. |
+| `saveSettings`   | `() => Promise<void>` | Persists the current settings via `apiFetch`. Shows a success/error toast.             |
+| `isLoading`      | `boolean`             | `true` while a save is in flight.                                                      |
+
+## EsThemeOptionsContext
+
+A standard React context that exposes the value returned by `useThemeOptions`. Use it from any child component of `ThemeOptionsPage` to read or update settings without prop-drilling.
+
+```jsx
+import { useContext } from '@wordpress/element';
+import { EsThemeOptionsContext } from '@eightshift/frontend-libs-tailwind/scripts';
+
+const { settings, updateSettings } = useContext(EsThemeOptionsContext);
+```

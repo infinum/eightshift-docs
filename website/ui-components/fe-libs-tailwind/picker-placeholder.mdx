@@ -1,0 +1,74 @@
+# PickerPlaceholder
+
+:::tip
+[View source on GitHub →](https://github.com/infinum/eightshift-frontend-libs-tailwind/blob/main/scripts/components/picker-placeholder.js)
+:::
+
+An empty-state placeholder for blocks that ship with one or more **layout presets**. Each preset can pre-fill block attributes and insert inner blocks. Optionally pairs with a [BlockInserter](./block-inserter) for the _"or pick a block manually"_ escape hatch.
+
+```jsx
+import { PickerPlaceholder } from '@eightshift/frontend-libs-tailwind/scripts';
+
+<PickerPlaceholder
+	clientId={clientId}
+	title={__('Hero', 'my-theme')}
+	blockIcon='hero'
+	presets={[
+		{
+			name: __('Two columns', 'my-theme'),
+			icon: 'columns',
+			attributes: { layout: 'two-columns' },
+			blocks: [
+				{ name: 'my-theme/heading', attributes: { content: 'Title' } },
+				{ name: 'my-theme/paragraph', attributes: { content: 'Body' } },
+			],
+		},
+	]}
+	onChange={(attrs) => setAttributes(attrs)}
+	inserter
+/>;
+```
+
+## Driving it from the manifest
+
+If you pass `manifest`, the component reads `title`, `icon.src`, and `layoutPresets` from it — so you don't need to pass `title`, `blockIcon`, or `presets` separately.
+
+```jsx
+import manifest from './manifest.json';
+
+<PickerPlaceholder
+	clientId={clientId}
+	manifest={manifest}
+	onChange={(attrs) => setAttributes(attrs)}
+/>;
+```
+
+## Highlighted props
+
+| Prop             | Type                                          | Description                                                                                                                                         |
+| ---------------- | --------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `clientId`       | `string`                                      | **Required.** Client ID of the block. Used to insert the preset's inner blocks.                                                                     |
+| `onChange`       | `(attributes) => void`                        | **Required.** Called with the preset's `attributes` when the user picks one.                                                                        |
+| `presets`        | `Array<{ name, icon, blocks?, attributes? }>` | Presets shown as buttons. `blocks` is an array of `{ name, attributes }` inserted into the block.                                                   |
+| `title`          | `string \| JSX.Element`                       | Heading shown at the top. Falls back to `manifest.title`.                                                                                           |
+| `blockIcon`      | `string \| JSX.Element`                       | Icon shown next to the title. Strings are looked up first in `blockIcons`, then resolved as a generic icon name. Falls back to `manifest.icon.src`. |
+| `manifest`       | `object`                                      | Block/component manifest, used as a fallback source for `title`, `blockIcon`, and `presets` (`layoutPresets`).                                      |
+| `inserter`       | `boolean \| JSX.Element`                      | If `true`, renders a default [BlockInserter](./block-inserter); pass a custom element to render that instead.                                       |
+| `presetsHeading` | `string`                                      | Header above the preset buttons. Defaults to _"Select a preset"_.                                                                                   |
+| `hidden`         | `boolean`                                     | If `true`, nothing is rendered.                                                                                                                     |
+
+## Preset shape
+
+```js
+{
+	name: 'Two columns',       // Button label
+	icon: 'columns',           // Icon name from @eightshift/ui-components/icons
+	attributes: {              // Optional: merged into the parent block
+		layout: 'two-columns',
+	},
+	blocks: [                  // Optional: inserted as inner blocks
+		{ name: 'my-theme/heading', attributes: { content: 'Title' } },
+		{ name: 'my-theme/paragraph', attributes: { content: 'Body' } },
+	],
+}
+```

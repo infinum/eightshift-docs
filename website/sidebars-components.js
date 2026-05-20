@@ -3,7 +3,7 @@ module.exports = {
 		'welcome',
 		{
 			type: 'category',
-			label: 'Eightshift UI components',
+			label: 'Eightshift UI-Components',
 			items: [
 				'es-ui-components/getting-started',
 				{
@@ -118,8 +118,28 @@ module.exports = {
 		},
 		{
 			type: 'category',
-			label: 'Frontend libs components',
-			items: ['fe-libs-components/introduction'],
+			label: 'Frontend libs Tailwind',
+			items: [
+				'fe-libs-tailwind/getting-started',
+				{
+					type: 'category',
+					label: 'Components',
+					items: [
+						'fe-libs-tailwind/block-inserter',
+						'fe-libs-tailwind/link-section-editor',
+						'fe-libs-tailwind/file-picker',
+						'fe-libs-tailwind/media-picker',
+						'fe-libs-tailwind/picker-placeholder',
+						'fe-libs-tailwind/server-side-render',
+						'fe-libs-tailwind/theme-options',
+					],
+				},
+				{
+					type: 'category',
+					label: 'Helpers',
+					items: ['fe-libs-tailwind/breakpoints', 'fe-libs-tailwind/cookies', 'fe-libs-tailwind/dynamic-import'],
+				},
+			],
 		},
 	],
 };
