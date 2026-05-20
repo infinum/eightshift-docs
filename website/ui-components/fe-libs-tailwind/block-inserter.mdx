@@ -1,0 +1,66 @@
+# BlockInserter
+
+:::tip
+[View source on GitHub →](https://github.com/infinum/eightshift-frontend-libs-tailwind/blob/main/scripts/components/block-inserter.js)
+:::
+
+A drop-in replacement for the default Gutenberg block inserter button, whose styling can vary between WordPress versions. Renders as an Eightshift UI [Button](../es-ui-components/button) with the standard `add` icon.
+
+By default, the inserter only shows when the parent block is selected — pass `alwaysVisible` to keep it visible at all times.
+
+```jsx
+import { BlockInserter } from '@eightshift/frontend-libs-tailwind/scripts';
+
+<InnerBlocks renderAppender={() => <BlockInserter clientId={clientId} />} />;
+```
+
+## With a label
+
+Pass `label={true}` to render the default localized label — _"Add a block"_, or _"Add &lt;BlockName&gt;"_ when the parent only allows a single block type.
+
+```jsx
+<BlockInserter
+	clientId={clientId}
+	label
+/>
+```
+
+You can also pass a custom string or JSX element as the label.
+
+```jsx
+<BlockInserter
+	clientId={clientId}
+	label={__('Add a card', 'my-theme')}
+/>
+```
+
+## Highlighted props
+
+| Prop                 | Type                               | Description                                                                                              |
+| -------------------- | ---------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `clientId`           | `string`                           | **Required.** Client ID of the block the inserter belongs to.                                            |
+| `label`              | `boolean \| string \| JSX.Element` | Label to render next to the icon. `true` uses the default localized label.                               |
+| `small`              | `boolean`                          | Renders the trigger button at `small` size. Useful inside nested InnerBlocks.                            |
+| `prioritizePatterns` | `boolean`                          | Show patterns before blocks in the inserter modal.                                                       |
+| `alwaysVisible`      | `boolean`                          | If `true`, the inserter renders regardless of whether the parent block is selected. Defaults to `false`. |
+| `hidden`             | `boolean`                          | If `true`, nothing is rendered.                                                                          |
+| `className`          | `string`                           | Extra classes appended to the trigger button.                                                            |
+
+## Always visible
+
+```jsx
+<BlockInserter
+	clientId={clientId}
+	alwaysVisible
+	label
+/>
+```
+
+## Compact inserter for nested InnerBlocks
+
+```jsx
+<BlockInserter
+	clientId={clientId}
+	small
+/>
+```

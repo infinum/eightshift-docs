@@ -1,0 +1,43 @@
+# dynamicImport
+
+:::tip
+[View source on GitHub →](https://github.com/infinum/eightshift-frontend-libs-tailwind/blob/main/scripts/helpers/dynamic-import.js)
+:::
+
+A one-liner helper that iterates a webpack `require.context` and imports every file it returns. Typically used to side-effect-import all blocks, components, or assets matching a glob — without listing them by hand.
+
+```js
+import { dynamicImport } from '@eightshift/frontend-libs-tailwind/scripts';
+
+dynamicImport(require.context('./../../custom', true, /assets\/index.js$/));
+```
+
+## Signature
+
+```js
+dynamicImport(paths);
+```
+
+| Argument | Type                                | Description                                                       |
+| -------- | ----------------------------------- | ----------------------------------------------------------------- |
+| `paths`  | `__WebpackModuleApi.RequireContext` | The `require.context` whose keys should be iterated and imported. |
+
+Returns `undefined`. The function exists for the side effect of importing — every matched file is executed when called.
+
+:::note
+`require.context` is a webpack-specific API. If you're on Vite or another bundler, use that bundler's equivalent (e.g., `import.meta.glob`) instead — `dynamicImport` won't help there.
+:::
+
+## Common patterns
+
+**Import every block's editor entry:**
+
+```js
+dynamicImport(require.context('./../../custom', true, /assets\/index.js$/));
+```
+
+**Import every component's style entry:**
+
+```js
+dynamicImport(require.context('./../../components', true, /style\.scss$/));
+```
