@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr" class="blog-wrapper blog-post-page plugin-blog plugin-id-default" data-has-hydrated="false">
 <head>
 <meta charset="UTF-8">
-<meta name="generator" content="Docusaurus v3.9.2">
+<meta name="generator" content="Docusaurus v3.10.1">
 <title data-rh="true">Initial setup and first steps | Eightshift Development kit</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://eightshift.com/blog/initial-setup"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docusaurus_tag" content="default"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docsearch:docusaurus_tag" content="default"><meta data-rh="true" property="og:title" content="Initial setup and first steps | Eightshift Development kit"><meta data-rh="true" name="description" content="This blog post describes how to set up Eightshift Boilerplate theme, and covers some of the most common issues that may occur"><meta data-rh="true" property="og:description" content="This blog post describes how to set up Eightshift Boilerplate theme, and covers some of the most common issues that may occur"><meta data-rh="true" property="og:type" content="article"><meta data-rh="true" property="article:published_time" content="2022-01-20T00:00:00.000Z"><meta data-rh="true" property="article:author" content="https://github.com/iobrado"><meta data-rh="true" property="article:tag" content="eightshift,boilerplate,setup"><link data-rh="true" rel="icon" href="/img/favicon.png"><link data-rh="true" rel="canonical" href="https://eightshift.com/blog/initial-setup"><link data-rh="true" rel="alternate" href="https://eightshift.com/blog/initial-setup" hreflang="en"><link data-rh="true" rel="alternate" href="https://eightshift.com/blog/initial-setup" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://CWB1S6U3C4-dsn.algolia.net" crossorigin="anonymous"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","@id":"https://eightshift.com/blog/initial-setup","mainEntityOfPage":"https://eightshift.com/blog/initial-setup","url":"https://eightshift.com/blog/initial-setup","headline":"Initial setup and first steps","name":"Initial setup and first steps","description":"This blog post describes how to set up Eightshift Boilerplate theme, and covers some of the most common issues that may occur","datePublished":"2022-01-20T00:00:00.000Z","author":{"@type":"Person","name":"Igor Obradović","description":"WordPress Engineer","url":"https://github.com/iobrado","image":"https://avatars.githubusercontent.com/u/23059501?v=4"},"keywords":[],"isPartOf":{"@type":"Blog","@id":"https://eightshift.com/blog","name":"Tutorials and articles about Eightshift development kit"}}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Eightshift Development kit RSS Feed">
 <link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Eightshift Development kit Atom Feed">
 
@@ -17,11 +17,11 @@
 
 
 
-<script src="https://buttons.github.io/buttons.js" async defer="defer"></script><link rel="stylesheet" href="/assets/css/styles.4dd34853.css">
-<script src="/assets/js/runtime~main.5fd1441a.js" defer="defer"></script>
-<script src="/assets/js/main.69df870a.js" defer="defer"></script>
+<script src="https://buttons.github.io/buttons.js" async defer="defer"></script><link rel="stylesheet" href="/assets/css/styles.883a4dd6.css">
+<script src="/assets/js/runtime~main.c6e3f4fb.js" defer="defer"></script>
+<script src="/assets/js/main.68f61e21.js" defer="defer"></script>
 </head>
-<body class="navigation-with-keyboard">
+<body>
 <svg style="display: none;"><defs>
 <symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
 </defs></svg>
@@ -31,7 +31,7 @@
 <p>If you haven&#x27;t already, be sure to read our official <a class="" href="/docs/welcome">Eightshift Docs</a>.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="setup">Setup<a href="#setup" class="hash-link" aria-label="Direct link to Setup" title="Direct link to Setup" translate="no">​</a></h2>
 <p>To create Eightshift theme, navigate to <code>wp-content/themes</code> in your project and type the following in the terminal:</p>
-<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">npx eightshift-create</span><br></span></code></pre></div></div>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#F8F8F2"><span class="token plain">npx eightshift-create</span><br></div></code></pre></div></div>
 <p>Just follow the instructions and wait for the theme to download.</p>
 <p><img decoding="async" loading="lazy" alt="Setup - initial prompt" src="/assets/images/setup-1-ec493b6656446eff46afec93938c9c13.webp" width="770" height="674" class="img_ev3q"></p>
 <p>OK, you went through the process, filled out all required information, but the theme still isn&#x27;t working. There are a few more instructions in the terminal on what to do next, but you may have skipped them. While the principle <strong>&quot;6 hours of debugging can save you 5 minutes of reading documentation&quot;</strong> is fun, sometimes it&#x27;s just not worth it. Here&#x27;s what you should do:</p>
