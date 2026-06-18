@@ -306,7 +306,12 @@ module.exports = {
 							{
 								type: 'category',
 								label: 'Validation',
-								items: ['php/filters/validation/force-mimetype-from-fs'],
+								items: [
+									'php/filters/validation/alternative-params-security-check',
+									'php/filters/validation/file-security-deny-extensions',
+									'php/filters/validation/file-security-pdf-qpdf-binary',
+									'php/filters/validation/file-security-pdf-use-qpdf',
+								],
 							},
 							{
 								type: 'category',
