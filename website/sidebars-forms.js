@@ -5,9 +5,9 @@ module.exports = {
 			'basics',
 			'first-form',
 			{
-				'type': 'category',
-				'label': 'Features',
-				'items': [
+				type: 'category',
+				label: 'Features',
+				items: [
 					[
 						'features/dashboard',
 						'features/conditional-tags',
@@ -37,9 +37,9 @@ module.exports = {
 				],
 			},
 			{
-				'type': 'category',
-				'label': 'Integrations',
-				'items': [
+				type: 'category',
+				label: 'Integrations',
+				items: [
 					'integrations/intro',
 					'integrations/active-campaign',
 					'integrations/airtable',
@@ -53,29 +53,30 @@ module.exports = {
 					'integrations/mailer',
 					'integrations/mailerlite',
 					'integrations/moments',
+					'integrations/pardot',
 					'integrations/workable',
 					'integrations/pipedrive',
 				],
 			},
 			'known-issues',
 		],
-		'Customization': [
+		Customization: [
 			{
-				'type': 'category',
-				'label': 'PHP',
-				'items': [
+				type: 'category',
+				label: 'PHP',
+				items: [
 					'php/intro',
 					{
-						'type': 'category',
-						'label': 'Global variables',
-						'items': [
+						type: 'category',
+						label: 'Global variables',
+						items: [
 							'php/global-variables/how-to-use',
 							'php/global-variables/geolocation',
 							'php/global-variables/google-recaptcha',
 							{
-								'type': 'category',
-								'label': 'Integrations',
-								'items': [
+								type: 'category',
+								label: 'Integrations',
+								items: [
 									'php/global-variables/integrations/mailchimp',
 									'php/global-variables/integrations/greenhouse',
 									'php/global-variables/integrations/hubspot',
@@ -92,32 +93,33 @@ module.exports = {
 									'php/global-variables/integrations/paycek',
 									'php/global-variables/integrations/pipedrive',
 									'php/global-variables/integrations/nationbuilder',
+									'php/global-variables/integrations/pardot',
 								],
 							},
-						]
+						],
 					},
 					'php/helpers',
 					{
-						'type': 'category',
-						'label': 'Filters',
-						'items': [
+						type: 'category',
+						label: 'Filters',
+						items: [
 							'php/filters/how-to-use',
 							{
-								'type': 'category',
-								'label': 'Block',
-								'items': [
+								type: 'category',
+								label: 'Block',
+								items: [
 									{
-										'type': 'category',
-										'label': 'Forms',
-										'items': [
+										type: 'category',
+										label: 'Forms',
+										items: [
 											'php/filters/block/forms/style-options',
 											'php/filters/block/forms/use-custom-result-output-feature',
 										],
 									},
 									{
-										'type': 'category',
-										'label': 'Form',
-										'items': [
+										type: 'category',
+										label: 'Form',
+										items: [
 											'php/filters/block/form/redirect-timeout',
 											'php/filters/block/form/success-redirect-url',
 											'php/filters/block/form/variation',
@@ -132,77 +134,65 @@ module.exports = {
 										],
 									},
 									{
-										'type': 'category',
-										'label': 'Form selector',
-										'items': [
+										type: 'category',
+										label: 'Form selector',
+										items: [
 											'php/filters/block/form-selector/form-templates',
 											'php/filters/block/form-selector/additional-content',
 										],
 									},
 									{
-										'type': 'category',
-										'label': 'Field',
-										'items': [
+										type: 'category',
+										label: 'Field',
+										items: [
 											'php/filters/block/field/style-options',
 											'php/filters/block/field/style-classes',
 											'php/filters/block/field/additional-content',
 										],
 									},
 									{
-										'type': 'category',
-										'label': 'Input',
-										'items': [
-											'php/filters/block/input/additional-content',
-										],
+										type: 'category',
+										label: 'Input',
+										items: ['php/filters/block/input/additional-content'],
 									},
 									{
-										'type': 'category',
-										'label': 'Textarea',
-										'items': [
-											'php/filters/block/textarea/additional-content',
-										],
+										type: 'category',
+										label: 'Textarea',
+										items: ['php/filters/block/textarea/additional-content'],
 									},
 									{
-										'type': 'category',
-										'label': 'Select',
-										'items': [
-											'php/filters/block/select/additional-content',
-										],
+										type: 'category',
+										label: 'Select',
+										items: ['php/filters/block/select/additional-content'],
 									},
 									{
-										'type': 'category',
-										'label': 'File',
-										'items': [
+										type: 'category',
+										label: 'File',
+										items: [
 											'php/filters/block/file/additional-content',
 											'php/filters/block/file/info-additional-content',
 											'php/filters/block/file/preview-remove-label',
 										],
 									},
 									{
-										'type': 'category',
-										'label': 'Checkboxes',
-										'items': [
-											'php/filters/block/checkboxes/additional-content',
-										],
+										type: 'category',
+										label: 'Checkboxes',
+										items: ['php/filters/block/checkboxes/additional-content'],
 									},
 									{
-										'type': 'category',
-										'label': 'Radios',
-										'items': [
-											'php/filters/block/radios/additional-content',
-										],
+										type: 'category',
+										label: 'Radios',
+										items: ['php/filters/block/radios/additional-content'],
 									},
 									{
-										'type': 'category',
-										'label': 'Phone',
-										'items': [
-											'php/filters/block/phone/additional-content',
-										],
+										type: 'category',
+										label: 'Phone',
+										items: ['php/filters/block/phone/additional-content'],
 									},
 									{
-										'type': 'category',
-										'label': 'Country',
-										'items': [
+										type: 'category',
+										label: 'Country',
+										items: [
 											'php/filters/block/country/additional-content',
 											'php/filters/block/country/modify-data-set',
 											'php/filters/block/country/alternative-data-set',
@@ -210,57 +200,41 @@ module.exports = {
 										],
 									},
 									{
-										'type': 'category',
-										'label': 'Date',
-										'items': [
-											'php/filters/block/date/additional-content',
-										],
+										type: 'category',
+										label: 'Date',
+										items: ['php/filters/block/date/additional-content'],
 									},
 									{
-										'type': 'category',
-										'label': 'Submit',
-										'items': [
-											'php/filters/block/submit/component',
-											'php/filters/block/submit/additional-content',
-										],
+										type: 'category',
+										label: 'Submit',
+										items: ['php/filters/block/submit/component', 'php/filters/block/submit/additional-content'],
 									},
 									{
-										'type': 'category',
-										'label': 'Step',
-										'items': [
-											'php/filters/block/step/component-prev',
-											'php/filters/block/step/component-next',
-										],
+										type: 'category',
+										label: 'Step',
+										items: ['php/filters/block/step/component-prev', 'php/filters/block/step/component-next'],
 									},
 									{
-										'type': 'category',
-										'label': 'Rating',
-										'items': [
-											'php/filters/block/rating/additional-content',
-											'php/filters/block/rating/star-icon',
-										],
+										type: 'category',
+										label: 'Rating',
+										items: ['php/filters/block/rating/additional-content', 'php/filters/block/rating/star-icon'],
 									},
 									{
-										'type': 'category',
-										'label': 'Dynamic',
-										'items': [
-											'php/filters/block/dynamic/additional-content',
-											'php/filters/block/dynamic/data-output',
-										],
+										type: 'category',
+										label: 'Dynamic',
+										items: ['php/filters/block/dynamic/additional-content', 'php/filters/block/dynamic/data-output'],
 									},
 									{
-										'type': 'category',
-										'label': 'Loader',
-										'items': [
-											'php/filters/block/loader/additional-content',
-										],
+										type: 'category',
+										label: 'Loader',
+										items: ['php/filters/block/loader/additional-content'],
 									},
 								],
 							},
 							{
-								'type': 'category',
-								'label': 'Blocks',
-								'items': [
+								type: 'category',
+								label: 'Blocks',
+								items: [
 									'php/filters/blocks/allowed-blocks',
 									'php/filters/blocks/additional-blocks',
 									'php/filters/blocks/additional-addon-blocks',
@@ -269,17 +243,14 @@ module.exports = {
 								],
 							},
 							{
-								'type': 'category',
-								'label': 'General',
-								'items': [
-									'php/filters/general/http-request-timeout',
-									'php/filters/general/locale',
-								],
+								type: 'category',
+								label: 'General',
+								items: ['php/filters/general/http-request-timeout', 'php/filters/general/locale'],
 							},
 							{
-								'type': 'category',
-								'label': 'Scripts',
-								'items': [
+								type: 'category',
+								label: 'Scripts',
+								items: [
 									'php/filters/scripts/dependency-admin',
 									'php/filters/scripts/dependency-captcha',
 									'php/filters/scripts/dependency-blocks-editor',
@@ -289,18 +260,18 @@ module.exports = {
 								],
 							},
 							{
-								'type': 'category',
-								'label': 'Geolocation',
-								'items': [
+								type: 'category',
+								label: 'Geolocation',
+								items: [
 									'php/filters/geolocation/countries',
 									'php/filters/geolocation/db-location',
 									'php/filters/geolocation/phar-location',
 								],
 							},
 							{
-								'type': 'category',
-								'label': 'Integrations',
-								'items': [
+								type: 'category',
+								label: 'Integrations',
+								items: [
 									'php/filters/integrations/mailer',
 									'php/filters/integrations/mailchimp',
 									'php/filters/integrations/greenhouse',
@@ -319,56 +290,46 @@ module.exports = {
 									'php/filters/integrations/pipedrive',
 									'php/filters/integrations/calculator',
 									'php/filters/integrations/nationbuilder',
+									'php/filters/integrations/pardot',
 								],
 							},
 							{
-								'type': 'category',
-								'label': 'Entries',
-								'items': [
-									'php/filters/entries/pre-post-params',
-								],
+								type: 'category',
+								label: 'Entries',
+								items: ['php/filters/entries/pre-post-params'],
 							},
 							{
-								'type': 'category',
-								'label': 'Enrichment',
-								'items': [
-									'php/filters/enrichment/manual-map',
-								],
+								type: 'category',
+								label: 'Enrichment',
+								items: ['php/filters/enrichment/manual-map'],
 							},
 							{
-								'type': 'category',
-								'label': 'Validation',
-								'items': [
-									'php/filters/validation/force-mimetype-from-fs',
-								],
+								type: 'category',
+								label: 'Validation',
+								items: ['php/filters/validation/force-mimetype-from-fs'],
 							},
 							{
-								'type': 'category',
-								'label': 'Encryption',
-								'items': [
-									'php/filters/encryption/secret-key',
-								],
+								type: 'category',
+								label: 'Encryption',
+								items: ['php/filters/encryption/secret-key'],
 							},
 							{
-								'type': 'category',
-								'label': 'Admin',
-								'items': [
-									'php/filters/admin/top-bar-menu-items',
-									'php/filters/admin/settings-data',
-								],
+								type: 'category',
+								label: 'Admin',
+								items: ['php/filters/admin/top-bar-menu-items', 'php/filters/admin/settings-data'],
 							},
 						],
 					},
 					{
-						'type': 'category',
-						'label': 'Actions',
-						'items': [
+						type: 'category',
+						label: 'Actions',
+						items: [
 							'php/actions/how-to-use',
 							'php/actions/migrations',
 							{
-								'type': 'category',
-								'label': 'Integrations',
-								'items': [
+								type: 'category',
+								label: 'Integrations',
+								items: [
 									'php/actions/integrations/mailer',
 									'php/actions/integrations/mailchimp',
 									'php/actions/integrations/greenhouse',
@@ -386,6 +347,7 @@ module.exports = {
 									'php/actions/integrations/pipedrive',
 									'php/actions/integrations/calculator',
 									'php/actions/integrations/nationbuilder',
+									'php/actions/integrations/pardot',
 									'php/actions/integrations/custom',
 								],
 							},
@@ -396,22 +358,19 @@ module.exports = {
 				],
 			},
 			{
-				'type': 'category',
-				'label': 'JavaScript',
-				'items': [
+				type: 'category',
+				label: 'JavaScript',
+				items: [
 					'javascript/intro',
 					{
-						'type': 'category',
-						'label': 'Events',
-						'items': [
-							'javascript/events/available-events',
-							'javascript/events/how-to-use',
-						]
+						type: 'category',
+						label: 'Events',
+						items: ['javascript/events/available-events', 'javascript/events/how-to-use'],
 					},
 					{
-						'type': 'category',
-						'label': 'State',
-						'items': [
+						type: 'category',
+						label: 'State',
+						items: [
 							'javascript/state/how-to-use',
 							'javascript/state/state',
 							'javascript/state/store',
@@ -421,33 +380,29 @@ module.exports = {
 							'javascript/state/enrichment',
 							'javascript/state/step',
 							'javascript/state/captcha',
-						]
+						],
 					},
 					'javascript/manual-initiation',
 				],
 			},
 		],
-		'Tutorials': [
-			'tutorials/playlist',
-		],
+		Tutorials: ['tutorials/playlist'],
 		'Addon plugins': [
 			'addons/intro',
 			{
-				'type': 'category',
-				'label': 'Free',
-				'items': [
-					'addons/free/intro',
-				],
+				type: 'category',
+				label: 'Free',
+				items: ['addons/free/intro'],
 			},
 			{
-				'type': 'category',
-				'label': 'Premium',
-				'items': [
+				type: 'category',
+				label: 'Premium',
+				items: [
 					'addons/premium/intro',
 					{
-						'type': 'category',
-						'label': 'Computed fields',
-						'items': [
+						type: 'category',
+						label: 'Computed fields',
+						items: [
 							'addons/premium/computed-fields/intro',
 							'addons/premium/computed-fields/how-to-use',
 							'addons/premium/computed-fields/settings',
@@ -458,9 +413,9 @@ module.exports = {
 				],
 			},
 			{
-				'type': 'category',
-				'label': 'Create an addon',
-				'items': [
+				type: 'category',
+				label: 'Create an addon',
+				items: [
 					'addons/create/intro',
 					'addons/create/utils-library',
 					'addons/create/requirements',
@@ -468,5 +423,5 @@ module.exports = {
 				],
 			},
 		],
-	}
+	},
 };
