@@ -1,0 +1,17 @@
+---
+id: pardot
+title: Pardot
+---
+
+import { IntegrationFilters } from './../../../../src/docs/filters';
+
+<IntegrationFilters
+	name='Pardot'
+	filter='pardot'
+	onlyUse={[
+		'overridePostRequestFilter',
+		'prePostParamsFilter',
+		'beforeSuccessResponseFilter',
+		'afterCustomResultOutputProcessFilter',
+	]}
+/>
