@@ -170,31 +170,3 @@ These are all helpers generally only in specific plugins.
 
 This helper will search all blocks and components manifests and find attributes that have "seo": "true" key.
 This key will be added in to the content and proceed by the YoastSeo Analysis plugin.
-
-# [Storybook helpers](https://github.com/infinum/eightshift-frontend-libs/tree/develop/scripts/storybook)
-
-These are all helpers generally only in Storybook.
-
-### blockDetails
-
-Combine block details in one object.
-
-### Gutenberg
-
-Load actual Block Editor and all the magic.
-
-### storybookDefaultMocksCategories
-
-Manually populate categories for blocks. This is generated in the PHP part of the real project.
-
-### storybookDefaultMocksColorPalette
-
-Manually populate blocks color palette. This is generated in the PHP part of the real project.
-
-### storybookWindowObjects,
-
-Loading WP build files.
-
-### storybookWpStyles
-
-Loading styles for block editor.

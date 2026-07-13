@@ -11,7 +11,7 @@ Eightshift Development Kit follows a strict project structure to support autoloa
 
 While Eightshift Development Kit provides required theme files and common theme files such as `style.css` and `functions.php`, they're used differently to what you might expect if you've worked with WordPress themes previously. For instance, `style.css` is used only to register theme metadata, and doesn't contain any actual styles, as they're built using Webpack and use cache busting. `functions.php` simply bootstraps the execution lifecycle. We also provide very basic template partials, such as `single.php`, which you can accommodate to your needs. An idea to consider is replacing some of them with pages that are editable in Gutenberg.
 
-While you'll find some additional configuration files such as `webpack.config.js` in the project root, the majority of your projects codebase should live in the `src` directory, which is autoloaded via Composer following PSR-4 conventions. This implies that every directory under `src` is a namespace under your base namespace (which is your project name), and PHP files inside of those directories are classes in that namespace, with exceptions for filenames that aren't in `StudlyCase`. 
+While you'll find some additional configuration files such as `webpack.config.mjs` in the project root, the majority of your projects codebase should live in the `src` directory, which is autoloaded via Composer following PSR-4 conventions. This implies that every directory under `src` is a namespace under your base namespace (which is your project name), and PHP files inside of those directories are classes in that namespace, with exceptions for filenames that aren't in `StudlyCase`. 
 
 An Eightshift Development Kit convention is to structure namespaces around features and functionality, so for instance, all custom post types would be part of the `ProjectName\CustomPostType` namespace.
 
@@ -23,9 +23,9 @@ Our use of OOP allows you to extend, modify or even replace Eightshift Developme
 
 One of the most important interfaces in Eightshift Libs is the `ServiceInterface`. Classes that implement it are called service classes. This isn't a common pattern in PHP OOP. In Eightshift Development Kit, a service class represents a part of the project's functionality and has a `register` method that sets up the action and filter hooks for the service. If you need to add an action or a filter, you should do that in a service class. All your service classes are automatically loaded and can have dependencies injected using dependency injection.
 
-To ensure there are no naming collisions caused by Composer dependencies, we use the [Imposter Composer plugin](https://github.com/infinum/imposter-plugin) to contain them in the `{ProjectName}Vendor` namespace. This comes with a few caveats which you should be aware of, and about which you can read more in the [namespaces chapter](namespaces).
+To ensure there are no naming collisions caused by Composer dependencies, we use [Strauss](https://github.com/BrianHenryIE/strauss) to prefix them into the `{ProjectName}Vendor` namespace and copy the prefixed packages into a separate `vendor-prefixed` directory. This comes with a few caveats which you should be aware of, and about which you can read more in the [namespaces chapter](namespaces).
 
-Read more about [namespaces and Imposter](namespaces), [extending classes and service classes](extending-classes), and [dependency injection and autowiring](autowiring).
+Read more about [namespaces and Strauss](namespaces), [extending classes and service classes](extending-classes), and [dependency injection and autowiring](autowiring).
 
 ## Blocks and Components
 
@@ -59,7 +59,7 @@ To learn more about the [global manifest](blocks-global-manifest.md), [block man
 ## The directory structure in detail
 
 Your project might contain a different set of namespaces and classes in the `src` folder, depending on what you've included using wp boilerplate commands.
-By default, your project will include the `Blocks`, `Config`, `Enqueue`, `Main`, `Manifest` and `Menu` namespaces. You can include classes from Eightshift Libs to provide additional functionality manually or using wp boilerplate.
+By default, your project will include the `Blocks`, `Cache`, `Config`, `Enqueue`, `Main` and `Menu` namespaces. You can include classes from Eightshift Libs to provide additional functionality manually or using wp boilerplate.
 
 This chapter also doesn't cover all the namespaces and classes in Eightshift Libs, or their use. Check out the source code documentation for all available namespaces and classes.
 
@@ -70,6 +70,7 @@ This chapter also doesn't cover all the namespaces and classes in Eightshift Lib
   	- custom
   	- variations
   	- wrapper
+	- Cache
 	- Columns
 	- Config
 	- CustomMeta
@@ -83,7 +84,6 @@ This chapter also doesn't cover all the namespaces and classes in Eightshift Lib
 	- Helpers
 	- I18n
 	- Main
-	- Manifest
 	- Media
 	- Menu
 	- ModifyAdminAppearance
@@ -91,26 +91,32 @@ This chapter also doesn't cover all the namespaces and classes in Eightshift Lib
 	- Rest
 	- ThemeOptions
 	- View
-- .storybook
 - .gitignore
-- .eslintignore
-- .eslintrc
+- .prettierrc
 - .stylelintrc
-- babel.config.js
+- .swcrc
+- bun.lock
 - composer.json
 - composer.lock
-- package-lock.json
+- eightshift-cache.php
+- eslint.config.mjs
 - package.json
 - phpcs.xml.dist
+- phpstan.neon.dist
 - postcss.config.js
+- rector.php
 - README.md
-- webpack.config.js
+- webpack.config.mjs
 
 #### Blocks
 
 The Blocks namespace contains the Blocks class used for block registration. This directory also contains shared assets, components, blocks, variations, and the wrapper.
 
 Read about blocks in detail in the [Blocks chapter](blocks).
+
+#### Cache
+
+The Cache namespace contains the `ManifestCache` class, which caches manifest data (global settings, blocks, components, variations, and the wrapper) to improve performance. It's initialized in `functions.php` before the `Main` class, and works together with the `eightshift-cache.php` file in the project root.
 
 #### Columns
 
@@ -161,10 +167,6 @@ The Main namespace contains the `Main` class, which sets up the dependency injec
 
 You can provide manual service classes here as well. Learn more in the [autowiring chapter](autowiring).
 
-#### Manifest
-
-The Manifest namespace provides the `manifest.json` file location and helpers to return the full path for a specific asset. Learn more about the manifest in the [manifest chapter](manifest).
-
 #### Media
 
 The Media namespace is used to add custom implementations for media, such as adding custom image sizes, enabling SVG image support, etc. By default, it registers theme support for title tags, HTML5 and post thumbnails.
@@ -193,29 +195,25 @@ This namespace is used to add admin menu configuration panels such as _Theme Opt
 
 This namespace is used to add filters used when escaping unsafe tags using `wp_kses_post` and `wp_kses` functions.
 
-#### .storybook
-
-This folder contains all of the files necessary to run the storybook in your project. Read more [about the Storybook project](https://storybook.js.org/).
-
 #### .gitignore
 
 As the name implies, this file is used to define restrictions to which files Git watches. Read more [about Git](https://git-scm.com/).
 
-#### .eslintignore
+#### .prettierrc
 
-Defines files and folders which ESLint should ignore when linting.
-
-#### .eslintrc
-
-Provides definitions used for linting JavaScript files. Read more [about ESLint](https://eslint.org/).
+Provides Prettier configuration used for formatting your code. Read more [about Prettier](https://prettier.io/).
 
 #### .stylelintrc
 
 Provides definitions used for linting SCSS/CSS stylesheets. Read more [about Stylelint](https://stylelint.io/).
 
-#### babel.config.js
+#### .swcrc
 
-Provides Babel configuration, which determines how your JavaScript code will be compiled, what standard you will use, and much more. Read more [about Babel](https://babeljs.io/).
+Provides SWC configuration, which determines how your JavaScript code will be compiled. SWC replaces Babel as the compiler in the build process. Read more [about SWC](https://swc.rs/).
+
+#### bun.lock
+
+The same as `composer.lock`, but for node_modules. Depending on the package manager your project uses, this may instead be a `package-lock.json` or `pnpm-lock.yaml` file.
 
 #### composer.json
 
@@ -225,9 +223,13 @@ Contains a list of your project's Composer dependencies, as well as project meta
 
 Lock files are used to set the package version to the exact release. This ensures that everyone has the same package version when installing.
 
-#### package-lock.json
+#### eightshift-cache.php
 
-The same as `composer.lock`, but for node_modules.
+Bootstraps the manifest cache before the `Main` class initializes. It works together with the `Cache` namespace to cache manifest data and improve performance.
+
+#### eslint.config.mjs
+
+Provides the ESLint flat configuration used for linting JavaScript files. This replaces the older `.eslintrc` and `.eslintignore` files. Read more [about ESLint](https://eslint.org/).
 
 #### package.json
 
@@ -237,10 +239,18 @@ Contains a list of your project's npm dependencies, as well as project metadata 
 
 Provides definitions used for linting PHP files. Read more [about PHPCS](https://github.com/squizlabs/PHP_CodeSniffer).
 
+#### phpstan.neon.dist
+
+Provides configuration for PHPStan static analysis of your PHP code. Read more [about PHPStan](https://phpstan.org/).
+
 #### postcss.config.js
 
 PostCSS works in collaboration with Webpack and defines what additional plugins you are going to use when building your CSS files. Read more [about PostCSS](https://postcss.org/).
 
-#### webpack.config.js
+#### rector.php
 
-`webpack.config.js` provides Webpack configuration, used when building your JavaScript and CSS files. This is covered in more detail in the [Webpack chapter](webpack).
+Provides configuration for Rector, used to automate refactoring and upgrades of your PHP code. Read more [about Rector](https://getrector.com/).
+
+#### webpack.config.mjs
+
+`webpack.config.mjs` provides Webpack configuration, used when building your JavaScript and CSS files. This is covered in more detail in the [Webpack chapter](webpack).

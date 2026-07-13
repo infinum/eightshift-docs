@@ -15,7 +15,7 @@ The Eightshift Development Kit provides you with a lot of useful features, so le
   - **Components** - Extract commonly used parts into _components_. Manage attributes on the component level. Use powerful composition features to build blocks from multiple components, or even multiple instances of them without worrying about attribute registration. It's a game-changer.
   - **The Manifest** - Every block and component has a `manifest.json` file, which is a single source of truth for metadata about your block.
 - **Sustainable coding practices** - All our code follows battle-tested programming practices.
-  - **OOP** - Object-oriented programming is at the core of the Development Kit. Extend our classes or replace them entirely. Need to build a new WP-CLI command? [There's an abstract class for that.](https://github.com/infinum/eightshift-libs/tree/develop/src/Cli)
+  - **OOP** - Object-oriented programming is at the core of the Development Kit. Extend our classes or replace them entirely. Need to build a new WP-CLI command? [There's an abstract class for that.](https://github.com/infinum/eightshift-libs/tree/main/src/Cli)
   - **DI** - Eightshift Development Kit ships with a dependency injection container set up out of the box.
   - **Code style** - Linters for PHP, JavaScript and SCSS ship out of the box, helping you write better code. Also, all of our code [follows Eightshift Coding Standards](https://github.com/infinum/eightshift-coding-standards/) - consistency assured.
   - **Unit tests** - We use Pest and Jest to run unit tests on our code, catching bugs early.
@@ -45,4 +45,4 @@ Eightshift Frontend Tailwind Libs houses our frontend code, including various he
 
 We provide [boilerplates for themes](https://github.com/infinum/eightshift-boilerplate) and [plugins](https://github.com/infinum/eightshift-boilerplate-plugin/), so you can start building your project right away - without manually setting up the libraries above.
 
-The easiest way to set up the Development Kit is to use the `npx eightshift-create` command, which we'll go into further detail about in the following chapters.
+The easiest way to set up the Development Kit is to use the `bunx eightshift-create` command, which we'll go into further detail about in the following chapters.

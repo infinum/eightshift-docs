@@ -178,7 +178,7 @@ use ProjectNamespaceVendor\EightshiftLibs\Services\ServiceInterface;
 
 class QueryDocuments implements ServiceInterface, QueryDocumentsInterface
 {
-    /**
+  /**
    * Get structured documents data for documents section.
    *
    * @param int $id Id for data.

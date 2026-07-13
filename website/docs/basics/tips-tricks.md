@@ -17,7 +17,7 @@ As we described in the previous chapters Webpack watch is used to monitor all yo
 * Changing the block/component folder name.
 * Changing any of the file names in the block/component folder.
 * Adding/removing a JS package to the project.
-* Changing the webpack, babel, eslint, stylelint configuration.
+* Changing the webpack, swc, eslint, stylelint configuration.
 * Changing the project domain name for Browser sync.
 * Adding/removing a new JS or SCSS file in the global assets folder.
 
@@ -31,7 +31,7 @@ When you are using one boilerplate for a theme and another for a plugin keep in 
 * If using blocks, update the block namespace in the global block `manifest.json` file.
 * If using blocks, change the blocks' background and foreground color (Not necessary but it would be a good UX).
 * If using blocks, make your own implementation of the Components::render method so you don't need to pass project location on every usage (example below).
-* Update the default project imposter namespace in the `composer.json` file and run `composer install`.
+* Update the default project Strauss namespace prefix in the `composer.json` file and run `composer install`.
 * Update all files with the new vendor namespace prefix.
 * Update the default WP-CLI command prefix for your plugin located in the root of your plugin.
 

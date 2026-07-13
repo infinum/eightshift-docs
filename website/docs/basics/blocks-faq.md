@@ -18,12 +18,6 @@ The main difference is that blocks are available in the block editor's block pic
 
 For more information about blocks, read the [block structure](block-structure) chapter. To find out more about components, read the [component structure](blocks-component-structure) chapter. You can also read our blog post that explains the [difference between components and blocks](/blog/components-and-blocks/) with some examples.
 
-### Do I need to have Storybook stories in my block?
-
-No, you don't. But we provided you with the ability to use the Storybook for all of your blocks and components. Why not use it? It will speed up your development time. Trust us. 🙂
-
-For more details on how to write stories, check out [this chapter](blocks-storybook).
-
 ### Do you support block variations, and how can I use them?
 
 Yes, we do. All block variations are located in the `src/Blocks/variations` folder. For more information about this, please check the [variations](blocks-variations) chapter and check out our [blog post](/blog/block-variations/) where we explain step-by-step how to register a new block variation.

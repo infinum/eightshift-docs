@@ -70,7 +70,7 @@ This key is the most important one. We use this key to specify the component att
 
 ### title
 
-This key is used to provide the label for all your component options and provide the storybook's automatic story title.
+This key is used to provide the label for all your component options.
 
 ### componentClass
 

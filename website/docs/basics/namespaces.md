@@ -9,9 +9,9 @@ title: Namespaces
 The PHP codebase of this project lives in `EightshiftLibs` namespace.
 :::
 
-Because WordPress lives in a global namespace, we had to provide the way for your project to be unique. That is why we implemented [**Imposter**](https://github.com/infinum/imposter-plugin) in `composer.json`. Imposter adds a namespace prefix to all the packages inside the `vendor` folder that use namespacing.
+Because WordPress lives in a global namespace, we had to provide the way for your project to be unique. That is why we use [**Strauss**](https://github.com/BrianHenryIE/strauss), configured in `composer.json`. Strauss adds a namespace prefix to all the packages that use namespacing and copies the prefixed versions into a separate `vendor-prefixed` folder. It runs automatically via the `post-install-cmd` and `post-update-cmd` Composer scripts.
 
-You can change the vendor prefix in your `composer.json` file. If you do this, make sure you delete the `vendor` folder and re-run `composer install`.
+You can change the vendor prefix in your `composer.json` file. If you do this, make sure you delete the `vendor` and `vendor-prefixed` folders and re-run `composer install`.
 
 Using the default setup, your project will have the namespace you defined in the setup process.
 
@@ -23,8 +23,8 @@ However, let's say you change your `composer.json` file to contain this snippet:
   }
 },
 "extra": {
-  "imposter": {
-    "namespace": "EightshiftBoilerplateVendor"
+  "strauss": {
+    "namespace_prefix": "EightshiftBoilerplateVendor"
   }
 }
 ```
@@ -39,6 +39,6 @@ However, let's say you change your `composer.json` file to contain this snippet:
 
 If you are installing additional composer packages, make sure that they don't have any inline namespace usage. All referenced classes should be imported with `use` statements, which must be defined at the top of files.
 
-The Imposter plugin is not able to replace inline namespaces, which will cause issues with classname resolution and result in a fatal error getting thrown.
+Strauss is not able to replace inline namespaces, which will cause issues with classname resolution and result in a fatal error getting thrown.
 
-To fix these issues, either create a PR on the package and fix this for everyone, or exclude this package from imposter script. Keep in mind that can have some unexpected side effects that we can't predict.
+To fix these issues, either create a PR on the package and fix this for everyone, or exclude this package using the `exclude_from_prefix` option in the `strauss` config. Keep in mind that can have some unexpected side effects that we can't predict.
