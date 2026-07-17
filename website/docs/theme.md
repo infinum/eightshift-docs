@@ -17,7 +17,7 @@ composer install
 
 bun install
 
-bun build
+bun run build
 ```
 
 ## What is next?
