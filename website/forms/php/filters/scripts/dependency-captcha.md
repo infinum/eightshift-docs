@@ -5,6 +5,8 @@ title: Captcha script dependency
 
 Allows adding custom script dependencies that should load before the captcha script. Useful when you have custom scripts that need to be loaded before the reCAPTCHA integration initializes.
 
+This filter applies to the Google reCAPTCHA script only. For Friendly Captcha, use the [Friendly Captcha script dependency](dependency-friendly-captcha) filter.
+
 ```php
 \add_filter('es_forms_scripts_dependency_captcha', [$this, 'getScriptsDependencyCaptcha']);
 

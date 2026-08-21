@@ -20,3 +20,11 @@ The user's IP address determines the rate limit. However, we hash each stored IP
 ## Cloudflare
 
 If you have Cloudflare turned on for your project, please make sure that you read the [Cloudflare documentation](cloudflare) to make sure that the security feature works as expected.
+
+## CloudFront
+
+If your project runs behind Amazon CloudFront, please make sure that you read the [CloudFront documentation](cloudfront) to make sure that the security feature works as expected.
+
+## File upload security
+
+Uploaded files go through a dedicated scanner stack that checks what each file actually contains before it is stored. Details are in the [file upload security](file-security) documentation.

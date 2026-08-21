@@ -28,3 +28,11 @@ All data is secured and checked before it is stored in the WordPress database to
 :::caution
 Form file uploads are not supported at this point.
 :::
+
+## Additional values
+
+Alongside the submitted fields, an entry can also store additional values set during the submission — for example the [increment](increment) ID, which is useful when the same reference has to be found again later.
+
+## Showing entries progress on the front end
+
+Stored entries can be aggregated and shown on the front end with the [`esFormsEntryProgress`](../php/shortcodes#esformsentryprogress) shortcode. It sums a numeric field from all the form entries and outputs it as a number or a percentage of a target value, with an optional progress bar.
