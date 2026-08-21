@@ -91,9 +91,13 @@ Props are mostly the same, with a few differences:
 ### `wpSearchRoute`
 A pre-configured fetch function that simplifies adding an URL picker with WP search autocomplete.
 
+:::note
+Icons are individual named imports from `@eightshift/ui-components/icons` (e.g. `import { globe, globeAnchor, imageFile } from '@eightshift/ui-components/icons';`). For dynamic usage, use the `Icon` component: `<Icon icon={iconName} />`.
+:::
+
 ```jsx
 <LinkInput
-	icon={buttonIsAnchor ? icons.globeAnchor : icons.globe}
+	icon={buttonIsAnchor ? globeAnchor : globe}
 	url={buttonUrl}
 	onChange={({ url, isAnchor }) => {
 		setAttributes({
@@ -118,7 +122,7 @@ You can provide a function to the second argument if you want to customize the v
 <Responsive
 	value={imageData}
 	onChange={(value) => setAttributes({ [getAttrKey('imageData', attributes, manifest)]: value })}
-	icon={icons.imageFile}
+	icon={imageFile}
 	label={__('Image', 'eightshift-ui-components')}
 	// highlight-next-line
 	options={generateOptionsFromValue(imageData)}

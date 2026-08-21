@@ -9,7 +9,7 @@ At its core, Webpack is a static module bundler for modern JavaScript applicatio
 
 To put it simply, Webpack takes your development files and creates a production-ready version of them based on the config.
 
-Eightshift Development Kit comes with everything set up out of the box. In the root of your project, you will find a file called `webpack.config.js`. If you open it, you will see that the configuration is pulled from the Eightshift Frontend Libs library.
+Eightshift Development Kit comes with everything set up out of the box. In the root of your project, you will find a file called `webpack.config.mjs`. If you open it, you will see that the configuration is pulled from the Eightshift Frontend Libs library.
 
 You can remove this config and write everything from scratch (keep in mind that this is a lot of work), or you can use our config and extend/remove whatever you need.
 
@@ -126,7 +126,7 @@ module.exports = (env, argv) => {
 
 ## Add a new entrypoint
 
-Let's say you want to add a new, separate JS and/or CSS build for some specific functionality. This functionality may or may not have anything to do with your WordPress theme or plugin, but it needs to be in separate files. To do that you'd need to add a new entrypoint for Webpack to build in `webpack.config.js`:
+Let's say you want to add a new, separate JS and/or CSS build for some specific functionality. This functionality may or may not have anything to do with your WordPress theme or plugin, but it needs to be in separate files. To do that you'd need to add a new entrypoint for Webpack to build in `webpack.config.mjs`:
 
 ```js
 module.exports = (env, argv) => {

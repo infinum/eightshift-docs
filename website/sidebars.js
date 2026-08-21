@@ -68,7 +68,6 @@ module.exports = {
 					'basics/blocks-special-use-cases',
 					'basics/blocks-reusable',
 					'basics/blocks-styles',
-					'basics/blocks-storybook',
 				],
 			},
 			{
