@@ -27,7 +27,7 @@ email : contact-email
 first-name : name
 ```
 
-The left side is a field name from the current form, and the right side is a field name from the connected form. Both dropdowns in the settings list the available field names for each side.
+The left side is a field name from the current form, and the right side is a field name from the connected form. The **Connected form** control is a dropdown; **Connected fields** is a textarea with two collapsible lists of available field names.
 
 :::note
 Only fields with a **Name** set can be mapped. If a field is missing from the available names list, set its name in the form editor first.
