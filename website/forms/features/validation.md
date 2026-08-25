@@ -24,3 +24,7 @@ With all the native validations provided, you can also add your own custom valid
 For example, you want an email field not to allow emails with a `.org` domain. You can provide a custom validation pattern using a regular expression to check if the email has a `.org` domain. 
 
 ![Validation screen](/img/forms/validation.webp)
+
+## File upload validation
+
+Beyond the field rules, every uploaded file is inspected by the file security scanners — extension deny list, content-based MIME detection, and format-specific checks for PDF, image, Office, CSV, archive and text files. See the [file upload security](file-security) documentation for the full breakdown and server requirements.

@@ -22,9 +22,10 @@ We use DataHub to list countries for the dropdown menu to select the country of 
 [All releases are listed here](https://datahub.io/core/country-list) and our implementation is located on [this link](https://github.com/infinum/eightshift-forms/blob/develop/data/country/manifest.json).
 
 With the default countries list, we have made a few groups:
-* Europe
-* European Union
-* Ex Yugoslavia
+
+- Europe
+- European Union
+- Ex Yugoslavia
 
 but you can also provide your list by using our filters.
 
@@ -56,3 +57,7 @@ This toggle is here to help you preview what you have configured so far. It will
 ## Cloudflare
 
 If you have Cloudflare turned on for your project, please make sure that you read the [Cloudflare documentation](cloudflare) to make sure that the geolocation feature works as expected.
+
+## CloudFront
+
+If your project runs behind Amazon CloudFront, please make sure that you read the [CloudFront documentation](cloudfront) to make sure that the geolocation feature works as expected.

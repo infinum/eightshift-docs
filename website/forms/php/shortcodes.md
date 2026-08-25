@@ -7,6 +7,60 @@ title: Shortcodes
 
 Shortcodes are small pieces of code that allow adding forms to the site in places blocks can't be easily added.
 
+## esFormsEntryProgress
+
+The `esFormsEntryProgress` shortcode sums a numeric field from all the stored [entries](../features/entries) of a form and outputs the total against a target value, optionally with a progress bar. Useful for donation goals, sign-up counters, and similar progress indicators.
+
+:::note
+The entries feature must be enabled on the form; otherwise there is no data to read from.
+:::
+
+**Available usage:**
+* Anywhere shortcodes are parsed (post or page content, Shortcode block, widgets, etc.)
+
+**Available attributes:**
+* form_id - (string) (required) The ID of the form whose entries are counted.
+* key - (string) (required) The entry field name whose values are summed.
+* limit - (number) (required) The target value used to calculate the percentage. Can't be `0`.
+* output - (string) (optional) The output format, `percentage` (default) or `number`.
+* prefix - (string) (optional) Text shown before the value.
+* suffix - (string) (optional) Text shown after the value.
+* show_bar - (string) (optional) Render the progress bar, `yes` or `no` (default).
+* condition_key - (string) (optional) The entry field name used to filter which entries are counted.
+* condition_value - (string) (optional) The value `condition_key` must match for the entry to be counted.
+
+**Example usage:**
+```php
+[esFormsEntryProgress form_id="123" key="amount" limit="10000" output="number" prefix="$" show_bar="yes" /]
+```
+
+Counting only the entries where the `status` field equals `paid`:
+```php
+[esFormsEntryProgress form_id="123" key="amount" limit="10000" condition_key="status" condition_value="paid" /]
+```
+
+**Good to know:**
+* Nothing is output if `form_id`, `key`, or a non-zero `limit` is missing.
+* Entries with a non-numeric value in `key` are skipped.
+* Both `condition_key` and `condition_value` must be provided for the filtering to apply.
+* The `percentage` output is formatted with two decimals, and the `number` output is rounded to the nearest integer.
+* The value is not capped, so it can go over `100%` if the sum exceeds the `limit`.
+* Up to 10 000 entries per form are taken into account.
+
+**Output markup:**
+```html
+<div class="es-entry-progress">
+	<div class="es-entry-progress__bar">
+		<div class="es-entry-progress__status" style="width: 42.50%;"></div>
+	</div>
+	<div class="es-entry-progress__text">42.50%</div>
+</div>
+```
+
+:::note
+The plugin doesn't ship any styles for these classes, so style them in your theme.
+:::
+
 ## esFormsLink
 
 This shortcode allows adding links within text labels, e.g. if you need to add a privacy policy link to a form checkbox label.

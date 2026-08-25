@@ -13,9 +13,10 @@ With this feature, users can visit your form and leave without submitting it. Yo
 
 ### How does it work?
 
-By providing a parameters map in settings, forms can read users `cookies` and `URL` parameters and store that data in the users `localStorage`. This data is updated every time the user lands on any pages containing the forms. 
+By providing a parameters map in settings, forms can read users `cookies` and `URL` parameters and store that data in the users `localStorage`. This data is updated every time the user lands on any pages containing the forms.
 
 For example, if the user first time lands on this page:
+
 ```
  https://infinum.com/?utm_content=test
 ```
@@ -69,3 +70,102 @@ It is important to disclose this in your site's Privacy policy.
 :::
 
 ![Enrichment prefill url map screen](/img/forms/enrichment-url.webp)
+
+### URL format
+
+:::note
+Both the enrichment feature and its _prefill from URL_ option must be enabled in the global settings, otherwise the URL is ignored.
+:::
+
+All the data goes into a **single** query parameter, named `form-` plus the form ID:
+
+```
+?form-{formId}=field-name==value/other-field==value
+```
+
+| Separator | Use                                     |
+| --------- | --------------------------------------- |
+| `/`       | separates fields                        |
+| `==`      | separates the field name from its value |
+| `---`     | separates multiple values for one field |
+
+Field names are the **Name** values set in the form editor, and the values must match the field's values (not the labels).
+
+### Examples
+
+A simple text and textarea prefill:
+
+```
+https://example.com/contact/?form-840=first-name==Ivan/message==Hello%20there
+```
+
+An email and a phone number — the `+` has to be encoded as `%2B`:
+
+```
+https://example.com/contact/?form-840=email==ivan%40example.com/phone==%2B385911234567
+```
+
+A phone field with a separate prefix — the number comes first, the dialing code (without `+`) second:
+
+```
+https://example.com/contact/?form-840=phone==911234567---385
+```
+
+Multiple values for checkboxes and a select, a country and a date:
+
+```
+https://example.com/apply/?form-840=checkboxes==check-1---check-2/select==option-1/country==hr/date==2026-01-31
+```
+
+A range or rating field takes a plain number:
+
+```
+https://example.com/survey/?form-840=rating==4/range==10
+```
+
+:::note
+Values must be URL encoded — space as `%20`, `@` as `%40`, `+` as `%2B`, `&` as `%26`, `#` as `%23`.
+:::
+
+:::caution
+A value can't contain a `/`, since that is the field separator and it can't be escaped. Values like URLs have to be filled in manually. File fields can't be prefilled either.
+:::
+
+Fields with an empty value are skipped, so a parameter such as `field-name==` does nothing.
+
+:::tip
+The form ID is the ID of the form post. If the prefill doesn't fire, check the value the form actually uses in the browser console via `window.esForms`.
+:::
+
+## Smart prefill
+
+Prefill from storage remembers a user's inputs for one form. _Smart prefill_ goes a step further and remembers selected fields across **all** the forms on your site — if a user types their email into a newsletter form, the contact form further down the site will already have it filled in.
+
+Configure it in the global settings, under **Enrichment → Prefill smart**. Add one field name per line in the _Add custom enrichment smart parameters_ field.
+
+Then, whenever a user fills in a field with one of those names, its value is stored in the browser and used to prefill every field with the same name on any other form.
+
+:::note
+These are field names, the same ones you set in the form editor, not URL parameters. A field is only prefilled if its name matches exactly.
+:::
+
+The values are stored in `localStorage` under the `es-storage-smart` key, separately from the per-form prefill data.
+
+|                                  | Prefill from storage                                   | Smart prefill                                         |
+| -------------------------------- | ------------------------------------------------------ | ----------------------------------------------------- |
+| Scope                            | one form                                               | every form with a matching field name                 |
+| Requires                         | the _prefill from storage_ option                      | only the enrichment feature                           |
+| Cleared on successful submission | yes                                                    | no                                                    |
+| Expires after                    | _Clear form prefill storage after_ (2 days by default) | _Clear enrichment storage after_ (30 days by default) |
+
+:::caution
+Smart values intentionally survive a successful submission, so keep the list to convenience fields like a name, an email or a phone number. Don't add anything sensitive to it.
+:::
+
+:::caution
+It is important to disclose this in your site's Privacy policy.
+:::
+
+## Prefill from another form
+
+Fields can also be prefilled with the data from a form the user has just submitted. See the [connected forms](connected-forms) feature.
