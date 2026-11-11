@@ -1,0 +1,168 @@
+---
+title: "Slider"
+slug: "components/es-ui-components/slider"
+description: "View source on GitHub →"
+---
+import { Example1, Example2, Example3, Example4, Example5, Example6, Example7, Example8, Example9, Example10, Example11, Example12 } from '../../../../demos/ui-components/es-ui-components/slider.jsx';
+
+<span id="slider"></span>
+
+:::tip
+[View source on GitHub →](https://github.com/infinum/eightshift-ui-components/tree/main/lib/components/slider)
+:::
+
+
+
+<Example1 client:only="react"><span slot="fallback">Loading interactive example…</span></Example1>
+
+```jsx
+<Slider
+	value={value}
+	onChange={(value) => setData(value)}
+/>
+```
+## Range slider
+
+In order for the value display to be visible, a `label` must be set!
+
+<Example2 client:only="react"><span slot="fallback">Loading interactive example…</span></Example2>
+
+```jsx {3}
+<Slider
+	label='My slider'
+	value={value} // e.g. [20, 60]
+	onChange={(value) => setData(value)}
+/>
+```
+## Highlighted props
+
+For the complete list of props, use your IDE's autocomplete functionality.
+
+### Markers
+
+#### Auto-generated
+
+<Example3 client:only="react"><span slot="fallback">Loading interactive example…</span></Example3>
+
+```jsx {4}
+<Slider
+	value={value}
+	onChange={(value) => setData(value)}
+	markers
+/>
+```
+#### Dots
+
+<Example4 client:only="react"><span slot="fallback">Loading interactive example…</span></Example4>
+
+```jsx {4}
+<Slider
+	value={value}
+	onChange={(value) => setData(value)}
+	markers='dots'
+/>
+```
+#### Manual
+
+<Example5 client:only="react"><span slot="fallback">Loading interactive example…</span></Example5>
+
+```jsx {4}
+<Slider
+	value={value}
+	onChange={(value) => setData(value)}
+	markers={{ 0: 'start', 25: '', 50: 'middle', 75: '', 100: 'end' }}
+/>
+```
+### Custom start point
+
+<Example6 client:only="react"><span slot="fallback">Loading interactive example…</span></Example6>
+
+```jsx {4}
+<Slider
+	value={value}
+	onChange={(value) => setData(value)}
+	startPoint={50}
+/>
+```
+### Disable the active area highlight
+
+<Example7 client:only="react"><span slot="fallback">Loading interactive example…</span></Example7>
+
+```jsx {4}
+<Slider
+	value={value}
+	onChange={(value) => setData(value)}
+	noActiveHighlight
+/>
+```
+### Custom track style
+
+<Example8 client:only="react"><span slot="fallback">Loading interactive example…</span></Example8>
+
+```jsx {11,12,13}
+<Slider
+	value={value}
+	onChange={(value) => setData(value)}
+	markers={{
+		0: <span className='es:text-red-500'>R</span>,
+		50: <span className='es:text-green-500'>G</span>,
+		100: <span className='es:text-blue-500'>B</span>,
+	}}
+	startPoint={50}
+	noActiveHighlight
+	trackStyle={{
+		backgroundImage: 'linear-gradient(to right in oklab, #ff000060, #00ff0060, #0000ff60)',
+	}}
+/>
+```
+### Before element
+
+<Example9 client:only="react"><span slot="fallback">Loading interactive example…</span></Example9>
+
+```jsx {4}
+<Slider
+	value={value}
+	onChange={(value) => setData(value)}
+	before={magicAltFillTransparent}
+/>
+```
+### After element
+
+<Example10 client:only="react"><span slot="fallback">Loading interactive example…</span></Example10>
+
+```jsx {4}
+<Slider
+	value={value}
+	onChange={(value) => setData(value)}
+	after={magicAltFillTransparent}
+/>
+```
+### Input field
+
+Requires `label`!
+
+:::note
+Use sparingly, the input methods are redundant.
+:::
+
+<Example11 client:only="react"><span slot="fallback">Loading interactive example…</span></Example11>
+
+```jsx {5}
+<Slider
+	label='My slider'
+	value={value}
+	onChange={(value) => setData(value)}
+	inputField
+/>
+```
+### Vertical slider
+
+<Example12 client:only="react"><span slot="fallback">Loading interactive example…</span></Example12>
+
+```jsx {4}
+<Slider
+	value={value}
+	onChange={(value) => setData(value)}
+	vertical
+/>
+```

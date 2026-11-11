@@ -1,0 +1,229 @@
+---
+title: "Option selector"
+slug: "components/es-ui-components/option-select"
+description: "View source on GitHub →"
+---
+import { Example1, Example2, Example3, Example4, Example5, Example6, Example7, Example8, Example9, Example10, Example11, Example12, Example13, Example14, Example15, Example16, Example17, Example18, Example19, Example20, Example21, Example22, Example23 } from '../../../../demos/ui-components/es-ui-components/option-select.jsx';
+
+<span id="option-selector"></span>
+
+:::tip
+[View source on GitHub →](https://github.com/infinum/eightshift-ui-components/tree/main/lib/components/option-select)
+:::
+
+
+
+This is a versatile component that can allow selecting from a set of options in various ways.
+
+<Example1 client:only="react"><span slot="fallback">Loading interactive example…</span></Example1>
+
+```jsx
+<OptionSelect
+	icon={columns}
+	label='Option'
+	value={value} // e.g. 'option1'
+	onChange={(value) => setData(value)}
+	options={[
+		{ value: 'option1', label: 'Option 1' },
+		{ value: 'option2', label: 'Option 2' },
+		{ value: 'option3', label: 'Option 3' },
+	]}
+/>
+```
+## Highlighted props
+
+For the complete list of props, use your IDE's autocomplete functionality.
+
+### Control type
+
+#### Toggle buttons
+
+`type='toggleButtons'`
+
+<Example2 client:only="react"><span slot="fallback">Loading interactive example…</span></Example2>
+
+#### Split toggle buttons
+
+`type='toggleButtonsSplit'`
+
+<Example3 client:only="react"><span slot="fallback">Loading interactive example…</span></Example3>
+
+#### Radio buttons
+
+`type='radios'`
+
+`icon`s on items are not supported.
+
+<Example4 client:only="react"><span slot="fallback">Loading interactive example…</span></Example4>
+
+#### Segmented radio buttons
+
+`type='radiosSegmented'`
+
+`icon`s on items are not supported.
+
+<Example5 client:only="react"><span slot="fallback">Loading interactive example…</span></Example5>
+
+#### Dropdown menu
+
+`type='menu'`
+
+<Example6 client:only="react"><span slot="fallback">Loading interactive example…</span></Example6>
+
+##### Additional features for items
+
+`endIcon`s
+
+<Example7 client:only="react"><span slot="fallback">Loading interactive example…</span></Example7>
+
+`disabled` items
+
+<Example8 client:only="react"><span slot="fallback">Loading interactive example…</span></Example8>
+
+Separator lines <br /> (`separator: 'below'` or `separator: 'above'`)
+
+<Example9 client:only="react"><span slot="fallback">Loading interactive example…</span></Example9>
+
+`subtitle`s
+
+<Example10 client:only="react"><span slot="fallback">Loading interactive example…</span></Example10>
+
+Section titles (`sectionTitle`)
+
+<Example11 client:only="react"><span slot="fallback">Loading interactive example…</span></Example11>
+
+`shortcut`/supplementary labels
+
+<Example12 client:only="react"><span slot="fallback">Loading interactive example…</span></Example12>
+
+#### Submenu
+
+Meant to be used as a part of a `Menu`.
+
+`type='submenu'`
+
+Most item features from `'menu'` are supported.
+
+<Example13 client:only="react"><span slot="fallback">Loading interactive example…</span></Example13>
+
+```jsx
+<Menu>
+	<MenuItem>Lorem</MenuItem>
+	<MenuItem>Ipsum</MenuItem>
+	<MenuSeparator />
+	<OptionSelect
+		label='Option'
+		value={data}
+		onChange={setData}
+		options={[
+			{ value: 'option1', label: 'Option 1', icon: design },
+			{ value: 'option2', label: 'Option 2', icon: wrench },
+			{ value: 'option3', label: 'Option 3', icon: magicAlt },
+		]}
+		type='submenu'
+	/>
+</Menu>
+```
+##### Additional features
+
+If no `label` is provided, the current value will be used as a label.
+
+<Example14 client:only="react"><span slot="fallback">Loading interactive example…</span></Example14>
+
+If `subtitle` is set (to `true`), the current value will be used as a subtitle.
+
+<Example15 client:only="react"><span slot="fallback">Loading interactive example…</span></Example15>
+
+#### Menu radio buttons
+
+Meant to be used as a part of a `Menu`.
+
+`type='standaloneMenuItems'`
+
+Most item features from `'menu'` are supported.
+
+<Example16 client:only="react"><span slot="fallback">Loading interactive example…</span></Example16>
+
+```jsx
+<Menu>
+	<MenuItem>Lorem</MenuItem>
+	<MenuItem>Ipsum</MenuItem>
+	<MenuSeparator />
+	<OptionSelect
+		label='Option'
+		value={data}
+		onChange={setData}
+		options={[
+			{ value: 'option1', label: 'Option 1', icon: design },
+			{ value: 'option2', label: 'Option 2', icon: wrench },
+			{ value: 'option3', label: 'Option 3', icon: magicAlt },
+		]}
+		type='standaloneMenuItems'
+	/>
+</Menu>
+```
+### Vertical alignment
+
+_(not applicable to all types)_
+
+<Example17 client:only="react"><span slot="fallback">Loading interactive example…</span></Example17>
+
+```jsx {11}
+<OptionSelect
+	icon={columns}
+	label='Option'
+	value={value} // e.g. 'option1'
+	onChange={(value) => setData(value)}
+	options={[
+		{ value: 'option1', label: 'Option 1' },
+		{ value: 'option2', label: 'Option 2' },
+		{ value: 'option3', label: 'Option 3' },
+	]}
+	vertical
+/>
+```
+### Trigger customization
+
+_(might not apply to all types)_
+
+Hide the trigger icon with `noTriggerIcon`.
+
+<Example18 client:only="react"><span slot="fallback">Loading interactive example…</span></Example18>
+
+Hide the trigger label with `noTriggerLabel`.
+
+<Example19 client:only="react"><span slot="fallback">Loading interactive example…</span></Example19>
+
+Modify the "outside" component props with `wrapperProps`.
+
+<Example20 client:only="react"><span slot="fallback">Loading interactive example…</span></Example20>
+
+```jsx {3}
+<OptionSelect
+	...
+	wrapperProps={{ className: 'bg-gray-100 p-4' }}
+/>
+```
+### Item customization
+
+_(might not apply to all types)_
+
+Hide the item icon with `noItemIcon`.
+
+<Example21 client:only="react"><span slot="fallback">Loading interactive example…</span></Example21>
+
+Hide the item label with `noItemLabel`.
+
+<Example22 client:only="react"><span slot="fallback">Loading interactive example…</span></Example22>
+
+Modify the item props with `itemProps` or just pass a class name with `itemClassName`.
+
+<Example23 client:only="react"><span slot="fallback">Loading interactive example…</span></Example23>
+
+```jsx {3,4}
+<OptionSelect
+	...
+	itemProps={{ size: 'large' }}
+	itemClassName='flex-col h-auto px-16 py-8'
+/>
+```

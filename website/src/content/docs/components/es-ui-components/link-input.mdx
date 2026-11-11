@@ -1,0 +1,74 @@
+---
+title: "Link input"
+slug: "components/es-ui-components/link-input"
+description: "View source on GitHub →"
+---
+import { Example1, Example2 } from '../../../../demos/ui-components/es-ui-components/link-input.jsx';
+
+<span id="link-input"></span>
+
+:::tip
+[View source on GitHub →](https://github.com/infinum/eightshift-ui-components/tree/main/lib/components/link-input)
+:::
+
+
+
+
+
+<Example1 client:only="react"><span slot="fallback">Loading interactive example…</span></Example1>
+
+```jsx
+const getSearchSuggestions = async (search) => {
+	// Do your thing, and return an array of suggestions.
+	// Each item should have a `label` and a `value`.
+	// Optionally, you can include a `subtype` within
+	// `metadata` to show a different icon in the suggestions.
+};
+
+<LinkInput
+	label='URL'
+	url={data}
+	onChange={({ url }) => setAttributes({ myUrl: url })}
+	fetchSuggestions={getSearchSuggestions}
+/>;
+```
+## Frontend libs integration
+
+If using Frontend libs (v13+) or Frontend libs Tailwind, for the `fetchSuggestions` callback you can import the included `wpSearchRoute` function.
+
+```jsx {1,9}
+import { wpSearchRoute } from '@eightshift/frontend-libs-tailwind/scripts';
+
+...
+
+<LinkInput
+	label='URL'
+	url={data}
+	onChange={({ url }) => setAttributes({ myUrl: url })}
+	fetchSuggestions={getSearchSuggestions}
+/>
+```
+## Providing custom metadata icons
+
+If you want to provide custom icons for the search suggestions, you can provide a mapping list with the `suggestionTypeIconOverride` prop to map the `subtype` to the icon.
+
+<Example2 client:only="react"><span slot="fallback">Loading interactive example…</span></Example2>
+
+```jsx {12}
+const overrides = {
+	post: newspaper,
+	page: magicAltFillTransparent,
+	'help-article': troubleshootAlt,
+};
+
+<LinkInput
+	label='URL'
+	url={data}
+	onChange={({ url }) => setAttributes({ myUrl: url })}
+	fetchSuggestions={getSearchSuggestions}
+	suggestionTypeIconOverride={(type) => overrides[type]}
+/>;
+```
+```jsx
+
+```

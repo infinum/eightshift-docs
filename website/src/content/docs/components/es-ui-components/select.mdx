@@ -1,0 +1,87 @@
+---
+title: "Single select"
+slug: "components/es-ui-components/select"
+description: "View source on GitHub →"
+---
+import { Example1, Example2, Example3, Example4, Example5 } from '../../../../demos/ui-components/es-ui-components/select.jsx';
+
+<span id="single-select"></span>
+
+:::tip
+[View source on GitHub →](https://github.com/infinum/eightshift-ui-components/tree/main/lib/components/select)
+:::
+
+
+
+
+
+<Example1 client:only="react"><span slot="fallback">Loading interactive example…</span></Example1>
+
+```jsx
+<Select
+	value={value}
+	onChange={(value) => setValue(value)}
+	options={[
+		{ value: 'option-1', label: 'Option 1' },
+		{ value: 'option-2', label: 'Option 2' },
+		{ value: 'option-3', label: 'Option 3' },
+	]}
+/>
+```
+## Highlighted props
+
+For the complete list of props, use your IDE's autocomplete functionality.
+
+### Allow clearing the selected option
+
+<Example2 client:only="react"><span slot="fallback">Loading interactive example…</span></Example2>
+
+```jsx {9}
+<Select
+	value={value}
+	onChange={(value) => setValue(value)}
+	options={[
+		{ value: 'option-1', label: 'Option 1' },
+		{ value: 'option-2', label: 'Option 2' },
+		{ value: 'option-3', label: 'Option 3' },
+	]}
+	clearable
+/>
+```
+### Disable search
+
+<Example3 client:only="react"><span slot="fallback">Loading interactive example…</span></Example3>
+
+```jsx {9}
+<Select
+	value={value}
+	onChange={(value) => setValue(value)}
+	options={[
+		{ value: 'option-1', label: 'Option 1' },
+		{ value: 'option-2', label: 'Option 2' },
+		{ value: 'option-3', label: 'Option 3' },
+	]}
+	noSearch
+/>
+```
+### Simple value
+
+By default, values are objects with `value` and `label` properties (and optionally `metadata`).
+If you want to use a simple string value, use the `simpleValue` prop.
+
+<Example4 client:only="react"><span slot="fallback">Loading interactive example…</span></Example4>
+
+<Example5 client:only="react"><span slot="fallback">Loading interactive example…</span></Example5>
+
+```jsx {9}
+<Select
+	value={value}
+	onChange={(value) => setValue(value)}
+	options={[
+		{ value: 'option-1', label: 'Option 1' },
+		{ value: 'option-2', label: 'Option 2' },
+		{ value: 'option-3', label: 'Option 3' },
+	]}
+	simpleValue
+/>
+```

@@ -1,0 +1,58 @@
+---
+title: "Draggable"
+slug: "components/es-ui-components/draggable"
+description: "View source on GitHub →"
+---
+import { Example1 } from '../../../../demos/ui-components/es-ui-components/draggable.jsx';
+
+<span id="draggable"></span>
+
+:::tip
+[View source on GitHub →](https://github.com/infinum/eightshift-ui-components/tree/main/lib/components/draggable)
+:::
+
+
+
+
+
+<Example1 client:only="react"><span slot="fallback">Loading interactive example…</span></Example1>
+
+```jsx
+<Draggable
+	items={value}
+	onChange={(value) => setValue(value)}
+>
+	{(item) => {
+		const { toggle, title, icon, updateData } = item;
+
+		return (
+			<div className='...'>
+				<DraggableHandle />
+
+				// This can be any content,
+				// only DraggableHandle is required
+
+				<RichLabel
+					label={title ?? 'New item'}
+					icon={icon ?? emptyCircle}
+				/>
+
+				<Switch
+					aria-label='Title'
+					checked={toggle}
+					onChange={(value) => updateData({ toggle: value })}
+				/>
+			</div>
+		);
+	}}
+</Draggable>
+```
+## Highlighted props
+
+For the complete list of props, use your IDE's autocomplete functionality.
+
+### Axis
+
+If you want to limit the dragging to a specific axis, you can use the `axis` prop.
+
+It accepts either `horizontal`, `vertical`, or `both` (default).

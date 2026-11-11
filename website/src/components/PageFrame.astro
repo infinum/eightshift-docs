@@ -1,0 +1,17 @@
+---
+import DefaultPageFrame from '@astrojs/starlight/components/PageFrame.astro';
+import Footer from './Footer.astro';
+---
+
+<DefaultPageFrame>
+	<slot name="header" slot="header" />
+	<slot name="sidebar" slot="sidebar" />
+	<slot />
+</DefaultPageFrame>
+<div class="site-footer-frame"><Footer /></div>
+
+<style is:global>
+	body:has(#starlight__sidebar:popover-open) .site-footer-frame {
+		visibility: hidden;
+	}
+</style>

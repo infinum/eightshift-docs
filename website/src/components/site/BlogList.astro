@@ -1,0 +1,26 @@
+---
+import { createMarkdownProcessor } from '@astrojs/markdown-remark';
+import type { BlogPost } from '../../lib/blog';
+import { formatDate, pageUrl, postsPerPage } from '../../lib/blog';
+interface Props { posts: BlogPost[]; base: string; page: number; }
+const { posts, base, page } = Astro.props;
+const pages = Math.ceil(posts.length / postsPerPage);
+const visiblePosts = posts.slice((page - 1) * postsPerPage, page * postsPerPage);
+const markdown = await createMarkdownProcessor();
+const summaries = await Promise.all(visiblePosts.map((post) => markdown.render(post.data.summary)));
+---
+<nav aria-label="Blog"><a href="/blog">All posts</a> · <a href="/blog/tags">Tags</a> · <a href="/blog/authors">Authors</a> · <a href="/blog/archive">Archive</a> · <a href="/blog/rss.xml">RSS</a> · <a href="/blog/atom.xml">Atom</a></nav>
+{visiblePosts.map((post, index) => <article>
+	<h2><a href={post.data.permalink}>{post.data.title}</a></h2>
+	<p><time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time> · {Math.ceil(post.data.readingTime)} min read</p>
+	<p>{post.data.authors.map((author, i) => <><span>{i > 0 && ', '}<a href={author.url}>{author.name}</a></span></>)}</p>
+	<div set:html={summaries[index].code} />
+	<p><a href={post.data.permalink}>Read more<span class="sr-only">: {post.data.title}</span></a></p>
+	<ul>{post.data.tags.map((tag) => <li><a href={tag.permalink}>{tag.label}</a></li>)}</ul>
+</article>)}
+{pages > 1 && <nav aria-label="Blog pagination">
+	{page > 1 && <a rel="prev" href={pageUrl(base, page - 1)}>Newer posts</a>}
+	<span> Page {page} of {pages} </span>
+	{page < pages && <a rel="next" href={pageUrl(base, page + 1)}>Older posts</a>}
+</nav>}
+<style>article { border-bottom: 1px solid var(--sl-color-gray-5); padding-block: 1.5rem; } ul { display: flex; flex-wrap: wrap; gap: 1rem; list-style: none; padding: 0; } .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }</style>

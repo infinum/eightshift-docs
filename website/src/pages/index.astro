@@ -1,0 +1,146 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import OpenSource from '../components/site/OpenSource.astro';
+import EditorIllustration from '../components/site/EditorIllustration.astro';
+import { Icon } from '@astrojs/starlight/components';
+const features = [
+	{ icon: "puzzle", title: "Reusable blocks", description: "Build dynamic Gutenberg blocks with automatic registration and reusable components." },
+	{ icon: "rocket", title: "Quick project setup", description: "Scaffold themes and plugins with WP-CLI. Include only what your project needs." },
+	{ icon: "code-branch", title: "Extendable PHP", description: "Build on Eightshift Libs and an object-oriented foundation designed to grow with your project." },
+	{ icon: "laptop", title: "Responsive by default", description: "Define breakpoints once and use them across styles, blocks, and attributes." },
+	{ icon: "setting", title: "Ready-to-go builds", description: "Compile and optimize assets with preconfigured tooling and automatic cache busting." },
+	{ icon: "star", title: "Tailwind built in", description: "Connect block attributes to utility classes with dedicated helpers and frontend tools." },
+] as const;
+---
+<StarlightPage frontmatter={{
+	title: 'Eightshift Development Kit',
+	description: 'All the tools you need to start building a modern WordPress project, using all the latest front end development tools.',
+	template: 'splash', editUrl: false,
+	hero: {
+		title: 'Eightshift<br />Development Kit<span class="hero-dot">.</span>',
+		tagline: 'All the tools you need to start building a modern WordPress project, using all the latest front end development tools.',
+		image: { html: '<img src="/img/homepage/w-logo.svg" alt="WordPress" width="641" height="519" fetchpriority="high" />' },
+		actions: [{ text: 'Get started', link: '#get-started', variant: 'primary', icon: 'right-arrow' }],
+	},
+}}>
+	<div class="eightshift-home">
+		<section class="split intro" aria-labelledby="a-wordpress-boilerplate-from-the-future">
+			<div class="illustration"><img src="/img/homepage/block-cards.svg" alt="Reusable blocks and components" width="560" loading="lazy" /></div>
+			<div class="section-copy">
+				<p class="eyebrow">Less boilerplate. More building.</p>
+				<h2 id="a-wordpress-boilerplate-from-the-future">A WordPress boilerplate from the future</h2>
+				<p class="lead">Eightshift Development kit makes building complex WordPress themes and plugins painless.</p>
+				<p>Use and extend our block and component collection to build out dynamic Gutenberg blocks. Extract commonly-used UI elements into reusable components. Forget about block registration and save callbacks. Build a REST route in minutes.</p>
+				<p class="closing">You'll never want to go back!</p>
+			</div>
+		</section>
+		<section class="setup" aria-labelledby="get-started">
+			<div class="section-heading"><p class="eyebrow">Your next project starts here</p><h2 id="get-started">Get started in minutes,<br />not hours</h2>
+			<p>Boilerplate your project in a few simple steps. Get instructions for setting up an Eightshift DevKit theme or plugin, run a command (or two) and start coding. It's that easy!</p></div>
+			<div class="setup-grid">
+				<a class="setup-card" href="/docs/theme"><span class="card-index" aria-hidden="true">01 / THEME</span><span class="card-title">I want a new WordPress theme</span><span class="card-link">New theme <span aria-hidden="true">↗</span></span></a>
+				<a class="setup-card" href="/docs/plugin"><span class="card-index" aria-hidden="true">02 / PLUGIN</span><span class="card-title">I want a new WordPress plugin</span><span class="card-link">New plugin <span aria-hidden="true">↗</span></span></a>
+			</div>
+		</section>
+		<section class="features" aria-labelledby="batteries-included">
+			<div class="section-heading"><p class="eyebrow">Small details. Big difference.</p><h2 id="batteries-included">Batteries included</h2><p>Everything you need to build, style, and ship modern WordPress projects.</p></div>
+			<div class="feature-grid">
+				{features.map(({ icon, title, description }) => (
+					<section class="feature">
+						<span class="feature-icon"><Icon name={icon} size="1.5rem" /></span>
+						<h3>{title}</h3>
+						<p>{description}</p>
+					</section>
+				))}
+			</div>
+		</section>
+		<section class="editor" aria-labelledby="an-editing-experience-content-editors-will-love">
+			<div class="split"><div><p class="eyebrow">Built for people, too</p><h2 id="an-editing-experience-content-editors-will-love">An editing experience content editors will love</h2></div><p class="lead">Provide the ease of use and flexibility that your content editors crave for. Rely on our user-friendly default blocks or use plug&amp;play editor components to build great experiences.</p></div>
+			<div class="editor-frame"><EditorIllustration /></div>
+		</section>
+		<div class="open-source"><p class="eyebrow">Open source. Open possibilities.</p><OpenSource /></div>
+		<section class="split freebies"><div><p class="eyebrow">From our team to yours</p><h2>Find more libraries, tools, and design assets free for everyone to use.</h2><a class="text-link" href="https://infinum.com/open-source">Open-source freebies <span aria-hidden="true">↗</span></a></div><img src="/img/homepage/infinum-open-source.svg" alt="" width="440" loading="lazy" /></section>
+	</div>
+</StarlightPage>
+
+<style>
+	/* Only the homepage opts into these Starlight layout overrides. */
+	:global(html:has(.eightshift-home)) { --sl-content-width: 80rem; }
+	:global(body:has(.eightshift-home) main > .content-panel) { padding-block: 0; padding-inline: clamp(1.5rem, 5vw, 4rem); }
+	:global(body:has(.eightshift-home) .hero) { grid-template-columns: 1.1fr 1fr; gap: 0; min-height: min(780px, 85svh); padding-block: clamp(3rem, 7vw, 7rem); }
+	:global(body:has(.eightshift-home) .hero .hero-html) { order: 2; width: 100%; max-width: none; margin-inline: 0; }
+	:global(body:has(.eightshift-home) .hero img) { width: 100%; height: auto; }
+	:global(body:has(.eightshift-home) .hero h1) { font-size: clamp(3rem, 5.7vw, 5.5rem); line-height: 1.04; letter-spacing: -.065em; font-weight: 750; }
+	:global(body:has(.eightshift-home) .hero .tagline) { max-width: 34rem; font-size: 1.125rem; line-height: 1.7; margin-top: 1rem; }
+	:global(body:has(.eightshift-home) .hero-dot) { color: var(--sl-color-text-accent); }
+	:global(body:has(.eightshift-home) .hero .primary) { background: #c90b1e; border-color: #c90b1e; color: white; border-radius: 999rem; padding: 1rem 1.5rem; font-weight: 650; }
+	:global(body:has(.eightshift-home) .hero .stack) { text-align: left; }
+	:global(body:has(.eightshift-home) .hero .copy) { align-items: flex-start; }
+	:global(body:has(.eightshift-home) .hero .actions) { justify-content: flex-start; }
+	.eightshift-home { --home-panel: color-mix(in srgb, var(--sl-color-text) 5%, var(--sl-color-bg)); --home-border: color-mix(in srgb, var(--sl-color-text) 17%, transparent); color: var(--sl-color-text); }
+	.eightshift-home :global(*) { box-sizing: border-box; }
+	.eightshift-home :global(h2), .eightshift-home :global(h3), .eightshift-home :global(p), .eightshift-home :global(ul) { margin: 0; }
+	.eightshift-home :global(h2) { font-size: clamp(2rem, 3.6vw, 3.6rem); line-height: 1.12; font-weight: 700; letter-spacing: -.05em; color: var(--sl-color-white); }
+	.eightshift-home :global(h3) { font-size: 1.3rem; line-height: 1.3; letter-spacing: -.025em; color: var(--sl-color-white); }
+	.eightshift-home :global(p) { line-height: 1.8; }
+	.eightshift-home :global(a) { text-underline-offset: .25em; }
+	.eightshift-home :global(a:focus-visible) { outline: 3px solid var(--sl-color-text-accent); outline-offset: 5px; }
+	.eightshift-home > section, .open-source { padding-block: clamp(3.5rem, 7vw, 7rem); }
+	.split { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: clamp(2rem, 6vw, 6rem); }
+	.eightshift-home .eyebrow { font-family: var(--font-mono); font-size: .75rem; text-transform: uppercase; letter-spacing: .12em; color: var(--sl-color-text-accent); margin-bottom: 1.25rem; }
+	.section-copy > p:not(.eyebrow) { margin-top: 1.5rem; }
+	.lead { font-size: 1.15rem; }
+	.closing { color: var(--sl-color-white); font-weight: 650; }
+	.illustration { background: var(--home-panel); border-radius: 1rem; padding: 2rem 1rem; }
+	.illustration img { width: 100%; }
+	.section-heading { max-width: 44rem; margin-bottom: 3rem; }
+	.section-heading > p:last-child { margin-top: 1.5rem; }
+	.setup-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+	.setup-card { display: flex; flex-direction: column; gap: 1.5rem; background: var(--home-panel); padding: clamp(1.5rem, 4vw, 3rem); border: 1px solid var(--home-border); border-radius: .75rem; color: var(--sl-color-white); text-decoration: none; transition: border-color .2s, background .2s; }
+	.setup-card:hover { background: color-mix(in srgb, var(--sl-color-text-accent) 8%, var(--sl-color-bg)); border-color: var(--sl-color-text-accent); }
+	.card-index { font-family: var(--font-mono); font-size: .8rem; color: var(--sl-color-text-accent); }
+	.card-title { font-size: clamp(1.5rem, 2.6vw, 2.5rem); font-weight: 650; line-height: 1.2; letter-spacing: -.04em; max-width: 16ch; }
+	.card-link { display: flex; justify-content: space-between; align-items: center; color: var(--sl-color-text-accent); font-weight: 600; margin-top: 1rem; }
+	.card-link span { font-size: 1.75rem; }
+	.feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem 2.5rem; }
+	.feature { margin: 0; border-top: 1px solid var(--home-border); padding-top: 1.5rem; }
+	.feature-icon { display: inline-flex; padding: .75rem; border-radius: .75rem; color: var(--sl-color-text-accent); background: var(--sl-color-accent-low); }
+	.feature h3 { margin-block: 1rem .5rem; }
+	.feature p { font-size: .95rem; }
+	.editor .split { margin-bottom: 3rem; }
+	.editor-frame { padding: clamp(.5rem, 2vw, 1.5rem); border-radius: .8rem; background: var(--home-panel); border: 1px solid var(--home-border); box-shadow: 0 1.5rem 4rem #0000000d; }
+	.editor-frame :global(.editor-illustration) { margin: 0; border-radius: .3rem; }
+	.open-source :global(ul) { display: grid; grid-template-columns: 1fr 1fr; gap: 0 2.5rem; list-style: none; padding: 0; margin-top: 2.5rem; }
+	.open-source :global(li) { margin: 0; border-bottom: 1px solid var(--home-border); }
+	.open-source :global(a) { display: flex; align-items: center; gap: 1rem; padding-block: 1.25rem; color: var(--sl-color-white); text-decoration: none; }
+	.open-source :global(a)::after { content: '↗'; flex-shrink: 0; color: var(--sl-color-text-accent); margin-inline-start: auto; }
+	.open-source :global(a:hover) { color: var(--sl-color-text-accent); }
+	.freebies img { width: 100%; max-width: 28rem; justify-self: center; }
+	.eightshift-home a.text-link {
+		display: inline-flex;
+		align-items: center;
+		gap: .75rem;
+		min-height: 2.75rem;
+		margin-top: 2rem;
+		padding: .75rem 1.25rem;
+		border: 1px solid transparent;
+		border-radius: 999rem;
+		background: var(--sl-color-bg-accent);
+		color: var(--sl-color-text-invert);
+		font-weight: 600;
+		text-decoration: none;
+	}
+	.eightshift-home a.text-link:hover { background: color-mix(in srgb, var(--sl-color-bg-accent) 85%, var(--sl-color-white)); }
+	.eightshift-home a.text-link:focus-visible { outline: 2px solid var(--sl-color-text-accent); outline-offset: 4px; }
+	@media (max-width: 60rem) {
+		.feature-grid { grid-template-columns: 1fr 1fr; }
+	}
+	@media (max-width: 40rem) {
+		:global(body:has(.eightshift-home) .hero) { grid-template-columns: 1fr; min-height: auto; padding-block: 3rem; gap: 2rem; }
+		:global(body:has(.eightshift-home) .hero .hero-html) { width: 100%; max-width: 28rem; margin-inline: auto; }
+		.split, .setup-grid, .feature-grid, .open-source :global(ul) { grid-template-columns: 1fr; }
+		.intro .illustration { order: 2; }
+		.feature-grid { gap: 2rem; }
+	}
+	@media (prefers-reduced-motion: reduce) { .setup-card { transition: none; } }
+</style>

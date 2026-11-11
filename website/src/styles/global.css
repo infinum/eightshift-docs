@@ -1,0 +1,241 @@
+@layer base, starlight, theme, components, utilities;
+
+@import '@fontsource-variable/inter';
+@import '@fontsource-variable/inter/wght-italic.css';
+@import '@fontsource/ibm-plex-mono/400.css';
+@import '@fontsource/ibm-plex-mono/400-italic.css';
+@import '@fontsource/ibm-plex-mono/700.css';
+@import '@fontsource/ibm-plex-mono/700-italic.css';
+@import 'tailwindcss/theme.css' layer(theme);
+@import 'tailwindcss/utilities.css' layer(utilities) source('../');
+@import '@astrojs/starlight-tailwind';
+
+@theme {
+	--font-sans: 'Inter Variable', sans-serif;
+	--font-mono: 'IBM Plex Mono', monospace;
+
+	--color-accent-200: #f3b8b1;
+	--color-accent-600: #c90b1e;
+	--color-accent-900: #5d1313;
+	--color-accent-950: #401311;
+
+	--color-gray-100: #f9f5f5;
+	--color-gray-200: #f3ecea;
+	--color-gray-300: #c8c0be;
+	--color-gray-400: #978784;
+	--color-gray-500: #635451;
+	--color-gray-700: #423432;
+	--color-gray-800: #302321;
+	--color-gray-900: #1d1715;
+}
+
+:root {
+	--site-nav-inset: .75rem;
+	--site-nav-bar-height: 4rem;
+	/* Reserve both floating gaps for content, sidebar, and sticky offsets. */
+	--sl-nav-height: calc(var(--site-nav-bar-height) + 2 * var(--site-nav-inset));
+}
+
+body {
+	font-feature-settings: "cv05" 1, "cv08" 1, "ss03" 1;
+}
+
+.page > header.header {
+	inset-block-start: var(--site-nav-inset);
+	inset-inline: var(--site-nav-inset);
+	width: auto;
+	height: var(--site-nav-bar-height);
+	border: 1px solid var(--sl-color-hairline-shade);
+	border-radius: 1rem;
+	box-shadow: 0 .25rem 1.25rem #00000014;
+}
+
+.sl-menu-button {
+	inset-inline-end: calc(var(--sl-nav-pad-x) + var(--site-nav-inset));
+}
+
+@media (max-width: 49.99rem) {
+	:root { --site-nav-inset: .5rem; }
+
+	body:has(mobile-starlight-toc):not(:has(#starlight__sidebar:popover-open)) .page > header.header {
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
+		box-shadow: none;
+	}
+
+	mobile-starlight-toc > nav {
+		top: calc(var(--site-nav-inset) + var(--site-nav-bar-height));
+		inset-inline: var(--site-nav-inset);
+		border: 1px solid var(--sl-color-hairline-shade);
+		border-top: 0;
+		border-radius: 0 0 1rem 1rem;
+		box-shadow: 0 .25rem 1.25rem #00000014;
+		overflow: hidden;
+	}
+
+	#starlight__on-this-page--mobile {
+		border-bottom: 0;
+	}
+
+	body:has(#starlight__sidebar:popover-open) mobile-starlight-toc {
+		visibility: hidden;
+	}
+
+	#starlight__sidebar {
+		inset-block: var(--sl-nav-height) max(var(--site-nav-inset), env(safe-area-inset-bottom));
+		inset-inline: var(--site-nav-inset);
+		width: auto;
+		margin: 0;
+		border: 1px solid var(--sl-color-hairline-shade);
+		border-radius: 1rem;
+		box-shadow: 0 .5rem 1.5rem #0000001f;
+		overscroll-behavior: contain;
+	}
+}
+
+@media (min-width: 50rem) {
+	#starlight__sidebar {
+		border-inline-end: 0;
+	}
+}
+
+@media (min-width: 50rem) and (max-width: 71.99rem) {
+	mobile-starlight-toc > nav {
+		top: var(--sl-nav-height);
+		inset-inline-start: calc(var(--sl-content-inline-start, 0rem) + var(--site-nav-inset));
+		inset-inline-end: var(--site-nav-inset);
+		border: 1px solid var(--sl-color-hairline-shade);
+		border-radius: 1rem;
+		box-shadow: 0 .25rem 1.25rem #00000014;
+		overflow: hidden;
+	}
+
+	#starlight__on-this-page--mobile {
+		border-bottom: 0;
+	}
+}
+
+@media (min-width: 72rem) {
+	.right-sidebar-container {
+		width: 15rem;
+		flex: 0 0 15rem;
+	}
+
+	.right-sidebar {
+		width: 15rem;
+		border-inline-start: 0;
+	}
+
+	[data-has-sidebar][data-has-toc] .main-pane {
+		--sl-content-margin-inline: auto;
+		width: calc(100% - 15rem);
+	}
+}
+
+@media print {
+	:root { --site-nav-inset: 0rem; }
+	.page > header.header { border: 0; border-radius: 0; box-shadow: none; }
+}
+
+.social-icons-extended .custom-links {
+	flex-wrap: wrap;
+}
+
+.navbar-links .custom-link,
+.navbar-links .more-links > summary {
+	color: var(--sl-color-gray-1);
+}
+
+header .social-icons::after,
+.social-icons-extended .custom-links::after {
+	content: none;
+}
+
+.pagination-links > a {
+	gap: 1rem;
+	padding: 1.25rem;
+	border-color: var(--sl-color-hairline-shade);
+	border-radius: 1rem;
+	background: var(--sl-color-bg-nav);
+	color: var(--sl-color-gray-3);
+	font-size: var(--sl-text-xs);
+	box-shadow: none;
+	transition: background-color .15s ease, border-color .15s ease;
+}
+
+.pagination-links .link-title {
+	display: inline-block;
+	margin-top: .25rem;
+	font-size: var(--sl-text-base);
+	font-weight: 600;
+	line-height: 1.4;
+}
+
+.pagination-links > a > svg {
+	color: var(--sl-color-text-accent);
+}
+
+.pagination-links > a:hover {
+	border-color: var(--sl-color-text-accent);
+	background: color-mix(in srgb, var(--sl-color-text-accent) 6%, var(--sl-color-bg-nav));
+}
+
+.pagination-links > a:focus-visible {
+	outline: 2px solid var(--sl-color-text-accent);
+	outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.pagination-links > a { transition: none; }
+}
+
+body:not(:has(.eightshift-home)) main :is(h1, h2, h3, h4, h5, h6):not(:where(.not-content *, .esd-demo-island *, footer *)) {
+	font-weight: 700;
+	letter-spacing: -.025em;
+}
+
+body:not(:has(.eightshift-home)) main h1:not(:where(.not-content *, .esd-demo-island *)) {
+	font-size: 2rem;
+}
+
+body:not(:has(.eightshift-home)) .sl-markdown-content h2:not(:where(.not-content *, .esd-demo-island *)) {
+	font-size: 1.625rem;
+}
+
+body:not(:has(.eightshift-home)) .sl-markdown-content h3:not(:where(.not-content *, .esd-demo-island *)) {
+	font-size: 1.25rem;
+}
+
+body:not(:has(.eightshift-home)) .sl-markdown-content h4:not(:where(.not-content *, .esd-demo-island *)) {
+	font-size: 1.125rem;
+}
+
+.sidebar-content .top-level a {
+	border-radius: .5rem;
+}
+
+.sidebar-content .top-level ul summary {
+	padding-block: .3em;
+	border-radius: .25rem;
+	font-size: var(--sl-text-base);
+	font-weight: 400;
+	color: var(--sl-color-gray-2);
+}
+
+.sidebar-content .top-level ul summary .large {
+	font-size: inherit;
+	font-weight: inherit;
+	color: inherit;
+}
+
+.sidebar-content .top-level ul summary:hover,
+.sidebar-content .top-level ul summary:focus {
+	color: var(--sl-color-white);
+}
+
+@media (min-width: 50rem) {
+	.sidebar-content .top-level ul summary {
+		font-size: var(--sl-text-sm);
+	}
+}
+

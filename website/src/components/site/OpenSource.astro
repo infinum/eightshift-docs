@@ -1,0 +1,28 @@
+---
+const projects = [
+	['Eightshift Boilerplate', 'eightshift-boilerplate'],
+	['Eightshift Boilerplate Plugin', 'eightshift-boilerplate-plugin'],
+	['Eightshift Libs', 'eightshift-libs'],
+	['Eightshift Frontend Libs (Tailwind)', 'eightshift-frontend-libs-tailwind'],
+	['Eightshift Frontend Libs (legacy)', 'eightshift-frontend-libs'],
+	['Eightshift Forms', 'eightshift-forms'],
+	['Eightshift Docs', 'eightshift-docs'],
+	['Eightshift Coding Standards for WordPress', 'eightshift-coding-standards'],
+];
+---
+<section>
+	<h2 id="start-exploring">Start exploring</h2>
+	<ul>
+		{projects.map(([label, repo]) => (
+			<li><a href={`https://github.com/infinum/${repo}`}>
+				<img src={`/img/projects/${repo}.svg`} alt="" width="48" height="48" loading="lazy" />
+				<span>{label}</span>
+			</a></li>
+		))}
+	</ul>
+</section>
+
+<style>
+	li > a { display: flex; align-items: center; gap: 1rem; }
+	a > img { flex: 0 0 48px; width: 48px; height: 48px; margin: 0; }
+</style>

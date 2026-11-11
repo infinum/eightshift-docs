@@ -1,0 +1,70 @@
+---
+title: "Rich label"
+slug: "components/es-ui-components/rich-label"
+description: "View source on GitHub →"
+---
+import { Example1, Example2, Example3, Example4 } from '../../../../demos/ui-components/es-ui-components/rich-label.jsx';
+
+<span id="rich-label"></span>
+
+:::tip
+[View source on GitHub →](https://github.com/infinum/eightshift-ui-components/tree/main/lib/components/rich-label)
+:::
+
+
+
+
+
+Upgrade your basic labels with an optional icon and subtitle.
+
+<Example1 client:only="react"><span slot="fallback">Loading interactive example…</span></Example1>
+
+```jsx
+<RichLabel
+	label='Label ipsum dolor sit amet'
+	subtitle='Subtitle ipsum dolor sit amet'
+	icon={emptyCircle}
+/>
+```
+## Highlighted props
+
+For the complete list of props, use your IDE's autocomplete functionality.
+
+### Expand to full width
+
+<Example2 client:only="react"><span slot="fallback">Loading interactive example…</span></Example2>
+
+```jsx {5}
+<RichLabel
+	label='Label ipsum dolor sit amet'
+	subtitle='Subtitle ipsum dolor sit amet'
+	icon={emptyCircle}
+	fullWidth
+/>
+```
+### Monochrome
+
+If you have cases where the text might be a different color, or of dynamic color,
+use the `noColor` prop to use opacity to highlight hierarchy instead of multiple colors.
+
+<Example3 client:only="react"><span slot="fallback">Loading interactive example…</span></Example3>
+
+```jsx
+// The container has a red text color applied.
+<RichLabel
+	label='Label ipsum dolor sit amet'
+	subtitle='Subtitle ipsum dolor sit amet'
+	icon={solidCircleFilled}
+/>
+```
+<Example4 client:only="react"><span slot="fallback">Loading interactive example…</span></Example4>
+
+```jsx {6}
+// The container has a red text color applied.
+<RichLabel
+	label='Label ipsum dolor sit amet'
+	subtitle='Subtitle ipsum dolor sit amet'
+	icon={solidCircleFilled}
+	noColor
+/>
+```

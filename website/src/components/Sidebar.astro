@@ -1,0 +1,29 @@
+---
+import MobileMenuFooter from '@astrojs/starlight/components/MobileMenuFooter.astro';
+import SidebarPersister from '@astrojs/starlight/components/SidebarPersister.astro';
+import SidebarSublist from 'starlight-plugin-icons/components/starlight/SidebarSublist.astro';
+
+const { sidebar } = Astro.locals.starlightRoute;
+const section = sidebar.length === 1 && sidebar[0]?.type === 'group' ? sidebar[0] : undefined;
+const entries = section?.entries ?? sidebar;
+---
+
+{section && <h2 class="section-heading">{section.label}</h2>}
+<SidebarPersister>
+	<SidebarSublist sublist={entries} />
+</SidebarPersister>
+<div class="md:sl-hidden">
+	<MobileMenuFooter />
+</div>
+
+<style>
+	.section-heading {
+		margin: 0;
+		padding: .5rem;
+		font-size: var(--sl-text-xs);
+		font-weight: 600;
+		letter-spacing: .08em;
+		text-transform: uppercase;
+		color: var(--sl-color-gray-3);
+	}
+</style>

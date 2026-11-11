@@ -1,0 +1,45 @@
+---
+import PluginLinks from 'starlight-ui-tweaks/overrides/SocialIcons.astro';
+---
+
+<nav class="navbar-links" aria-label="Site sections">
+	<PluginLinks />
+	<details class="more-links">
+		<summary><span class="sr-only">More</span><span aria-hidden="true">⋯</span></summary>
+		<div class="more-panel">
+			<a href="/blog">Blog</a>
+			<a href="/showcase">Showcase</a>
+		</div>
+	</details>
+</nav>
+
+<script>
+	document.addEventListener('click', (event) => {
+		if (!(event.target instanceof Node)) return;
+		for (const menu of document.querySelectorAll<HTMLDetailsElement>('.more-links[open]')) {
+			if (!menu.contains(event.target) || (event.target instanceof Element && event.target.closest('a'))) menu.open = false;
+		}
+	});
+	document.addEventListener('keydown', (event) => {
+		if (event.key !== 'Escape') return;
+		for (const menu of document.querySelectorAll<HTMLDetailsElement>('.more-links[open]')) {
+			menu.open = false;
+			menu.querySelector('summary')?.focus();
+		}
+	});
+</script>
+
+<style>
+	.navbar-links { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+	.more-links { position: relative; font-size: var(--sl-text-sm); font-weight: 500; }
+	summary { display: flex; align-items: center; gap: .35rem; cursor: pointer; color: var(--sl-color-text-accent); list-style: none; }
+	summary::-webkit-details-marker { display: none; }
+	summary:hover { color: var(--sl-color-white); }
+	.more-panel { position: absolute; inset-inline-end: 0; top: calc(100% + .75rem); min-width: 10rem; padding: .5rem; border: 1px solid var(--sl-color-hairline-shade); border-radius: .75rem; background: var(--sl-color-bg-nav); box-shadow: var(--sl-shadow-md); }
+	a { display: block; padding: .5rem .75rem; color: var(--sl-color-text); text-decoration: none; border-radius: .35rem; }
+	a:hover { background: var(--sl-color-bg-inline-code); color: var(--sl-color-text-accent); }
+	summary:focus-visible, a:focus-visible { outline: 2px solid var(--sl-color-text-accent); outline-offset: 3px; }
+	@media (max-width: 49.99rem) {
+		.more-panel { position: static; margin-top: .5rem; box-shadow: none; }
+	}
+</style>

@@ -1,0 +1,47 @@
+import { ComponentShowcase } from '../../support/components/component-showcase.jsx';
+import { Button, InputField } from '@eightshift/ui-components';
+import * as icons from '@eightshift/ui-components/icons';
+
+export function Example1() { return (<><ComponentShowcase
+	className='es:flex es:flex-wrap es:gap-2 es:space-y-0! es:w-full'
+	fitWidth
+	preContent={(data, setData) => (
+		<InputField
+			placeholder='Search icons'
+			aria-label='Search icons'
+			value={data}
+			onChange={setData}
+			style={{ width: '10rem' }}
+		/>
+	)}
+>
+	{(data) => {
+		const filteredIcons = Object.keys(icons)
+			.filter((k) => /^[a-z]/.test(k))
+			.filter((k) => icons[k]?.$$typeof !== undefined)
+			.filter((k) =>
+				data?.length > 0 ? k.toLowerCase().includes(data?.toLowerCase()) : true
+			);
+
+    	if (filteredIcons.length < 1)  {
+    		return (
+    			<span>Nothing found</span>
+    		);
+    	}
+
+    	return filteredIcons.map((icon, index) => (
+    		<Button
+    			key={index}
+    			className='esd-icon-showcase-button'
+    			icon={icons[icon]}
+    			tooltip={<span className='es:font-mono'>{icon}</span>}
+    			aria-label={icon}
+    			onPress={() => {
+    				navigator.clipboard.writeText(icon);
+    			}}
+    			type='simple'
+    		/>
+    	));
+    }}
+
+</ComponentShowcase></>); }

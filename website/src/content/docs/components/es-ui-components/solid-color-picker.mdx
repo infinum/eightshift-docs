@@ -1,0 +1,60 @@
+---
+title: "Solid color picker"
+slug: "components/es-ui-components/solid-color-picker"
+description: "View source on GitHub →"
+---
+import { Example1, Example2, Example3, Example4 } from '../../../../demos/ui-components/es-ui-components/solid-color-picker.jsx';
+
+<span id="solid-color-picker"></span>
+
+:::tip
+[View source on GitHub →](https://github.com/infinum/eightshift-ui-components/tree/main/lib/components/color-pickers)
+:::
+
+
+
+<Example1 client:only="react"><span slot="fallback">Loading interactive example…</span></Example1>
+
+```jsx
+<SolidColorPicker
+	value={value}
+	onChange={(value) => setData(value)}
+/>
+```
+## Highlighted props
+
+For the complete list of props, use your IDE's autocomplete functionality.
+
+### Allow transparent colors
+
+<Example2 client:only="react"><span slot="fallback">Loading interactive example…</span></Example2>
+
+```jsx {4}
+<SolidColorPicker
+	value={value}
+	onChange={(value) => setData(value)}
+	allowTransparency
+/>
+```
+### Change output color format
+
+<Example3 client:only="react"><span slot="fallback">Loading interactive example…</span></Example3>
+
+```jsx {4}
+<SolidColorPicker
+	value={value}
+	onChange={(value) => setData(value)}
+	outputFormat='rgb'
+/>
+```
+### Hide advanced options
+
+<Example4 client:only="react"><span slot="fallback">Loading interactive example…</span></Example4>
+
+```jsx {4}
+<SolidColorPicker
+	value={value}
+	onChange={(value) => setData(value)}
+	noAdvancedOptions
+/>
+```

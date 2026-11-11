@@ -1,0 +1,35 @@
+---
+title: "Multi-select"
+slug: "components/es-ui-components/multi-select"
+description: "View source on GitHub →"
+---
+import { Example1 } from '../../../../demos/ui-components/es-ui-components/multi-select.jsx';
+
+<span id="multi-select"></span>
+
+:::tip
+[View source on GitHub →](https://github.com/infinum/eightshift-ui-components/tree/main/lib/components/select)
+:::
+
+
+
+
+
+<Example1 client:only="react"><span slot="fallback">Loading interactive example…</span></Example1>
+
+```jsx
+<MultiSelect
+	value={value}
+	onChange={(value) => setValue(value)}
+	options={[
+		{ value: 'option-1', label: 'Option 1' },
+		{ value: 'option-2', label: 'Option 2' },
+		{ value: 'option-3', label: 'Option 3' },
+	]}
+/>
+```
+:::note
+Props are the same as for the [Single select](/components/es-ui-components/select).
+:::
+
+For the complete list of props, use your IDE's autocomplete functionality.
