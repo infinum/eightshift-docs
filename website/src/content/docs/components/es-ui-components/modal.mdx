@@ -1,0 +1,192 @@
+---
+title: "Modal"
+slug: "components/es-ui-components/modal"
+description: "View source on GitHub →"
+---
+import { Example1, Example2, Example3, Example4, Example5, Example6, Example7, Example8, Example9 } from '../../../../demos/ui-components/es-ui-components/modal.jsx';
+
+<span id="modal"></span>
+
+:::tip
+[View source on GitHub →](https://github.com/infinum/eightshift-ui-components/tree/main/lib/components/modal)
+:::
+
+
+
+<Example1 client:only="react"><span slot="fallback">Loading interactive example…</span></Example1>
+
+```jsx
+<Modal>
+	<div>This is demo content</div>
+</Modal>
+```
+## Highlighted props
+
+For the complete list of props, use your IDE's autocomplete functionality.
+
+### Trigger button customization
+
+<Example2 client:only="react"><span slot="fallback">Loading interactive example…</span></Example2>
+
+```jsx {2,3}
+<Modal
+	triggerLabel='Click me'
+	triggerIcon={pointerHand}
+>
+	<div>This is demo content</div>
+</Modal>
+```
+#### More advanced customizations
+
+`triggerProps` accepts all props a [`Button`](/components/es-ui-components/button) accepts.
+
+<Example3 client:only="react"><span slot="fallback">Loading interactive example…</span></Example3>
+
+```jsx {3}
+<Modal
+	triggerIcon={trash}
+	triggerProps={{ type: 'danger' }}
+>
+	<div>This is demo content</div>
+</Modal>
+```
+## Customization
+
+### Title
+
+Add the title to the modal by passing a `title` prop.
+
+<Example4 client:only="react"><span slot="fallback">Loading interactive example…</span></Example4>
+
+```jsx {2}
+<Modal
+	title='This is a title'
+>
+	<div>This is demo content</div>
+</Modal>
+```
+### Actions
+
+Add actions to the bottom of the modal with the `actions` prop.
+
+<Example5 client:only="react"><span slot="fallback">Loading interactive example…</span></Example5>
+
+```jsx {3,4,5,6,7,8,9,10,11,12,13,14,15,16,17}
+<Modal
+	title='Message'
+	actions={
+		<Button
+			type='ghost'
+			slot='close'
+		>
+			Cancel
+		</Button>
+		<Button
+			type='selected'
+			slot='close'
+			onPress={() => alert('OK clicked')}
+		>
+			OK
+		</Button>
+	}
+>
+	<div>This is demo content</div>
+</Modal>
+```
+#### Closing the modal
+
+You can add `slot='close'` to any button inside the modal to close it when clicked.
+This works both with the fully manual control, and the automatic trigger button.
+
+If using buttons from Eightshift UI components (or anything *React Aria*-based), *and* have `onPress` passed to the button,
+`slot='close'` will automatically close the modal after the `onPress` function is executed.
+
+### Header actions
+
+You can add actions to the header of the modal with the `headerActions` prop.
+
+<Example6 client:only="react"><span slot="fallback">Loading interactive example…</span></Example6>
+
+```jsx {3,4,5,6,7,8,9,10,11}
+<Modal
+	title='Message'
+	headerActions={
+		<Button
+			type='ghost'
+			size='small'
+			icon={experiment}
+			aria-label='Demo button'
+			onPress={() => alert('Demo button clicked')}
+		/>
+	}
+>
+	<div>This is demo content</div>
+</Modal>
+```
+### Disabling the close button
+
+If you want to disable the close button in the header, you can pass `noCloseButton` prop.
+
+Modal will still be closable by clicking outside of it, or pressing the `Esc` key (if `noClickToDismiss` is not set).
+You should, however, provide a way to close the modal in your content, such as a button with `slot='close'`.
+
+<Example7 client:only="react"><span slot="fallback">Loading interactive example…</span></Example7>
+
+```jsx {6}
+<Modal
+	title='Message'
+	actions={
+		<Button type='ghost' slot='close'>Close</Button>
+	}
+	noCloseButton
+>
+	<div>This is demo content</div>
+</Modal>
+```
+## Trigger button replacement
+
+If you want to render your own trigger button, you can either:
+- replace the default trigger with a `customTrigger`
+- manually control the modal with `open` and `onOpenChange`
+
+### Replacing the default trigger
+
+The passed component needs to be compatible with React Aria's pressable system,
+so it can automatically wire up the modal's open/close functionality.
+
+<Example8 client:only="react"><span slot="fallback">Loading interactive example…</span></Example8>
+
+```jsx {2,3,4,5,6,7,8,9}
+<Modal
+	customTrigger={
+		<Button
+			type='ghost'
+			icon={pointerHand}
+		>
+			Click me
+		</Button>
+	}
+>
+	<div>This is demo content</div>
+</Modal>
+```
+### Full manual control
+
+<Example9 client:only="react"><span slot="fallback">Loading interactive example…</span></Example9>
+
+```jsx {8,9}
+const [open, setOpen] = useState(false);
+
+return (
+	<>
+		<button onClick={() => setOpen(true)}>Click me</button>
+
+		<Modal
+			open={open}
+			onOpenChange={(isOpen) => setOpen(isOpen)}
+		>
+			<div>This is demo content</div>
+		</Modal>
+	</>
+);
+```

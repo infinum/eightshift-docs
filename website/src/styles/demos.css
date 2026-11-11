@@ -1,0 +1,107 @@
+@import '@eightshift/ui-components/dist/assets/style-editor.css';
+
+.esd-full-fixed {
+	position: fixed;
+	inset: 0;
+}
+
+:root {
+	--color-violet-50: oklch(.969 .016 293.756);
+	--color-gray-50: oklch(.985 .002 247.839);
+	--es-spacing: 0.25rem;
+}
+
+.es\:bg-violet-50 {
+	background-color: var(--color-violet-50);
+}
+
+.es\:bg-gray-50 {
+	background-color: var(--color-gray-50);
+}
+
+.esd-hide-bg-on-hover.es\:bg-violet-50:hover,
+.esd-hide-bg-on-hover:hover .es\:bg-violet-50 {
+	background-color: color-mix(in oklab,var(--color-violet-50) 20%,transparent) !important;
+}
+
+.esd-hide-bg-on-hover.es\:bg-gray-50:hover,
+.esd-hide-bg-on-hover:hover .es\:bg-gray-50 {
+	background-color: color-mix(in oklab,var(--color-gray-50) 20%,transparent) !important;
+}
+
+.esd-white-space-pre {
+	white-space: break-spaces;
+}
+
+.esd-icon-showcase-button {
+	width: 3.25rem !important;
+	height: 3.25rem !important;
+
+}
+
+.esd-icon-showcase-button svg {
+	width: 1.5rem !important;
+	height: 1.5rem !important;
+}
+
+.esd-legacy-docs-iframe {
+	width: 100%;
+	min-height: 32rem;
+
+	border: 1px solid #D1D5DB !important;
+	border-radius: 0.5rem !important;
+}
+
+.esd-showcase {
+	--ifm-list-left-padding: 0;
+	--ifm-list-margin: 0;
+	--ifm-list-paragraph-margin: 0;
+
+	ul, li {
+		margin: 0;
+		padding: 0;
+	}
+}
+
+.es\:w-full {
+	width: 100%;
+}
+
+.es\:w-fit {
+	width: fit-content;
+}
+
+.esd-showcase-w {
+	width: min(26rem, 100%);
+	min-width: 0;
+}
+
+.esd-space-v > :not(:last-child) {
+	margin-bottom: 0.625rem !important;
+}
+
+.esd-btn-custom {
+	height: auto !important;
+	padding: 0.5rem 1rem !important;
+}
+
+.esd-demo-island {
+	max-width: 100%;
+	color: #18181b;
+	background: white;
+	border-radius: 0.5rem;
+	padding: 0.5rem;
+}
+
+.esd-demo-island {
+	flex-wrap: wrap;
+	gap: 1rem;
+}
+
+.esd-demo-island > div {
+	max-width: 100%;
+}
+
+.sl-markdown-content iframe {
+	max-width: 100%;
+}

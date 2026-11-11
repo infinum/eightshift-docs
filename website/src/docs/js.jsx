@@ -1,6 +1,6 @@
 import React from 'react';
-import CodeBlock from '@theme/CodeBlock';
-import { reformatCode } from '../../utils/shared.jsx';
+import CodeBlock from './code-block.jsx';
+import { reformatCode } from '../utils/shared.jsx';
 
 export function WindowObject(props) {
 	const {

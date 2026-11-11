@@ -1,0 +1,53 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import { render } from 'astro:content';
+import BlogList from '../../components/site/BlogList.astro';
+import { blogTitle, formatDate, getPosts, getTags, postsPerPage, pageUrl, type BlogPost } from '../../lib/blog';
+import authors from '../../lib/blog-authors.json';
+
+export async function getStaticPaths() {
+	const posts = await getPosts();
+	const paths: { params: { path: string | undefined }; props: Props }[] = [];
+	const addList = (base: string, title: string, selected: BlogPost[]) => {
+		for (let page = 1; page <= Math.ceil(selected.length / postsPerPage); page++) {
+			paths.push({ params: { path: pageUrl(base, page).replace(/^\/blog\/?/, '') || undefined }, props: { kind: 'list', title, posts: selected, base, page } });
+		}
+	};
+	addList('/blog', blogTitle, posts);
+	for (const tag of getTags(posts)) addList(tag.permalink, `Posts tagged “${tag.label}”`, tag.posts);
+	for (const post of posts) paths.push({ params: { path: post.data.permalink.replace('/blog/', '') }, props: { kind: 'post', title: post.data.title, post, posts } });
+	for (const [kind, title] of [['tags', 'Tags'], ['authors', 'Authors'], ['archive', 'Archive']] as const) paths.push({ params: { path: kind }, props: { kind, title, posts } });
+	return paths;
+}
+interface Props { kind: 'list' | 'post' | 'tags' | 'authors' | 'archive'; title: string; posts: BlogPost[]; post?: BlogPost; base?: string; page?: number; }
+const { kind, title, posts, post, base = '/blog', page = 1 } = Astro.props;
+const rendered = post ? await render(post) : undefined;
+const Content = rendered?.Content;
+const currentIndex = post ? posts.findIndex((item) => item.id === post.id) : -1;
+const newer = posts[currentIndex - 1];
+const older = posts[currentIndex + 1];
+const years = [...new Set(posts.map((item) => item.data.date.getUTCFullYear()))];
+const tags = getTags(posts);
+const tagLetters = [...new Set(tags.map((tag) => tag.label.charAt(0).toUpperCase()))];
+const head = post ? [
+	{ tag: 'meta' as const, attrs: { property: 'og:type', content: 'article' } },
+	{ tag: 'meta' as const, attrs: { property: 'article:published_time', content: post.data.date.toISOString() } },
+	...post.data.authors.map((author) => ({ tag: 'meta' as const, attrs: { name: 'author', content: author.name } })),
+] : [];
+---
+<StarlightPage frontmatter={{ title, description: post?.data.description ?? title, head, editUrl: false }} headings={rendered?.headings}>
+	<div class="sl-markdown-content" data-pagefind-body>
+		{kind === 'list' && <BlogList posts={posts} base={base} page={page} />}
+		{post && Content && <>
+			<p><time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time> · {Math.ceil(post.data.readingTime)} min read</p>
+			{post.data.authors.map((author) => <p>{author.imageURL && <img class="avatar" src={author.imageURL} alt="" width="48" height="48" loading="lazy" />} <a href={author.url}>{author.name}</a> — {author.title}</p>)}
+			<Content />
+			<p>Tags: {post.data.tags.map((tag) => <><a href={tag.permalink}>{tag.label}</a>{' '}</>)}</p>
+			<nav aria-label="Blog posts">{newer && <p>Newer post: <a rel="prev" href={newer.data.permalink}>{newer.data.title}</a></p>}{older && <p>Older post: <a rel="next" href={older.data.permalink}>{older.data.title}</a></p>}<a href="/blog">All posts</a></nav>
+		</>}
+		{kind === 'tags' && tagLetters.map((letter) => <section><h2 id={letter}>{letter}</h2><ul>{tags.filter((tag) => tag.label.charAt(0).toUpperCase() === letter).map((tag) => <li><a href={tag.permalink}>{tag.label}</a> ({tag.posts.length})</li>)}</ul></section>)}
+		{kind === 'authors' && <ul>{Object.entries(authors).map(([key, author]) => <li><a href={author.url}>{author.name}</a> — {author.title} ({posts.filter((item) => item.data.authors.some((person) => person.key === key)).length} posts)</li>)}</ul>}
+		{kind === 'archive' && years.map((year) => <section><h2 id={String(year)}>{year}</h2><ul>{posts.filter((item) => item.data.date.getUTCFullYear() === year).map((item) => <li><time datetime={item.data.date.toISOString()}>{formatDate(item.data.date)}</time> — <a href={item.data.permalink}>{item.data.title}</a></li>)}</ul></section>)}
+	</div>
+</StarlightPage>
+<style>.avatar { display: inline-block; border-radius: 50%; vertical-align: middle; margin: 0 0.5rem 0 0; }</style>

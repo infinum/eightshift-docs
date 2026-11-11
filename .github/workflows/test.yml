@@ -1,9 +1,9 @@
-name: documentation
+name: Check documentation
 
 on:
+  pull_request:
+    branches: [develop, main]
   push:
-    paths-ignore:
-      - '**.md'
     branches:
       - develop
   # Allow manually triggering the workflow.
@@ -19,6 +19,9 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
+permissions:
+  contents: read
+
 jobs:
   checks:
     name: Test build
@@ -27,13 +30,12 @@ jobs:
       - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
         with:
-          node-version: 'latest'
-          cache-dependency-path: ./bun.lock
+          node-version: '24'
       - name: Install Bun
         uses: oven-sh/setup-bun@v2
         with:
-          bun-version: latest
+          bun-version: '1.4.4'
       - name: Test Build
         run: |
-          bun install
+          bun install --frozen-lockfile
           bun run build

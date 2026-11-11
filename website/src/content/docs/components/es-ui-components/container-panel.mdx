@@ -1,0 +1,98 @@
+---
+title: "Container panel"
+slug: "components/es-ui-components/container-panel"
+description: "View source on GitHub →"
+---
+import { Example1, Example2, Example3, Example4, Example5, Example6 } from '../../../../demos/ui-components/es-ui-components/container-panel.jsx';
+
+<span id="container-panel"></span>
+
+:::tip
+[View source on GitHub →](https://github.com/infinum/eightshift-ui-components/tree/main/lib/components/container-panel)
+:::
+
+
+
+A perfect shell for options within the Block editor sidebar. Replaces the default WordPress `<PanelBody>` component.
+
+<Example1 client:only="react"><span slot="fallback">Loading interactive example…</span></Example1>
+
+```jsx
+<ContainerPanel title='My block'>
+	<span>This is demo content</span>
+</ContainerPanel>
+```
+## Highlighted props
+
+For the complete list of props, use your IDE's autocomplete functionality.
+
+### Closable
+
+<Example2 client:only="react"><span slot="fallback">Loading interactive example…</span></Example2>
+
+```jsx {3}
+<ContainerPanel
+	title='My block'
+	closable
+>
+	<span>This is demo content</span>
+</ContainerPanel>
+```
+### Use toggle
+
+<Example3 client:only="react"><span slot="fallback">Loading interactive example…</span></Example3>
+
+```jsx {3,4}
+<ContainerPanel
+	title='My block'
+	use={value}
+	onUseChange={(value) => setValue(value)}
+>
+	<span>This is demo content</span>
+</ContainerPanel>
+```
+### Use toggle and closable
+
+<Example4 client:only="react"><span slot="fallback">Loading interactive example…</span></Example4>
+
+```jsx {3,4,5}
+<ContainerPanel
+	title='My block'
+	use={value}
+	onUseChange={(value) => setValue(value)}
+	closable
+>
+	<span>This is demo content</span>
+</ContainerPanel>
+```
+### Externally toggle use
+
+<Example5 client:only="react"><span slot="fallback">Loading interactive example…</span></Example5>
+
+```jsx {3,4}
+<ContainerPanel
+	title='My block'
+	use={myUseValue}
+	closable
+>
+	<span>This is demo content</span>
+</ContainerPanel>
+```
+### Actions
+
+<Example6 client:only="react"><span slot="fallback">Loading interactive example…</span></Example6>
+
+```jsx {4,5,6,7,8,9}
+<ContainerPanel
+	title='My block'
+	closable
+	actions={
+		<>
+			<Button size='small'>Demo 1</Button>
+			<Button size='small'>Demo 2</Button>
+		</>
+	}
+>
+	<span>This is demo content</span>
+</ContainerPanel>
+```

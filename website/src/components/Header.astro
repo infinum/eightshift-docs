@@ -1,0 +1,45 @@
+---
+import DefaultHeader from '@astrojs/starlight/components/Header.astro';
+import { Icon } from '@astrojs/starlight/components';
+import NavbarLinks from './NavbarLinks.astro';
+import ThemeSelect from 'starlight-ui-tweaks/overrides/ThemeSelect.astro';
+const { hasSidebar } = Astro.locals.starlightRoute;
+---
+<div class:list={['header-content', { 'has-site-menu': !hasSidebar }]}>
+	<DefaultHeader />
+</div>
+{!hasSidebar && (
+	<details class="site-mobile-menu">
+		<summary aria-label="Site menu"><Icon name="bars" size="1.25rem" /></summary>
+		<div class="site-menu-panel">
+			<NavbarLinks />
+			<ThemeSelect />
+		</div>
+	</details>
+)}
+<script>
+	document.addEventListener('click', (event) => {
+		const menu = document.querySelector<HTMLDetailsElement>('.site-mobile-menu[open]');
+		if (!menu || !(event.target instanceof Node)) return;
+		if (!menu.contains(event.target) || (event.target instanceof Element && event.target.closest('a'))) menu.open = false;
+	});
+	document.addEventListener('keydown', (event) => {
+		if (event.key !== 'Escape') return;
+		const menu = document.querySelector<HTMLDetailsElement>('.site-mobile-menu[open]');
+		if (!menu) return;
+		menu.open = false;
+		menu.querySelector('summary')?.focus();
+	});
+</script>
+<style>
+	.header-content { height: 100%; min-width: 0; }
+	.site-mobile-menu { display: none; }
+	@media (max-width: 49.99rem) {
+		.has-site-menu { padding-inline-end: 2.75rem; }
+		.site-mobile-menu { display: block; }
+		summary { position: absolute; inset-inline-end: var(--sl-nav-pad-x); top: 50%; transform: translateY(-50%); display: flex; align-items: center; justify-content: center; width: 2rem; height: 2rem; border-radius: 50%; cursor: pointer; color: var(--sl-color-gray-1); list-style: none; }
+		summary::-webkit-details-marker { display: none; }
+		summary:focus-visible { outline: 2px solid var(--sl-color-text-accent); outline-offset: 3px; }
+		.site-menu-panel { position: absolute; inset-inline: 0; top: calc(100% + var(--site-nav-inset)); display: flex; flex-direction: column; align-items: flex-start; gap: 1.5rem; padding: 1.25rem; max-height: calc(100dvh - var(--sl-nav-height) - 1rem); overflow-y: auto; border: 1px solid var(--sl-color-hairline-shade); border-radius: 1rem; background: var(--sl-color-bg-nav); box-shadow: var(--sl-shadow-md); }
+	}
+</style>

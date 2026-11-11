@@ -1,0 +1,22 @@
+---
+import OpenSource from './OpenSource.astro';
+import { privateData, publicData } from './showcase-data';
+const { privateType = false } = Astro.props;
+const items = privateType ? [...publicData, ...privateData] : publicData;
+---
+<p>{privateType ? "See all the awesome websites built by Infinum's WordPress team." : 'See the awesome websites people are building with Eightshift Boilerplate.'}</p>
+<ul class="showcase-grid" data-showcase-grid>{items.map((item) => <li><a href={item.link}><img src={item.image} alt={item.label} width="480" height="320" loading="lazy" /><h2>{item.label}</h2></a><p>{item.desc}</p></li>)}</ul>
+<section><h2>{privateType ? "Let's get in touch" : 'Want to add your project to the list?'}</h2><p><a href={privateType ? 'https://infinum.com/contact/' : 'https://github.com/infinum/eightshift-docs/issues'}>{privateType ? 'Contact us' : 'Open an issue on GitHub'}</a></p><img src="/img/showcase/cta.svg" alt="" width="240" loading="lazy" /></section>
+<OpenSource />
+<script>
+	const grid = document.querySelector('[data-showcase-grid]');
+	if (grid) {
+		const items = Array.from(grid.children);
+		for (let index = items.length - 1; index > 0; index--) {
+			const target = Math.floor(Math.random() * (index + 1));
+			[items[index], items[target]] = [items[target], items[index]];
+		}
+		grid.append(...items);
+	}
+</script>
+<style>.showcase-grid { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr)); gap: 1.5rem; } .showcase-grid li { margin: 0; padding: 1rem; border: 1px solid var(--sl-color-gray-5); border-radius: 0.5rem; } img { max-width: 100%; height: auto; } h2 { font-size: var(--sl-text-xl); }</style>

@@ -1,0 +1,23 @@
+---
+import logo from '../../static/img/logo.svg?raw';
+
+const { siteTitleHref } = Astro.locals.starlightRoute;
+---
+
+<a href={siteTitleHref} aria-label="Eightshift DevKit home" class="site-logo">
+	<span aria-hidden="true" set:html={logo} />
+</a>
+
+<style>
+	.site-logo {
+		display: flex;
+		align-items: center;
+		width: 229px;
+		max-width: 100%;
+		color: var(--sl-color-white);
+	}
+
+	span { display: flex; width: 100%; }
+	span :global(svg) { display: block; width: 100%; height: auto; }
+	span :global(path[fill='#000']) { fill: currentColor; }
+</style>

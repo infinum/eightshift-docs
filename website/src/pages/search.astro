@@ -1,0 +1,21 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+---
+<StarlightPage frontmatter={{ title: 'Search', description: 'Search Eightshift documentation, articles, and showcases.', editUrl: false }}>
+	<link rel="stylesheet" href="/pagefind/pagefind-ui.css" />
+	<div id="page-search"></div>
+	<p id="search-status" role="status">Search is available in the production build. You can also use the search button in the header.</p>
+</StarlightPage>
+<script is:inline src="/pagefind/pagefind-ui.js"></script>
+<script is:inline>
+	try {
+		if (typeof PagefindUI !== 'undefined') {
+			const search = new PagefindUI({ element: '#page-search', showSubResults: true });
+			const query = new URLSearchParams(location.search).get('q');
+			if (query) search.triggerSearch(query);
+			document.querySelector('#search-status').hidden = true;
+		}
+	} catch (error) {
+		console.error('Unable to initialize search.', error);
+	}
+</script>

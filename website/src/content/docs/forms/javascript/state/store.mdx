@@ -1,0 +1,23 @@
+---
+title: "Store"
+slug: "forms/javascript/state/store"
+description: "The store object contains all getters and setters for managing the application's state."
+---
+import { Example1 } from '../../../../../demos/forms/javascript/state/store.jsx';
+
+
+
+
+The `store` object contains all getters and setters for managing the application's state.
+
+We highly recommend using these helpers instead of directly accessing the state object to avoid unexpected behavior and prevent future breaking changes.
+
+<Example1 />
+
+### Example
+
+This example will return DOM element of the form assigned to the `formId`.
+
+```js
+window?.esForms?.store?.getStateFormElement('<formId>');
+```
