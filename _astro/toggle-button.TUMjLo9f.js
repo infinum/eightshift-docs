@@ -1,0 +1,1 @@
+import{Ut as e,t}from"./component-showcase.D063BhiL.js";import{t as n}from"./toggle-button-DYDp11rq.B6SRRYTQ.js";var r=e();function i(){return(0,r.jsx)(r.Fragment,{children:(0,r.jsx)(t,{defaultValue:!1,children:(e,t)=>(0,r.jsx)(n,{selected:e,onChange:t,children:`Toggle me`})})})}export{i as Example1};

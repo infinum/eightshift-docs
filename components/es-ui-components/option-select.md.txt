@@ -1,0 +1,230 @@
+---
+title: Option selector
+description: View source on GitHub →
+---
+
+<span id="option-selector" />
+
+:::tip
+[View source on GitHub →](https://github.com/infinum/eightshift-ui-components/tree/main/lib/components/option-select)
+:::
+
+This is a versatile component that can allow selecting from a set of options in various ways.
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx
+<OptionSelect
+	icon={columns}
+	label='Option'
+	value={value} // e.g. 'option1'
+	onChange={(value) => setData(value)}
+	options={[
+		{ value: 'option1', label: 'Option 1' },
+		{ value: 'option2', label: 'Option 2' },
+		{ value: 'option3', label: 'Option 3' },
+	]}
+/>
+```
+
+## Highlighted props
+
+For the complete list of props, use your IDE's autocomplete functionality.
+
+### Control type
+
+#### Toggle buttons
+
+`type='toggleButtons'`
+
+<span slot="fallback">Loading interactive example…</span>
+
+#### Split toggle buttons
+
+`type='toggleButtonsSplit'`
+
+<span slot="fallback">Loading interactive example…</span>
+
+#### Radio buttons
+
+`type='radios'`
+
+`icon`s on items are not supported.
+
+<span slot="fallback">Loading interactive example…</span>
+
+#### Segmented radio buttons
+
+`type='radiosSegmented'`
+
+`icon`s on items are not supported.
+
+<span slot="fallback">Loading interactive example…</span>
+
+#### Dropdown menu
+
+`type='menu'`
+
+<span slot="fallback">Loading interactive example…</span>
+
+##### Additional features for items
+
+`endIcon`s
+
+<span slot="fallback">Loading interactive example…</span>
+
+`disabled` items
+
+<span slot="fallback">Loading interactive example…</span>
+
+Separator lines <br /> (`separator: 'below'` or `separator: 'above'`)
+
+<span slot="fallback">Loading interactive example…</span>
+
+`subtitle`s
+
+<span slot="fallback">Loading interactive example…</span>
+
+Section titles (`sectionTitle`)
+
+<span slot="fallback">Loading interactive example…</span>
+
+`shortcut`/supplementary labels
+
+<span slot="fallback">Loading interactive example…</span>
+
+#### Submenu
+
+Meant to be used as a part of a `Menu`.
+
+`type='submenu'`
+
+Most item features from `'menu'` are supported.
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx
+<Menu>
+	<MenuItem>Lorem</MenuItem>
+	<MenuItem>Ipsum</MenuItem>
+	<MenuSeparator />
+	<OptionSelect
+		label='Option'
+		value={data}
+		onChange={setData}
+		options={[
+			{ value: 'option1', label: 'Option 1', icon: design },
+			{ value: 'option2', label: 'Option 2', icon: wrench },
+			{ value: 'option3', label: 'Option 3', icon: magicAlt },
+		]}
+		type='submenu'
+	/>
+</Menu>
+```
+
+##### Additional features
+
+If no `label` is provided, the current value will be used as a label.
+
+<span slot="fallback">Loading interactive example…</span>
+
+If `subtitle` is set (to `true`), the current value will be used as a subtitle.
+
+<span slot="fallback">Loading interactive example…</span>
+
+#### Menu radio buttons
+
+Meant to be used as a part of a `Menu`.
+
+`type='standaloneMenuItems'`
+
+Most item features from `'menu'` are supported.
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx
+<Menu>
+	<MenuItem>Lorem</MenuItem>
+	<MenuItem>Ipsum</MenuItem>
+	<MenuSeparator />
+	<OptionSelect
+		label='Option'
+		value={data}
+		onChange={setData}
+		options={[
+			{ value: 'option1', label: 'Option 1', icon: design },
+			{ value: 'option2', label: 'Option 2', icon: wrench },
+			{ value: 'option3', label: 'Option 3', icon: magicAlt },
+		]}
+		type='standaloneMenuItems'
+	/>
+</Menu>
+```
+
+### Vertical alignment
+
+*(not applicable to all types)*
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {11}
+<OptionSelect
+	icon={columns}
+	label='Option'
+	value={value} // e.g. 'option1'
+	onChange={(value) => setData(value)}
+	options={[
+		{ value: 'option1', label: 'Option 1' },
+		{ value: 'option2', label: 'Option 2' },
+		{ value: 'option3', label: 'Option 3' },
+	]}
+	vertical
+/>
+```
+
+### Trigger customization
+
+*(might not apply to all types)*
+
+Hide the trigger icon with `noTriggerIcon`.
+
+<span slot="fallback">Loading interactive example…</span>
+
+Hide the trigger label with `noTriggerLabel`.
+
+<span slot="fallback">Loading interactive example…</span>
+
+Modify the "outside" component props with `wrapperProps`.
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {3}
+<OptionSelect
+	...
+	wrapperProps={{ className: 'bg-gray-100 p-4' }}
+/>
+```
+
+### Item customization
+
+*(might not apply to all types)*
+
+Hide the item icon with `noItemIcon`.
+
+<span slot="fallback">Loading interactive example…</span>
+
+Hide the item label with `noItemLabel`.
+
+<span slot="fallback">Loading interactive example…</span>
+
+Modify the item props with `itemProps` or just pass a class name with `itemClassName`.
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {3,4}
+<OptionSelect
+	...
+	itemProps={{ size: 'large' }}
+	itemClassName='flex-col h-auto px-16 py-8'
+/>
+```

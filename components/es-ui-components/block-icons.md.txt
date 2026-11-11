@@ -1,0 +1,14 @@
+---
+title: Block icons
+description: View source on GitHub →
+---
+
+<span id="block-icons" />
+
+:::tip
+[View source on GitHub →](https://github.com/infinum/eightshift-ui-components/tree/main/lib/icons)
+:::
+
+Use within block manifests, or in your UI with the `<BlockIcon />` component.
+
+<span slot="fallback">Loading interactive example…</span>

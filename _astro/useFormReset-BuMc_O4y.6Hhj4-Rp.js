@@ -1,0 +1,1 @@
+import{a as e,n as t}from"./react-dom.zHLzy7MB.js";import{Et as n}from"./component-showcase.D063BhiL.js";var r=e(t(),1);function i(e,t,i){let a=n(e=>{i&&!e.defaultPrevented&&i(t)});(0,r.useEffect)(()=>{let t=e?.current?.form;return t?.addEventListener(`reset`,a),()=>{t?.removeEventListener(`reset`,a)}},[e])}export{i as t};

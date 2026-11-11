@@ -1,0 +1,53 @@
+---
+title: Animated visibility
+description: View source on GitHub →
+---
+
+<span id="animated-visibility" />
+
+:::tip
+[View source on GitHub →](https://github.com/infinum/eightshift-ui-components/tree/main/lib/components/animated-visibility)
+:::
+
+Allows showing/hiding content in an animated way. After hiding, the content is unmounted from the DOM.
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx
+<AnimatedVisibility
+	visibility={myVariable}
+>
+	<span>Your content goes here</span>
+</AnimatedVisibility>
+```
+
+## Highlighted props
+
+For the complete list of props, use your IDE's autocomplete functionality.
+
+### Transitions
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {3}
+<AnimatedVisibility
+	visibility={myVariable}
+	transition='scaleFade'
+>
+	<span>This is demo content</span>
+</AnimatedVisibility>
+```
+
+### Skipping initial transition
+
+If you want to skip the initial transition (when the component mounts), and just want to transition
+when the visibility changes afterwards, you can use the `noInitial` prop.
+
+```jsx {3}
+<AnimatedVisibility
+	visibility={myVariable}
+	noInitial
+>
+	<span>Your content goes here</span>
+</AnimatedVisibility>
+```

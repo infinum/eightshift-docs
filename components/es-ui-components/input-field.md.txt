@@ -1,0 +1,46 @@
+---
+title: Input field
+description: View source on GitHub →
+---
+
+<span id="input-field" />
+
+:::tip
+[View source on GitHub →](https://github.com/infinum/eightshift-ui-components/tree/main/lib/components/input-field)
+:::
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx
+<InputField
+	value={value}
+	onChange={(value) => setValue(value)}
+	placeholder='Basic text input'
+/>
+```
+
+:::note
+If you're not setting a `label`, add an `aria-label` to help describe the field to users that use screen readers.
+:::
+
+## Highlighted props
+
+For the complete list of props, use your IDE's autocomplete functionality.
+
+### Field type
+
+<span slot="fallback">Loading interactive example…</span>
+
+### Monospace font
+
+Makes it harder to confuse certain characters in IDs, passwords, or similar types of data.
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {4}
+<InputField
+	value={value}
+	onChange={(value) => setValue(value)}
+	monospaceFont
+/>
+```

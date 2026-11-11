@@ -1,0 +1,157 @@
+---
+title: Control base
+description: View source on GitHub →
+---
+
+<span id="control-base" />
+
+:::tip
+[View source on GitHub →](https://github.com/infinum/eightshift-ui-components/tree/main/lib/components/base-control)
+:::
+
+The base for a lot of Eightshift UI components controls.
+
+Allows creating your controls that will fit in nicely with Eightshift UI components
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx
+<BaseControl
+	label='Label'
+	icon={emptyCircle}
+>
+	<span>This is demo content</span>
+</BaseControl>
+```
+
+## Highlighted props
+
+For the complete list of props, use your IDE's autocomplete functionality.
+
+### Help text
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {4}
+<BaseControl
+	label='Label'
+	icon={emptyCircle}
+	help='This is help text'
+>
+	<span>This is demo content</span>
+</BaseControl>
+```
+
+### Actions
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {4,5,6,7,8,9,10,11,12,13,14,15}
+<BaseControl
+	label='Label'
+	icon={emptyCircle}
+	actions={
+		<>
+			<Button
+				icon={emptyCircle}
+				size='small'
+			/>
+			<Button
+				icon={emptyRect}
+				size='small'
+			/>
+		</>
+	}
+>
+	<span>This is demo content</span>
+</BaseControl>
+```
+
+### Inline label
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {4}
+<BaseControl
+	label='Label'
+	icon={emptyCircle}
+	inline
+>
+	<span>This is demo content</span>
+</BaseControl>
+```
+
+## Container
+
+A styled wrapper for sections of controls. Shipped from the same module as `BaseControl` and used internally by many higher-level components.
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx
+<Container>
+	<span>Container contents</span>
+</Container>
+```
+
+### Highlighted props
+
+| Prop | Description |
+| - | - |
+| `as` | Element type to render. Defaults to `div`. Any HTML tag or component is accepted. |
+| `accent` | Switches to the accent color scheme. |
+| `elevated` | Adds a subtle shadow and inset highlight for emphasis. |
+| `primary` | Renders as a pill-shaped (`rounded-full`) container. |
+| `compact` | Reduces vertical padding and minimum height. |
+| `standalone` | When `true`, the container is rendered with rounded corners on its own (not as part of a `ContainerGroup`). |
+| `horizontal` | Hint for `ContainerGroup` to render this child as part of a horizontal group (set automatically by parent). |
+| `centered` | Vertically centers the contents. |
+| `lessSpaceStart` / `lessSpaceEnd` | Reduces left / right padding. |
+| `hidden` | When `true`, the container renders nothing. |
+| `className` | Appended to the default class list. |
+
+#### Variants
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx
+<ContainerGroup>
+	<Container>Default</Container>
+	<Container accent>Accent</Container>
+	<Container elevated>Elevated</Container>
+	<Container
+		accent
+		elevated
+	>
+		Accent + elevated
+	</Container>
+</ContainerGroup>
+```
+
+## ContainerGroup
+
+Groups multiple `Container` components, applies consistent spacing between them, and rounds the outer corners. Children that are `Container` instances automatically inherit the group's `horizontal` flag.
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx
+<ContainerGroup label='Group label'>
+	<Container>First</Container>
+	<Container>Second</Container>
+	<Container>Third</Container>
+</ContainerGroup>
+```
+
+### Highlighted props
+
+| Prop | Description |
+| - | - |
+| `as` | Element type to render. Defaults to `div`. |
+| `label` | Optional label rendered above the group. |
+| `horizontal` | Stacks children horizontally instead of vertically and propagates the flag to child `Container` components. |
+| `wrapClassName` | Class applied to the outer wrapper element when a `label` is provided. |
+| `className` | Class applied to the inner flex container. |
+| `hidden` | When `true`, the group renders nothing. |
+
+:::tip
+`ContainerGroup` will render `null` if all of its children are falsy — no empty wrappers in the DOM.
+:::

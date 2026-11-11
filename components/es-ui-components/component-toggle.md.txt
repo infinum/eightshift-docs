@@ -1,0 +1,75 @@
+---
+title: Component toggle
+description: View source on GitHub →
+---
+
+<span id="component-toggle" />
+
+:::tip
+[View source on GitHub →](https://github.com/infinum/eightshift-ui-components/tree/main/lib/components/component-toggle)
+:::
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx
+<ComponentToggle
+	icon={paragraph}
+	label='Paragraph'
+	useComponent={value}
+	onChange={(value) => setValue(value)}
+>
+	<span>Component options go here</span>
+</ComponentToggle>
+```
+
+## Highlighted props
+
+For the complete list of props, use your IDE's autocomplete functionality.
+
+### Hide the use toggle
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {6}
+<ComponentToggle
+	icon={paragraph}
+	label='Paragraph'
+	useComponent={value}
+	onChange={(value) => setValue(value)}
+	noUseToggle
+>
+	<span>Component options go here</span>
+</ComponentToggle>
+```
+
+### Disable expand button
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {6}
+<ComponentToggle
+	icon={paragraph}
+	label='Paragraph'
+	useComponent={value}
+	onChange={(value) => setValue(value)}
+	expandButtonDisabled
+>
+	<span>Component options go here</span>
+</ComponentToggle>
+```
+
+### Styles
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {6}
+<ComponentToggle
+	icon={paragraph}
+	label='Paragraph'
+	useComponent={value}
+	onChange={(value) => setValue(value)}
+	design='compact'
+>
+	<span>Component options go here</span>
+</ComponentToggle>
+```

@@ -1,0 +1,1 @@
+import{Ut as e,t}from"./component-showcase.D063BhiL.js";import{n}from"./select-helpers.CeP3N9tE.js";import{t as r}from"./multi-select.WUoPyeqb.js";var i=e();function a(){return(0,i.jsx)(i.Fragment,{children:(0,i.jsx)(t,{defaultValue:[],children:(e,t)=>(0,i.jsx)(r,{value:e,onChange:t,options:n})})})}export{a as Example1};

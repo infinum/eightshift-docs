@@ -1,0 +1,104 @@
+---
+title: Radio button
+description: View source on GitHub →
+---
+
+<span id="radio-button" />
+
+:::tip
+[View source on GitHub →](https://github.com/infinum/eightshift-ui-components/tree/main/lib/components/radio)
+:::
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx
+<RadioButtonGroup
+	label='My radio buttons'
+	value={value}
+	onChange={(value) => setData(value)}
+>
+	<RadioButton
+		value='first'
+		label='First option'
+	/>
+	<RadioButton
+		value='second'
+		label='Second option'
+	/>
+</RadioButtonGroup>
+```
+
+## Highlighted props
+
+For the complete list of props, use your IDE's autocomplete functionality.
+
+### Horizontal layout
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {5}
+<RadioButtonGroup
+	label='My radio buttons'
+	value={value}
+	onChange={(value) => setData(value)}
+	orientation='horizontal'
+>
+	<RadioButton
+		value='first'
+		label='First option'
+	/>
+	<RadioButton
+		value='second'
+		label='Second option'
+	/>
+</RadioButtonGroup>
+```
+
+### Segmented design
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {5}
+<RadioButtonGroup
+	label='My radio buttons'
+	value={value}
+	onChange={(value) => setData(value)}
+	design='segmented'
+>
+	<RadioButton
+		value='first'
+		label='First option'
+	/>
+	<RadioButton
+		value='second'
+		label='Second option'
+	/>
+</RadioButtonGroup>
+```
+
+### Disable certain items
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {14}
+<RadioButtonGroup
+	label='My radio buttons'
+	value={value}
+	onChange={(value) => setData(value)}
+>
+	<RadioButton
+		value='first'
+		label='First option'
+	/>
+	<RadioButton
+		value='second'
+		label='Second option'
+		subtitle='Disabled because of reasons'
+		disabled
+	/>
+	<RadioButton
+		value='third'
+		label='Third option'
+	/>
+</RadioButtonGroup>
+```

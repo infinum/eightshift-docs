@@ -1,0 +1,1 @@
+import{Ut as e,t}from"./component-showcase.D063BhiL.js";import{n,r}from"./draggable-list-helpers.CFQ3FpNm.js";var i=e();function a(){return(0,i.jsx)(i.Fragment,{children:(0,i.jsx)(t,{defaultValue:r,children:(e,t)=>(0,i.jsx)(n,{data:e,setData:t})})})}export{a as Example1};

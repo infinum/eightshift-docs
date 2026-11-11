@@ -1,0 +1,25 @@
+---
+title: Toggle button
+description: View source on GitHub →
+---
+
+<span id="toggle-button" />
+
+:::tip
+[View source on GitHub →](https://github.com/infinum/eightshift-ui-components/tree/main/lib/components/toggle-button)
+:::
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx
+<ToggleButton
+	selected={data}
+	onChange={setData}
+>
+	Toggle me
+</ToggleButton>
+```
+
+Rest of the props are the same as on the [Button](/components/es-ui-components/button) component.
+
+For the complete list of props, use your IDE's autocomplete functionality.

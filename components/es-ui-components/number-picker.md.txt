@@ -1,0 +1,130 @@
+---
+title: Number picker
+description: View source on GitHub →
+---
+
+<span id="number-picker" />
+
+:::tip
+[View source on GitHub →](https://github.com/infinum/eightshift-ui-components/tree/main/lib/components/number-picker)
+:::
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx
+<NumberPicker
+	value={data}
+	onChange={(value) => setValue(value)}
+/>
+```
+
+:::tip
+When focused inside the input field, use the up/down arrows to change the value.
+:::
+
+## Highlighted props
+
+For the complete list of props, use your IDE's autocomplete functionality.
+
+### Min, max, step
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {4,5,6}
+<NumberPicker
+	value={value}
+	onChange={(value) => setValue(value)}
+	min={-40}
+	max={40}
+	step={2}
+/>
+```
+
+### Fixed width
+
+By default, the picker will try to calculate maximum width based on the `max` value.
+If it's not set, the width defaults to 4 characters.
+
+In cases where `min` is less than `0`, the width is slightly increased to account for the `-` sign.
+
+If you set the width to a certain number of characters, you can use the `fixedWidth` prop.
+Decimal numbers are allowed.
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {5}
+<NumberPicker
+	value={value}
+	onChange={(value) => setValue(value)}
+	max={999}
+	fixedWidth={12}
+/>
+```
+
+### Prefix and suffix
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {4}
+<NumberPicker
+	value={value}
+	onChange={(value) => setValue(value)}
+	prefix='€'
+/>
+```
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {4}
+<NumberPicker
+	value={value}
+	onChange={(value) => setValue(value)}
+	suffix='item(s)'
+/>
+```
+
+### Additional controls
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {5,6,7,8,9,10,11}
+<NumberPicker
+	value={value}
+	onChange={(value) => setValue(value)}
+>
+	<Button
+		icon={resetToZero}
+		tooltip='Reset'
+		onPress={() => setValue(0)}
+		disabled={value === 0}
+		type='ghost'
+	/>
+</NumberPicker>
+```
+
+### Label, icon, subtitle, help, inline
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {4,5,6}
+<NumberPicker
+	value={value}
+	onChange={(value) => setValue(value)}
+	label='Pick a number'
+	icon={emptyCircle}
+	help='Help text'
+/>
+```
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {4,5,6,7}
+<NumberPicker
+	value={value}
+	onChange={(value) => setValue(value)}
+	label='Pick a number'
+	icon={emptyCircle}
+	subtitle='Subtitle text'
+	inline
+/>
+```

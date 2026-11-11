@@ -1,0 +1,20 @@
+---
+title: Greenhouse
+description: ESAPIKEY_GREENHOUSE
+---
+
+### ES\_API\_KEY\_GREENHOUSE
+
+This variable will set the Greenhouse integration API key.
+
+```php
+define('ES_API_KEY_GREENHOUSE', '<api-key>');
+```
+
+### ES\_BOARD\_TOKEN\_GREENHOUSE
+
+This variable will set Greenhouse integration board token key.
+
+```php
+define('ES_BOARD_TOKEN_GREENHOUSE', '<board-token>');
+```

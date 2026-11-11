@@ -1,0 +1,1 @@
+import{Ut as e,t}from"./component-showcase.D063BhiL.js";import{t as n}from"./spinner.D37oH2Bo.js";var r=e();function i(){return(0,r.jsx)(r.Fragment,{children:(0,r.jsx)(t,{children:(0,r.jsx)(n,{})})})}function a(){return(0,r.jsx)(r.Fragment,{children:(0,r.jsx)(t,{children:(0,r.jsx)(n,{className:`es:size-4 es:text-surface-600`})})})}export{i as Example1,a as Example2};

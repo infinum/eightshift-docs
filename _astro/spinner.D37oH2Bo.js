@@ -1,0 +1,1 @@
+import{Ut as e,Wt as t}from"./component-showcase.D063BhiL.js";var n=e(),r=({className:e})=>(0,n.jsx)(`div`,{className:t(`es:animate-spin es:anim-duration-1000`,`es:spinner-5 es:text-accent-600 es:size-8 es:rounded-full`,e)});export{r as t};

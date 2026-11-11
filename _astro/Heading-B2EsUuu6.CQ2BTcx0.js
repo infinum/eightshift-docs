@@ -1,0 +1,1 @@
+import{a as e,n as t}from"./react-dom.zHLzy7MB.js";import{It as n,Mt as r}from"./component-showcase.D063BhiL.js";var i=e(t(),1),a=(0,i.createContext)({}),o=(0,i.forwardRef)(function(e,t){[e,t]=r(e,t,a);let{children:o,level:s=3,className:c,...l}=e,u=n[`h${s}`];return i.createElement(u,{...l,ref:t,className:c??`react-aria-Heading`},o)});export{a as n,o as t};

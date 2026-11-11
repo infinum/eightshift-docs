@@ -1,0 +1,12 @@
+---
+title: Airtable
+description: ESAPIKEY_AIRTABLE
+---
+
+### ES\_API\_KEY\_AIRTABLE
+
+This variable will set the Airtable integration API key.
+
+```php
+define('ES_API_KEY_AIRTABLE', '<api-key>');
+```

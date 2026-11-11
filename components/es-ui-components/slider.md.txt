@@ -1,0 +1,175 @@
+---
+title: Slider
+description: View source on GitHub →
+---
+
+<span id="slider" />
+
+:::tip
+[View source on GitHub →](https://github.com/infinum/eightshift-ui-components/tree/main/lib/components/slider)
+:::
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx
+<Slider
+	value={value}
+	onChange={(value) => setData(value)}
+/>
+```
+
+## Range slider
+
+In order for the value display to be visible, a `label` must be set!
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {3}
+<Slider
+	label='My slider'
+	value={value} // e.g. [20, 60]
+	onChange={(value) => setData(value)}
+/>
+```
+
+## Highlighted props
+
+For the complete list of props, use your IDE's autocomplete functionality.
+
+### Markers
+
+#### Auto-generated
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {4}
+<Slider
+	value={value}
+	onChange={(value) => setData(value)}
+	markers
+/>
+```
+
+#### Dots
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {4}
+<Slider
+	value={value}
+	onChange={(value) => setData(value)}
+	markers='dots'
+/>
+```
+
+#### Manual
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {4}
+<Slider
+	value={value}
+	onChange={(value) => setData(value)}
+	markers={{ 0: 'start', 25: '', 50: 'middle', 75: '', 100: 'end' }}
+/>
+```
+
+### Custom start point
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {4}
+<Slider
+	value={value}
+	onChange={(value) => setData(value)}
+	startPoint={50}
+/>
+```
+
+### Disable the active area highlight
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {4}
+<Slider
+	value={value}
+	onChange={(value) => setData(value)}
+	noActiveHighlight
+/>
+```
+
+### Custom track style
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {11,12,13}
+<Slider
+	value={value}
+	onChange={(value) => setData(value)}
+	markers={{
+		0: <span className='es:text-red-500'>R</span>,
+		50: <span className='es:text-green-500'>G</span>,
+		100: <span className='es:text-blue-500'>B</span>,
+	}}
+	startPoint={50}
+	noActiveHighlight
+	trackStyle={{
+		backgroundImage: 'linear-gradient(to right in oklab, #ff000060, #00ff0060, #0000ff60)',
+	}}
+/>
+```
+
+### Before element
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {4}
+<Slider
+	value={value}
+	onChange={(value) => setData(value)}
+	before={magicAltFillTransparent}
+/>
+```
+
+### After element
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {4}
+<Slider
+	value={value}
+	onChange={(value) => setData(value)}
+	after={magicAltFillTransparent}
+/>
+```
+
+### Input field
+
+Requires `label`!
+
+:::note
+Use sparingly, the input methods are redundant.
+:::
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {5}
+<Slider
+	label='My slider'
+	value={value}
+	onChange={(value) => setData(value)}
+	inputField
+/>
+```
+
+### Vertical slider
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {4}
+<Slider
+	value={value}
+	onChange={(value) => setData(value)}
+	vertical
+/>
+```

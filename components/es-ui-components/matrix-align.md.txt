@@ -1,0 +1,49 @@
+---
+title: Matrix align
+description: View source on GitHub →
+---
+
+<span id="matrix-align" />
+
+:::tip
+[View source on GitHub →](https://github.com/infinum/eightshift-ui-components/tree/main/lib/components/matrix-align)
+:::
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx
+<MatrixAlign
+	onChange={(value) => setData(value)}
+	value={data}
+/>
+```
+
+## Highlighted props
+
+For the complete list of props, use your IDE's autocomplete functionality.
+
+### Matrix size
+
+`3x3` is the default size. If needed, `2x2` can be set with the `size` prop.
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx
+<MatrixAlign
+	onChange={(value) => setData(value)}
+	value={data}
+/>
+```
+
+### Label
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {4,5}
+<MatrixAlign
+	onChange={(value) => setData(value)}
+	value={data}
+	label='Alignment'
+	icon={emptyRect}
+/>
+```

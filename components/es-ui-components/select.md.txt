@@ -1,0 +1,84 @@
+---
+title: Single select
+description: View source on GitHub →
+---
+
+<span id="single-select" />
+
+:::tip
+[View source on GitHub →](https://github.com/infinum/eightshift-ui-components/tree/main/lib/components/select)
+:::
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx
+<Select
+	value={value}
+	onChange={(value) => setValue(value)}
+	options={[
+		{ value: 'option-1', label: 'Option 1' },
+		{ value: 'option-2', label: 'Option 2' },
+		{ value: 'option-3', label: 'Option 3' },
+	]}
+/>
+```
+
+## Highlighted props
+
+For the complete list of props, use your IDE's autocomplete functionality.
+
+### Allow clearing the selected option
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {9}
+<Select
+	value={value}
+	onChange={(value) => setValue(value)}
+	options={[
+		{ value: 'option-1', label: 'Option 1' },
+		{ value: 'option-2', label: 'Option 2' },
+		{ value: 'option-3', label: 'Option 3' },
+	]}
+	clearable
+/>
+```
+
+### Disable search
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {9}
+<Select
+	value={value}
+	onChange={(value) => setValue(value)}
+	options={[
+		{ value: 'option-1', label: 'Option 1' },
+		{ value: 'option-2', label: 'Option 2' },
+		{ value: 'option-3', label: 'Option 3' },
+	]}
+	noSearch
+/>
+```
+
+### Simple value
+
+By default, values are objects with `value` and `label` properties (and optionally `metadata`).
+If you want to use a simple string value, use the `simpleValue` prop.
+
+<span slot="fallback">Loading interactive example…</span>
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {9}
+<Select
+	value={value}
+	onChange={(value) => setValue(value)}
+	options={[
+		{ value: 'option-1', label: 'Option 1' },
+		{ value: 'option-2', label: 'Option 2' },
+		{ value: 'option-3', label: 'Option 3' },
+	]}
+	simpleValue
+/>
+```

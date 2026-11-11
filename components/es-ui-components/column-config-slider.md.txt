@@ -1,0 +1,82 @@
+---
+title: Column config slider
+description: View source on GitHub →
+---
+
+<span id="column-config-slider" />
+
+:::tip
+[View source on GitHub →](https://github.com/infinum/eightshift-ui-components/tree/main/lib/components/slider)
+:::
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx
+<ColumnConfigSlider
+	icon={columns}
+	label='Column configuration'
+	value={value} // e.g. [1, 12]
+	onChange={(value) => setData(value)}
+/>
+```
+
+## Highlighted props
+
+For the complete list of props, use your IDE's autocomplete functionality.
+
+### Change number of columns
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {6}
+<ColumnConfigSlider
+	icon={columns}
+	label='Column configuration'
+	value={value}
+	onChange={(value) => setData(value)}
+	columns={14}
+/>
+```
+
+### Mark outer columns as "gutter"
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {7}
+<ColumnConfigSlider
+	icon={columns}
+	label='Column configuration'
+	value={value}
+	onChange={(value) => setData(value)}
+	columns={14}
+	showOuterAsGutter
+/>
+```
+
+### No offset thumb
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {6}
+<ColumnConfigSlider
+	icon={columns}
+	label='Column configuration'
+	value={value}
+	onChange={(value) => setData(value)}
+	disableOffset
+/>
+```
+
+### No width thumb
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {6}
+<ColumnConfigSlider
+	icon={columns}
+	label='Column configuration'
+	value={value}
+	onChange={(value) => setData(value)}
+	disableWidth
+/>
+```

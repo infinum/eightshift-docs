@@ -1,0 +1,14 @@
+---
+title: UI icons
+description: View source on GitHub →
+---
+
+<span id="ui-icons" />
+
+:::tip
+[View source on GitHub →](https://github.com/infinum/eightshift-ui-components/tree/main/lib/icons/ui-icons)
+:::
+
+Regular React components, use within components, option pages, sidebar, ...
+
+<span slot="fallback">Loading interactive example…</span>

@@ -1,0 +1,256 @@
+---
+title: Menu
+description: View source on GitHub →
+---
+
+<span id="menu" />
+
+:::tip
+[View source on GitHub →](https://github.com/infinum/eightshift-ui-components/tree/main/lib/components/menu)
+:::
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx
+<Menu>
+	<MenuItem>First item</MenuItem>
+	<MenuItem>Second item</MenuItem>
+	<MenuItem>Third item</MenuItem>
+</Menu>
+```
+
+## Menu separator
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {4}
+<Menu>
+	<MenuItem>Item 1</MenuItem>
+	<MenuItem>Item 2</MenuItem>
+	<MenuSeparator />
+	<MenuItem>Item 3</MenuItem>
+	<MenuItem>Item 4</MenuItem>
+</Menu>
+```
+
+## Menu with sections
+
+:::caution
+If using sections, you **do not** mix menu sections and regular menu items.
+:::
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {2,6}
+<Menu>
+	<MenuSection label='Section 1'>
+		<MenuItem>Item 1</MenuItem>
+		<MenuItem>Item 2</MenuItem>
+	</MenuSection>
+	<MenuSection label='Section 2'>
+		<MenuItem>Item 3</MenuItem>
+		<MenuItem>Item 4</MenuItem>
+	</MenuSection>
+</Menu>
+```
+
+If you need to have a top-level menu item outside of any sections you can either add a section without a label, or use `MenuSeparator` elements with a disabled `MenuItem` to act as the section label.
+
+## Menu with a sub-menu
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {4,5,6,7}
+<Menu>
+	<MenuItem>Item 1</MenuItem>
+	<MenuItem>Item 2</MenuItem>
+	<SubMenuItem trigger={<MenuItem>Submenu</MenuItem>}>
+		<MenuItem>Subitem 1</MenuItem>
+		<MenuItem>Subitem 2</MenuItem>
+	</SubMenuItem>
+</Menu>
+```
+
+## Menu item customization
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {3,8,13,18}
+<Menu>
+	<MenuItem
+		icon={emptyCircle}
+	>
+		Item with icon
+	</MenuItem>
+	<MenuItem
+		endIcon={emptyRect}
+	>
+		Item with end icon
+	</MenuItem>
+	<MenuItem
+		shortcut='Ctrl + Z'
+	>
+		Item with shortcut text
+	</MenuItem>
+	<MenuItem
+		disabled
+	>
+		Disabled item
+	</MenuItem>
+</Menu>
+```
+
+:::note
+The `shortcut` prop is used to display additional text on the right side of the menu item.
+It will not handle keyboard shortcut management.
+:::
+
+## Single/multi-select menu items
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {3,9,15}
+<Menu>
+	<MenuItem
+		checked={myValue === 'a'}
+		onClick={() => setMyValue('a')}
+	>
+		Item A
+	</MenuItem>
+	<MenuItem
+		checked={myValue === 'b'}
+		onClick={() => setMyValue('b')}
+	>
+		Item B
+	</MenuItem>
+	<MenuItem
+		checked={myValue === 'c'}
+		onClick={() => setMyValue('c')}
+	>
+		Item C
+	</MenuItem>
+</Menu>
+```
+
+```jsx {3}
+<Menu>
+	<MenuItem
+		checked={myValue}
+		onClick={() => setMyValue(!myValue)}
+	>
+		Item
+	</MenuItem>
+</Menu>
+```
+
+## Highlighted props
+
+For the complete list of props, use your IDE's autocomplete functionality.
+
+### Trigger button customization
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {2}
+<Menu
+	triggerLabel='Menu'
+>
+	<MenuItem>First item</MenuItem>
+	<MenuItem>Second item</MenuItem>
+	<MenuItem>Third item</MenuItem>
+</Menu>
+```
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {2,3}
+<Menu
+	triggerLabel='Menu'
+	triggerIcon={emptyCircle}
+>
+	<MenuItem>First item</MenuItem>
+	<MenuItem>Second item</MenuItem>
+	<MenuItem>Third item</MenuItem>
+</Menu>
+```
+
+#### Advanced customizations
+
+`triggerProps` accepts all [`Button`](/components/es-ui-components/button) props.
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {2}
+<Menu
+	triggerProps={{ size: 'small' }}
+>
+	<MenuItem>First item</MenuItem>
+	<MenuItem>Second item</MenuItem>
+	<MenuItem>Third item</MenuItem>
+</Menu>
+```
+
+### Keep open after item selection
+
+By default, the menu will close after an item is selected. If you want to keep it open, use the `keepOpen` prop.
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {2}
+<Menu
+	keepOpen
+>
+	<MenuItem>First item</MenuItem>
+	<MenuItem>Second item</MenuItem>
+	<MenuItem>Third item</MenuItem>
+</Menu>
+```
+
+### Open on long press
+
+If you want the menu to open on long press instead of click, use the `openOnLongPress` prop.
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {2}
+<Menu
+	openOnLongPress
+>
+	<MenuItem>First item</MenuItem>
+	<MenuItem>Second item</MenuItem>
+	<MenuItem>Third item</MenuItem>
+</Menu>
+```
+
+This allows implementing a button that can, for example, act as a toggle button by default, but open a menu on long press.
+
+**Be careful about UX and discoverability in those cases.**
+
+<span slot="fallback">Loading interactive example…</span>
+
+*Click to toggle 'bold', press and hold for more font weights.*
+
+```jsx
+<Menu
+	triggerIcon={bold}
+	tooltip='Font weight'
+	triggerProps={{
+		type: fontWeight === '700' ? 'selected' : 'default',
+		onPress: () => setData(fontWeight === '700' ? '400' : '700'),
+	}}
+	openOnLongPress
+>
+	<MenuItem selected={fontWeight === '300'} onClick={...}>
+		Light
+	</MenuItem>
+	<MenuItem selected={fontWeight === '400'} onClick={...}>
+		Regular
+	</MenuItem>
+	<MenuItem selected={fontWeight === '500'} onClick={...}>
+		Medium
+	</MenuItem>
+	<MenuItem selected={fontWeight === '700'} onClick={...}>
+		Bold
+	</MenuItem>
+</Menu>
+```

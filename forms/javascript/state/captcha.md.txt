@@ -1,0 +1,18 @@
+---
+title: Captcha
+description: The captcha object contains methods used in spam protection.
+---
+
+The `captcha` object contains methods used in spam protection.
+
+:::tip
+For more details about this feature visit [spam prevention](/forms/features/spam-prevention) feature.
+:::
+
+### Example
+
+This example will hide Google reCaptcha badge if conditions are set.
+
+```js
+window?.esForms?.captcha?.initHideCaptchaBadge();
+```

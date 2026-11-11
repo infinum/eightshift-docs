@@ -1,0 +1,1 @@
+import{a as e,n as t}from"./react-dom.zHLzy7MB.js";import{It as n,Mt as r}from"./component-showcase.D063BhiL.js";var i=e(t(),1),a=(0,i.createContext)({}),o=(0,i.forwardRef)(function(e,t){[e,t]=r(e,t,a);let{elementType:o=`span`,...s}=e,c=n[o];return i.createElement(c,{className:`react-aria-Text`,...s,ref:t})});export{a as n,o as t};

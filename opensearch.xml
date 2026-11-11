@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/"
-                       xmlns:moz="http://www.mozilla.org/2006/browser/search/">
-  <ShortName>Eightshift Development kit</ShortName>
-  <Description>Search Eightshift Development kit</Description>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+  <ShortName>Eightshift Development Kit</ShortName>
+  <Description>Search Eightshift documentation</Description>
   <InputEncoding>UTF-8</InputEncoding>
-  <Image width="16" height="16" type="image/x-icon">https://eightshift.com/img/favicon.png</Image>
+  <Image width="16" height="16" type="image/png">https://eightshift.com/img/favicon.png</Image>
   <Url type="text/html" method="get" template="https://eightshift.com/search?q={searchTerms}"/>
-  <Url type="application/opensearchdescription+xml" rel="self" template="https://eightshift.com/opensearch.xml" />
-  <moz:SearchForm>https://eightshift.com/</moz:SearchForm>
+  <Url type="application/opensearchdescription+xml" rel="self" template="https://eightshift.com/opensearch.xml"/>
 </OpenSearchDescription>

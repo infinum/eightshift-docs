@@ -1,0 +1,51 @@
+---
+title: Checkbox
+description: View source on GitHub →
+---
+
+<span id="checkbox" />
+
+:::tip
+[View source on GitHub →](https://github.com/infinum/eightshift-ui-components/tree/main/lib/components/checkbox)
+:::
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx
+<Checkbox
+	label='Demo'
+	checked={data}
+	onChange={(value) => setData(value)}
+/>
+```
+
+## Highlighted props
+
+For the complete list of props, use your IDE's autocomplete functionality.
+
+### Align checkbox to the end
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {6}
+<Checkbox
+	icon={emptyRect}
+	label='Demo'
+	checked={data}
+	onChange={setData}
+	alignEnd
+/>
+```
+
+### Indeterminate state
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {5}
+<Checkbox
+	label='Demo'
+	checked={data}
+	onChange={(value) => setData(value)}
+	indeterminate={data === null}
+/>
+```

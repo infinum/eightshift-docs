@@ -1,0 +1,1 @@
+import{Ut as e,Wt as t}from"./component-showcase.D063BhiL.js";var n=e(),r=e=>{let{children:r,noWrap:i,className:a,hidden:o,as:s}=e;return o?null:(0,n.jsx)(s??`div`,{className:t(`es:flex es:flex-col es:gap-x-1.5 es:gap-y-1.5`,!i&&`es:flex-wrap`,a),children:r})};export{r as t};

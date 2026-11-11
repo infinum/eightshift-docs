@@ -1,0 +1,25 @@
+---
+title: Responsive preview
+description: View source on GitHub →
+---
+
+<span id="responsive-preview" />
+
+:::tip
+[View source on GitHub →](https://github.com/infinum/eightshift-ui-components/tree/main/lib/components/responsive-preview)
+:::
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx
+<ToggleButton
+	selected={data}
+	onChange={setData}
+>
+	Toggle me
+</ToggleButton>
+```
+
+## Highlighted props
+
+For the complete list of props, use your IDE's autocomplete functionality.

@@ -1,0 +1,1 @@
+import{a as e,n as t}from"./react-dom.zHLzy7MB.js";import{ot as n}from"./component-showcase.D063BhiL.js";var r=e(t(),1);function i(e={}){let{isReadOnly:t}=e,[i,a]=n(e.isSelected,e.defaultSelected||!1,e.onChange),[o]=(0,r.useState)(i);function s(e){t||a(e)}function c(){t||a(!i)}return{isSelected:i,defaultSelected:e.defaultSelected??o,setSelected:s,toggle:c}}export{i as t};

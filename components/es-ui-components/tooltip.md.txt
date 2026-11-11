@@ -1,0 +1,87 @@
+---
+title: Tooltip
+description: View source on GitHub →
+---
+
+<span id="tooltip" />
+
+:::tip
+[View source on GitHub →](https://github.com/infinum/eightshift-ui-components/tree/main/lib/components/tooltip)
+:::
+
+Tooltips don't usually need to be used directly, as they are used internally by other components.
+By default, they only work with components that properly handle pointer events.
+
+There is an initial delay before showing a tooltip, so they don't show accidentally when the user is just moving the pointer around.
+This can be modified with props.
+
+After a tooltip has been shown, the surrounding tooltips will **not** have any delay before showing the tooltip.
+
+Likewise, there's a slight delay when the pointer exits the element with a tooltip, so it doesn't disappear immediately.
+
+The tooltip will also be shown when the element is focused. In that case, there is no delay when the tooltip is shown/hidden.
+
+If you need a tooltip on an element which doesn't handle pointer events, you can use the `DecorativeTooltip` component.
+Decorative tooltips **do not** have special delayed enter/exit behavior as regular tooltips.
+They will also wrap your element in a container that handles hover events.
+
+:::caution\[Important]
+Never include any crucial info within tooltips as they cannot be triggered on devices without a pointer, e.g. phones.
+:::
+
+<span slot="fallback">Loading interactive example…</span>
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx
+<Tooltip text='This is a tooltip'>
+	<Button>Hello</Button>
+</Tooltip>
+```
+
+<span slot="fallback">Loading interactive example…</span>
+
+## Highlighted props
+
+For the complete list of props, use your IDE's autocomplete functionality.
+
+### Themes
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {3}
+<Tooltip
+	text='This is a tooltip'
+	theme='light'
+>
+	<Button>Light theme</Button>
+</Tooltip>
+```
+
+### Arrow
+
+Helps connect the tooltip to the element it's describing.
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {3}
+<Tooltip
+	text='This is a tooltip'
+	arrow
+>
+	<Button>Arrow</Button>
+</Tooltip>
+```
+
+### Placement
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {3}
+<Tooltip
+	text='This is a tooltip'
+	placement='right'
+>
+	<Button>Tooltip on the right</Button>
+</Tooltip>
+```

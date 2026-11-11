@@ -1,0 +1,19 @@
+---
+title: Gradient editor
+description: View source on GitHub →
+---
+
+<span id="gradient-editor" />
+
+:::tip
+[View source on GitHub →](https://github.com/infinum/eightshift-ui-components/tree/main/lib/components/color-pickers)
+:::
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx
+<GradientEditor
+	value={value}
+	onChange={(value) => setData(value)}
+/>
+```

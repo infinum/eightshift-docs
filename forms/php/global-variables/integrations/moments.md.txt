@@ -1,0 +1,20 @@
+---
+title: Moments
+description: ESAPIKEY_MOMENTS
+---
+
+### ES\_API\_KEY\_MOMENTS
+
+This variable will set the Moments integration API key.
+
+```php
+define('ES_API_KEY_MOMENTS', '<api-key>');
+```
+
+### ES\_API\_URL\_MOMENTS
+
+This variable will set the Moments integration API URL.
+
+```php
+define('ES_API_URL_MOMENTS', '<api-url-key>');
+```

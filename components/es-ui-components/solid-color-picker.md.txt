@@ -1,0 +1,59 @@
+---
+title: Solid color picker
+description: View source on GitHub →
+---
+
+<span id="solid-color-picker" />
+
+:::tip
+[View source on GitHub →](https://github.com/infinum/eightshift-ui-components/tree/main/lib/components/color-pickers)
+:::
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx
+<SolidColorPicker
+	value={value}
+	onChange={(value) => setData(value)}
+/>
+```
+
+## Highlighted props
+
+For the complete list of props, use your IDE's autocomplete functionality.
+
+### Allow transparent colors
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {4}
+<SolidColorPicker
+	value={value}
+	onChange={(value) => setData(value)}
+	allowTransparency
+/>
+```
+
+### Change output color format
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {4}
+<SolidColorPicker
+	value={value}
+	onChange={(value) => setData(value)}
+	outputFormat='rgb'
+/>
+```
+
+### Hide advanced options
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {4}
+<SolidColorPicker
+	value={value}
+	onChange={(value) => setData(value)}
+	noAdvancedOptions
+/>
+```

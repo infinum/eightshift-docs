@@ -1,0 +1,1 @@
+var e=(e=``)=>new DOMParser().parseFromString(e,`text/html`).documentElement.textContent;export{e as t};

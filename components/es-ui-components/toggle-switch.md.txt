@@ -1,0 +1,83 @@
+---
+title: Toggle / Switch
+description: View source on GitHub →
+---
+
+<span id="toggle--switch" />
+
+:::tip
+[View source on GitHub →](https://github.com/infinum/eightshift-ui-components/tree/main/lib/components/toggle)
+:::
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx
+<Toggle
+	label='Demo'
+	checked={data}
+	onChange={(value) => setData(value)}
+/>
+```
+
+If you need the toggle switch standalone, you can use the `Switch` component.
+
+Other props are the same, with the exception of label and related props.
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx
+<Switch
+	checked={data}
+	onChange={(value) => setData(value)}
+/>
+```
+
+## Highlighted props
+
+For the complete list of props, use your IDE's autocomplete functionality.
+
+### Icon, subtitle
+
+Augment the label
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {2,3}
+<Toggle
+	icon={emptyRect}
+	subtitle='Subtitle'
+	label='Demo'
+	checked={data}
+	onChange={setData}
+/>
+```
+
+### Disabled
+
+Prevent interactions with the toggle.
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {5}
+<Toggle
+	label='Demo'
+	checked={data}
+	onChange={(value) => setData(value)}
+	disabled
+/>
+```
+
+### Indeterminate state
+
+Whether the toggle should be rendered in an indeterminate state.
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {5}
+<Toggle
+	label='Demo'
+	checked={data}
+	onChange={(value) => setData(value)}
+	isIndeterminate={data === null}
+/>
+```

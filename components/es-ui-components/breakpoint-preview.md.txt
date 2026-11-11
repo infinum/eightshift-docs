@@ -1,0 +1,88 @@
+---
+title: Breakpoint preview
+description: View source on GitHub →
+---
+
+<span id="breakpoint-preview" />
+
+:::tip
+[View source on GitHub →](https://github.com/infinum/eightshift-ui-components/tree/main/lib/components/breakpoint-preview)
+:::
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx
+<BreakpointPreview
+	blocks={[
+		{
+			breakpoint: 'Mobile',
+			widthEnd: '480px',
+			value: 'Regular',
+			dotsStart: true,
+			alignEnd: true,
+			active: true,
+		},
+		{
+			breakpoint: 'Default',
+			value: 'Small',
+			dotsEnd: true,
+		},
+	]}
+/>
+```
+
+## Highlighted props
+
+For the complete list of props, use your IDE's autocomplete functionality.
+
+### Start dots
+
+If you don't want to reduce the width of the blocks within.
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {2}
+<BreakpointPreview
+	dotsStart
+	blocks={[
+		{
+			breakpoint: 'Mobile',
+			widthEnd: '480px',
+			value: 'Regular',
+			alignEnd: true,
+			active: true,
+		},
+		{
+			breakpoint: 'Default',
+			value: 'Small',
+			dotsEnd: true,
+		},
+	]}
+/>
+```
+
+### End dots
+
+If you don't want to reduce the width of the blocks within.
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {2}
+<BreakpointPreview
+	dotsEnd
+	blocks={[
+		{
+			breakpoint: 'Mobile',
+			widthEnd: '480px',
+			value: 'Regular',
+			dotsStart: true,
+			alignEnd: true,
+			active: true,
+		},
+		{
+			breakpoint: 'Default',
+			value: 'Small',
+		},
+	]}
+/>
+```

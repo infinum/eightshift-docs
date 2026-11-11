@@ -1,0 +1,12 @@
+---
+title: Hubspot
+description: ESAPIKEY_HUBSPOT
+---
+
+### ES\_API\_KEY\_HUBSPOT
+
+This variable will set the HubSpot integration API key.
+
+```php
+define('ES_API_KEY_HUBSPOT', '<api-key>');
+```

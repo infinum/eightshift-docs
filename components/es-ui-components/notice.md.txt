@@ -1,0 +1,69 @@
+---
+title: Notice
+description: View source on GitHub →
+---
+
+<span id="notice" />
+
+:::tip
+[View source on GitHub →](https://github.com/infinum/eightshift-ui-components/tree/main/lib/components/notice)
+:::
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx
+<Notice
+	label='Hello there'
+	subtitle='This is a notification subtitle'
+/>
+```
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx
+<Notice label='Hello there!' />
+```
+
+## Highlighted props
+
+For the complete list of props, use your IDE's autocomplete functionality.
+
+### Type
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {4}
+<Notice
+	label='Hello there'
+	subtitle='This is a notification subtitle'
+	type='error'
+/>
+```
+
+### Icon override
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {5}
+<Notice
+	label='Warning'
+	subtitle='Potential magic ahead'
+	type='warning'
+	icon={magicAltFillTransparent}
+/>
+```
+
+### Align icon to title
+
+Aligns the icon vertically to the title, instead of the whole notice. Useful if the content of the notice is longer.
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {5}
+<Notice
+	label='Lorem ipsum...'
+	subtitle='...'
+	type='info'
+	alignIconToTitle
+/>
+```

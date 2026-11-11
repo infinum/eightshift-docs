@@ -1,0 +1,127 @@
+---
+title: Button
+description: View source on GitHub →
+---
+
+<span id="button" />
+
+:::tip
+[View source on GitHub →](https://github.com/infinum/eightshift-ui-components/tree/main/lib/components/button)
+:::
+
+:::note
+The click event is set by the `onPress` prop.
+:::
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx
+<Button>Hi, I'm a button!</Button>
+```
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx
+<Button icon={emptyCircle} />
+```
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx
+<Button
+	icon={emptyCircle
+>
+	Hi, I'm a button!
+</Button>
+```
+
+## Button groups
+
+If buttons are related, they can be grouped with a `ButtonGroup`.
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {1,5}
+<ButtonGroup>
+	<Button>First</Button>
+	<Button>Second</Button>
+	<Button>Third</Button>
+</ButtonGroup>
+```
+
+Button groups improve focus behavior - instead of having to `Tab` through each button,
+the group is treated as a single focusable element that can be navigated with left/right arrows.
+
+### Vertical group
+
+<span slot="fallback">Loading interactive example…</span>
+
+In this case, the focus navigation is handled with up/down arrows.
+
+```jsx {2}
+<ButtonGroup
+	vertical
+>
+	<Button>First</Button>
+	<Button>Second</Button>
+	<Button>Third</Button>
+</ButtonGroup>
+```
+
+:::note
+By default, vertical button groups take up the full width of their container.
+:::
+
+## Highlighted props
+
+For the complete list of props, use your IDE's autocomplete functionality.
+
+### Sizes
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {2}
+<Button
+	size='small'
+>
+	Hi, I'm a button!
+</Button>
+```
+
+### Types
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {2}
+<Button
+	type='ghost'
+>
+	Hi, I'm a button!
+</Button>
+```
+
+### Tooltip
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {3}
+<Button
+	icon={emptyCircle}
+	tooltip="Hi, I'm a tooltip!"
+/>
+```
+
+:::note
+If text label is not set, please set the `aria-label` prop to ensure accessibility.
+
+<br />
+
+When `aria-label` is set, `tooltip` can be just passed without value. In that case it will take the value from
+`aria-label`. :::
+
+### Pending
+
+If you want to show a pending state, you can use the `pending` prop.
+It will replace the button content with a loading indicator, announce an action, and disable the button.
+
+<span slot="fallback">Loading interactive example…</span>

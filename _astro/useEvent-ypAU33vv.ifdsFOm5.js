@@ -1,0 +1,1 @@
+import{a as e,n as t}from"./react-dom.zHLzy7MB.js";import{Et as n}from"./component-showcase.D063BhiL.js";var r=e(t(),1);function i(e,t,i,a){let o=n(i),s=i==null;(0,r.useEffect)(()=>{if(s||!e.current)return;let n=e.current;return n.addEventListener(t,o,a),()=>{n.removeEventListener(t,o,a)}},[e,t,a,s])}export{i as t};

@@ -1,0 +1,12 @@
+---
+title: Goodbits
+description: ESAPIKEY_GOODBITS
+---
+
+### ES\_API\_KEY\_GOODBITS
+
+This variable will set the Goodbits integration API key.
+
+```php
+define('ES_API_KEY_GOODBITS', '<api-key>');
+```

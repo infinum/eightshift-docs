@@ -1,0 +1,101 @@
+---
+title: Color picker
+description: View source on GitHub →
+---
+
+<span id="color-picker" />
+
+:::tip
+[View source on GitHub →](https://github.com/infinum/eightshift-ui-components/tree/main/lib/components/color-pickers)
+:::
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx
+const defaultColors = [
+	{
+		name: 'Red',
+		slug: 'red',
+		color: '#FF0000',
+	},
+	{
+		name: 'Green',
+		slug: 'green',
+		color: '#00FF00',
+	},
+	{
+		name: 'Blue',
+		slug: 'blue',
+		color: '#0000FF',
+	},
+	...
+];
+
+<ColorPicker
+	value={value}
+	onChange={(value) => setData(value)}
+	colors={myColors}
+/>
+```
+
+:::tip
+In Frontend libs and Frontend libs Tailwind you can use the `getOption` helper to fetch the color data based on the list in the manifes.
+:::
+
+## Highlighted props
+
+For the complete list of props, use your IDE's autocomplete functionality.
+
+### Allow deselecting a color
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {5}
+<ColorPicker
+	value={value}
+	onChange={(value) => setData(value)}
+	colors={myColors}
+	clearable
+/>
+```
+
+### Disable color grouping
+
+By default, colors are grouped by their names, e.g. `red-100`, `red-200`, `red-300`...
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {5}
+<ColorPicker
+	value={value}
+	onChange={(value) => setData(value)}
+	colors={myColors}
+	noColorGroups
+/>
+```
+
+### Show color hex code in the dropdown
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {5}
+<ColorPicker
+	value={value}
+	onChange={(value) => setData(value)}
+	colors={myColors}
+	showColorCode
+/>
+```
+
+### Picker type
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {5}
+<ColorPicker
+	value={value}
+	onChange={(value) => setData(value)}
+	colors={myColors}
+	type='textColor'
+/>
+```

@@ -1,0 +1,67 @@
+---
+title: Rich label
+description: View source on GitHub →
+---
+
+<span id="rich-label" />
+
+:::tip
+[View source on GitHub →](https://github.com/infinum/eightshift-ui-components/tree/main/lib/components/rich-label)
+:::
+
+Upgrade your basic labels with an optional icon and subtitle.
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx
+<RichLabel
+	label='Label ipsum dolor sit amet'
+	subtitle='Subtitle ipsum dolor sit amet'
+	icon={emptyCircle}
+/>
+```
+
+## Highlighted props
+
+For the complete list of props, use your IDE's autocomplete functionality.
+
+### Expand to full width
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {5}
+<RichLabel
+	label='Label ipsum dolor sit amet'
+	subtitle='Subtitle ipsum dolor sit amet'
+	icon={emptyCircle}
+	fullWidth
+/>
+```
+
+### Monochrome
+
+If you have cases where the text might be a different color, or of dynamic color,
+use the `noColor` prop to use opacity to highlight hierarchy instead of multiple colors.
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx
+// The container has a red text color applied.
+<RichLabel
+	label='Label ipsum dolor sit amet'
+	subtitle='Subtitle ipsum dolor sit amet'
+	icon={solidCircleFilled}
+/>
+```
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {6}
+// The container has a red text color applied.
+<RichLabel
+	label='Label ipsum dolor sit amet'
+	subtitle='Subtitle ipsum dolor sit amet'
+	icon={solidCircleFilled}
+	noColor
+/>
+```

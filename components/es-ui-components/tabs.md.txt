@@ -1,0 +1,78 @@
+---
+title: Tabs
+description: View source on GitHub →
+---
+
+<span id="tabs" />
+
+:::tip
+[View source on GitHub →](https://github.com/infinum/eightshift-ui-components/tree/main/lib/components/tabs)
+:::
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx
+<Tabs>
+	<TabList>
+		<Tab>Tab 1</Tab>
+		<Tab>Tab 2</Tab>
+	</TabList>
+	<TabPanel>Tab 1 content</TabPanel>
+	<TabPanel>Tab 2 content</TabPanel>
+</Tabs>
+```
+
+## Highlighted props
+
+For the complete list of props, use your IDE's autocomplete functionality.
+
+### Vertical tabs
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {2}
+<Tabs
+	vertical
+>
+	<TabList>
+		<Tab>Tab 1</Tab>
+		<Tab>Tab 2</Tab>
+	</TabList>
+	<TabPanel>Tab 1 content</TabPanel>
+	<TabPanel>Tab 2 content</TabPanel>
+</Tabs>
+```
+
+### Tab styles
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx {2}
+<Tabs
+	type='pill'
+>
+	<TabList>
+		<Tab>Tab 1</Tab>
+		<Tab>Tab 2</Tab>
+	</TabList>
+	<TabPanel>Tab 1 content</TabPanel>
+	<TabPanel>Tab 2 content</TabPanel>
+</Tabs>
+```
+
+## Misconfiguration alert
+
+If the number of `Tab` elements and `TabPanel` elements doesn't match, an alert will be shown.
+
+<span slot="fallback">Loading interactive example…</span>
+
+```jsx
+<Tabs>
+	<TabList>
+		<Tab>Tab 1</Tab>
+		<Tab>Tab 2</Tab>
+	</TabList>
+	<TabPanel>Tab 1 content</TabPanel>
+	// Missing Tab 2 content
+</Tabs>
+```
